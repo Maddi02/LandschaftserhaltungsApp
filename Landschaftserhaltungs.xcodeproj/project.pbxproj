@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		224F45FC28FD80E7004EA74F /* LandschaftserhaltungsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F45FB28FD80E7004EA74F /* LandschaftserhaltungsApp.swift */; };
-		224F45FE28FD80E7004EA74F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F45FD28FD80E7004EA74F /* ContentView.swift */; };
+		224F45FE28FD80E7004EA74F /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F45FD28FD80E7004EA74F /* LaunchScreen.swift */; };
 		224F460028FD80E8004EA74F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 224F45FF28FD80E8004EA74F /* Assets.xcassets */; };
 		224F460328FD80E8004EA74F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 224F460228FD80E8004EA74F /* Preview Assets.xcassets */; };
 		224F460D28FD80E8004EA74F /* LandschaftserhaltungsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F460C28FD80E8004EA74F /* LandschaftserhaltungsTests.swift */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		224F45F828FD80E7004EA74F /* Landschaftserhaltungs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Landschaftserhaltungs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		224F45FB28FD80E7004EA74F /* LandschaftserhaltungsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandschaftserhaltungsApp.swift; sourceTree = "<group>"; };
-		224F45FD28FD80E7004EA74F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		224F45FD28FD80E7004EA74F /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		224F45FF28FD80E8004EA74F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		224F460228FD80E8004EA74F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		224F460828FD80E8004EA74F /* LandschaftserhaltungsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LandschaftserhaltungsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,8 +94,10 @@
 		224F45FA28FD80E7004EA74F /* Landschaftserhaltungs */ = {
 			isa = PBXGroup;
 			children = (
+				224F462628FD855D004EA74F /* BackEnd */,
 				224F45FB28FD80E7004EA74F /* LandschaftserhaltungsApp.swift */,
-				224F45FD28FD80E7004EA74F /* ContentView.swift */,
+				224F45FD28FD80E7004EA74F /* LaunchScreen.swift */,
+				224F462528FD8555004EA74F /* FrontEnd */,
 				224F45FF28FD80E8004EA74F /* Assets.xcassets */,
 				224F460128FD80E8004EA74F /* Preview Content */,
 			);
@@ -125,6 +127,20 @@
 				224F461828FD80E8004EA74F /* LandschaftserhaltungsUITestsLaunchTests.swift */,
 			);
 			path = LandschaftserhaltungsUITests;
+			sourceTree = "<group>";
+		};
+		224F462528FD8555004EA74F /* FrontEnd */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FrontEnd;
+			sourceTree = "<group>";
+		};
+		224F462628FD855D004EA74F /* BackEnd */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BackEnd;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				224F45FE28FD80E7004EA74F /* ContentView.swift in Sources */,
+				224F45FE28FD80E7004EA74F /* LaunchScreen.swift in Sources */,
 				224F45FC28FD80E7004EA74F /* LandschaftserhaltungsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
