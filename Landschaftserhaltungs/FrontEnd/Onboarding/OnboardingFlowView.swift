@@ -11,8 +11,9 @@ struct OnboardingFlowView: View {
     @State private var selection = 0
     @State private var buttonTitleNext = "Start"
     @State private var buttonTitleBack = "back"
+    @EnvironmentObject var appState : AppState
     var body: some View {
-        ZStack(alignment: .bottom) {
+      
             TabView(selection: $selection){
                 WelcomeView().tag(0)
                 FirstFeatureOverview().tag(1)
@@ -25,13 +26,11 @@ struct OnboardingFlowView: View {
             .tabViewStyle(.page)
             .indexViewStyle(
                 .page(backgroundDisplayMode: .always))
-        }
+        
         HStack{
             if(selection >= 1)
             {
                 Button("back") {
-                    print("pressed")
-                    
                     withAnimation {
                         if(selection == 0)
                         {
@@ -50,41 +49,44 @@ struct OnboardingFlowView: View {
                     .padding()
             }
             
-            
-            Button(buttonTitleNext) {
-                
+            if(selection < 4)
+            {
+                Button(buttonTitleNext) {
+                    withAnimation {
+                        
+                        if(selection < 4)
+                        {
+                            buttonTitleNext = "Next"
+                            selection+=1
+                        }
+                        
+                    }
+                }.foregroundColor(.white)
+                    .frame(width: 100, height: 40)
+                    .background(Color.blue)
+                    .cornerRadius(15)
+                    .padding()
+            }
+        }.padding(.leading, 50).padding(.trailing,50)
+        
+        if(selection < 4)
+        {
+            Button("Skip Tutorial") {
                 
                 withAnimation {
-            
                     if(selection < 4)
                     {
-                        buttonTitleNext = "Next"
-                        selection+=1
+                        appState.hasOnboarded = true
                     }
                     
                 }
-            }.foregroundColor(.white)
-                .frame(width: 100, height: 40)
-                .background(Color.blue)
-                .cornerRadius(15)
-                .padding()
-        }.padding(.leading, 50).padding(.trailing,50)
-        
-        Button("Skip Tutorial") {
-            
-            withAnimation {
-                if(selection < 4)
-                {
-                    selection = 4
-                }
-                
             }
+            .foregroundColor(.white)
+            .frame(width: 230, height: 40)
+            .background(Color.blue)
+            .cornerRadius(15)
+            .padding()
         }
-        .foregroundColor(.white)
-        .frame(width: 230, height: 40)
-        .background(Color.blue)
-        .cornerRadius(15)
-        .padding()
     }
 }
 

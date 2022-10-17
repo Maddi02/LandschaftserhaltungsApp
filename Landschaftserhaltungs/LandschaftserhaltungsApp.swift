@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct LandschaftserhaltungsApp: App {
+    @ObservedObject var appState = AppState(hasOnboarded: false)
     var body: some Scene {
         WindowGroup {
-            OnboardingFlowView()
+            
+            if appState.hasOnboarded{
+                MainSide().environmentObject(appState)
+            } else {
+                OnboardingFlowView().environmentObject(appState)
+            }
         }
     }
 }

@@ -20,6 +20,7 @@
 		224F462F28FE06CD004EA74F /* SecondFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F462E28FE06CD004EA74F /* SecondFeatureOverview.swift */; };
 		224F463128FE06E4004EA74F /* ThirdFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F463028FE06E4004EA74F /* ThirdFeatureOverview.swift */; };
 		224F463328FE07D8004EA74F /* DoneOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F463228FE07D8004EA74F /* DoneOverview.swift */; };
+		224F463528FE1443004EA74F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F463428FE1443004EA74F /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		224F462E28FE06CD004EA74F /* SecondFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondFeatureOverview.swift; sourceTree = "<group>"; };
 		224F463028FE06E4004EA74F /* ThirdFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdFeatureOverview.swift; sourceTree = "<group>"; };
 		224F463228FE07D8004EA74F /* DoneOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneOverview.swift; sourceTree = "<group>"; };
+		224F463428FE1443004EA74F /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,8 +145,8 @@
 		224F462528FD8555004EA74F /* FrontEnd */ = {
 			isa = PBXGroup;
 			children = (
-				224F462928FE014B004EA74F /* Onboarding */,
 				224F462728FDFC99004EA74F /* MainSide.swift */,
+				224F462928FE014B004EA74F /* Onboarding */,
 			);
 			path = FrontEnd;
 			sourceTree = "<group>";
@@ -152,6 +154,7 @@
 		224F462628FD855D004EA74F /* BackEnd */ = {
 			isa = PBXGroup;
 			children = (
+				224F463428FE1443004EA74F /* AppState.swift */,
 			);
 			path = BackEnd;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				224F463128FE06E4004EA74F /* ThirdFeatureOverview.swift in Sources */,
 				224F45FE28FD80E7004EA74F /* OnboardingFlowView.swift in Sources */,
 				224F463328FE07D8004EA74F /* DoneOverview.swift in Sources */,
+				224F463528FE1443004EA74F /* AppState.swift in Sources */,
 				224F462F28FE06CD004EA74F /* SecondFeatureOverview.swift in Sources */,
 				224F462D28FE06BB004EA74F /* FirstFeatureOverview.swift in Sources */,
 				224F462828FDFC99004EA74F /* MainSide.swift in Sources */,

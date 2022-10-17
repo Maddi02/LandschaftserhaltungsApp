@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct DoneOverview: View {
+    @EnvironmentObject var appState : AppState
     var body: some View {
-        Text("So lets finally start")
+        VStack{
+            Text("So lets finally start")
+            Button("Lets Start "){
+                appState.hasOnboarded = true
+            }
+        }
+      
+        
     }
 }
 
