@@ -96,7 +96,6 @@
 			children = (
 				224F462628FD855D004EA74F /* BackEnd */,
 				224F45FB28FD80E7004EA74F /* LandschaftserhaltungsApp.swift */,
-				224F45FD28FD80E7004EA74F /* LaunchScreen.swift */,
 				224F462528FD8555004EA74F /* FrontEnd */,
 				224F45FF28FD80E8004EA74F /* Assets.xcassets */,
 				224F460128FD80E8004EA74F /* Preview Content */,
@@ -132,6 +131,7 @@
 		224F462528FD8555004EA74F /* FrontEnd */ = {
 			isa = PBXGroup;
 			children = (
+				224F45FD28FD80E7004EA74F /* LaunchScreen.swift */,
 			);
 			path = FrontEnd;
 			sourceTree = "<group>";
