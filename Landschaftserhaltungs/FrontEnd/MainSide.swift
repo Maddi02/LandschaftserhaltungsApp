@@ -11,11 +11,37 @@ import SwiftUI
 struct MainSide:  View {
     @EnvironmentObject var appState : AppState
     var body: some View {
-        Text("Main VIEW")
-        Button("Reset")
+        //Verwalten
+        // Neu anlegen
+        // Auslaufende Verträge
+        
+        VStack(alignment: .leading)
         {
-            appState.hasOnboarded = false
+            Button("Neuen Vertrag anlegen")
+            {
+                
+            }.foregroundColor(.white)
+                .padding()
+                .background(Color.blue)
+            Button("Vertäge verwalten")
+            {
+                
+            }
+            Button("Auslaufende Verträge")
+            {
+                
+            }
         }
+            .padding(.top)
+            .frame(
+                  minWidth: 0,
+                  maxWidth: .infinity,
+                  minHeight: 0,
+                  maxHeight: .infinity,
+                  alignment: .topLeading
+                ).fullBackground(imageName: "NatureLaunch")
+        
+
     }
 }
 

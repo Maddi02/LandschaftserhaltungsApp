@@ -21,6 +21,7 @@
 		224F463128FE06E4004EA74F /* ThirdFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F463028FE06E4004EA74F /* ThirdFeatureOverview.swift */; };
 		224F463328FE07D8004EA74F /* DoneOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F463228FE07D8004EA74F /* DoneOverview.swift */; };
 		224F463528FE1443004EA74F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F463428FE1443004EA74F /* AppState.swift */; };
+		224F463828FE1BE2004EA74F /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F463728FE1BE2004EA74F /* extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		224F463028FE06E4004EA74F /* ThirdFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdFeatureOverview.swift; sourceTree = "<group>"; };
 		224F463228FE07D8004EA74F /* DoneOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneOverview.swift; sourceTree = "<group>"; };
 		224F463428FE1443004EA74F /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		224F463728FE1BE2004EA74F /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		224F45EF28FD80E7004EA74F = {
 			isa = PBXGroup;
 			children = (
+				224F463628FE1BD1004EA74F /* extensions */,
 				224F45FA28FD80E7004EA74F /* Landschaftserhaltungs */,
 				224F460B28FD80E8004EA74F /* LandschaftserhaltungsTests */,
 				224F461528FD80E8004EA74F /* LandschaftserhaltungsUITests */,
@@ -170,6 +173,14 @@
 				224F463228FE07D8004EA74F /* DoneOverview.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		224F463628FE1BD1004EA74F /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				224F463728FE1BE2004EA74F /* extensions.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +318,7 @@
 				224F463328FE07D8004EA74F /* DoneOverview.swift in Sources */,
 				224F463528FE1443004EA74F /* AppState.swift in Sources */,
 				224F462F28FE06CD004EA74F /* SecondFeatureOverview.swift in Sources */,
+				224F463828FE1BE2004EA74F /* extensions.swift in Sources */,
 				224F462D28FE06BB004EA74F /* FirstFeatureOverview.swift in Sources */,
 				224F462828FDFC99004EA74F /* MainSide.swift in Sources */,
 				224F45FC28FD80E7004EA74F /* LandschaftserhaltungsApp.swift in Sources */,
