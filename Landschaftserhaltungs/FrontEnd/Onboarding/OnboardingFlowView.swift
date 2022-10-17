@@ -12,6 +12,7 @@ struct OnboardingFlowView: View {
     @State private var buttonTitleNext = "Start"
     @State private var buttonTitleBack = "back"
     @EnvironmentObject var appState : AppState
+    private let defaults = UserDefaults.standard
     var body: some View {
       
             TabView(selection: $selection){
@@ -87,6 +88,10 @@ struct OnboardingFlowView: View {
             .cornerRadius(15)
             .padding()
         }
+    }
+    func save() {
+        defaults.set(appState.hasOnboarded, forKey: "hasOnboarded")
+
     }
 }
 

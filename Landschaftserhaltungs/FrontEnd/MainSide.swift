@@ -14,34 +14,47 @@ struct MainSide:  View {
         //Verwalten
         // Neu anlegen
         // Auslaufende Verträge
-        
-        VStack(alignment: .leading)
-        {
-            Button("Neuen Vertrag anlegen")
+        GeometryReader { geometry in
+            VStack(alignment: .leading)
             {
+                Image("LandschaftserhaltungsVerbandLogo").resizable().aspectRatio(contentMode: .fit)
+                Button("Neuen Vertrag anlegen")
+                {
+                    
+                }.foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.gray.opacity(0.5))
+                    
                 
-            }.foregroundColor(.white)
-                .padding()
-                .background(Color.blue)
-            Button("Vertäge verwalten")
-            {
+                Button("Verträge verwalten")
+                {
+                    
+                }.foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.gray.opacity(0.5))
+                    
                 
+                Button("Auslaufende Verträge")
+                {
+                    
+                }.foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.gray.opacity(0.5))
             }
-            Button("Auslaufende Verträge")
-            {
-                
-            }
-        }
             .padding(.top)
             .frame(
-                  minWidth: 0,
-                  maxWidth: .infinity,
-                  minHeight: 0,
-                  maxHeight: .infinity,
-                  alignment: .topLeading
-                ).fullBackground(imageName: "NatureLaunch")
-        
-
+                minWidth: 0,
+                maxWidth: .infinity,
+                minHeight: 0,
+                maxHeight: .infinity,
+                alignment: .topLeading
+            ).fullBackground(imageName: "NatureLaunch")
+            
+            
+        }
     }
 }
 
@@ -50,3 +63,4 @@ struct MyView_Previews: PreviewProvider {
         MainSide()
     }
 }
+

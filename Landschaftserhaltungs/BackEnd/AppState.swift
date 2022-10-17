@@ -9,6 +9,7 @@ import Foundation
 
 class AppState: ObservableObject
 {
+    
     @Published var hasOnboarded : Bool
     
     init(hasOnboarded: Bool)
