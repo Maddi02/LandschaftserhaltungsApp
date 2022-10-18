@@ -13,7 +13,14 @@ struct createNewContract : View
     
     var body : some View
     {
-        Text("Create new Contract")
+        VStack(alignment: .leading){
+            Text("Erstellung eines neuen Vertrags").font(.title2)
+            Color.white
+        }
+       
+       
+                   
+        
     }
     
 }

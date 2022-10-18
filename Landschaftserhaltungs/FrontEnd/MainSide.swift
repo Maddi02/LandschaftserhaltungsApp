@@ -25,16 +25,17 @@ struct MainSide:  View {
                                 .padding()
                                 .background(Color.gray.opacity(0.5))
                                 .navigationTitle("Menu")
+                                .frame(alignment: .topLeading)
                                 
                             
-                            NavigationLink(destination: createNewContract()) {
+                            NavigationLink(destination: expieredContractView()) {
                                 Text("Verträge verwalten")
                             }.foregroundColor(.white)
                                 .frame(maxWidth: .infinity)
                                 .padding()
                                 .background(Color.gray.opacity(0.5))
                             
-                            NavigationLink(destination: createNewContract()) {
+                            NavigationLink(destination: manageContractView()) {
                                 Text("Auslaufende Verträge")
                             }.foregroundColor(.white)
                                 .frame(maxWidth: .infinity)
@@ -43,7 +44,6 @@ struct MainSide:  View {
                             
                         }.frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
                             .fullBackground(imageName: "NatureLaunch")
-                            
                         
                 }
                 
