@@ -12,50 +12,60 @@ struct MainSide:  View {
     @EnvironmentObject var appState : AppState
     var body: some View {
         //Verwalten
-        GeometryReader { geometry in
-            NavigationView {
-                VStack {
-                    NavigationLink(destination: createNewContract()) {
-                        Text("Neuen Vertrag anlegen")
-                    }.foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.gray.opacity(0.5))
-                        .navigationTitle("Menu")
-                    
-                    NavigationLink(destination: createNewContract()) {
-                        Text("Verträge verwalten")
-                    }.foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.gray.opacity(0.5))
-                    
-                    NavigationLink(destination: createNewContract()) {
-                        Text("Auslaufende Verträge")
-                    }.foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.gray.opacity(0.5))
-                    
+        
+        VStack{
+            GeometryReader { geometry in
+          
+                NavigationView() {
+                        VStack {
+                            NavigationLink(destination: createNewContract()) {
+                                Text("Neuen Vertrag anlegen")
+                            }.foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.gray.opacity(0.5))
+                                .navigationTitle("Menu")
+                                
+                            
+                            NavigationLink(destination: createNewContract()) {
+                                Text("Verträge verwalten")
+                            }.foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.gray.opacity(0.5))
+                            
+                            NavigationLink(destination: createNewContract()) {
+                                Text("Auslaufende Verträge")
+                            }.foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.gray.opacity(0.5))
+                            
+                        }.frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
+                            .fullBackground(imageName: "NatureLaunch")
+                            
+                        
                 }
-            }.background(Color.gray.opacity(0.0))
+                
+            
+            }
             // Neu anlegen
             // Auslaufende Verträge
             
             
-            .padding(.top)
-            .frame(
-                minWidth: 0,
-                maxWidth: .infinity,
-                minHeight: 0,
-                maxHeight: .infinity,
-                alignment: .topLeading
-            )
+                .padding(.top)
+                .frame(
+                    minWidth: 0,
+                    maxWidth: .infinity,
+                    minHeight: 0,
+                    maxHeight: .infinity,
+                    alignment: .topLeading
+                ).edgesIgnoringSafeArea(.all)
             
-            
-        }.fullBackground(imageName: "NatureLaunch")
+        }
     }
 }
+
 
 
 struct MyView_Previews: PreviewProvider {
