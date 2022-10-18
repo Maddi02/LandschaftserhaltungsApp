@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct createNewContract : View
+struct CreateNewContract : View
 {
     
     var body : some View

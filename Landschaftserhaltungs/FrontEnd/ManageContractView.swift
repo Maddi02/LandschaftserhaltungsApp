@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct manageContractView: View {
+struct ManageContractView: View {
     var body: some View {
         VStack(alignment: .leading){
             Text("Verträge Verwaltung").font(.title2)
@@ -16,8 +16,8 @@ struct manageContractView: View {
     }
 }
 
-struct manageContractView_Previews: PreviewProvider {
+struct ManageContractView_Previews: PreviewProvider {
     static var previews: some View {
-        manageContractView()
+        ManageContractView()
     }
 }

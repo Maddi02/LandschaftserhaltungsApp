@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct MainSide:  View {
+struct MainSideView:  View {
     @EnvironmentObject var appState : AppState
     var body: some View {
         //Verwalten
@@ -18,7 +18,7 @@ struct MainSide:  View {
           
                 NavigationView() {
                         VStack {
-                            NavigationLink(destination: createNewContract()) {
+                            NavigationLink(destination: CreateNewContract()) {
                                 Text("Neuen Vertrag anlegen")
                             }.foregroundColor(.white)
                                 .frame(maxWidth: .infinity)
@@ -28,14 +28,14 @@ struct MainSide:  View {
                                 .frame(alignment: .topLeading)
                                 
                             
-                            NavigationLink(destination: expieredContractView()) {
+                            NavigationLink(destination: ExpiredContractView()) {
                                 Text("Verträge verwalten")
                             }.foregroundColor(.white)
                                 .frame(maxWidth: .infinity)
                                 .padding()
                                 .background(Color.gray.opacity(0.5))
                             
-                            NavigationLink(destination: manageContractView()) {
+                            NavigationLink(destination: ManageContractView()) {
                                 Text("Auslaufende Verträge")
                             }.foregroundColor(.white)
                                 .frame(maxWidth: .infinity)
@@ -70,7 +70,7 @@ struct MainSide:  View {
 
 struct MyView_Previews: PreviewProvider {
     static var previews: some View {
-        MainSide()
+        MainSideView()
     }
 }
 

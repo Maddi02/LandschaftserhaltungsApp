@@ -13,7 +13,7 @@ struct LandschaftserhaltungsApp: App {
     var body: some Scene {
         WindowGroup {
             if appState.hasOnboarded{
-                MainSide().environmentObject(appState)
+                MainSideView().environmentObject(appState)
             } else {
                 OnboardingFlowView().environmentObject(appState)
             }

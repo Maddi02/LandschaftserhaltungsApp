@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct expieredContractView: View {
+struct ExpiredContractView: View {
     var body: some View {
         VStack(alignment: .leading){
             Text("Ablaufende Verträge").font(.title2)
@@ -16,8 +16,8 @@ struct expieredContractView: View {
     }
 }
 
-struct expieredContractView_Previews: PreviewProvider {
+struct ExpiredContract_Previews: PreviewProvider {
     static var previews: some View {
-        expieredContractView()
+        ExpiredContractView()
     }
 }
