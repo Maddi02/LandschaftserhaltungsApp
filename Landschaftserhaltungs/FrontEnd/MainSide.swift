@@ -12,38 +12,37 @@ struct MainSide:  View {
     @EnvironmentObject var appState : AppState
     var body: some View {
         //Verwalten
-        // Neu anlegen
-        // Auslaufende Verträge
         GeometryReader { geometry in
-            VStack(alignment: .leading)
-            {
-                Image("LandschaftserhaltungsVerbandLogo").resizable().aspectRatio(contentMode: .fit)
-                Button("Neuen Vertrag anlegen")
-                {
+            NavigationView {
+                VStack {
+                    NavigationLink(destination: createNewContract()) {
+                        Text("Neuen Vertrag anlegen")
+                    }.foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.gray.opacity(0.5))
+                        .navigationTitle("Menu")
                     
-                }.foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.gray.opacity(0.5))
+                    NavigationLink(destination: createNewContract()) {
+                        Text("Verträge verwalten")
+                    }.foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.gray.opacity(0.5))
                     
-                
-                Button("Verträge verwalten")
-                {
+                    NavigationLink(destination: createNewContract()) {
+                        Text("Auslaufende Verträge")
+                    }.foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.gray.opacity(0.5))
                     
-                }.foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.gray.opacity(0.5))
-                    
-                
-                Button("Auslaufende Verträge")
-                {
-                    
-                }.foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.gray.opacity(0.5))
-            }
+                }
+            }.background(Color.gray.opacity(0.0))
+            // Neu anlegen
+            // Auslaufende Verträge
+            
+            
             .padding(.top)
             .frame(
                 minWidth: 0,
@@ -51,12 +50,13 @@ struct MainSide:  View {
                 minHeight: 0,
                 maxHeight: .infinity,
                 alignment: .topLeading
-            ).fullBackground(imageName: "NatureLaunch")
+            )
             
             
-        }
+        }.fullBackground(imageName: "NatureLaunch")
     }
 }
+
 
 struct MyView_Previews: PreviewProvider {
     static var previews: some View {

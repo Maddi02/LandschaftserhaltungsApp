@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22455CF628FF03BC002876AD /* createNewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455CF528FF03BC002876AD /* createNewContract.swift */; };
 		224F45FC28FD80E7004EA74F /* LandschaftserhaltungsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F45FB28FD80E7004EA74F /* LandschaftserhaltungsApp.swift */; };
 		224F45FE28FD80E7004EA74F /* OnboardingFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F45FD28FD80E7004EA74F /* OnboardingFlowView.swift */; };
 		224F460028FD80E8004EA74F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 224F45FF28FD80E8004EA74F /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22455CF528FF03BC002876AD /* createNewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createNewContract.swift; sourceTree = "<group>"; };
 		224F45F828FD80E7004EA74F /* Landschaftserhaltungs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Landschaftserhaltungs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		224F45FB28FD80E7004EA74F /* LandschaftserhaltungsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandschaftserhaltungsApp.swift; sourceTree = "<group>"; };
 		224F45FD28FD80E7004EA74F /* OnboardingFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlowView.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				224F462728FDFC99004EA74F /* MainSide.swift */,
+				22455CF528FF03BC002876AD /* createNewContract.swift */,
 				224F462928FE014B004EA74F /* Onboarding */,
 			);
 			path = FrontEnd;
@@ -313,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22455CF628FF03BC002876AD /* createNewContract.swift in Sources */,
 				224F463128FE06E4004EA74F /* ThirdFeatureOverview.swift in Sources */,
 				224F45FE28FD80E7004EA74F /* OnboardingFlowView.swift in Sources */,
 				224F463328FE07D8004EA74F /* DoneOverview.swift in Sources */,
