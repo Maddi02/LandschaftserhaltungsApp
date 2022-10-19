@@ -11,7 +11,7 @@ import MapKit
 
 struct CreateNewContract : View
 {
-
+    
     @State private var isShownPhotoLibrary = false
     @State private var image = UIImage()
     @ObservedObject var model = NewContractDataModel()
@@ -45,41 +45,75 @@ struct CreateNewContract : View
                         TextField("Bewirtschaftungsauflagen", text: $model.managementRequirements,axis: .vertical)
                         TextField("Besonderheiten", text: $model.particularities,axis: .vertical)
                     }
-                    
-                    Image(uiImage: self.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .edgesIgnoringSafeArea(.all)
-                    
-                    Button {
-                        self.isShownPhotoLibrary = true
-                    } label: {
-                        HStack {
-                            HStack{
-                                Image(systemName: "photo")
-                                    .font(.system(size: 20))
-                                Text("Wähle ein Bild aus der Galerie aus")
+                    Section(header: Text("Karte mit Vertragsflächen")) {
+                        Image(uiImage: self.image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .edgesIgnoringSafeArea(.all)
+                        
+                        Button {
+                            self.isShownPhotoLibrary = true
+                        } label: {
+                            HStack {
+                                HStack{
+                                    Image(systemName: "photo")
+                                        .font(.system(size: 20))
+                                    Text("Wähle ein Bild aus der Galerie aus")
+                                }
+                                .frame(minWidth: 0, maxWidth: .infinity , minHeight: 0 , maxHeight: 50)
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(15)
+                                .padding(.horizontal)
                             }
-                            .frame(minWidth: 0, maxWidth: .infinity , minHeight: 0 , maxHeight: 50)
-                            .background(Color.primary)
-                            .foregroundColor(.white)
-                            .cornerRadius(15)
-                            .padding(.horizontal)
                         }
                     }
+                    Section(header: Text("Actionen")) {
+                        Button{
+                            print("Speichern des Vertrage = TODO")
+                        }
+                    label: {
+                        HStack {
+                            Text("Speichern")
+                        }
+                        .frame(minWidth: 0, maxWidth: .infinity , minHeight: 0 , maxHeight: 50)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(15)
+                        .padding(.horizontal)
+                    }
+                        
+                        
+                        Button{
+                            print("Sollte ein Feldbegehungsformular öffnen")
+                        }
+                    label: {
+                        HStack {
+                            Text("Hinzufügen einer Feldbegehung")
+                        }
+                        .frame(minWidth: 0, maxWidth: .infinity , minHeight: 0 , maxHeight: 50)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(15)
+                        .padding(.horizontal)
+                    }
+                    }
                     
-
+                    
+                    
+                    
+                    
                 }.navigationBarTitle(Text("Neuen Vertrag anlegen"))
             }
-          
+            
         }.sheet(isPresented: $isShownPhotoLibrary){
             ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
         }
-      
+        
         
     }
 }
-    
-    
+
+
 

@@ -28,14 +28,14 @@ struct MainSideView:  View {
                                 .frame(alignment: .topLeading)
                                 
                             
-                            NavigationLink(destination: ExpiredContractView()) {
+                            NavigationLink(destination: ManageContractView()) {
                                 Text("Verträge verwalten")
                             }.foregroundColor(.white)
                                 .frame(maxWidth: .infinity)
                                 .padding()
                                 .background(Color.gray.opacity(0.5))
                             
-                            NavigationLink(destination: ManageContractView()) {
+                            NavigationLink(destination: ExpiredContractView()) {
                                 Text("Auslaufende Verträge")
                             }.foregroundColor(.white)
                                 .frame(maxWidth: .infinity)
@@ -44,7 +44,8 @@ struct MainSideView:  View {
                             
                         }.frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
                             .fullBackground(imageName: "NatureLaunch")
-                        
+                      
+                    
                 }
                 
             
