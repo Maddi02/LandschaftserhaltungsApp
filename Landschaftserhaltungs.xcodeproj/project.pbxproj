@@ -208,6 +208,8 @@
 			dependencies = (
 			);
 			name = Landschaftserhaltungs;
+			packageProductDependencies = (
+			);
 			productName = Landschaftserhaltungs;
 			productReference = 224F45F828FD80E7004EA74F /* Landschaftserhaltungs.app */;
 			productType = "com.apple.product-type.application";
@@ -280,6 +282,9 @@
 				Base,
 			);
 			mainGroup = 224F45EF28FD80E7004EA74F;
+			packageReferences = (
+				22455CFB29007AF3002876AD /* XCRemoteSwiftPackageReference "SwiftLocation" */,
+			);
 			productRefGroup = 224F45F928FD80E7004EA74F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -659,6 +664,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		22455CFB29007AF3002876AD /* XCRemoteSwiftPackageReference "SwiftLocation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftLocation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 224F45F028FD80E7004EA74F /* Project object */;
 }
