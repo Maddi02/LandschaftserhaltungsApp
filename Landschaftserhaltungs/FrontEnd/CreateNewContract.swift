@@ -9,31 +9,12 @@ import Foundation
 import SwiftUI
 import MapKit
 
-class Model: ObservableObject {
-
-    @Published var firstName: String = ""
-    
-    @Published var lastNames: String = ""
-
-    @Published var birthday: Date = Date()
-
-    @Published var street: String = ""
-
-    @Published var PLZName: String = ""
-
-    @Published var addressSecondLine: String = ""
-
-    @Published var PLZ: String = ""
-
-    @Published var Land: String = ""
-}
-
 struct CreateNewContract : View
 {
-    @State var firstName: String = ""
-    @State var lastName: String = ""
-    @ObservedObject var model = Model()
-    @State var birthdate = Date()
+
+    @State private var isShownPhotoLibrary = false
+    @State private var image = UIImage()
+    @ObservedObject var model = NewContractDataModel()
     var body : some View
     {
         
@@ -58,19 +39,44 @@ struct CreateNewContract : View
                     }
                     
                     Section(header: Text("Vertragsinformationen")) {
-                        TextField("Vorgangsnummer", text: $model.street)
-                        TextField("Vertragszweck", text: $model.PLZName,axis: .vertical)
-                        TextField("Maßnahmen", text: $model.PLZ,axis: .vertical)
-                        TextField("Bewirtschaftungsauflagen", text: $model.Land,axis: .vertical)
-                        TextField("Besonderheiten", text: $model.Land,axis: .vertical)
+                        TextField("Vorgangsnummer", text: $model.operationNumber)
+                        TextField("Vertragszweck", text: $model.contractPurpose,axis: .vertical)
+                        TextField("Maßnahmen", text: $model.measures,axis: .vertical)
+                        TextField("Bewirtschaftungsauflagen", text: $model.managementRequirements,axis: .vertical)
+                        TextField("Besonderheiten", text: $model.particularities,axis: .vertical)
                     }
+                    
+                    Image(uiImage: self.image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    Button {
+                        self.isShownPhotoLibrary = true
+                    } label: {
+                        HStack {
+                            HStack{
+                                Image(systemName: "photo")
+                                    .font(.system(size: 20))
+                                Text("Wähle ein Bild aus der Galerie aus")
+                            }
+                            .frame(minWidth: 0, maxWidth: .infinity , minHeight: 0 , maxHeight: 50)
+                            .background(Color.primary)
+                            .foregroundColor(.white)
+                            .cornerRadius(15)
+                            .padding(.horizontal)
+                        }
+                    }
+                    
 
-                }
-                .navigationBarTitle(Text("Neuen Vertrag anlegen"))
-                
+                }.navigationBarTitle(Text("Neuen Vertrag anlegen"))
             }
+          
+        }.sheet(isPresented: $isShownPhotoLibrary){
+            ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
         }
-        
+      
         
     }
 }

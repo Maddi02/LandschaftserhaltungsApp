@@ -10,6 +10,8 @@
 		22455CF628FF03BC002876AD /* CreateNewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455CF528FF03BC002876AD /* CreateNewContract.swift */; };
 		22455CF828FF2794002876AD /* ExpiredContractView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455CF728FF2794002876AD /* ExpiredContractView.swift */; };
 		22455CFA28FF27B5002876AD /* ManageContractView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455CF928FF27B5002876AD /* ManageContractView.swift */; };
+		22455D0B2900901C002876AD /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455D0A2900901C002876AD /* ImagePicker.swift */; };
+		22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455D0C290094AE002876AD /* NewContractDataModel.swift */; };
 		224F45FC28FD80E7004EA74F /* LandschaftserhaltungsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F45FB28FD80E7004EA74F /* LandschaftserhaltungsApp.swift */; };
 		224F45FE28FD80E7004EA74F /* OnboardingFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F45FD28FD80E7004EA74F /* OnboardingFlowView.swift */; };
 		224F460028FD80E8004EA74F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 224F45FF28FD80E8004EA74F /* Assets.xcassets */; };
@@ -48,6 +50,8 @@
 		22455CF528FF03BC002876AD /* CreateNewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewContract.swift; sourceTree = "<group>"; usesTabs = 0; };
 		22455CF728FF2794002876AD /* ExpiredContractView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiredContractView.swift; sourceTree = "<group>"; };
 		22455CF928FF27B5002876AD /* ManageContractView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageContractView.swift; sourceTree = "<group>"; };
+		22455D0A2900901C002876AD /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		22455D0C290094AE002876AD /* NewContractDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContractDataModel.swift; sourceTree = "<group>"; };
 		224F45F828FD80E7004EA74F /* Landschaftserhaltungs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Landschaftserhaltungs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		224F45FB28FD80E7004EA74F /* LandschaftserhaltungsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandschaftserhaltungsApp.swift; sourceTree = "<group>"; };
 		224F45FD28FD80E7004EA74F /* OnboardingFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlowView.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				224F463428FE1443004EA74F /* AppState.swift */,
+				22455D0A2900901C002876AD /* ImagePicker.swift */,
+				22455D0C290094AE002876AD /* NewContractDataModel.swift */,
 			);
 			path = BackEnd;
 			sourceTree = "<group>";
@@ -330,10 +336,12 @@
 				22455CF828FF2794002876AD /* ExpiredContractView.swift in Sources */,
 				22455CF628FF03BC002876AD /* CreateNewContract.swift in Sources */,
 				224F463128FE06E4004EA74F /* ThirdFeatureOverview.swift in Sources */,
+				22455D0B2900901C002876AD /* ImagePicker.swift in Sources */,
 				22455CFA28FF27B5002876AD /* ManageContractView.swift in Sources */,
 				224F45FE28FD80E7004EA74F /* OnboardingFlowView.swift in Sources */,
 				224F463328FE07D8004EA74F /* DoneOverview.swift in Sources */,
 				224F463528FE1443004EA74F /* AppState.swift in Sources */,
+				22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */,
 				224F462F28FE06CD004EA74F /* SecondFeatureOverview.swift in Sources */,
 				224F463828FE1BE2004EA74F /* extensions.swift in Sources */,
 				224F462D28FE06BB004EA74F /* FirstFeatureOverview.swift in Sources */,
