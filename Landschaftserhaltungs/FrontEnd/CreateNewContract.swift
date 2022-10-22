@@ -14,7 +14,8 @@ struct CreateNewContract : View
     
     @State private var isShownPhotoLibrary = false
     @State private var image = UIImage()
-    @ObservedObject var model = NewContractDataModel()
+    @ObservedObject var newContractDataModel = NewContractDataModel()
+    
     var body : some View
     {
         
@@ -22,31 +23,31 @@ struct CreateNewContract : View
             GeometryReader { geo in
                 Form {
                     Section(header: Text("Vertragsnehmer")) {
-                        TextField("Vorname", text: $model.firstName)
-                        TextField("Nachname", text: $model.lastNames)
+                        TextField("Vorname", text: $newContractDataModel.firstName)
+                        TextField("Nachname", text: $newContractDataModel.lastNames)
                     }
                     Section(header: Text("Persönliche Informationen")) {
-                        DatePicker(selection: $model.birthday,
+                        DatePicker(selection: $newContractDataModel.birthday,
                                    displayedComponents: [.date],
                                    label: { Text("Geburtstag") })
                         
                     }
                     Section(header: Text("Kontakt-Adresse")) {
-                        TextField("Staße", text: $model.street)
-                        TextField("Ort", text: $model.PLZName)
-                        TextField("PLZ", text: $model.PLZ)
-                        TextField("Land", text: $model.Land)
+                        TextField("Staße", text: $newContractDataModel.street)
+                        TextField("Ort", text: $newContractDataModel.PLZName)
+                        TextField("PLZ", text: $newContractDataModel.PLZ).keyboardType(UIKeyboardType.numberPad)
+                        TextField("Land", text: $newContractDataModel.Land)
                     }
                     
                     Section(header: Text("Vertragsinformationen")) {
-                        DatePicker(selection: $model.birthday,
+                        DatePicker(selection: $newContractDataModel.birthday,
                                    displayedComponents: [.date],
                                    label: { Text("Vertragsabschluss") })
-                        TextField("Vorgangsnummer", text: $model.operationNumber)
-                        TextField("Vertragszweck", text: $model.contractPurpose,axis: .vertical)
-                        TextField("Maßnahmen", text: $model.measures,axis: .vertical)
-                        TextField("Bewirtschaftungsauflagen", text: $model.managementRequirements,axis: .vertical)
-                        TextField("Besonderheiten", text: $model.particularities,axis: .vertical)
+                        TextField("Vorgangsnummer", text: $newContractDataModel.operationNumber)
+                        TextField("Vertragszweck", text: $newContractDataModel.contractPurpose,axis: .vertical)
+                        TextField("Maßnahmen", text: $newContractDataModel.measures,axis: .vertical)
+                        TextField("Bewirtschaftungsauflagen", text: $newContractDataModel.managementRequirements,axis: .vertical)
+                        TextField("Besonderheiten", text: $newContractDataModel.particularities,axis: .vertical)
                     
                         
                     }
@@ -77,10 +78,12 @@ struct CreateNewContract : View
                     }
                     Section(header: Text("")) {
                         Button{
+                            newContractDataModel.whatWasSaved()
                             print("Speichern des Vertrage = TODO")
                         }
                     label: {
                         HStack {
+                           
                             Text("Speichern")
                         }
                         .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)

@@ -6,9 +6,17 @@
 //
 
 import Foundation
+import UIKit
 
 class NewContractDataModel: ObservableObject {
 
+    
+
+    
+    
+    
+    @Published var photo : UIImage = UIImage()
+    
     @Published var firstName: String = ""
     
     @Published var lastNames: String = ""
@@ -34,4 +42,12 @@ class NewContractDataModel: ObservableObject {
     @Published var managementRequirements: String = ""
     
     @Published var particularities: String = ""
+    
+    public func whatWasSaved()
+    {
+        print(firstName, "Firstname")
+    }
 }
+
+
+

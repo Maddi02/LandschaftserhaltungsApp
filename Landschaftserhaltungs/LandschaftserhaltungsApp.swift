@@ -10,14 +10,14 @@ import Foundation
 @main
 struct LandschaftserhaltungsApp: App {
     
-    @StateObject private var dataController = DataController()
+    let container = CoreDataManager.shared // <- so need add this line
     @ObservedObject var appState = AppState(hasOnboarded:/*false*/ UserDefaults.standard.bool(forKey: "onBoarded")) // this loads the info from storage so that the app knows if the User has onboarded already.
     var body: some Scene {
         WindowGroup {
             if appState.hasOnboarded{
-                MainSideView().environment(\.managedObjectContext, dataController.container.viewContext)
+                MainSideView().environment(\.managedObjectContext, container.persistentContainer.viewContext)
             } else {
-                OnboardingFlowView().environmentObject(appState).environment(\.managedObjectContext, dataController.container.viewContext)
+                OnboardingFlowView().environment(\.managedObjectContext, container.persistentContainer.viewContext)
             }
         }
     }
