@@ -14,6 +14,7 @@ struct DoneOverview: View {
             Text("So lets finally start")
             Button("Lets Start "){
                 appState.hasOnboarded = true
+                UserDefaults.standard.set(appState.hasOnboarded, forKey: "onBoarded")
             }
         }
       

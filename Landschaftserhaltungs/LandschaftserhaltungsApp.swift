@@ -11,7 +11,7 @@ import Foundation
 struct LandschaftserhaltungsApp: App {
     
     @StateObject private var dataController = DataController()
-    @ObservedObject var appState = AppState(hasOnboarded: UserDefaults.standard.bool(forKey: "onBoarded")) // this loads the info from storage so that the app knows if the User has onboarded already.
+    @ObservedObject var appState = AppState(hasOnboarded:/*false*/ UserDefaults.standard.bool(forKey: "onBoarded")) // this loads the info from storage so that the app knows if the User has onboarded already.
     var body: some Scene {
         WindowGroup {
             if appState.hasOnboarded{
