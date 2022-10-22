@@ -12,6 +12,8 @@
 		22455CFA28FF27B5002876AD /* ManageContractView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455CF928FF27B5002876AD /* ManageContractView.swift */; };
 		22455D0B2900901C002876AD /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455D0A2900901C002876AD /* ImagePicker.swift */; };
 		22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455D0C290094AE002876AD /* NewContractDataModel.swift */; };
+		22455D102900A81A002876AD /* AppStateDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22455D0E2900A81A002876AD /* AppStateDataModel.xcdatamodeld */; };
+		22455D122900A869002876AD /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455D112900A869002876AD /* DataController.swift */; };
 		224F45FC28FD80E7004EA74F /* LandschaftserhaltungsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F45FB28FD80E7004EA74F /* LandschaftserhaltungsApp.swift */; };
 		224F45FE28FD80E7004EA74F /* OnboardingFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F45FD28FD80E7004EA74F /* OnboardingFlowView.swift */; };
 		224F460028FD80E8004EA74F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 224F45FF28FD80E8004EA74F /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 		22455CF928FF27B5002876AD /* ManageContractView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageContractView.swift; sourceTree = "<group>"; };
 		22455D0A2900901C002876AD /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		22455D0C290094AE002876AD /* NewContractDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContractDataModel.swift; sourceTree = "<group>"; };
+		22455D0F2900A81A002876AD /* AppStateDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppStateDataModel.xcdatamodel; sourceTree = "<group>"; };
+		22455D112900A869002876AD /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		224F45F828FD80E7004EA74F /* Landschaftserhaltungs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Landschaftserhaltungs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		224F45FB28FD80E7004EA74F /* LandschaftserhaltungsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandschaftserhaltungsApp.swift; sourceTree = "<group>"; };
 		224F45FD28FD80E7004EA74F /* OnboardingFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlowView.swift; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 				224F463428FE1443004EA74F /* AppState.swift */,
 				22455D0A2900901C002876AD /* ImagePicker.swift */,
 				22455D0C290094AE002876AD /* NewContractDataModel.swift */,
+				22455D0E2900A81A002876AD /* AppStateDataModel.xcdatamodeld */,
+				22455D112900A869002876AD /* DataController.swift */,
 			);
 			path = BackEnd;
 			sourceTree = "<group>";
@@ -336,9 +342,11 @@
 				22455CF828FF2794002876AD /* ExpiredContractView.swift in Sources */,
 				22455CF628FF03BC002876AD /* CreateNewContract.swift in Sources */,
 				224F463128FE06E4004EA74F /* ThirdFeatureOverview.swift in Sources */,
+				22455D102900A81A002876AD /* AppStateDataModel.xcdatamodeld in Sources */,
 				22455D0B2900901C002876AD /* ImagePicker.swift in Sources */,
 				22455CFA28FF27B5002876AD /* ManageContractView.swift in Sources */,
 				224F45FE28FD80E7004EA74F /* OnboardingFlowView.swift in Sources */,
+				22455D122900A869002876AD /* DataController.swift in Sources */,
 				224F463328FE07D8004EA74F /* DoneOverview.swift in Sources */,
 				224F463528FE1443004EA74F /* AppState.swift in Sources */,
 				22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */,
@@ -683,6 +691,19 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCVersionGroup section */
+		22455D0E2900A81A002876AD /* AppStateDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				22455D0F2900A81A002876AD /* AppStateDataModel.xcdatamodel */,
+			);
+			currentVersion = 22455D0F2900A81A002876AD /* AppStateDataModel.xcdatamodel */;
+			path = AppStateDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 224F45F028FD80E7004EA74F /* Project object */;
 }

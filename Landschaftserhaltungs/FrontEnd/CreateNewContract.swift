@@ -21,7 +21,7 @@ struct CreateNewContract : View
         NavigationView {
             GeometryReader { geo in
                 Form {
-                    Section(header: Text("Name")) {
+                    Section(header: Text("Vertragsnehmer")) {
                         TextField("Vorname", text: $model.firstName)
                         TextField("Nachname", text: $model.lastNames)
                     }
@@ -31,7 +31,7 @@ struct CreateNewContract : View
                                    label: { Text("Geburtstag") })
                         
                     }
-                    Section(header: Text("Addresse")) {
+                    Section(header: Text("Kontakt-Adresse")) {
                         TextField("Staße", text: $model.street)
                         TextField("Ort", text: $model.PLZName)
                         TextField("PLZ", text: $model.PLZ)
@@ -39,12 +39,18 @@ struct CreateNewContract : View
                     }
                     
                     Section(header: Text("Vertragsinformationen")) {
+                        DatePicker(selection: $model.birthday,
+                                   displayedComponents: [.date],
+                                   label: { Text("Vertragsabschluss") })
                         TextField("Vorgangsnummer", text: $model.operationNumber)
                         TextField("Vertragszweck", text: $model.contractPurpose,axis: .vertical)
                         TextField("Maßnahmen", text: $model.measures,axis: .vertical)
                         TextField("Bewirtschaftungsauflagen", text: $model.managementRequirements,axis: .vertical)
                         TextField("Besonderheiten", text: $model.particularities,axis: .vertical)
+                    
+                        
                     }
+                
                     Section(header: Text("Karte mit Vertragsflächen")) {
                         Image(uiImage: self.image)
                             .resizable()
@@ -61,15 +67,15 @@ struct CreateNewContract : View
                                         .font(.system(size: 20))
                                     Text("Wähle ein Bild aus der Galerie aus")
                                 }
-                                .frame(minWidth: 0, maxWidth: .infinity , minHeight: 0 , maxHeight: 50)
+                                .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
                                 .background(Color.blue)
                                 .foregroundColor(.white)
-                                .cornerRadius(15)
+                                .cornerRadius(10)
                                 .padding(.horizontal)
                             }
                         }
                     }
-                    Section(header: Text("Actionen")) {
+                    Section(header: Text("")) {
                         Button{
                             print("Speichern des Vertrage = TODO")
                         }
@@ -77,10 +83,10 @@ struct CreateNewContract : View
                         HStack {
                             Text("Speichern")
                         }
-                        .frame(minWidth: 0, maxWidth: .infinity , minHeight: 0 , maxHeight: 50)
+                        .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
                         .background(Color.blue)
                         .foregroundColor(.white)
-                        .cornerRadius(15)
+                        .cornerRadius(10)
                         .padding(.horizontal)
                     }
                         
@@ -92,10 +98,10 @@ struct CreateNewContract : View
                         HStack {
                             Text("Hinzufügen einer Feldbegehung")
                         }
-                        .frame(minWidth: 0, maxWidth: .infinity , minHeight: 0 , maxHeight: 50)
+                        .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
                         .background(Color.blue)
                         .foregroundColor(.white)
-                        .cornerRadius(15)
+                        .cornerRadius(10)
                         .padding(.horizontal)
                     }
                     }

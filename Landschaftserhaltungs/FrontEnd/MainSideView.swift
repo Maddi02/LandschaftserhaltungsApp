@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct MainSideView:  View {
+    @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var appState : AppState
     var body: some View {
         //Verwalten

@@ -6,16 +6,18 @@
 //
 
 import SwiftUI
-
+import Foundation
 @main
 struct LandschaftserhaltungsApp: App {
-    @ObservedObject var appState = AppState(hasOnboarded: false)
+    
+    @StateObject private var dataController = DataController()
+    @ObservedObject var appState = AppState(hasOnboarded: UserDefaults.standard.bool(forKey: "onBoarded")) // this loads the info from storage so that the app knows if the User has onboarded already.
     var body: some Scene {
         WindowGroup {
             if appState.hasOnboarded{
-                MainSideView().environmentObject(appState)
+                MainSideView().environment(\.managedObjectContext, dataController.container.viewContext)
             } else {
-                OnboardingFlowView().environmentObject(appState)
+                OnboardingFlowView().environmentObject(appState).environment(\.managedObjectContext, dataController.container.viewContext)
             }
         }
     }

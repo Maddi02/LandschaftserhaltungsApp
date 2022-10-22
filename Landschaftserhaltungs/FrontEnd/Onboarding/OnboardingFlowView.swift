@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct OnboardingFlowView: View {
+    @FetchRequest(sortDescriptors: []) var onboard: FetchedResults<AppStateSaver>
+        @Environment(\.managedObjectContext) var managedObjectContext
     @State private var selection = 0
     @State private var buttonTitleNext = "Start"
     @State private var buttonTitleBack = "back"
@@ -77,7 +79,9 @@ struct OnboardingFlowView: View {
                 withAnimation {
                     if(selection < 4)
                     {
+                        
                         appState.hasOnboarded = true
+                        UserDefaults.standard.set(appState.hasOnboarded, forKey: "onBoarded")
                     }
                     
                 }
@@ -89,10 +93,7 @@ struct OnboardingFlowView: View {
             .padding()
         }
     }
-    func save() {
-        defaults.set(appState.hasOnboarded, forKey: "hasOnboarded")
 
-    }
 }
 
 
