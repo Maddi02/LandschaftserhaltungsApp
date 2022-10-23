@@ -16,10 +16,11 @@ struct CustomText: View {
     var operationNumber: String
     var contractTermination: String
     var endOfContract: String
-
+    var image : UIImage
     var body: some View {
-       // Image(systemName: "HFULogo")
+        
         HStack(){
+            Image(uiImage: image).resizable().scaledToFit()
             VStack(alignment: .leading)
             {
                Text("Inhaber")
@@ -39,13 +40,13 @@ struct CustomText: View {
         
     }
     
-    init(firstName: String, lastName : String, operationNumber: String , contractTermination : String, endOfContract : String ) {
+    init(firstName: String, lastName : String, operationNumber: String , contractTermination : String, endOfContract : String , image : UIImage) {
         self.firstName = firstName
         self.lastName = lastName
         self.operationNumber = operationNumber
         self.contractTermination = contractTermination
         self.endOfContract = endOfContract
-    
+        self.image = image
     }
 }
 
@@ -54,7 +55,7 @@ struct CustomText_Preview: PreviewProvider{
     let date = Date()
     static var previews: some View{
         
-        CustomText(firstName: "Rafael", lastName: "Raguci", operationNumber: "187361", contractTermination:  Date().toString(), endOfContract: Calendar.current.date(byAdding: .year, value: 5, to: Date())!.toString())
+        CustomText(firstName: "Rafael", lastName: "Raguci", operationNumber: "187361", contractTermination:  Date().toString(), endOfContract: Calendar.current.date(byAdding: .year, value: 5, to: Date())!.toString() , image: UIImage(imageLiteralResourceName: "HFULogo"))
     }
 }
  
@@ -85,7 +86,7 @@ struct ManageContractView: View {
                     ForEach(test1, id: \.self)
                     {
                         test1 in
-                        CustomText(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName ?? "Unknown", operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: Calendar.current.date(byAdding: .year, value: 5, to: test1.contractTermination ?? Date())!.toString())
+                        CustomText(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName ?? "Unknown", operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: Calendar.current.date(byAdding: .year, value: 5, to: test1.contractTermination ?? Date())!.toString(), image: test1.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
                     }
                 }
             }.frame(maxWidth: .infinity)

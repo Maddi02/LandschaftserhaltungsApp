@@ -63,6 +63,7 @@ struct CreateNewContract : View
                         
                         Button {
                             self.isShownPhotoLibrary = true
+                            
                         } label: {
                             HStack {
                                 HStack{
@@ -80,7 +81,9 @@ struct CreateNewContract : View
                     }
                     Section(header: Text("")) {
                         Button{
-                            newContractDataModel.saveAll()
+                            
+               
+                            newContractDataModel.saveAll(image: self.image)
                             print("Speichern des Vertrage = TODO")
                         }
                     label: {
@@ -94,8 +97,6 @@ struct CreateNewContract : View
                         .cornerRadius(10)
                         .padding(.horizontal)
                     }
-                        
-                        
                         Button{
                             print("Sollte ein Feldbegehungsformular öffnen")
                         }
@@ -110,19 +111,13 @@ struct CreateNewContract : View
                         .padding(.horizontal)
                     }
                     }
-                    
-                    
-                    
-                    
-                    
                 }.navigationBarTitle(Text("Neuen Vertrag anlegen"))
             }
             
         }.sheet(isPresented: $isShownPhotoLibrary){
             ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
+
         }
-        
-        
     }
 }
 

@@ -52,7 +52,7 @@ class NewContractDataModel: ObservableObject {
     }
     
     
-    public func saveAll()
+    public func saveAll(image: UIImage)
     {
         let appContract = AppContract(context: context);
         appContract.setValue(firstName, forKey: #keyPath(AppContract.firstName))
@@ -66,6 +66,8 @@ class NewContractDataModel: ObservableObject {
         appContract.setValue(particularities, forKey: #keyPath(AppContract.particularities))
         appContract.setValue(PLZName, forKey: #keyPath(AppContract.plzName))
         appContract.setValue(street, forKey: #keyPath(AppContract.street))
+        appContract.setValue(image, forKey: #keyPath(AppContract.picture))
+        appContract.setValue(contractTermination, forKey: #keyPath(AppContract.contractTermination))
         do{
             try context.save()
             

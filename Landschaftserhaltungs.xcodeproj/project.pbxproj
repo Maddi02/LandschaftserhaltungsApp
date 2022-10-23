@@ -110,7 +110,6 @@
 		224F45EF28FD80E7004EA74F = {
 			isa = PBXGroup;
 			children = (
-				224F463628FE1BD1004EA74F /* extensions */,
 				224F45FA28FD80E7004EA74F /* Landschaftserhaltungs */,
 				224F460B28FD80E8004EA74F /* LandschaftserhaltungsTests */,
 				224F461528FD80E8004EA74F /* LandschaftserhaltungsUITests */,
@@ -131,6 +130,7 @@
 		224F45FA28FD80E7004EA74F /* Landschaftserhaltungs */ = {
 			isa = PBXGroup;
 			children = (
+				224F463628FE1BD1004EA74F /* extensions */,
 				224F462628FD855D004EA74F /* BackEnd */,
 				224F45FB28FD80E7004EA74F /* LandschaftserhaltungsApp.swift */,
 				224F462528FD8555004EA74F /* FrontEnd */,
