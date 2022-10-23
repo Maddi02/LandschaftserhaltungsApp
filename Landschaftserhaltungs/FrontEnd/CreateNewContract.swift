@@ -24,7 +24,7 @@ struct CreateNewContract : View
                 Form {
                     Section(header: Text("Vertragsnehmer")) {
                         TextField("Vorname", text: $newContractDataModel.firstName)
-                        TextField("Nachname", text: $newContractDataModel.lastNames)
+                        TextField("Nachname", text: $newContractDataModel.lastName)
                     }
                     Section(header: Text("Persönliche Informationen")) {
                         DatePicker(selection: $newContractDataModel.birthday,
@@ -36,7 +36,7 @@ struct CreateNewContract : View
                         TextField("Staße", text: $newContractDataModel.street)
                         TextField("Ort", text: $newContractDataModel.PLZName)
                         TextField("PLZ", text: $newContractDataModel.PLZ).keyboardType(UIKeyboardType.numberPad)
-                        TextField("Land", text: $newContractDataModel.Land)
+                        TextField("Land", text: $newContractDataModel.country)
                     }
                     
                     Section(header: Text("Vertragsinformationen")) {
@@ -78,7 +78,7 @@ struct CreateNewContract : View
                     }
                     Section(header: Text("")) {
                         Button{
-                            newContractDataModel.whatWasSaved()
+                            newContractDataModel.saveAll()
                             print("Speichern des Vertrage = TODO")
                         }
                     label: {

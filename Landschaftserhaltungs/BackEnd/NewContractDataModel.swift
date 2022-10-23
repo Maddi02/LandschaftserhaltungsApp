@@ -7,11 +7,11 @@
 
 import Foundation
 import UIKit
-
+import CoreData
 class NewContractDataModel: ObservableObject {
 
+    private var context = CoreDataManager.shared.persistentContainer.viewContext
     
-
     
     
     
@@ -19,7 +19,7 @@ class NewContractDataModel: ObservableObject {
     
     @Published var firstName: String = ""
     
-    @Published var lastNames: String = ""
+    @Published var lastName: String = ""
 
     @Published var birthday: Date = Date()
 
@@ -31,7 +31,7 @@ class NewContractDataModel: ObservableObject {
 
     @Published var PLZ: String = ""
 
-    @Published var Land: String = ""
+    @Published var country: String = ""
     
     @Published var operationNumber: String = ""
     
@@ -47,6 +47,50 @@ class NewContractDataModel: ObservableObject {
     {
         print(firstName, "Firstname")
     }
+    
+    
+    public func saveAll()
+    {
+        let appContract = AppContract(context: context);
+        appContract.setValue(firstName, forKey: #keyPath(AppContract.firstName))
+        appContract.setValue(lastName, forKey: #keyPath(AppContract.lastName))
+        appContract.setValue(birthday, forKey: #keyPath(AppContract.birthday))
+        appContract.setValue(contractPurpose, forKey: #keyPath(AppContract.contractPurpose))
+        appContract.setValue(country, forKey: #keyPath(AppContract.country))
+        appContract.setValue(managementRequirements, forKey: #keyPath(AppContract.managementRequirements))
+        appContract.setValue(measures, forKey: #keyPath(AppContract.measures))
+        appContract.setValue(operationNumber, forKey: #keyPath(AppContract.operationNumber))
+        appContract.setValue(particularities, forKey: #keyPath(AppContract.particularities))
+        appContract.setValue(PLZName, forKey: #keyPath(AppContract.plzName))
+        appContract.setValue(street, forKey: #keyPath(AppContract.street))
+        do{
+            try context.save()
+            
+        }catch{
+            print(error)
+        }
+    }
+    
+    public func printALL()
+    {
+    
+        let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
+        
+        do{
+            let test: [AppContract] = try context.fetch(request)
+            print(test.count)
+            for test1 in test {
+                print(test1.firstName)
+            }
+        }
+        
+        catch{
+            print(error)
+        }
+    }
+    
+    
+    
 }
 
 

@@ -11,6 +11,7 @@ import SwiftUI
 struct MainSideView:  View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var appState : AppState
+    @ObservedObject var newContractDataModel = NewContractDataModel()
     var body: some View {
         //Verwalten
         
@@ -31,10 +32,15 @@ struct MainSideView:  View {
                             
                             NavigationLink(destination: ManageContractView()) {
                                 Text("Verträge verwalten")
+                
                             }.foregroundColor(.white)
                                 .frame(maxWidth: .infinity)
                                 .padding()
                                 .background(Color.gray.opacity(0.5))
+                                .simultaneousGesture(TapGesture().onEnded{
+                                    print("Hello world!")
+                                    newContractDataModel.printALL()
+                                })
                             
                             NavigationLink(destination: ExpiredContractView()) {
                                 Text("Auslaufende Verträge")
