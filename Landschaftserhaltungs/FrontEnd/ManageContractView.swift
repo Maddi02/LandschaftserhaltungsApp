@@ -11,13 +11,30 @@ import SwiftUI
 struct CustomText: View {
     let text: String
     var body: some View {
-        Text(text)
+       // Image(systemName: "HFULogo")
+        HStack(){
+            Text("Here shoud be \n a picture").font(.title)
+            
+            VStack(alignment: .leading)
+            {
+                Text(text)
+                Text("grew")
+            }.frame(maxWidth: .infinity, alignment: .center)
+        }.frame(maxWidth: .infinity, alignment: .leading)
+        
+       
+        
     }
     
     init(text: String) {
         self.text = text
     }
-    
+}
+
+struct CustomText_Preview: PreviewProvider{
+    static var previews: some View{
+        CustomText(text : "Hello")
+    }
 }
 
 
@@ -35,7 +52,6 @@ struct ManageContractView: View {
         VStack(alignment: .leading){
             Text("Verträge Verwaltung").font(.title2)
             
-            
             ScrollView()
             {
                 LazyVStack(spacing: 10){
@@ -45,7 +61,6 @@ struct ManageContractView: View {
                     }
                 }
             }.frame(maxWidth: .infinity)
-           
         }
     }
 }
