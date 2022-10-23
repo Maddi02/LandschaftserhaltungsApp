@@ -3,6 +3,7 @@
     <entity name="AppContract" representedClassName="AppContract" syncable="YES">
         <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="contractPurpose" optional="YES" attributeType="String"/>
+        <attribute name="contractTermination" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="country" optional="YES" attributeType="String"/>
         <attribute name="firstName" optional="YES" attributeType="String"/>
         <attribute name="lastName" optional="YES" attributeType="String"/>

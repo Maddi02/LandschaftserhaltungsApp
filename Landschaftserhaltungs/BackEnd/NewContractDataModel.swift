@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import CoreData
+
 class NewContractDataModel: ObservableObject {
 
     private var context = CoreDataManager.shared.persistentContainer.viewContext
@@ -22,6 +23,8 @@ class NewContractDataModel: ObservableObject {
     @Published var lastName: String = ""
 
     @Published var birthday: Date = Date()
+    
+    @Published var contractTermination: Date = Date()
 
     @Published var street: String = ""
 

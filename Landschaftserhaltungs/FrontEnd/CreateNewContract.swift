@@ -26,32 +26,34 @@ struct CreateNewContract : View
                         TextField("Vorname", text: $newContractDataModel.firstName)
                         TextField("Nachname", text: $newContractDataModel.lastName)
                     }
-                    Section(header: Text("Persönliche Informationen")) {
-                        DatePicker(selection: $newContractDataModel.birthday,
-                                   displayedComponents: [.date],
-                                   label: { Text("Geburtstag") })
-                        
-                    }
+                    
                     Section(header: Text("Kontakt-Adresse")) {
                         TextField("Staße", text: $newContractDataModel.street)
                         TextField("Ort", text: $newContractDataModel.PLZName)
                         TextField("PLZ", text: $newContractDataModel.PLZ).keyboardType(UIKeyboardType.numberPad)
                         TextField("Land", text: $newContractDataModel.country)
+                        TextField("Mobil", text: $newContractDataModel.country)
                     }
                     
                     Section(header: Text("Vertragsinformationen")) {
-                        DatePicker(selection: $newContractDataModel.birthday,
+                        DatePicker(selection: $newContractDataModel.contractTermination,
                                    displayedComponents: [.date],
                                    label: { Text("Vertragsabschluss") })
                         TextField("Vorgangsnummer", text: $newContractDataModel.operationNumber)
                         TextField("Vertragszweck", text: $newContractDataModel.contractPurpose,axis: .vertical)
                         TextField("Maßnahmen", text: $newContractDataModel.measures,axis: .vertical)
                         TextField("Bewirtschaftungsauflagen", text: $newContractDataModel.managementRequirements,axis: .vertical)
-                        TextField("Besonderheiten", text: $newContractDataModel.particularities,axis: .vertical)
+                        
                     
                         
                     }
                 
+                    Section(header: Text("Besonderheiten"))
+                    {
+                        TextField("Besonderheiten", text: $newContractDataModel.particularities,axis: .vertical).frame(minHeight: 50)
+                    }
+                    
+                    
                     Section(header: Text("Karte mit Vertragsflächen")) {
                         Image(uiImage: self.image)
                             .resizable()

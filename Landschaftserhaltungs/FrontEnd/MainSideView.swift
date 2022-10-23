@@ -12,6 +12,7 @@ struct MainSideView:  View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var appState : AppState
     @ObservedObject var newContractDataModel = NewContractDataModel()
+    @ObservedObject var manageContractModel = ManageContractModel()
     var body: some View {
         //Verwalten
         
@@ -40,6 +41,8 @@ struct MainSideView:  View {
                                 .simultaneousGesture(TapGesture().onEnded{
                                     print("Hello world!")
                                     newContractDataModel.printALL()
+                                    manageContractModel.getEntrys()
+                                    
                                 })
                             
                             NavigationLink(destination: ExpiredContractView()) {
