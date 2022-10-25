@@ -36,53 +36,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ED73BD40-63D1-4215-81D0-30536A04D402"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Landschaftserhaltungs/FrontEnd/CreateNewContract.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "init(appContractObject:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "ED73BD40-63D1-4215-81D0-30536A04D402 - d531ea6461ab1eee"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "default argument 0 of Landschaftserhaltungs.CreateNewContract.set(appContractObject: Landschaftserhaltungs.AppContract) -&gt; ()"
-                  moduleName = "Landschaftserhaltungs"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/martinhummel/git/Landschaftserhaltungs/Landschaftserhaltungs/FrontEnd/CreateNewContract.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "ED73BD40-63D1-4215-81D0-30536A04D402 - 9f32c21b7589efe0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Landschaftserhaltungs.CreateNewContract.set(appContractObject: Landschaftserhaltungs.AppContract) -&gt; ()"
-                  moduleName = "Landschaftserhaltungs"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/martinhummel/git/Landschaftserhaltungs/Landschaftserhaltungs/FrontEnd/CreateNewContract.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "56">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

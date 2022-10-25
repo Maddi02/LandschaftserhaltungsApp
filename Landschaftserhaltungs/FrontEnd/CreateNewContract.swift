@@ -16,16 +16,14 @@ struct CreateNewContract : View
     @State private var image = UIImage()
     @ObservedObject var newContractDataModel = NewContractDataModel()
     
-    func set(appContractObject: AppContract = AppContract() )
-    {
-        print(appContractObject.self.firstName)
-        //print(appContractObject.firstName ?? "No Data")
-    }
+
     
     
-    var body : some View
+    
+        var body : some View
     {
         
+
         NavigationView {
             GeometryReader { geo in
                 Form {
@@ -88,8 +86,6 @@ struct CreateNewContract : View
                     }
                     Section(header: Text("")) {
                         Button{
-                            
-               
                             newContractDataModel.saveAll(image: self.image)
                             print("Speichern des Vertrage = TODO")
                         }

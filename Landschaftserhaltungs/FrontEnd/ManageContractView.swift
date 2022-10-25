@@ -14,7 +14,7 @@ import MapKit
 struct ManageContractView: View {
     let formatter = DateFormatter()
     let date = Date()
-     private var manageContractModel = ManageContractModel()
+    private var manageContractModel = ManageContractModel()
     private var test1 : [AppContract]
     let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
     @Environment(\.managedObjectContext) var moc
@@ -42,11 +42,14 @@ struct ManageContractView: View {
                                     {
                                         test1 in
                                         
-                                        NavigationLink(destination: CreateNewContract()) {
+                                        NavigationLink(destination: CreateNewContract().onAppear {
+                                            
+                                        }) {
+                                           
                                             ContractListItem(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName ?? "Unknown", operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: Calendar.current.date(byAdding: .year, value: 5, to: test1.contractTermination ?? Date())!.toString(), image: test1.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
-                                        }.frame(maxWidth: .infinity).onTapGesture {
-                                            print("Helll0 \(test1.firstName)")
-                                        }
+                                            
+                                        }.frame(maxWidth: .infinity)
+                                    
                                         
                                     }.onDelete(perform: delete)
                                     
@@ -74,9 +77,17 @@ struct ManageContractView: View {
         for offset in offsets{
             let book = test1[offset]
             moc.delete(book)
+            
+            
+            do{
+                try moc.save()
+                
+            } catch{
+                
+            }
         }
-        
-        try? moc.save()
+
+   
     }
 }
 

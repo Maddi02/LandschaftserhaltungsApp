@@ -95,6 +95,12 @@ class NewContractDataModel: ObservableObject {
     }
     
     
+    public func testSet()
+    {
+        firstName = "HHHHHH"
+    }
+    
+    
     
 }
 
