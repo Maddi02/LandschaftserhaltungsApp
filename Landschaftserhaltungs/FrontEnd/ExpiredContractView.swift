@@ -15,9 +15,3 @@ struct ExpiredContractView: View {
         }
     }
 }
-
-struct ExpiredContract_Previews: PreviewProvider {
-    static var previews: some View {
-        ExpiredContractView()
-    }
-}
