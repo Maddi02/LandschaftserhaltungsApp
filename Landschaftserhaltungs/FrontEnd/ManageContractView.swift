@@ -68,6 +68,7 @@ struct ManageContractView: View {
     private var test1 : [AppContract]
     let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
     @Environment(\.managedObjectContext) var moc
+    @State private var searchText = ""
     init()
     {
         print("Hello", terminator: "")
@@ -86,7 +87,7 @@ struct ManageContractView: View {
                             NavigationView {
                                 
                                 List {
-                                    
+                                  
                                     ForEach(test1, id: \.self)
                                     {
                                         test1 in
@@ -95,7 +96,8 @@ struct ManageContractView: View {
                                             CustomText(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName ?? "Unknown", operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: Calendar.current.date(byAdding: .year, value: 5, to: test1.contractTermination ?? Date())!.toString(), image: test1.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
                                         }.frame(maxWidth: .infinity)
                                         
-                                    }.onDelete(perform: deleteEntry)
+                                    }.onDelete(perform: delete)
+                                    
                                 }.frame(
                                     minWidth: 0,
                                     maxWidth: .infinity,
@@ -103,7 +105,7 @@ struct ManageContractView: View {
                                     maxHeight: .infinity,
                                     alignment: .topLeading
                                 ).ignoresSafeArea(.all)
-                            
+                                    
                         
                     }.frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
                       //  .fullBackground(imageName: "NatureLaunch")
@@ -113,7 +115,9 @@ struct ManageContractView: View {
             }.frame(maxWidth: .infinity)
         }
     }
-    func deleteEntry(at offsets : IndexSet)
+
+    
+    func delete(at offsets : IndexSet)
     {
         for offset in offsets{
             let book = test1[offset]
