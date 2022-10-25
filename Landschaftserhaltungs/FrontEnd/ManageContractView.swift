@@ -42,9 +42,11 @@ struct ManageContractView: View {
                                     {
                                         test1 in
                                         
-                                        NavigationLink(destination: Text("Second view")) {
+                                        NavigationLink(destination: CreateNewContract()) {
                                             ContractListItem(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName ?? "Unknown", operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: Calendar.current.date(byAdding: .year, value: 5, to: test1.contractTermination ?? Date())!.toString(), image: test1.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
-                                        }.frame(maxWidth: .infinity)
+                                        }.frame(maxWidth: .infinity).onTapGesture {
+                                            print("Helll0 \(test1.firstName)")
+                                        }
                                         
                                     }.onDelete(perform: delete)
                                     

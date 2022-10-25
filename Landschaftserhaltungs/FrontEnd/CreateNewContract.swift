@@ -16,6 +16,13 @@ struct CreateNewContract : View
     @State private var image = UIImage()
     @ObservedObject var newContractDataModel = NewContractDataModel()
     
+    func set(appContractObject: AppContract = AppContract() )
+    {
+        print(appContractObject.self.firstName)
+        //print(appContractObject.firstName ?? "No Data")
+    }
+    
+    
     var body : some View
     {
         
