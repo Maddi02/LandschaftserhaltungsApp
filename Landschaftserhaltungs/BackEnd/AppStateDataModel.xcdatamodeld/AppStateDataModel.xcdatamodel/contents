@@ -9,6 +9,7 @@
         <attribute name="lastName" optional="YES" attributeType="String"/>
         <attribute name="managementRequirements" optional="YES" attributeType="String"/>
         <attribute name="measures" optional="YES" attributeType="String"/>
+        <attribute name="mobile" optional="YES" attributeType="String"/>
         <attribute name="operationNumber" optional="YES" attributeType="String"/>
         <attribute name="particularities" optional="YES" attributeType="String"/>
         <attribute name="picture" optional="YES" attributeType="Transformable" valueTransformerName="UIImageTransformer" customClassName="UIImage"/>

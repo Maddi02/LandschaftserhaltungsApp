@@ -11,24 +11,25 @@ import MapKit
 
 struct CreateNewContract : View
 {
-    
+    weak var passwordTextField: UITextField!
     @State private var isShownPhotoLibrary = false
     @State private var image = UIImage()
-    @ObservedObject var newContractDataModel = NewContractDataModel()
+    @State private var firstName  = String()
+    @StateObject var newContractDataModel = NewContractDataModel()
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.dismiss) private var dismiss
     
 
-    
-    
-    
         var body : some View
     {
-        
+   
 
         NavigationView {
             GeometryReader { geo in
                 Form {
                     Section(header: Text("Vertragsnehmer")) {
-                        TextField("Vorname", text: $newContractDataModel.firstName)
+                        
+                        TextField("Vorname", text: $firstName).tag(1)
                         TextField("Nachname", text: $newContractDataModel.lastName)
                     }
                     
@@ -37,7 +38,7 @@ struct CreateNewContract : View
                         TextField("Ort", text: $newContractDataModel.PLZName)
                         TextField("PLZ", text: $newContractDataModel.PLZ).keyboardType(UIKeyboardType.numberPad)
                         TextField("Land", text: $newContractDataModel.country)
-                        TextField("Mobil", text: $newContractDataModel.country)
+                        TextField("Mobil", text: $newContractDataModel.mobile)
                     }
                     
                     Section(header: Text("Vertragsinformationen")) {
@@ -86,8 +87,11 @@ struct CreateNewContract : View
                     }
                     Section(header: Text("")) {
                         Button{
-                            newContractDataModel.saveAll(image: self.image)
+                            newContractDataModel.saveAll(image: self.image, firstName1: firstName)
+                            testSet()
+                            dismiss()
                             print("Speichern des Vertrage = TODO")
+           
                         }
                     label: {
                         HStack {
@@ -122,6 +126,14 @@ struct CreateNewContract : View
 
         }
     }
+    
+    public func testSet()
+    {
+        self.firstName = "dd"
+        
+    }
+    
+
 }
 
 

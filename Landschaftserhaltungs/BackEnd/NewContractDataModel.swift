@@ -45,6 +45,7 @@ class NewContractDataModel: ObservableObject {
     @Published var managementRequirements: String = ""
     
     @Published var particularities: String = ""
+    @Published var mobile : String = ""
     
     public func whatWasSaved()
     {
@@ -52,10 +53,10 @@ class NewContractDataModel: ObservableObject {
     }
     
     
-    public func saveAll(image: UIImage)
+    public func saveAll(image: UIImage , firstName1: String)
     {
         let appContract = AppContract(context: context);
-        appContract.setValue(firstName, forKey: #keyPath(AppContract.firstName))
+        appContract.setValue(firstName1, forKey: #keyPath(AppContract.firstName))
         appContract.setValue(lastName, forKey: #keyPath(AppContract.lastName))
         appContract.setValue(birthday, forKey: #keyPath(AppContract.birthday))
         appContract.setValue(contractPurpose, forKey: #keyPath(AppContract.contractPurpose))
@@ -66,6 +67,7 @@ class NewContractDataModel: ObservableObject {
         appContract.setValue(particularities, forKey: #keyPath(AppContract.particularities))
         appContract.setValue(PLZName, forKey: #keyPath(AppContract.plzName))
         appContract.setValue(street, forKey: #keyPath(AppContract.street))
+        appContract.setValue(mobile, forKey: #keyPath(AppContract.mobile))
         appContract.setValue(image, forKey: #keyPath(AppContract.picture))
         appContract.setValue(contractTermination, forKey: #keyPath(AppContract.contractTermination))
         do{
@@ -94,11 +96,14 @@ class NewContractDataModel: ObservableObject {
         }
     }
     
-    
     public func testSet()
     {
-        firstName = "HHHHHH"
+      //  self.firstName = "dd"
+        
     }
+    
+    
+
     
     
     
