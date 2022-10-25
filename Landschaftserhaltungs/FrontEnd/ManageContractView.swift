@@ -61,13 +61,13 @@ struct CustomText_Preview: PreviewProvider{
  
 
 
-
 struct ManageContractView: View {
     let formatter = DateFormatter()
     let date = Date()
      private var manageContractModel = ManageContractModel()
     private var test1 : [AppContract]
     let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
+    @Environment(\.managedObjectContext) var moc
     init()
     {
         print("Hello", terminator: "")
@@ -78,19 +78,49 @@ struct ManageContractView: View {
     var body: some View {
         VStack(alignment: .leading){
             Text("Verträge Verwaltung").font(.title2)
-            
-            ScrollView()
-            {
-                LazyVStack(spacing: 10){
-                
-                    ForEach(test1, id: \.self)
+           
+                GeometryReader { geometry in
+                    ScrollView()
                     {
-                        test1 in
-                        CustomText(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName ?? "Unknown", operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: Calendar.current.date(byAdding: .year, value: 5, to: test1.contractTermination ?? Date())!.toString(), image: test1.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
-                    }
+                    
+                            NavigationView {
+                                
+                                List {
+                                    
+                                    ForEach(test1, id: \.self)
+                                    {
+                                        test1 in
+                                        
+                                        NavigationLink(destination: Text("Second view")) {
+                                            CustomText(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName ?? "Unknown", operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: Calendar.current.date(byAdding: .year, value: 5, to: test1.contractTermination ?? Date())!.toString(), image: test1.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
+                                        }.frame(maxWidth: .infinity)
+                                        
+                                    }.onDelete(perform: deleteEntry)
+                                }.frame(
+                                    minWidth: 0,
+                                    maxWidth: .infinity,
+                                    minHeight: 0,
+                                    maxHeight: .infinity,
+                                    alignment: .topLeading
+                                ).ignoresSafeArea(.all)
+                            
+                        
+                    }.frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
+                      //  .fullBackground(imageName: "NatureLaunch")
+              
                 }
+            
             }.frame(maxWidth: .infinity)
         }
+    }
+    func deleteEntry(at offsets : IndexSet)
+    {
+        for offset in offsets{
+            let book = test1[offset]
+            moc.delete(book)
+        }
+        
+        try? moc.save()
     }
 }
 

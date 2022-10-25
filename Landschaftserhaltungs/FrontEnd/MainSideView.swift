@@ -38,6 +38,11 @@ struct MainSideView:  View {
                                 .frame(maxWidth: .infinity)
                                 .padding()
                                 .background(Color.gray.opacity(0.5))
+                                .toolbar{
+                                    ToolbarItem(placement: .navigationBarLeading){
+                                        EditButton()
+                                    }
+                                }
                                 .simultaneousGesture(TapGesture().onEnded{
                                     print("Hello world!")
                                     newContractDataModel.printALL()
