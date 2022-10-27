@@ -34,8 +34,7 @@ struct ManageContractView: View {
                     ScrollView()
                     {
                     
-                            NavigationView {
-                                
+                            
                                 List {
                                   
                                     ForEach(test1, id: \.self)
@@ -62,7 +61,7 @@ struct ManageContractView: View {
                                 ).ignoresSafeArea(.all)
                                     
                         
-                    }.frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
+                    .frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
                       //  .fullBackground(imageName: "NatureLaunch")
               
                 }
