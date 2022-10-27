@@ -12,6 +12,7 @@ struct ExpiredContractView: View {
     
     private var newContractDataModel = NewContractDataModel()
     private var test1 : [AppContract]
+    @Environment(\.managedObjectContext) var moc
     init(){
         
         test1 = newContractDataModel.sortByDateASC()
@@ -20,8 +21,65 @@ struct ExpiredContractView: View {
     
     var body: some View {
         VStack(alignment: .leading){
-            Text("Ablaufende Verträge").font(.title2)
-            Color.white
+            Text("Verträge Verwaltung").font(.title2)
+            
+            GeometryReader { geometry in
+                ScrollView()
+                {
+                    
+                    
+                    List {
+                        
+                        ForEach(test1, id: \.self)
+                        {
+                            test1 in
+                            
+                            NavigationLink(destination: EditContract(appContract: test1).onAppear {
+                                
+                            }) {
+                                
+                                ContractListItem(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName ?? "Unknown", operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: Calendar.current.date(byAdding: .year, value: 5, to: test1.contractTermination ?? Date())!.toString(), image: test1.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
+                                
+                            }.frame(maxWidth: .infinity)
+                            
+                            
+                        }.onDelete(perform: delete)
+                        
+                    }.frame(
+                        minWidth: 0,
+                        maxWidth: .infinity,
+                        minHeight: 0,
+                        maxHeight: .infinity,
+                        alignment: .topLeading
+                    ).ignoresSafeArea(.all)
+                    
+                    
+                        .frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
+                    //  .fullBackground(imageName: "NatureLaunch")
+                    
+                }
+                
+            }.frame(maxWidth: .infinity)
         }
     }
+    
+    
+    func delete(at offsets : IndexSet)
+    {
+        for offset in offsets{
+            let book = test1[offset]
+            moc.delete(book)
+            
+            
+            do{
+                try moc.save()
+                
+            } catch{
+                
+            }
+        }
+
+   
+    }
+    
 }
