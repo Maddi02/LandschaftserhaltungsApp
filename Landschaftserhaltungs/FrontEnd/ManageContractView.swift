@@ -41,7 +41,7 @@ struct ManageContractView: View {
                                     {
                                         test1 in
                                         
-                                        NavigationLink(destination: CreateNewContract().onAppear {
+                                        NavigationLink(destination: EditContract(appContract: test1).onAppear {
                                             
                                         }) {
                                            

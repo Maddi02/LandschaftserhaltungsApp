@@ -9,14 +9,17 @@ import SwiftUI
 
 struct EditContract: View {
     
+    var appContract : AppContract
+    
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(appContract.firstName ?? "NO Data")
     }
 }
-
+/*
 struct EditContract_Previews: PreviewProvider {
     static var previews: some View {
         EditContract()
     }
 }
+*/
