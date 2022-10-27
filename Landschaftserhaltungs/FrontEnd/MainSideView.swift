@@ -43,7 +43,8 @@ struct MainSideView:  View {
                                     print("Hello world!")
                                    
                                     manageContractModel.getEntrys()
-                                    
+                                    newContractDataModel.sortByDateASC()
+
                                 })
                             
                             NavigationLink(destination: ExpiredContractView()) {

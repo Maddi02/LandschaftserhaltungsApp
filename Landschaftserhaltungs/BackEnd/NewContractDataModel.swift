@@ -12,7 +12,7 @@ import CoreData
 class NewContractDataModel: ObservableObject {
 
     private var context = CoreDataManager.shared.persistentContainer.viewContext
-    
+    @Published var appContractListSortedByDate: [AppContract] = []
     
     
     
@@ -53,7 +53,7 @@ class NewContractDataModel: ObservableObject {
     }
     
     
-    public func saveAll(image: UIImage , firstName1: String)
+    public func saveAll(image: UIImage = UIImage(), firstName1: String)
     {
         let appContract = AppContract(context: context);
         appContract.setValue(firstName1, forKey: #keyPath(AppContract.firstName))
@@ -95,6 +95,27 @@ class NewContractDataModel: ObservableObject {
             print(error)
         }
     }
+    
+    
+    public func sortByDateASC() -> Array<AppContract>
+    {
+        let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
+        let sortByDate = NSSortDescriptor(key: #keyPath(AppContract.contractTermination), ascending: true)
+        request.sortDescriptors = [sortByDate]
+        do{
+            appContractListSortedByDate = try context.fetch(request)
+            print(appContractListSortedByDate.count)
+            for test1 in appContractListSortedByDate {
+                print(test1.firstName)
+            }
+        }
+        catch{
+            print(error)
+        }
+        
+        return appContractListSortedByDate
+    }
+    
     
     public func testSet()
     {

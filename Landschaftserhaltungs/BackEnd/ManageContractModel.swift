@@ -29,24 +29,4 @@ class ManageContractModel : ObservableObject
         }
         return appContractList
     }
-    
-    public func getEntrysSortedBasedOnDate() -> Array<AppContract>{
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        dateFormatter.dateFormat = "dd-MMM-yyyy"
-        var customObjects: [AppContract]
-        do{
-            customObjects = try context.fetch(request)
-            return customObjects
-        
-        }
-        catch{
-            print(error)
-        }
-        return test
-        
-    }
-    
- 
 }

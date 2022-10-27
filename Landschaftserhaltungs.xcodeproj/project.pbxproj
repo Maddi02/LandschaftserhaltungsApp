@@ -34,6 +34,7 @@
 		224F463528FE1443004EA74F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F463428FE1443004EA74F /* AppState.swift */; };
 		224F463828FE1BE2004EA74F /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F463728FE1BE2004EA74F /* extensions.swift */; };
 		2252D321290868FF00568A1A /* EditContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252D320290868FF00568A1A /* EditContract.swift */; };
+		227915CA290A9ED30017F571 /* EditContractModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227915C9290A9ED30017F571 /* EditContractModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		224F463428FE1443004EA74F /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		224F463728FE1BE2004EA74F /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		2252D320290868FF00568A1A /* EditContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContract.swift; sourceTree = "<group>"; };
+		227915C9290A9ED30017F571 /* EditContractModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContractModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				22455D0E2900A81A002876AD /* AppStateDataModel.xcdatamodeld */,
 				22455D112900A869002876AD /* CoreDataManager.swift */,
 				2239595C2905B78D00D5F38E /* ManageContractModel.swift */,
+				227915C9290A9ED30017F571 /* EditContractModel.swift */,
 			);
 			path = BackEnd;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */,
 				22455D122900A869002876AD /* CoreDataManager.swift in Sources */,
 				224F463328FE07D8004EA74F /* DoneOverview.swift in Sources */,
+				227915CA290A9ED30017F571 /* EditContractModel.swift in Sources */,
 				224F463528FE1443004EA74F /* AppState.swift in Sources */,
 				22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */,
 				224F462F28FE06CD004EA74F /* SecondFeatureOverview.swift in Sources */,

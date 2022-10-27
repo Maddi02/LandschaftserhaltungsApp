@@ -6,14 +6,26 @@
 //
 
 import SwiftUI
-
+import CoreData
 struct EditContract: View {
     
     var appContract : AppContract
-    
-    
+    @StateObject var newContractDataModel = NewContractDataModel()
+
     var body: some View {
-        Text(appContract.firstName ?? "NO Data")
+        TextField(appContract.lastName ?? "NO Data", text: $newContractDataModel.lastName)
+        Button{
+            print("PRINT \($newContractDataModel.lastName)")
+            newContractDataModel.saveAll( firstName1: "Peter")
+            print("Speichern des Vertrage = TODO")
+            
+        }
+    label: {
+        HStack {
+            
+            Text("Speichern")
+        }
+    }
     }
 }
 /*

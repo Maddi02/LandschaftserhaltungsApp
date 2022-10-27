@@ -16,9 +16,8 @@ struct ManageContractView: View {
     let date = Date()
     private var manageContractModel = ManageContractModel()
     private var test1 : [AppContract]
-    let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
+    // let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
     @Environment(\.managedObjectContext) var moc
-    @State private var searchText = ""
     init()
     {
         print("Hello", terminator: "")
