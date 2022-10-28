@@ -14,10 +14,13 @@ struct LandschaftserhaltungsApp: App {
     @ObservedObject var appState = AppState(hasOnboarded:/*false*/ UserDefaults.standard.bool(forKey: "onBoarded")) // this loads the info from storage so that the app knows if the User has onboarded already.
     var body: some Scene {
         WindowGroup {
+          
             if appState.hasOnboarded{
-                MainSideView().environment(\.managedObjectContext, container.persistentContainer.viewContext)
+
+                MainSideView().environment(\.managedObjectContext, container.persistentContainer.viewContext).environmentObject(appState)
             } else {
-                OnboardingFlowView().environment(\.managedObjectContext, container.persistentContainer.viewContext)
+
+                OnboardingFlowView().environment(\.managedObjectContext, container.persistentContainer.viewContext).environmentObject(appState)
             }
         }
     }

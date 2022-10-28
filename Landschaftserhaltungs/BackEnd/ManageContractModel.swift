@@ -16,7 +16,6 @@ class ManageContractModel : ObservableObject
     let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
     
     @Published var appContractList: [AppContract] = []
-    @Published var test: [AppContract] = []
     public func getEntrys() -> Array<AppContract> {
         do{
             appContractList = try context.fetch(request)

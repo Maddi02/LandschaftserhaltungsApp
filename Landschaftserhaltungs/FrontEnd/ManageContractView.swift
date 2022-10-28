@@ -16,11 +16,11 @@ struct ManageContractView: View {
     let date = Date()
     private var manageContractModel = ManageContractModel()
     private var test1 : [AppContract]
-    // let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
     @Environment(\.managedObjectContext) var moc
     init()
     {
         print("Hello", terminator: "")
+        print("INIT Manage")
         test1 = manageContractModel.getEntrys()
     }
     
@@ -72,14 +72,14 @@ struct ManageContractView: View {
     
     func delete(at offsets : IndexSet)
     {
+        
         for offset in offsets{
             let book = test1[offset]
             moc.delete(book)
             
-            
             do{
                 try moc.save()
-                
+  
             } catch{
                 
             }

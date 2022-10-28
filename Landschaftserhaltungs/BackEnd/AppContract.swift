@@ -18,7 +18,7 @@ class AppContract : NSManagedObject {
     
     @NSManaged public var picture : UIImage?
     @NSManaged public var firstName : String?
-    @NSManaged public var lastName : String?
+    @NSManaged public var lastName : String
     @NSManaged public var birthday : Date?
     @NSManaged public var contractPurpose : String?
     @NSManaged public var country : String?

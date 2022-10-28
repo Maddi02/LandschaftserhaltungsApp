@@ -8,17 +8,18 @@
 import SwiftUI
 import CoreData
 struct EditContract: View {
-    
+
     var appContract : AppContract
     @StateObject var newContractDataModel = NewContractDataModel()
-
+ 
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    var editContract = EditContractModel()
     var body: some View {
         TextField(appContract.lastName ?? "NO Data", text: $newContractDataModel.lastName)
         Button{
-            print("PRINT \($newContractDataModel.lastName)")
-            newContractDataModel.saveAll( firstName1: "Peter")
-            print("Speichern des Vertrage = TODO")
-            
+            editContract.upi(appContract: appContract, contractDataModel: newContractDataModel)
+            presentationMode.wrappedValue.dismiss()
+            EditContractModel()
         }
     label: {
         HStack {

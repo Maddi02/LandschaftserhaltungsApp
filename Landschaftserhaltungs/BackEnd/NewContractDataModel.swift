@@ -11,8 +11,9 @@ import CoreData
 
 class NewContractDataModel: ObservableObject {
 
-    private var context = CoreDataManager.shared.persistentContainer.viewContext
+     var context = CoreDataManager.shared.persistentContainer.viewContext
     @Published var appContractListSortedByDate: [AppContract] = []
+    
     
     
     
@@ -46,7 +47,6 @@ class NewContractDataModel: ObservableObject {
     
     @Published var particularities: String = ""
     @Published var mobile : String = ""
-    
     public func whatWasSaved()
     {
         print(firstName, "Firstname")
@@ -114,6 +114,24 @@ class NewContractDataModel: ObservableObject {
         }
         
         return appContractListSortedByDate
+    }
+    
+    
+    public func updateField(str : NewContractDataModel)
+    {
+        let appContract = AppContract(context: context);
+        lastName = str.lastName
+        print("IN class got param \(lastName)")
+        print("IN class got param \(str.firstName)")
+        print("IN class got param \(lastName)")
+        appContract.setValue(lastName, forKey: #keyPath(AppContract.lastName))
+        do {
+            
+            try context.save()
+        }
+        catch {
+            // Handle Error
+        }
     }
     
     
