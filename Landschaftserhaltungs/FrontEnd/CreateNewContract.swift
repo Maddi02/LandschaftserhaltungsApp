@@ -16,6 +16,7 @@ struct CreateNewContract : View
     @State private var image = UIImage()
     @State private var firstName  = String()
     @StateObject var newContractDataModel = NewContractDataModel()
+    @StateObject var dataHandler = DataHandler()
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.dismiss) private var dismiss
     
@@ -87,7 +88,7 @@ struct CreateNewContract : View
                     }
                     Section(header: Text("")) {
                         Button{
-                            newContractDataModel.saveAll(image: self.image, firstName1: firstName)
+                            dataHandler.saveAll(image: self.image, firstName1: firstName)
                             testSet()
                             dismiss()
                             print("Speichern des Vertrage = TODO")

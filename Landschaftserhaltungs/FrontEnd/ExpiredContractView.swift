@@ -10,13 +10,13 @@ import SwiftUI
 struct ExpiredContractView: View {
     
     
-    private var newContractDataModel = NewContractDataModel()
-    private var test1 : [AppContract]
+    private var dataHandler = DataHandler()
+    private var appContractListASC : [AppContract]
     @Environment(\.managedObjectContext) var moc
     init(){
         
-        test1 = newContractDataModel.sortByDateASC()
-        print("Test size \(test1.count)")
+        appContractListASC = dataHandler.sortByDateASC()
+        print("Test size \(appContractListASC.count)")
     }
     
     var body: some View {
@@ -30,7 +30,7 @@ struct ExpiredContractView: View {
                     
                     List {
                         
-                        ForEach(test1, id: \.self)
+                        ForEach(appContractListASC, id: \.self)
                         {
                             test1 in
                             
@@ -38,7 +38,7 @@ struct ExpiredContractView: View {
                                 
                             }) {
                                 
-                                ContractListItem(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName ?? "Unknown", operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: Calendar.current.date(byAdding: .year, value: 5, to: test1.contractTermination ?? Date())!.toString(), image: test1.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
+                                ContractListItem(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName , operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: Calendar.current.date(byAdding: .year, value: 5, to: test1.contractTermination ?? Date())!.toString(), image: test1.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
                                 
                             }.frame(maxWidth: .infinity)
                             
@@ -67,7 +67,7 @@ struct ExpiredContractView: View {
     func delete(at offsets : IndexSet)
     {
         for offset in offsets{
-            let book = test1[offset]
+            let book = appContractListASC[offset]
             moc.delete(book)
             
             

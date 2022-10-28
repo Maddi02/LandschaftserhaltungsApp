@@ -14,14 +14,14 @@ import MapKit
 struct ManageContractView: View {
     let formatter = DateFormatter()
     let date = Date()
-    private var manageContractModel = ManageContractModel()
-    private var test1 : [AppContract]
+    private var dataHandler = DataHandler()
+    private var appContractList : [AppContract]
     @Environment(\.managedObjectContext) var moc
     init()
     {
         print("Hello", terminator: "")
         print("INIT Manage")
-        test1 = manageContractModel.getEntrys()
+        appContractList = dataHandler.getEntrys()
     }
     
     
@@ -36,7 +36,7 @@ struct ManageContractView: View {
                             
                                 List {
                                   
-                                    ForEach(test1, id: \.self)
+                                    ForEach(appContractList, id: \.self)
                                     {
                                         test1 in
                                         
@@ -74,7 +74,7 @@ struct ManageContractView: View {
     {
         
         for offset in offsets{
-            let book = test1[offset]
+            let book = appContractList[offset]
             moc.delete(book)
             
             do{

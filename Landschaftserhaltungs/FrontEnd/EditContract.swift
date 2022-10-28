@@ -13,13 +13,13 @@ struct EditContract: View {
     @StateObject var newContractDataModel = NewContractDataModel()
  
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    var editContract = EditContractModel()
+    var dataHandler = DataHandler()
     var body: some View {
-        TextField(appContract.lastName ?? "NO Data", text: $newContractDataModel.lastName)
+        TextField(appContract.lastName , text: $newContractDataModel.lastName)
         Button{
-            editContract.upi(appContract: appContract, contractDataModel: newContractDataModel)
+            dataHandler.upi(appContract: appContract, contractDataModel: newContractDataModel)
             presentationMode.wrappedValue.dismiss()
-            EditContractModel()
+        
         }
     label: {
         HStack {

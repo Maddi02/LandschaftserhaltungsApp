@@ -11,8 +11,7 @@ import SwiftUI
 struct MainSideView:  View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var appState : AppState
-    @StateObject var newContractDataModel = NewContractDataModel()
-    @ObservedObject var manageContractModel = ManageContractModel()
+    @StateObject var dataHandler = DataHandler()
     var body: some View {
         //Verwalten
         
@@ -42,8 +41,8 @@ struct MainSideView:  View {
                                 .simultaneousGesture(TapGesture().onEnded{
                                     print("Hello world!")
                                    
-                                    manageContractModel.getEntrys()
-                                    newContractDataModel.sortByDateASC()
+                                    dataHandler.getEntrys()
+                                    dataHandler.sortByDateASC()
 
                                 })
                             
