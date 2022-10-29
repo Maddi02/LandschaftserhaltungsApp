@@ -19,7 +19,13 @@ public extension View {
 }
 extension Date
 {
-    
+    init(_ dateString:String) {
+            let dateStringFormatter = DateFormatter()
+            dateStringFormatter.dateFormat = "dd-MM-yyyy"
+            dateStringFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
+            let date = dateStringFormatter.date(from: dateString)!
+            self.init(timeInterval:0, since:date)
+        }
     
     func toString(format: String = "dd-MM-yyyy") -> String {
         let formatter = DateFormatter()
@@ -76,6 +82,23 @@ extension Date
     func removeYears(numberOfYears: Int) -> Date {
         let endDate = Calendar.current.date(byAdding: .year, value: -numberOfYears, to: self)
         return endDate ?? Date()
+    }
+    
+    
+   func getLastYear() -> Date
+    {
+        var lastOfYear = Date()
+        
+        let year = Calendar.current.component(.year, from: Date())
+        // Get the first day of next year
+        if let firstOfNextYear = Calendar.current.date(from: DateComponents(year: year + 1, month: 1, day: 1)) {
+            // Get the last day of the current year
+            lastOfYear = Calendar.current.date(byAdding: .day, value: -1, to: firstOfNextYear)!
+            print("HALLLLLOOOOO \(lastOfYear.toString())")
+            return lastOfYear
+        }
+        print("HALLLLLOOOOO \(lastOfYear.toString())")
+        return Date()
     }
     
     func getHumanReadableDayString() -> String {

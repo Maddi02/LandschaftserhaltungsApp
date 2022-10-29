@@ -12,6 +12,7 @@ import CoreData
 class NewContractDataModel: ObservableObject {
 
      var context = CoreDataManager.shared.persistentContainer.viewContext
+    let year = Calendar.current.component(.year, from: Date())
     @Published var appContractListSortedByDate: [AppContract] = []
     
     @Published var photo : UIImage = UIImage()
@@ -22,7 +23,7 @@ class NewContractDataModel: ObservableObject {
 
     @Published var birthday: Date = Date()
     
-    @Published var contractTermination: Date = Date()
+    @Published var contractTermination: Date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date("01-01-\(Calendar.current.component(.year, from: Date()).description)"))!
 
     @Published var street: String = ""
 

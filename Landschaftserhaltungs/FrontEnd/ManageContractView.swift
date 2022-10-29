@@ -26,7 +26,8 @@ struct ManageContractView: View {
     var body: some View {
         VStack(alignment: .leading){
             Text("Verträge Verwaltung").font(.title2)
-           
+            let year = Calendar.current.component(.year, from: Date())
+            let firstOfNextYear = Calendar.current.date(from: DateComponents(year: year + 5, month: 1, day: 1))
                 GeometryReader { geometry in
                     ScrollView()
                     {
@@ -42,7 +43,7 @@ struct ManageContractView: View {
                                             
                                         }) {
                                            
-                                            ContractListItem(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName , operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: Calendar.current.date(byAdding: .year, value: 5, to: test1.contractTermination ?? Date())!.toString(), image: test1.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
+                                            ContractListItem(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName , operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: Calendar.current.date(byAdding: .day, value: -1, to: firstOfNextYear ?? Date())!.toString() , image: test1.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
                                             
                                         }.frame(maxWidth: .infinity)
                                     

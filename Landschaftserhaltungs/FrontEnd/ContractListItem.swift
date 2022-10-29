@@ -48,10 +48,18 @@ struct ContractListItem: View {
 }
 
 struct ContractListItem_Preview: PreviewProvider{
+    
+    let lastOfYear : Int
+
     let formatter = DateFormatter()
     let date = Date()
+    let year1 = Calendar.current.component(.year, from: Date())
+    let firstOfNextYear = Calendar.current.date(from: DateComponents(year: 2020 + 1, month: 1, day: 1))
     static var previews: some View{
-        
-        ContractListItem(firstName: "Rafael", lastName: "Raguci", operationNumber: "187361", contractTermination:  Date().toString(), endOfContract: Calendar.current.date(byAdding: .year, value: 5, to: Date())!.toString() , image: UIImage(imageLiteralResourceName: "HFULogo"))
+     
+         Text("HHello")
+     /*
+        ContractListItem(firstName: "Rafael", lastName: "Raguci", operationNumber: "187361", contractTermination:  Date().toString(), endOfContract: Calendar.current.date(byAdding: .day, value: -1, to: firstOfNextYear ?? Date())?.toString() ?? Date().toString() , image: UIImage(imageLiteralResourceName: "HFULogo"))
+      */
     }
 }

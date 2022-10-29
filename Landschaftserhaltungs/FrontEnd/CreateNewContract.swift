@@ -11,7 +11,8 @@ import MapKit
 
 struct CreateNewContract : View
 {
-    weak var passwordTextField: UITextField!
+    
+    @State private var date = Date()
     @State private var isShownPhotoLibrary = false
     @State private var image = UIImage()
     @State private var firstName  = String()
