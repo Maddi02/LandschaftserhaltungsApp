@@ -54,7 +54,7 @@ struct MainSideView:  View {
                                 .background(Color.gray.opacity(0.5))
                             
                         }.frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
-                            .fullBackground(imageName: "NatureLaunch")
+                        .background(BackGroundGradient.getGradient())
                       
                     
                 }

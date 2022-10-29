@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		221AC67B290C3A2800993F52 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221AC67A290C3A2700993F52 /* DataHandler.swift */; };
+		221AC67D290D150B00993F52 /* BackgroundLinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221AC67C290D150B00993F52 /* BackgroundLinearGradient.swift */; };
 		2239595929044A6A00D5F38E /* AppContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239595829044A6A00D5F38E /* AppContract.swift */; };
 		2239595B290452A600D5F38E /* UIImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239595A290452A600D5F38E /* UIImageTransformer.swift */; };
 		2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239595E2907DDCD00D5F38E /* ContractListItem.swift */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		221AC67A290C3A2700993F52 /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
+		221AC67C290D150B00993F52 /* BackgroundLinearGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundLinearGradient.swift; sourceTree = "<group>"; };
 		2239595829044A6A00D5F38E /* AppContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContract.swift; sourceTree = "<group>"; };
 		2239595A290452A600D5F38E /* UIImageTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageTransformer.swift; sourceTree = "<group>"; };
 		2239595E2907DDCD00D5F38E /* ContractListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractListItem.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		224F462528FD8555004EA74F /* FrontEnd */ = {
 			isa = PBXGroup;
 			children = (
+				221AC67C290D150B00993F52 /* BackgroundLinearGradient.swift */,
 				224F462728FDFC99004EA74F /* MainSideView.swift */,
 				22455CF528FF03BC002876AD /* CreateNewContract.swift */,
 				22455CF728FF2794002876AD /* ExpiredContractView.swift */,
@@ -365,6 +368,7 @@
 				2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */,
 				22455D122900A869002876AD /* CoreDataManager.swift in Sources */,
 				224F463328FE07D8004EA74F /* DoneOverview.swift in Sources */,
+				221AC67D290D150B00993F52 /* BackgroundLinearGradient.swift in Sources */,
 				224F463528FE1443004EA74F /* AppState.swift in Sources */,
 				22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */,
 				224F462F28FE06CD004EA74F /* SecondFeatureOverview.swift in Sources */,

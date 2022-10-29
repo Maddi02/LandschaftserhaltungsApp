@@ -120,7 +120,7 @@ struct CreateNewContract : View
                     }
                     }
                 }.navigationBarTitle(Text("Neuen Vertrag anlegen"))
-            }
+            }.background(content: BackGroundGradient.getGradient)
             
         }.sheet(isPresented: $isShownPhotoLibrary){
             ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)

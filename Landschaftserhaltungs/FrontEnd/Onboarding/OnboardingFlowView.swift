@@ -24,7 +24,7 @@ struct OnboardingFlowView: View {
                 DoneOverview().tag(4)
                 
             }
-            .background(Image("NatureLaunch").ignoresSafeArea())
+            .background(BackGroundGradient.getGradient())
             .tabViewStyle(.page)
             .indexViewStyle(
                 .page(backgroundDisplayMode: .always))
