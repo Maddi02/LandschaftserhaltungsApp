@@ -94,5 +94,8 @@ class DataHandler : ObservableObject
             print(error)
         }
     }
-    
+    public func delete(at offsets : IndexSet){
+        
+        appContractList.remove(atOffsets: offsets)
+    }
 }

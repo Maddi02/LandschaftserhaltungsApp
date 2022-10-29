@@ -65,6 +65,7 @@ struct ExpiredContractView: View {
 
     func delete(at offsets : IndexSet)
     {
+        
         for offset in offsets{
             let book = appContractListASC[offset]
             moc.delete(book)

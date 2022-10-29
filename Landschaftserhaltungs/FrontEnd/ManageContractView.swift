@@ -15,8 +15,10 @@ struct ManageContractView: View {
     let formatter = DateFormatter()
     let date = Date()
     private var dataHandler = DataHandler()
-    private var appContractList : [AppContract]
+    public var appContractList : [AppContract]
     @Environment(\.managedObjectContext) var moc
+    @State private var showingAlert = false
+    @State private var delteOK = false
     init()
     {
         appContractList = dataHandler.getEntrys()
@@ -34,7 +36,7 @@ struct ManageContractView: View {
                             
                                 List {
                                   
-                                    ForEach(appContractList, id: \.self)
+                                    ForEach(dataHandler.appContractList, id: \.self)
                                     {
                                         test1 in
     
@@ -47,7 +49,9 @@ struct ManageContractView: View {
                                         }.frame(maxWidth: .infinity)
                                     
                                         
-                                    }.onDelete(perform: delete)
+                                    }.onDelete(perform: delete).alert("Vertrag wurde gelöscht", isPresented: $showingAlert) {
+                                
+                                    }
                                     
                                 }.frame(
                                     minWidth: 0,
@@ -68,19 +72,26 @@ struct ManageContractView: View {
     }
 
     
-    func delete(at offsets : IndexSet)
+    func delete(at offsets : IndexSet )
     {
-        
-        for offset in offsets{
-            let book = appContractList[offset]
-            moc.delete(book)
+        showingAlert = true
+
             
-            do{
-                try moc.save()
-  
-            } catch{
+            dataHandler.appContractList.remove(atOffsets: offsets)
+            for offset in offsets{
+                let book = appContractList[offset]
                 
-            }
+                moc.delete(book)
+                
+                
+                do{
+                    try moc.save()
+                    
+                    
+                } catch{
+                    
+                }
+      
         }
 
    
