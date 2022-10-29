@@ -62,10 +62,6 @@ class DataHandler : ObservableObject
         request.sortDescriptors = [sortByDate]
         do{
             appContractListSortedByDate = try context.fetch(request)
-            print(appContractListSortedByDate.count)
-            for test1 in appContractListSortedByDate {
-                print(test1.firstName)
-            }
         }
         catch{
             print(error)
@@ -74,7 +70,7 @@ class DataHandler : ObservableObject
         return appContractListSortedByDate
     }
     
-    public func saveAll(image: UIImage = UIImage(), firstName1: String)
+    public func saveAll(image: UIImage = UIImage(), firstName1: String, newContractDataModel : NewContractDataModel)
     {
         let appContract = AppContract(context: context);
         appContract.setValue(firstName1, forKey: #keyPath(AppContract.firstName))

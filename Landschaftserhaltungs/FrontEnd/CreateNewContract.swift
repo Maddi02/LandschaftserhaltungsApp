@@ -88,11 +88,9 @@ struct CreateNewContract : View
                     }
                     Section(header: Text("")) {
                         Button{
-                            dataHandler.saveAll(image: self.image, firstName1: firstName)
+                            dataHandler.saveAll(image: self.image, firstName1: firstName, newContractDataModel : newContractDataModel)
                             testSet()
                             dismiss()
-                            print("Speichern des Vertrage = TODO")
-           
                         }
                     label: {
                         HStack {

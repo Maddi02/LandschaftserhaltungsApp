@@ -16,7 +16,6 @@ struct ExpiredContractView: View {
     init(){
         
         appContractListASC = dataHandler.sortByDateASC()
-        print("Test size \(appContractListASC.count)")
     }
     
     var body: some View {

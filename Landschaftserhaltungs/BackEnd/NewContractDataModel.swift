@@ -14,9 +14,6 @@ class NewContractDataModel: ObservableObject {
      var context = CoreDataManager.shared.persistentContainer.viewContext
     @Published var appContractListSortedByDate: [AppContract] = []
     
-    
-    
-    
     @Published var photo : UIImage = UIImage()
     
     @Published var firstName: String = ""

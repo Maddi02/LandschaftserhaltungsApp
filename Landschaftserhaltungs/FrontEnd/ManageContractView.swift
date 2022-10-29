@@ -19,8 +19,6 @@ struct ManageContractView: View {
     @Environment(\.managedObjectContext) var moc
     init()
     {
-        print("Hello", terminator: "")
-        print("INIT Manage")
         appContractList = dataHandler.getEntrys()
     }
     
@@ -44,7 +42,7 @@ struct ManageContractView: View {
                                             
                                         }) {
                                            
-                                            ContractListItem(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName ?? "Unknown", operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: Calendar.current.date(byAdding: .year, value: 5, to: test1.contractTermination ?? Date())!.toString(), image: test1.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
+                                            ContractListItem(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName , operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: Calendar.current.date(byAdding: .year, value: 5, to: test1.contractTermination ?? Date())!.toString(), image: test1.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
                                             
                                         }.frame(maxWidth: .infinity)
                                     

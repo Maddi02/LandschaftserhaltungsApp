@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 struct MainSideView:  View {
-    @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var appState : AppState
     @StateObject var dataHandler = DataHandler()
     var body: some View {
@@ -39,8 +38,6 @@ struct MainSideView:  View {
                                 .background(Color.gray.opacity(0.5))
                                 
                                 .simultaneousGesture(TapGesture().onEnded{
-                                    print("Hello world!")
-                                   
                                     dataHandler.getEntrys()
                                     dataHandler.sortByDateASC()
 
