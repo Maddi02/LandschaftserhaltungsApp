@@ -79,9 +79,9 @@ struct ManageContractView: View {
             
             dataHandler.appContractList.remove(atOffsets: offsets)
             for offset in offsets{
-                let book = appContractList[offset]
+                let item = appContractList[offset]
                 
-                moc.delete(book)
+                moc.delete(item)
                 
                 
                 do{
