@@ -14,42 +14,58 @@ import MapKit
 struct ManageContractView: View {
     let formatter = DateFormatter()
     let date = Date()
-    private var dataHandler = DataHandler()
-    public var appContractList : [AppContract]
+    @ObservedObject private var dataHandler = DataHandler()
+    
     @Environment(\.managedObjectContext) var moc
     @State private var showingAlert = false
-    @State private var delteOK = false
+    @State static private var delteOK = false
+    @State private var showingNavView = false
+    @State private var test = [AppContract]()
+  
+    
     init()
     {
-        appContractList = dataHandler.getEntrys()
+        // dataHandler.getEntrys()
+    }
+
+    
+    static func aa()
+    {
+        
+        delteOK.toggle()
+        print("HHHHH")
     }
     
+    public  var buttonAction: ()->Void {
+         {
+             print("Button tapped!!")
+             dataHandler.fetchAppContract()
+         }
+     }
     
     var body: some View {
+  
         VStack(alignment: .leading){
             Text("Verträge Verwaltung").font(.title2)
-
                 GeometryReader { geometry in
                     ScrollView()
                     {
                     
                             
                                 List {
-                                  
+                                    
                                     ForEach(dataHandler.appContractList, id: \.self)
                                     {
                                         test1 in
     
-                                        NavigationLink(destination: EditContract(appContract: test1).onAppear {
-                                            
-                                        }) {
+                                        NavigationLink(destination: EditContract(appContract: test1, dataHandler: dataHandler)) {
                                            
                                             ContractListItem(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName , operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: test1.contractTermination?.getEndOfContract(date: test1.contractTermination ?? Date()) ?? Date().toString() , image: test1.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
                                             
                                         }.frame(maxWidth: .infinity)
                                     
                                         
-                                    }.onDelete(perform: delete).alert("Vertrag wurde gelöscht", isPresented: $showingAlert) {
+                                    } .onDelete(perform: delete).alert("Vertrag wurde gelöscht", isPresented: $showingAlert) {
                                 
                                     }
                                     
@@ -65,7 +81,11 @@ struct ManageContractView: View {
                     .frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
                       //  .fullBackground(imageName: "NatureLaunch")
               
+                }.refreshable {
+                    
+                    dataHandler.fetchAppContract()
                 }
+
             
             }.frame(maxWidth: .infinity)
         }
@@ -77,10 +97,10 @@ struct ManageContractView: View {
         showingAlert = true
 
             
-            dataHandler.appContractList.remove(atOffsets: offsets)
+           
             for offset in offsets{
-                let item = appContractList[offset]
-                
+                let item = dataHandler.appContractList[offset]
+                dataHandler.appContractList.remove(atOffsets: offsets)
                 moc.delete(item)
                 
                 

@@ -19,6 +19,22 @@ class DataHandler : ObservableObject
     @Published var appContractList: [AppContract] = []
     
     
+    init()
+    {
+      fetchAppContract()
+    }
+    
+    
+     func fetchAppContract()
+    {
+        print("Fetching")
+        do {
+            appContractList = try context.fetch(request)        }
+        catch {
+            // Handle Error
+        }
+    }
+    
     func upi(appContract : AppContract, contractDataModel : NewContractDataModel){
 
         

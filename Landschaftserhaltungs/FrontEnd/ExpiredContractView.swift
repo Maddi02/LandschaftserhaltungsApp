@@ -33,7 +33,7 @@ struct ExpiredContractView: View {
                         {
                             test1 in
                             
-                            NavigationLink(destination: EditContract(appContract: test1).onAppear {
+                            NavigationLink(destination: EditContract(appContract: test1, dataHandler: dataHandler).onAppear {
                                 
                             }) {
                                 

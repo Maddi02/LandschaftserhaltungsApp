@@ -38,9 +38,8 @@ struct MainSideView:  View {
                                 .background(Color.gray.opacity(0.5))
                                 
                                 .simultaneousGesture(TapGesture().onEnded{
-                                    dataHandler.getEntrys()
+             
                                     dataHandler.sortByDateASC()
-
                                 })
                             
                             NavigationLink(destination: ExpiredContractView()) {
