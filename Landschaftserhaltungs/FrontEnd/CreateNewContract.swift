@@ -18,6 +18,7 @@ struct CreateNewContract : View
     @State private var firstName  = String()
     @StateObject var newContractDataModel = NewContractDataModel()
     @StateObject var dataHandler = DataHandler()
+    @StateObject var appContract = AppContract()
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.dismiss) private var dismiss
     
@@ -122,7 +123,7 @@ struct CreateNewContract : View
             }.background(content: BackGroundGradient.getGradient)
             
         }.sheet(isPresented: $isShownPhotoLibrary){
-            ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
+            ImagePicker(appContract: appContract,  sourceType: .photoLibrary, selectedImage: self.$image)
 
         }
     }

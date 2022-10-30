@@ -84,7 +84,7 @@ struct EditContract: View {
                     
                     Section(header: Text("Karte mit Vertragsflächen")) {
                         
-                        Image(uiImage: self.image)
+                        Image(uiImage: appContract.picture ?? self.image)
                             .resizable()
                             .scaledToFit()
                             .frame(minWidth: 0, maxWidth: .infinity)
@@ -148,7 +148,7 @@ struct EditContract: View {
             }.background(content: BackGroundGradient.getGradient)
             
         }.sheet(isPresented: $isShownPhotoLibrary){
-            ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
+            ImagePicker(appContract: appContract, sourceType: .photoLibrary, selectedImage: self.$image)
             
         }
     }

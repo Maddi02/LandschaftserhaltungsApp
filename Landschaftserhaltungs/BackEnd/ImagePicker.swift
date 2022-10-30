@@ -11,7 +11,7 @@ import CoreData
 
 
 struct ImagePicker: UIViewControllerRepresentable {
-    
+    var appContract : AppContract
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @Binding var selectedImage: UIImage
 
@@ -22,11 +22,11 @@ struct ImagePicker: UIViewControllerRepresentable {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = sourceType
         imagePicker.delegate = context.coordinator
-        
+    
         return imagePicker
     }
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
-        
+        appContract.picture = selectedImage
     }
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -44,9 +44,11 @@ struct ImagePicker: UIViewControllerRepresentable {
             if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                 
                 parent.selectedImage = image
+              
             //    test.picture = image
             
             }
+           
             parent.presentationMode.wrappedValue.dismiss()
         }
     }
