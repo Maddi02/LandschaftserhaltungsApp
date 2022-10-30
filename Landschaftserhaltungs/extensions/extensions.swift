@@ -55,7 +55,7 @@ extension Date
         
         let year = date.getYearFromDate(date: date)
         
-        if(date.getDayFromDate(date: date) == 1 || (date.getMonthFromDate(date: date) == 1))
+        if(date.getDayFromDate(date: date) == 1 && (date.getMonthFromDate(date: date) == 1))
         {
             let firstOfNextYear = Calendar.current.date(from: DateComponents(year: year + 5, month: 1, day: 1))
             return Calendar.current.date(byAdding: .day, value: -1, to: firstOfNextYear ?? Date())!.toString()
