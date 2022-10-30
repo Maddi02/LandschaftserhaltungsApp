@@ -91,7 +91,6 @@ struct CreateNewContract : View
                     Section(header: Text("")) {
                         Button{
                             dataHandler.saveAll(image: self.image, firstName1: firstName, newContractDataModel : newContractDataModel)
-                            testSet()
                             dismiss()
                         }
                     label: {
@@ -128,11 +127,6 @@ struct CreateNewContract : View
         }
     }
     
-    public func testSet()
-    {
-        self.firstName = "dd"
-        
-    }
     
 
 }

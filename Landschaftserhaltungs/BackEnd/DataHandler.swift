@@ -39,6 +39,30 @@ class DataHandler : ObservableObject
     func updateContract(appContract : AppContract, contractDataModel : NewContractDataModel, image: UIImage){
 
         appContract.picture = image
+        
+        if(contractDataModel.street.isEmpty)
+        {
+            appContract.street = appContract.street
+        }
+        else{
+            appContract.street = appContract.street
+            appContract.street = contractDataModel.street
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         if(contractDataModel.lastName.isEmpty)
            {
             appContract.lastName = appContract.lastName
