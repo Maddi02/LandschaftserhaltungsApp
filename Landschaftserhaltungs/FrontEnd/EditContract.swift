@@ -83,7 +83,7 @@ struct EditContract: View {
                     }
                     
                     Section(header: Text("Karte mit Vertragsflächen")) {
-                        Image(uiImage: self.image)
+                        Image(uiImage: appContract.picture ?? UIImage())
                             .resizable()
                             .scaledToFit()
                             .frame(minWidth: 0, maxWidth: .infinity)
@@ -109,7 +109,7 @@ struct EditContract: View {
                     }
                     Section(header: Text("")) {
                         Button{
-                            dataHandler.updateContract(appContract: appContract, contractDataModel: newContractDataModel)
+                            dataHandler.updateContract(appContract: appContract, contractDataModel: newContractDataModel, image: self.image)
                             dataHandler.fetchAppContract()
                             presentationMode.wrappedValue.dismiss()
                         }

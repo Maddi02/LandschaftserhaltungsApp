@@ -13,7 +13,6 @@ class DataHandler : ObservableObject
     
     private var newContractDataModel = NewContractDataModel()
     private var context = CoreDataManager.shared.persistentContainer.viewContext
-    let fetchUser: NSFetchRequest<AppContract> = AppContract.fetchRequest()
     let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
     @Published var appContractListSortedByDate: [AppContract] = []
     @Published var appContractList: [AppContract] = []
@@ -29,15 +28,17 @@ class DataHandler : ObservableObject
     {
         print("Fetching")
         do {
-            appContractList = try context.fetch(request)        }
+            appContractList = try context.fetch(request)
+            
+        }
         catch {
             // Handle Error
         }
     }
     
-    func updateContract(appContract : AppContract, contractDataModel : NewContractDataModel){
+    func updateContract(appContract : AppContract, contractDataModel : NewContractDataModel, image: UIImage){
 
-        
+        appContract.picture = image
         if(contractDataModel.lastName.isEmpty)
            {
             appContract.lastName = appContract.lastName
@@ -54,13 +55,7 @@ class DataHandler : ObservableObject
             appContract.firstName = appContract.firstName
             appContract.firstName = contractDataModel.firstName
         }
-        
-        
-        
-        
-        
-        
-    
+
         do {
             try context.save()
         }
