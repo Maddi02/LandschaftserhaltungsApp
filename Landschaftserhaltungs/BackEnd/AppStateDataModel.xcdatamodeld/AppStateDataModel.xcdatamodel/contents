@@ -13,6 +13,7 @@
         <attribute name="operationNumber" optional="YES" attributeType="String"/>
         <attribute name="particularities" optional="YES" attributeType="String"/>
         <attribute name="picture" optional="YES" attributeType="Transformable" valueTransformerName="UIImageTransformer" customClassName="UIImage"/>
+        <attribute name="plz" optional="YES" attributeType="String"/>
         <attribute name="plzName" optional="YES" attributeType="String"/>
         <attribute name="street" optional="YES" attributeType="String"/>
     </entity>

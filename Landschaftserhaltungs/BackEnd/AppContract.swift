@@ -27,6 +27,7 @@ class AppContract : NSManagedObject {
     @NSManaged public var operationNumber : String?
     @NSManaged public var particularities : String?
     @NSManaged public var plzName : String?
+    @NSManaged public var plz : String?
     @NSManaged public var street : String?
     @NSManaged public var mobile: String?
     @NSManaged public var contractTermination : Date?

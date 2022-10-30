@@ -35,18 +35,31 @@ class DataHandler : ObservableObject
         }
     }
     
-    func upi(appContract : AppContract, contractDataModel : NewContractDataModel){
+    func updateContract(appContract : AppContract, contractDataModel : NewContractDataModel){
 
         
         if(contractDataModel.lastName.isEmpty)
            {
             appContract.lastName = appContract.lastName
-            
-        }
+           }
         else{
             appContract.lastName = appContract.lastName
             appContract.lastName = contractDataModel.lastName
         }
+        if(contractDataModel.firstName.isEmpty)
+           {
+            appContract.firstName = appContract.firstName
+           }
+        else{
+            appContract.firstName = appContract.firstName
+            appContract.firstName = contractDataModel.firstName
+        }
+        
+        
+        
+        
+        
+        
     
         do {
             try context.save()

@@ -58,7 +58,7 @@ struct ManageContractView: View {
                                     {
                                         test1 in
     
-                                        NavigationLink(destination: EditContract(appContract: test1, dataHandler: dataHandler)) {
+                                        NavigationLink(destination: EditContract(appContract: test1, dataHandler: dataHandler, contractTerminatation: test1.contractTermination ?? Date())) {
                                            
                                             ContractListItem(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName , operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: test1.contractTermination?.getEndOfContract(date: test1.contractTermination ?? Date()) ?? Date().toString() , image: test1.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
                                             
