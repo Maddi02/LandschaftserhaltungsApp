@@ -36,9 +36,10 @@ class DataHandler : ObservableObject
         }
     }
     
-    func updateContract(appContract : AppContract, contractDataModel : NewContractDataModel, image: UIImage){
+    func updateContract(appContract : AppContract, contractDataModel : NewContractDataModel, image: UIImage, contractTermination : Date){
 
         appContract.picture = image
+        appContract.contractTermination = contractTermination
         
         if(contractDataModel.street.isEmpty)
         {
@@ -48,6 +49,91 @@ class DataHandler : ObservableObject
             appContract.street = appContract.street
             appContract.street = contractDataModel.street
         }
+        
+        if(contractDataModel.PLZName.isEmpty)
+        {
+            appContract.plzName = appContract.plzName
+        }
+        else{
+            appContract.plzName = appContract.plzName
+            appContract.plzName = contractDataModel.PLZName
+        }
+        
+        if(contractDataModel.PLZ.isEmpty)
+        {
+            appContract.plz = appContract.plz
+        }
+        else{
+            appContract.plz = appContract.plz
+            appContract.plz = contractDataModel.PLZ
+        }
+        
+        if(contractDataModel.country.isEmpty)
+        {
+            appContract.country = appContract.country
+        }
+        else{
+            appContract.country = appContract.country
+            appContract.country = contractDataModel.country
+        }
+
+        
+        if(contractDataModel.mobile.isEmpty)
+        {
+            appContract.mobile = appContract.mobile
+        }
+        else{
+            appContract.mobile = appContract.mobile
+            appContract.mobile = contractDataModel.mobile
+        }
+        if(contractDataModel.operationNumber.isEmpty)
+        {
+            appContract.operationNumber = appContract.operationNumber
+        }
+        else{
+            appContract.operationNumber = appContract.operationNumber
+            appContract.operationNumber = contractDataModel.operationNumber
+        }
+        
+        if(contractDataModel.contractPurpose.isEmpty)
+        {
+            appContract.contractPurpose = appContract.contractPurpose
+        }
+        else{
+            appContract.contractPurpose = appContract.contractPurpose
+            appContract.contractPurpose = contractDataModel.contractPurpose
+        }
+        
+        if(contractDataModel.measures.isEmpty)
+        {
+            appContract.measures = appContract.measures
+        }
+        else{
+            appContract.measures = appContract.measures
+            appContract.measures = contractDataModel.measures
+        }
+        
+        if(contractDataModel.managementRequirements.isEmpty)
+        {
+            appContract.managementRequirements = appContract.managementRequirements
+        }
+        else{
+            appContract.managementRequirements = appContract.managementRequirements
+            appContract.managementRequirements = contractDataModel.managementRequirements
+        }
+        
+        if(contractDataModel.particularities.isEmpty)
+        {
+            appContract.particularities = appContract.particularities
+        }
+        else{
+            appContract.particularities = appContract.particularities
+            appContract.particularities = contractDataModel.particularities
+        }
+
+
+        
+        
         
         
         

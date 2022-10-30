@@ -110,7 +110,7 @@ struct EditContract: View {
                     }
                     Section(header: Text("")) {
                         Button{
-                            dataHandler.updateContract(appContract: appContract, contractDataModel: newContractDataModel, image: self.image)
+                            dataHandler.updateContract(appContract: appContract, contractDataModel: newContractDataModel, image: self.image, contractTermination: self.contractTerminatation)
                             dataHandler.fetchAppContract()
                             presentationMode.wrappedValue.dismiss()
                         }
