@@ -83,7 +83,8 @@ struct EditContract: View {
                     }
                     
                     Section(header: Text("Karte mit Vertragsflächen")) {
-                        Image(uiImage: appContract.picture ?? UIImage())
+                        
+                        Image(uiImage: self.image)
                             .resizable()
                             .scaledToFit()
                             .frame(minWidth: 0, maxWidth: .infinity)
