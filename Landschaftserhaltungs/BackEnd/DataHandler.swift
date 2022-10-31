@@ -16,13 +16,30 @@ class DataHandler : ObservableObject
     let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
     @Published var appContractListSortedByDate: [AppContract] = []
     @Published var appContractList: [AppContract] = []
+    @Published var filter : FilterType = .deadline
+    enum FilterType{
+        case none, date, deadline
+    }
     
-    
+
+
     init()
     {
       fetchAppContract()
     }
     
+     var filteredContracts: [AppContract]{
+        switch filter {
+        case .none:
+            print("None")
+            return appContractList
+        case .date:
+            print("Date")
+            return appContractListSortedByDate
+        case .deadline:
+            return appContractList
+        }
+    }
     
      func fetchAppContract()
     {

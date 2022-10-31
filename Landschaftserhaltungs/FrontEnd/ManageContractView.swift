@@ -11,22 +11,54 @@ import Foundation
 import SwiftUI
 import MapKit
 
+struct SheetView: View {
+
+    @Environment(\.dismiss) var dismiss
+    @ObservedObject  var dataHandler : DataHandler
+    var body: some View {
+        Text("Wähle die Sortierung aus").font(.title).padding()
+        List {
+           
+                Button("zuletzt hinzugefügt") {
+                    dataHandler.filter = .none
+                    dismiss()
+                }
+                Button("bald auslaufende Verträge") {
+                    dataHandler.filter = .date
+                    dismiss()
+                }
+                Button("nach Fristen") {
+                    
+                    dataHandler.filter = .none
+                    dismiss()
+                }
+                Button("Press to dismiss") {
+                    dismiss()
+                }
+                
+                
+            }
+        
+        
+       
+    }
+}
+
+
+
+
+
 struct ManageContractView: View {
     let formatter = DateFormatter()
     let date = Date()
     @ObservedObject private var dataHandler = DataHandler()
-    
+    @State private var showingSheet = false
     @Environment(\.managedObjectContext) var moc
     @State private var showingAlert = false
     @State static private var delteOK = false
     @State private var showingNavView = false
     @State private var test = [AppContract]()
   
-    enum FilterType{
-        case none, date, deadline
-    }
-    
-    @State var filter : FilterType = .date
 
 
     
@@ -50,7 +82,10 @@ struct ManageContractView: View {
   
             Text("Verträge Verwaltung").font(.title2)
             Button("Button title") {
-                filter = .none
+                showingSheet.toggle()
+                
+            }.sheet(isPresented: $showingSheet) {
+                SheetView(dataHandler: dataHandler)
             }
                 GeometryReader { geometry in
                     ScrollView()
@@ -59,7 +94,7 @@ struct ManageContractView: View {
                             
                                 List {
                                     
-                                    ForEach(filteredContracts, id: \.self)
+                                    ForEach(dataHandler.filteredContracts, id: \.self)
                                     {
                                         test1 in
     
@@ -96,17 +131,7 @@ struct ManageContractView: View {
         }
     }
 
-    var filteredContracts: [AppContract]{
-        switch filter {
-        case .none:
-            return dataHandler.appContractList
-        case .date:
-      
-            return dataHandler.appContractListSortedByDate
-        case .deadline:
-            return dataHandler.appContractList
-        }
-    }
+
     
     func delete(at offsets : IndexSet )
     {
