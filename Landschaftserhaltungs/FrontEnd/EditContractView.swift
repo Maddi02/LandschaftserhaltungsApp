@@ -17,7 +17,9 @@ struct EditContractView: View {
     var manageContractView = ManageContractView()
     @State  var contractTerminatation : Date
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
+
+    @State private var message = "ourehgf8re9"
+    @State private var textStyle = UIFont.TextStyle.body
     
     
     var body: some View {
@@ -29,11 +31,28 @@ struct EditContractView: View {
                     Section(header: Text("Vertragsnehmer")) {
                         
                         Section(header: Text("Vorname")) {
-                            TextField(appContract.lastName , text: $newContractDataModel.lastName)
+                         
+                            HStack {
+                                HStack {
+                                    Text("Version")
+                                    Spacer()
+                                    
+                                }
+                                    
+                                    HStack {
+                                        Text("")
+                                        Spacer()
+                                        TextField(appContract.firstName ?? "unknown" , text: $newContractDataModel.firstName,axis: .vertical)
+                                        TextView(text: $message, textStyle: $textStyle)
+                                            .padding(.horizontal)
+                                    }
+                                }
+                            
+                            
+                           
                         }
                         Section(header: Text("Nachname")) {
                             TextField(appContract.firstName ?? "unknown" , text: $newContractDataModel.firstName)
-                            
                         }
                     }
                     Section(header: Text("Kontakt-Adresse")) {

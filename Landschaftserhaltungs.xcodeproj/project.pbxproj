@@ -12,6 +12,7 @@
 		2239595929044A6A00D5F38E /* AppContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239595829044A6A00D5F38E /* AppContract.swift */; };
 		2239595B290452A600D5F38E /* UIImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239595A290452A600D5F38E /* UIImageTransformer.swift */; };
 		2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239595E2907DDCD00D5F38E /* ContractListItem.swift */; };
+		223BB34D29103C490064927A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB34C29103C490064927A /* TextView.swift */; };
 		22455CF628FF03BC002876AD /* CreateNewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455CF528FF03BC002876AD /* CreateNewContract.swift */; };
 		22455CF828FF2794002876AD /* ExpiredContractView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455CF728FF2794002876AD /* ExpiredContractView.swift */; };
 		22455CFA28FF27B5002876AD /* ManageContractView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455CF928FF27B5002876AD /* ManageContractView.swift */; };
@@ -60,6 +61,7 @@
 		2239595829044A6A00D5F38E /* AppContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContract.swift; sourceTree = "<group>"; };
 		2239595A290452A600D5F38E /* UIImageTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageTransformer.swift; sourceTree = "<group>"; };
 		2239595E2907DDCD00D5F38E /* ContractListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractListItem.swift; sourceTree = "<group>"; };
+		223BB34C29103C490064927A /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		22455CF528FF03BC002876AD /* CreateNewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewContract.swift; sourceTree = "<group>"; usesTabs = 0; };
 		22455CF728FF2794002876AD /* ExpiredContractView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiredContractView.swift; sourceTree = "<group>"; };
 		22455CF928FF27B5002876AD /* ManageContractView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageContractView.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 		224F462528FD8555004EA74F /* FrontEnd */ = {
 			isa = PBXGroup;
 			children = (
+				223BB34C29103C490064927A /* TextView.swift */,
 				221AC67C290D150B00993F52 /* BackgroundLinearGradient.swift */,
 				224F462728FDFC99004EA74F /* MainSideView.swift */,
 				22455CF528FF03BC002876AD /* CreateNewContract.swift */,
@@ -366,6 +369,7 @@
 				22455CFA28FF27B5002876AD /* ManageContractView.swift in Sources */,
 				224F45FE28FD80E7004EA74F /* OnboardingFlowView.swift in Sources */,
 				2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */,
+				223BB34D29103C490064927A /* TextView.swift in Sources */,
 				22455D122900A869002876AD /* CoreDataManager.swift in Sources */,
 				224F463328FE07D8004EA74F /* DoneOverview.swift in Sources */,
 				221AC67D290D150B00993F52 /* BackgroundLinearGradient.swift in Sources */,
