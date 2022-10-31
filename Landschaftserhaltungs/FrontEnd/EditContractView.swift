@@ -7,7 +7,7 @@
 
 import SwiftUI
 import CoreData
-struct EditContract: View {
+struct EditContractView: View {
     
     var appContract : AppContract
     var dataHandler : DataHandler

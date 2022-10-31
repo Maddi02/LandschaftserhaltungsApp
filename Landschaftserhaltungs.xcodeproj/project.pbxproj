@@ -34,7 +34,7 @@
 		224F463328FE07D8004EA74F /* DoneOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F463228FE07D8004EA74F /* DoneOverview.swift */; };
 		224F463528FE1443004EA74F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F463428FE1443004EA74F /* AppState.swift */; };
 		224F463828FE1BE2004EA74F /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F463728FE1BE2004EA74F /* extensions.swift */; };
-		2252D321290868FF00568A1A /* EditContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252D320290868FF00568A1A /* EditContract.swift */; };
+		2252D321290868FF00568A1A /* EditContractView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252D320290868FF00568A1A /* EditContractView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +85,7 @@
 		224F463228FE07D8004EA74F /* DoneOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneOverview.swift; sourceTree = "<group>"; };
 		224F463428FE1443004EA74F /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		224F463728FE1BE2004EA74F /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
-		2252D320290868FF00568A1A /* EditContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContract.swift; sourceTree = "<group>"; };
+		2252D320290868FF00568A1A /* EditContractView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContractView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +180,7 @@
 				22455CF728FF2794002876AD /* ExpiredContractView.swift */,
 				2239595E2907DDCD00D5F38E /* ContractListItem.swift */,
 				22455CF928FF27B5002876AD /* ManageContractView.swift */,
-				2252D320290868FF00568A1A /* EditContract.swift */,
+				2252D320290868FF00568A1A /* EditContractView.swift */,
 				224F462928FE014B004EA74F /* Onboarding */,
 			);
 			path = FrontEnd;
@@ -373,7 +373,7 @@
 				22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */,
 				224F462F28FE06CD004EA74F /* SecondFeatureOverview.swift in Sources */,
 				2239595B290452A600D5F38E /* UIImageTransformer.swift in Sources */,
-				2252D321290868FF00568A1A /* EditContract.swift in Sources */,
+				2252D321290868FF00568A1A /* EditContractView.swift in Sources */,
 				2239595929044A6A00D5F38E /* AppContract.swift in Sources */,
 				224F463828FE1BE2004EA74F /* extensions.swift in Sources */,
 				224F462D28FE06BB004EA74F /* FirstFeatureOverview.swift in Sources */,

@@ -18,7 +18,6 @@ struct SheetView: View {
     var body: some View {
         Text("Wähle die Sortierung aus").font(.title).padding()
         List {
-           
                 Button("zuletzt hinzugefügt") {
                     dataHandler.filter = .none
                     dismiss()
@@ -35,12 +34,7 @@ struct SheetView: View {
                 Button("Press to dismiss") {
                     dismiss()
                 }
-                
-                
             }
-        
-        
-       
     }
 }
 
@@ -77,60 +71,64 @@ struct ManageContractView: View {
      }
     
     var body: some View {
-  
+        
         VStack(alignment: .leading){
-  
             Text("Verträge Verwaltung").font(.title2)
-            Button("Button title") {
+            
+            Button {
                 showingSheet.toggle()
                 
-            }.sheet(isPresented: $showingSheet) {
-                SheetView(dataHandler: dataHandler)
-            }
-                GeometryReader { geometry in
-                    ScrollView()
-                    {
+            }label: {
+                Image(systemName: "line.3.horizontal.decrease.circle")
+                
+            }.frame(maxWidth: .infinity, alignment: .trailing).padding(.trailing, 30)
+                .sheet(isPresented: $showingSheet) {
+                    SheetView(dataHandler: dataHandler)
                     
-                            
-                                List {
-                                    
-                                    ForEach(dataHandler.filteredContracts, id: \.self)
-                                    {
-                                        test1 in
-    
-                                        NavigationLink(destination: EditContract(appContract: test1, dataHandler: dataHandler, contractTerminatation: test1.contractTermination ?? Date())) {
-                                           
-                                            ContractListItem(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName , operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: test1.contractTermination?.getEndOfContract(date: test1.contractTermination ?? Date()) ?? Date().toString() , image: test1.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
-                                            
-                                        }.frame(maxWidth: .infinity)
-                                    
-                                        
-                                    } .onDelete(perform: delete).alert("Vertrag wurde gelöscht", isPresented: $showingAlert) {
-                                
-                                    }
-                                    
-                                }.frame(
-                                    minWidth: 0,
-                                    maxWidth: .infinity,
-                                    minHeight: 0,
-                                    maxHeight: .infinity,
-                                    alignment: .topLeading
-                                ).ignoresSafeArea(.all)
-                                    
+                }.frame(alignment: .trailing)
+            GeometryReader { geometry in
+                ScrollView()
+                {
+                    
+                    
+                    List {
                         
-                    .frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
-                      //  .fullBackground(imageName: "NatureLaunch")
-              
+                        ForEach(dataHandler.filteredContracts, id: \.self)
+                        {
+                            test1 in
+                            
+                            NavigationLink(destination: EditContractView(appContract: test1, dataHandler: dataHandler, contractTerminatation: test1.contractTermination ?? Date())) {
+                                
+                                ContractListItem(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName , operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: test1.contractTermination?.getEndOfContract(date: test1.contractTermination ?? Date()) ?? Date().toString() , image: test1.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
+                                
+                            }.frame(maxWidth: .infinity)
+                            
+                            
+                        } .onDelete(perform: delete).alert("Vertrag wurde gelöscht", isPresented: $showingAlert) {
+                            
+                        }
+                        
+                    }.frame(
+                        minWidth: 0,
+                        maxWidth: .infinity,
+                        minHeight: 0,
+                        maxHeight: .infinity,
+                        alignment: .topLeading
+                    ).ignoresSafeArea(.all)
+                    
+                    
+                        .frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
+                    //  .fullBackground(imageName: "NatureLaunch")
+                    
                 }.refreshable {
                     
                     dataHandler.fetchAppContract()
                 }
-
-            
+                
+                
             }.frame(maxWidth: .infinity)
         }
     }
-
 
     
     func delete(at offsets : IndexSet )
