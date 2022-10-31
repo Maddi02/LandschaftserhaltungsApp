@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct ContractListItem: View {
+    
+
+
+    
     var firstName: String
     var lastName: String
     var operationNumber: String
     var contractTermination: String
     var endOfContract: String
     var image : UIImage
+    
     var body: some View {
         
         HStack(){
@@ -45,6 +50,8 @@ struct ContractListItem: View {
         self.endOfContract = endOfContract
         self.image = image
     }
+    
+
 }
 
 struct ContractListItem_Preview: PreviewProvider{

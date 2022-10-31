@@ -22,11 +22,12 @@ struct ManageContractView: View {
     @State private var showingNavView = false
     @State private var test = [AppContract]()
   
-    
-    init()
-    {
-        // dataHandler.getEntrys()
+    enum FilterType{
+        case none, date, deadline
     }
+    
+    let filter : FilterType = .date
+
 
     
     static func aa()
@@ -54,7 +55,7 @@ struct ManageContractView: View {
                             
                                 List {
                                     
-                                    ForEach(dataHandler.appContractList, id: \.self)
+                                    ForEach(filteredContracts, id: \.self)
                                     {
                                         test1 in
     
@@ -91,6 +92,17 @@ struct ManageContractView: View {
         }
     }
 
+    var filteredContracts: [AppContract]{
+        switch filter {
+        case .none:
+            return dataHandler.appContractList
+        case .date:
+      
+            return dataHandler.appContractListSortedByDate
+        case .deadline:
+            return dataHandler.appContractList
+        }
+    }
     
     func delete(at offsets : IndexSet )
     {

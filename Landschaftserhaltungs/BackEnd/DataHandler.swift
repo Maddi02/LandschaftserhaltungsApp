@@ -29,6 +29,7 @@ class DataHandler : ObservableObject
         print("Fetching")
         do {
             appContractList = try context.fetch(request)
+            appContractListSortedByDate =  sortByDateASC()
             
         }
         catch {
@@ -131,24 +132,6 @@ class DataHandler : ObservableObject
             appContract.particularities = contractDataModel.particularities
         }
 
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         if(contractDataModel.lastName.isEmpty)
            {
             appContract.lastName = appContract.lastName
