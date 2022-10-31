@@ -26,7 +26,7 @@ struct ManageContractView: View {
         case none, date, deadline
     }
     
-    let filter : FilterType = .date
+    @State var filter : FilterType = .date
 
 
     
@@ -47,7 +47,11 @@ struct ManageContractView: View {
     var body: some View {
   
         VStack(alignment: .leading){
+  
             Text("Verträge Verwaltung").font(.title2)
+            Button("Button title") {
+                filter = .none
+            }
                 GeometryReader { geometry in
                     ScrollView()
                     {
