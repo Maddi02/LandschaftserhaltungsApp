@@ -11,11 +11,11 @@ class AppState: ObservableObject
 {
     
     @Published  var hasOnboarded : Bool = false
-
+    
     init(hasOnboarded: Bool)
     {
         self.hasOnboarded = hasOnboarded
-
+        
     }
     
 }

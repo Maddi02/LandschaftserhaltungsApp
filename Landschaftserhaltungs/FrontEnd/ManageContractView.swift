@@ -18,26 +18,6 @@ struct ManageContractView: View {
     @State private var showingSheet = false
     @Environment(\.managedObjectContext) var moc
     @State private var showingAlert = false
-    @State static private var delteOK = false
-    @State private var showingNavView = false
-    @State private var test = [AppContract]()
-  
-
-
-    
-    static func aa()
-    {
-        
-        delteOK.toggle()
-        print("HHHHH")
-    }
-    
-    public  var buttonAction: ()->Void {
-         {
-             print("Button tapped!!")
-             dataHandler.fetchAppContract()
-         }
-     }
     
     var body: some View {
         
@@ -64,11 +44,11 @@ struct ManageContractView: View {
                         
                         ForEach(dataHandler.filteredContracts, id: \.self)
                         {
-                            test1 in
+                            filteredContracts in
                             
-                            NavigationLink(destination: EditContractView(appContract: test1, dataHandler: dataHandler, contractTerminatation: test1.contractTermination ?? Date() )) {
+                            NavigationLink(destination: EditContractView(appContract: filteredContracts, contractTerminatation: filteredContracts.contractTermination ?? Date(), dataHandler: dataHandler )) {
                                 
-                                ContractListItem(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName , operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: test1.contractTermination?.getEndOfContract(date: test1.contractTermination ?? Date()) ?? Date().toString() , image: test1.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
+                                ContractListItem(firstName: filteredContracts.firstName ?? "Unknown", lastName: filteredContracts.lastName , operationNumber: filteredContracts.operationNumber ?? "Unknown", contractTermination:  filteredContracts.contractTermination?.toString() ?? Date().toString(), endOfContract: filteredContracts.contractTermination?.getEndOfContract(date: filteredContracts.contractTermination ?? Date()) ?? Date().toString() , image: filteredContracts.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
                                 
                             }.frame(maxWidth: .infinity)
                             
@@ -84,10 +64,7 @@ struct ManageContractView: View {
                         maxHeight: .infinity,
                         alignment: .topLeading
                     ).ignoresSafeArea(.all)
-                    
-                    
                         .frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
-                    //  .fullBackground(imageName: "NatureLaunch")
                     
                 }.refreshable {
                     
@@ -98,31 +75,25 @@ struct ManageContractView: View {
             }.frame(maxWidth: .infinity)
         }
     }
-
+    
     
     func delete(at offsets : IndexSet )
     {
         showingAlert = true
-
+        for offset in offsets{
+            let item = dataHandler.appContractList[offset]
+            dataHandler.appContractList.remove(atOffsets: offsets)
+            moc.delete(item)
             
-           
-            for offset in offsets{
-                let item = dataHandler.appContractList[offset]
-                dataHandler.appContractList.remove(atOffsets: offsets)
-                moc.delete(item)
+            
+            do{
+                try moc.save()
                 
                 
-                do{
-                    try moc.save()
-                    
-                    
-                } catch{
-                    
-                }
-      
+            } catch{
+                
+            }
         }
-
-   
     }
 }
 

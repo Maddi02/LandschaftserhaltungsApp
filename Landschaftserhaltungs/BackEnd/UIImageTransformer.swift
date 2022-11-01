@@ -33,7 +33,7 @@ class UIImageTransformer: ValueTransformer {
         
         do{
             let image = try NSKeyedUnarchiver.unarchivedObject(ofClass: UIImage.self, from: data)
-             return image
+            return image
         } catch{
             return nil
         }

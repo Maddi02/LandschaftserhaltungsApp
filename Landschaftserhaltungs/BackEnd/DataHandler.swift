@@ -21,47 +21,42 @@ class DataHandler : ObservableObject
         case none, date, deadline
     }
     
-
-
+    
+    
     init()
     {
-      fetchAppContract()
+        fetchAppContract()
     }
     
-     var filteredContracts: [AppContract]{
+    var filteredContracts: [AppContract]{
         switch filter {
         case .none:
-            print("None")
             return appContractList
         case .date:
-            print("Date")
             return appContractListSortedByDate
         case .deadline:
             return appContractList
         }
     }
     
-     func fetchAppContract()
+    func fetchAppContract()
     {
-        print("Fetching")
-   
-        
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false)
-            { _ in
-                do {
-                    self.appContractList = try self.context.fetch(self.request)
-                    self.appContractListSortedByDate =  self.sortByDateASC()
-                }
-                catch {
-                    // Handle Error
-                }
+        { _ in
+            do {
+                self.appContractList = try self.context.fetch(self.request)
+                self.appContractListSortedByDate =  self.sortByDateASC()
             }
-               
-             
-            
+            catch {
+                // Handle Error
+            }
+        }
         
-            
-       
+        
+        
+        
+        
+        
     }
     
     func test(appContract : AppContract) -> UIImage
@@ -110,7 +105,7 @@ class DataHandler : ObservableObject
             appContract.country = appContract.country
             appContract.country = contractDataModel.country
         }
-
+        
         
         if(contractDataModel.mobile.isEmpty)
         {
@@ -164,24 +159,24 @@ class DataHandler : ObservableObject
             appContract.particularities = appContract.particularities
             appContract.particularities = contractDataModel.particularities
         }
-
+        
         if(contractDataModel.lastName.isEmpty)
-           {
+        {
             appContract.lastName = appContract.lastName
-           }
+        }
         else{
             appContract.lastName = appContract.lastName
             appContract.lastName = contractDataModel.lastName
         }
         if(contractDataModel.firstName.isEmpty)
-           {
+        {
             appContract.firstName = appContract.firstName
-           }
+        }
         else{
             appContract.firstName = appContract.firstName
             appContract.firstName = contractDataModel.firstName
         }
-
+        
         do {
             try context.save()
         }
@@ -190,12 +185,12 @@ class DataHandler : ObservableObject
         }
     }
     
-
+    
     public func getEntrys() -> Array<AppContract> {
         do{
             appContractList = try context.fetch(request)
             return appContractList
-        
+            
         }
         
         catch{

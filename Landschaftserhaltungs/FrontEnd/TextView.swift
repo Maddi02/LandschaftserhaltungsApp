@@ -40,13 +40,13 @@ struct TextView: UIViewRepresentable {
     
     class Coordinator: NSObject, UITextViewDelegate {
         var text: Binding<String>
-
+        
         init(_ text: Binding<String>) {
             self.text = text
         }
         
         func textViewDidChange(_ textView: UITextView) {
-         
+            
             self.text.wrappedValue = textView.text
         }
     }

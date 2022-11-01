@@ -9,37 +9,37 @@ import Foundation
 import SwiftUI
 public extension View {
     func fullBackground(imageName: String) -> some View {
-       return background(
-                Image(imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
-       )
+        return background(
+            Image(imageName)
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+        )
     }
 }
 extension Date
 {
     init(_ dateString:String) {
-            let dateStringFormatter = DateFormatter()
-            dateStringFormatter.dateFormat = "dd-MM-yyyy"
-            dateStringFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
-            let date = dateStringFormatter.date(from: dateString)!
-            self.init(timeInterval:0, since:date)
-        }
+        let dateStringFormatter = DateFormatter()
+        dateStringFormatter.dateFormat = "dd-MM-yyyy"
+        dateStringFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
+        let date = dateStringFormatter.date(from: dateString)!
+        self.init(timeInterval:0, since:date)
+    }
     
     
     func getYearFromDate(date : Date) -> Int
     {
         let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: date)
         return calendarDate.year!
-
+        
     }
     
     func getMonthFromDate(date : Date) -> Int
     {
         let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: date)
         return calendarDate.month!
-
+        
     }
     
     
@@ -47,7 +47,7 @@ extension Date
     {
         let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: date)
         return calendarDate.day!
-
+        
     }
     
     func getEndOfContract(date : Date)-> String
@@ -61,11 +61,9 @@ extension Date
             return Calendar.current.date(byAdding: .day, value: -1, to: firstOfNextYear ?? Date())!.toString()
             
         }
-        print("Could work ")
-  
         let firstOfNextYear = Calendar.current.date(byAdding: .year, value: 5, to: date )!
         return Calendar.current.date(byAdding: .day, value: -1, to: firstOfNextYear )!.toString()
-       
+        
     }
     
     
@@ -127,7 +125,7 @@ extension Date
     }
     
     
-   func getLastYear() -> Date
+    func getLastYear() -> Date
     {
         var lastOfYear = Date()
         
@@ -136,10 +134,8 @@ extension Date
         if let firstOfNextYear = Calendar.current.date(from: DateComponents(year: year + 1, month: 1, day: 1)) {
             // Get the last day of the current year
             lastOfYear = Calendar.current.date(byAdding: .day, value: -1, to: firstOfNextYear)!
-            print("HALLLLLOOOOO \(lastOfYear.toString())")
             return lastOfYear
         }
-        print("HALLLLLOOOOO \(lastOfYear.toString())")
         return Date()
     }
     
@@ -220,7 +216,7 @@ extension Color {
     }
 }
 extension Binding {
-     func toUnwrapped<T>(defaultValue: T) -> Binding<T> where Value == Optional<T>  {
+    func toUnwrapped<T>(defaultValue: T) -> Binding<T> where Value == Optional<T>  {
         Binding<T>(get: { self.wrappedValue ?? defaultValue }, set: { self.wrappedValue = $0 })
     }
 }

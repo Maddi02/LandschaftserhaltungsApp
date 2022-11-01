@@ -9,9 +9,6 @@ import Foundation
 import SwiftUI
 class BackGroundGradient
 {
-    
-    
-    
     public static func getGradient() -> LinearGradient{
         
         let gradient = Gradient(colors: [
@@ -23,8 +20,4 @@ class BackGroundGradient
         return LinearGradient(gradient: gradient, startPoint: .topLeading, endPoint: .bottomTrailing)
         
     }
-
-    
-    
-    
 }

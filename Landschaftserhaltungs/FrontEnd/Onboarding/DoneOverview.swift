@@ -17,8 +17,6 @@ struct DoneOverview: View {
                 UserDefaults.standard.set(appState.hasOnboarded, forKey: "onBoarded")
             }
         }
-      
-        
     }
 }
 

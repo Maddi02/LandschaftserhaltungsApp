@@ -11,7 +11,7 @@ import UIKit
 
 @objc(AppContract)
 class AppContract : NSManagedObject {
-   
+    
     @nonobjc public class func fetchRequest() -> NSFetchRequest<AppContract>{
         return NSFetchRequest<AppContract>(entityName: "AppContract")
     }

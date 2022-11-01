@@ -31,13 +31,13 @@ struct ExpiredContractView: View {
                         
                         ForEach(appContractListASC, id: \.self)
                         {
-                            test1 in
+                            appContractListASC in
                             
-                            NavigationLink(destination: EditContractView(appContract: test1, dataHandler: dataHandler, contractTerminatation: test1.contractTermination ?? Date()).onAppear {
+                            NavigationLink(destination: EditContractView(appContract: appContractListASC, contractTerminatation: appContractListASC.contractTermination ?? Date(), dataHandler: dataHandler).onAppear {
                                 
                             }) {
                                 
-                                ContractListItem(firstName: test1.firstName ?? "Unknown", lastName: test1.lastName , operationNumber: test1.operationNumber ?? "Unknown", contractTermination:  test1.contractTermination?.toString() ?? Date().toString(), endOfContract: Date().getLastYear().toString() , image: test1.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
+                                ContractListItem(firstName: appContractListASC.firstName ?? "Unknown", lastName: appContractListASC.lastName , operationNumber: appContractListASC.operationNumber ?? "Unknown", contractTermination:  appContractListASC.contractTermination?.toString() ?? Date().toString(), endOfContract: Date().getLastYear().toString() , image: appContractListASC.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
                                 
                             }.frame(maxWidth: .infinity)
                             
@@ -62,7 +62,7 @@ struct ExpiredContractView: View {
         }
     }
     
-
+    
     func delete(at offsets : IndexSet)
     {
         
@@ -78,8 +78,8 @@ struct ExpiredContractView: View {
                 
             }
         }
-
-   
+        
+        
     }
     
 }

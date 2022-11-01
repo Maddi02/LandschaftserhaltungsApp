@@ -22,11 +22,11 @@ struct CreateNewContract : View
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.dismiss) private var dismiss
     
-
-        var body : some View
+    
+    var body : some View
     {
-   
-
+        
+        
         NavigationView {
             GeometryReader { geo in
                 Form {
@@ -53,10 +53,10 @@ struct CreateNewContract : View
                         TextField("Maßnahmen", text: $newContractDataModel.measures,axis: .vertical)
                         TextField("Bewirtschaftungsauflagen", text: $newContractDataModel.managementRequirements,axis: .vertical)
                         
-                    
+                        
                         
                     }
-                
+                    
                     Section(header: Text("Besonderheiten"))
                     {
                         TextField("Besonderheiten", text: $newContractDataModel.particularities,axis: .vertical).frame(minHeight: 50)
@@ -95,7 +95,7 @@ struct CreateNewContract : View
                         }
                     label: {
                         HStack {
-                           
+                            
                             Text("Speichern")
                         }
                         .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
@@ -123,12 +123,12 @@ struct CreateNewContract : View
             
         }.sheet(isPresented: $isShownPhotoLibrary){
             ImagePicker(appContract: appContract,  sourceType: .photoLibrary, selectedImage: self.$image)
-
+            
         }
     }
     
     
-
+    
 }
 
 

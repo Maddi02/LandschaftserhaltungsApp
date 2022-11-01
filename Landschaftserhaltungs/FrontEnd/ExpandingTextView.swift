@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ExpandingTextView: View {
-    @State var text: String = " "
+    @Binding var text: String
     let minHeight: CGFloat = 150
     @State private var height: CGFloat?
 

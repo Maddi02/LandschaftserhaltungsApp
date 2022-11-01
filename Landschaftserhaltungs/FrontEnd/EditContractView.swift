@@ -10,50 +10,66 @@ import CoreData
 struct EditContractView: View {
     
     @State var appContract : AppContract
-    var dataHandler : DataHandler
+    
     @State private var isShownPhotoLibrary = false
     @State private var image = UIImage()
-    @StateObject var newContractDataModel = NewContractDataModel()
-    var manageContractView = ManageContractView()
     @State  var contractTerminatation : Date
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
     @State private var firstname = String()
     @State private var textStyle = UIFont.TextStyle.body
-
-    let minHeightContractNumber: CGFloat = 30
-    let minHeightContractPurpose: CGFloat = 30
-    let minHeightContractMeasures: CGFloat = 30
-    let minHeightContractManagementRequirements: CGFloat = 30
-    let minHeightContractParticularities: CGFloat = 30
-    let minHeightStreet: CGFloat = 30
     @State private var heightContractNumber: CGFloat?
     @State private var heightContractPurpose: CGFloat?
     @State private var heightContractMeasures: CGFloat?
     @State private var heightContractManagementRequirements: CGFloat?
     @State private var heightContractParticularities: CGFloat?
     @State private var heightStreet: CGFloat?
-
-
-
+    @State private var heightFirstName: CGFloat?
+    @State private var heightLastName: CGFloat?
+    @State private var heightLocation: CGFloat?
+    @StateObject var newContractDataModel = NewContractDataModel()
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    var dataHandler : DataHandler
+    var manageContractView = ManageContractView()
+    let minHeightContractNumber: CGFloat = 30
+    let minHeightContractPurpose: CGFloat = 30
+    let minHeightContractMeasures: CGFloat = 30
+    let minHeightContractManagementRequirements: CGFloat = 30
+    let minHeightContractParticularities: CGFloat = 30
+    let minHeightStreet: CGFloat = 30
+    let minHeightFirstName: CGFloat = 30
+    let minHeightLastName: CGFloat = 30
+    let minHeightLocation: CGFloat = 30
+    
+    
+    
+    
     private func textDidChangeContractNumber(_ textView: UITextView) {
-            self.heightContractNumber = max(textView.contentSize.height, minHeightContractNumber)
-        }
+        self.heightContractNumber = max(textView.contentSize.height, minHeightContractNumber)
+    }
     private func textDidChangeContractPurpose(_ textView: UITextView) {
-            self.heightContractPurpose = max(textView.contentSize.height, minHeightContractPurpose)
-        }
+        self.heightContractPurpose = max(textView.contentSize.height, minHeightContractPurpose)
+    }
     private func textDidChangeContractMeasures(_ textView: UITextView) {
-            self.heightContractMeasures = max(textView.contentSize.height, minHeightContractMeasures)
-        }
+        self.heightContractMeasures = max(textView.contentSize.height, minHeightContractMeasures)
+    }
     private func textDidChangeContractManagementRequirements(_ textView: UITextView) {
-            self.heightContractManagementRequirements = max(textView.contentSize.height, minHeightContractManagementRequirements)
-        }
+        self.heightContractManagementRequirements = max(textView.contentSize.height, minHeightContractManagementRequirements)
+    }
     private func textDidChangeContractParticularities(_ textView: UITextView) {
-            self.heightContractParticularities = max(textView.contentSize.height, minHeightContractParticularities)
-        }
+        self.heightContractParticularities = max(textView.contentSize.height, minHeightContractParticularities)
+    }
     private func textDidChangeStreet(_ textView: UITextView) {
-            self.heightStreet = max(textView.contentSize.height, minHeightStreet)
-        }
+        self.heightStreet = max(textView.contentSize.height, minHeightStreet)
+    }
+    private func textDidChangeFirstName(_ textView: UITextView) {
+        self.heightFirstName = max(textView.contentSize.height, minHeightFirstName)
+    }
+    private func textDidChangeLastName(_ textView: UITextView) {
+        self.heightLastName = max(textView.contentSize.height, minHeightLastName)
+    }
+    private func textDidChangeLocation(_ textView: UITextView) {
+        self.heightLocation = max(textView.contentSize.height, minHeightLocation)
+    }
     var body: some View {
         
         NavigationView {
@@ -71,7 +87,8 @@ struct EditContractView: View {
                             }
                             
                             HStack {
-                                TextView(text: $appContract.firstName.toUnwrapped(defaultValue: ""), textStyle: $textStyle)
+                                WrappedTextView(text: $appContract.firstName.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeFirstName)
+                                    .frame(height: heightFirstName ?? minHeightFirstName)
                             }
                             
                         }
@@ -82,7 +99,8 @@ struct EditContractView: View {
                                 
                             }
                             HStack {
-                                TextView(text: $appContract.lastName, textStyle: $textStyle)
+                                WrappedTextView(text: $appContract.lastName, textDidChange: self.textDidChangeLastName)
+                                    .frame(height: heightLastName ?? minHeightLastName)
                             }
                             
                         }
@@ -97,7 +115,7 @@ struct EditContractView: View {
                             }
                             HStack {
                                 WrappedTextView(text: $appContract.street.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeStreet(_:))
-                                            .frame(height: heightStreet ?? minHeightStreet)
+                                    .frame(height: heightStreet ?? minHeightStreet)
                             }
                             
                         }
@@ -109,7 +127,8 @@ struct EditContractView: View {
                                 
                             }
                             HStack {
-                                TextView(text: $appContract.plzName.toUnwrapped(defaultValue: ""), textStyle: $textStyle)
+                                WrappedTextView(text: $appContract.plzName.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeLocation)
+                                    .frame(height: heightLocation ?? minHeightLocation)
                             }
                             
                         }
@@ -176,7 +195,7 @@ struct EditContractView: View {
                             }
                             HStack {
                                 WrappedTextView(text: $appContract.contractPurpose.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeContractPurpose)
-                                            .frame(height: heightContractPurpose ?? minHeightContractPurpose)
+                                    .frame(height: heightContractPurpose ?? minHeightContractPurpose)
                             }
                             
                         }
@@ -189,7 +208,7 @@ struct EditContractView: View {
                             }
                             HStack {
                                 WrappedTextView(text: $appContract.measures.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeContractMeasures)
-                                            .frame(height: heightContractMeasures ?? minHeightContractMeasures)
+                                    .frame(height: heightContractMeasures ?? minHeightContractMeasures)
                             }
                             
                         }
@@ -202,17 +221,17 @@ struct EditContractView: View {
                             }
                             HStack {
                                 WrappedTextView(text: $appContract.managementRequirements.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeContractManagementRequirements)
-                                            .frame(height: heightContractManagementRequirements ?? minHeightContractManagementRequirements)
+                                    .frame(height: heightContractManagementRequirements ?? minHeightContractManagementRequirements)
                             }
                             
                         }
-
+                        
                     }
                     Section(header: Text("Besonderheiten"))
                     {
                         HStack {
                             WrappedTextView(text: $appContract.particularities.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeContractParticularities)
-                                        .frame(height: heightContractParticularities ?? minHeightContractParticularities)
+                                .frame(height: heightContractParticularities ?? minHeightContractParticularities)
                         }
                     }
                     
@@ -246,7 +265,7 @@ struct EditContractView: View {
                         Button{
                             
                             
-                           
+                            
                             dataHandler.updateContract(appContract: appContract, contractDataModel: newContractDataModel, image:dataHandler.test(appContract: appContract), contractTermination: contractTerminatation)
                             dataHandler.fetchAppContract()
                             presentationMode.wrappedValue.dismiss()
@@ -290,11 +309,3 @@ struct EditContractView: View {
         }
     }
 }
-
-/*
- struct EditContract_Previews: PreviewProvider {
- static var previews: some View {
- EditContract()
- }
- }
- */

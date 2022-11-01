@@ -16,65 +16,53 @@ struct MainSideView:  View {
         
         VStack{
             GeometryReader { geometry in
-          
-                NavigationView() {
-                        VStack {
-                            NavigationLink(destination: CreateNewContract()) {
-                                Text("Neuen Vertrag anlegen")
-                            }.foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.gray.opacity(0.5))
-                                .navigationTitle("Menu")
-                                .frame(alignment: .topLeading)
-                                
-                            
-                            NavigationLink(destination: ManageContractView()) {
-                                Text("Verträge verwalten")
                 
-                            }.foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.gray.opacity(0.5))
-                                
+                NavigationView() {
+                    VStack {
+                        NavigationLink(destination: CreateNewContract()) {
+                            Text("Neuen Vertrag anlegen")
+                        }.foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.gray.opacity(0.5))
+                            .navigationTitle("Menu")
+                            .frame(alignment: .topLeading)
+                        
+                        
+                        NavigationLink(destination: ManageContractView()) {
+                            Text("Verträge verwalten")
                             
-                            NavigationLink(destination: ExpiredContractView()) {
-                                Text("Auslaufende Verträge")
-                            }.foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.gray.opacity(0.5))
-                            
-                        }.frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
+                        }.foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.gray.opacity(0.5))
+                        
+                        
+                        NavigationLink(destination: ExpiredContractView()) {
+                            Text("Auslaufende Verträge")
+                        }.foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.gray.opacity(0.5))
+                        
+                    }.frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
                         .background(BackGroundGradient.getGradient())
-                      
+                    
                     
                 }
                 
-            
+                
             }
-            // Neu anlegen
-            // Auslaufende Verträge
-            
-            
-                .padding(.top)
-                .frame(
-                    minWidth: 0,
-                    maxWidth: .infinity,
-                    minHeight: 0,
-                    maxHeight: .infinity,
-                    alignment: .topLeading
-                ).edgesIgnoringSafeArea(.all)
+            .padding(.top)
+            .frame(
+                minWidth: 0,
+                maxWidth: .infinity,
+                minHeight: 0,
+                maxHeight: .infinity,
+                alignment: .topLeading
+            ).edgesIgnoringSafeArea(.all)
             
         }
-    }
-}
-
-
-
-struct MyView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainSideView()
     }
 }
 

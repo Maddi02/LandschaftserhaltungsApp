@@ -8,26 +8,26 @@
 import SwiftUI
 
 struct OnboardingFlowView: View {
-        @Environment(\.managedObjectContext) var managedObjectContext
+    @Environment(\.managedObjectContext) var managedObjectContext
     @State private var selection = 0
     @State private var buttonTitleNext = "Start"
     @State private var buttonTitleBack = "back"
     @EnvironmentObject var appState : AppState
     private let defaults = UserDefaults.standard
     var body: some View {
-      
-            TabView(selection: $selection){
-                WelcomeView().tag(0)
-                FirstFeatureOverview().tag(1)
-                SecondFeatureOverview().tag(2)
-                ThirdFeatureOverview().tag(3)
-                DoneOverview().tag(4)
-                
-            }
-            .background(BackGroundGradient.getGradient())
-            .tabViewStyle(.page)
-            .indexViewStyle(
-                .page(backgroundDisplayMode: .always))
+        
+        TabView(selection: $selection){
+            WelcomeView().tag(0)
+            FirstFeatureOverview().tag(1)
+            SecondFeatureOverview().tag(2)
+            ThirdFeatureOverview().tag(3)
+            DoneOverview().tag(4)
+            
+        }
+        .background(BackGroundGradient.getGradient())
+        .tabViewStyle(.page)
+        .indexViewStyle(
+            .page(backgroundDisplayMode: .always))
         
         HStack{
             if(selection >= 1)
@@ -78,7 +78,7 @@ struct OnboardingFlowView: View {
                 withAnimation {
                     if(selection < 4)
                     {
-          
+                        
                         appState.hasOnboarded = true
                         UserDefaults.standard.set(appState.hasOnboarded, forKey: "onBoarded")
                     }
@@ -92,7 +92,7 @@ struct OnboardingFlowView: View {
             .padding()
         }
     }
-
+    
 }
 
 
