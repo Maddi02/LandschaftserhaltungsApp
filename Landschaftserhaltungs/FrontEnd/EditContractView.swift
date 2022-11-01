@@ -35,6 +35,7 @@ struct EditContractView: View {
     @State private var heightStreet: CGFloat?
 
 
+
     private func textDidChangeContractNumber(_ textView: UITextView) {
             self.heightContractNumber = max(textView.contentSize.height, minHeightContractNumber)
         }
@@ -243,8 +244,10 @@ struct EditContractView: View {
                     }
                     Section(header: Text("")) {
                         Button{
+                            
+                            
                            
-                            dataHandler.updateContract(appContract: appContract, contractDataModel: newContractDataModel, image: self.image, contractTermination: self.contractTerminatation)
+                            dataHandler.updateContract(appContract: appContract, contractDataModel: newContractDataModel, image:dataHandler.test(appContract: appContract), contractTermination: contractTerminatation)
                             dataHandler.fetchAppContract()
                             presentationMode.wrappedValue.dismiss()
                         }

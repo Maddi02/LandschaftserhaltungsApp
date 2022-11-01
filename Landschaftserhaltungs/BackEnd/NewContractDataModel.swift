@@ -45,6 +45,11 @@ class NewContractDataModel: ObservableObject {
     
     @Published var particularities: String = ""
     @Published var mobile : String = ""
+    
+    public func getImage () -> UIImage
+    {
+        return photo
+    }
 }
 
 

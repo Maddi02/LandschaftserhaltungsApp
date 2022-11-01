@@ -19,6 +19,7 @@ struct WrappedTextView: UIViewRepresentable {
         view.isEditable = true
         view.delegate = context.coordinator
         view.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+        view.backgroundColor = .clear
         return view
     }
 

@@ -54,10 +54,16 @@ class DataHandler : ObservableObject
         }
     }
     
+    func test(appContract : AppContract) -> UIImage
+    {
+        fetchAppContract()
+        return appContract.picture ?? UIImage()
+    }
+    
     func updateContract(appContract : AppContract, contractDataModel : NewContractDataModel, image: UIImage, contractTermination : Date){
-
-        appContract.picture = image
         appContract.contractTermination = contractTermination
+        appContract.picture = image
+        
         
         if(contractDataModel.street.isEmpty)
         {
