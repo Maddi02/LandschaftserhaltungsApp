@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct ExpandingTextView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    @State var text: String = " "
+    let minHeight: CGFloat = 150
+    @State private var height: CGFloat?
 
-struct ExpandingTextView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExpandingTextView()
+    var body: some View {
+        WrappedTextView(text: $text, textDidChange: self.textDidChange)
+            .frame(height: height ?? minHeight)
+    }
+
+    private func textDidChange(_ textView: UITextView) {
+        self.height = max(textView.contentSize.height, minHeight)
     }
 }

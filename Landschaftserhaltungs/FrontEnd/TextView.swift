@@ -15,6 +15,7 @@ struct TextView: UIViewRepresentable {
     
     @Binding var text: String
     @Binding var textStyle: UIFont.TextStyle
+    private let maxHeight: CGFloat = 100
     
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
@@ -45,6 +46,7 @@ struct TextView: UIViewRepresentable {
         }
         
         func textViewDidChange(_ textView: UITextView) {
+         
             self.text.wrappedValue = textView.text
         }
     }

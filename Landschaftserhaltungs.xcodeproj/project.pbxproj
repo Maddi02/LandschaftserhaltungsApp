@@ -13,6 +13,9 @@
 		2239595B290452A600D5F38E /* UIImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239595A290452A600D5F38E /* UIImageTransformer.swift */; };
 		2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239595E2907DDCD00D5F38E /* ContractListItem.swift */; };
 		223BB34D29103C490064927A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB34C29103C490064927A /* TextView.swift */; };
+		223BB352291144BE0064927A /* TextView in Frameworks */ = {isa = PBXBuildFile; productRef = 223BB351291144BE0064927A /* TextView */; };
+		223BB354291147380064927A /* WrappedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB353291147380064927A /* WrappedTextView.swift */; };
+		223BB3562911474E0064927A /* ExpandingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB3552911474E0064927A /* ExpandingTextView.swift */; };
 		22455CF628FF03BC002876AD /* CreateNewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455CF528FF03BC002876AD /* CreateNewContract.swift */; };
 		22455CF828FF2794002876AD /* ExpiredContractView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455CF728FF2794002876AD /* ExpiredContractView.swift */; };
 		22455CFA28FF27B5002876AD /* ManageContractView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455CF928FF27B5002876AD /* ManageContractView.swift */; };
@@ -62,6 +65,8 @@
 		2239595A290452A600D5F38E /* UIImageTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageTransformer.swift; sourceTree = "<group>"; };
 		2239595E2907DDCD00D5F38E /* ContractListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractListItem.swift; sourceTree = "<group>"; };
 		223BB34C29103C490064927A /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		223BB353291147380064927A /* WrappedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedTextView.swift; sourceTree = "<group>"; };
+		223BB3552911474E0064927A /* ExpandingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingTextView.swift; sourceTree = "<group>"; };
 		22455CF528FF03BC002876AD /* CreateNewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewContract.swift; sourceTree = "<group>"; usesTabs = 0; };
 		22455CF728FF2794002876AD /* ExpiredContractView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiredContractView.swift; sourceTree = "<group>"; };
 		22455CF928FF27B5002876AD /* ManageContractView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageContractView.swift; sourceTree = "<group>"; };
@@ -95,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223BB352291144BE0064927A /* TextView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +182,7 @@
 		224F462528FD8555004EA74F /* FrontEnd */ = {
 			isa = PBXGroup;
 			children = (
+				223BB353291147380064927A /* WrappedTextView.swift */,
 				223BB34C29103C490064927A /* TextView.swift */,
 				221AC67C290D150B00993F52 /* BackgroundLinearGradient.swift */,
 				224F462728FDFC99004EA74F /* MainSideView.swift */,
@@ -185,6 +192,7 @@
 				22455CF928FF27B5002876AD /* ManageContractView.swift */,
 				2252D320290868FF00568A1A /* EditContractView.swift */,
 				224F462928FE014B004EA74F /* Onboarding */,
+				223BB3552911474E0064927A /* ExpandingTextView.swift */,
 			);
 			path = FrontEnd;
 			sourceTree = "<group>";
@@ -242,6 +250,7 @@
 			);
 			name = Landschaftserhaltungs;
 			packageProductDependencies = (
+				223BB351291144BE0064927A /* TextView */,
 			);
 			productName = Landschaftserhaltungs;
 			productReference = 224F45F828FD80E7004EA74F /* Landschaftserhaltungs.app */;
@@ -317,6 +326,7 @@
 			mainGroup = 224F45EF28FD80E7004EA74F;
 			packageReferences = (
 				22455CFB29007AF3002876AD /* XCRemoteSwiftPackageReference "SwiftLocation" */,
+				223BB350291144BE0064927A /* XCRemoteSwiftPackageReference "TextView" */,
 			);
 			productRefGroup = 224F45F928FD80E7004EA74F /* Products */;
 			projectDirPath = "";
@@ -370,12 +380,14 @@
 				224F45FE28FD80E7004EA74F /* OnboardingFlowView.swift in Sources */,
 				2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */,
 				223BB34D29103C490064927A /* TextView.swift in Sources */,
+				223BB3562911474E0064927A /* ExpandingTextView.swift in Sources */,
 				22455D122900A869002876AD /* CoreDataManager.swift in Sources */,
 				224F463328FE07D8004EA74F /* DoneOverview.swift in Sources */,
 				221AC67D290D150B00993F52 /* BackgroundLinearGradient.swift in Sources */,
 				224F463528FE1443004EA74F /* AppState.swift in Sources */,
 				22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */,
 				224F462F28FE06CD004EA74F /* SecondFeatureOverview.swift in Sources */,
+				223BB354291147380064927A /* WrappedTextView.swift in Sources */,
 				2239595B290452A600D5F38E /* UIImageTransformer.swift in Sources */,
 				2252D321290868FF00568A1A /* EditContractView.swift in Sources */,
 				2239595929044A6A00D5F38E /* AppContract.swift in Sources */,
@@ -710,6 +722,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		223BB350291144BE0064927A /* XCRemoteSwiftPackageReference "TextView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUI-Plus/TextView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		22455CFB29007AF3002876AD /* XCRemoteSwiftPackageReference "SwiftLocation" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/malcommac/SwiftLocation";
@@ -719,6 +739,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		223BB351291144BE0064927A /* TextView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 223BB350291144BE0064927A /* XCRemoteSwiftPackageReference "TextView" */;
+			productName = TextView;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		22455D0E2900A81A002876AD /* AppStateDataModel.xcdatamodeld */ = {

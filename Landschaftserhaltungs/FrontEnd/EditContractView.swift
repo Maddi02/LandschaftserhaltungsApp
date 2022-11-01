@@ -20,7 +20,11 @@ struct EditContractView: View {
     
     @State private var firstname = String()
     @State private var textStyle = UIFont.TextStyle.body
-    
+    let minHeight: CGFloat = 30
+    @State private var height: CGFloat?
+    private func textDidChange(_ textView: UITextView) {
+            self.height = max(textView.contentSize.height, minHeight)
+        }
     
     
     var body: some View {
@@ -40,7 +44,9 @@ struct EditContractView: View {
                             }
                             
                             HStack {
-                                TextView(text: $appContract.firstName.toUnwrapped(defaultValue: ""), textStyle: $textStyle) //TODO replace lastname with firstname
+                                WrappedTextView(text: $appContract.firstName.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChange)
+                                            
+                               // TextView(text: $appContract.firstName.toUnwrapped(defaultValue: ""), textStyle: $textStyle) //TODO replace lastname with firstname
                             }
                             
                         }
@@ -51,11 +57,11 @@ struct EditContractView: View {
                                 
                             }
                             HStack {
-                                TextView(text: $appContract.lastName, textStyle: $textStyle)
+                                WrappedTextView(text: $appContract.lastName, textDidChange: self.textDidChange)
                             }
                             
                         }
-                    }
+                    }.frame(height: height ?? minHeight)
                     Section(header: Text("Kontakt-Adresse")) {
                         
                         HStack {
@@ -114,7 +120,7 @@ struct EditContractView: View {
                                 
                             }
                             HStack {
-                                TextView(text: $appContract.mobile.toUnwrapped(defaultValue: ""), textStyle: $textStyle)
+                                TextView(text: $appContract.mobile.toUnwrapped(defaultValue: ""), textStyle: $textStyle).frame(maxWidth: .infinity)
                             }
                             
                         }
@@ -123,24 +129,59 @@ struct EditContractView: View {
                         DatePicker(selection: $contractTerminatation,
                                    displayedComponents: [.date],
                                    label: { Text("Vertragsabschluss") })
-                        Section(header: Text("Vorgangsnummer")) {
-                            TextField(appContract.operationNumber ?? "unknown" , text: $newContractDataModel.operationNumber)
-                        }
-                        Section(header: Text("Vertragszweck")) {
-                            TextField(appContract.contractPurpose ?? "unknown" , text: $newContractDataModel.contractPurpose,axis: .vertical)
-                        }
-                        Section(header: Text("Maßnahmen")) {
-                            TextField(appContract.measures ?? "unknown" , text: $newContractDataModel.measures,axis: .vertical)
-                        }
-                        Section(header: Text("Bewirtschaftungsauflagen")) {
-                            TextField(appContract.managementRequirements ?? "unknown" , text: $newContractDataModel.managementRequirements,axis: .vertical)
+                        
+                        HStack {
+                            HStack {
+                                Text("Vorgangsnummer")
+                                Spacer()
+                                
+                            }
+                            HStack {
+                                TextView(text: $appContract.operationNumber.toUnwrapped(defaultValue: ""), textStyle: $textStyle)
+                            }
+                            
                         }
                         
+                        HStack {
+                            HStack {
+                                Text("Vertragszweck")
+                                Spacer()
+                                
+                            }
+                            HStack {
+                                TextView(text: $appContract.contractPurpose.toUnwrapped(defaultValue: ""), textStyle: $textStyle)
+                            }
+                            
+                        }
                         
+                        HStack {
+                            HStack {
+                                Text("Maßnahmen")
+                                Spacer()
+                                
+                            }
+                            HStack {
+                                TextView(text: $appContract.measures.toUnwrapped(defaultValue: ""), textStyle: $textStyle)
+                            }
+                            
+                        }
+                        
+                        HStack {
+                            HStack {
+                                Text("Bewirtschaftungsauflagen")
+                                Spacer()
+                                
+                            }
+                            HStack {
+                                TextView(text: $appContract.managementRequirements.toUnwrapped(defaultValue: ""), textStyle: $textStyle)
+                            }
+                            
+                        }
+
                     }
                     Section(header: Text("Besonderheiten"))
                     {
-                        Section(header: Text("Bewirtschaftungsauflagen")) {
+                        Section(header: Text("")) {
                             TextField(appContract.particularities ?? "unknown", text: $newContractDataModel.particularities,axis: .vertical).frame(minHeight: 50)
                         }
                     }
