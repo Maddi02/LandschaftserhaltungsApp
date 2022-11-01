@@ -14,20 +14,31 @@ struct SelectFilterView: View {
         Text("Wähle die Sortierung aus").font(.title).padding()
         List {
                 Button("zuletzt hinzugefügt") {
-                    dataHandler.filter = .none
+                    Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false)
+                    { _ in
+                        dataHandler.filter = .none
+                    }
                     dismiss()
                 }
                 Button("bald auslaufende Verträge") {
-                    dataHandler.filter = .date
+                    Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false)
+                    { _ in
+                        dataHandler.filter = .date
+                    }
                     dismiss()
                 }
                 Button("nach Fristen") {
+                    Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false)
+                    { _ in
+                        dataHandler.filter = .none
+                    }
+                        dismiss()
                     
-                    dataHandler.filter = .none
-                    dismiss()
                 }
                 Button("Press to dismiss") {
-                    dismiss()
+
+                        dismiss()
+                   
                 }
             }
     }

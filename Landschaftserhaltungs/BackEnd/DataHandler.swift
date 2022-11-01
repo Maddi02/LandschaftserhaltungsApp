@@ -44,14 +44,24 @@ class DataHandler : ObservableObject
      func fetchAppContract()
     {
         print("Fetching")
-        do {
-            appContractList = try context.fetch(request)
-            appContractListSortedByDate =  sortByDateASC()
+   
+        
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false)
+            { _ in
+                do {
+                    self.appContractList = try self.context.fetch(self.request)
+                    self.appContractListSortedByDate =  self.sortByDateASC()
+                }
+                catch {
+                    // Handle Error
+                }
+            }
+               
+             
             
-        }
-        catch {
-            // Handle Error
-        }
+        
+            
+       
     }
     
     func test(appContract : AppContract) -> UIImage

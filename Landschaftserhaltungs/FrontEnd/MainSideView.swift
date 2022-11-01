@@ -37,10 +37,6 @@ struct MainSideView:  View {
                                 .padding()
                                 .background(Color.gray.opacity(0.5))
                                 
-                                .simultaneousGesture(TapGesture().onEnded{
-             
-                                    dataHandler.sortByDateASC()
-                                })
                             
                             NavigationLink(destination: ExpiredContractView()) {
                                 Text("Auslaufende Verträge")
