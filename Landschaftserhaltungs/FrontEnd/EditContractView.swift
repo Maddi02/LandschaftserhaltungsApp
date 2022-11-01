@@ -89,7 +89,7 @@ struct EditContractView: View {
                             
                             HStack {
                                 WrappedTextView(text: $appContract.firstName.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeFirstName)
-                                    .frame(height: heightFirstName ?? minHeightFirstName)
+                                    .frame(height: heightFirstName ?? minHeightFirstName).background(Color.clear)
                             }
                             
                         }
@@ -101,7 +101,7 @@ struct EditContractView: View {
                             }
                             HStack {
                                 WrappedTextView(text: $appContract.lastName, textDidChange: self.textDidChangeLastName)
-                                    .frame(height: heightLastName ?? minHeightLastName)
+                                    .frame(height: heightLastName ?? minHeightLastName).background(Color.clear)
                             }
                             
                         }
@@ -116,7 +116,7 @@ struct EditContractView: View {
                             }
                             HStack {
                                 WrappedTextView(text: $appContract.street.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeStreet(_:))
-                                    .frame(height: heightStreet ?? minHeightStreet)
+                                    .frame(height: heightStreet ?? minHeightStreet).background(Color.clear)
                             }
                             
                         }
@@ -129,7 +129,7 @@ struct EditContractView: View {
                             }
                             HStack {
                                 WrappedTextView(text: $appContract.plzName.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeLocation)
-                                    .frame(height: heightLocation ?? minHeightLocation)
+                                    .frame(height: heightLocation ?? minHeightLocation).background(Color.clear)
                             }
                             
                         }
@@ -141,7 +141,7 @@ struct EditContractView: View {
                                 
                             }
                             HStack {
-                                TextView(text: $appContract.plz.toUnwrapped(defaultValue: ""), textStyle: $textStyle)
+                                TextView(text: $appContract.plz.toUnwrapped(defaultValue: ""), textStyle: $textStyle).background(Color.clear)
                             }
                             
                         }
@@ -153,7 +153,7 @@ struct EditContractView: View {
                                 
                             }
                             HStack {
-                                TextView(text: $appContract.country.toUnwrapped(defaultValue: ""), textStyle: $textStyle)
+                                TextView(text: $appContract.country.toUnwrapped(defaultValue: ""), textStyle: $textStyle).background(Color.clear)
                             }
                             
                         }
@@ -166,7 +166,7 @@ struct EditContractView: View {
                                 
                             }
                             HStack {
-                                TextView(text: $appContract.mobile.toUnwrapped(defaultValue: ""), textStyle: $textStyle).frame(maxWidth: .infinity)
+                                TextView(text: $appContract.mobile.toUnwrapped(defaultValue: ""), textStyle: $textStyle).frame(maxWidth: .infinity).background(Color.clear)
                             }
                             
                         }
@@ -183,7 +183,7 @@ struct EditContractView: View {
                                 
                             }
                             HStack {
-                                TextView(text: $appContract.operationNumber.toUnwrapped(defaultValue: ""), textStyle: $textStyle)
+                                TextView(text: $appContract.operationNumber.toUnwrapped(defaultValue: ""), textStyle: $textStyle).background(Color.clear)
                             }
                             
                         }
@@ -196,7 +196,7 @@ struct EditContractView: View {
                             }
                             HStack {
                                 WrappedTextView(text: $appContract.contractPurpose.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeContractPurpose)
-                                    .frame(height: heightContractPurpose ?? minHeightContractPurpose)
+                                    .frame(height: heightContractPurpose ?? minHeightContractPurpose).background(Color.clear)
                             }
                             
                         }
@@ -209,7 +209,7 @@ struct EditContractView: View {
                             }
                             HStack {
                                 WrappedTextView(text: $appContract.measures.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeContractMeasures)
-                                    .frame(height: heightContractMeasures ?? minHeightContractMeasures)
+                                    .frame(height: heightContractMeasures ?? minHeightContractMeasures).background(Color.clear)
                             }
                             
                         }
@@ -222,7 +222,7 @@ struct EditContractView: View {
                             }
                             HStack {
                                 WrappedTextView(text: $appContract.managementRequirements.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeContractManagementRequirements)
-                                    .frame(height: heightContractManagementRequirements ?? minHeightContractManagementRequirements)
+                                    .frame(height: heightContractManagementRequirements ?? minHeightContractManagementRequirements).background(Color.clear)
                             }
                             DatePicker(selection: $contractDeadline,
                                        displayedComponents: [.date],
@@ -235,7 +235,7 @@ struct EditContractView: View {
                     {
                         HStack {
                             WrappedTextView(text: $appContract.particularities.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeContractParticularities)
-                                .frame(height: heightContractParticularities ?? minHeightContractParticularities)
+                                .frame(height: heightContractParticularities ?? minHeightContractParticularities).background(Color.clear)
                         }
                     }
                     

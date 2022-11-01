@@ -41,7 +41,7 @@ struct CreateNewContract : View
                         TextField("Ort", text: $newContractDataModel.PLZName)
                         TextField("PLZ", text: $newContractDataModel.PLZ).keyboardType(UIKeyboardType.numberPad)
                         TextField("Land", text: $newContractDataModel.country)
-                        TextField("Mobil", text: $newContractDataModel.mobile)
+                        TextField("Mobil", text: $newContractDataModel.mobile).keyboardType(UIKeyboardType.numberPad)
                     }
                     
                     Section(header: Text("Vertragsinformationen")) {
