@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 struct EditContractView: View {
     
-    var appContract : AppContract
+    @State var appContract : AppContract
     var dataHandler : DataHandler
     @State private var isShownPhotoLibrary = false
     @State private var image = UIImage()
@@ -17,9 +17,10 @@ struct EditContractView: View {
     var manageContractView = ManageContractView()
     @State  var contractTerminatation : Date
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-
-    @State private var message = "ourehgf8re9"
+    
+    @State private var firstname = String()
     @State private var textStyle = UIFont.TextStyle.body
+    
     
     
     var body: some View {
@@ -30,50 +31,93 @@ struct EditContractView: View {
                     
                     Section(header: Text("Vertragsnehmer")) {
                         
-                        Section(header: Text("Vorname")) {
-                         
+                        
+                        HStack {
                             HStack {
-                                HStack {
-                                    Text("Version")
-                                    Spacer()
-                                    
-                                }
-                                    
-                                    HStack {
-                                        Text("")
-                                        Spacer()
-                                        TextField(appContract.firstName ?? "unknown" , text: $newContractDataModel.firstName,axis: .vertical)
-                                        TextView(text: $message, textStyle: $textStyle)
-                                            .padding(.horizontal)
-                                    }
-                                }
+                                Text("Vorname")
+                                Spacer()
+                                
+                            }
                             
+                            HStack {
+                                TextView(text: $appContract.firstName.toUnwrapped(defaultValue: ""), textStyle: $textStyle) //TODO replace lastname with firstname
+                            }
                             
-                           
                         }
-                        Section(header: Text("Nachname")) {
-                            TextField(appContract.firstName ?? "unknown" , text: $newContractDataModel.firstName)
+                        HStack {
+                            HStack {
+                                Text("Nachname")
+                                Spacer()
+                                
+                            }
+                            HStack {
+                                TextView(text: $appContract.lastName, textStyle: $textStyle)
+                            }
+                            
                         }
                     }
                     Section(header: Text("Kontakt-Adresse")) {
                         
-                        Section(header: Text("Staße")) {
-                            TextField(appContract.street ?? "unknown" , text: $newContractDataModel.street)
+                        HStack {
+                            HStack {
+                                Text("Straße")
+                                Spacer()
+                                
+                            }
+                            HStack {
+                                TextView(text: $appContract.street.toUnwrapped(defaultValue: ""), textStyle: $textStyle)
+                            }
+                            
                         }
-                        Section(header: Text("Ort")) {
-                            TextField(appContract.plzName ?? "unknown" , text: $newContractDataModel.PLZName)
+                        
+                        HStack {
+                            HStack {
+                                Text("Ort")
+                                Spacer()
+                                
+                            }
+                            HStack {
+                                TextView(text: $appContract.plzName.toUnwrapped(defaultValue: ""), textStyle: $textStyle)
+                            }
+                            
                         }
-                        Section(header: Text("PLZ")) {
-                            TextField(appContract.plz ?? "unknown" , text: $newContractDataModel.PLZ)
+                        
+                        HStack {
+                            HStack {
+                                Text("PLZ")
+                                Spacer()
+                                
+                            }
+                            HStack {
+                                TextView(text: $appContract.plz.toUnwrapped(defaultValue: ""), textStyle: $textStyle)
+                            }
+                            
                         }
-                        Section(header: Text("Land")) {
-                            TextField(appContract.country ?? "unknown" , text: $newContractDataModel.country)
-                        }
-                        Section(header: Text("Mobil")) {
-                            TextField(appContract.mobile ?? "unknown" , text: $newContractDataModel.mobile)
+                        
+                        HStack {
+                            HStack {
+                                Text("Land")
+                                Spacer()
+                                
+                            }
+                            HStack {
+                                TextView(text: $appContract.country.toUnwrapped(defaultValue: ""), textStyle: $textStyle)
+                            }
+                            
                         }
                         
                         
+                        HStack {
+                            HStack {
+                                Text("Mobil")
+                                Spacer()
+                                
+                            }
+                            HStack {
+                                TextView(text: $appContract.mobile.toUnwrapped(defaultValue: ""), textStyle: $textStyle)
+                            }
+                            
+                        }
                     }
                     Section(header: Text("Vertragsinformationen")) {
                         DatePicker(selection: $contractTerminatation,
@@ -129,6 +173,7 @@ struct EditContractView: View {
                     }
                     Section(header: Text("")) {
                         Button{
+                           
                             dataHandler.updateContract(appContract: appContract, contractDataModel: newContractDataModel, image: self.image, contractTermination: self.contractTerminatation)
                             dataHandler.fetchAppContract()
                             presentationMode.wrappedValue.dismiss()
@@ -174,9 +219,9 @@ struct EditContractView: View {
 }
 
 /*
-struct EditContract_Previews: PreviewProvider {
-    static var previews: some View {
-        EditContract()
-    }
-}
-*/
+ struct EditContract_Previews: PreviewProvider {
+ static var previews: some View {
+ EditContract()
+ }
+ }
+ */
