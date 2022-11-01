@@ -29,6 +29,7 @@ struct MainSideView:  View {
                             .frame(alignment: .topLeading)
                         
                         
+                        
                         NavigationLink(destination: ManageContractView()) {
                             Text("Verträge verwalten")
                             
@@ -36,7 +37,9 @@ struct MainSideView:  View {
                             .frame(maxWidth: .infinity)
                             .padding()
                             .background(Color.gray.opacity(0.5))
-                        
+                            .simultaneousGesture(TapGesture().onEnded{
+                                                                dataHandler.fetchAppContract()
+                                                          })
                         
                         NavigationLink(destination: ExpiredContractView()) {
                             Text("Auslaufende Verträge")

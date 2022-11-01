@@ -19,7 +19,17 @@ struct ManageContractView: View {
     @Environment(\.managedObjectContext) var moc
     @State private var showingAlert = false
     
+    init()
+    {
+        dataHandler.fetchAppContract()
+    }
+    
+    
     var body: some View {
+        
+        
+        
+        
         
         VStack(alignment: .leading){
             Text("Verträge Verwaltung").font(.title2)

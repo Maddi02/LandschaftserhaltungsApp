@@ -41,6 +41,7 @@ class DataHandler : ObservableObject
     
     func fetchAppContract()
     {
+        
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false)
         { _ in
             do {
@@ -49,6 +50,7 @@ class DataHandler : ObservableObject
             }
             catch {
                 // Handle Error
+                print("EHHHHHHHHHHH")
             }
         }
         
@@ -234,6 +236,7 @@ class DataHandler : ObservableObject
         appContract.setValue(newContractDataModel.contractTermination, forKey: #keyPath(AppContract.contractTermination))
         do{
             try context.save()
+            fetchAppContract()
             
         }catch{
             print(error)

@@ -11,7 +11,7 @@ import CoreData
 
 
 struct ImagePicker: UIViewControllerRepresentable {
-    var appContract : AppContract
+    var appContract : AppContract?
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @Binding var selectedImage: UIImage
     
@@ -26,7 +26,14 @@ struct ImagePicker: UIViewControllerRepresentable {
         return imagePicker
     }
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
-        appContract.picture = selectedImage
+        print("HALLLLLO\(appContract)")
+     
+        if(appContract == nil)
+        {
+
+        }
+   
+       // appContract.picture = selectedImage
     }
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
