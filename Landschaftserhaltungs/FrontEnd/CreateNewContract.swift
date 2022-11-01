@@ -52,7 +52,9 @@ struct CreateNewContract : View
                         TextField("Vertragszweck", text: $newContractDataModel.contractPurpose,axis: .vertical)
                         TextField("Maßnahmen", text: $newContractDataModel.measures,axis: .vertical)
                         TextField("Bewirtschaftungsauflagen", text: $newContractDataModel.managementRequirements,axis: .vertical)
-                        
+                        DatePicker(selection: $newContractDataModel.deadline,
+                                   displayedComponents: [.date],
+                                   label: { Text("First") })
                     
                         
                     }

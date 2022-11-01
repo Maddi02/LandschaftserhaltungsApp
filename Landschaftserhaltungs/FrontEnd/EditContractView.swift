@@ -14,6 +14,7 @@ struct EditContractView: View {
     @State private var isShownPhotoLibrary = false
     @State private var image = UIImage()
     @State  var contractTerminatation : Date
+    @State  var contractDeadline : Date
     @State private var firstname = String()
     @State private var textStyle = UIFont.TextStyle.body
     @State private var heightContractNumber: CGFloat?
@@ -223,6 +224,9 @@ struct EditContractView: View {
                                 WrappedTextView(text: $appContract.managementRequirements.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeContractManagementRequirements)
                                     .frame(height: heightContractManagementRequirements ?? minHeightContractManagementRequirements)
                             }
+                            DatePicker(selection: $contractDeadline,
+                                       displayedComponents: [.date],
+                                       label: { Text("Vertragsabschluss") })
                             
                         }
                         
@@ -266,7 +270,7 @@ struct EditContractView: View {
                             
                             
                             
-                            dataHandler.updateContract(appContract: appContract, contractDataModel: newContractDataModel, image:dataHandler.getImage(appContract: appContract), contractTermination: contractTerminatation)
+                            dataHandler.updateContract(appContract: appContract, contractDataModel: newContractDataModel, image:dataHandler.getImage(appContract: appContract), contractTermination: contractTerminatation, contractDeadline: contractDeadline)
                             dataHandler.fetchAppContract()
                             presentationMode.wrappedValue.dismiss()
                         }

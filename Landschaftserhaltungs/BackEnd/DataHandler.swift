@@ -15,6 +15,7 @@ class DataHandler : ObservableObject
     private var context = CoreDataManager.shared.persistentContainer.viewContext
     let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
     @Published var appContractListSortedByDate: [AppContract] = []
+    @Published var appContractListSortedByDeadline: [AppContract] = []
     @Published var appContractList: [AppContract] = []
     @Published var filter : FilterType = .deadline
     enum FilterType{
@@ -29,24 +30,30 @@ class DataHandler : ObservableObject
     }
     
     var filteredContracts: [AppContract]{
+        fetchAppContract()
         switch filter {
+            
         case .none:
+  
             return appContractList
         case .date:
+       
             return appContractListSortedByDate
         case .deadline:
-            return appContractList
+           
+            return appContractListSortedByDeadline
         }
     }
     
     func fetchAppContract()
     {
         
-        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false)
+        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false)
         { _ in
             do {
                 self.appContractList = try self.context.fetch(self.request)
                 self.appContractListSortedByDate =  self.sortByDateASC()
+                self.appContractListSortedByDeadline =  self.sortByDateDeadline()
             }
             catch {
                 // Handle Error
@@ -67,7 +74,8 @@ class DataHandler : ObservableObject
         return appContract.picture ?? UIImage()
     }
     
-    func updateContract(appContract : AppContract, contractDataModel : NewContractDataModel, image: UIImage, contractTermination : Date){
+    func updateContract(appContract : AppContract, contractDataModel : NewContractDataModel, image: UIImage, contractTermination : Date, contractDeadline : Date){
+        appContract.deadline = contractDeadline
         appContract.contractTermination = contractTermination
         appContract.picture = image
         
@@ -216,6 +224,20 @@ class DataHandler : ObservableObject
         
         return appContractListSortedByDate
     }
+    public func sortByDateDeadline() -> Array<AppContract>
+    {
+        let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
+        let sortByDate = NSSortDescriptor(key: #keyPath(AppContract.deadline), ascending: true)
+        request.sortDescriptors = [sortByDate]
+        do{
+            appContractListSortedByDeadline = try context.fetch(request)
+        }
+        catch{
+            print(error)
+        }
+        
+        return appContractListSortedByDeadline
+    }
     
     public func saveAll(image: UIImage = UIImage(), firstName1: String, newContractDataModel : NewContractDataModel)
     {
@@ -234,6 +256,7 @@ class DataHandler : ObservableObject
         appContract.setValue(newContractDataModel.mobile, forKey: #keyPath(AppContract.mobile))
         appContract.setValue(image, forKey: #keyPath(AppContract.picture))
         appContract.setValue(newContractDataModel.contractTermination, forKey: #keyPath(AppContract.contractTermination))
+        appContract.setValue(newContractDataModel.deadline, forKey: #keyPath(AppContract.deadline))
         do{
             try context.save()
             fetchAppContract()

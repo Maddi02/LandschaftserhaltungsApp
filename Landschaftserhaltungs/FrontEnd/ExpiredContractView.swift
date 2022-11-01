@@ -33,11 +33,11 @@ struct ExpiredContractView: View {
                         {
                             appContractListASC in
                             
-                            NavigationLink(destination: EditContractView(appContract: appContractListASC, contractTerminatation: appContractListASC.contractTermination ?? Date(), dataHandler: dataHandler).onAppear {
+                            NavigationLink(destination: EditContractView(appContract: appContractListASC, contractTerminatation: appContractListASC.contractTermination ?? Date(), contractDeadline: appContractListASC.deadline ?? Date() , dataHandler: dataHandler).onAppear {
                                 
                             }) {
                                 
-                                ContractListItem(firstName: appContractListASC.firstName ?? "Unknown", lastName: appContractListASC.lastName , operationNumber: appContractListASC.operationNumber ?? "Unknown", contractTermination:  appContractListASC.contractTermination?.toString() ?? Date().toString(), endOfContract: Date().getLastYear().toString() , image: appContractListASC.picture ?? UIImage(imageLiteralResourceName: "HFULogo"))
+                                ContractListItem(firstName: appContractListASC.firstName ?? "Unknown", lastName: appContractListASC.lastName , operationNumber: appContractListASC.operationNumber ?? "Unknown", contractTermination:  appContractListASC.contractTermination?.toString() ?? Date().toString(), endOfContract: Date().getLastYear().toString() , image: appContractListASC.picture ?? UIImage(imageLiteralResourceName: "HFULogo"), deadline: appContractListASC.deadline?.toString() ?? Date().toString())
                                 
                             }.frame(maxWidth: .infinity)
                             

@@ -13,6 +13,7 @@ struct ContractListItem: View {
     var operationNumber: String
     var contractTermination: String
     var endOfContract: String
+    var deadline: String
     var image : UIImage
     
     var body: some View {
@@ -30,18 +31,21 @@ struct ContractListItem: View {
                 Group{
                     Text("Ende des Vertrags")
                     Text("\(endOfContract)")
+                    Text("First")
+                    Text("\(deadline)")
                 }
             }.frame(maxWidth: .infinity, alignment: .center)
         }.frame(maxWidth: .infinity, alignment: .leading)
     }
     
-    init(firstName: String, lastName : String, operationNumber: String , contractTermination : String, endOfContract : String , image : UIImage) {
+    init(firstName: String, lastName : String, operationNumber: String , contractTermination : String, endOfContract : String , image : UIImage, deadline : String) {
         self.firstName = firstName
         self.lastName = lastName
         self.operationNumber = operationNumber
         self.contractTermination = contractTermination
         self.endOfContract = endOfContract
         self.image = image
+        self.deadline = deadline
     }
 }
 

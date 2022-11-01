@@ -25,6 +25,9 @@ class NewContractDataModel: ObservableObject {
     
     @Published var contractTermination: Date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date("01-01-\(Calendar.current.component(.year, from: Date()).description)"))!
     
+    
+    @Published var deadline : Date = Date()
+    
     @Published var street: String = ""
     
     @Published var PLZName: String = ""

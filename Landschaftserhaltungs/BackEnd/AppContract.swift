@@ -31,6 +31,7 @@ class AppContract : NSManagedObject {
     @NSManaged public var street : String?
     @NSManaged public var mobile: String?
     @NSManaged public var contractTermination : Date?
+    @NSManaged public var deadline : Date?
 }
 
 extension AppContract : Identifiable {
