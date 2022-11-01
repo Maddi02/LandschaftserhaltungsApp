@@ -11,9 +11,13 @@ import CoreData
 
 
 struct ImagePicker: UIViewControllerRepresentable {
-    var appContract : AppContract?
+    var changePicture : Bool
+    var appContract : AppContract
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @Binding var selectedImage: UIImage
+    
+    
+
     
     @Environment(\.presentationMode) private var presentationMode
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
@@ -26,14 +30,15 @@ struct ImagePicker: UIViewControllerRepresentable {
         return imagePicker
     }
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
-        print("HALLLLLO\(appContract)")
-     
-        if(appContract == nil)
-        {
 
+        if(changePicture)
+        {
+            appContract.picture = selectedImage
         }
+         
+       
    
-       // appContract.picture = selectedImage
+
     }
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -58,4 +63,5 @@ struct ImagePicker: UIViewControllerRepresentable {
         }
     }
     
+   
 }

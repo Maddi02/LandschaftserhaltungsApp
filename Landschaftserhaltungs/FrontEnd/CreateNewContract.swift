@@ -91,7 +91,7 @@ struct CreateNewContract : View
                     Section(header: Text("")) {
                         Button{
                             dataHandler.saveAll(image: self.image, firstName1: firstName, newContractDataModel : newContractDataModel)
-                            testSet()
+                          
                             dismiss()
                         }
                     label: {
@@ -123,7 +123,7 @@ struct CreateNewContract : View
             }.background(content: BackGroundGradient.getGradient)
             
         }.sheet(isPresented: $isShownPhotoLibrary){
-            ImagePicker(appContract: appContract,  sourceType: .photoLibrary, selectedImage: self.$image)
+            ImagePicker(changePicture: false, appContract: appContract,  sourceType: .photoLibrary, selectedImage: self.$image)
 
         }
     }

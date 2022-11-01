@@ -266,7 +266,7 @@ struct EditContractView: View {
                             
                             
                             
-                            dataHandler.updateContract(appContract: appContract, contractDataModel: newContractDataModel, image:dataHandler.test(appContract: appContract), contractTermination: contractTerminatation)
+                            dataHandler.updateContract(appContract: appContract, contractDataModel: newContractDataModel, image:dataHandler.getImage(appContract: appContract), contractTermination: contractTerminatation)
                             dataHandler.fetchAppContract()
                             presentationMode.wrappedValue.dismiss()
                         }
@@ -304,7 +304,7 @@ struct EditContractView: View {
             }.background(content: BackGroundGradient.getGradient)
             
         }.sheet(isPresented: $isShownPhotoLibrary){
-            ImagePicker(appContract: appContract, sourceType: .photoLibrary, selectedImage: self.$image)
+            ImagePicker(changePicture: true, appContract: appContract, sourceType: .photoLibrary, selectedImage: self.$image)
             
         }
     }

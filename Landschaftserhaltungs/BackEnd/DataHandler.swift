@@ -61,7 +61,7 @@ class DataHandler : ObservableObject
         
     }
     
-    func test(appContract : AppContract) -> UIImage
+    func getImage(appContract : AppContract) -> UIImage
     {
         fetchAppContract()
         return appContract.picture ?? UIImage()
