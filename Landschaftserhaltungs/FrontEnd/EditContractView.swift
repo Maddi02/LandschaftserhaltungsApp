@@ -21,9 +21,16 @@ struct EditContractView: View {
     @State private var firstname = String()
     @State private var textStyle = UIFont.TextStyle.body
     let minHeight: CGFloat = 30
+    let minHeight1: CGFloat = 30
+    @State private var height1: CGFloat?
     @State private var height: CGFloat?
     private func textDidChange(_ textView: UITextView) {
             self.height = max(textView.contentSize.height, minHeight)
+           // self.height1 = max(textView.contentSize.height, minHeight1)
+        }
+    private func textDidChange1(_ textView: UITextView) {
+            self.height1 = max(textView.contentSize.height, minHeight1)
+           // self.height1 = max(textView.contentSize.height, minHeight1)
         }
     
     
@@ -44,8 +51,8 @@ struct EditContractView: View {
                             }
                             
                             HStack {
-                                WrappedTextView(text: $appContract.firstName.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChange)
-                                            
+                                WrappedTextView(text: $appContract.firstName.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChange1)
+                                            .frame(height: height1 ?? minHeight1)
                                // TextView(text: $appContract.firstName.toUnwrapped(defaultValue: ""), textStyle: $textStyle) //TODO replace lastname with firstname
                             }
                             
@@ -57,11 +64,11 @@ struct EditContractView: View {
                                 
                             }
                             HStack {
-                                WrappedTextView(text: $appContract.lastName, textDidChange: self.textDidChange)
+                                TextView(text: $appContract.lastName, textStyle: $textStyle)
                             }
                             
                         }
-                    }.frame(height: height ?? minHeight)
+                    }
                     Section(header: Text("Kontakt-Adresse")) {
                         
                         HStack {
@@ -71,7 +78,8 @@ struct EditContractView: View {
                                 
                             }
                             HStack {
-                                TextView(text: $appContract.street.toUnwrapped(defaultValue: ""), textStyle: $textStyle)
+                                WrappedTextView(text: $appContract.street.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChange)
+                                            .frame(height: height ?? minHeight)
                             }
                             
                         }
