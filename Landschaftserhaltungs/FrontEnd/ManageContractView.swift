@@ -49,6 +49,8 @@ struct ManageContractView: View {
             GeometryReader { geometry in
                 ScrollView()
                 {
+                    
+                    NavigationStack{
                     List {
                         
                         ForEach(dataHandler.filteredContracts, id: \.self)
@@ -65,17 +67,17 @@ struct ManageContractView: View {
                                     .tint(.indigo)
                                 }
                                 
-                            }.frame(maxWidth: .infinity)
+                            }.frame(maxWidth: .infinity).navigationDestination(isPresented: $isActiveEditing){
+                                EditContractView(appContract: filteredContracts, contractTerminatation: filteredContracts.contractTermination ?? Date(), contractDeadline: filteredContracts.deadline ?? Date(), dataHandler: dataHandler)
+                            }
                             
-                            NavigationLink(destination: EditContractView(appContract: filteredContracts, contractTerminatation: filteredContracts.contractTermination ?? Date(), contractDeadline: filteredContracts.deadline ?? Date(), dataHandler: dataHandler),isActive: $isActiveEditing){
-                                
-                            }.hidden()
+                           
                       
                             
                             
                         } .onDelete(perform: delete).alert("Vertrag wurde gelöscht", isPresented: $showingAlert) {
-                            
                         }
+                    }
                         
                     }.frame(
                         minWidth: 0,
