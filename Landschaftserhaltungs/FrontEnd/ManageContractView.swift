@@ -56,13 +56,13 @@ struct ManageContractView: View {
                         ForEach(dataHandler.filteredContracts, id: \.self)
                         {
                             filteredContracts in
-                            NavigationLink(destination: ContractAdminister() )
+                            NavigationLink(destination: ContractAdminister(filteredContracts: filteredContracts) )
                             {
                                 ContractListItem(firstName: filteredContracts.firstName ?? "Unknown", lastName: filteredContracts.lastName , operationNumber: filteredContracts.operationNumber ?? "Unknown", contractTermination:  filteredContracts.contractTermination?.toString() ?? Date().toString(), endOfContract: filteredContracts.contractTermination?.getEndOfContract(date: filteredContracts.contractTermination ?? Date()) ?? Date().toString() , image: filteredContracts.picture ?? UIImage(imageLiteralResourceName: "HFULogo"), deadline: filteredContracts.deadline?.toString() ?? Date().toString()).swipeActions(edge: .leading) {
                                     Button {
                                         isActiveEditing.toggle()
                                     } label: {
-                                        Label("Vertrag \n verwalten" ,systemImage: "slider.horizontal.2.square.on.square")
+                                        Label("Vertrag \n bearbeiten" ,systemImage: "rectangle.and.pencil.and.ellipsis")
                                     }
                                     .tint(.indigo)
                                 }
