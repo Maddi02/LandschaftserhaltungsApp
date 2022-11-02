@@ -17,7 +17,7 @@ struct MainSideView:  View {
         VStack{
             GeometryReader { geometry in
                 
-                NavigationView() {
+                NavigationStack() {
                     VStack {
                         NavigationLink(destination: CreateNewContract()) {
                             Text("Neuen Vertrag anlegen")

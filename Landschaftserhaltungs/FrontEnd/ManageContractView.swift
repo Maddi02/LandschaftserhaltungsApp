@@ -69,7 +69,9 @@ struct ManageContractView: View {
                                 
                             }.frame(maxWidth: .infinity).navigationDestination(isPresented: $isActiveEditing){
                                 EditContractView(appContract: filteredContracts, contractTerminatation: filteredContracts.contractTermination ?? Date(), contractDeadline: filteredContracts.deadline ?? Date(), dataHandler: dataHandler)
+                                
                             }
+                            
                             
                            
                       
