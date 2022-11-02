@@ -27,7 +27,6 @@ extension Date
         self.init(timeInterval:0, since:date)
     }
     
-    
     func getYearFromDate(date : Date) -> Int
     {
         let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: date)

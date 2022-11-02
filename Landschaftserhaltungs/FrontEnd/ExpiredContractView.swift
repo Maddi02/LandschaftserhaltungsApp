@@ -14,7 +14,6 @@ struct ExpiredContractView: View {
     private var appContractListASC : [AppContract]
     @Environment(\.managedObjectContext) var moc
     init(){
-        
         appContractListASC = dataHandler.sortByDateASC()
     }
     
@@ -25,8 +24,6 @@ struct ExpiredContractView: View {
             GeometryReader { geometry in
                 ScrollView()
                 {
-                    
-                    
                     List {
                         
                         ForEach(appContractListASC, id: \.self)

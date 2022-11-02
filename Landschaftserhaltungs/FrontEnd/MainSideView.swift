@@ -28,11 +28,8 @@ struct MainSideView:  View {
                             .navigationTitle("Menu")
                             .frame(alignment: .topLeading)
                         
-                        
-                        
                         NavigationLink(destination: ManageContractView()) {
                             Text("Verträge verwalten")
-                            
                         }.foregroundColor(.white)
                             .frame(maxWidth: .infinity)
                             .padding()
@@ -50,8 +47,6 @@ struct MainSideView:  View {
                         
                     }.frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
                         .background(BackGroundGradient.getGradient())
-                    
-                    
                 }
                 
                 
