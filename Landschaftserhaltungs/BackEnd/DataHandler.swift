@@ -31,11 +31,18 @@ class DataHandler : ObservableObject
   
             return appContractList
         case .date:
-            self.appContractListSortedByDate =  self.sortByDateASC()
+            Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false)
+            { _ in
+                self.appContractListSortedByDate =  self.sortByDateASC()
+            }
             return appContractListSortedByDate
         case .deadline:
-            self.appContractListSortedByDeadline =  self.sortByDateDeadline()
-            return appContractListSortedByDeadline
+            Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false)
+            { _ in
+                self.appContractListSortedByDeadline =  self.sortByDateDeadline()
+            }
+                return appContractListSortedByDeadline
+            
         }
     }
     

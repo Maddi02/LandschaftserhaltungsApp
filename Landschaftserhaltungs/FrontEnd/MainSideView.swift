@@ -34,7 +34,7 @@ struct MainSideView:  View {
                             .frame(maxWidth: .infinity)
                             .padding()
                             .background(Color.gray.opacity(0.5))
-                         //   .simultaneousGesture(TapGesture().onEnded{
+                         //   .simultaneousGesture(TapGesture().onEnded{  // Dont include, this will cause 
                          //                                       dataHandler.fetchAppContract()
                          //                                 })
                         

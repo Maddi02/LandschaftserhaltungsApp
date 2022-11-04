@@ -27,11 +27,6 @@ struct ManageContractView: View {
     
     
     var body: some View {
-        
-        
-        
-        
-        
         VStack(alignment: .leading){
             Text("Verträge Verwaltung").font(.title2)
             
@@ -49,9 +44,8 @@ struct ManageContractView: View {
             GeometryReader { geometry in
                 ScrollView()
                 {
-                    
                     NavigationStack{
-                    List {
+                    List() {
                         
                         ForEach(dataHandler.filteredContracts, id: \.self)
                         {
@@ -71,11 +65,6 @@ struct ManageContractView: View {
                                 EditContractView(appContract: filteredContracts, contractTerminatation: filteredContracts.contractTermination ?? Date(), contractDeadline: filteredContracts.deadline ?? Date(), dataHandler: dataHandler)
                                 
                             }
-                            
-                            
-                           
-                      
-                            
                             
                         } .onDelete(perform: delete).alert("Vertrag wurde gelöscht", isPresented: $showingAlert) {
                         }
