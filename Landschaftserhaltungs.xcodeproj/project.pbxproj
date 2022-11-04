@@ -14,7 +14,6 @@
 		2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239595E2907DDCD00D5F38E /* ContractListItem.swift */; };
 		223AD4D42912B59B009B5C1C /* ContractAdminister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD4D32912B59B009B5C1C /* ContractAdminister.swift */; };
 		223BB34D29103C490064927A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB34C29103C490064927A /* TextView.swift */; };
-		223BB352291144BE0064927A /* TextView in Frameworks */ = {isa = PBXBuildFile; productRef = 223BB351291144BE0064927A /* TextView */; };
 		223BB354291147380064927A /* WrappedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB353291147380064927A /* WrappedTextView.swift */; };
 		223BB35829116F9D0064927A /* SelectFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB35729116F9D0064927A /* SelectFilterView.swift */; };
 		22455CF628FF03BC002876AD /* CreateNewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455CF528FF03BC002876AD /* CreateNewContract.swift */; };
@@ -102,7 +101,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				223BB352291144BE0064927A /* TextView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +251,6 @@
 			);
 			name = Landschaftserhaltungs;
 			packageProductDependencies = (
-				223BB351291144BE0064927A /* TextView */,
 			);
 			productName = Landschaftserhaltungs;
 			productReference = 224F45F828FD80E7004EA74F /* Landschaftserhaltungs.app */;
@@ -743,14 +740,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		223BB351291144BE0064927A /* TextView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 223BB350291144BE0064927A /* XCRemoteSwiftPackageReference "TextView" */;
-			productName = TextView;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		22455D0E2900A81A002876AD /* AppStateDataModel.xcdatamodeld */ = {

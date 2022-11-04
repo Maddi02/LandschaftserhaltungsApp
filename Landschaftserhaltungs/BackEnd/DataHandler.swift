@@ -17,18 +17,12 @@ class DataHandler : ObservableObject
     @Published var appContractListSortedByDate: [AppContract] = []
     @Published var appContractListSortedByDeadline: [AppContract] = []
     @Published var appContractList: [AppContract] = []
-    @Published var filter : FilterType = .deadline
+    @Published var filter : FilterType = .none
+    
     enum FilterType{
         case none, date, deadline
     }
-    
-    
-    
-    init()
-    {
-        fetchAppContract()
-    }
-    
+
     var filteredContracts: [AppContract]{
         fetchAppContract()
         switch filter {
@@ -37,10 +31,10 @@ class DataHandler : ObservableObject
   
             return appContractList
         case .date:
-       
+            self.appContractListSortedByDate =  self.sortByDateASC()
             return appContractListSortedByDate
         case .deadline:
-           
+            self.appContractListSortedByDeadline =  self.sortByDateDeadline()
             return appContractListSortedByDeadline
         }
     }
@@ -52,8 +46,6 @@ class DataHandler : ObservableObject
         { _ in
             do {
                 self.appContractList = try self.context.fetch(self.request)
-                self.appContractListSortedByDate =  self.sortByDateASC()
-                self.appContractListSortedByDeadline =  self.sortByDateDeadline()
             }
             catch {
                 // Handle Error

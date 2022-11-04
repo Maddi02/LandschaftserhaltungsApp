@@ -100,6 +100,11 @@ struct ManageContractView: View {
         }
     }
     
+    func popToRoot()
+    {
+        dataHandler.appContractList.removeAll()
+    }
+    
     
     func delete(at offsets : IndexSet )
     {

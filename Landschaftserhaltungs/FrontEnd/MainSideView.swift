@@ -34,9 +34,9 @@ struct MainSideView:  View {
                             .frame(maxWidth: .infinity)
                             .padding()
                             .background(Color.gray.opacity(0.5))
-                            .simultaneousGesture(TapGesture().onEnded{
-                                                                dataHandler.fetchAppContract()
-                                                          })
+                         //   .simultaneousGesture(TapGesture().onEnded{
+                         //                                       dataHandler.fetchAppContract()
+                         //                                 })
                         
                         NavigationLink(destination: ExpiredContractView()) {
                             Text("Auslaufende Verträge")
