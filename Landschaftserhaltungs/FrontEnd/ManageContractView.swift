@@ -53,18 +53,24 @@ struct ManageContractView: View {
                             NavigationLink(destination: ContractAdminister(filteredContracts: filteredContracts) )
                             {
                                 ContractListItem(firstName: filteredContracts.firstName ?? "Unknown", lastName: filteredContracts.lastName , operationNumber: filteredContracts.operationNumber ?? "Unknown", contractTermination:  filteredContracts.contractTermination?.toString() ?? Date().toString(), endOfContract: filteredContracts.contractTermination?.getEndOfContract(date: filteredContracts.contractTermination ?? Date()) ?? Date().toString() , image: filteredContracts.picture ?? UIImage(imageLiteralResourceName: "HFULogo"), deadline: filteredContracts.deadline?.toString() ?? Date().toString()).swipeActions(edge: .leading) {
-                                    Button {
-                                        isActiveEditing.toggle()
-                                    } label: {
-                                        Label("Vertrag \n bearbeiten" ,systemImage: "rectangle.and.pencil.and.ellipsis")
-                                    }
-                                    .tint(.indigo)
-                                }
+                                    
+
+                                        NavigationLink(destination: EditContractView(appContract: filteredContracts, contractTerminatation: filteredContracts.contractTermination ?? Date(), contractDeadline: filteredContracts.deadline ?? Date(), dataHandler: dataHandler)) {
+                               
+                                     
+                                            HStack(spacing: 0) {
+                                                Text("Vertrag bearbeiten")
+                                                Image(systemName: "slider.horizontal.2.square.on.square")
+                                         
+                                            }
+                            
+                                        }
+                                        
+                                }.tint(.indigo)
                                 
-                            }.frame(maxWidth: .infinity).navigationDestination(isPresented: $isActiveEditing){
-                                EditContractView(appContract: filteredContracts, contractTerminatation: filteredContracts.contractTermination ?? Date(), contractDeadline: filteredContracts.deadline ?? Date(), dataHandler: dataHandler)
                                 
-                            }
+                            }.frame(maxWidth: .infinity)
+                            
                             
                         } .onDelete(perform: delete).alert("Vertrag wurde gelöscht", isPresented: $showingAlert) {
                         }

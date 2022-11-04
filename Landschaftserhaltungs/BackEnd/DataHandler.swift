@@ -251,6 +251,7 @@ class DataHandler : ObservableObject
         appContract.setValue(newContractDataModel.operationNumber, forKey: #keyPath(AppContract.operationNumber))
         appContract.setValue(newContractDataModel.particularities, forKey: #keyPath(AppContract.particularities))
         appContract.setValue(newContractDataModel.PLZName, forKey: #keyPath(AppContract.plzName))
+        appContract.setValue(newContractDataModel.PLZ, forKey: #keyPath(AppContract.plz))
         appContract.setValue(newContractDataModel.street, forKey: #keyPath(AppContract.street))
         appContract.setValue(newContractDataModel.mobile, forKey: #keyPath(AppContract.mobile))
         appContract.setValue(image, forKey: #keyPath(AppContract.picture))
