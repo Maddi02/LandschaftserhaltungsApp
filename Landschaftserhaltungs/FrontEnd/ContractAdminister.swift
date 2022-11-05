@@ -22,16 +22,38 @@ struct ContractFieldItem
 
 
 struct ContractAdminister: View {
-    
+    @ObservedObject var dataHandler : DataHandler
     @State var filteredContracts : AppContract
     var body: some View {
         Text("Vetragsübersicht").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
         ContractListItem(firstName: filteredContracts.firstName ?? "Unknown", lastName: filteredContracts.lastName , operationNumber: filteredContracts.operationNumber ?? "Unknown", contractTermination:  filteredContracts.contractTermination?.toString() ?? Date().toString(), endOfContract: filteredContracts.contractTermination?.getEndOfContract(date: filteredContracts.contractTermination ?? Date()) ?? Date().toString() , image: filteredContracts.picture ?? UIImage(imageLiteralResourceName: "HFULogo"), deadline: filteredContracts.deadline?.toString() ?? Date().toString()).frame(maxWidth: .infinity, alignment: .top)
         
-        Text("Vetragsflächen:").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
-
         
         
+        VStack{
+            Text("Vetragsflächen:").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
+            Button(action: {
+                addRow()
+            }){
+                Image(systemName: "plus")
+            }.frame(maxWidth: .infinity, alignment: .trailing).padding(.trailing,30).padding(.bottom,10)
+            
+            
+           
+    
+        }
+        List()
+        {
+            ForEach(dataHandler.test, id: \.self)
+            {
+                filteredContracts in
+                ListItemContractArea()
+            }
+        }
     }
-}
+    private func addRow() {
+        dataHandler.listItemContractArea.append(ListItemContractArea())
+        print("Size: \(dataHandler.listItemContractArea.count)")
+    }
+    }
 

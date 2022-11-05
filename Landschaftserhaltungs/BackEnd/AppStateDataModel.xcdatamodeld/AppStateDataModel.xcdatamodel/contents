@@ -21,4 +21,5 @@
     <entity name="AppStateSaver" representedClassName="AppStateSaver" syncable="YES" codeGenerationType="class">
         <attribute name="hasOnboarded" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
+    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class"/>
 </model>

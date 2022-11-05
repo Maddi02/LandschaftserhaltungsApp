@@ -11,10 +11,15 @@ import SwiftUI
 struct MainSideView:  View {
     @EnvironmentObject var appState : AppState
     @StateObject var dataHandler = DataHandler()
+    @State private var showingSheet = false
+    @StateObject var appContract = AppContract()
+    @State private var image = UIImage()
     var body: some View {
         //Verwalten
         
         VStack{
+            
+            
             GeometryReader { geometry in
                 
                 NavigationStack() {
@@ -38,9 +43,15 @@ struct MainSideView:  View {
                          //                                       dataHandler.fetchAppContract()
                          //                                 })
                         
-                        NavigationLink(destination: ExpiredContractView()) {
-                            Text("Auslaufende Verträge")
-                        }.foregroundColor(.white)
+                       Button("Logo setzen")
+                        {
+                            showingSheet.toggle()
+                        }.sheet(isPresented: $showingSheet)
+                        {
+                            ImagePicker(changePicture: false, appContract: appContract,  sourceType: .photoLibrary, selectedImage: self.$image)
+                        }
+                            
+                        .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
                             .padding()
                             .background(Color.gray.opacity(0.5))

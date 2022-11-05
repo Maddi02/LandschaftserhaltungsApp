@@ -13,7 +13,8 @@
 		2239595B290452A600D5F38E /* UIImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239595A290452A600D5F38E /* UIImageTransformer.swift */; };
 		2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239595E2907DDCD00D5F38E /* ContractListItem.swift */; };
 		223AD4D42912B59B009B5C1C /* ContractAdminister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD4D32912B59B009B5C1C /* ContractAdminister.swift */; };
-		223AD5122915546E009B5C1C /* Test1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD5112915546E009B5C1C /* Test1.swift */; };
+		223AD51529156A51009B5C1C /* AppStateDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 223AD51329156A50009B5C1C /* AppStateDataModel.xcdatamodeld */; };
+		223AD52229157DF1009B5C1C /* ListItemContractArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD52129157DF1009B5C1C /* ListItemContractArea.swift */; };
 		223BB34D29103C490064927A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB34C29103C490064927A /* TextView.swift */; };
 		223BB354291147380064927A /* WrappedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB353291147380064927A /* WrappedTextView.swift */; };
 		223BB35829116F9D0064927A /* SelectFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB35729116F9D0064927A /* SelectFilterView.swift */; };
@@ -22,7 +23,6 @@
 		22455CFA28FF27B5002876AD /* ManageContractView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455CF928FF27B5002876AD /* ManageContractView.swift */; };
 		22455D0B2900901C002876AD /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455D0A2900901C002876AD /* ImagePicker.swift */; };
 		22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455D0C290094AE002876AD /* NewContractDataModel.swift */; };
-		22455D102900A81A002876AD /* AppStateDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22455D0E2900A81A002876AD /* AppStateDataModel.xcdatamodeld */; };
 		22455D122900A869002876AD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455D112900A869002876AD /* CoreDataManager.swift */; };
 		224F45FC28FD80E7004EA74F /* LandschaftserhaltungsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F45FB28FD80E7004EA74F /* LandschaftserhaltungsApp.swift */; };
 		224F45FE28FD80E7004EA74F /* OnboardingFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F45FD28FD80E7004EA74F /* OnboardingFlowView.swift */; };
@@ -66,7 +66,8 @@
 		2239595A290452A600D5F38E /* UIImageTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageTransformer.swift; sourceTree = "<group>"; };
 		2239595E2907DDCD00D5F38E /* ContractListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractListItem.swift; sourceTree = "<group>"; };
 		223AD4D32912B59B009B5C1C /* ContractAdminister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractAdminister.swift; sourceTree = "<group>"; };
-		223AD5112915546E009B5C1C /* Test1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test1.swift; sourceTree = "<group>"; };
+		223AD51429156A50009B5C1C /* AppStateDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppStateDataModel.xcdatamodel; sourceTree = "<group>"; };
+		223AD52129157DF1009B5C1C /* ListItemContractArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemContractArea.swift; sourceTree = "<group>"; };
 		223BB34C29103C490064927A /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		223BB353291147380064927A /* WrappedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedTextView.swift; sourceTree = "<group>"; };
 		223BB35729116F9D0064927A /* SelectFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFilterView.swift; sourceTree = "<group>"; };
@@ -75,7 +76,6 @@
 		22455CF928FF27B5002876AD /* ManageContractView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageContractView.swift; sourceTree = "<group>"; };
 		22455D0A2900901C002876AD /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		22455D0C290094AE002876AD /* NewContractDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContractDataModel.swift; sourceTree = "<group>"; };
-		22455D0F2900A81A002876AD /* AppStateDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppStateDataModel.xcdatamodel; sourceTree = "<group>"; };
 		22455D112900A869002876AD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		224F45F828FD80E7004EA74F /* Landschaftserhaltungs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Landschaftserhaltungs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		224F45FB28FD80E7004EA74F /* LandschaftserhaltungsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandschaftserhaltungsApp.swift; sourceTree = "<group>"; };
@@ -185,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				223AD4D32912B59B009B5C1C /* ContractAdminister.swift */,
+				223AD52129157DF1009B5C1C /* ListItemContractArea.swift */,
 				223BB35729116F9D0064927A /* SelectFilterView.swift */,
 				223BB353291147380064927A /* WrappedTextView.swift */,
 				223BB34C29103C490064927A /* TextView.swift */,
@@ -196,7 +197,6 @@
 				22455CF928FF27B5002876AD /* ManageContractView.swift */,
 				2252D320290868FF00568A1A /* EditContractView.swift */,
 				224F462928FE014B004EA74F /* Onboarding */,
-				223AD5112915546E009B5C1C /* Test1.swift */,
 			);
 			path = FrontEnd;
 			sourceTree = "<group>";
@@ -204,12 +204,12 @@
 		224F462628FD855D004EA74F /* BackEnd */ = {
 			isa = PBXGroup;
 			children = (
+				223AD51329156A50009B5C1C /* AppStateDataModel.xcdatamodeld */,
 				2239595A290452A600D5F38E /* UIImageTransformer.swift */,
 				2239595829044A6A00D5F38E /* AppContract.swift */,
 				224F463428FE1443004EA74F /* AppState.swift */,
 				22455D0A2900901C002876AD /* ImagePicker.swift */,
 				22455D0C290094AE002876AD /* NewContractDataModel.swift */,
-				22455D0E2900A81A002876AD /* AppStateDataModel.xcdatamodeld */,
 				22455D112900A869002876AD /* CoreDataManager.swift */,
 				221AC67A290C3A2700993F52 /* DataHandler.swift */,
 			);
@@ -375,9 +375,9 @@
 			files = (
 				22455CF828FF2794002876AD /* ExpiredContractView.swift in Sources */,
 				22455CF628FF03BC002876AD /* CreateNewContract.swift in Sources */,
+				223AD51529156A51009B5C1C /* AppStateDataModel.xcdatamodeld in Sources */,
+				223AD52229157DF1009B5C1C /* ListItemContractArea.swift in Sources */,
 				224F463128FE06E4004EA74F /* ThirdFeatureOverview.swift in Sources */,
-				223AD5122915546E009B5C1C /* Test1.swift in Sources */,
-				22455D102900A81A002876AD /* AppStateDataModel.xcdatamodeld in Sources */,
 				221AC67B290C3A2800993F52 /* DataHandler.swift in Sources */,
 				22455D0B2900901C002876AD /* ImagePicker.swift in Sources */,
 				223BB35829116F9D0064927A /* SelectFilterView.swift in Sources */,
@@ -746,12 +746,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
-		22455D0E2900A81A002876AD /* AppStateDataModel.xcdatamodeld */ = {
+		223AD51329156A50009B5C1C /* AppStateDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				22455D0F2900A81A002876AD /* AppStateDataModel.xcdatamodel */,
+				223AD51429156A50009B5C1C /* AppStateDataModel.xcdatamodel */,
 			);
-			currentVersion = 22455D0F2900A81A002876AD /* AppStateDataModel.xcdatamodel */;
+			currentVersion = 223AD51429156A50009B5C1C /* AppStateDataModel.xcdatamodel */;
 			path = AppStateDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

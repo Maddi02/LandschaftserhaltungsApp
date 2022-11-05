@@ -15,6 +15,7 @@ class DataHandler : ObservableObject
     private var context = CoreDataManager.shared.persistentContainer.viewContext
     let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
     @Published var appContractListSortedByDate: [AppContract] = []
+    @Published var listItemContractArea: [ListItemContractArea] = []
     @Published var appContractListSortedByDeadline: [AppContract] = []
     @Published var appContractList: [AppContract] = []
     @Published var filter : FilterType = .none
@@ -23,6 +24,13 @@ class DataHandler : ObservableObject
         case none, date, deadline
     }
 
+    
+  
+    var test :[ListItemContractArea] {
+        
+        return listItemContractArea
+    }
+    
     var filteredContracts: [AppContract]{
         fetchAppContract()
         switch filter {
@@ -269,4 +277,5 @@ class DataHandler : ObservableObject
         
         appContractList.remove(atOffsets: offsets)
     }
+    
 }
