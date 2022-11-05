@@ -41,18 +41,14 @@ struct ContractAdminister: View {
             }){
                 Image(systemName: "plus")
             }.frame(maxWidth: .infinity, alignment: .trailing).padding(.trailing,30).padding(.bottom,10) .actionSheet(isPresented: $showingOptions) {
-                ActionSheet( title: Text("Select a color"),
+                ActionSheet( title: Text("Art der Teilfläche"),
                              buttons: [
-                                .default(Text("Red")) {
-                                    selection = "Red"
+                                .default(Text("FFH - Mähwiese")) {
+                                    selection = "FFH - Mähwiese"
                                 },
                                 
-                                    .default(Text("Green")) {
-                                        selection = "Green"
-                                    },
-                                
-                                    .default(Text("Blue")) {
-                                        selection = "Blue"
+                                    .default(Text("Anderer Biotype")) {
+                                        selection = "Anderer Biotype"
                                     },
                              ]
                 )
