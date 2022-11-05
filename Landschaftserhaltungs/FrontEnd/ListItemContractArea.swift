@@ -12,7 +12,7 @@ struct ListItemContractArea: Hashable,  View {
     
 
     
-    private var username: String = "HHH"
+   private var username: String = "HHH"
     var test : Int = 0
     private var heightLocation: CGFloat = 0
    
@@ -69,10 +69,10 @@ struct ListItemContractArea: Hashable,  View {
                 }
                 
                 HStack{
-                    /*
-                    WrappedTextView(text: $username.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeLocation)
+                  /*
+                    WrappedTextView(text: username, textDidChange: self.textDidChangeLocation)
                         .frame(height: heightLocation ?? minHeightLocation).background(Color.clear)
-                    */
+                   */
                 }
                 
                 
