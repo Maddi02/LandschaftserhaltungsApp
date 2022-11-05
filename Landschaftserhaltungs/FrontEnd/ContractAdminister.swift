@@ -22,6 +22,7 @@ struct ContractFieldItem
 
 
 struct ContractAdminister: View {
+    @Environment(\.dismiss) var dismiss
     @ObservedObject var dataHandler : DataHandler
     @State var filteredContracts : AppContract
     @State private var showingOptions = false
@@ -50,6 +51,7 @@ struct ContractAdminister: View {
                                     .default(Text("Anderer Biotype")) {
                                         selection = "Anderer Biotype"
                                     },
+                                .cancel(Text("Abbruch"))
                              ]
                 )
                 
