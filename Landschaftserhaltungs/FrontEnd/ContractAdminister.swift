@@ -17,7 +17,7 @@ struct ContractAdminister: View {
     @ObservedObject var dataHandler : DataHandler
     @State var filteredContracts : AppContract
     
-    
+    @State private var action: Int? = 0
     @State private var showingOptions = false
     @State private var selection = "None"
     @State private var showingAlert = false
@@ -30,6 +30,7 @@ struct ContractAdminister: View {
         
         
         VStack{
+
             Text("Vetragsflächen:").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
             Button(action: {
                 showingOptions.toggle()
@@ -79,16 +80,24 @@ struct ContractAdminister: View {
                 }
                 
             }.confirmationDialog("Wähle die Art der Zählung aus", isPresented: $showingActionSheet, titleVisibility: .visible) {
-                Button("Artenzählung") {
-                    
+                NavigationLink(destination: EditListItemContractArea()) {
+                    Button("Artenzählung")
+                    {
+
+                    }
                 }
 
-                Button("Häufigkeitsschätzung") {
-                    
+                NavigationLink(destination: EditListItemContractArea()) {
+                    Button("Häufigkeitsschätzung")
+                    {
+
+                    }
                 }
-                
-                Button("Exportieren"){
-                    
+                NavigationLink(destination: EditListItemContractArea()) {
+                    Button("Exportieren")
+                    {
+
+                    }
                 }
             }
         }

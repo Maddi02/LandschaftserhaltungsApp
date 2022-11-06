@@ -198,6 +198,7 @@
 		224F462528FD8555004EA74F /* FrontEnd */ = {
 			isa = PBXGroup;
 			children = (
+				223AD56F29185486009B5C1C /* ContractFieldItem.swift */,
 				223AD5252917CBDA009B5C1C /* ToggleCheckboxStyle.swift */,
 				223AD5232917C67D009B5C1C /* CreateNewPerpetration.swift */,
 				223AD4D32912B59B009B5C1C /* ContractAdminister.swift */,
@@ -214,7 +215,6 @@
 				2252D320290868FF00568A1A /* EditContractView.swift */,
 				223AD56D291845D3009B5C1C /* EditListItemContractArea.swift */,
 				224F462928FE014B004EA74F /* Onboarding */,
-				223AD56F29185486009B5C1C /* ContractFieldItem.swift */,
 			);
 			path = FrontEnd;
 			sourceTree = "<group>";
