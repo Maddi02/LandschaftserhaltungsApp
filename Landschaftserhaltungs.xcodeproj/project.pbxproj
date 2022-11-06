@@ -15,6 +15,8 @@
 		223AD4D42912B59B009B5C1C /* ContractAdminister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD4D32912B59B009B5C1C /* ContractAdminister.swift */; };
 		223AD51529156A51009B5C1C /* AppStateDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 223AD51329156A50009B5C1C /* AppStateDataModel.xcdatamodeld */; };
 		223AD52229157DF1009B5C1C /* ListItemContractArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD52129157DF1009B5C1C /* ListItemContractArea.swift */; };
+		223AD5242917C67D009B5C1C /* CreateNewPerpetration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD5232917C67D009B5C1C /* CreateNewPerpetration.swift */; };
+		223AD5262917CBDA009B5C1C /* ToggleCheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD5252917CBDA009B5C1C /* ToggleCheckboxStyle.swift */; };
 		223BB34D29103C490064927A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB34C29103C490064927A /* TextView.swift */; };
 		223BB354291147380064927A /* WrappedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB353291147380064927A /* WrappedTextView.swift */; };
 		223BB35829116F9D0064927A /* SelectFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB35729116F9D0064927A /* SelectFilterView.swift */; };
@@ -68,6 +70,8 @@
 		223AD4D32912B59B009B5C1C /* ContractAdminister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractAdminister.swift; sourceTree = "<group>"; };
 		223AD51429156A50009B5C1C /* AppStateDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppStateDataModel.xcdatamodel; sourceTree = "<group>"; };
 		223AD52129157DF1009B5C1C /* ListItemContractArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemContractArea.swift; sourceTree = "<group>"; };
+		223AD5232917C67D009B5C1C /* CreateNewPerpetration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPerpetration.swift; sourceTree = "<group>"; };
+		223AD5252917CBDA009B5C1C /* ToggleCheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCheckboxStyle.swift; sourceTree = "<group>"; };
 		223BB34C29103C490064927A /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		223BB353291147380064927A /* WrappedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedTextView.swift; sourceTree = "<group>"; };
 		223BB35729116F9D0064927A /* SelectFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFilterView.swift; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 		224F462528FD8555004EA74F /* FrontEnd */ = {
 			isa = PBXGroup;
 			children = (
+				223AD5252917CBDA009B5C1C /* ToggleCheckboxStyle.swift */,
+				223AD5232917C67D009B5C1C /* CreateNewPerpetration.swift */,
 				223AD4D32912B59B009B5C1C /* ContractAdminister.swift */,
 				223AD52129157DF1009B5C1C /* ListItemContractArea.swift */,
 				223BB35729116F9D0064927A /* SelectFilterView.swift */,
@@ -388,6 +394,8 @@
 				22455D122900A869002876AD /* CoreDataManager.swift in Sources */,
 				224F463328FE07D8004EA74F /* DoneOverview.swift in Sources */,
 				221AC67D290D150B00993F52 /* BackgroundLinearGradient.swift in Sources */,
+				223AD5242917C67D009B5C1C /* CreateNewPerpetration.swift in Sources */,
+				223AD5262917CBDA009B5C1C /* ToggleCheckboxStyle.swift in Sources */,
 				224F463528FE1443004EA74F /* AppState.swift in Sources */,
 				22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */,
 				224F462F28FE06CD004EA74F /* SecondFeatureOverview.swift in Sources */,

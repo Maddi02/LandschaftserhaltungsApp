@@ -41,20 +41,9 @@ struct ContractAdminister: View {
                 addRow()
             }){
                 Image(systemName: "plus")
-            }.frame(maxWidth: .infinity, alignment: .trailing).padding(.trailing,30).padding(.bottom,10) .actionSheet(isPresented: $showingOptions) {
-                ActionSheet( title: Text("Art der Teilfläche"),
-                             buttons: [
-                                .default(Text("FFH - Mähwiese")) {
-                                    selection = "FFH - Mähwiese"
-                                },
-                                
-                                    .default(Text("Anderer Biotype")) {
-                                        selection = "Anderer Biotype"
-                                    },
-                                .cancel(Text("Abbruch"))
-                             ]
-                )
-                
+            }.frame(maxWidth: .infinity, alignment: .trailing).padding(.trailing,30).padding(.bottom,10) .sheet(isPresented: $showingOptions)
+            {
+                CreateNewPerpetration()
             }
                 
                 
