@@ -32,6 +32,7 @@ struct ContractAdminister: View {
     @State private var showingOptions = false
     @State private var selection = "None"
     @State private var showingAlert = false
+    @State private var showingActionSheet = false
     
     var body: some View {
         Text("Vetragsübersicht").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
@@ -64,13 +65,17 @@ struct ContractAdminister: View {
                     list in
                     
                     Button{
+                        showingActionSheet.toggle()
                         print("Pressed on a List Item")
-                    }label: {
+                    }
+                
+                
+                label: {
                         
                         
                         ListItemContractArea(description: list.detailDescription ?? "Unknown", date: list.dateOfObservation ?? Date(), typ: list.descriptionField ?? "Unknown").tint(.black)
                         
-                    }  .swipeActions(edge: .leading) {
+                    }.swipeActions(edge: .leading) {
                         NavigationLink( destination: EditListItemContractArea())
                         {
                             HStack(spacing: 0) {
@@ -84,6 +89,14 @@ struct ContractAdminister: View {
                 } .onDelete(perform: delete).alert("Vertrag wurde gelöscht", isPresented: $showingAlert) {
                 }
                 
+            }.confirmationDialog("Wähle die Art der Zählung aus", isPresented: $showingActionSheet, titleVisibility: .visible) {
+                Button("Artenzählung") {
+                    
+                }
+
+                Button("Häufigkeitsschätzung") {
+                    
+                }
             }
         }
     }
