@@ -21,6 +21,7 @@
 		223AD56B29181348009B5C1C /* AppContract+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD56729181348009B5C1C /* AppContract+CoreDataClass.swift */; };
 		223AD56C29181348009B5C1C /* AppContract+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD56829181348009B5C1C /* AppContract+CoreDataProperties.swift */; };
 		223AD56E291845D3009B5C1C /* EditListItemContractArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD56D291845D3009B5C1C /* EditListItemContractArea.swift */; };
+		223AD57029185486009B5C1C /* ContractFieldItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD56F29185486009B5C1C /* ContractFieldItem.swift */; };
 		223BB34D29103C490064927A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB34C29103C490064927A /* TextView.swift */; };
 		223BB354291147380064927A /* WrappedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB353291147380064927A /* WrappedTextView.swift */; };
 		223BB35829116F9D0064927A /* SelectFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB35729116F9D0064927A /* SelectFilterView.swift */; };
@@ -80,6 +81,7 @@
 		223AD56729181348009B5C1C /* AppContract+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppContract+CoreDataClass.swift"; sourceTree = "<group>"; };
 		223AD56829181348009B5C1C /* AppContract+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppContract+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		223AD56D291845D3009B5C1C /* EditListItemContractArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditListItemContractArea.swift; sourceTree = "<group>"; };
+		223AD56F29185486009B5C1C /* ContractFieldItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractFieldItem.swift; sourceTree = "<group>"; };
 		223BB34C29103C490064927A /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		223BB353291147380064927A /* WrappedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedTextView.swift; sourceTree = "<group>"; };
 		223BB35729116F9D0064927A /* SelectFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFilterView.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				2252D320290868FF00568A1A /* EditContractView.swift */,
 				223AD56D291845D3009B5C1C /* EditListItemContractArea.swift */,
 				224F462928FE014B004EA74F /* Onboarding */,
+				223AD56F29185486009B5C1C /* ContractFieldItem.swift */,
 			);
 			path = FrontEnd;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				223AD56C29181348009B5C1C /* AppContract+CoreDataProperties.swift in Sources */,
 				224F462F28FE06CD004EA74F /* SecondFeatureOverview.swift in Sources */,
 				223AD56A29181348009B5C1C /* ListEntry+CoreDataProperties.swift in Sources */,
+				223AD57029185486009B5C1C /* ContractFieldItem.swift in Sources */,
 				223BB354291147380064927A /* WrappedTextView.swift in Sources */,
 				2239595B290452A600D5F38E /* UIImageTransformer.swift in Sources */,
 				223AD56929181348009B5C1C /* ListEntry+CoreDataClass.swift in Sources */,
