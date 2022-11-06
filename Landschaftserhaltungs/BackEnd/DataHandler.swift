@@ -278,4 +278,9 @@ class DataHandler : ObservableObject
         appContractList.remove(atOffsets: offsets)
     }
     
+    public func deleteTest(at offsets : IndexSet){
+        
+        //test.remove(atOffsets: offsets)
+    }
+    
 }

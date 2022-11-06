@@ -27,6 +27,7 @@ struct ContractAdminister: View {
     @State var filteredContracts : AppContract
     @State private var showingOptions = false
     @State private var selection = "None"
+    @State private var showingAlert = false
     
     var body: some View {
         Text("Vetragsübersicht").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
@@ -38,7 +39,6 @@ struct ContractAdminister: View {
             Text("Vetragsflächen:").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
             Button(action: {
                 showingOptions.toggle()
-                addRow()
             }){
                 Image(systemName: "plus")
             }.frame(maxWidth: .infinity, alignment: .trailing).padding(.trailing,30).padding(.bottom,10) .sheet(isPresented: $showingOptions)
@@ -54,12 +54,19 @@ struct ContractAdminister: View {
                 {
                     filteredContracts in
                     filteredContracts
+                }.onDelete(perform: delete).alert("Vertrag wurde gelöscht", isPresented: $showingAlert) {
                 }
             }
         }
-        private func addRow() {
-        
-            print("Size: \(dataHandler.listItemContractArea.count)")
+    
+    func delete(at offsets : IndexSet )
+    {
+        showingAlert = true
+        for offset in offsets{
+            let item = dataHandler.test[offset]
+           // dataHandler.test.remove(atOffsets: offsets)
         }
+    }
+
     }
     
