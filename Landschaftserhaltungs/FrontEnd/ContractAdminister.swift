@@ -43,7 +43,7 @@ struct ContractAdminister: View {
                 Image(systemName: "plus")
             }.frame(maxWidth: .infinity, alignment: .trailing).padding(.trailing,30).padding(.bottom,10) .sheet(isPresented: $showingOptions)
             {
-                CreateNewPerpetration()
+                CreateNewPerpetration(dataHandler: dataHandler)
             }
                 
                 
@@ -58,7 +58,7 @@ struct ContractAdminister: View {
             }
         }
         private func addRow() {
-            dataHandler.listItemContractArea.append(ListItemContractArea())
+        
             print("Size: \(dataHandler.listItemContractArea.count)")
         }
     }

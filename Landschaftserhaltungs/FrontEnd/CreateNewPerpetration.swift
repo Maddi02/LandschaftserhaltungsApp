@@ -15,6 +15,7 @@ struct CreateNewPerpetration: View {
     @State private var description : String = ""
     @State private var isOnFFH = false
     @State private var isOnDiffrent = false
+    var dataHandler : DataHandler
     @Environment(\.dismiss) var dismiss
     var body: some View {
         
@@ -63,8 +64,15 @@ struct CreateNewPerpetration: View {
                     
                     
                 }
+                Button("Speichern"){
+                    dataHandler.listItemContractArea.append(ListItemContractArea())
+                    dismiss()
+                }.frame(maxWidth: .infinity, alignment: .center)
+                
             }
-             
+            
+     
+            
             Button("Abbrechen"){
                 dismiss()
             }
@@ -72,9 +80,10 @@ struct CreateNewPerpetration: View {
         }
     }
 }
-
-struct CreateNewPerpetration_Previews: PreviewProvider {
-    static var previews: some View {
-        CreateNewPerpetration()
-    }
-}
+/*
+ struct CreateNewPerpetration_Previews: PreviewProvider {
+ static var previews: some View {
+ CreateNewPerpetration(datahandler: )
+ }
+ }
+ */
