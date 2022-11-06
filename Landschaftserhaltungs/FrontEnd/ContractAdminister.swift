@@ -97,6 +97,10 @@ struct ContractAdminister: View {
                 Button("Häufigkeitsschätzung") {
                     
                 }
+                
+                Button("Exportieren"){
+                    
+                }
             }
         }
     }
