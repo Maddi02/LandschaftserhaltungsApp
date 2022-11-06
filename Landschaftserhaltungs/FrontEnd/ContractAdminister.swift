@@ -60,7 +60,18 @@ struct ContractAdminister: View {
                 ForEach(filteredContracts.ContactArray, id: \.self)
                 {
                     list in
-                    ListItemContractArea(description: list.detailDescription ?? "Unknown", date: list.dateOfObservation ?? Date(), typ: list.descriptionField ?? "Unknown")
+                    ListItemContractArea(description: list.detailDescription ?? "Unknown", date: list.dateOfObservation ?? Date(), typ: list.descriptionField ?? "Unknown").swipeActions(edge: .leading) {
+                        NavigationLink( destination: EditListItemContractArea())
+                        {
+                            HStack(spacing: 0) {
+                                Text("Aufnahme bearbeiten")
+                                Image(systemName: "slider.horizontal.2.square.on.square")
+                                
+                            }
+                        }.tint(.indigo)
+               
+                    }
+                
              
                     
                 } .onDelete(perform: delete).alert("Vertrag wurde gelöscht", isPresented: $showingAlert) {

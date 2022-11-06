@@ -247,10 +247,7 @@ class DataHandler : ObservableObject
     }
     
     
-    public func testsave()
-    {
-        let appContract = AppContract(context: context);
-    }
+
     
     public func saveAll(image: UIImage = UIImage(), firstName1: String, newContractDataModel : NewContractDataModel)
     {
