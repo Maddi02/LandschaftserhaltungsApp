@@ -24,7 +24,7 @@ struct ContractFieldItem
 struct ContractAdminister: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var list : FetchedResults<ListEntry>
+    
     @ObservedObject var dataHandler : DataHandler
     @State var filteredContracts : AppContract
 
@@ -43,7 +43,7 @@ struct ContractAdminister: View {
             Text("Vetragsflächen:").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
             Button(action: {
                 showingOptions.toggle()
-                print("Size \(list.count)")
+
             }){
                 Image(systemName: "plus")
             }.frame(maxWidth: .infinity, alignment: .trailing).padding(.trailing,30).padding(.bottom,10) .sheet(isPresented: $showingOptions)
@@ -57,25 +57,29 @@ struct ContractAdminister: View {
         VStack{
             List()
             {
+                
                 ForEach(filteredContracts.ContactArray, id: \.self)
                 {
+                    
                     list in
-                    ListItemContractArea(description: list.detailDescription ?? "Unknown", date: list.dateOfObservation ?? Date(), typ: list.descriptionField ?? "Unknown").swipeActions(edge: .leading) {
-                        NavigationLink( destination: EditListItemContractArea())
-                        {
-                            HStack(spacing: 0) {
-                                Text("Aufnahme bearbeiten")
-                                Image(systemName: "slider.horizontal.2.square.on.square")
-                                
-                            }
-                        }.tint(.indigo)
-               
-                    }
-                
-             
+                        ListItemContractArea(description: list.detailDescription ?? "Unknown", date: list.dateOfObservation ?? Date(), typ: list.descriptionField ?? "Unknown").tint(.black)
+                    
+                        .swipeActions(edge: .leading) {
+                            NavigationLink( destination: EditListItemContractArea())
+                            {
+                                HStack(spacing: 0) {
+                                    Text("Aufnahme bearbeiten")
+                                    Image(systemName: "slider.horizontal.2.square.on.square")
+                                }
+                            }.tint(.indigo)
+                            
+                            
+                        }
+                    
                     
                 } .onDelete(perform: delete).alert("Vertrag wurde gelöscht", isPresented: $showingAlert) {
                 }
+            
             }
         }
     }

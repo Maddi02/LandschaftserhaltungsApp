@@ -10,7 +10,7 @@ import CoreData
 import SwiftUI
 class DataHandler : ObservableObject
 {
-    
+    @FetchRequest(sortDescriptors: []) var list : FetchedResults<ListEntry>
     private var newContractDataModel = NewContractDataModel()
     private var context = CoreDataManager.shared.persistentContainer.viewContext
     let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
