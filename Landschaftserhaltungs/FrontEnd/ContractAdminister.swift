@@ -80,20 +80,20 @@ struct ContractAdminister: View {
                 }
                 
             }.confirmationDialog("Wähle die Art der Zählung aus", isPresented: $showingActionSheet, titleVisibility: .visible) {
-                NavigationLink(destination: EditListItemContractArea()) {
+                NavigationLink(destination: SpeciesCensusView()) {
                     Button("Artenzählung")
                     {
 
                     }
                 }
 
-                NavigationLink(destination: EditListItemContractArea()) {
+                NavigationLink(destination: FrequencyEstimationField()) {
                     Button("Häufigkeitsschätzung")
                     {
 
                     }
                 }
-                NavigationLink(destination: EditListItemContractArea()) {
+                NavigationLink(destination: ExportPreview()) {
                     Button("Exportieren")
                     {
 
