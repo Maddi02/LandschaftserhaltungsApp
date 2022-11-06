@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		221AC67B290C3A2800993F52 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221AC67A290C3A2700993F52 /* DataHandler.swift */; };
 		221AC67D290D150B00993F52 /* BackgroundLinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221AC67C290D150B00993F52 /* BackgroundLinearGradient.swift */; };
-		2239595929044A6A00D5F38E /* AppContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239595829044A6A00D5F38E /* AppContract.swift */; };
 		2239595B290452A600D5F38E /* UIImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239595A290452A600D5F38E /* UIImageTransformer.swift */; };
 		2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239595E2907DDCD00D5F38E /* ContractListItem.swift */; };
 		223AD4D42912B59B009B5C1C /* ContractAdminister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD4D32912B59B009B5C1C /* ContractAdminister.swift */; };
@@ -17,6 +16,10 @@
 		223AD52229157DF1009B5C1C /* ListItemContractArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD52129157DF1009B5C1C /* ListItemContractArea.swift */; };
 		223AD5242917C67D009B5C1C /* CreateNewPerpetration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD5232917C67D009B5C1C /* CreateNewPerpetration.swift */; };
 		223AD5262917CBDA009B5C1C /* ToggleCheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD5252917CBDA009B5C1C /* ToggleCheckboxStyle.swift */; };
+		223AD56929181348009B5C1C /* ListEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD56529181348009B5C1C /* ListEntry+CoreDataClass.swift */; };
+		223AD56A29181348009B5C1C /* ListEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD56629181348009B5C1C /* ListEntry+CoreDataProperties.swift */; };
+		223AD56B29181348009B5C1C /* AppContract+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD56729181348009B5C1C /* AppContract+CoreDataClass.swift */; };
+		223AD56C29181348009B5C1C /* AppContract+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD56829181348009B5C1C /* AppContract+CoreDataProperties.swift */; };
 		223BB34D29103C490064927A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB34C29103C490064927A /* TextView.swift */; };
 		223BB354291147380064927A /* WrappedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB353291147380064927A /* WrappedTextView.swift */; };
 		223BB35829116F9D0064927A /* SelectFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB35729116F9D0064927A /* SelectFilterView.swift */; };
@@ -64,7 +67,6 @@
 /* Begin PBXFileReference section */
 		221AC67A290C3A2700993F52 /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 		221AC67C290D150B00993F52 /* BackgroundLinearGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundLinearGradient.swift; sourceTree = "<group>"; };
-		2239595829044A6A00D5F38E /* AppContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContract.swift; sourceTree = "<group>"; };
 		2239595A290452A600D5F38E /* UIImageTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageTransformer.swift; sourceTree = "<group>"; };
 		2239595E2907DDCD00D5F38E /* ContractListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractListItem.swift; sourceTree = "<group>"; };
 		223AD4D32912B59B009B5C1C /* ContractAdminister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractAdminister.swift; sourceTree = "<group>"; };
@@ -72,6 +74,10 @@
 		223AD52129157DF1009B5C1C /* ListItemContractArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemContractArea.swift; sourceTree = "<group>"; };
 		223AD5232917C67D009B5C1C /* CreateNewPerpetration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPerpetration.swift; sourceTree = "<group>"; };
 		223AD5252917CBDA009B5C1C /* ToggleCheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCheckboxStyle.swift; sourceTree = "<group>"; };
+		223AD56529181348009B5C1C /* ListEntry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		223AD56629181348009B5C1C /* ListEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		223AD56729181348009B5C1C /* AppContract+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppContract+CoreDataClass.swift"; sourceTree = "<group>"; };
+		223AD56829181348009B5C1C /* AppContract+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppContract+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		223BB34C29103C490064927A /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		223BB353291147380064927A /* WrappedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedTextView.swift; sourceTree = "<group>"; };
 		223BB35729116F9D0064927A /* SelectFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFilterView.swift; sourceTree = "<group>"; };
@@ -210,9 +216,12 @@
 		224F462628FD855D004EA74F /* BackEnd */ = {
 			isa = PBXGroup;
 			children = (
+				223AD56529181348009B5C1C /* ListEntry+CoreDataClass.swift */,
+				223AD56629181348009B5C1C /* ListEntry+CoreDataProperties.swift */,
+				223AD56729181348009B5C1C /* AppContract+CoreDataClass.swift */,
+				223AD56829181348009B5C1C /* AppContract+CoreDataProperties.swift */,
 				223AD51329156A50009B5C1C /* AppStateDataModel.xcdatamodeld */,
 				2239595A290452A600D5F38E /* UIImageTransformer.swift */,
-				2239595829044A6A00D5F38E /* AppContract.swift */,
 				224F463428FE1443004EA74F /* AppState.swift */,
 				22455D0A2900901C002876AD /* ImagePicker.swift */,
 				22455D0C290094AE002876AD /* NewContractDataModel.swift */,
@@ -398,15 +407,18 @@
 				223AD5262917CBDA009B5C1C /* ToggleCheckboxStyle.swift in Sources */,
 				224F463528FE1443004EA74F /* AppState.swift in Sources */,
 				22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */,
+				223AD56C29181348009B5C1C /* AppContract+CoreDataProperties.swift in Sources */,
 				224F462F28FE06CD004EA74F /* SecondFeatureOverview.swift in Sources */,
+				223AD56A29181348009B5C1C /* ListEntry+CoreDataProperties.swift in Sources */,
 				223BB354291147380064927A /* WrappedTextView.swift in Sources */,
 				2239595B290452A600D5F38E /* UIImageTransformer.swift in Sources */,
+				223AD56929181348009B5C1C /* ListEntry+CoreDataClass.swift in Sources */,
 				2252D321290868FF00568A1A /* EditContractView.swift in Sources */,
-				2239595929044A6A00D5F38E /* AppContract.swift in Sources */,
 				224F463828FE1BE2004EA74F /* extensions.swift in Sources */,
 				224F462D28FE06BB004EA74F /* FirstFeatureOverview.swift in Sources */,
 				224F462828FDFC99004EA74F /* MainSideView.swift in Sources */,
 				223AD4D42912B59B009B5C1C /* ContractAdminister.swift in Sources */,
+				223AD56B29181348009B5C1C /* AppContract+CoreDataClass.swift in Sources */,
 				224F45FC28FD80E7004EA74F /* LandschaftserhaltungsApp.swift in Sources */,
 				224F462B28FE0167004EA74F /* WelcomeView.swift in Sources */,
 			);

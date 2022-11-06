@@ -246,6 +246,12 @@ class DataHandler : ObservableObject
         return appContractListSortedByDeadline
     }
     
+    
+    public func testsave()
+    {
+        let appContract = AppContract(context: context);
+    }
+    
     public func saveAll(image: UIImage = UIImage(), firstName1: String, newContractDataModel : NewContractDataModel)
     {
         let appContract = AppContract(context: context);

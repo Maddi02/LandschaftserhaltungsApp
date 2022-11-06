@@ -11,11 +11,14 @@ struct CreateNewPerpetration: View {
     
     @State private var selectedStrength = "FFH Mähwiese"
         let strengths = ["FFH Mähwiese", "Anderes Biotop"]
+    @Environment(\.managedObjectContext) var moc
     @State private var date = Date()
     @State private var description : String = ""
+
     @State private var isOnFFH = false
     @State private var isOnDiffrent = false
     var dataHandler : DataHandler
+    var appContact : AppContract
     @Environment(\.dismiss) var dismiss
     var body: some View {
         
@@ -67,7 +70,19 @@ struct CreateNewPerpetration: View {
                 Button("Speichern"){
                     Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false)
                     { _ in
-                        dataHandler.listItemContractArea.append(ListItemContractArea(description: description, date: date, typ: selectedStrength))
+                        let test = ListEntry(context: moc)
+                        test.contract = appContact
+                        test.descriptionField = "FuckOf"
+                        test.dateOfObservation = Date() 
+                        
+
+                        do{
+                            try moc.save()
+                        }
+                        catch{
+                            print("f \(error)")
+                        }
+                
                     }
                     dismiss()
                 }.frame(maxWidth: .infinity, alignment: .center)

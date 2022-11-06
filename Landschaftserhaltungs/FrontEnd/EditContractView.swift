@@ -100,7 +100,7 @@ struct EditContractView: View {
                                 
                             }
                             HStack {
-                                WrappedTextView(text: $appContract.lastName, textDidChange: self.textDidChangeLastName)
+                                WrappedTextView(text: $appContract.lastName.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeLastName)
                                     .frame(height: heightLastName ?? minHeightLastName).background(Color.clear)
                             }
                             

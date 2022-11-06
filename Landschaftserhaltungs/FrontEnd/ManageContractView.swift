@@ -52,7 +52,7 @@ struct ManageContractView: View {
                             filteredContracts in
                             NavigationLink(destination: ContractAdminister(dataHandler: dataHandler, filteredContracts: filteredContracts) )
                             {
-                                ContractListItem(firstName: filteredContracts.firstName ?? "Unknown", lastName: filteredContracts.lastName , operationNumber: filteredContracts.operationNumber ?? "Unknown", contractTermination:  filteredContracts.contractTermination?.toString() ?? Date().toString(), endOfContract: filteredContracts.contractTermination?.getEndOfContract(date: filteredContracts.contractTermination ?? Date()) ?? Date().toString() , image: filteredContracts.picture ?? UIImage(imageLiteralResourceName: "HFULogo"), deadline: filteredContracts.deadline?.toString() ?? Date().toString()).swipeActions(edge: .leading) {
+                                ContractListItem(firstName: filteredContracts.firstName ?? "Unknown", lastName: filteredContracts.lastName ?? "Unknwon" , operationNumber: filteredContracts.operationNumber ?? "Unknown", contractTermination:  filteredContracts.contractTermination?.toString() ?? Date().toString(), endOfContract: filteredContracts.contractTermination?.getEndOfContract(date: filteredContracts.contractTermination ?? Date()) ?? Date().toString() , image: filteredContracts.picture ?? UIImage(imageLiteralResourceName: "HFULogo"), deadline: filteredContracts.deadline?.toString() ?? Date().toString(), dataHandler: dataHandler).swipeActions(edge: .leading) {
                                     
 
                                         NavigationLink(destination: EditContractView(appContract: filteredContracts, contractTerminatation: filteredContracts.contractTermination ?? Date(), contractDeadline: filteredContracts.deadline ?? Date(), dataHandler: dataHandler)) {
@@ -103,13 +103,13 @@ struct ManageContractView: View {
     
     func delete(at offsets : IndexSet )
     {
+
         showingAlert = true
         for offset in offsets{
             let item = dataHandler.appContractList[offset]
             dataHandler.appContractList.remove(atOffsets: offsets)
             moc.delete(item)
-            
-            
+
             do{
                 try moc.save()
                 

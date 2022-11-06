@@ -7,6 +7,7 @@
         <attribute name="country" optional="YES" attributeType="String"/>
         <attribute name="deadline" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="lastName" optional="YES" attributeType="String"/>
         <attribute name="managementRequirements" optional="YES" attributeType="String"/>
         <attribute name="measures" optional="YES" attributeType="String"/>
@@ -17,9 +18,17 @@
         <attribute name="plz" optional="YES" attributeType="String"/>
         <attribute name="plzName" optional="YES" attributeType="String"/>
         <attribute name="street" optional="YES" attributeType="String"/>
+        <relationship name="list" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ListEntry" inverseName="contract" inverseEntity="ListEntry"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
-    <entity name="AppStateSaver" representedClassName="AppStateSaver" syncable="YES" codeGenerationType="class">
-        <attribute name="hasOnboarded" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    <entity name="ListEntry" representedClassName="ListEntry" syncable="YES">
+        <attribute name="dateOfObservation" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="descriptionField" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="contract" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AppContract" inverseName="list" inverseEntity="AppContract"/>
     </entity>
-    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class"/>
 </model>

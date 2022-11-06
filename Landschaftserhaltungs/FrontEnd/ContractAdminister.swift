@@ -23,15 +23,19 @@ struct ContractFieldItem
 
 struct ContractAdminister: View {
     @Environment(\.dismiss) var dismiss
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var list : FetchedResults<ListEntry>
     @ObservedObject var dataHandler : DataHandler
     @State var filteredContracts : AppContract
+
+
     @State private var showingOptions = false
     @State private var selection = "None"
     @State private var showingAlert = false
     
     var body: some View {
         Text("Vetragsübersicht").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
-        ContractListItem(firstName: filteredContracts.firstName ?? "Unknown", lastName: filteredContracts.lastName , operationNumber: filteredContracts.operationNumber ?? "Unknown", contractTermination:  filteredContracts.contractTermination?.toString() ?? Date().toString(), endOfContract: filteredContracts.contractTermination?.getEndOfContract(date: filteredContracts.contractTermination ?? Date()) ?? Date().toString() , image: filteredContracts.picture ?? UIImage(imageLiteralResourceName: "HFULogo"), deadline: filteredContracts.deadline?.toString() ?? Date().toString()).frame(maxWidth: .infinity, alignment: .top)
+        ContractListItem(firstName: filteredContracts.firstName ?? "Unknown", lastName: filteredContracts.lastName ?? "Unknwon" , operationNumber: filteredContracts.operationNumber ?? "Unknown", contractTermination:  filteredContracts.contractTermination?.toString() ?? Date().toString(), endOfContract: filteredContracts.contractTermination?.getEndOfContract(date: filteredContracts.contractTermination ?? Date()) ?? Date().toString() , image: filteredContracts.picture ?? UIImage(imageLiteralResourceName: "HFULogo"), deadline: filteredContracts.deadline?.toString() ?? Date().toString(), dataHandler: dataHandler).frame(maxWidth: .infinity, alignment: .top)
         
         
         
@@ -39,32 +43,46 @@ struct ContractAdminister: View {
             Text("Vetragsflächen:").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
             Button(action: {
                 showingOptions.toggle()
+                print("Size \(list.count)")
             }){
                 Image(systemName: "plus")
             }.frame(maxWidth: .infinity, alignment: .trailing).padding(.trailing,30).padding(.bottom,10) .sheet(isPresented: $showingOptions)
             {
-                CreateNewPerpetration(dataHandler: dataHandler)
-            }
                 
-                
+                CreateNewPerpetration( dataHandler: dataHandler, appContact: filteredContracts)
             }
+            
+            
+        }
+        VStack{
             List()
             {
-                ForEach(dataHandler.test, id: \.self)
+                ForEach(filteredContracts.ContactArray, id: \.self)
                 {
-                    filteredContracts in
-                    filteredContracts
-                }.onDelete(perform: delete).alert("Vertrag wurde gelöscht", isPresented: $showingAlert) {
+                    list in
+                    ListItemContractArea(description: list.name ?? "Unknown", date: list.dateOfObservation ?? Date(), typ: list.descriptionField ?? "Unknown")
+             
+                    
+                } .onDelete(perform: delete).alert("Vertrag wurde gelöscht", isPresented: $showingAlert) {
                 }
             }
         }
+    }
     
     func delete(at offsets : IndexSet )
     {
         showingAlert = true
         for offset in offsets{
-            let item = dataHandler.test[offset]
+            let item = filteredContracts.ContactArray[offset]
+            moc.delete(item)
            // dataHandler.test.remove(atOffsets: offsets)
+        }
+        do{
+            try moc.save()
+            
+            
+        } catch{
+            
         }
     }
 

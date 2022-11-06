@@ -15,6 +15,7 @@ struct ContractListItem: View {
     var endOfContract: String
     var deadline: String
     var image : UIImage
+    var dataHandler : DataHandler
     
     var body: some View {
         
@@ -38,7 +39,7 @@ struct ContractListItem: View {
         }.frame(maxWidth: .infinity, alignment: .leading)
     }
     
-    init(firstName: String, lastName : String, operationNumber: String , contractTermination : String, endOfContract : String , image : UIImage, deadline : String) {
+    init(firstName: String, lastName : String, operationNumber: String , contractTermination : String, endOfContract : String , image : UIImage, deadline : String, dataHandler : DataHandler ) {
         self.firstName = firstName
         self.lastName = lastName
         self.operationNumber = operationNumber
@@ -46,6 +47,7 @@ struct ContractListItem: View {
         self.endOfContract = endOfContract
         self.image = image
         self.deadline = deadline
+        self.dataHandler = dataHandler
     }
 }
 

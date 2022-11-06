@@ -21,7 +21,7 @@
             <Locations>
                <Location
                   uuid = "3918D365-3D83-42B2-8A53-8375DECA791C - 891684467726a040"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "one-time initialization function for shared"
@@ -36,7 +36,7 @@
                </Location>
                <Location
                   uuid = "3918D365-3D83-42B2-8A53-8375DECA791C - bca72671c607121"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Landschaftserhaltungs.CoreDataManager.shared.unsafeMutableAddressor : Landschaftserhaltungs.CoreDataManager"
@@ -56,7 +56,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C3636385-8D46-4CCD-A03C-EE3A4451A423"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Landschaftserhaltungs/BackEnd/AppState.swift"
@@ -69,7 +69,7 @@
             <Locations>
                <Location
                   uuid = "C3636385-8D46-4CCD-A03C-EE3A4451A423 - 7bbb81135345db7a"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Landschaftserhaltungs.AppState.__allocating_init(hasOnboarded: Swift.Bool) -&gt; Landschaftserhaltungs.AppState"
@@ -84,7 +84,7 @@
                </Location>
                <Location
                   uuid = "C3636385-8D46-4CCD-A03C-EE3A4451A423 - 3d66b748bb30db3b"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Landschaftserhaltungs.AppState.init(hasOnboarded: Swift.Bool) -&gt; Landschaftserhaltungs.AppState"
@@ -104,7 +104,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "30CB8BE8-26AA-4230-AF4B-BB5635CC1B19"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Landschaftserhaltungs/LandschaftserhaltungsApp.swift"
@@ -152,7 +152,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "99F4ADE9-8D49-47DE-9878-EF4175BBA458"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Landschaftserhaltungs/BackEnd/ImagePicker.swift"
@@ -168,7 +168,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "2DE25472-9831-47B8-AF4C-F51B6BEE853C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Landschaftserhaltungs/FrontEnd/ListItemContractArea.swift"

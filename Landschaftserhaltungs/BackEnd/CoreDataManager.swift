@@ -25,6 +25,6 @@ class CoreDataManager
             }
             
         }
-        
+        self.persistentContainer.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
     }
 }
