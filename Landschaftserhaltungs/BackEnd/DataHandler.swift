@@ -25,11 +25,11 @@ class DataHandler : ObservableObject
     }
 
     
-  
-    var test :[ListItemContractArea] {
-        
-        return listItemContractArea
-    }
+        var test :[ListItemContractArea] {
+            
+            return listItemContractArea
+        }
+   
     
     var filteredContracts: [AppContract]{
         fetchAppContract()

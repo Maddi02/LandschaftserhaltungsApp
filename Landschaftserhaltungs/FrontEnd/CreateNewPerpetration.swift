@@ -65,7 +65,10 @@ struct CreateNewPerpetration: View {
                     
                 }
                 Button("Speichern"){
-                    dataHandler.listItemContractArea.append(ListItemContractArea(description: description, date: date, typ: selectedStrength))
+                    Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false)
+                    { _ in
+                        dataHandler.listItemContractArea.append(ListItemContractArea(description: description, date: date, typ: selectedStrength))
+                    }
                     dismiss()
                 }.frame(maxWidth: .infinity, alignment: .center)
                 
