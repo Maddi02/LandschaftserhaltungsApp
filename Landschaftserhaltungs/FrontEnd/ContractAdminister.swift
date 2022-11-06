@@ -27,8 +27,8 @@ struct ContractAdminister: View {
     
     @ObservedObject var dataHandler : DataHandler
     @State var filteredContracts : AppContract
-
-
+    
+    
     @State private var showingOptions = false
     @State private var selection = "None"
     @State private var showingAlert = false
@@ -43,7 +43,7 @@ struct ContractAdminister: View {
             Text("Vetragsflächen:").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
             Button(action: {
                 showingOptions.toggle()
-
+                
             }){
                 Image(systemName: "plus")
             }.frame(maxWidth: .infinity, alignment: .trailing).padding(.trailing,30).padding(.bottom,10) .sheet(isPresented: $showingOptions)
@@ -62,24 +62,28 @@ struct ContractAdminister: View {
                 {
                     
                     list in
+                    
+                    Button{
+                        print("Pressed on a List Item")
+                    }label: {
+                        
+                        
                         ListItemContractArea(description: list.detailDescription ?? "Unknown", date: list.dateOfObservation ?? Date(), typ: list.descriptionField ?? "Unknown").tint(.black)
-                    
-                        .swipeActions(edge: .leading) {
-                            NavigationLink( destination: EditListItemContractArea())
-                            {
-                                HStack(spacing: 0) {
-                                    Text("Aufnahme bearbeiten")
-                                    Image(systemName: "slider.horizontal.2.square.on.square")
-                                }
-                            }.tint(.indigo)
-                            
-                            
-                        }
-                    
-                    
+                        
+                    }  .swipeActions(edge: .leading) {
+                        NavigationLink( destination: EditListItemContractArea())
+                        {
+                            HStack(spacing: 0) {
+                                Text("Aufnahme bearbeiten")
+                                Image(systemName: "slider.horizontal.2.square.on.square")
+                            }
+                        }.tint(.indigo)
+                        
+                        
+                    }.tint(.indigo)
                 } .onDelete(perform: delete).alert("Vertrag wurde gelöscht", isPresented: $showingAlert) {
                 }
-            
+                
             }
         }
     }
@@ -99,6 +103,6 @@ struct ContractAdminister: View {
             
         }
     }
-
-    }
     
+}
+
