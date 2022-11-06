@@ -18,6 +18,7 @@ extension ListEntry {
 
     @NSManaged public var name: String?
     @NSManaged public var descriptionField: String?
+    @NSManaged public var detailDescription: String?
     @NSManaged public var dateOfObservation: Date?
     @NSManaged public var contract: AppContract?
 

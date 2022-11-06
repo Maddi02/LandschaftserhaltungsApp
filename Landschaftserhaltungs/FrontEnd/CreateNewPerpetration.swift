@@ -72,8 +72,9 @@ struct CreateNewPerpetration: View {
                     { _ in
                         let test = ListEntry(context: moc)
                         test.contract = appContact
-                        test.descriptionField = "FuckOf"
-                        test.dateOfObservation = Date() 
+                        test.detailDescription = description
+                        test.descriptionField = selectedStrength
+                        test.dateOfObservation = date
                         
 
                         do{

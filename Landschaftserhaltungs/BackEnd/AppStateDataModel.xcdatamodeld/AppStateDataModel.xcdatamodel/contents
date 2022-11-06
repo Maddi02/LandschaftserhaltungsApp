@@ -28,6 +28,7 @@
     <entity name="ListEntry" representedClassName="ListEntry" syncable="YES">
         <attribute name="dateOfObservation" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="descriptionField" optional="YES" attributeType="String"/>
+        <attribute name="detailDescription" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="contract" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AppContract" inverseName="list" inverseEntity="AppContract"/>
     </entity>

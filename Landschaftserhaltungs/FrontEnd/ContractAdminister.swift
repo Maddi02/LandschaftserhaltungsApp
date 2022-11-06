@@ -60,7 +60,7 @@ struct ContractAdminister: View {
                 ForEach(filteredContracts.ContactArray, id: \.self)
                 {
                     list in
-                    ListItemContractArea(description: list.name ?? "Unknown", date: list.dateOfObservation ?? Date(), typ: list.descriptionField ?? "Unknown")
+                    ListItemContractArea(description: list.detailDescription ?? "Unknown", date: list.dateOfObservation ?? Date(), typ: list.descriptionField ?? "Unknown")
              
                     
                 } .onDelete(perform: delete).alert("Vertrag wurde gelöscht", isPresented: $showingAlert) {
@@ -75,7 +75,6 @@ struct ContractAdminister: View {
         for offset in offsets{
             let item = filteredContracts.ContactArray[offset]
             moc.delete(item)
-           // dataHandler.test.remove(atOffsets: offsets)
         }
         do{
             try moc.save()
