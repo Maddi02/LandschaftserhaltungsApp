@@ -65,7 +65,7 @@ struct CreateNewPerpetration: View {
                     
                 }
                 Button("Speichern"){
-                    dataHandler.listItemContractArea.append(ListItemContractArea())
+                    dataHandler.listItemContractArea.append(ListItemContractArea(description: description, date: date, typ: selectedStrength))
                     dismiss()
                 }.frame(maxWidth: .infinity, alignment: .center)
                 

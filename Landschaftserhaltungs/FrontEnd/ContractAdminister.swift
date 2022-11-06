@@ -53,7 +53,7 @@ struct ContractAdminister: View {
                 ForEach(dataHandler.test, id: \.self)
                 {
                     filteredContracts in
-                    ListItemContractArea()
+                    filteredContracts
                 }
             }
         }
