@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 struct EditContractView: View {
     
-    @State var appContract : AppContract
+    @ObservedObject var appContract : AppContract // in any case of trubble thing about this line
     
     @State private var isShownPhotoLibrary = false
     @State private var image = UIImage()

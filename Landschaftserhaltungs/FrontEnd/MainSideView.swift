@@ -43,19 +43,7 @@ struct MainSideView:  View {
                          //                                       dataHandler.fetchAppContract()
                          //                                 })
                         
-                       Button("Logo setzen")
-                        {
-                            showingSheet.toggle()
-                        }.sheet(isPresented: $showingSheet)
-                        {
-                            ImagePicker(changePicture: false, appContract: appContract,  sourceType: .photoLibrary, selectedImage: self.$image)
-                        }
-                            
-                        .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.gray.opacity(0.5))
-                        
+
                     }.frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
                         .background(BackGroundGradient.getGradient())
                 }
