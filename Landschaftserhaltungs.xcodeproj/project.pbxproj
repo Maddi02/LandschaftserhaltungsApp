@@ -26,6 +26,7 @@
 		223AD5742918623C009B5C1C /* ExportPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD5732918623C009B5C1C /* ExportPreview.swift */; };
 		223AD57629186339009B5C1C /* SpeciesCensusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD57529186339009B5C1C /* SpeciesCensusView.swift */; };
 		223AD57829192815009B5C1C /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD57729192815009B5C1C /* CounterViewModel.swift */; };
+		223AD57A291930D5009B5C1C /* PlantSpecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD579291930D5009B5C1C /* PlantSpecies.swift */; };
 		223BB34D29103C490064927A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB34C29103C490064927A /* TextView.swift */; };
 		223BB354291147380064927A /* WrappedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB353291147380064927A /* WrappedTextView.swift */; };
 		223BB35829116F9D0064927A /* SelectFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB35729116F9D0064927A /* SelectFilterView.swift */; };
@@ -90,6 +91,7 @@
 		223AD5732918623C009B5C1C /* ExportPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportPreview.swift; sourceTree = "<group>"; };
 		223AD57529186339009B5C1C /* SpeciesCensusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesCensusView.swift; sourceTree = "<group>"; };
 		223AD57729192815009B5C1C /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
+		223AD579291930D5009B5C1C /* PlantSpecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSpecies.swift; sourceTree = "<group>"; };
 		223BB34C29103C490064927A /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		223BB353291147380064927A /* WrappedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedTextView.swift; sourceTree = "<group>"; };
 		223BB35729116F9D0064927A /* SelectFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFilterView.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				22455D0C290094AE002876AD /* NewContractDataModel.swift */,
 				22455D112900A869002876AD /* CoreDataManager.swift */,
 				221AC67A290C3A2700993F52 /* DataHandler.swift */,
+				223AD579291930D5009B5C1C /* PlantSpecies.swift */,
 			);
 			path = BackEnd;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */,
 				223AD56C29181348009B5C1C /* AppContract+CoreDataProperties.swift in Sources */,
 				224F462F28FE06CD004EA74F /* SecondFeatureOverview.swift in Sources */,
+				223AD57A291930D5009B5C1C /* PlantSpecies.swift in Sources */,
 				223AD56A29181348009B5C1C /* ListEntry+CoreDataProperties.swift in Sources */,
 				223AD57029185486009B5C1C /* ContractFieldItem.swift in Sources */,
 				223BB354291147380064927A /* WrappedTextView.swift in Sources */,
