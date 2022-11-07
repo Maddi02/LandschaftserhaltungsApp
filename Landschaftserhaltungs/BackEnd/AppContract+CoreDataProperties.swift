@@ -47,7 +47,6 @@ extension AppContract {
     
     public var ContactArray : [ListEntry] {
         let set = list as? Set<ListEntry> ?? []
-        print("Hlllo")
         return set.sorted
         {
             $0.dateOfObservation ?? Date() <= $1.dateOfObservation ?? Date()
