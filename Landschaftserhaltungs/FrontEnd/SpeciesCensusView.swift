@@ -10,7 +10,8 @@ import SwiftUI
 struct SpeciesCensusView: View {
     @StateObject private var vm = ViewModel()
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
+    @State private var selectedStrength = "FFH Mähwiese"
+        let strengths = ["Deutsch", "Latein"]
     
     private let  width : Double = 250
     var description : String
@@ -21,9 +22,21 @@ struct SpeciesCensusView: View {
 
         VStack{
             Text("Schnellaufnahme").font(Font.title).frame(maxWidth: .infinity , alignment: .topLeading)
-            Text("\(description): ").font(Font.title3).frame(maxWidth: .infinity , alignment: .topLeading).padding(.bottom ,30 )
-
-            
+            Text("\(description) ").font(Font.title3).frame(maxWidth: .infinity , alignment: .topLeading)
+            HStack{
+                
+                Text("Platzennamen: ")
+                
+                Section {
+                    Picker("", selection: $selectedStrength) {
+                        ForEach(strengths, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                }.frame(maxWidth: .infinity, alignment: .center)
+                
+            }
             Text("\(vm.time)")
                 .font(.system(size: 70, weight: .medium, design: .rounded))
                 .background(.thinMaterial)
@@ -32,7 +45,7 @@ struct SpeciesCensusView: View {
                 .alert("Zeit abgelaufen", isPresented: $vm.showingAlert){
                 Button("Okay", role: .cancel){
                     //Code
-                }
+                }.scaledToFit()
                     
                 }
             Slider(value: $vm.minutes, in: 1...10, step: 1)
