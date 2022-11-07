@@ -50,7 +50,7 @@ struct ManageContractView: View {
                         ForEach(dataHandler.filteredContracts, id: \.self)
                         {
                             filteredContracts in
-                            NavigationLink(destination: ContractAdminister(dataHandler: dataHandler, filteredContracts: filteredContracts) )
+                            NavigationLink(destination: ContractAdminister(dataHandler: dataHandler, filteredContracts: filteredContracts, description: "") )
                             {
                                 ContractListItem(firstName: filteredContracts.firstName ?? "Unknown", lastName: filteredContracts.lastName ?? "Unknwon" , operationNumber: filteredContracts.operationNumber ?? "Unknown", contractTermination:  filteredContracts.contractTermination?.toString() ?? Date().toString(), endOfContract: filteredContracts.contractTermination?.getEndOfContract(date: filteredContracts.contractTermination ?? Date()) ?? Date().toString() , image: filteredContracts.picture ?? UIImage(imageLiteralResourceName: "HFULogo"), deadline: filteredContracts.deadline?.toString() ?? Date().toString(), dataHandler: dataHandler).swipeActions(edge: .leading) {
                                     

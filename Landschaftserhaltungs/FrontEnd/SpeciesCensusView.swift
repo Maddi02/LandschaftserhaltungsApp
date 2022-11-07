@@ -13,12 +13,17 @@ struct SpeciesCensusView: View {
     
     
     private let  width : Double = 250
-    
+    var description : String
+    @State var fieldDescription : String = ""
 
     
     var body: some View {
-        
+
         VStack{
+            Text("Schnellaufnahme").font(Font.title).frame(maxWidth: .infinity , alignment: .topLeading)
+            Text("\(description): ").font(Font.title3).frame(maxWidth: .infinity , alignment: .topLeading).padding(.bottom ,30 )
+
+            
             Text("\(vm.time)")
                 .font(.system(size: 70, weight: .medium, design: .rounded))
                 .background(.thinMaterial)
@@ -51,14 +56,23 @@ struct SpeciesCensusView: View {
         }.onReceive(timer){ _ in
             vm.updateCountdown()
         }
-        
-        
-        Text("Hello, Artenzählung!")
+        Form{
+            Section(header: Text("Description"))
+            {
+                TextField("Fügen Sie ein Beschreibung hinzu", text: $fieldDescription)
+            }
+            List {
+                   Text("Hello World")
+                   Text("Hello World")
+                   Text("Hello World")
+               }
+        }
+       
     }
 }
 
 struct SpeciesCensusView_Previews: PreviewProvider {
     static var previews: some View {
-        SpeciesCensusView()
+        SpeciesCensusView(description: "Hello")
     }
 }

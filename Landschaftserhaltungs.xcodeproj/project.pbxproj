@@ -27,6 +27,7 @@
 		223AD57829192815009B5C1C /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD57729192815009B5C1C /* CounterViewModel.swift */; };
 		223AD57A291930D5009B5C1C /* PlantSpecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD579291930D5009B5C1C /* PlantSpecies.swift */; };
 		223AD57E29193940009B5C1C /* PlantSpeciesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD57D29193940009B5C1C /* PlantSpeciesDataModel.swift */; };
+		223AD581291940D7009B5C1C /* AppStateDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 223AD57F291940D7009B5C1C /* AppStateDataModel.xcdatamodeld */; };
 		223BB34D29103C490064927A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB34C29103C490064927A /* TextView.swift */; };
 		223BB354291147380064927A /* WrappedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB353291147380064927A /* WrappedTextView.swift */; };
 		223BB35829116F9D0064927A /* SelectFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB35729116F9D0064927A /* SelectFilterView.swift */; };
@@ -92,6 +93,7 @@
 		223AD57729192815009B5C1C /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 		223AD579291930D5009B5C1C /* PlantSpecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSpecies.swift; sourceTree = "<group>"; };
 		223AD57D29193940009B5C1C /* PlantSpeciesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSpeciesDataModel.swift; sourceTree = "<group>"; };
+		223AD580291940D7009B5C1C /* AppStateDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppStateDataModel.xcdatamodel; sourceTree = "<group>"; };
 		223BB34C29103C490064927A /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		223BB353291147380064927A /* WrappedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedTextView.swift; sourceTree = "<group>"; };
 		223BB35729116F9D0064927A /* SelectFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFilterView.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 		224F462628FD855D004EA74F /* BackEnd */ = {
 			isa = PBXGroup;
 			children = (
+				223AD57F291940D7009B5C1C /* AppStateDataModel.xcdatamodeld */,
 				223AD56529181348009B5C1C /* ListEntry+CoreDataClass.swift */,
 				223AD56629181348009B5C1C /* ListEntry+CoreDataProperties.swift */,
 				223AD56729181348009B5C1C /* AppContract+CoreDataClass.swift */,
@@ -424,6 +427,7 @@
 				22455D122900A869002876AD /* CoreDataManager.swift in Sources */,
 				223AD57629186339009B5C1C /* SpeciesCensusView.swift in Sources */,
 				224F463328FE07D8004EA74F /* DoneOverview.swift in Sources */,
+				223AD581291940D7009B5C1C /* AppStateDataModel.xcdatamodeld in Sources */,
 				221AC67D290D150B00993F52 /* BackgroundLinearGradient.swift in Sources */,
 				223AD57829192815009B5C1C /* CounterViewModel.swift in Sources */,
 				223AD5242917C67D009B5C1C /* CreateNewPerpetration.swift in Sources */,
@@ -792,6 +796,19 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCVersionGroup section */
+		223AD57F291940D7009B5C1C /* AppStateDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				223AD580291940D7009B5C1C /* AppStateDataModel.xcdatamodel */,
+			);
+			currentVersion = 223AD580291940D7009B5C1C /* AppStateDataModel.xcdatamodel */;
+			path = AppStateDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 224F45F028FD80E7004EA74F /* Project object */;
 }

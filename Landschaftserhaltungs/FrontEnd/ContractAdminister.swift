@@ -16,7 +16,7 @@ struct ContractAdminister: View {
     
     @ObservedObject var dataHandler : DataHandler
     @State var filteredContracts : AppContract
-    
+    @State var description : String = ""
     @State private var action: Int? = 0
     @State private var showingOptions = false
     @State private var selection = "None"
@@ -55,8 +55,10 @@ struct ContractAdminister: View {
                     list in
                     
                     Button{
+                        description = list.detailDescription ?? "Unknown"
                         showingActionSheet.toggle()
                         print("Pressed on a List Item")
+                        print("\(description)")
                     }
                 
                 
@@ -80,7 +82,7 @@ struct ContractAdminister: View {
                 }
                 
             }.confirmationDialog("Wähle die Art der Zählung aus", isPresented: $showingActionSheet, titleVisibility: .visible) {
-                NavigationLink(destination: SpeciesCensusView()) {
+                NavigationLink(destination: SpeciesCensusView( description:  self.description)) {
                     Button("Artenzählung")
                     {
 
