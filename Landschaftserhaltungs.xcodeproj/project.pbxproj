@@ -12,7 +12,6 @@
 		2239595B290452A600D5F38E /* UIImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239595A290452A600D5F38E /* UIImageTransformer.swift */; };
 		2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239595E2907DDCD00D5F38E /* ContractListItem.swift */; };
 		223AD4D42912B59B009B5C1C /* ContractAdminister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD4D32912B59B009B5C1C /* ContractAdminister.swift */; };
-		223AD51529156A51009B5C1C /* AppStateDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 223AD51329156A50009B5C1C /* AppStateDataModel.xcdatamodeld */; };
 		223AD52229157DF1009B5C1C /* ListItemContractArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD52129157DF1009B5C1C /* ListItemContractArea.swift */; };
 		223AD5242917C67D009B5C1C /* CreateNewPerpetration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD5232917C67D009B5C1C /* CreateNewPerpetration.swift */; };
 		223AD5262917CBDA009B5C1C /* ToggleCheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD5252917CBDA009B5C1C /* ToggleCheckboxStyle.swift */; };
@@ -27,6 +26,7 @@
 		223AD57629186339009B5C1C /* SpeciesCensusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD57529186339009B5C1C /* SpeciesCensusView.swift */; };
 		223AD57829192815009B5C1C /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD57729192815009B5C1C /* CounterViewModel.swift */; };
 		223AD57A291930D5009B5C1C /* PlantSpecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD579291930D5009B5C1C /* PlantSpecies.swift */; };
+		223AD57E29193940009B5C1C /* PlantSpeciesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD57D29193940009B5C1C /* PlantSpeciesDataModel.swift */; };
 		223BB34D29103C490064927A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB34C29103C490064927A /* TextView.swift */; };
 		223BB354291147380064927A /* WrappedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB353291147380064927A /* WrappedTextView.swift */; };
 		223BB35829116F9D0064927A /* SelectFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB35729116F9D0064927A /* SelectFilterView.swift */; };
@@ -77,7 +77,6 @@
 		2239595A290452A600D5F38E /* UIImageTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageTransformer.swift; sourceTree = "<group>"; };
 		2239595E2907DDCD00D5F38E /* ContractListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractListItem.swift; sourceTree = "<group>"; };
 		223AD4D32912B59B009B5C1C /* ContractAdminister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractAdminister.swift; sourceTree = "<group>"; };
-		223AD51429156A50009B5C1C /* AppStateDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppStateDataModel.xcdatamodel; sourceTree = "<group>"; };
 		223AD52129157DF1009B5C1C /* ListItemContractArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemContractArea.swift; sourceTree = "<group>"; };
 		223AD5232917C67D009B5C1C /* CreateNewPerpetration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPerpetration.swift; sourceTree = "<group>"; };
 		223AD5252917CBDA009B5C1C /* ToggleCheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCheckboxStyle.swift; sourceTree = "<group>"; };
@@ -92,6 +91,7 @@
 		223AD57529186339009B5C1C /* SpeciesCensusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesCensusView.swift; sourceTree = "<group>"; };
 		223AD57729192815009B5C1C /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 		223AD579291930D5009B5C1C /* PlantSpecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSpecies.swift; sourceTree = "<group>"; };
+		223AD57D29193940009B5C1C /* PlantSpeciesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSpeciesDataModel.swift; sourceTree = "<group>"; };
 		223BB34C29103C490064927A /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		223BB353291147380064927A /* WrappedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedTextView.swift; sourceTree = "<group>"; };
 		223BB35729116F9D0064927A /* SelectFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFilterView.swift; sourceTree = "<group>"; };
@@ -240,7 +240,6 @@
 				223AD56629181348009B5C1C /* ListEntry+CoreDataProperties.swift */,
 				223AD56729181348009B5C1C /* AppContract+CoreDataClass.swift */,
 				223AD56829181348009B5C1C /* AppContract+CoreDataProperties.swift */,
-				223AD51329156A50009B5C1C /* AppStateDataModel.xcdatamodeld */,
 				2239595A290452A600D5F38E /* UIImageTransformer.swift */,
 				224F463428FE1443004EA74F /* AppState.swift */,
 				22455D0A2900901C002876AD /* ImagePicker.swift */,
@@ -248,6 +247,7 @@
 				22455D112900A869002876AD /* CoreDataManager.swift */,
 				221AC67A290C3A2700993F52 /* DataHandler.swift */,
 				223AD579291930D5009B5C1C /* PlantSpecies.swift */,
+				223AD57D29193940009B5C1C /* PlantSpeciesDataModel.swift */,
 			);
 			path = BackEnd;
 			sourceTree = "<group>";
@@ -412,7 +412,6 @@
 				22455CF828FF2794002876AD /* ExpiredContractView.swift in Sources */,
 				223AD5742918623C009B5C1C /* ExportPreview.swift in Sources */,
 				22455CF628FF03BC002876AD /* CreateNewContract.swift in Sources */,
-				223AD51529156A51009B5C1C /* AppStateDataModel.xcdatamodeld in Sources */,
 				223AD52229157DF1009B5C1C /* ListItemContractArea.swift in Sources */,
 				224F463128FE06E4004EA74F /* ThirdFeatureOverview.swift in Sources */,
 				221AC67B290C3A2800993F52 /* DataHandler.swift in Sources */,
@@ -430,6 +429,7 @@
 				223AD5242917C67D009B5C1C /* CreateNewPerpetration.swift in Sources */,
 				223AD5262917CBDA009B5C1C /* ToggleCheckboxStyle.swift in Sources */,
 				224F463528FE1443004EA74F /* AppState.swift in Sources */,
+				223AD57E29193940009B5C1C /* PlantSpeciesDataModel.swift in Sources */,
 				22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */,
 				223AD56C29181348009B5C1C /* AppContract+CoreDataProperties.swift in Sources */,
 				224F462F28FE06CD004EA74F /* SecondFeatureOverview.swift in Sources */,
@@ -792,19 +792,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCVersionGroup section */
-		223AD51329156A50009B5C1C /* AppStateDataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				223AD51429156A50009B5C1C /* AppStateDataModel.xcdatamodel */,
-			);
-			currentVersion = 223AD51429156A50009B5C1C /* AppStateDataModel.xcdatamodel */;
-			path = AppStateDataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 224F45F028FD80E7004EA74F /* Project object */;
 }
