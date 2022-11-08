@@ -8,20 +8,22 @@
 import Foundation
 
 
-class PlantSpecies
+class PlantSpecies : Identifiable, ObservableObject
 
 {
-    private var scientificName : String = " "
-    private var redListBw : Character = " "
-    private var responsibility : Character = " "
-    private var oberReihnArea : Character = " "
-    private var blackForest : Character = " "
-    private var odenWald : Character = " "
-    private var nothernGaelandschaften : Character = " "
-    private var southernGaelandschaften : Character = " "
-    private var schaebischeAlb : Character = " "
-    private var alpenvorland : Character = " "
-    private var germanName : String = " "
+    public var scientificName : String = " "
+    public var redListBw : Character = " "
+    public var responsibility : Character = " "
+    public var oberReihnArea : Character = " "
+    public var blackForest : Character = " "
+    public var odenWald : Character = " "
+    public var nothernGaelandschaften : Character = " "
+    public var southernGaelandschaften : Character = " "
+    public var schaebischeAlb : Character = " "
+    public var alpenvorland : Character = " "
+    public var germanName : String = " "
+    @Published public var isChecked : Bool = false
+  
     
     
     init(scientificName: String,
@@ -49,7 +51,6 @@ class PlantSpecies
     
     
 }
-
 
 
 

@@ -11,9 +11,12 @@ import SwiftUI
 class DataHandler : ObservableObject
 {
     @FetchRequest(sortDescriptors: []) var list : FetchedResults<ListEntry>
+   
     private var newContractDataModel = NewContractDataModel()
     private var context = CoreDataManager.shared.persistentContainer.viewContext
     let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
+
+
     @Published var appContractListSortedByDate: [AppContract] = []
     @Published var listItemContractArea: [ListItemContractArea] = []
     @Published var appContractListSortedByDeadline: [AppContract] = []
@@ -29,10 +32,14 @@ class DataHandler : ObservableObject
             
             return listItemContractArea
         }
+    
+    
+
    
     
     var filteredContracts: [AppContract]{
         fetchAppContract()
+     
         switch filter {
             
         case .none:
@@ -54,6 +61,11 @@ class DataHandler : ObservableObject
         }
     }
     
+
+    
+    
+    
+    
     func fetchAppContract()
     {
         
@@ -61,6 +73,7 @@ class DataHandler : ObservableObject
         { _ in
             do {
                 self.appContractList = try self.context.fetch(self.request)
+
             }
             catch {
                 // Handle Error

@@ -6,17 +6,28 @@
 //
 
 import SwiftUI
-
+import CoreData
 struct SpeciesCensusView: View {
-    @StateObject private var vm = ViewModel()
+
+
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State private var selectedStrength = "FFH Mähwiese"
         let strengths = ["Deutsch", "Latein"]
-    
+    @State private var showSelectionView = false
     private let  width : Double = 250
     var description : String
     @State var fieldDescription : String = ""
-
+    @StateObject var plantSpeciesDataModel = PlantSpeciesDataModel()
+    var listEntry : ListEntry
+    @Environment(\.managedObjectContext) var moc
+    
+    @State var platList1: [PlantSpecies] = []
+    
+    
+    
+    
+    
+    
     
     var body: some View {
 
@@ -37,55 +48,79 @@ struct SpeciesCensusView: View {
                 }.frame(maxWidth: .infinity, alignment: .center)
                 
             }
-            Text("\(vm.time)")
-                .font(.system(size: 70, weight: .medium, design: .rounded))
-                .background(.thinMaterial)
-                .cornerRadius( 20)
-                .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray, lineWidth: 4))
-                .alert("Zeit abgelaufen", isPresented: $vm.showingAlert){
-                Button("Okay", role: .cancel){
-                    //Code
-                }.scaledToFit()
-                    
-                }
-            Slider(value: $vm.minutes, in: 1...10, step: 1)
-                .padding()
-                .frame(width: width)
-                .disabled(vm.isActive)
-                .animation(.easeInOut, value: vm.minutes)
-            
-            HStack(spacing: 50){
-                Button("Start"){
-                    vm.start(minutes: vm.minutes)
-                }.disabled(vm.isActive)
-                
-                Button("Reset", action: vm.reset).tint(.red)
-            }.frame(width: width)
-                    
-                    
-                    
-                    
-       
-        }.onReceive(timer){ _ in
-            vm.updateCountdown()
         }
         Form{
             Section(header: Text("Description"))
             {
                 TextField("Fügen Sie ein Beschreibung hinzu", text: $fieldDescription)
+            
+                List{
+                    ForEach(listEntry.PlantArray)
+                    {
+                        list in
+                       
+                            Text(list.scientificName ?? "BBB")
+                           
+                        
+                    }
+                }
             }
-            List {
-                   Text("Hello World")
-                   Text("Hello World")
-                   Text("Hello World")
-               }
+            
+            
+            Button("Wähle Pflanze aus")
+            {
+                print("Wähle aus")
+                showSelectionView.toggle()
+    
+            }.sheet(isPresented: $showSelectionView)
+            {
+                SheetSelectPlants(plantSpeciesDataModel: plantSpeciesDataModel, listEntry: listEntry)
+            }
         }
-       
+        
+        Button("Schnellaufnahme beenden")
+        {
+           
+            
+           
+           
+           test2()
+            
+  
+        }
+
     }
+    
+    private func test2()
+    {
+        let newUser = NSEntityDescription.insertNewObject(forEntityName: "PlantSpeciesItem", into: moc)
+       
+        
+        
+        
+        for list in plantSpeciesDataModel.platList
+        {
+   
+
+            if(list.isChecked)
+            {
+              
+                let plant = PlantSpeciesItem(context: moc)
+                plant.species = listEntry
+                plant.scientificName = list.scientificName
+                print(list.scientificName)
+                do {
+                        try moc.save()
+                        print("Success")
+                    } catch {
+                        print("Error saving: \(error)")
+                    }
+               
+            }
+          
+        }
+
+    }
+   
 }
 
-struct SpeciesCensusView_Previews: PreviewProvider {
-    static var previews: some View {
-        SpeciesCensusView(description: "Hello")
-    }
-}

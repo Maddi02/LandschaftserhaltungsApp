@@ -2,7 +2,7 @@
 //  ListEntry+CoreDataClass.swift
 //  Landschaftserhaltungs
 //
-//  Created by Martin Hummel on 06.11.22.
+//  Created by Martin Hummel on 07.11.22.
 //
 //
 

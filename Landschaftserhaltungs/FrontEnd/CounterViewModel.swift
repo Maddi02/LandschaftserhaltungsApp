@@ -8,7 +8,7 @@
 import Foundation
 
 
-extension SpeciesCensusView
+extension TimerView
 {
     final class ViewModel: ObservableObject {
         @Published var isActive = false

@@ -20,6 +20,8 @@ struct CreateNewPerpetration: View {
     var dataHandler : DataHandler
     var appContact : AppContract
     @Environment(\.dismiss) var dismiss
+
+    
     var body: some View {
         
 

@@ -2,7 +2,7 @@
 //  AppContract+CoreDataProperties.swift
 //  Landschaftserhaltungs
 //
-//  Created by Martin Hummel on 06.11.22.
+//  Created by Martin Hummel on 07.11.22.
 //
 //
 
@@ -11,17 +11,18 @@ import CoreData
 import SwiftUI
 
 extension AppContract {
-    
+
     @nonobjc public class func fetchRequest() -> NSFetchRequest<AppContract> {
         return NSFetchRequest<AppContract>(entityName: "AppContract")
     }
-    
+
     @NSManaged public var birthday: Date?
     @NSManaged public var contractPurpose: String?
     @NSManaged public var contractTermination: Date?
     @NSManaged public var country: String?
     @NSManaged public var deadline: Date?
     @NSManaged public var firstName: String?
+    @NSManaged public var id: UUID?
     @NSManaged public var lastName: String?
     @NSManaged public var managementRequirements: String?
     @NSManaged public var measures: String?
@@ -32,26 +33,28 @@ extension AppContract {
     @NSManaged public var plz: String?
     @NSManaged public var plzName: String?
     @NSManaged public var street: String?
-    @NSManaged public var id: UUID?
     @NSManaged public var list: NSSet?
+
+    
     
     public var wrappedFirstName : String
-    {
-        firstName ?? "Unknown Firstname"
-    }
+          {
+              firstName ?? "Unknown Firstname"
+          }
+          
+          public var wrappedLastName : String
+          {
+              lastName ?? "Unknown LastName"
+          }
+          
+          public var ContactArray : [ListEntry] {
+              let set = list as? Set<ListEntry> ?? []
+              return set.sorted
+              {
+                  $0.dateOfObservation ?? Date() <= $1.dateOfObservation ?? Date()
+              }
+          }
     
-    public var wrappedLastName : String
-    {
-        lastName ?? "Unknown LastName"
-    }
-    
-    public var ContactArray : [ListEntry] {
-        let set = list as? Set<ListEntry> ?? []
-        return set.sorted
-        {
-            $0.dateOfObservation ?? Date() <= $1.dateOfObservation ?? Date()
-        }
-    }
 }
 
 // MARK: Generated accessors for list
