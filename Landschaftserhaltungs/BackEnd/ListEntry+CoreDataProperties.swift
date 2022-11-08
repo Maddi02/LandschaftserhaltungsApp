@@ -25,17 +25,21 @@ extension ListEntry {
     
     public var PlantArray : [PlantSpeciesItem] {
           let set = plant as? Set<PlantSpeciesItem> ?? []
-          return set.sorted
-          {
-              $0.scientificName ?? " " < $1.scientificName ?? " "
-          }
+          
+        return Array(Set(set.sorted
+                         {
+                             $0.scientificName ?? " " < $1.scientificName ?? " "
+        }))
       }
+
+
 
 }
 
 // MARK: Generated accessors for plant
 extension ListEntry {
 
+    
     @objc(addPlantObject:)
     @NSManaged public func addToPlant(_ value: PlantSpeciesItem)
 

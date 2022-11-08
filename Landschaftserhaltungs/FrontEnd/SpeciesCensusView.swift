@@ -8,11 +8,11 @@
 import SwiftUI
 import CoreData
 struct SpeciesCensusView: View {
-
-
+    
+    
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State private var selectedStrength = "FFH Mähwiese"
-        let strengths = ["Deutsch", "Latein"]
+    let strengths = ["Deutsch", "Latein"]
     @State private var showSelectionView = false
     private let  width : Double = 250
     var description : String
@@ -22,7 +22,7 @@ struct SpeciesCensusView: View {
     @Environment(\.managedObjectContext) var moc
     
     @State var platList1: [PlantSpecies] = []
-    
+    @State var saveTest : [PlantSpecies] = []
     
     
     
@@ -30,7 +30,7 @@ struct SpeciesCensusView: View {
     
     
     var body: some View {
-
+        
         VStack{
             Text("Schnellaufnahme").font(Font.title).frame(maxWidth: .infinity , alignment: .topLeading)
             Text("\(description) ").font(Font.title3).frame(maxWidth: .infinity , alignment: .topLeading)
@@ -53,14 +53,17 @@ struct SpeciesCensusView: View {
             Section(header: Text("Description"))
             {
                 TextField("Fügen Sie ein Beschreibung hinzu", text: $fieldDescription)
-            
+                
                 List{
                     ForEach(listEntry.PlantArray)
                     {
                         list in
-                       
-                            Text(list.scientificName ?? "BBB")
-                           
+                        
+                        
+                        Text(list.scientificName ?? "BBB")
+                        
+                        
+                        
                         
                     }
                 }
@@ -71,7 +74,7 @@ struct SpeciesCensusView: View {
             {
                 print("Wähle aus")
                 showSelectionView.toggle()
-    
+                
             }.sheet(isPresented: $showSelectionView)
             {
                 SheetSelectPlants(plantSpeciesDataModel: plantSpeciesDataModel, listEntry: listEntry)
@@ -80,47 +83,88 @@ struct SpeciesCensusView: View {
         
         Button("Schnellaufnahme beenden")
         {
-           
             
-           
-           
-           test2()
             
-  
+            
+            
+            saveEntrys()
+            
+            
         }
-
+        
     }
     
-    private func test2()
+    
+    private func contains(str: String) -> Bool
     {
-        let newUser = NSEntityDescription.insertNewObject(forEntityName: "PlantSpeciesItem", into: moc)
-       
+        for i in listEntry.PlantArray
+        {
+            if(i.scientificName == str)
+            {
+                return true
+            }
+        }
+        return false
+    }
+    
+    
+    private func saveEntrys()
+    {
+
         
+        
+        print("Size \(listEntry.PlantArray.count)")
         
         
         for list in plantSpeciesDataModel.platList
         {
-   
-
-            if(list.isChecked)
-            {
-              
-                let plant = PlantSpeciesItem(context: moc)
-                plant.species = listEntry
-                plant.scientificName = list.scientificName
-                print(list.scientificName)
-                do {
+            
+            
+            if(list.isChecked){
+                if(contains(str: list.scientificName))
+                {
+                    print("Found")
+                }
+                else{
+                    let plant = PlantSpeciesItem(context: moc)
+                    plant.species = listEntry
+                    plant.scientificName = list.scientificName
+                    print(list.scientificName)
+                    
+                    do {
                         try moc.save()
                         print("Success")
                     } catch {
                         print("Error saving: \(error)")
                     }
-               
+                }
+                
+                
+                if (listEntry.PlantArray.count == 0)
+                {
+                    let plant = PlantSpeciesItem(context: moc)
+                    plant.species = listEntry
+                    plant.scientificName = list.scientificName
+                    print(list.scientificName)
+                    
+                    do {
+                        try moc.save()
+                        print("Success")
+                    } catch {
+                        print("Error saving: \(error)")
+                    }
+                }
             }
-          
+            
+            if(list.isChecked)
+            {
+               
+               
+                saveTest.append(list)
+                
+            }
         }
 
     }
-   
 }
 

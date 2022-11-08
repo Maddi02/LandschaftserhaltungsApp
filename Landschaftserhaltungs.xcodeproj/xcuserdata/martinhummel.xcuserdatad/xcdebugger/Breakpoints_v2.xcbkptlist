@@ -126,10 +126,10 @@
             filePath = "Landschaftserhaltungs/extensions/extensions.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "Date"
-            landmarkType = "21">
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "getLastYear()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -193,22 +193,6 @@
             startingLineNumber = "54"
             endingLineNumber = "54"
             landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E3910AED-9EE6-4C84-B02F-593FDE487384"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Landschaftserhaltungs/BackEnd/ListEntry+CoreDataProperties.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "PlantArray"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
