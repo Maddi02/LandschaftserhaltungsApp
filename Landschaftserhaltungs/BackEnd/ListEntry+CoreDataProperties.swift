@@ -23,7 +23,7 @@ extension ListEntry {
     @NSManaged public var contract: AppContract?
     @NSManaged public var plant: NSSet?
     
-    public var PlantArray : [PlantSpeciesItem] {
+    var PlantArray : [PlantSpeciesItem] {
           let set = plant as? Set<PlantSpeciesItem> ?? []
           
         return Array(Set(set.sorted
@@ -31,6 +31,9 @@ extension ListEntry {
                              $0.scientificName ?? " " < $1.scientificName ?? " "
         }))
       }
+    
+    
+    
 
 
 

@@ -10,6 +10,8 @@ import Foundation
 struct SheetSelectPlants: View {
     
     @StateObject var plantSpeciesDataModel = PlantSpeciesDataModel()
+    var speciesCensusView : SpeciesCensusView
+    
     
 
     @State private var selection: Set<UUID> = []
@@ -40,7 +42,7 @@ struct SheetSelectPlants: View {
             }
             Button("Save")
             {
-
+                speciesCensusView.saveEntrys()
             }.padding()
             
             TimerView()

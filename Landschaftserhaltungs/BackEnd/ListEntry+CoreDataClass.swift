@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 @objc(ListEntry)
-public class ListEntry: NSManagedObject {
+public class ListEntry: NSManagedObject{
 
 }

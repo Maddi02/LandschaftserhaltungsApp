@@ -18,7 +18,7 @@ struct SpeciesCensusView: View {
     var description : String
     @State var fieldDescription : String = ""
     @StateObject var plantSpeciesDataModel = PlantSpeciesDataModel()
-    var listEntry : ListEntry
+    @StateObject var listEntry : ListEntry
     @Environment(\.managedObjectContext) var moc
     
     @State var platList1: [PlantSpecies] = []
@@ -77,7 +77,7 @@ struct SpeciesCensusView: View {
                 
             }.sheet(isPresented: $showSelectionView)
             {
-                SheetSelectPlants(plantSpeciesDataModel: plantSpeciesDataModel, listEntry: listEntry)
+                SheetSelectPlants(plantSpeciesDataModel: plantSpeciesDataModel, speciesCensusView: self, listEntry: listEntry )
             }
         }
         
@@ -108,7 +108,7 @@ struct SpeciesCensusView: View {
     }
     
     
-    private func saveEntrys()
+    public func saveEntrys()
     {
 
         
