@@ -42,7 +42,7 @@ struct SheetSelectPlants: View {
             }
             Button("Save")
             {
-                speciesCensusView.saveEntrys()
+                
             }.padding()
             
             TimerView()

@@ -81,16 +81,16 @@ struct SpeciesCensusView: View {
             }
         }
         
-        Button("Schnellaufnahme beenden")
-        {
+        
+            NavigationLink(destination: LongTimeSpeciesCensus()){
+                
+                Text("Verträge verwalten")
+            }
+        
             
             
-            
-            
-            saveEntrys()
-            
-            
-        }
+        
+        
         
     }
     

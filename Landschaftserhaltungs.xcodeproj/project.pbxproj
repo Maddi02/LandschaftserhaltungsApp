@@ -58,6 +58,7 @@
 		22A108792919C8A50071FF3A /* SheetSelectPlants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A108782919C8A50071FF3A /* SheetSelectPlants.swift */; };
 		22A1087B2919CDCC0071FF3A /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1087A2919CDCC0071FF3A /* TimerView.swift */; };
 		22A1087D2919CFF80071FF3A /* CheckListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1087C2919CFF80071FF3A /* CheckListItem.swift */; };
+		22A1087F291AF5FB0071FF3A /* LongTimeSpeciesCensus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1087E291AF5FB0071FF3A /* LongTimeSpeciesCensus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		22A108782919C8A50071FF3A /* SheetSelectPlants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSelectPlants.swift; sourceTree = "<group>"; };
 		22A1087A2919CDCC0071FF3A /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		22A1087C2919CFF80071FF3A /* CheckListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListItem.swift; sourceTree = "<group>"; };
+		22A1087E291AF5FB0071FF3A /* LongTimeSpeciesCensus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTimeSpeciesCensus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,8 @@
 				223AD56D291845D3009B5C1C /* EditListItemContractArea.swift */,
 				223AD56F29185486009B5C1C /* ContractFieldItem.swift */,
 				223AD57529186339009B5C1C /* SpeciesCensusView.swift */,
+				22A1087A2919CDCC0071FF3A /* TimerView.swift */,
+				22A1087E291AF5FB0071FF3A /* LongTimeSpeciesCensus.swift */,
 				224F45FF28FD80E8004EA74F /* Assets.xcassets */,
 				223AD5252917CBDA009B5C1C /* ToggleCheckboxStyle.swift */,
 				223AD5232917C67D009B5C1C /* CreateNewPerpetration.swift */,
@@ -243,7 +247,6 @@
 				22455CF928FF27B5002876AD /* ManageContractView.swift */,
 				2252D320290868FF00568A1A /* EditContractView.swift */,
 				224F462928FE014B004EA74F /* Onboarding */,
-				22A1087A2919CDCC0071FF3A /* TimerView.swift */,
 			);
 			path = FrontEnd;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				223AD5262917CBDA009B5C1C /* ToggleCheckboxStyle.swift in Sources */,
 				223AD5E029199C53009B5C1C /* AppContract+CoreDataClass.swift in Sources */,
 				224F463528FE1443004EA74F /* AppState.swift in Sources */,
+				22A1087F291AF5FB0071FF3A /* LongTimeSpeciesCensus.swift in Sources */,
 				22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */,
 				224F462F28FE06CD004EA74F /* SecondFeatureOverview.swift in Sources */,
 				223AD57029185486009B5C1C /* ContractFieldItem.swift in Sources */,
