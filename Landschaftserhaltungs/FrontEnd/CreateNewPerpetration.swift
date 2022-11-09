@@ -78,6 +78,7 @@ struct CreateNewPerpetration: View {
                         test.descriptionField = selectedStrength
                         test.dateOfObservation = date
                         
+                        
 
                         do{
                             try moc.save()

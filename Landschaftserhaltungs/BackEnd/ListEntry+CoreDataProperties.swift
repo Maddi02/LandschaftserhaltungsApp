@@ -17,6 +17,7 @@ extension ListEntry {
     }
     
     @NSManaged public var dateOfObservation: Date?
+    @NSManaged public var listUUID: UUID?
     @NSManaged public var descriptionField: String?
     @NSManaged public var detailDescription: String?
     @NSManaged public var name: String?

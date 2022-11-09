@@ -11,7 +11,7 @@ struct SpeciesCensusView: View {
     
     
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State private var selectedStrength = "FFH Mähwiese"
+    @State private var selectedStrength = "Deutsch"
     let strengths = ["Deutsch", "Latein"]
     @State private var showSelectionView = false
     private let  width : Double = 250
@@ -41,7 +41,7 @@ struct SpeciesCensusView: View {
                 Section {
                     Picker("", selection: $selectedStrength) {
                         ForEach(strengths, id: \.self) {
-                            Text($0)
+                            Text($0).tag($0.components(separatedBy: " ")[0])
                         }
                     }
                     .pickerStyle(.menu)

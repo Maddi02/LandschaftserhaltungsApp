@@ -29,10 +29,16 @@
         <attribute name="dateOfObservation" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="descriptionField" optional="YES" attributeType="String"/>
         <attribute name="detailDescription" optional="YES" attributeType="String"/>
+        <attribute name="listUUID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="contract" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AppContract" inverseName="list" inverseEntity="AppContract"/>
         <relationship name="longTermPlant" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlantSpeciesLongTermItem" inverseName="speciesLongTerm" inverseEntity="PlantSpeciesLongTermItem"/>
         <relationship name="plant" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlantSpeciesItem" inverseName="species" inverseEntity="PlantSpeciesItem"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="listUUID"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="PlantSpeciesItem" representedClassName="PlantSpeciesItem" syncable="YES">
         <attribute name="alpenvorland" optional="YES" attributeType="String"/>

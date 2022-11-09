@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LongTimeSpeciesCensus: View {
-    @State private var selectedStrength = "FFH Mähwiese"
+    @State private var selectedStrength = "Deutsch"
     let strengths = ["Deutsch", "Latein"]
     var description : String = "Test"
     @State var fieldDescription : String = ""
@@ -53,7 +53,7 @@ struct LongTimeSpeciesCensus: View {
                         
                         if(list.isChecked)
                         {
-                            Text(list.scientificName ?? "BBB")
+                            Text(list.scientificName)
                         }
                     }
                     
@@ -88,30 +88,43 @@ struct LongTimeSpeciesCensus: View {
                 
             }.sheet(isPresented: $showSelectionView)
             {
-                SheetSelectPlantsLongTerm(plantSpeciesDataModel: plantSpeciesDataModel)
+                
                 
                 
                 
             }
             
-            NavigationLink(destination: InformationFFHWiese()){
-                Button("Save")
-                {
-                    for i in plantSpeciesDataModel.platList
-                    {
-                        
-                        if(i.isChecked)
-                        {
-                            print(i.scientificName)
-                        }
-                    }
-                    
+            
+            
+           
+                
+                
+                NavigationLink(destination:  getDestination().onAppear{
                     saveEntrysLongTerm()
-                    
+                })
+                {
+                    Text("Save & geh zur nächsten Seite")
                 }
-            }
+                
+            
         }
     }
+        
+    
+    private func getDestination() -> AnyView
+    {
+        
+        if(listEntry.descriptionField == "FFH Mähwiese")
+        {
+            return AnyView(InformationFFHWiese())
+        }
+        else {
+            return AnyView(InformationAnderesBiotop())
+        }
+        
+    }
+    
+    
     
     private func contains(str: String) -> Bool
     {
@@ -146,7 +159,6 @@ struct LongTimeSpeciesCensus: View {
                     let plant = PlantSpeciesLongTermItem(context: moc)
                   
                     plant.speciesLongTerm = listEntry
-$fieldDescription
                     plant.scientificName =  list.scientificName
                     plant.southernGaelandschaften = list.southernGaelandschaften
                     plant.schaebischeAlb = list.schaebischeAlb
