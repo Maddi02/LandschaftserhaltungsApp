@@ -7,14 +7,13 @@
 
 import SwiftUI
 import Foundation
-struct SheetSelectPlants: View {
+struct SheetSelectPlantsShortTerm: View {
     @StateObject var plantSpeciesDataModel = PlantSpeciesDataModel()
     var speciesCensusView : SpeciesCensusView
     @Environment(\.presentationMode) var presentationMode
     
     @State var listDisabled = true
     @State private var selection: Set<UUID> = []
-    var listEntry : ListEntry
     @Environment(\.managedObjectContext) var moc
     var body: some View {
         

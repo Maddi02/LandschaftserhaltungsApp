@@ -70,6 +70,7 @@ struct SpeciesCensusView: View {
             }
             
             
+            
             Button("Wähle Pflanze aus")
             {
                 print("Wähle aus")
@@ -77,18 +78,18 @@ struct SpeciesCensusView: View {
                 
             }.sheet(isPresented: $showSelectionView)
             {
-                SheetSelectPlants(plantSpeciesDataModel: plantSpeciesDataModel, speciesCensusView: self, listEntry: listEntry )
+                SheetSelectPlantsShortTerm(plantSpeciesDataModel: plantSpeciesDataModel, speciesCensusView: self)
             }
+            
+        }
+        
+        NavigationLink(destination: LongTimeSpeciesCensus(listEntry: listEntry, speciesCensusView: self)){
+            
+            Text("Genauere Aufnahme")
         }
         
         
-            NavigationLink(destination: LongTimeSpeciesCensus()){
-                
-                Text("Genauere Aufnahme")
-            }
         
-            
-            
         
         
         
@@ -110,11 +111,12 @@ struct SpeciesCensusView: View {
     
     public func saveEntrys()
     {
-
+        
         
         
         print("Size \(listEntry.PlantArray.count)")
-        
+        let plant = PlantSpeciesItem(context: moc)
+        plant.descriptionField = description
         
         for list in plantSpeciesDataModel.platList
         {
@@ -129,6 +131,17 @@ struct SpeciesCensusView: View {
                     let plant = PlantSpeciesItem(context: moc)
                     plant.species = listEntry
                     plant.scientificName = list.scientificName
+                    plant.southernGaelandschaften = list.southernGaelandschaften
+                    plant.schaebischeAlb = list.schaebischeAlb
+                    plant.responsibility = list.responsibility
+                    plant.redListBw = list.redListBw
+                    plant.odenWald = list.odenWald
+                    plant.oberReihnArea = list.oberReihnArea
+                    plant.nothernGaelandschaften = list.nothernGaelandschaften
+                    plant.germanName = list.germanName
+                    plant.checked = list.isChecked
+                    plant.blackForest = list.blackForest
+                    plant.alpenvorland = list.alpenvorland
                     print(list.scientificName)
                     
                     do {
@@ -158,13 +171,13 @@ struct SpeciesCensusView: View {
             
             if(list.isChecked)
             {
-               
-               
+                
+                
                 saveTest.append(list)
                 
             }
         }
-
+        
     }
 }
 

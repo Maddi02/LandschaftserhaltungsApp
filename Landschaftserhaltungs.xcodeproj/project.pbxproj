@@ -55,10 +55,13 @@
 		224F463528FE1443004EA74F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F463428FE1443004EA74F /* AppState.swift */; };
 		224F463828FE1BE2004EA74F /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F463728FE1BE2004EA74F /* extensions.swift */; };
 		2252D321290868FF00568A1A /* EditContractView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252D320290868FF00568A1A /* EditContractView.swift */; };
-		22A108792919C8A50071FF3A /* SheetSelectPlants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A108782919C8A50071FF3A /* SheetSelectPlants.swift */; };
+		22A108792919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A108782919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift */; };
 		22A1087B2919CDCC0071FF3A /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1087A2919CDCC0071FF3A /* TimerView.swift */; };
 		22A1087D2919CFF80071FF3A /* CheckListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1087C2919CFF80071FF3A /* CheckListItem.swift */; };
 		22A1087F291AF5FB0071FF3A /* LongTimeSpeciesCensus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1087E291AF5FB0071FF3A /* LongTimeSpeciesCensus.swift */; };
+		22A10882291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A10880291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataClass.swift */; };
+		22A10883291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A10881291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataProperties.swift */; };
+		22A10885291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A10884291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,10 +133,13 @@
 		224F463428FE1443004EA74F /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		224F463728FE1BE2004EA74F /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		2252D320290868FF00568A1A /* EditContractView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContractView.swift; sourceTree = "<group>"; };
-		22A108782919C8A50071FF3A /* SheetSelectPlants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSelectPlants.swift; sourceTree = "<group>"; };
+		22A108782919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSelectPlantsShortTerm.swift; sourceTree = "<group>"; };
 		22A1087A2919CDCC0071FF3A /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		22A1087C2919CFF80071FF3A /* CheckListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListItem.swift; sourceTree = "<group>"; };
 		22A1087E291AF5FB0071FF3A /* LongTimeSpeciesCensus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTimeSpeciesCensus.swift; sourceTree = "<group>"; };
+		22A10880291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlantSpeciesLongTermItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		22A10881291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlantSpeciesLongTermItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		22A10884291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSelectPlantsLongTerm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,7 +227,8 @@
 		224F462528FD8555004EA74F /* FrontEnd */ = {
 			isa = PBXGroup;
 			children = (
-				22A108782919C8A50071FF3A /* SheetSelectPlants.swift */,
+				22A108782919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift */,
+				22A10884291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift */,
 				223AD57729192815009B5C1C /* CounterViewModel.swift */,
 				22A1087C2919CFF80071FF3A /* CheckListItem.swift */,
 				223AD571291861AD009B5C1C /* FrequencyEstimationField.swift */,
@@ -254,6 +261,8 @@
 		224F462628FD855D004EA74F /* BackEnd */ = {
 			isa = PBXGroup;
 			children = (
+				22A10880291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataClass.swift */,
+				22A10881291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataProperties.swift */,
 				223AD5D629199C53009B5C1C /* PlantSpeciesItem+CoreDataClass.swift */,
 				223AD5D729199C53009B5C1C /* PlantSpeciesItem+CoreDataProperties.swift */,
 				223AD5D829199C53009B5C1C /* ListEntry+CoreDataClass.swift */,
@@ -439,6 +448,7 @@
 				221AC67B290C3A2800993F52 /* DataHandler.swift in Sources */,
 				22A1087D2919CFF80071FF3A /* CheckListItem.swift in Sources */,
 				22455D0B2900901C002876AD /* ImagePicker.swift in Sources */,
+				22A10885291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift in Sources */,
 				223BB35829116F9D0064927A /* SelectFilterView.swift in Sources */,
 				223AD5DE29199C53009B5C1C /* ListEntry+CoreDataClass.swift in Sources */,
 				22455CFA28FF27B5002876AD /* ManageContractView.swift in Sources */,
@@ -449,7 +459,7 @@
 				223AD57629186339009B5C1C /* SpeciesCensusView.swift in Sources */,
 				224F463328FE07D8004EA74F /* DoneOverview.swift in Sources */,
 				223AD5E32919C2E7009B5C1C /* PlantSpecies.swift in Sources */,
-				22A108792919C8A50071FF3A /* SheetSelectPlants.swift in Sources */,
+				22A108792919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift in Sources */,
 				223AD581291940D7009B5C1C /* AppStateDataModel.xcdatamodeld in Sources */,
 				221AC67D290D150B00993F52 /* BackgroundLinearGradient.swift in Sources */,
 				223AD57829192815009B5C1C /* CounterViewModel.swift in Sources */,
@@ -459,6 +469,7 @@
 				223AD5E029199C53009B5C1C /* AppContract+CoreDataClass.swift in Sources */,
 				224F463528FE1443004EA74F /* AppState.swift in Sources */,
 				22A1087F291AF5FB0071FF3A /* LongTimeSpeciesCensus.swift in Sources */,
+				22A10882291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataClass.swift in Sources */,
 				22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */,
 				224F462F28FE06CD004EA74F /* SecondFeatureOverview.swift in Sources */,
 				223AD57029185486009B5C1C /* ContractFieldItem.swift in Sources */,
@@ -470,6 +481,7 @@
 				2252D321290868FF00568A1A /* EditContractView.swift in Sources */,
 				224F463828FE1BE2004EA74F /* extensions.swift in Sources */,
 				224F462D28FE06BB004EA74F /* FirstFeatureOverview.swift in Sources */,
+				22A10883291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataProperties.swift in Sources */,
 				224F462828FDFC99004EA74F /* MainSideView.swift in Sources */,
 				223AD4D42912B59B009B5C1C /* ContractAdminister.swift in Sources */,
 				223AD56E291845D3009B5C1C /* EditListItemContractArea.swift in Sources */,

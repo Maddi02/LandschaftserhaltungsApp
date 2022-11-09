@@ -26,6 +26,7 @@ extension PlantSpeciesItem {
     @NSManaged public var responsibility: String?
     @NSManaged public var schaebischeAlb: String?
     @NSManaged public var scientificName: String?
+    @NSManaged public var descriptionField: String?
     @NSManaged public var southernGaelandschaften: String?
     @NSManaged public var checked: Bool
     @NSManaged public var uuid: UUID?

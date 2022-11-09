@@ -31,12 +31,15 @@
         <attribute name="detailDescription" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="contract" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AppContract" inverseName="list" inverseEntity="AppContract"/>
+        <relationship name="longTermPlant" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlantSpeciesLongTermItem" inverseName="speciesLongTerm" inverseEntity="PlantSpeciesLongTermItem"/>
         <relationship name="plant" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlantSpeciesItem" inverseName="species" inverseEntity="PlantSpeciesItem"/>
     </entity>
     <entity name="PlantSpeciesItem" representedClassName="PlantSpeciesItem" syncable="YES">
         <attribute name="alpenvorland" optional="YES" attributeType="String"/>
         <attribute name="blackForest" optional="YES" attributeType="String"/>
         <attribute name="checked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="descriptionField" optional="YES" attributeType="String"/>
+        <attribute name="descriptionFieldLongTerm" optional="YES" attributeType="String"/>
         <attribute name="germanName" optional="YES" attributeType="String"/>
         <attribute name="nothernGaelandschaften" optional="YES" attributeType="String"/>
         <attribute name="oberReihnArea" optional="YES" attributeType="String"/>
@@ -51,6 +54,27 @@
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="uuid"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="PlantSpeciesLongTermItem" representedClassName="PlantSpeciesLongTermItem" syncable="YES">
+        <attribute name="alpenvorland" optional="YES" attributeType="String"/>
+        <attribute name="blackForest" optional="YES" attributeType="String"/>
+        <attribute name="checked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="germanName" optional="YES" attributeType="String"/>
+        <attribute name="longTermuuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="nothernGaelandschaften" optional="YES" attributeType="String"/>
+        <attribute name="oberReihnArea" optional="YES" attributeType="String"/>
+        <attribute name="odenWald" optional="YES" attributeType="String"/>
+        <attribute name="redListBw" optional="YES" attributeType="String"/>
+        <attribute name="responsibility" optional="YES" attributeType="String"/>
+        <attribute name="schaebischeAlb" optional="YES" attributeType="String"/>
+        <attribute name="scientificName" optional="YES" attributeType="String"/>
+        <attribute name="southernGaelandschaften" optional="YES" attributeType="String"/>
+        <relationship name="speciesLongTerm" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListEntry" inverseName="longTermPlant" inverseEntity="ListEntry"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="longTermuuid"/>
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>

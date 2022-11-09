@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TimerView: View {
-    var  sheetSelectPlants : SheetSelectPlants
+    var  sheetSelectPlants : SheetSelectPlantsShortTerm
     @StateObject private var vm = ViewModel()
     private let  width : Double = 250
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()

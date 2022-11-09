@@ -12,30 +12,30 @@ class PlantSpecies : Identifiable, ObservableObject
 
 {
     public var scientificName : String = " "
-    public var redListBw : Character = " "
-    public var responsibility : Character = " "
-    public var oberReihnArea : Character = " "
-    public var blackForest : Character = " "
-    public var odenWald : Character = " "
-    public var nothernGaelandschaften : Character = " "
-    public var southernGaelandschaften : Character = " "
-    public var schaebischeAlb : Character = " "
-    public var alpenvorland : Character = " "
+    public var redListBw : String = " "
+    public var responsibility : String = " "
+    public var oberReihnArea : String = " "
+    public var blackForest : String = " "
+    public var odenWald : String = " "
+    public var nothernGaelandschaften : String = " "
+    public var southernGaelandschaften : String = " "
+    public var schaebischeAlb : String = " "
+    public var alpenvorland : String = " "
     public var germanName : String = " "
     @Published public var isChecked : Bool = false
   
     
     
     init(scientificName: String,
-         redListBw : Character,
-         responsibility : Character,
-         oberReihnArea : Character,
-         blackForest : Character,
-         odenWald : Character,
-         nothernGaelandschaften : Character,
-         southernGaelandschaften : Character,
-         schaebischeAlb : Character,
-         alpenvorland : Character,
+         redListBw : String,
+         responsibility : String,
+         oberReihnArea : String,
+         blackForest : String,
+         odenWald : String,
+         nothernGaelandschaften : String,
+         southernGaelandschaften : String,
+         schaebischeAlb : String,
+         alpenvorland : String,
          germanName : String)
     {
         self.scientificName = scientificName
