@@ -62,6 +62,8 @@
 		22A10882291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A10880291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataClass.swift */; };
 		22A10883291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A10881291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataProperties.swift */; };
 		22A10885291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A10884291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift */; };
+		22A10889291C1C260071FF3A /* InformationFFHWiese.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A10888291C1C260071FF3A /* InformationFFHWiese.swift */; };
+		22A1088B291C1CE50071FF3A /* InformationAnderesBiotop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1088A291C1CE50071FF3A /* InformationAnderesBiotop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +142,8 @@
 		22A10880291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlantSpeciesLongTermItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		22A10881291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlantSpeciesLongTermItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		22A10884291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSelectPlantsLongTerm.swift; sourceTree = "<group>"; };
+		22A10888291C1C260071FF3A /* InformationFFHWiese.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationFFHWiese.swift; sourceTree = "<group>"; };
+		22A1088A291C1CE50071FF3A /* InformationAnderesBiotop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAnderesBiotop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,7 +198,6 @@
 				224F462628FD855D004EA74F /* BackEnd */,
 				224F45FB28FD80E7004EA74F /* LandschaftserhaltungsApp.swift */,
 				224F462528FD8555004EA74F /* FrontEnd */,
-				224F460128FD80E8004EA74F /* Preview Content */,
 			);
 			path = Landschaftserhaltungs;
 			sourceTree = "<group>";
@@ -237,7 +240,10 @@
 				223AD56F29185486009B5C1C /* ContractFieldItem.swift */,
 				223AD57529186339009B5C1C /* SpeciesCensusView.swift */,
 				22A1087A2919CDCC0071FF3A /* TimerView.swift */,
+				22A1088A291C1CE50071FF3A /* InformationAnderesBiotop.swift */,
 				22A1087E291AF5FB0071FF3A /* LongTimeSpeciesCensus.swift */,
+				22A10888291C1C260071FF3A /* InformationFFHWiese.swift */,
+				224F460128FD80E8004EA74F /* Preview Content */,
 				224F45FF28FD80E8004EA74F /* Assets.xcassets */,
 				223AD5252917CBDA009B5C1C /* ToggleCheckboxStyle.swift */,
 				223AD5232917C67D009B5C1C /* CreateNewPerpetration.swift */,
@@ -457,6 +463,7 @@
 				223BB34D29103C490064927A /* TextView.swift in Sources */,
 				22455D122900A869002876AD /* CoreDataManager.swift in Sources */,
 				223AD57629186339009B5C1C /* SpeciesCensusView.swift in Sources */,
+				22A10889291C1C260071FF3A /* InformationFFHWiese.swift in Sources */,
 				224F463328FE07D8004EA74F /* DoneOverview.swift in Sources */,
 				223AD5E32919C2E7009B5C1C /* PlantSpecies.swift in Sources */,
 				22A108792919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift in Sources */,
@@ -464,6 +471,7 @@
 				221AC67D290D150B00993F52 /* BackgroundLinearGradient.swift in Sources */,
 				223AD57829192815009B5C1C /* CounterViewModel.swift in Sources */,
 				223AD5E52919C309009B5C1C /* PlantSpeciesDataModel.swift in Sources */,
+				22A1088B291C1CE50071FF3A /* InformationAnderesBiotop.swift in Sources */,
 				223AD5242917C67D009B5C1C /* CreateNewPerpetration.swift in Sources */,
 				223AD5262917CBDA009B5C1C /* ToggleCheckboxStyle.swift in Sources */,
 				223AD5E029199C53009B5C1C /* AppContract+CoreDataClass.swift in Sources */,

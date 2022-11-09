@@ -43,7 +43,7 @@ struct LongTimeSpeciesCensus: View {
             {
                 TextField("Fügen Sie ein Beschreibung hinzu", text: $fieldDescription)
             }
-                Section(header: Text("Ausgewählte Pflanzen"))
+            Section(header: Text("Ausgewählte Pflanzen"))
             {
                 List{
                     ForEach(plantSpeciesDataModel.platList)
@@ -60,22 +60,22 @@ struct LongTimeSpeciesCensus: View {
                     
                 }
             }
-                Section(header: Text("Schon gespeicherte Pflanzen"))
-                {
-                    List{
-                        ForEach(listEntry.PlantArrayLongTerm)
-                        {
-                            
-                            list in
-                            
-                            
-                            Text(list.scientificName ?? "BBB")
-                            
-                        }
+            Section(header: Text("Schon gespeicherte Pflanzen"))
+            {
+                List{
+                    ForEach(listEntry.PlantArrayLongTerm)
+                    {
+                        
+                        list in
+                        
+                        
+                        Text(list.scientificName ?? "BBB")
                         
                     }
+                    
+                }
                 
-
+                
                 
                 
             }
@@ -94,19 +94,21 @@ struct LongTimeSpeciesCensus: View {
                 
             }
             
-            
-            Button("Save")
-            {
-                for i in plantSpeciesDataModel.platList
+            NavigationLink(destination: InformationFFHWiese()){
+                Button("Save")
                 {
-
-                    if(i.isChecked)
+                    for i in plantSpeciesDataModel.platList
                     {
-                        print(i.scientificName)
+                        
+                        if(i.isChecked)
+                        {
+                            print(i.scientificName)
+                        }
                     }
+                    
+                    saveEntrysLongTerm()
+                    
                 }
-                
-                saveEntrysLongTerm()
             }
         }
     }
