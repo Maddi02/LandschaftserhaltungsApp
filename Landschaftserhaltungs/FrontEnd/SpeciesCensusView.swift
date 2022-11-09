@@ -84,7 +84,7 @@ struct SpeciesCensusView: View {
         
             NavigationLink(destination: LongTimeSpeciesCensus()){
                 
-                Text("Verträge verwalten")
+                Text("Genauere Aufnahme")
             }
         
             

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TimerView: View {
+    var  sheetSelectPlants : SheetSelectPlants
     @StateObject private var vm = ViewModel()
     private let  width : Double = 250
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -32,10 +33,15 @@ struct TimerView: View {
                 
                 HStack(spacing: 50){
                     Button("Start"){
+                        sheetSelectPlants.selectionActivate()
                         vm.start(minutes: vm.minutes)
                     }.disabled(vm.isActive)
                     
-                    Button("Reset", action: vm.reset).tint(.red)
+                    Button("Reset")
+                    {
+                        vm.reset()
+                        sheetSelectPlants.selectionDeactivate()
+                    }.tint(.red)
                 }.frame(width: width).padding(.top,30)
                 
                 
@@ -49,8 +55,6 @@ struct TimerView: View {
     }
 
 
-struct TimerView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimerView()
-    }
-}
+
+
+

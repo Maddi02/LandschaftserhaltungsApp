@@ -8,12 +8,11 @@
 import SwiftUI
 import Foundation
 struct SheetSelectPlants: View {
-    
     @StateObject var plantSpeciesDataModel = PlantSpeciesDataModel()
     var speciesCensusView : SpeciesCensusView
+    @Environment(\.presentationMode) var presentationMode
     
-    
-
+    @State var listDisabled = true
     @State private var selection: Set<UUID> = []
     var listEntry : ListEntry
     @Environment(\.managedObjectContext) var moc
@@ -35,17 +34,18 @@ struct SheetSelectPlants: View {
                     }
                     
                     
-                }
+                }.disabled(listDisabled)
                 
                 
                 
             }
             Button("Save")
             {
-                
+                speciesCensusView.saveEntrys()
+                presentationMode.wrappedValue.dismiss()
             }.padding()
             
-            TimerView()
+            TimerView(sheetSelectPlants: self)
             
         }
         
@@ -54,9 +54,18 @@ struct SheetSelectPlants: View {
         
 
         
+  
         
         
-        
+    }
+    func selectionActivate()
+    {
+        listDisabled = false
+    }
+    
+    func selectionDeactivate()
+    {
+        listDisabled = true
     }
 }
 
