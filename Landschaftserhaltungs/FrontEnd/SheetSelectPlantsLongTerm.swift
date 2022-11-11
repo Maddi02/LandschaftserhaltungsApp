@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SheetSelectPlantsLongTerm: View {
     @StateObject var plantSpeciesDataModel = PlantSpeciesDataModel()
+    var longTimeSpeciesCencus : LongTimeSpeciesCensus
+    @StateObject var listEntry : ListEntry
     @Environment(\.presentationMode) var presentationMode
     @State private var selection: Set<UUID> = []
     @Environment(\.managedObjectContext) var moc
@@ -34,15 +36,28 @@ struct SheetSelectPlantsLongTerm: View {
                 
                 
             }
-            Button("Cancel")
+            NavigationLink(destination:  getDestination().onAppear{
+                longTimeSpeciesCencus.saveEntrysLongTerm()
+            })
             {
-              
-                presentationMode.wrappedValue.dismiss()
-            }.padding()
+                Text("Save & geh zur nächsten Seite")
+            }
             
           //  TimerView(sheetSelectPlants: self)
             
         }
+    }
+    private func getDestination() -> AnyView
+    {
+        
+        if(listEntry.descriptionField == "FFH Mähwiese")
+        {
+            return AnyView(InformationFFHWiese())
+        }
+        else {
+            return AnyView(InformationAnderesBiotop())
+        }
+        
     }
 }
 

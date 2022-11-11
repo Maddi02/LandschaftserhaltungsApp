@@ -81,39 +81,15 @@ struct LongTimeSpeciesCensus: View {
             }
             
             
-            NavigationLink(destination: SheetSelectPlantsLongTerm(plantSpeciesDataModel: plantSpeciesDataModel)){
+            NavigationLink(destination: SheetSelectPlantsLongTerm(plantSpeciesDataModel: plantSpeciesDataModel, longTimeSpeciesCencus: self ,listEntry: listEntry)){
                 
                 Text("Wähle Pflanze aus")
             }
-            
-            
-           
-                
-                
-                NavigationLink(destination:  getDestination().onAppear{
-                    saveEntrysLongTerm()
-                })
-                {
-                    Text("Save & geh zur nächsten Seite")
-                }
-                
-            
         }
     }
         
     
-    private func getDestination() -> AnyView
-    {
-        
-        if(listEntry.descriptionField == "FFH Mähwiese")
-        {
-            return AnyView(InformationFFHWiese())
-        }
-        else {
-            return AnyView(InformationAnderesBiotop())
-        }
-        
-    }
+    
     
     
     
