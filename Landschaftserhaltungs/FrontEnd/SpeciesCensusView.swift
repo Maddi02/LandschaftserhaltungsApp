@@ -49,19 +49,22 @@ struct SpeciesCensusView: View {
                 
             }
         }
+        
         Form{
+            
             Section(header: Text("Description"))
             {
                 TextField("Fügen Sie ein Beschreibung hinzu", text: $fieldDescription)
             }
             
-            NavigationLink(destination: SheetSelectPlantsShortTerm(plantSpeciesDataModel: plantSpeciesDataModel, speciesCensusView: self, listEntry: listEntry,testw: plantSpeciesDataModel.platList)){
+            NavigationLink(destination: SheetSelectPlantsShortTerm(plantSpeciesDataModel: plantSpeciesDataModel, speciesCensusView: self, listEntry: listEntry, testw: plantSpeciesDataModel.platList)){
                 
                 Text("Wähle Pflanze aus")
             }
+        }
         
             
-        }
+       
         
   
         

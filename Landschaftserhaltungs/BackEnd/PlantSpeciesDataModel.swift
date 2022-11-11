@@ -17,6 +17,7 @@ public class PlantSpeciesDataModel : ObservableObject
     
      @Published var platList : [PlantSpecies] = []
      @Published var filterdPlants : [PlantSpecies] = []
+  //  @Published var sectionDictionary : Dictionary<String , [PlantSpecies]>
     @Published var checklistItems = [
       CheckListItem(name: "Walk the dog"),
       CheckListItem(name: "Brush my teeth"),
@@ -30,6 +31,11 @@ public class PlantSpeciesDataModel : ObservableObject
     
     init()
     {
+
+      //  sectionDictionary = [:]
+      //  sectionDictionary = getSectionedDictionary()
+        
+     
         platList.append(PlantSpecies(
             scientificName: "Abies alba",
             redListBw: "*",
@@ -58,41 +64,9 @@ public class PlantSpeciesDataModel : ObservableObject
             germanName: "Feld-Ahorn"
         ))
         
-        platList.append(PlantSpecies(
-            scientificName: "Acer negundo",
-            redListBw: "*",
-            responsibility: " ",
-            oberReihnArea: "*",
-            blackForest: "-",
-            odenWald: "°",
-            nothernGaelandschaften: "°",
-            southernGaelandschaften: "°",
-            schaebischeAlb: "°",
-            alpenvorland: "°",
-            germanName: "Eschen-Ahorn"
-        ))
-
-
-    }
-    
-     func geti() -> [PlantSpecies]
-    {
-        platList.append(PlantSpecies(
-            scientificName: "Abies alba",
-            redListBw: "*",
-            responsibility: " ",
-            oberReihnArea: "*",
-            blackForest: "*",
-            odenWald: "°",
-            nothernGaelandschaften: "V",
-            southernGaelandschaften: "*",
-            schaebischeAlb: "*",
-            alpenvorland: "*",
-            germanName: "Weiß-Tanne"
-        ))
         
         platList.append(PlantSpecies(
-            scientificName: "Acer campestre",
+            scientificName: "C",
             redListBw: "*",
             responsibility: " ",
             oberReihnArea: "*",
@@ -102,7 +76,7 @@ public class PlantSpeciesDataModel : ObservableObject
             southernGaelandschaften: "*",
             schaebischeAlb: "*",
             alpenvorland: "*",
-            germanName: "Feld-Ahorn"
+            germanName: "C"
         ))
         
         platList.append(PlantSpecies(
@@ -118,7 +92,9 @@ public class PlantSpeciesDataModel : ObservableObject
             alpenvorland: "°",
             germanName: "Eschen-Ahorn"
         ))
-        return platList
+       
+        
+   
     }
     
     
@@ -133,7 +109,17 @@ public class PlantSpeciesDataModel : ObservableObject
     }
     
     
-    
+    func getSectionedDictionary() -> Dictionary <String , [PlantSpecies]> {
+        let sectionDictionary: Dictionary<String, [PlantSpecies]> = {
+            return Dictionary(grouping: platList, by: {
+                let name = $0.germanName
+                let normalizedName = name.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
+                let firstChar = String(normalizedName.first!).uppercased()
+                return firstChar
+            })
+        }()
+        return sectionDictionary
+    }
     
     
     

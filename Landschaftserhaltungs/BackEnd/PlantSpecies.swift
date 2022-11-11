@@ -8,9 +8,11 @@
 import Foundation
 
 
-class PlantSpecies : Identifiable, ObservableObject
-
+class PlantSpecies : Identifiable
 {
+    
+
+  
     public var scientificName : String = " "
     public var redListBw : String = " "
     public var responsibility : String = " "
@@ -24,6 +26,15 @@ class PlantSpecies : Identifiable, ObservableObject
     public var germanName : String = " "
     @Published public var isChecked : Bool = false
   
+    
+    static func == (lhs: PlantSpecies, rhs: PlantSpecies) -> Bool {
+        return (lhs.scientificName) == (rhs.scientificName)
+    }
+    
+    
+    static func < (lhs: PlantSpecies , rhs: PlantSpecies) -> Bool {
+        return (lhs.scientificName) < (rhs.scientificName)
+        }
     
     
     init(scientificName: String,

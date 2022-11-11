@@ -14,7 +14,7 @@ struct TimerView: View {
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var body: some View {
         Text("\(vm.time)")
-                    .font(.system(size: 70, weight: .medium, design: .rounded))
+                    .font(.system(size: 50, weight: .medium, design: .rounded))
                     .background(.thinMaterial)
                     .cornerRadius( 20)
                 
@@ -42,7 +42,7 @@ struct TimerView: View {
                         vm.reset()
                         sheetSelectPlants.selectionDeactivate()
                     }.tint(.red)
-                }.frame(width: width).padding(.top,30)
+                }.frame(width: width).padding(.top,20)
                 
                 
                 

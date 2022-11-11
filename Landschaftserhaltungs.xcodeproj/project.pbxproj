@@ -56,6 +56,7 @@
 		224F463828FE1BE2004EA74F /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F463728FE1BE2004EA74F /* extensions.swift */; };
 		2252D321290868FF00568A1A /* EditContractView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252D320290868FF00568A1A /* EditContractView.swift */; };
 		227FAAC4291E4BC700D747DA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227FAAC3291E4BC700D747DA /* SearchBar.swift */; };
+		227FAB33291ED81700D747DA /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227FAB32291ED81700D747DA /* CheckBoxView.swift */; };
 		22A108792919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A108782919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift */; };
 		22A1087B2919CDCC0071FF3A /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1087A2919CDCC0071FF3A /* TimerView.swift */; };
 		22A1087D2919CFF80071FF3A /* CheckListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1087C2919CFF80071FF3A /* CheckListItem.swift */; };
@@ -137,6 +138,7 @@
 		224F463728FE1BE2004EA74F /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		2252D320290868FF00568A1A /* EditContractView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContractView.swift; sourceTree = "<group>"; };
 		227FAAC3291E4BC700D747DA /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		227FAB32291ED81700D747DA /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		22A108782919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSelectPlantsShortTerm.swift; sourceTree = "<group>"; };
 		22A1087A2919CDCC0071FF3A /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		22A1087C2919CFF80071FF3A /* CheckListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListItem.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				2252D320290868FF00568A1A /* EditContractView.swift */,
 				224F462928FE014B004EA74F /* Onboarding */,
 				227FAAC3291E4BC700D747DA /* SearchBar.swift */,
+				227FAB32291ED81700D747DA /* CheckBoxView.swift */,
 			);
 			path = FrontEnd;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				223BB35829116F9D0064927A /* SelectFilterView.swift in Sources */,
 				223AD5DE29199C53009B5C1C /* ListEntry+CoreDataClass.swift in Sources */,
 				22455CFA28FF27B5002876AD /* ManageContractView.swift in Sources */,
+				227FAB33291ED81700D747DA /* CheckBoxView.swift in Sources */,
 				224F45FE28FD80E7004EA74F /* OnboardingFlowView.swift in Sources */,
 				2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */,
 				223BB34D29103C490064927A /* TextView.swift in Sources */,
