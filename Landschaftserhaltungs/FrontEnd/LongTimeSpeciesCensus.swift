@@ -17,6 +17,9 @@ struct LongTimeSpeciesCensus: View {
     @StateObject var plantSpeciesDataModel = PlantSpeciesDataModel()
     var speciesCensusView : SpeciesCensusView
     @Environment(\.managedObjectContext) var moc
+    
+    let alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    
     var body: some View {
         
         VStack{
@@ -68,7 +71,7 @@ struct LongTimeSpeciesCensus: View {
             }
             
             
-            NavigationLink(destination: SheetSelectPlantsLongTerm(plantSpeciesDataModel: plantSpeciesDataModel, longTimeSpeciesCencus: self ,listEntry: listEntry)){
+            NavigationLink(destination: SheetSelectPlantsLongTerm(plantSpeciesDataModel: plantSpeciesDataModel, longTimeSpeciesCencus: self ,listEntry: listEntry, plantSpecies: plantSpeciesDataModel.platList)){
                 
                 Text("Wähle Pflanze aus")
             }
@@ -153,7 +156,46 @@ struct LongTimeSpeciesCensus: View {
             }
         
         }
+       
         
+    }
+    
+    private func checkJump1(char : String) -> Bool
+    {
+        
+        //Get index dann geh einenn davor und checke
+        var counter = 0;
+        for i in alphabet{
+            
+            if(i == char)
+            {
+                break
+            }
+            
+            counter += 1
+        }
+        
+        if(char == "A" && plantSpeciesDataModel.platList.first(where: { $0.scientificName.prefix(1) == char }) != nil)
+        {
+            return true
+        }
+        
+        
+        
+        if(counter > 0 && counter < 27){
+            if plantSpeciesDataModel.platList.first(where: { $0.scientificName.prefix(1) == alphabet[counter - 1 ] }) != nil  && plantSpeciesDataModel.platList.first(where: { $0.scientificName.prefix(1) == alphabet[counter + 1 ] }) != nil {
+                return true
+            }
+            else{
+                return false
+            }
+        }
+        
+        
+        
+        
+        
+        return false
     }
     
 }
