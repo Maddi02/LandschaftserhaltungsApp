@@ -20,6 +20,13 @@ extension PlantSpeciesLongTermItem {
     @NSManaged public var blackForest: String?
     @NSManaged public var germanName: String?
     @NSManaged public var checked: Bool
+    @NSManaged public var brachePointer: Bool
+    @NSManaged public var disturbanceIndicator: Bool
+    @NSManaged public var impairedSpecies: Bool
+    @NSManaged public var mergerityPointer: Bool
+    @NSManaged public var nitrogenIndicator: Bool
+    @NSManaged public var seedSpecies: Bool
+    @NSManaged public var valuationNeutralType: Bool
     @NSManaged public var nothernGaelandschaften: String?
     @NSManaged public var oberReihnArea: String?
     @NSManaged public var redListBw: String?

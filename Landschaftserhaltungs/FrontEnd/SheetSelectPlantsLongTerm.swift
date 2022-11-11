@@ -48,7 +48,6 @@ struct SheetSelectPlantsLongTerm: View {
                                         else{
                                             CheckBoxView(checked: contact.isChecked)
                                         }
-                                   
                                     }
                                     
                                 }
@@ -69,10 +68,6 @@ struct SheetSelectPlantsLongTerm: View {
                                         else{
                                             CheckBoxView(checked: contact.isChecked)
                                         }
-                                     
-                          
-                                        
-                                        
                                     }
                                     
                                 }
