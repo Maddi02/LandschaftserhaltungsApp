@@ -22,6 +22,7 @@ struct SheetSelectPlantsLongTerm: View {
     let alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     var body: some View {
         VStack{
+
             ScrollViewReader { scrollProxy in
                 ZStack {
                     List {
@@ -52,7 +53,18 @@ struct SheetSelectPlantsLongTerm: View {
                                         // Image(systemName: "person.circle.fill").font(.largeTitle).padding(.trailing, 5)
                                         Text(contact.germanName.wrappedValue)
                                         Spacer()
-                                        CheckBoxView(checked: contact.isChecked)
+                                
+                                        if(contact.isChecked.wrappedValue)
+                                        {
+                                            CheckBoxView(checked: contact.isChecked).disabled(true)
+                                        }
+                                        else{
+                                            CheckBoxView(checked: contact.isChecked)
+                                        }
+                                     
+                          
+                                        
+                                        
                                     }
                                     
                                 }
@@ -205,6 +217,15 @@ struct SheetSelectPlantsLongTerm: View {
         
         return false
     }
+
+        
+        
+        
+        
+        
+        
+        
+    
 }
 
 
