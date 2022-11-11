@@ -43,7 +43,16 @@ struct LongTimeSpeciesCensus: View {
                         
                         if(list.isChecked.wrappedValue)
                         {
-                            Text(list.scientificName.wrappedValue)
+                            if(selectedStrength == "Latein")
+                            {
+                                Text(list.scientificName.wrappedValue)
+                            }
+                            
+                            if(selectedStrength == "Deutsch")
+                            {
+                                Text(list.germanName.wrappedValue)
+                            }
+        
                         }
                     }
                     
@@ -57,9 +66,15 @@ struct LongTimeSpeciesCensus: View {
                     {
                         
                         list in
+                        if(selectedStrength == "Deutsch")
+                        {
+                            Text(list.germanName ?? "Unknown")
+                        }
                         
-                        
-                        Text(list.scientificName ?? "BBB")
+                        if(selectedStrength == "Latein")
+                        {
+                            Text(list.scientificName ?? "Unknown")
+                        }
                         
                     }
                     
@@ -75,7 +90,26 @@ struct LongTimeSpeciesCensus: View {
                 
                 Text("Wähle Pflanze aus")
             }
-        }.navigationBarBackButtonHidden(true)
+        }.toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                HStack{
+                    
+                    Text("Sprache: ")
+                    Section {
+                        Picker("", selection: $selectedStrength) {
+                            ForEach(strengths, id: \.self) {
+                                Text($0).tag($0.components(separatedBy: " ")[0])
+                            }
+                        }
+                        .pickerStyle(.menu)
+                    }.frame(maxWidth: .infinity, alignment: .center)
+                    
+                }
+            }
+        }
+        
+        
+        .navigationBarBackButtonHidden(true)
     }
         
     
