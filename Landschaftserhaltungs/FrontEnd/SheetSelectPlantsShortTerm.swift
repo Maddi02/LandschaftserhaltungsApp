@@ -164,7 +164,7 @@ struct SheetSelectPlantsShortTerm: View {
             
             TimerView(sheetSelectPlants: self).frame(maxWidth: .infinity, maxHeight: 30)
             
-        }
+        }.navigationBarBackButtonHidden(true)
     }
     
     

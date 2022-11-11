@@ -40,7 +40,15 @@ struct SheetSelectPlantsLongTerm: View {
                                         // Image(systemName: "person.circle.fill").font(.largeTitle).padding(.trailing, 5)
                                         Text(contact.scientificName.wrappedValue)
                                         Spacer()
-                                        CheckBoxView(checked: contact.isChecked)
+                                        
+                                        if(contact.isChecked.wrappedValue)
+                                        {
+                                            CheckBoxView(checked: contact.isChecked).disabled(true)
+                                        }
+                                        else{
+                                            CheckBoxView(checked: contact.isChecked)
+                                        }
+                                   
                                     }
                                     
                                 }
@@ -165,7 +173,7 @@ struct SheetSelectPlantsLongTerm: View {
             
           //  TimerView(sheetSelectPlants: self)
             
-        }
+        }.navigationBarBackButtonHidden(true)
     }
     private func getDestination() -> AnyView
     {

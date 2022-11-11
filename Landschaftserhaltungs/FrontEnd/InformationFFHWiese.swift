@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InformationFFHWiese: View {
     var body: some View {
-        Text("Hello, World! FFH Wiese")
+        Text("Hello, World! FFH Wiese").navigationBarBackButtonHidden(true)
     }
 }
 

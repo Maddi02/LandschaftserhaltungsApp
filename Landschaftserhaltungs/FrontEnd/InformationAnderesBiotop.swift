@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InformationAnderesBiotop: View {
     var body: some View {
-        Text("Hello, World! Anderes Biotop")
+        Text("Hello, World! Anderes Biotop").navigationBarBackButtonHidden(true)
     }
 }
 

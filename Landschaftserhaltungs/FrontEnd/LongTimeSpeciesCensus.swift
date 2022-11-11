@@ -75,7 +75,7 @@ struct LongTimeSpeciesCensus: View {
                 
                 Text("Wähle Pflanze aus")
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
         
     
