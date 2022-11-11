@@ -8,10 +8,12 @@
 import SwiftUI
 import Foundation
 struct SheetSelectPlantsShortTerm: View {
-    @StateObject var plantSpeciesDataModel = PlantSpeciesDataModel()
+    @StateObject var plantSpeciesDataModel : PlantSpeciesDataModel
     var speciesCensusView : SpeciesCensusView
+    var listEntry : ListEntry
     @Environment(\.presentationMode) var presentationMode
-    
+    @State private var selectedStrength = "Deutsch"
+    let strengths = ["Deutsch", "Latein"]
     @State var listDisabled = true
     @State private var selection: Set<UUID> = []
     @Environment(\.managedObjectContext) var moc
@@ -33,29 +35,40 @@ struct SheetSelectPlantsShortTerm: View {
                     }
                     
                     
-                }.disabled(listDisabled)
+                }.disabled(listDisabled).toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        HStack{
+                            
+                            Text("Sprache: ")
+                            Section {
+                                Picker("", selection: $selectedStrength) {
+                                    ForEach(strengths, id: \.self) {
+                                        Text($0).tag($0.components(separatedBy: " ")[0])
+                                    }
+                                }
+                                .pickerStyle(.menu)
+                            }.frame(maxWidth: .infinity, alignment: .center)
+                            
+                        }
+                    }
+                }
                 
                 
                 
             }
-            Button("Save")
-            {
-                speciesCensusView.saveEntrys()
-                presentationMode.wrappedValue.dismiss()
-            }.padding()
             
+
+            NavigationLink(destination: LongTimeSpeciesCensus(listEntry: listEntry, plantSpeciesDataModel: plantSpeciesDataModel, speciesCensusView: speciesCensusView).onAppear{
+                speciesCensusView.saveEntrys()
+                
+            }){
+                  
+                  Text("Save & Go to Genaue Aufnahme")
+            }.padding(.bottom, 30)
+           
             TimerView(sheetSelectPlants: self)
             
-        }
-        
-
-        
-        
-
-        
-  
-        
-        
+        }.navigationBarBackButtonHidden(true)
     }
     func selectionActivate()
     {

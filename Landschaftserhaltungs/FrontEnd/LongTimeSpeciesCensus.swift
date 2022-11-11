@@ -46,24 +46,24 @@ struct LongTimeSpeciesCensus: View {
             Section(header: Text("Ausgewählte Pflanzen"))
             {
                 List{
-                    ForEach(plantSpeciesDataModel.platList)
+                    ForEach($plantSpeciesDataModel.platList)
                     {
                         
                         list in
                         
-                        if(list.isChecked)
+                        if(list.isChecked.wrappedValue)
                         {
-                            Text(list.scientificName)
+                            Text(list.scientificName.wrappedValue)
                         }
                     }
                     
                     
                 }
             }
-            Section(header: Text("Schon gespeicherte Pflanzen"))
+            Section(header: Text("Schon gespeicherte Pflanzen aus Schnellaufnahme"))
             {
                 List{
-                    ForEach(listEntry.PlantArrayLongTerm)
+                    ForEach(listEntry.PlantArray)
                     {
                         
                         list in
@@ -88,8 +88,7 @@ struct LongTimeSpeciesCensus: View {
                 
             }.sheet(isPresented: $showSelectionView)
             {
-                
-                
+                SheetSelectPlantsLongTerm(plantSpeciesDataModel: plantSpeciesDataModel)
                 
                 
             }

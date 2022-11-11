@@ -53,40 +53,17 @@ struct SpeciesCensusView: View {
             Section(header: Text("Description"))
             {
                 TextField("Fügen Sie ein Beschreibung hinzu", text: $fieldDescription)
-                
-                List{
-                    ForEach(listEntry.PlantArray)
-                    {
-                        list in
-                        
-                        
-                        Text(list.scientificName ?? "BBB")
-                        
-                        
-                        
-                        
-                    }
-                }
             }
             
-            
-            
-            Button("Wähle Pflanze aus")
-            {
-                print("Wähle aus")
-                showSelectionView.toggle()
+            NavigationLink(destination: SheetSelectPlantsShortTerm(plantSpeciesDataModel: plantSpeciesDataModel, speciesCensusView: self, listEntry: listEntry)){
                 
-            }.sheet(isPresented: $showSelectionView)
-            {
-                SheetSelectPlantsShortTerm(plantSpeciesDataModel: plantSpeciesDataModel, speciesCensusView: self)
+                Text("Wähle Pflanze aus")
             }
+        
             
         }
         
-        NavigationLink(destination: LongTimeSpeciesCensus(listEntry: listEntry, speciesCensusView: self)){
-            
-            Text("Genauere Aufnahme")
-        }
+  
         
         
         
