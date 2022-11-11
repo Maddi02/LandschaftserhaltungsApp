@@ -20,14 +20,14 @@ struct SheetSelectPlantsShortTerm: View {
     @State private var searchText = ""
     @State  var testw : [PlantSpecies]
     @State private var showGreeting = true
-
+    
     
     let alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     
     
-
     
- 
+    
+    
     var body: some View {
         
         VStack {
@@ -35,38 +35,38 @@ struct SheetSelectPlantsShortTerm: View {
                 ZStack {
                     List {
                         
-   
-                            ForEach(alphabet, id: \.self) { letter in
-                                Section(header: Text(letter).multilineTextAlignment(.center).id(letter)){}
-                          
-                                
-                                if(selectedStrength == "Latein"){
-                                    ForEach($testw.filter({ (plantSpecies) -> Bool in
-                                        plantSpecies.scientificName.wrappedValue.prefix(1) == letter
-                                    })) { contact in
-                                        HStack {
-                                            // Image(systemName: "person.circle.fill").font(.largeTitle).padding(.trailing, 5)
-                                            Text(contact.scientificName.wrappedValue)
-                                            Spacer()
-                                            CheckBoxView(checked: contact.isChecked)
-                                        }
-                                        
-                                    }
-                                }
-                                if(selectedStrength == "Deutsch"){
-                                    ForEach($testw.filter({ (plantSpecies) -> Bool in
-                                        plantSpecies.germanName.wrappedValue.prefix(1) == letter
-                                    })) { contact in
-                                        HStack {
-                                            // Image(systemName: "person.circle.fill").font(.largeTitle).padding(.trailing, 5)
-                                            Text(contact.germanName.wrappedValue)
-                                            Spacer()
-                                            CheckBoxView(checked: contact.isChecked)
-                                        }
-                                        
+                        
+                        ForEach(alphabet, id: \.self) { letter in
+                            Section(header: Text(letter).multilineTextAlignment(.center).id(letter)){}
+                            
+                            
+                            if(selectedStrength == "Latein"){
+                                ForEach($testw.filter({ (plantSpecies) -> Bool in
+                                    plantSpecies.scientificName.wrappedValue.prefix(1) == letter
+                                })) { contact in
+                                    HStack {
+                                        // Image(systemName: "person.circle.fill").font(.largeTitle).padding(.trailing, 5)
+                                        Text(contact.scientificName.wrappedValue)
+                                        Spacer()
+                                        CheckBoxView(checked: contact.isChecked)
                                     }
                                     
                                 }
+                            }
+                            if(selectedStrength == "Deutsch"){
+                                ForEach($testw.filter({ (plantSpecies) -> Bool in
+                                    plantSpecies.germanName.wrappedValue.prefix(1) == letter
+                                })) { contact in
+                                    HStack {
+                                        // Image(systemName: "person.circle.fill").font(.largeTitle).padding(.trailing, 5)
+                                        Text(contact.germanName.wrappedValue)
+                                        Spacer()
+                                        CheckBoxView(checked: contact.isChecked)
+                                    }
+                                    
+                                }
+                                
+                            }
                         }
                     }
                     .navigationTitle("Schnellaufname").font(.title3)
@@ -120,15 +120,15 @@ struct SheetSelectPlantsShortTerm: View {
                                     
                                     //need to figure out if there is a name in this section before I allow scrollto or it will crash
                                     if(selectedStrength == "Latein" ){
-                                    if plantSpeciesDataModel.platList.first(where: { $0.scientificName.prefix(1) == letter }) != nil {
-                                        withAnimation{
-                                            if(checkJump(char: letter))
-                                            {
-                                                scrollProxy.scrollTo(letter)
+                                        if plantSpeciesDataModel.platList.first(where: { $0.scientificName.prefix(1) == letter }) != nil {
+                                            withAnimation{
+                                                if(checkJump(char: letter))
+                                                {
+                                                    scrollProxy.scrollTo(letter)
+                                                }
                                             }
                                         }
                                     }
-                                }
                                     if(selectedStrength == "German" ){
                                         if plantSpeciesDataModel.platList.first(where: { $0.germanName.prefix(1) == letter }) != nil {
                                             withAnimation{
@@ -140,32 +140,32 @@ struct SheetSelectPlantsShortTerm: View {
                                         }
                                     }
                                 }
-                                    
-                                    
-                                    , label: {
+                                       
+                                       
+                                       , label: {
                                     Text(letter)
                                         .font(.system(size: 12))
                                         .padding(.trailing, 7)
                                 })
-                                    
+                                
                             }
                         }
                     }
                 }
             }
+            
+            NavigationLink(destination: LongTimeSpeciesCensus(listEntry: listEntry, plantSpeciesDataModel: plantSpeciesDataModel, speciesCensusView: speciesCensusView).onAppear{
+                speciesCensusView.saveEntrys()
                 
-        NavigationLink(destination: LongTimeSpeciesCensus(listEntry: listEntry, plantSpeciesDataModel: plantSpeciesDataModel, speciesCensusView: speciesCensusView).onAppear{
-                       speciesCensusView.saveEntrys()
-                       
-                   }){
-                         
-                         Text("Save & Go to Genaue Aufnahme")
-                   }.padding(.bottom, 30)
-                  
+            }){
+                
+                Text("Save & Go to Genaue Aufnahme")
+            }.padding(.bottom, 30)
+            
             TimerView(sheetSelectPlants: self).frame(maxWidth: .infinity, maxHeight: 30)
-                   
-               }
-            }
+            
+        }
+    }
     
     
     func checkJump(char : String) -> Bool
@@ -206,7 +206,7 @@ struct SheetSelectPlantsShortTerm: View {
         return false
     }
     
-   
+    
     
     
     

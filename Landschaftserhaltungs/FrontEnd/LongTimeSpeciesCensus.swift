@@ -81,18 +81,10 @@ struct LongTimeSpeciesCensus: View {
             }
             
             
-            Button("Wähle Pflanze aus")
-            {
-                print("Wähle aus")
-                showSelectionView.toggle()
+            NavigationLink(destination: SheetSelectPlantsLongTerm(plantSpeciesDataModel: plantSpeciesDataModel)){
                 
-            }.sheet(isPresented: $showSelectionView)
-            {
-                SheetSelectPlantsLongTerm(plantSpeciesDataModel: plantSpeciesDataModel)
-                
-                
+                Text("Wähle Pflanze aus")
             }
-            
             
             
            

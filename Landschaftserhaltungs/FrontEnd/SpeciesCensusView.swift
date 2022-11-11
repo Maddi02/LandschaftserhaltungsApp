@@ -34,20 +34,6 @@ struct SpeciesCensusView: View {
         VStack{
             Text("Schnellaufnahme").font(Font.title).frame(maxWidth: .infinity , alignment: .topLeading)
             Text("\(description) ").font(Font.title3).frame(maxWidth: .infinity , alignment: .topLeading)
-            HStack{
-                
-                Text("Platzennamen: ")
-                
-                Section {
-                    Picker("", selection: $selectedStrength) {
-                        ForEach(strengths, id: \.self) {
-                            Text($0).tag($0.components(separatedBy: " ")[0])
-                        }
-                    }
-                    .pickerStyle(.menu)
-                }.frame(maxWidth: .infinity, alignment: .center)
-                
-            }
         }
         
         Form{
