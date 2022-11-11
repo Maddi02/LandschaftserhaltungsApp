@@ -16,6 +16,7 @@ public class PlantSpeciesDataModel : ObservableObject
     
     
      @Published var platList : [PlantSpecies] = []
+     @Published var filterdPlants : [PlantSpecies] = []
     @Published var checklistItems = [
       CheckListItem(name: "Walk the dog"),
       CheckListItem(name: "Brush my teeth"),

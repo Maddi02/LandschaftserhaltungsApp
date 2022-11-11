@@ -17,25 +17,70 @@ struct SheetSelectPlantsShortTerm: View {
     @State var listDisabled = true
     @State private var selection: Set<UUID> = []
     @Environment(\.managedObjectContext) var moc
+    @State private var searchText = ""
+    @State  var testw : [PlantSpecies]
+    
+    
+    
+    var searchResults: [PlantSpecies] {
+           if searchText.isEmpty {
+               return plantSpeciesDataModel.platList
+           } else {
+               return plantSpeciesDataModel.platList.filter { $0.germanName.contains(searchText)
+                   
+               }
+           }
+       }
+    
+ 
     var body: some View {
         
         VStack{
+
             HStack{
-                List(){
-                    
-                    ForEach($plantSpeciesDataModel.platList){
-                        list in
-                        HStack{
-                            Text(list.scientificName.wrappedValue)
-                            Toggle("", isOn: list.isChecked)
+                NavigationView{
+                    List(){
+                        
+                        ForEach($testw){
+                            list in
+                            HStack{
+                                if selectedStrength == "Deutsch"
+                                {
+                                    
+                                    Text(list.germanName.wrappedValue)
+                                }
+                                
+                                if selectedStrength == "Latein"
+                                {
+                                    Text(list.scientificName.wrappedValue)
+                                }
+                                
+                                Toggle("", isOn: list.isChecked)
+                                
+                            }
+                            
                             
                         }
                         
                         
                     }
+                    .listStyle(GroupedListStyle())
+                    .disabled(listDisabled)
+                    
+                }.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always)).foregroundColor(Color.green)
+                    
+                    .onChange(of: searchText) { searchText in
+
+                        if !searchText.isEmpty {
+                            testw = plantSpeciesDataModel.platList.filter { $0.germanName.contains(searchText) }
+                        } else {
+                            testw = plantSpeciesDataModel.platList
+                        }
+                    }
                     
                     
-                }.disabled(listDisabled).toolbar {
+                    
+                    .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         HStack{
                             
@@ -68,7 +113,7 @@ struct SheetSelectPlantsShortTerm: View {
            
             TimerView(sheetSelectPlants: self)
             
-        }.navigationBarBackButtonHidden(true)
+        }
     }
     func selectionActivate()
     {

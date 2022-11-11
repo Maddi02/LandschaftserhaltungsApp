@@ -18,6 +18,13 @@ public extension View {
     }
     
 }
+
+extension UIApplication {
+      func dismissKeyboard() {
+          sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+      }
+  }
+ 
 extension Sequence where Element: Hashable {
     func uniqued() -> [Element] {
         var set = Set<Element>()
