@@ -43,7 +43,7 @@ struct SpeciesCensusView: View {
                 TextField("Fügen Sie ein Beschreibung hinzu", text: $fieldDescription)
             }
             
-            NavigationLink(destination: SheetSelectPlantsShortTerm(plantSpeciesDataModel: plantSpeciesDataModel, speciesCensusView: self, listEntry: listEntry, testw: plantSpeciesDataModel.platList)){
+            NavigationLink(destination: SheetSelectPlantsShortTerm(plantSpeciesDataModel: plantSpeciesDataModel, speciesCensusView: self, listEntry: listEntry, plantSpecies: plantSpeciesDataModel.platList)){
                 
                 Text("Wähle Pflanze aus")
             }

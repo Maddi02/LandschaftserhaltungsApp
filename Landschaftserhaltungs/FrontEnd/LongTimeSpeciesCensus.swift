@@ -22,19 +22,6 @@ struct LongTimeSpeciesCensus: View {
         VStack{
             Text("Genauere Aufname").font(Font.title).frame(maxWidth: .infinity , alignment: .topLeading)
             Text("\(description) ").font(Font.title3).frame(maxWidth: .infinity , alignment: .topLeading)
-            HStack{
-                
-                Text("Planzenname: ")
-                
-                Section {
-                    Picker("", selection: $selectedStrength) {
-                        ForEach(strengths, id: \.self) {
-                            Text($0)
-                        }
-                    }
-                    .pickerStyle(.menu)
-                }.frame(maxWidth: .infinity, alignment: .center)
-            }
         }
         
         

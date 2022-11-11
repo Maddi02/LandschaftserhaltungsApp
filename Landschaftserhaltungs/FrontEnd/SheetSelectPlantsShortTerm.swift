@@ -18,7 +18,7 @@ struct SheetSelectPlantsShortTerm: View {
     @State private var selection: Set<UUID> = []
     @Environment(\.managedObjectContext) var moc
     @State private var searchText = ""
-    @State  var testw : [PlantSpecies]
+    @State  var plantSpecies : [PlantSpecies]
     @State private var showGreeting = true
     
     
@@ -41,7 +41,7 @@ struct SheetSelectPlantsShortTerm: View {
                             
                             
                             if(selectedStrength == "Latein"){
-                                ForEach($testw.filter({ (plantSpecies) -> Bool in
+                                ForEach($plantSpecies.filter({ (plantSpecies) -> Bool in
                                     plantSpecies.scientificName.wrappedValue.prefix(1) == letter
                                 })) { contact in
                                     HStack {
@@ -54,7 +54,7 @@ struct SheetSelectPlantsShortTerm: View {
                                 }
                             }
                             if(selectedStrength == "Deutsch"){
-                                ForEach($testw.filter({ (plantSpecies) -> Bool in
+                                ForEach($plantSpecies.filter({ (plantSpecies) -> Bool in
                                     plantSpecies.germanName.wrappedValue.prefix(1) == letter
                                 })) { contact in
                                     HStack {
@@ -78,15 +78,15 @@ struct SheetSelectPlantsShortTerm: View {
                         if !searchText.isEmpty {
                             if(selectedStrength == "Deutsch")
                             {
-                                testw = plantSpeciesDataModel.platList.filter { $0.germanName.lowercased().contains(searchText.lowercased()) }
+                                plantSpecies = plantSpeciesDataModel.platList.filter { $0.germanName.lowercased().contains(searchText.lowercased()) }
                             }
                             if(selectedStrength == "Latein")
                             {
-                                testw = plantSpeciesDataModel.platList.filter { $0.scientificName.lowercased().contains(searchText.lowercased()) }
+                                plantSpecies = plantSpeciesDataModel.platList.filter { $0.scientificName.lowercased().contains(searchText.lowercased()) }
                             }
                             
                         } else {
-                            testw = plantSpeciesDataModel.platList
+                            plantSpecies = plantSpeciesDataModel.platList
                         }
                     }
                     .toolbar {
