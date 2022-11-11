@@ -72,7 +72,15 @@ struct SheetSelectPlantsShortTerm: View {
                     .onChange(of: searchText) { searchText in
 
                         if !searchText.isEmpty {
-                            testw = plantSpeciesDataModel.platList.filter { $0.germanName.contains(searchText) }
+                            if(selectedStrength == "Deutsch")
+                            {
+                                testw = plantSpeciesDataModel.platList.filter { $0.germanName.lowercased().contains(searchText.lowercased()) }
+                            }
+                            if(selectedStrength == "Latein")
+                            {
+                                testw = plantSpeciesDataModel.platList.filter { $0.scientificName.lowercased().contains(searchText.lowercased()) }
+                            }
+                          
                         } else {
                             testw = plantSpeciesDataModel.platList
                         }
