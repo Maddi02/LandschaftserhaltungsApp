@@ -79,10 +79,6 @@ struct LongTimeSpeciesCensus: View {
                     }
                     
                 }
-                
-                
-                
-                
             }
             
             

@@ -198,11 +198,6 @@ struct SheetSelectPlantsShortTerm: View {
                 return false
             }
         }
-        
-        
-        
-        
-        
         return false
     }
     

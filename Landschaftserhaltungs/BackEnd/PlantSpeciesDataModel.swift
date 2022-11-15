@@ -92,7 +92,32 @@ public class PlantSpeciesDataModel : ObservableObject
             alpenvorland: "°",
             germanName: "Eschen-Ahorn"
         ))
-       
+        platList.append(PlantSpecies(
+            scientificName: "B",
+            redListBw: "*",
+            responsibility: " ",
+            oberReihnArea: "*",
+            blackForest: "-",
+            odenWald: "°",
+            nothernGaelandschaften: "°",
+            southernGaelandschaften: "°",
+            schaebischeAlb: "°",
+            alpenvorland: "°",
+            germanName: "B"
+        ))
+        platList.append(PlantSpecies(
+            scientificName: "A",
+            redListBw: "*",
+            responsibility: " ",
+            oberReihnArea: "*",
+            blackForest: "-",
+            odenWald: "°",
+            nothernGaelandschaften: "°",
+            southernGaelandschaften: "°",
+            schaebischeAlb: "°",
+            alpenvorland: "°",
+            germanName: "A"
+        ))
         
    
     }
