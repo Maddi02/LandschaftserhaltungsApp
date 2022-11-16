@@ -55,6 +55,10 @@
 		224F463528FE1443004EA74F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F463428FE1443004EA74F /* AppState.swift */; };
 		224F463828FE1BE2004EA74F /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F463728FE1BE2004EA74F /* extensions.swift */; };
 		2252D321290868FF00568A1A /* EditContractView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252D320290868FF00568A1A /* EditContractView.swift */; };
+		225561D029252F6700C645F6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225561CF29252F6700C645F6 /* HeaderView.swift */; };
+		225561D229252F8900C645F6 /* RowViewLongTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225561D129252F8900C645F6 /* RowViewLongTerm.swift */; };
+		225561D429252FC100C645F6 /* SectionIndexTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225561D329252FC100C645F6 /* SectionIndexTitles.swift */; };
+		225561D629252FEC00C645F6 /* SectionIndexTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225561D529252FEC00C645F6 /* SectionIndexTitle.swift */; };
 		227FAAC4291E4BC700D747DA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227FAAC3291E4BC700D747DA /* SearchBar.swift */; };
 		227FAB33291ED81700D747DA /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227FAB32291ED81700D747DA /* CheckBoxView.swift */; };
 		22A108792919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A108782919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift */; };
@@ -137,6 +141,10 @@
 		224F463428FE1443004EA74F /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		224F463728FE1BE2004EA74F /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		2252D320290868FF00568A1A /* EditContractView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContractView.swift; sourceTree = "<group>"; };
+		225561CF29252F6700C645F6 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		225561D129252F8900C645F6 /* RowViewLongTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViewLongTerm.swift; sourceTree = "<group>"; };
+		225561D329252FC100C645F6 /* SectionIndexTitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionIndexTitles.swift; sourceTree = "<group>"; };
+		225561D529252FEC00C645F6 /* SectionIndexTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionIndexTitle.swift; sourceTree = "<group>"; };
 		227FAAC3291E4BC700D747DA /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		227FAB32291ED81700D747DA /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		22A108782919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSelectPlantsShortTerm.swift; sourceTree = "<group>"; };
@@ -235,8 +243,7 @@
 		224F462528FD8555004EA74F /* FrontEnd */ = {
 			isa = PBXGroup;
 			children = (
-				22A108782919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift */,
-				22A10884291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift */,
+				225561CE29252F4100C645F6 /* SelectPlants */,
 				223AD57729192815009B5C1C /* CounterViewModel.swift */,
 				22A1087C2919CFF80071FF3A /* CheckListItem.swift */,
 				223AD571291861AD009B5C1C /* FrequencyEstimationField.swift */,
@@ -313,6 +320,19 @@
 				224F463728FE1BE2004EA74F /* extensions.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		225561CE29252F4100C645F6 /* SelectPlants */ = {
+			isa = PBXGroup;
+			children = (
+				22A108782919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift */,
+				22A10884291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift */,
+				225561CF29252F6700C645F6 /* HeaderView.swift */,
+				225561D129252F8900C645F6 /* RowViewLongTerm.swift */,
+				225561D329252FC100C645F6 /* SectionIndexTitles.swift */,
+				225561D529252FEC00C645F6 /* SectionIndexTitle.swift */,
+			);
+			path = SelectPlants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,6 +486,7 @@
 				22455CFA28FF27B5002876AD /* ManageContractView.swift in Sources */,
 				227FAB33291ED81700D747DA /* CheckBoxView.swift in Sources */,
 				224F45FE28FD80E7004EA74F /* OnboardingFlowView.swift in Sources */,
+				225561D629252FEC00C645F6 /* SectionIndexTitle.swift in Sources */,
 				2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */,
 				223BB34D29103C490064927A /* TextView.swift in Sources */,
 				22455D122900A869002876AD /* CoreDataManager.swift in Sources */,
@@ -491,6 +512,7 @@
 				223BB354291147380064927A /* WrappedTextView.swift in Sources */,
 				223AD5DC29199C53009B5C1C /* PlantSpeciesItem+CoreDataClass.swift in Sources */,
 				223AD572291861AD009B5C1C /* FrequencyEstimationField.swift in Sources */,
+				225561D029252F6700C645F6 /* HeaderView.swift in Sources */,
 				223AD5DF29199C53009B5C1C /* ListEntry+CoreDataProperties.swift in Sources */,
 				227FAAC4291E4BC700D747DA /* SearchBar.swift in Sources */,
 				2239595B290452A600D5F38E /* UIImageTransformer.swift in Sources */,
@@ -501,6 +523,8 @@
 				224F462828FDFC99004EA74F /* MainSideView.swift in Sources */,
 				223AD4D42912B59B009B5C1C /* ContractAdminister.swift in Sources */,
 				223AD56E291845D3009B5C1C /* EditListItemContractArea.swift in Sources */,
+				225561D429252FC100C645F6 /* SectionIndexTitles.swift in Sources */,
+				225561D229252F8900C645F6 /* RowViewLongTerm.swift in Sources */,
 				223AD5E129199C53009B5C1C /* AppContract+CoreDataProperties.swift in Sources */,
 				224F45FC28FD80E7004EA74F /* LandschaftserhaltungsApp.swift in Sources */,
 				224F462B28FE0167004EA74F /* WelcomeView.swift in Sources */,
