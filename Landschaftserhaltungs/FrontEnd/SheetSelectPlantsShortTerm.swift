@@ -124,7 +124,10 @@ struct SheetSelectPlantsShortTerm: View {
                                             withAnimation{
                                                 if(checkJump(char: letter))
                                                 {
-                                                    scrollProxy.scrollTo(letter)
+                                                    DispatchQueue.main.async {
+                                                        scrollProxy.scrollTo(letter, anchor: .center)
+                                                    }
+                        
                                                 }
                                             }
                                         }

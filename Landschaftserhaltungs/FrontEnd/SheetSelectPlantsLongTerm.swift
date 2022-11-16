@@ -47,7 +47,7 @@ struct SheetSelectPlantsLongTerm: View {
                             
                             
                             ForEach(alphabet, id: \.self) { letter in
-                                Section(header: Text(letter).multilineTextAlignment(.center).id(letter)){}
+                                Section(header: Text(letter).font(.system(size: 15)).multilineTextAlignment(.center).id(letter)){}
                                 
                                 
                                 
