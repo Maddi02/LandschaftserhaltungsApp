@@ -66,6 +66,8 @@ struct LongTimeSpeciesCensus: View {
                     {
                         
                         list in
+                        
+          
                         if(selectedStrength == "Deutsch")
                         {
                             Text(list.germanName ?? "Unknown")

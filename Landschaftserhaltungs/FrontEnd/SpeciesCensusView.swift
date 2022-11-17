@@ -66,7 +66,7 @@ struct SpeciesCensusView: View {
     {
         for i in listEntry.PlantArray
         {
-            if(i.scientificName == str)
+            if(i.germanName == str)
             {
                 return true
             }
@@ -81,40 +81,47 @@ struct SpeciesCensusView: View {
         
         
         print("Size \(listEntry.PlantArray.count)")
+        print("Size \(listEntry.PlantArray.count)")
         let plant = PlantSpeciesItem(context: moc)
         plant.descriptionField = description
+
         
-        for list in plantSpeciesDataModel.platList
+        for (_ ,list1) in plantSpeciesDataModel.germanList
         {
             
+            for list in list1{
+                print("ergeger \(list.germanName) \(list.isChecked)")
             
-            if(list.isChecked){
-                if(contains(str: list.scientificName))
-                {
-                    print("Found")
-                }
-                else{
-                    let plant = PlantSpeciesItem(context: moc)
-                    plant.species = listEntry
-                    plant.scientificName = list.scientificName
-                    plant.southernGaelandschaften = list.southernGaelandschaften
-                    plant.schaebischeAlb = list.schaebischeAlb
-                    plant.responsibility = list.responsibility
-                    plant.redListBw = list.redListBw
-                    plant.odenWald = list.odenWald
-                    plant.oberReihnArea = list.oberReihnArea
-                    plant.nothernGaelandschaften = list.nothernGaelandschaften
-                    plant.germanName = list.germanName
-                    plant.checked = list.isChecked
-                    plant.blackForest = list.blackForest
-                    plant.alpenvorland = list.alpenvorland
-                    print(list.scientificName)
-                    
-                    do {
-                        try moc.save()
-                        print("Success")
-                    } catch {
-                        print("Error saving: \(error)")
+                if(list.isChecked){
+                    print(list.germanName)
+                    if(contains(str: list.germanName))
+                    {
+                        print("Found")
+                    }
+                    else{
+                        print("try to insert ")
+                        let plant = PlantSpeciesItem(context: moc)
+                        plant.species = listEntry
+                        plant.scientificName = list.scientificName
+                        plant.southernGaelandschaften = list.southernGaelandschaften
+                        plant.schaebischeAlb = list.schaebischeAlb
+                        plant.responsibility = list.responsibility
+                        plant.redListBw = list.redListBw
+                        plant.odenWald = list.odenWald
+                        plant.oberReihnArea = list.oberReihnArea
+                        plant.nothernGaelandschaften = list.nothernGaelandschaften
+                        plant.germanName = list.germanName
+                        plant.checked = list.isChecked
+                        plant.blackForest = list.blackForest
+                        plant.alpenvorland = list.alpenvorland
+                        print(list.scientificName)
+                        
+                        do {
+                            try moc.save()
+                            print("Success")
+                        } catch {
+                            print("Error saving: \(error)")
+                        }
                     }
                 }
                 
@@ -135,13 +142,7 @@ struct SpeciesCensusView: View {
                 }
             }
             
-            if(list.isChecked)
-            {
-                
-                
-                saveTest.append(list)
-                
-            }
+            
         }
         
     }

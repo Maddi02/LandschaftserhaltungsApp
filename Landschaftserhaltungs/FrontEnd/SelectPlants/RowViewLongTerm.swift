@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct RowViewLongTerm: View {
+    @State  var plantSpecies : [PlantSpecies]
     var listEntry : ListEntry
     let text: String
     @State var checked : Bool
@@ -20,14 +21,34 @@ struct RowViewLongTerm: View {
             if(checkIfAllreadySaved(plant: text))
             {
                 CheckBoxView(checked: $checkedTrue).disabled(true)
+                
             }
-            else{
+            else if (checkinPlantList(str: text)){
                 CheckBoxView(checked: $checked)
+
             }
   
         }
 
     }
+    
+    
+    
+    func checkinPlantList(str : String) -> Bool
+    {
+        
+        for i in plantSpecies
+        {
+            if (i.germanName == str && checked
+            )
+            {
+                i.isChecked = true
+            }
+        }
+        
+        return true
+    }
+    
     
     func checkIfAllreadySaved(plant : String) -> Bool
     {

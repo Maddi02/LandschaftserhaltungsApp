@@ -270,8 +270,8 @@
             filePath = "Landschaftserhaltungs/FrontEnd/SelectPlants/SheetSelectPlantsLongTerm.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "containsInPlantArray(str:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -280,6 +280,22 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A5BE4E22-403E-4868-B523-D285F789D5DF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Landschaftserhaltungs/FrontEnd/SelectPlants/SheetSelectPlantsLongTerm.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
+            landmarkName = "containsInPlantArray(str:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9540822D-A20E-4F2C-B3FE-9DB332E6D487"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -295,16 +311,174 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9540822D-A20E-4F2C-B3FE-9DB332E6D487"
+            uuid = "BE362BB8-A1A0-4F34-809F-A7F975C1FE66"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Landschaftserhaltungs/FrontEnd/SelectPlants/SheetSelectPlantsLongTerm.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "267"
+            endingLineNumber = "267">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C556E995-B810-4B52-9E3A-5D2DD6645B8A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Landschaftserhaltungs/FrontEnd/SelectPlants/SheetSelectPlantsLongTerm.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "checkInOtherList()"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "devicesListLatein"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "89F6E769-B5EE-468A-9DC8-A0DD86B0367C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Landschaftserhaltungs/FrontEnd/SelectPlants/SheetSelectPlantsLongTerm.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "devicesListLatein"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "89F6E769-B5EE-468A-9DC8-A0DD86B0367C - 224e72aa8f57c34"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.String, Swift.Array&lt;Landschaftserhaltungs.PlantSpecies&gt;) -&gt; SwiftUI.TupleView&lt;(Landschaftserhaltungs.HeaderView, SwiftUI.ForEach&lt;Swift.Array&lt;Landschaftserhaltungs.PlantSpecies&gt;, Swift.ObjectIdentifier, Landschaftserhaltungs.RowViewLongTerm&gt;)&gt; in Landschaftserhaltungs.SheetSelectPlantsLongTerm.devicesListGerman.getter : some"
+                  moduleName = "Landschaftserhaltungs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinhummel/git/LandschaftserhaltungsApp/Landschaftserhaltungs/FrontEnd/SelectPlants/SheetSelectPlantsLongTerm.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "440">
+               </Location>
+               <Location
+                  uuid = "89F6E769-B5EE-468A-9DC8-A0DD86B0367C - 28945612d6325d6c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Landschaftserhaltungs.PlantSpecies) -&gt; Landschaftserhaltungs.RowViewLongTerm in closure #2 (Swift.String, Swift.Array&lt;Landschaftserhaltungs.PlantSpecies&gt;) -&gt; SwiftUI.TupleView&lt;(Landschaftserhaltungs.HeaderView, SwiftUI.ForEach&lt;Swift.Array&lt;Landschaftserhaltungs.PlantSpecies&gt;, Swift.ObjectIdentifier, Landschaftserhaltungs.RowViewLongTerm&gt;)&gt; in Landschaftserhaltungs.SheetSelectPlantsLongTerm.devicesListGerman.getter : some"
+                  moduleName = "Landschaftserhaltungs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinhummel/git/LandschaftserhaltungsApp/Landschaftserhaltungs/FrontEnd/SelectPlants/SheetSelectPlantsLongTerm.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "172">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "12685159-C2B7-42B4-B5BF-DAF6C52327AC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Landschaftserhaltungs/FrontEnd/SelectPlants/SheetSelectPlantsLongTerm.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "devicesListLatein"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1601C535-FE88-4DD1-B474-E1BE618091EA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Landschaftserhaltungs/FrontEnd/SelectPlants/SheetSelectPlantsLongTerm.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "devicesListLatein"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "34272B50-73C8-4338-A564-C086275247CB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Landschaftserhaltungs/FrontEnd/SelectPlants/SheetSelectPlantsLongTerm.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "devicesListLatein"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AE0DD6E2-43B7-43B3-8E41-5A684CE5CC6E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Landschaftserhaltungs/FrontEnd/LongTimeSpeciesCensus.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "21FF2A8F-61B3-40BC-92BF-EA67AC25F2FB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Landschaftserhaltungs/FrontEnd/LongTimeSpeciesCensus.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "779ECBC5-FBFD-400C-AA7A-AE6B1E24D61D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Landschaftserhaltungs/FrontEnd/SpeciesCensusView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "saveEntrys()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -20,143 +20,146 @@ struct SheetSelectPlantsShortTerm: View {
     @State private var searchText = ""
     @State  var plantSpecies : [PlantSpecies]
     @State private var showGreeting = true
+    @State private var show = true
+    @Environment(\.isSearching) private var isSearching: Bool
+    @Environment(\.dismissSearch) private var dismissSearch
     
     
     let alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     
     
+    var devicesListLatein: some View {
+        ForEach(plantSpeciesDataModel.lateinList.sorted(by: { (lhs, rhs) -> Bool in
+            lhs.key < rhs.key
+        }), id: \.key) { categoryName, devicesArray in
+            HeaderView(title: categoryName)
+            ForEach(devicesArray) { name in
+                RowViewLongTerm(plantSpecies: plantSpecies, listEntry: listEntry, text: name.germanName, checked: name.isChecked )
+            }
+        }
+        
+        
+    }
     
+    var devicesListGerman: some View {
+        ForEach(plantSpeciesDataModel.germanList.sorted(by: { (lhs, rhs) -> Bool in
+            lhs.key < rhs.key
+        }), id: \.key) { categoryName, devicesArray in
+            HeaderView(title: categoryName)
+            ForEach(devicesArray) { name in
+                RowViewLongTerm(plantSpecies: plantSpecies, listEntry: listEntry, text: name.germanName, checked: name.isChecked )
+            }
+        }
+    }
     
     
     var body: some View {
-        
-        VStack {
-            ScrollViewReader { scrollProxy in
-                ZStack {
-                    List {
+        ScrollViewReader { proxy in
+            List {
+                if( selectedStrength == "Deutsch"){
+                    devicesListGerman
+                }
+                else if( selectedStrength == "Latein"){
+                    devicesListLatein
+                }
+                else {
+                    ForEach($plantSpecies){
+                        plantSpecies1 in
                         
-                        
-                        ForEach(alphabet, id: \.self) { letter in
-                            Section(header: Text(letter).multilineTextAlignment(.center).id(letter)){}
-                            
-                            
-                            if(selectedStrength == "Latein"){
-                                ForEach($plantSpecies.filter({ (plantSpecies) -> Bool in
-                                    plantSpecies.scientificName.wrappedValue.prefix(1) == letter
-                                })) { contact in
-                                    HStack {
-                                        // Image(systemName: "person.circle.fill").font(.largeTitle).padding(.trailing, 5)
-                                        Text(contact.scientificName.wrappedValue)
-                                        Spacer()
-                                        CheckBoxView(checked: contact.isChecked)
-                                    }
-                                    
-                                }
-                            }
-                            if(selectedStrength == "Deutsch"){
-                                ForEach($plantSpecies.filter({ (plantSpecies) -> Bool in
-                                    plantSpecies.germanName.wrappedValue.prefix(1) == letter
-                                })) { contact in
-                                    HStack {
-                                        // Image(systemName: "person.circle.fill").font(.largeTitle).padding(.trailing, 5)
-                                        Text(contact.germanName.wrappedValue)
-                                        Spacer()
-                                        CheckBoxView(checked: contact.isChecked)
-                                    }
-                                    
-                                }
-                                
-                            }
-                        }
-                    }
-                    .navigationTitle("Schnellaufname").font(.title3)
-                    .listStyle(PlainListStyle())
-                    .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
-                    
-                    .onChange(of: searchText) { searchText in
-                        
-                        if !searchText.isEmpty {
-                            if(selectedStrength == "Deutsch")
-                            {
-                                plantSpecies = plantSpeciesDataModel.platList.filter { $0.germanName.lowercased().contains(searchText.lowercased()) }
-                            }
-                            if(selectedStrength == "Latein")
-                            {
-                                plantSpecies = plantSpeciesDataModel.platList.filter { $0.scientificName.lowercased().contains(searchText.lowercased()) }
-                            }
-                            
-                        } else {
-                            plantSpecies = plantSpeciesDataModel.platList
-                        }
-                    }
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            HStack{
-                                
-                                Text("Sprache: ")
-                                Section {
-                                    Picker("", selection: $selectedStrength) {
-                                        ForEach(strengths, id: \.self) {
-                                            Text($0).tag($0.components(separatedBy: " ")[0])
-                                        }
-                                    }
-                                    .pickerStyle(.menu)
-                                }.frame(maxWidth: .infinity, alignment: .center)
-                                
-                            }
-                        }
-                    }
-                    
-                    
-                    
-                    
-                    VStack {
-                        
-                        ForEach(alphabet, id: \.self) { letter in
-                            HStack {
+                        HStack{
+                            if(selectedStrength == "Latein" ){
+                                Text(plantSpecies1.scientificName.wrappedValue)
                                 Spacer()
-                                Button(action: {
-                                    
-                                    
-                                    //need to figure out if there is a name in this section before I allow scrollto or it will crash
-                                    if(selectedStrength == "Latein" ){
-                                        if plantSpeciesDataModel.platList.first(where: { $0.scientificName.prefix(1) == letter }) != nil {
-                                            withAnimation{
-                                                if(checkJump(char: letter))
-                                                {
-                                                    DispatchQueue.main.async {
-                                                        scrollProxy.scrollTo(letter, anchor: .center)
-                                                    }
-                        
-                                                }
-                                            }
-                                        }
-                                    }
-                                    if(selectedStrength == "German" ){
-                                        if plantSpeciesDataModel.platList.first(where: { $0.germanName.prefix(1) == letter }) != nil {
-                                            withAnimation{
-                                                if(checkJump(char: letter))
-                                                {
-                                                    scrollProxy.scrollTo(letter)
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                                       
-                                       
-                                       , label: {
-                                    Text(letter)
-                                        .font(.system(size: 12))
-                                        .padding(.trailing, 7)
-                                })
                                 
+                                CheckBoxView(checked: plantSpecies1.isChecked)
                             }
+                            
+                        }
+                        if(selectedStrength == "Deutsch" ){
+                            Text(plantSpecies1.germanName.wrappedValue)
+                            Spacer()
+                            CheckBoxView(checked: plantSpecies1.isChecked)
                         }
                     }
                 }
-            }
+                
+                
+            }.listStyle(InsetGroupedListStyle())
+                .overlay(sectionIndexTitles(proxy: proxy))
             
+            
+                .navigationBarTitle("Pflanzenarten")
+                .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+                .navigationBarBackButtonHidden(true)
+                .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+                .onChange(of: searchText) { value in
+                    if searchText.isEmpty && !isSearching {
+                        show = true
+                        
+                        
+                    }
+                }
+            
+                .onChange(of: searchText) { value in
+                    if !searchText.isEmpty {
+                        show = false
+                    }
+                }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        HStack{
+                            
+                            Text("Sprache: ")
+                            Section {
+                                Picker("", selection: $selectedStrength) {
+                                    ForEach(strengths, id: \.self) {
+                                        Text($0).tag($0.components(separatedBy: " ")[0])
+                                    }
+                                }
+                                .pickerStyle(.menu)
+                            }.frame(maxWidth: .infinity, alignment: .center)
+                            
+                        }
+                    }
+                }
+            
+                .navigationTitle("Schnellaufname").font(.title3)
+                .listStyle(PlainListStyle())
+            
+            
+            
+            
+                .onChange(of: searchText) {
+                    searchText in
+                    if !searchText.isEmpty {
+                        if(selectedStrength == "Deutsch")
+                        {
+                            
+                            let values = plantSpeciesDataModel.b().values.flatMap({$0})
+                            plantSpecies = values.filter { $0.germanName.lowercased().contains(searchText.lowercased()) }
+                            
+                            for i in plantSpecies {
+                                print (i.germanName)
+                            }
+                        }
+                        if(selectedStrength == "Latein")
+                        {
+                            plantSpecies = plantSpeciesDataModel.platList.filter { $0.scientificName.lowercased().contains(searchText.lowercased()) }
+                        }
+                        
+                    } else {
+                        plantSpecies = plantSpeciesDataModel.platList
+                    }
+                }
+            
+            
+        }
+    
+    
+
+
+    
+    
             NavigationLink(destination: LongTimeSpeciesCensus(listEntry: listEntry, plantSpeciesDataModel: plantSpeciesDataModel, speciesCensusView: speciesCensusView).onAppear{
                 speciesCensusView.saveEntrys()
                 
@@ -167,46 +170,7 @@ struct SheetSelectPlantsShortTerm: View {
             
             TimerView(sheetSelectPlants: self).frame(maxWidth: .infinity, maxHeight: 30)
             
-        }.navigationBarBackButtonHidden(true)
-    }
-    
-    
-    func checkJump(char : String) -> Bool
-    {
-        
-        //Get index dann geh einenn davor und checke
-        var counter = 0;
-        for i in alphabet{
-            
-            if(i == char)
-            {
-                break
-            }
-            
-            counter += 1
         }
-        
-        if(char == "A" && plantSpeciesDataModel.platList.first(where: { $0.scientificName.prefix(1) == char }) != nil)
-        {
-            return true
-        }
-        
-        
-        
-        if(counter > 0 && counter < 27){
-            if plantSpeciesDataModel.platList.first(where: { $0.scientificName.prefix(1) == alphabet[counter - 1 ] }) != nil  && plantSpeciesDataModel.platList.first(where: { $0.scientificName.prefix(1) == alphabet[counter + 1 ] }) != nil {
-                return true
-            }
-            else{
-                return false
-            }
-        }
-        return false
-    }
-    
-    
-    
-    
     
     func selectionActivate()
     {
@@ -217,6 +181,19 @@ struct SheetSelectPlantsShortTerm: View {
     {
         listDisabled = true
     }
+    
+    
+func sectionIndexTitles(proxy: ScrollViewProxy) -> some View {
+    SectionIndexTitles(proxy: proxy, titles: plantSpeciesDataModel.b().keys.sorted())
+        .frame(maxWidth: .infinity, alignment: .trailing)
+        .padding()
+}
+    
+    
+    
+    
+    
+
 }
 
 
