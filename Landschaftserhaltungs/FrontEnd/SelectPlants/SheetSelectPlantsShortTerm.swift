@@ -34,7 +34,7 @@ struct SheetSelectPlantsShortTerm: View {
         }), id: \.key) { categoryName, devicesArray in
             HeaderView(title: categoryName)
             ForEach(devicesArray) { name in
-                RowViewLongTerm(plantSpecies: plantSpecies, listEntry: listEntry, text: name.germanName, checked: name.isChecked )
+                RowViewLongTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies: plantSpecies, listEntry: listEntry, text: name.germanName, checked: name.isChecked)
             }
         }
         
@@ -47,7 +47,7 @@ struct SheetSelectPlantsShortTerm: View {
         }), id: \.key) { categoryName, devicesArray in
             HeaderView(title: categoryName)
             ForEach(devicesArray) { name in
-                RowViewLongTerm(plantSpecies: plantSpecies, listEntry: listEntry, text: name.germanName, checked: name.isChecked )
+                RowViewLongTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies: plantSpecies, listEntry: listEntry, text: name.germanName, checked: name.isChecked )
             }
         }
     }

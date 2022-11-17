@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct RowViewLongTerm: View {
+    @ObservedObject var plantSpeciesDataModel : PlantSpeciesDataModel
     @State  var plantSpecies : [PlantSpecies]
     var listEntry : ListEntry
     let text: String
@@ -39,13 +40,25 @@ struct RowViewLongTerm: View {
         
         for i in plantSpecies
         {
-            if (i.germanName == str && checked
-            )
+            if (i.germanName == str && checked)
             {
                 i.isChecked = true
             }
+            
+            if (i.germanName == str && !checked)
+            {
+                i.isChecked = false
+            }
         }
         
+        return true
+    }
+    
+    func checkinGermanList(str : String) -> Bool
+    {
+    
+
+            
         return true
     }
     
