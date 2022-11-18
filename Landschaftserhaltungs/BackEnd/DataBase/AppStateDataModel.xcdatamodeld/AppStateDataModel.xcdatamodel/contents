@@ -99,4 +99,10 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
+    <entity name="Profile" representedClassName="Profile" syncable="YES">
+        <attribute name="logo" optional="YES" attributeType="Transformable" valueTransformerName="UIImageTransformer" customClassName="UIImage"/>
+        <attribute name="selectedLanguage" optional="YES" attributeType="String"/>
+        <attribute name="userFirstName" optional="YES" attributeType="String"/>
+        <attribute name="userSecondName" optional="YES" attributeType="String"/>
+    </entity>
 </model>
