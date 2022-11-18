@@ -32,12 +32,22 @@ struct UserView: View {
            NavigationView {
                Form {
                    Text("Logo")
-                   Image("here should be an picure")
-                   .resizable()
-                   .clipped()
-                   .frame(width: 100, height: 100, alignment: .center)
-                   .clipShape(Circle())
-                   .overlay(Circle().stroke(Color.blue, lineWidth: 2.0))
+                   
+         
+                   HStack{
+                       Image("here should be an picure")
+                           .resizable()
+                           .clipped()
+                           .frame(width: 100, height: 100, alignment: .center)
+                           .clipShape(Circle())
+                           .overlay(Circle().stroke(Color.blue, lineWidth: 2.0))
+                       Button {
+                           print("Edit button was tapped")
+                       } label: {
+                           Label("Edit", systemImage: "pencil")
+                       }
+                       
+                   }
                    Section(header: Text("Bearbeitername")) {
                        HStack {
                            Text("Vorname")
