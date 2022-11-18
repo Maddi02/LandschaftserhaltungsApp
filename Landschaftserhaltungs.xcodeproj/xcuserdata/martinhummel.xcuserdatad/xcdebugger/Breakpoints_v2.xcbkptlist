@@ -200,7 +200,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "11C2BE68-D734-44D1-94D2-3F5DD37820D1"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Landschaftserhaltungs/FrontEnd/SheetSelectPlantsShortTerm.swift"
@@ -213,7 +213,7 @@
             <Locations>
                <Location
                   uuid = "11C2BE68-D734-44D1-94D2-3F5DD37820D1 - 90cb6e5f312a1dcc"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #2 () -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Spacer, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 (Swift.String) -&gt; SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;)&gt;&gt; in closure #4 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;Swift.String&gt;, Swift.String, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.toolbar&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ToolbarContent&gt;(content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Swift.String&gt;, Swift.String, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt;&gt;)&gt; in closure #1 (SwiftUI.ScrollViewProxy) -&gt; SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.toolbar&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ToolbarContent&gt;(content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Swift.String&gt;, Swift.String, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt;&gt;)&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ScrollViewReader&lt;SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.toolbar&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ToolbarContent&gt;(content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Swift.String&gt;, Swift.String, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt;&gt;)&gt;&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.frame(minWidth: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, idealWidth: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, maxWidth: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, minHeight: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, idealHeight: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, maxHeight: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0)&gt; in Landschaftserhaltungs.SheetSelectPlantsShortTerm.body.getter : some"
@@ -270,10 +270,10 @@
             filePath = "Landschaftserhaltungs/FrontEnd/SelectPlants/SheetSelectPlantsLongTerm.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
-            landmarkName = "containsInPlantArray(str:)"
-            landmarkType = "7">
+            startingLineNumber = "228"
+            endingLineNumber = "228"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -286,10 +286,10 @@
             filePath = "Landschaftserhaltungs/FrontEnd/SelectPlants/SheetSelectPlantsLongTerm.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
-            landmarkName = "containsInPlantArray(str:)"
-            landmarkType = "7">
+            startingLineNumber = "229"
+            endingLineNumber = "229"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -302,8 +302,8 @@
             filePath = "Landschaftserhaltungs/FrontEnd/SelectPlants/SheetSelectPlantsLongTerm.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
             landmarkName = "containsInPlantArray(str:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -312,14 +312,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "BE362BB8-A1A0-4F34-809F-A7F975C1FE66"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Landschaftserhaltungs/FrontEnd/SelectPlants/SheetSelectPlantsLongTerm.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267">
+            startingLineNumber = "280"
+            endingLineNumber = "280">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -336,6 +336,38 @@
             endingLineNumber = "39"
             landmarkName = "devicesListLatein"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "C556E995-B810-4B52-9E3A-5D2DD6645B8A - bdcfb22c743e57f4"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Landschaftserhaltungs.SheetSelectPlantsLongTerm.devicesListLatein.getter : some"
+                  moduleName = "Landschaftserhaltungs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinhummel/git/LandschaftserhaltungsApp/Landschaftserhaltungs/FrontEnd/SelectPlants/SheetSelectPlantsLongTerm.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "C556E995-B810-4B52-9E3A-5D2DD6645B8A - a054146f5e4626c1"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((key: Swift.String, value: Swift.Array&lt;Landschaftserhaltungs.PlantSpecies&gt;), (key: Swift.String, value: Swift.Array&lt;Landschaftserhaltungs.PlantSpecies&gt;)) -&gt; Swift.Bool in Landschaftserhaltungs.SheetSelectPlantsLongTerm.devicesListLatein.getter : some"
+                  moduleName = "Landschaftserhaltungs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinhummel/git/LandschaftserhaltungsApp/Landschaftserhaltungs/FrontEnd/SelectPlants/SheetSelectPlantsLongTerm.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "96">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -355,7 +387,7 @@
             <Locations>
                <Location
                   uuid = "89F6E769-B5EE-468A-9DC8-A0DD86B0367C - 224e72aa8f57c34"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #2 (Swift.String, Swift.Array&lt;Landschaftserhaltungs.PlantSpecies&gt;) -&gt; SwiftUI.TupleView&lt;(Landschaftserhaltungs.HeaderView, SwiftUI.ForEach&lt;Swift.Array&lt;Landschaftserhaltungs.PlantSpecies&gt;, Swift.ObjectIdentifier, Landschaftserhaltungs.RowViewLongTerm&gt;)&gt; in Landschaftserhaltungs.SheetSelectPlantsLongTerm.devicesListGerman.getter : some"
@@ -370,7 +402,7 @@
                </Location>
                <Location
                   uuid = "89F6E769-B5EE-468A-9DC8-A0DD86B0367C - 28945612d6325d6c"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Landschaftserhaltungs.PlantSpecies) -&gt; Landschaftserhaltungs.RowViewLongTerm in closure #2 (Swift.String, Swift.Array&lt;Landschaftserhaltungs.PlantSpecies&gt;) -&gt; SwiftUI.TupleView&lt;(Landschaftserhaltungs.HeaderView, SwiftUI.ForEach&lt;Swift.Array&lt;Landschaftserhaltungs.PlantSpecies&gt;, Swift.ObjectIdentifier, Landschaftserhaltungs.RowViewLongTerm&gt;)&gt; in Landschaftserhaltungs.SheetSelectPlantsLongTerm.devicesListGerman.getter : some"
@@ -476,8 +508,24 @@
             filePath = "Landschaftserhaltungs/FrontEnd/SpeciesCensusView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "saveEntrys()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E6A6591F-0001-4E24-B009-FD8E94B5E03C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Landschaftserhaltungs/FrontEnd/SpeciesCensusView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "saveEntrys()"
             landmarkType = "7">
          </BreakpointContent>

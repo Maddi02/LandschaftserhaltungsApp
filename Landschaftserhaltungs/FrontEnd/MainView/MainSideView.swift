@@ -13,6 +13,8 @@ struct MainSideView:  View {
     @StateObject var dataHandler = DataHandler()
     @State private var showingSheet = false
     @StateObject var appContract = AppContract()
+    @State var showProfile = false
+    @State var showImpressum = false
     @State private var image = UIImage()
     var body: some View {
         //Verwalten
@@ -34,15 +36,19 @@ struct MainSideView:  View {
                             .frame(alignment: .topLeading)
                             .toolbar {
                                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                                    Button {
-                                        print("Edit button was tapped")
-                                    } label: {
-                                        Label("Edit", systemImage: "person")
+                                    
+                                    NavigationLink(destination: UserView()) {
+                                        Text(Image(systemName: "person"))
                                     }
+                                    
+                                
                                 }
                                 ToolbarItemGroup(placement: .bottomBar) {
                                     Button("Impressum") {
-                                        print("Impressum was tapped")
+                                        showImpressum.toggle()
+                                    }.sheet(isPresented: $showImpressum)
+                                    {
+                                        ImpressumView()
                                     }
                                 }
                             }

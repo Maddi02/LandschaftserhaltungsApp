@@ -36,10 +36,10 @@ struct SheetSelectPlantsLongTerm: View {
     }
     
     var devicesListLatein: some View {
-        ForEach(plantSpeciesDataModel.getLateinList().sorted(by: { (lhs, rhs) -> Bool in
+        ForEach(plantSpeciesDataModel.lateinList.sorted(by: { (lhs, rhs) -> Bool in
             lhs.key < rhs.key
         }), id: \.key) { categoryName, devicesArray in
-            //HeaderView(title: categoryName)
+            HeaderView(title: categoryName)
             ForEach(devicesArray) { name in
                 RowViewLongTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies : plantSpecies, listEntry: listEntry, text: name.scientificName, checked: name.isChecked)
             }
@@ -85,7 +85,7 @@ struct SheetSelectPlantsLongTerm: View {
                             if(selectedStrength == "Deutsch" ){
                                 Text(plantSpecies1.germanName.wrappedValue)
                                 Spacer()
-                                if(containsInPlantArray(str: plantSpecies1.scientificName.wrappedValue))
+                                if(containsInPlantArray(str: plantSpecies1.germanName.wrappedValue))
                                 {
                                     CheckBoxView(checked: plantSpecies1.isChecked).disabled(true)
                                 }
@@ -103,9 +103,9 @@ struct SheetSelectPlantsLongTerm: View {
            
             
             .navigationBarTitle("Pflanzenarten")
-            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+           // .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
             .navigationBarBackButtonHidden(true)
-            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+          //  .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
             .onChange(of: searchText) { value in
                 if searchText.isEmpty && !isSearching {
                     show = true

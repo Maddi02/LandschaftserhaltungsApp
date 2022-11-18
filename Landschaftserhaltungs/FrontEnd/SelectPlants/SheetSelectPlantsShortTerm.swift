@@ -89,9 +89,9 @@ struct SheetSelectPlantsShortTerm: View {
             
             
                 .navigationBarTitle("Pflanzenarten")
-                .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+               // .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
                 .navigationBarBackButtonHidden(true)
-                .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+              //  .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
                 .onChange(of: searchText) { value in
                     if searchText.isEmpty && !isSearching {
                         show = true

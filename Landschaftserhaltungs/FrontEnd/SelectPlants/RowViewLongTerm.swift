@@ -40,14 +40,10 @@ struct RowViewLongTerm: View {
         
         for i in plantSpecies
         {
+            
             if (i.germanName == str && checked)
             {
                 i.isChecked = true
-            }
-            
-            if (i.germanName == str && !checked)
-            {
-                i.isChecked = false
             }
         }
         
@@ -57,8 +53,6 @@ struct RowViewLongTerm: View {
     func checkinGermanList(str : String) -> Bool
     {
     
-
-            
         return true
     }
     

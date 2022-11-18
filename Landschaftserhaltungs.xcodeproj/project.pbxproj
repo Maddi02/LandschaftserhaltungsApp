@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		221AC67B290C3A2800993F52 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221AC67A290C3A2700993F52 /* DataHandler.swift */; };
 		221AC67D290D150B00993F52 /* BackgroundLinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221AC67C290D150B00993F52 /* BackgroundLinearGradient.swift */; };
+		223523FD292700E2000126E1 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223523FC292700E2000126E1 /* UserView.swift */; };
+		223523FF292700ED000126E1 /* ImpressumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223523FE292700ED000126E1 /* ImpressumView.swift */; };
 		2239595B290452A600D5F38E /* UIImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239595A290452A600D5F38E /* UIImageTransformer.swift */; };
 		2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239595E2907DDCD00D5F38E /* ContractListItem.swift */; };
 		223AD4D42912B59B009B5C1C /* ContractAdminister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD4D32912B59B009B5C1C /* ContractAdminister.swift */; };
@@ -16,7 +18,6 @@
 		223AD5242917C67D009B5C1C /* CreateNewPerpetration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD5232917C67D009B5C1C /* CreateNewPerpetration.swift */; };
 		223AD5262917CBDA009B5C1C /* ToggleCheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD5252917CBDA009B5C1C /* ToggleCheckboxStyle.swift */; };
 		223AD56E291845D3009B5C1C /* EditListItemContractArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD56D291845D3009B5C1C /* EditListItemContractArea.swift */; };
-		223AD57029185486009B5C1C /* ContractFieldItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD56F29185486009B5C1C /* ContractFieldItem.swift */; };
 		223AD572291861AD009B5C1C /* FrequencyEstimationField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD571291861AD009B5C1C /* FrequencyEstimationField.swift */; };
 		223AD5742918623C009B5C1C /* ExportPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD5732918623C009B5C1C /* ExportPreview.swift */; };
 		223AD57629186339009B5C1C /* SpeciesCensusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD57529186339009B5C1C /* SpeciesCensusView.swift */; };
@@ -34,7 +35,6 @@
 		223BB354291147380064927A /* WrappedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB353291147380064927A /* WrappedTextView.swift */; };
 		223BB35829116F9D0064927A /* SelectFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB35729116F9D0064927A /* SelectFilterView.swift */; };
 		22455CF628FF03BC002876AD /* CreateNewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455CF528FF03BC002876AD /* CreateNewContract.swift */; };
-		22455CF828FF2794002876AD /* ExpiredContractView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455CF728FF2794002876AD /* ExpiredContractView.swift */; };
 		22455CFA28FF27B5002876AD /* ManageContractView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455CF928FF27B5002876AD /* ManageContractView.swift */; };
 		22455D0B2900901C002876AD /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455D0A2900901C002876AD /* ImagePicker.swift */; };
 		22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455D0C290094AE002876AD /* NewContractDataModel.swift */; };
@@ -92,6 +92,8 @@
 /* Begin PBXFileReference section */
 		221AC67A290C3A2700993F52 /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 		221AC67C290D150B00993F52 /* BackgroundLinearGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundLinearGradient.swift; sourceTree = "<group>"; };
+		223523FC292700E2000126E1 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		223523FE292700ED000126E1 /* ImpressumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpressumView.swift; sourceTree = "<group>"; };
 		2239595A290452A600D5F38E /* UIImageTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageTransformer.swift; sourceTree = "<group>"; };
 		2239595E2907DDCD00D5F38E /* ContractListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractListItem.swift; sourceTree = "<group>"; };
 		223AD4D32912B59B009B5C1C /* ContractAdminister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractAdminister.swift; sourceTree = "<group>"; };
@@ -99,7 +101,6 @@
 		223AD5232917C67D009B5C1C /* CreateNewPerpetration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPerpetration.swift; sourceTree = "<group>"; };
 		223AD5252917CBDA009B5C1C /* ToggleCheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCheckboxStyle.swift; sourceTree = "<group>"; };
 		223AD56D291845D3009B5C1C /* EditListItemContractArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditListItemContractArea.swift; sourceTree = "<group>"; };
-		223AD56F29185486009B5C1C /* ContractFieldItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractFieldItem.swift; sourceTree = "<group>"; };
 		223AD571291861AD009B5C1C /* FrequencyEstimationField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyEstimationField.swift; sourceTree = "<group>"; };
 		223AD5732918623C009B5C1C /* ExportPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportPreview.swift; sourceTree = "<group>"; };
 		223AD57529186339009B5C1C /* SpeciesCensusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesCensusView.swift; sourceTree = "<group>"; };
@@ -117,7 +118,6 @@
 		223BB353291147380064927A /* WrappedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedTextView.swift; sourceTree = "<group>"; };
 		223BB35729116F9D0064927A /* SelectFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFilterView.swift; sourceTree = "<group>"; };
 		22455CF528FF03BC002876AD /* CreateNewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewContract.swift; sourceTree = "<group>"; usesTabs = 0; };
-		22455CF728FF2794002876AD /* ExpiredContractView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiredContractView.swift; sourceTree = "<group>"; };
 		22455CF928FF27B5002876AD /* ManageContractView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageContractView.swift; sourceTree = "<group>"; };
 		22455D0A2900901C002876AD /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		22455D0C290094AE002876AD /* NewContractDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContractDataModel.swift; sourceTree = "<group>"; };
@@ -183,6 +183,115 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		223523FB2927005F000126E1 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				2252D320290868FF00568A1A /* EditContractView.swift */,
+				224F462728FDFC99004EA74F /* MainSideView.swift */,
+				223523FC292700E2000126E1 /* UserView.swift */,
+				223523FE292700ED000126E1 /* ImpressumView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		223524002927011B000126E1 /* NewContract */ = {
+			isa = PBXGroup;
+			children = (
+				22455CF528FF03BC002876AD /* CreateNewContract.swift */,
+				223AD4D32912B59B009B5C1C /* ContractAdminister.swift */,
+			);
+			path = NewContract;
+			sourceTree = "<group>";
+		};
+		223524012927041B000126E1 /* HelpView */ = {
+			isa = PBXGroup;
+			children = (
+				227FAAC3291E4BC700D747DA /* SearchBar.swift */,
+				227FAB32291ED81700D747DA /* CheckBoxView.swift */,
+				221AC67C290D150B00993F52 /* BackgroundLinearGradient.swift */,
+				223AD52129157DF1009B5C1C /* ListItemContractArea.swift */,
+				223AD5232917C67D009B5C1C /* CreateNewPerpetration.swift */,
+				223BB353291147380064927A /* WrappedTextView.swift */,
+				22A1087A2919CDCC0071FF3A /* TimerView.swift */,
+				22A1087C2919CFF80071FF3A /* CheckListItem.swift */,
+				223AD57729192815009B5C1C /* CounterViewModel.swift */,
+				2239595E2907DDCD00D5F38E /* ContractListItem.swift */,
+				223BB34C29103C490064927A /* TextView.swift */,
+				223BB35729116F9D0064927A /* SelectFilterView.swift */,
+				223AD5252917CBDA009B5C1C /* ToggleCheckboxStyle.swift */,
+			);
+			path = HelpView;
+			sourceTree = "<group>";
+		};
+		2235240229270541000126E1 /* CountingViews */ = {
+			isa = PBXGroup;
+			children = (
+				22352404292705FD000126E1 /* InformationView */,
+				223AD57529186339009B5C1C /* SpeciesCensusView.swift */,
+				22A1087E291AF5FB0071FF3A /* LongTimeSpeciesCensus.swift */,
+			);
+			path = CountingViews;
+			sourceTree = "<group>";
+		};
+		22352403292705A5000126E1 /* ContractManagement */ = {
+			isa = PBXGroup;
+			children = (
+				22455CF928FF27B5002876AD /* ManageContractView.swift */,
+				223AD571291861AD009B5C1C /* FrequencyEstimationField.swift */,
+				223AD5732918623C009B5C1C /* ExportPreview.swift */,
+				223AD56D291845D3009B5C1C /* EditListItemContractArea.swift */,
+				2235240229270541000126E1 /* CountingViews */,
+			);
+			path = ContractManagement;
+			sourceTree = "<group>";
+		};
+		22352404292705FD000126E1 /* InformationView */ = {
+			isa = PBXGroup;
+			children = (
+				22A1088A291C1CE50071FF3A /* InformationAnderesBiotop.swift */,
+				22A10888291C1C260071FF3A /* InformationFFHWiese.swift */,
+			);
+			path = InformationView;
+			sourceTree = "<group>";
+		};
+		2235240529270632000126E1 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				22A10880291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataClass.swift */,
+				22A10881291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataProperties.swift */,
+				223AD5D629199C53009B5C1C /* PlantSpeciesItem+CoreDataClass.swift */,
+				223AD5D729199C53009B5C1C /* PlantSpeciesItem+CoreDataProperties.swift */,
+				223AD5D829199C53009B5C1C /* ListEntry+CoreDataClass.swift */,
+				223AD5D929199C53009B5C1C /* ListEntry+CoreDataProperties.swift */,
+				223AD5DA29199C53009B5C1C /* AppContract+CoreDataClass.swift */,
+				223AD5DB29199C53009B5C1C /* AppContract+CoreDataProperties.swift */,
+				223AD57F291940D7009B5C1C /* AppStateDataModel.xcdatamodeld */,
+				22455D112900A869002876AD /* CoreDataManager.swift */,
+				221AC67A290C3A2700993F52 /* DataHandler.swift */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		2235240629270666000126E1 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				22455D0C290094AE002876AD /* NewContractDataModel.swift */,
+				223AD5E42919C309009B5C1C /* PlantSpeciesDataModel.swift */,
+				224F463428FE1443004EA74F /* AppState.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		22352407292706A4000126E1 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2239595A290452A600D5F38E /* UIImageTransformer.swift */,
+				22455D0A2900901C002876AD /* ImagePicker.swift */,
+				223AD5E22919C2E7009B5C1C /* PlantSpecies.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		224F45EF28FD80E7004EA74F = {
 			isa = PBXGroup;
 			children = (
@@ -243,36 +352,13 @@
 		224F462528FD8555004EA74F /* FrontEnd */ = {
 			isa = PBXGroup;
 			children = (
+				22352403292705A5000126E1 /* ContractManagement */,
+				223524012927041B000126E1 /* HelpView */,
+				223524002927011B000126E1 /* NewContract */,
+				223523FB2927005F000126E1 /* MainView */,
 				225561CE29252F4100C645F6 /* SelectPlants */,
-				223AD57729192815009B5C1C /* CounterViewModel.swift */,
-				22A1087C2919CFF80071FF3A /* CheckListItem.swift */,
-				223AD571291861AD009B5C1C /* FrequencyEstimationField.swift */,
-				223AD5732918623C009B5C1C /* ExportPreview.swift */,
-				223AD56D291845D3009B5C1C /* EditListItemContractArea.swift */,
-				223AD56F29185486009B5C1C /* ContractFieldItem.swift */,
-				223AD57529186339009B5C1C /* SpeciesCensusView.swift */,
-				22A1087A2919CDCC0071FF3A /* TimerView.swift */,
-				22A1088A291C1CE50071FF3A /* InformationAnderesBiotop.swift */,
-				22A10888291C1C260071FF3A /* InformationFFHWiese.swift */,
-				22A1087E291AF5FB0071FF3A /* LongTimeSpeciesCensus.swift */,
 				224F45FF28FD80E8004EA74F /* Assets.xcassets */,
-				223AD5252917CBDA009B5C1C /* ToggleCheckboxStyle.swift */,
-				223AD5232917C67D009B5C1C /* CreateNewPerpetration.swift */,
-				223AD4D32912B59B009B5C1C /* ContractAdminister.swift */,
-				223AD52129157DF1009B5C1C /* ListItemContractArea.swift */,
-				223BB35729116F9D0064927A /* SelectFilterView.swift */,
-				223BB353291147380064927A /* WrappedTextView.swift */,
-				223BB34C29103C490064927A /* TextView.swift */,
-				221AC67C290D150B00993F52 /* BackgroundLinearGradient.swift */,
-				224F462728FDFC99004EA74F /* MainSideView.swift */,
-				22455CF528FF03BC002876AD /* CreateNewContract.swift */,
-				22455CF728FF2794002876AD /* ExpiredContractView.swift */,
-				2239595E2907DDCD00D5F38E /* ContractListItem.swift */,
-				22455CF928FF27B5002876AD /* ManageContractView.swift */,
-				2252D320290868FF00568A1A /* EditContractView.swift */,
 				224F462928FE014B004EA74F /* Onboarding */,
-				227FAAC3291E4BC700D747DA /* SearchBar.swift */,
-				227FAB32291ED81700D747DA /* CheckBoxView.swift */,
 			);
 			path = FrontEnd;
 			sourceTree = "<group>";
@@ -280,23 +366,9 @@
 		224F462628FD855D004EA74F /* BackEnd */ = {
 			isa = PBXGroup;
 			children = (
-				22A10880291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataClass.swift */,
-				22A10881291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataProperties.swift */,
-				223AD5D629199C53009B5C1C /* PlantSpeciesItem+CoreDataClass.swift */,
-				223AD5D729199C53009B5C1C /* PlantSpeciesItem+CoreDataProperties.swift */,
-				223AD5D829199C53009B5C1C /* ListEntry+CoreDataClass.swift */,
-				223AD5D929199C53009B5C1C /* ListEntry+CoreDataProperties.swift */,
-				223AD5DA29199C53009B5C1C /* AppContract+CoreDataClass.swift */,
-				223AD5DB29199C53009B5C1C /* AppContract+CoreDataProperties.swift */,
-				223AD57F291940D7009B5C1C /* AppStateDataModel.xcdatamodeld */,
-				2239595A290452A600D5F38E /* UIImageTransformer.swift */,
-				224F463428FE1443004EA74F /* AppState.swift */,
-				22455D0A2900901C002876AD /* ImagePicker.swift */,
-				22455D0C290094AE002876AD /* NewContractDataModel.swift */,
-				22455D112900A869002876AD /* CoreDataManager.swift */,
-				221AC67A290C3A2700993F52 /* DataHandler.swift */,
-				223AD5E22919C2E7009B5C1C /* PlantSpecies.swift */,
-				223AD5E42919C309009B5C1C /* PlantSpeciesDataModel.swift */,
+				22352407292706A4000126E1 /* Helper */,
+				2235240629270666000126E1 /* DataModels */,
+				2235240529270632000126E1 /* DataBase */,
 			);
 			path = BackEnd;
 			sourceTree = "<group>";
@@ -472,7 +544,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				22A1087B2919CDCC0071FF3A /* TimerView.swift in Sources */,
-				22455CF828FF2794002876AD /* ExpiredContractView.swift in Sources */,
 				223AD5742918623C009B5C1C /* ExportPreview.swift in Sources */,
 				22455CF628FF03BC002876AD /* CreateNewContract.swift in Sources */,
 				223AD52229157DF1009B5C1C /* ListItemContractArea.swift in Sources */,
@@ -489,6 +560,7 @@
 				225561D629252FEC00C645F6 /* SectionIndexTitle.swift in Sources */,
 				2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */,
 				223BB34D29103C490064927A /* TextView.swift in Sources */,
+				223523FF292700ED000126E1 /* ImpressumView.swift in Sources */,
 				22455D122900A869002876AD /* CoreDataManager.swift in Sources */,
 				223AD57629186339009B5C1C /* SpeciesCensusView.swift in Sources */,
 				22A10889291C1C260071FF3A /* InformationFFHWiese.swift in Sources */,
@@ -508,7 +580,6 @@
 				22A10882291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataClass.swift in Sources */,
 				22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */,
 				224F462F28FE06CD004EA74F /* SecondFeatureOverview.swift in Sources */,
-				223AD57029185486009B5C1C /* ContractFieldItem.swift in Sources */,
 				223BB354291147380064927A /* WrappedTextView.swift in Sources */,
 				223AD5DC29199C53009B5C1C /* PlantSpeciesItem+CoreDataClass.swift in Sources */,
 				223AD572291861AD009B5C1C /* FrequencyEstimationField.swift in Sources */,
@@ -523,6 +594,7 @@
 				224F462828FDFC99004EA74F /* MainSideView.swift in Sources */,
 				223AD4D42912B59B009B5C1C /* ContractAdminister.swift in Sources */,
 				223AD56E291845D3009B5C1C /* EditListItemContractArea.swift in Sources */,
+				223523FD292700E2000126E1 /* UserView.swift in Sources */,
 				225561D429252FC100C645F6 /* SectionIndexTitles.swift in Sources */,
 				225561D229252F8900C645F6 /* RowViewLongTerm.swift in Sources */,
 				223AD5E129199C53009B5C1C /* AppContract+CoreDataProperties.swift in Sources */,
