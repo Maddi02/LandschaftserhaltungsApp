@@ -22,10 +22,12 @@ struct ProfileImage
 
 
 struct UserView: View {
-    
+
     @State private var firstName = ""
     @State private var lastName = ""
+    @State private var logo : UIImage = UIImage()
     @State private var selectedLanguage = "Deutsch"
+    @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
     let language = ["Deutsch", "Latein"]
     var body: some View {
@@ -50,9 +52,10 @@ struct UserView: View {
                    }
                    Section(header: Text("Bearbeitername")) {
                        HStack {
+                           let profile = Profile(context: moc)
                            Text("Vorname")
                            Spacer(minLength: 100)
-                           Text("Maddi")
+                           Text(profile.userSecondName ?? "No Data")
                        }
                        HStack {
                            Text("Nachname")
