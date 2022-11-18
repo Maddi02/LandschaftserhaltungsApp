@@ -30,8 +30,22 @@ struct MainSideView:  View {
                             .frame(maxWidth: .infinity)
                             .padding()
                             .background(Color.gray.opacity(0.5))
-                            .navigationTitle("Menu")
+                        
                             .frame(alignment: .topLeading)
+                            .toolbar {
+                                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                                    Button {
+                                        print("Edit button was tapped")
+                                    } label: {
+                                        Label("Edit", systemImage: "person")
+                                    }
+                                }
+                                ToolbarItemGroup(placement: .bottomBar) {
+                                    Button("Impressum") {
+                                        print("Impressum was tapped")
+                                    }
+                                }
+                            }
                         
                         NavigationLink(destination: ManageContractView()) {
                             Text("Verträge verwalten")
@@ -39,15 +53,15 @@ struct MainSideView:  View {
                             .frame(maxWidth: .infinity)
                             .padding()
                             .background(Color.gray.opacity(0.5))
-                         //   .simultaneousGesture(TapGesture().onEnded{  // Dont include, this will cause 
-                         //                                       dataHandler.fetchAppContract()
-                         //                                 })
-                        
 
+                        
+                  
+                      
+                     
                     }.frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
                         .background(BackGroundGradient.getGradient())
                 }
-                
+        
                 
             }
             .padding(.top)
@@ -58,8 +72,10 @@ struct MainSideView:  View {
                 maxHeight: .infinity,
                 alignment: .topLeading
             ).edgesIgnoringSafeArea(.all)
-            
+     
         }
+
     }
+    
 }
 
