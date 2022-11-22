@@ -48,7 +48,7 @@ struct UserView: View {
                     }
                     
                 }.onAppear(perform: {
-                    print("LOADING")
+
                     loadImage()
                     
                 })
