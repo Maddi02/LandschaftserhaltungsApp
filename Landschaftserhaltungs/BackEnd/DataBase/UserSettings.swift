@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 public class UserSettings: ObservableObject {
     @Published var firstName: String {
@@ -26,7 +27,7 @@ public class UserSettings: ObservableObject {
             UserDefaults.standard.set(language, forKey: "language")
         }
     }
-    
+
     
     
     init() {
