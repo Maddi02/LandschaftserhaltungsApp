@@ -26,7 +26,68 @@ struct InformationAnderesBiotop: View {
         
         NavigationView{
             VStack{
-                Text("Hello, World! Anderes Biotop").navigationBarBackButtonHidden(true)
+                VStack{
+                    Form
+                    {
+                        Section(header: Text("Datum"))
+                        {
+                                    DatePicker(selection: $dataOfTaking,
+                                               displayedComponents: [.date],
+                                               label: { Text("Datum der Begehung") })
+                                    
+                        }
+                        
+                        Section(header: Text("Bewirtschaftung"))
+                        {
+                            TextField("Bitte eingeben", text: $farming ,axis: .vertical)
+                                    
+                        }
+                        
+                        Section(header: Text("Lage"))
+                        {
+                            TextField("Bitte eingeben", text: $position ,axis: .vertical)
+                        }
+                        
+                        Section(header: Text("Vegetationsbeschreibung"))
+                        {
+                            TextField("Bitte eingeben", text: $vegetationDescription ,axis: .vertical)
+                        }
+                        
+                        Section(header: Text("Blühaspekt"))
+                        {
+                            TextField("Bitte eingeben", text: $bloomAspect ,axis: .vertical)
+                        }
+                        
+                        Group{
+                    
+                            Section(header: Text("Faunistische Beobachtungen"))
+                            {
+                                TextField("Bitte eingeben", text: $faunisticObservation,axis: .vertical )
+                            }
+                            
+                            Section(header: Text("Vertragsziel erfüllt"))
+                            {
+                                TextField("Bitte eingeben", text: $contractTarget,axis: .vertical )
+                            }
+                            
+                            Section(header: Text("Anpassung Auflagen"))
+                            {
+                                TextField("Bitte eingeben", text: $adaptationEditions,axis: .vertical )
+                            }
+                            
+                            Section(header: Text("Weitere Pflegemaßnahmen"))
+                            {
+                                TextField("Bitte eingeben", text: $furtherMaintenanceMeasures,axis: .vertical )
+                            }
+                            
+                            Text("Here should be a field to insert some picutures")
+                        }
+                    }
+                    NavigationLink(destination: FFHWieseConclusion()) {
+                        Text("Zur Zusammenfassung!")
+                    }.navigationBarBackButtonHidden(true)
+
+                }
             }.navigationTitle("Information")
         }.navigationBarBackButtonHidden(true)
     }

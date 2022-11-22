@@ -25,8 +25,6 @@ struct InformationFFHWiese: View {
         
         NavigationView{
             
-            
-   
             VStack{
                 Form
                 {
@@ -85,6 +83,8 @@ struct InformationFFHWiese: View {
                         {
                             TextField("Bitte eingeben", text: $faunisticObservation,axis: .vertical )
                         }
+                        
+                        Text("Here should be a field to insert some picutures")
                     } 
                 }
                 NavigationLink(destination: FFHWieseConclusion()) {
