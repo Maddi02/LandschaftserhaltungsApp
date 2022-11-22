@@ -100,7 +100,7 @@ struct SheetSelectPlantsLongTerm: View {
     public func saveEntrysLongTerm()
         {
             
-            let plant = PlantSpeciesLongTermItem(context: moc)
+            //let plant = PlantSpeciesLongTermItem(context: moc)
            // plant.descriptionFieldLongTerm = description
             print("Size \(listEntry.PlantArrayLongTerm.count)")
             
