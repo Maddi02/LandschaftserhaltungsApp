@@ -47,6 +47,12 @@ public class UserSettings: ObservableObject {
 
     }
     
+    
+    func getSelectedLanguage() -> String
+    {
+        return language
+    }
+    
     func saveImage(image : UIImage) {
         guard let data = image.jpegData(compressionQuality: 0.5) else { return }
         let encoded = try! PropertyListEncoder().encode(data)

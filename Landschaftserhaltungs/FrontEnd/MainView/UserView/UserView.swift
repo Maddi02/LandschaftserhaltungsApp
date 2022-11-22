@@ -75,9 +75,12 @@ struct UserView: View {
                     
                 }
                 
-                Button("Füge Pflanzenart hinzu"){
-                    print("Add Pflanzenart")
+                
+                NavigationLink(destination: InsertNewPlantView())
+                {
+                    Text("Füge Pflanze hinzu")
                 }
+              
                 
                 
                 Button("Save")

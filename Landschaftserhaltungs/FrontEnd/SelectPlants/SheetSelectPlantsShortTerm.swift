@@ -8,6 +8,7 @@
 import SwiftUI
 import Foundation
 struct SheetSelectPlantsShortTerm: View {
+    @ObservedObject var userSettings = UserSettings()
     @ObservedObject var plantSpeciesDataModel : PlantSpeciesDataModel
     var speciesCensusView : SpeciesCensusView
     var listEntry : ListEntry
@@ -56,10 +57,10 @@ struct SheetSelectPlantsShortTerm: View {
     var body: some View {
         ScrollViewReader { proxy in
             List {
-                if( selectedStrength == "Deutsch"){
+                if( userSettings.getSelectedLanguage() == "Deutsch"){
                     devicesListGerman
                 }
-                else if( selectedStrength == "Latein"){
+                else if( userSettings.getSelectedLanguage() == "Latein"){
                     devicesListLatein
                 }
                 else {
@@ -89,9 +90,7 @@ struct SheetSelectPlantsShortTerm: View {
             
             
                 .navigationBarTitle("Pflanzenarten")
-               // .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
                 .navigationBarBackButtonHidden(true)
-              //  .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
                 .onChange(of: searchText) { value in
                     if searchText.isEmpty && !isSearching {
                         show = true
@@ -105,23 +104,7 @@ struct SheetSelectPlantsShortTerm: View {
                         show = false
                     }
                 }
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        HStack{
-                            
-                            Text("Sprache: ")
-                            Section {
-                                Picker("", selection: $selectedStrength) {
-                                    ForEach(strengths, id: \.self) {
-                                        Text($0).tag($0.components(separatedBy: " ")[0])
-                                    }
-                                }
-                                .pickerStyle(.menu)
-                            }.frame(maxWidth: .infinity, alignment: .center)
-                            
-                        }
-                    }
-                }
+               
             
                 .navigationTitle("Schnellaufname").font(.title3)
                 .listStyle(PlainListStyle())

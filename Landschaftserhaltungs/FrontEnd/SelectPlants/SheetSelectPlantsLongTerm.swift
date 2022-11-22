@@ -119,23 +119,6 @@ struct SheetSelectPlantsLongTerm: View {
                     show = false
                 }
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack{
-                        
-                        Text("Sprache: ")
-                        Section {
-                            Picker("", selection: $selectedStrength) {
-                                ForEach(strengths, id: \.self) {
-                                    Text($0).tag($0.components(separatedBy: " ")[0])
-                                }
-                            }
-                            .pickerStyle(.menu)
-                        }.frame(maxWidth: .infinity, alignment: .center)
-                        
-                    }
-                }
-            }
             
             .navigationTitle("Schnellaufname").font(.title3)
             .listStyle(PlainListStyle())
