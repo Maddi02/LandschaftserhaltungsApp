@@ -11,10 +11,12 @@ import SwiftUI
 struct RowViewLongTerm: View {
     @ObservedObject var plantSpeciesDataModel : PlantSpeciesDataModel
     @State  var plantSpecies : [PlantSpecies]
-    var listEntry : ListEntry
-    let text: String
     @State var checked : Bool
     @State var checkedTrue : Bool = true
+    var listEntry : ListEntry
+    let text: String
+    
+    
     var body: some View {
         HStack{
             Text(text).foregroundColor(.green)
@@ -24,39 +26,14 @@ struct RowViewLongTerm: View {
                 CheckBoxView(checked: $checkedTrue).disabled(true)
                 
             }
-            else if (checkinPlantList(str: text)){
+
+            else {
                 CheckBoxView(checked: $checked)
-
             }
-  
         }
 
     }
-    
-    
-    
-    func checkinPlantList(str : String) -> Bool
-    {
-        
-        for i in plantSpecies
-        {
-            
-            if (i.germanName == str && checked)
-            {
-                i.isChecked = true
-            }
-        }
-        
-        return true
-    }
-    
-    func checkinGermanList(str : String) -> Bool
-    {
-    
-        return true
-    }
-    
-    
+
     func checkIfAllreadySaved(plant : String) -> Bool
     {
         for i in listEntry.PlantArray

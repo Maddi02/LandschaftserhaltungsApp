@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SheetSelectPlantsLongTerm: View {
+    @ObservedObject var userSettings = UserSettings()
     @StateObject var plantSpeciesDataModel = PlantSpeciesDataModel()
     var longTimeSpeciesCencus : LongTimeSpeciesCensus
     @StateObject var listEntry : ListEntry
@@ -30,7 +31,7 @@ struct SheetSelectPlantsLongTerm: View {
         }), id: \.key) { categoryName, devicesArray in
             HeaderView(title: categoryName)
             ForEach(devicesArray) { name in
-                RowViewLongTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies : plantSpecies, listEntry: listEntry, text: name.germanName, checked: name.isChecked)
+                RowViewLongTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies : plantSpecies, checked: name.isChecked, listEntry: listEntry, text: name.germanName)
             }
         }
     }
@@ -41,115 +42,30 @@ struct SheetSelectPlantsLongTerm: View {
         }), id: \.key) { categoryName, devicesArray in
             HeaderView(title: categoryName)
             ForEach(devicesArray) { name in
-                RowViewLongTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies : plantSpecies, listEntry: listEntry, text: name.scientificName, checked: name.isChecked)
+                RowViewLongTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies : plantSpecies, checked: name.isChecked, listEntry: listEntry, text: name.scientificName)
             }
         }
         
      
     }
-    
 
-
-    
-    
     var body: some View {
         ScrollViewReader { proxy in
             List {
-                if(show && selectedStrength == "Deutsch"){
+                if(userSettings.getSelectedLanguage() == "Deutsch"){
                     devicesListGerman
                 }
-                else if(show && selectedStrength == "Latein"){
+                else if(userSettings.getSelectedLanguage() == "Latein"){
                     devicesListLatein
                 }
-                else {
-                    ForEach($plantSpecies){
-                        plantSpecies1 in
-                        
-                        HStack{
-                            if(selectedStrength == "Latein" ){
-                                Text(plantSpecies1.scientificName.wrappedValue)
-                                Spacer()
-                                if(containsInPlantArray(str: plantSpecies1.scientificName.wrappedValue))
-                                {
-                                    CheckBoxView(checked: plantSpecies1.isChecked).disabled(true)
-                                }
-                                else {
-                                    CheckBoxView(checked: plantSpecies1.isChecked).onChange(of: plantSpecies1.isChecked.wrappedValue)
-                                    {
-                                        value in
-                                        print ("Halllo")
-                                    }
-                                }
-                                
-                            }
-                            if(selectedStrength == "Deutsch" ){
-                                Text(plantSpecies1.germanName.wrappedValue)
-                                Spacer()
-                                if(containsInPlantArray(str: plantSpecies1.germanName.wrappedValue))
-                                {
-                                    CheckBoxView(checked: plantSpecies1.isChecked).disabled(true)
-                                }
-                                else {
-                                    CheckBoxView(checked: plantSpecies1.isChecked)
-                                }
-                                
-                            }
-                        }
-                    }
-                    
-                }
+                
+                
             }.listStyle(InsetGroupedListStyle())
                 .overlay(sectionIndexTitles(proxy: proxy))
            
             
             .navigationBarTitle("Pflanzenarten")
-           // .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
-            .navigationBarBackButtonHidden(true)
-          //  .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
-            .onChange(of: searchText) { value in
-                if searchText.isEmpty && !isSearching {
-                    show = true
-                    
-                    
-                }
-            }
-            
-            .onChange(of: searchText) { value in
-                if !searchText.isEmpty {
-                    show = false
-                }
-            }
-            
-            .navigationTitle("Schnellaufname").font(.title3)
-            .listStyle(PlainListStyle())
-            
-            
-            
-            
-            .onChange(of: searchText) {
-                searchText in
-                if !searchText.isEmpty {
-                    if(selectedStrength == "Deutsch")
-                    {
-                        checkInOtherList()
-                        let values = plantSpeciesDataModel.b().values.flatMap({$0})
-                        plantSpecies = values.filter { $0.germanName.lowercased().contains(searchText.lowercased()) }
-                        
-                        for i in plantSpecies {
-                            print (i.germanName)
-                        }
-                    }
-                    if(selectedStrength == "Latein")
-                    {
-                        plantSpecies = plantSpeciesDataModel.platList.filter { $0.scientificName.lowercased().contains(searchText.lowercased()) }
-                    }
-                    
-                } else {
-                    plantSpecies = plantSpeciesDataModel.platList
-                }
-            }
-            
-            
+          
         }
     }
         
@@ -158,54 +74,6 @@ struct SheetSelectPlantsLongTerm: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .padding()
         }
-        
-        
-        func checkInOtherList()
-        {
-            
-            let keys = plantSpeciesDataModel.b().values.flatMap({$0})
-            
-            let a = keys.filter { $0.scientificName.lowercased().contains(searchText.lowercased()) }
-            for i in a
-            {
-                print(i.germanName)
-            }
-            
-        }
-    
-    private func containsInPlantArray(str : String) -> Bool
-    {
-        
-        
-        
-        if(selectedStrength == "Latein")
-        {
-            for i in listEntry.PlantArray
-            {
-                if(i.scientificName == str)
-                {
-                    return true
-                }
-            }
-        }
-        
-        if(selectedStrength == "Deutsch")
-        {
-            for i in listEntry.PlantArray
-            {
-                if(i.germanName == str)
-                {
-                    return true
-                }
-            }
-        }
-        
-        
-        
-        return false
-    }
-    
-    
 }
 
 

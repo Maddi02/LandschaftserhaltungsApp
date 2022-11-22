@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct LongTimeSpeciesCensus: View {
-    @State private var selectedStrength = "Deutsch"
-    let strengths = ["Deutsch", "Latein"]
-    var description : String = "Test"
-    @State var fieldDescription : String = ""
-    @StateObject var listEntry : ListEntry
-    @State private var showSelectionView = false
-    @StateObject var plantSpeciesDataModel = PlantSpeciesDataModel()
-    var speciesCensusView : SpeciesCensusView
     @Environment(\.managedObjectContext) var moc
-    
-    let alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    @ObservedObject var userSettings = UserSettings()
+    @StateObject var listEntry : ListEntry
+    @StateObject var plantSpeciesDataModel = PlantSpeciesDataModel()
+    @State private var selectedStrength = "Deutsch"
+    @State var fieldDescription : String = ""
+    @State private var showSelectionView = false
+    var description : String = ""
+    var speciesCensusView : SpeciesCensusView
+
     
     var body: some View {
         
@@ -43,12 +42,12 @@ struct LongTimeSpeciesCensus: View {
                         
                         if(list.isChecked.wrappedValue)
                         {
-                            if(selectedStrength == "Latein")
+                            if(userSettings.getSelectedLanguage() == "Latein")
                             {
                                 Text(list.scientificName.wrappedValue)
                             }
                             
-                            if(selectedStrength == "Deutsch")
+                            if(userSettings.getSelectedLanguage() == "Deutsch")
                             {
                                 Text(list.germanName.wrappedValue)
                             }
@@ -68,14 +67,14 @@ struct LongTimeSpeciesCensus: View {
                         list in
                         
           
-                        if(selectedStrength == "Deutsch")
+                        if(userSettings.getSelectedLanguage() == "Deutsch")
                         {
-                            Text(list.germanName ?? "Unknown")
+                            Text(list.germanName ?? "N")
                         }
                         
-                        if(selectedStrength == "Latein")
+                        if(userSettings.getSelectedLanguage() == "Latein")
                         {
-                            Text(list.scientificName ?? "Unknown")
+                            Text(list.scientificName  ?? "N")
                         }
                         
                     }
@@ -88,25 +87,7 @@ struct LongTimeSpeciesCensus: View {
                 
                 Text("Wähle Pflanze aus")
             }
-        }.toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                HStack{
-                    
-                    Text("Sprache: ")
-                    Section {
-                        Picker("", selection: $selectedStrength) {
-                            ForEach(strengths, id: \.self) {
-                                Text($0).tag($0.components(separatedBy: " ")[0])
-                            }
-                        }
-                        .pickerStyle(.menu)
-                    }.frame(maxWidth: .infinity, alignment: .center)
-                    
-                }
-            }
         }
-        
-        
         .navigationBarBackButtonHidden(true)
     }
         

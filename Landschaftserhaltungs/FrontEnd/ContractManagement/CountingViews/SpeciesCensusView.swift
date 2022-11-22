@@ -9,25 +9,14 @@ import SwiftUI
 import CoreData
 struct SpeciesCensusView: View {
     
-    
-    private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State private var selectedStrength = "Deutsch"
-    let strengths = ["Deutsch", "Latein"]
-    @State private var showSelectionView = false
-    private let  width : Double = 250
-    var description : String
-    @State var fieldDescription : String = ""
+    @Environment(\.managedObjectContext) var moc
     @StateObject var plantSpeciesDataModel = PlantSpeciesDataModel()
     @StateObject var listEntry : ListEntry
-    @Environment(\.managedObjectContext) var moc
-    
-    @State var platList1: [PlantSpecies] = []
-    @State var saveTest : [PlantSpecies] = []
-    
-    
-    
-    
-    
+    @State private var showSelectionView = false
+    @State var fieldDescription : String = ""
+    private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    private let  width : Double = 250
+    public var description : String
     
     var body: some View {
         
@@ -43,21 +32,11 @@ struct SpeciesCensusView: View {
                 TextField("Fügen Sie ein Beschreibung hinzu", text: $fieldDescription)
             }
             
-            NavigationLink(destination: SheetSelectPlantsShortTerm(plantSpeciesDataModel: plantSpeciesDataModel, speciesCensusView: self, listEntry: listEntry, plantSpecies: plantSpeciesDataModel.platList)){
+            NavigationLink(destination: SheetSelectPlantsShortTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies: plantSpeciesDataModel.platList, speciesCensusView: self, listEntry: listEntry)){
                 
                 Text("Wähle Pflanze aus")
             }
         }
-        
-            
-       
-        
-  
-        
-        
-        
-        
-        
         
     }
     
@@ -84,14 +63,14 @@ struct SpeciesCensusView: View {
         print("Size \(listEntry.PlantArray.count)")
         let plant = PlantSpeciesItem(context: moc)
         plant.descriptionField = description
-
+        
         
         for (_ ,list1) in plantSpeciesDataModel.germanList
         {
             
             for list in list1{
                 print("ergeger \(list.germanName) \(list.isChecked)")
-            
+                
                 if(list.isChecked){
                     print(list.germanName)
                     if(contains(str: list.germanName))
