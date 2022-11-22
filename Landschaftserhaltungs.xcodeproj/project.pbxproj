@@ -265,6 +265,7 @@
 		2235240529270632000126E1 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
+				226C67BD292CCAB60049958A /* UserSettings.swift */,
 				226C67B329278F1F0049958A /* Profile+CoreDataClass.swift */,
 				226C67B429278F1F0049958A /* Profile+CoreDataProperties.swift */,
 				22A10880291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataClass.swift */,
@@ -380,7 +381,6 @@
 				22352407292706A4000126E1 /* Helper */,
 				2235240629270666000126E1 /* DataModels */,
 				2235240529270632000126E1 /* DataBase */,
-				226C67BD292CCAB60049958A /* UserSettings.swift */,
 			);
 			path = BackEnd;
 			sourceTree = "<group>";

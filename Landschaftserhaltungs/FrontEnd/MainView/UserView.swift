@@ -17,20 +17,14 @@ struct UserView: View {
     @State private var lastName = ""
     @State private var logo : UIImage = UIImage()
     @State private var profileUser = Profile ()
-    @State private var selectedLanguage = "Deutsch"
     @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
     let defaults = UserDefaults.standard
-    @State private var index = UserDefaults.standard.integer(forKey: "language")
     
     let language = ["Deutsch", "Latein"]
     
     
-    init()
-    {
-        print(selectedLanguage)
-        selectedLanguage = UserDefaults.standard.string(forKey: "language") ?? "German"
-    }
+
     
     var body: some View {
         NavigationView {
@@ -68,9 +62,6 @@ struct UserView: View {
                             ForEach(language, id: \.self) {
                                 Text($0).tag($0.components(separatedBy: " ")[0])
                             }
-                        }.onChange(of: index) { newValue in
-                            // Run code to save
-                            UserDefaults.standard.set(newValue, forKey: "language")
                         }
                         .pickerStyle(.menu)
                     }.frame(maxWidth: .infinity, alignment: .center)
@@ -85,8 +76,7 @@ struct UserView: View {
                 Button("Save")
                 {
                     
-                    print(selectedLanguage)
-                    defaults.set(selectedLanguage, forKey: "language")
+                  
 
                     dismiss()
                     print("Button Saved was pressed")
