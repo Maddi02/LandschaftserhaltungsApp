@@ -20,6 +20,7 @@ struct InformationFFHWiese: View {
     @State private var protectionStatus  : String = ""
     @State private var overallAssessmentOfTheStateOfPreservation  : String = ""
     @State private var faunisticObservation  : String = ""
+    @State private var showingActionSheet = false
     
     var body: some View {
         
@@ -88,13 +89,29 @@ struct InformationFFHWiese: View {
                     }
                     Button(action: {
                         print("Select")
+                        showingActionSheet.toggle()
                     }, label: {
                       
                         HStack{
                             Text("Füge Bilder hinzu")
                             Text(Image(systemName: "camera.on.rectangle.fill"))
                         }.frame(maxWidth: .infinity ,alignment: .center)
-                    })
+                    }).confirmationDialog("Woher soll das Bild genommen werden", isPresented: $showingActionSheet, titleVisibility: .visible) {
+                        
+                        NavigationLink(destination: FrequencyEstimationField()) {
+                            Button("Galerie")
+                            {
+
+                            }
+                        }
+
+                        NavigationLink(destination: FrequencyEstimationField()) {
+                            Button("Foto auswählen")
+                            {
+
+                            }
+                        }
+                    }
                 }
                 NavigationLink(destination: FFHWieseConclusion()) {
                     Text("Zur Zusammenfassung!")

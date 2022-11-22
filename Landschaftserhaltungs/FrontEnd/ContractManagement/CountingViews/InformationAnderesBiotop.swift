@@ -19,11 +19,11 @@ struct InformationAnderesBiotop: View {
     @State private var contractTarget  : String = ""
     @State private var adaptationEditions  : String = ""
     @State private var furtherMaintenanceMeasures  : String = ""
-    
+    @State private var showingActionSheet = false
     
     
     var body: some View {
-        
+       
         NavigationView{
             VStack{
                 VStack{
@@ -83,13 +83,29 @@ struct InformationAnderesBiotop: View {
 
                         Button(action: {
                             print("Select")
+                            showingActionSheet.toggle()
                         }, label: {
                           
                             HStack{
                                 Text("Füge Bilder hinzu")
                                 Text(Image(systemName: "camera.on.rectangle.fill"))
                             }.frame(maxWidth: .infinity ,alignment: .center)
-                        })
+                        }).confirmationDialog("Woher soll das Bild genommen werden", isPresented: $showingActionSheet, titleVisibility: .visible) {
+                            
+                            NavigationLink(destination: FrequencyEstimationField()) {
+                                Button("Galerie")
+                                {
+
+                                }
+                            }
+
+                            NavigationLink(destination: FrequencyEstimationField()) {
+                                Button("Foto auswählen")
+                                {
+
+                                }
+                            }
+                        }
                         
                     }
                     
