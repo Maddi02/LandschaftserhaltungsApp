@@ -68,7 +68,7 @@ struct SheetSelectPlantsLongTerm: View {
           
         }
         
-        NavigationLink(destination:  getDestination().onAppear{
+        NavigationLink(destination:  getDestination().environmentObject(ViewModel()).onAppear{
                         saveEntrysLongTerm()
                     })
                     {
