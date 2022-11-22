@@ -79,10 +79,23 @@ struct InformationAnderesBiotop: View {
                             {
                                 TextField("Bitte eingeben", text: $furtherMaintenanceMeasures,axis: .vertical )
                             }
-                            
-                            Text("Here should be a field to insert some picutures")
                         }
+
+                        Button(action: {
+                            print("Select")
+                        }, label: {
+                          
+                            HStack{
+                                Text("Füge Bilder hinzu")
+                                Text(Image(systemName: "camera.on.rectangle.fill"))
+                            }.frame(maxWidth: .infinity ,alignment: .center)
+                        })
+                        
                     }
+                    
+            
+
+                    
                     NavigationLink(destination: FFHWieseConclusion()) {
                         Text("Zur Zusammenfassung!")
                     }.navigationBarBackButtonHidden(true)
