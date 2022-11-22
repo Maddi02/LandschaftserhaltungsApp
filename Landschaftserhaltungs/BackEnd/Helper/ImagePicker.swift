@@ -12,7 +12,7 @@ import CoreData
 
 struct ImagePicker: UIViewControllerRepresentable {
     var changePicture : Bool
-    var appContract : AppContract
+    var appContract = AppContract()
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @Binding var selectedImage: UIImage
     

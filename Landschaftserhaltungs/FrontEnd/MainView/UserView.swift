@@ -22,7 +22,8 @@ struct UserView: View {
     let defaults = UserDefaults.standard
     
     let language = ["Deutsch", "Latein"]
-    
+    @State private var isShownPhotoLibrary = false
+    @State private var image = UIImage()
     
 
     
@@ -32,20 +33,39 @@ struct UserView: View {
                 Text("Logo")
                 
                 
-                HStack{
-                    Image("here should be an picure")
-                        .resizable()
-                        .clipped()
-                        .frame(width: 100, height: 100, alignment: .center)
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(Color.blue, lineWidth: 2.0))
-                    Button {
-                        print("Edit button was tapped")
-                    } label: {
-                        Label("Edit", systemImage: "pencil")
-                    }
+                Section(header: Text("Karte mit Vertragsflächen")) {
                     
-                }
+                    Image(uiImage: self.image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    Button {
+                        self.isShownPhotoLibrary = true
+                        
+                    } label: {
+                        HStack {
+                            HStack{
+                                Image(systemName: "photo")
+                                    .font(.system(size: 20))
+                                Text("Wähle ein Bild aus der Galerie aus")
+                            }
+                            .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                        }
+                    }
+                
+
+                    
+                }.onAppear(perform: {
+                    print("LOADING")
+                    loadImage()
+
+                })
                 Section(header: Text("Bearbeitername")) {
                     HStack {
                         TextField("Vorname", text: $userSettings.firstName)
@@ -75,9 +95,8 @@ struct UserView: View {
                 
                 Button("Save")
                 {
-                    
-                  
-
+                 
+                    saveImage()
                     dismiss()
                     print("Button Saved was pressed")
                 }
@@ -85,6 +104,23 @@ struct UserView: View {
         }.onAppear(perform: {
             
         })
+        .sheet(isPresented: $isShownPhotoLibrary){
+            ImagePicker(changePicture: false,  sourceType: .photoLibrary, selectedImage: self.$image)
+
+        }
+    }
+    
+    func saveImage() {
+        guard let data = self.image.jpegData(compressionQuality: 0.5) else { return }
+        let encoded = try! PropertyListEncoder().encode(data)
+        UserDefaults.standard.set(encoded, forKey: "KEY")
+    }
+
+    func loadImage() {
+         guard let data = UserDefaults.standard.data(forKey: "KEY") else { return }
+         let decoded = try! PropertyListDecoder().decode(Data.self, from: data)
+         let image = UIImage(data: decoded)
+         self.image = image ?? UIImage()
     }
 }
 
