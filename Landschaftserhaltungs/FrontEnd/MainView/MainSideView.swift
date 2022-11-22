@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct MainSideView:  View {
+    @ObservedObject var userSettings = UserSettings()
     @EnvironmentObject var appState : AppState
     @StateObject var dataHandler = DataHandler()
     @State private var showingSheet = false
@@ -22,10 +23,17 @@ struct MainSideView:  View {
         VStack{
             
             
+
+            
             GeometryReader { geometry in
                 
                 NavigationStack() {
+
                     VStack {
+                        Image(uiImage: self.image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame( maxHeight: 400, alignment: .center)
                         NavigationLink(destination: CreateNewContract()) {
                             Text("Neuen Vertrag anlegen")
                         }.foregroundColor(.white)
@@ -66,6 +74,11 @@ struct MainSideView:  View {
                      
                     }.frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
                         .background(BackGroundGradient.getGradient())
+                        .onAppear(perform: {
+               
+                          //  userSettings.loadImage()
+                            self.image = userSettings.getImage()
+                        })
                 }
         
                 
