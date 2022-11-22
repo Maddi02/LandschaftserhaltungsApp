@@ -61,6 +61,8 @@
 		225561D629252FEC00C645F6 /* SectionIndexTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225561D529252FEC00C645F6 /* SectionIndexTitle.swift */; };
 		226C67B529278F1F0049958A /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67B329278F1F0049958A /* Profile+CoreDataClass.swift */; };
 		226C67B629278F1F0049958A /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67B429278F1F0049958A /* Profile+CoreDataProperties.swift */; };
+		226C67BC292BAAD70049958A /* ProfileDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67BB292BAAD70049958A /* ProfileDataModel.swift */; };
+		226C67BE292CCAB60049958A /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67BD292CCAB60049958A /* UserSettings.swift */; };
 		227FAAC4291E4BC700D747DA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227FAAC3291E4BC700D747DA /* SearchBar.swift */; };
 		227FAB33291ED81700D747DA /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227FAB32291ED81700D747DA /* CheckBoxView.swift */; };
 		22A108792919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A108782919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift */; };
@@ -149,6 +151,8 @@
 		225561D529252FEC00C645F6 /* SectionIndexTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionIndexTitle.swift; sourceTree = "<group>"; };
 		226C67B329278F1F0049958A /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
 		226C67B429278F1F0049958A /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		226C67BB292BAAD70049958A /* ProfileDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataModel.swift; sourceTree = "<group>"; };
+		226C67BD292CCAB60049958A /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		227FAAC3291E4BC700D747DA /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		227FAB32291ED81700D747DA /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		22A108782919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSelectPlantsShortTerm.swift; sourceTree = "<group>"; };
@@ -284,6 +288,7 @@
 				22455D0C290094AE002876AD /* NewContractDataModel.swift */,
 				223AD5E42919C309009B5C1C /* PlantSpeciesDataModel.swift */,
 				224F463428FE1443004EA74F /* AppState.swift */,
+				226C67BB292BAAD70049958A /* ProfileDataModel.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 				22352407292706A4000126E1 /* Helper */,
 				2235240629270666000126E1 /* DataModels */,
 				2235240529270632000126E1 /* DataBase */,
+				226C67BD292CCAB60049958A /* UserSettings.swift */,
 			);
 			path = BackEnd;
 			sourceTree = "<group>";
@@ -564,6 +570,7 @@
 				227FAB33291ED81700D747DA /* CheckBoxView.swift in Sources */,
 				224F45FE28FD80E7004EA74F /* OnboardingFlowView.swift in Sources */,
 				225561D629252FEC00C645F6 /* SectionIndexTitle.swift in Sources */,
+				226C67BC292BAAD70049958A /* ProfileDataModel.swift in Sources */,
 				2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */,
 				223BB34D29103C490064927A /* TextView.swift in Sources */,
 				223523FF292700ED000126E1 /* ImpressumView.swift in Sources */,
@@ -601,6 +608,7 @@
 				22A10883291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataProperties.swift in Sources */,
 				224F462828FDFC99004EA74F /* MainSideView.swift in Sources */,
 				223AD4D42912B59B009B5C1C /* ContractAdminister.swift in Sources */,
+				226C67BE292CCAB60049958A /* UserSettings.swift in Sources */,
 				223AD56E291845D3009B5C1C /* EditListItemContractArea.swift in Sources */,
 				223523FD292700E2000126E1 /* UserView.swift in Sources */,
 				225561D429252FC100C645F6 /* SectionIndexTitles.swift in Sources */,
