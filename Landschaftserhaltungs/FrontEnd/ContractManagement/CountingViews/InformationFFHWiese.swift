@@ -40,50 +40,50 @@ struct InformationFFHWiese: View {
                     
                     Section(header: Text("Bewirtschaftung"))
                     {
-                        TextField("Bitte eingeben", text: $farming)
+                        TextField("Bitte eingeben", text: $farming ,axis: .vertical)
                                 
                     }
                     
                     Section(header: Text("Lage"))
                     {
-                        TextField("Bitte eingeben", text: $position)
+                        TextField("Bitte eingeben", text: $position ,axis: .vertical)
                     }
                     
                     Section(header: Text("Vegetationsbeschreibung"))
                     {
-                        TextField("Bitte eingeben", text: $vegetationDescription)
+                        TextField("Bitte eingeben", text: $vegetationDescription ,axis: .vertical)
                     }
                     
                     Section(header: Text("Blühaspekt"))
                     {
-                        TextField("Bitte eingeben", text: $bloomAspect)
+                        TextField("Bitte eingeben", text: $bloomAspect ,axis: .vertical)
                     }
                     
                     Section(header: Text("Bewertung Arteninventar"))
                     {
-                        TextField("Bitte eingeben", text: $evaluationSpeciesInventory)
+                        TextField("Bitte eingeben", text: $evaluationSpeciesInventory ,axis: .vertical)
                     }
                     
                     Section(header: Text("Bewertung Habitatstrukturen"))
                     {
-                        TextField("Bitte eingeben", text: $assessmentHabitatStructure)
+                        TextField("Bitte eingeben", text: $assessmentHabitatStructure ,axis: .vertical)
                     }
                     Group{
                         Section(header: Text("Bewertung Beeinträchtigungen"))
                         {
-                            TextField("Bitte eingeben", text: $ratingImpairment)
+                            TextField("Bitte eingeben", text: $ratingImpairment ,axis: .vertical)
                         }
                         Section(header: Text("Gesamtbewertung Erhaltungszustand"))
                         {
-                            TextField("Bitte eingeben", text: $overallAssessmentOfTheStateOfPreservation)
+                            TextField("Bitte eingeben", text: $overallAssessmentOfTheStateOfPreservation ,axis: .vertical)
                         }
                         Section(header: Text("Schutzstatus"))
                         {
-                            TextField("Bitte eingeben", text: $protectionStatus)
+                            TextField("Bitte eingeben", text: $protectionStatus ,axis: .vertical)
                         }
                         Section(header: Text("Faunistische Beobachtungen"))
                         {
-                            TextField("Bitte eingeben", text: $faunisticObservation)
+                            TextField("Bitte eingeben", text: $faunisticObservation,axis: .vertical )
                         }
                     } 
                 }
