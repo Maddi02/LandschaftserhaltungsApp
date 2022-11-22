@@ -29,8 +29,6 @@ struct InformationAnderesBiotop: View {
                 Text("Hello, World! Anderes Biotop").navigationBarBackButtonHidden(true)
             }.navigationTitle("Information")
         }.navigationBarBackButtonHidden(true)
-
-        
     }
 }
 
