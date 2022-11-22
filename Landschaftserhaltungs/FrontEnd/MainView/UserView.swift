@@ -48,10 +48,11 @@ struct UserView: View {
                     }
                     
                 }.onAppear(perform: {
-
-                    loadImage()
-                    
+       
+                  //  userSettings.loadImage()
+                    self.image = userSettings.getImage()
                 })
+              
                 Section(header: Text("Bearbeitername")) {
                     HStack {
                         TextField("Vorname", text: $userSettings.firstName)
@@ -81,32 +82,18 @@ struct UserView: View {
                 
                 Button("Save")
                 {
-                    saveImage()
+                    userSettings.saveImage(image: self.image)
                     dismiss()
                     print("Button Saved was pressed")
                 }
             }.navigationBarTitle(Text("Profile"))
-        }.onAppear(perform: {
-            
-        })
+        }
         .sheet(isPresented: $isShownPhotoLibrary){
             ImagePicker(changePicture: false,  sourceType: .photoLibrary, selectedImage: self.$image)
-            
         }
     }
     
-    func saveImage() {
-        guard let data = self.image.jpegData(compressionQuality: 0.5) else { return }
-        let encoded = try! PropertyListEncoder().encode(data)
-        UserDefaults.standard.set(encoded, forKey: "KEY")
-    }
-    
-    func loadImage() {
-        guard let data = UserDefaults.standard.data(forKey: "KEY") else { return }
-        let decoded = try! PropertyListDecoder().decode(Data.self, from: data)
-        let image = UIImage(data: decoded)
-        self.image = image ?? UIImage()
-    }
+
 }
 
 struct UserView_Previews: PreviewProvider {

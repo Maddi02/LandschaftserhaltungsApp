@@ -11,6 +11,7 @@ import CoreData
 
 
 struct ImagePicker: UIViewControllerRepresentable {
+    @ObservedObject var userSettings = UserSettings()
     var changePicture : Bool
     var appContract = AppContract()
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
@@ -34,10 +35,8 @@ struct ImagePicker: UIViewControllerRepresentable {
         {
             appContract.picture = selectedImage
         }
-         
-       
-   
-
+        
+        
     }
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -55,8 +54,9 @@ struct ImagePicker: UIViewControllerRepresentable {
             if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                 
                 parent.selectedImage = image
-                
+               
             }
+            print("LETS SEWEW")
             
             parent.presentationMode.wrappedValue.dismiss()
         }
