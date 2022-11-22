@@ -238,6 +238,8 @@
 			children = (
 				22352404292705FD000126E1 /* InformationView */,
 				223AD57529186339009B5C1C /* SpeciesCensusView.swift */,
+				22A10888291C1C260071FF3A /* InformationFFHWiese.swift */,
+				22A1088A291C1CE50071FF3A /* InformationAnderesBiotop.swift */,
 				22A1087E291AF5FB0071FF3A /* LongTimeSpeciesCensus.swift */,
 			);
 			path = CountingViews;
@@ -258,8 +260,7 @@
 		22352404292705FD000126E1 /* InformationView */ = {
 			isa = PBXGroup;
 			children = (
-				22A1088A291C1CE50071FF3A /* InformationAnderesBiotop.swift */,
-				22A10888291C1C260071FF3A /* InformationFFHWiese.swift */,
+				225561CE29252F4100C645F6 /* SelectPlants */,
 			);
 			path = InformationView;
 			sourceTree = "<group>";
@@ -370,7 +371,6 @@
 				223524012927041B000126E1 /* HelpView */,
 				223524002927011B000126E1 /* NewContract */,
 				223523FB2927005F000126E1 /* MainView */,
-				225561CE29252F4100C645F6 /* SelectPlants */,
 				224F45FF28FD80E8004EA74F /* Assets.xcassets */,
 				224F462928FE014B004EA74F /* Onboarding */,
 			);
