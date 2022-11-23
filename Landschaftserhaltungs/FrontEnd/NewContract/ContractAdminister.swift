@@ -23,6 +23,7 @@ struct ContractAdminister: View {
     @State private var selection = "None"
     @State private var showingAlert = false
     @State private var showingActionSheet = false
+    @State private var typOfField = ""
     
     var body: some View {
         Text("Vetragsübersicht").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
@@ -58,8 +59,7 @@ struct ContractAdminister: View {
                     Button{
                         description = list.detailDescription ?? "Unknown"
                         showingActionSheet.toggle()
-        
-        
+                        typOfField = list.descriptionField ?? "Unknown"
                         listEntry = list.self
                         
                     }
@@ -99,11 +99,20 @@ struct ContractAdminister: View {
 
                     }
                 }
-                
-                NavigationLink(destination: ExportPreviewFFH(listEntry: listEntry)) {
-                    Button("Exportieren")
-                    {
-
+                if(typOfField == "FFH Mähwiese"){
+                    NavigationLink(destination: ExportPreviewFFH(listEntry: listEntry)) {
+                        Button("Exportieren")
+                        {
+                            
+                        }
+                    }
+                }
+                else {
+                    NavigationLink(destination: ExportPreviewOtherBiotop(listEntry: listEntry)) {
+                        Button("Exportieren")
+                        {
+                            
+                        }
                     }
                 }
             }
