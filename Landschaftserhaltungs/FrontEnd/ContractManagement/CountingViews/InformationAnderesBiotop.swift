@@ -7,7 +7,23 @@
 
 import SwiftUI
 
+struct partFieldArea : Identifiable {
+    var id = UUID()
+    var picuture : UIImage
+}
+
+class pictureVM : ObservableObject
+{
+    @Published var pictures : [partFieldArea] = [partFieldArea(picuture: UIImage()) ]
+    
+    
+}
+
+
+
 struct InformationAnderesBiotop: View {
+    @State private var removeUnneadedPicture = true
+    @StateObject var viewModelPicutre = pictureVM()
     @EnvironmentObject  var vm : ViewModel
     @State private var dataOfTaking = Date()
     @State private var farming : String = ""
@@ -93,54 +109,67 @@ struct InformationAnderesBiotop: View {
                             }.frame(maxWidth: .infinity ,alignment: .center)
                         }).confirmationDialog("Woher soll das Bild genommen werden", isPresented: $showingActionSheet, titleVisibility: .visible) {
                             
-                           
-                                Button("Foto aufnehmen")
-                                {
-                                    vm.source = .camera
-                                    vm.showPhotoPicker()
-                                }
+                            
+                            Button("Foto aufnehmen")
+                            {
+                                vm.source = .camera
+                                vm.showPhotoPicker()
+                            }
                             
                             
-                           
-                                Button("Foto aus Galerie wählen")
-                                {
-                                    vm.source = .library
-                                    vm.showPhotoPicker()
-                                    
-                                }
+                            
+                            Button("Foto aus Galerie wählen")
+                            {
+                                vm.source = .library
+                                vm.showPhotoPicker()
+                                
+                            }
                             
                         }
                         
-                        if let image = vm.image {
-                            ZoomableScrollView {
-                                Image(uiImage: image)
-                                    .resizable()
-                                    .scaledToFit()
-                                .frame(minWidth: 10, maxWidth: .infinity)
-                            }.scaledToFit()
-                        }  else{
+                        List{
+                      
+                            ForEach(viewModelPicutre.pictures)
+                            {
+                                i in
+                                
+                              
+                                    ZoomableScrollView {
+                                        Image(uiImage: i.picuture)
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(minWidth: 10, maxWidth: .infinity)
+                                    }.scaledToFit()
+                               
+                                
+                            }
+                  
                             
-                            Image(systemName: "photo.fill")
-                                .resizable()
-                                .scaledToFit()
-                                .opacity(0.6)
-                                .frame(minWidth: 10, maxWidth: .infinity)
-                                .padding(.horizontal)
-                            
-                        }
-                     
-                    }       .sheet(isPresented: $vm.showPicker){
-                        ImagePickerInformationSide(sourceType : vm.source == .library ? .photoLibrary : .camera, selectedImage: $vm.image).ignoresSafeArea()
-                    }
-                    .alert("Error", isPresented: $vm.showCameraAlert, presenting: vm.cameraError, actions: {
-                        cameraError in
-                        cameraError.button
-                    }, message: {
-                        cameraError in
-                        Text(cameraError.message)
-                    })
+                        }       .sheet(isPresented: $vm.showPicker){
+                            ImagePickerInformationSide(sourceType : vm.source == .library ? .photoLibrary : .camera, selectedImage: $vm.image).ignoresSafeArea()
                     
-            
+                        }.onChange(of: vm.image, perform: {newValue in
+                            
+                            if removeUnneadedPicture{
+                                if viewModelPicutre.pictures.count == 1
+                                {
+                                    viewModelPicutre.pictures.remove(at: 0)
+                                }
+                            }
+                            print("CHANGE")
+                            addToList(image: vm.image ?? UIImage())
+                            removeUnneadedPicture = false
+                        })
+                        .alert("Error", isPresented: $vm.showCameraAlert, presenting: vm.cameraError, actions: {
+                            cameraError in
+                            cameraError.button
+                        }, message: {
+                            cameraError in
+                            Text(cameraError.message)
+                        })
+                        
+                    }
+               
 
                     
                     NavigationLink(destination: FFHWieseConclusion()) {
@@ -150,6 +179,12 @@ struct InformationAnderesBiotop: View {
                 }
             }.navigationTitle("Information")
         }.navigationBarBackButtonHidden(true)
+    }
+    
+    
+    func addToList(image : UIImage){
+        let newImage = partFieldArea(picuture: image)
+        viewModelPicutre.pictures.append(newImage)
     }
 }
 

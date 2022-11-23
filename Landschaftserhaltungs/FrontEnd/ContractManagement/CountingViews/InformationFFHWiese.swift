@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InformationFFHWiese: View {
-    
+    @EnvironmentObject  var vm : ViewModel
     @State private var dataOfTaking = Date()
     @State private var farming : String = ""
     @State private var position : String = ""
@@ -31,16 +31,16 @@ struct InformationFFHWiese: View {
                 {
                     Section(header: Text("Datum"))
                     {
-                                DatePicker(selection: $dataOfTaking,
-                                           displayedComponents: [.date],
-                                           label: { Text("Datum der Begehung") })
-                                
+                        DatePicker(selection: $dataOfTaking,
+                                   displayedComponents: [.date],
+                                   label: { Text("Datum der Begehung") })
+                        
                     }
                     
                     Section(header: Text("Bewirtschaftung"))
                     {
                         TextField("Bitte eingeben", text: $farming ,axis: .vertical)
-                                
+                        
                     }
                     
                     Section(header: Text("Lage"))
@@ -85,34 +85,67 @@ struct InformationFFHWiese: View {
                             TextField("Bitte eingeben", text: $faunisticObservation,axis: .vertical )
                         }
                         
-                       
+                        
                     }
                     Button(action: {
                         print("Select")
                         showingActionSheet.toggle()
                     }, label: {
-                      
+                        
                         HStack{
                             Text("Füge Bilder hinzu")
                             Text(Image(systemName: "camera.on.rectangle.fill"))
                         }.frame(maxWidth: .infinity ,alignment: .center)
                     }).confirmationDialog("Woher soll das Bild genommen werden", isPresented: $showingActionSheet, titleVisibility: .visible) {
                         
-                        NavigationLink(destination: FrequencyEstimationField()) {
-                            Button("Galerie")
-                            {
-
-                            }
+                        
+                        Button("Foto aufnehmen")
+                        {
+                            vm.source = .camera
+                            vm.showPhotoPicker()
                         }
-
-                        NavigationLink(destination: FrequencyEstimationField()) {
-                            Button("Foto auswählen")
-                            {
-
-                            }
+                        
+                        
+                        
+                        Button("Foto aus Galerie wählen")
+                        {
+                            vm.source = .library
+                            vm.showPhotoPicker()
+                            
                         }
+                        
                     }
+                    
+                    if let image = vm.image {
+                        ZoomableScrollView {
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(minWidth: 10, maxWidth: .infinity)
+                        }.scaledToFit()
+                    }  else{
+                        
+                        Image(systemName: "photo.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .opacity(0.6)
+                            .frame(minWidth: 10, maxWidth: .infinity)
+                            .padding(.horizontal)
+                        
+                    }
+                    
+                }       .sheet(isPresented: $vm.showPicker){
+                    ImagePickerInformationSide(sourceType : vm.source == .library ? .photoLibrary : .camera, selectedImage: $vm.image).ignoresSafeArea()
                 }
+                .alert("Error", isPresented: $vm.showCameraAlert, presenting: vm.cameraError, actions: {
+                    cameraError in
+                    cameraError.button
+                }, message: {
+                    cameraError in
+                    Text(cameraError.message)
+                })
+            
+                
                 NavigationLink(destination: FFHWieseConclusion()) {
                     Text("Zur Zusammenfassung!")
                 }.navigationBarBackButtonHidden(true)
