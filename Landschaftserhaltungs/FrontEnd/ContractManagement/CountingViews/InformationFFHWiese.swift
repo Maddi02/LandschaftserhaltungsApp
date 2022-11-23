@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct InformationFFHWiese: View {
+    @State private var removeUnneadedPicture = true
     @EnvironmentObject  var vm : ViewModel
+    @StateObject var viewModelPicutre = pictureVM()
     @State private var dataOfTaking = Date()
     @State private var farming : String = ""
     @State private var position : String = ""
@@ -98,7 +100,6 @@ struct InformationFFHWiese: View {
                         }.frame(maxWidth: .infinity ,alignment: .center)
                     }).confirmationDialog("Woher soll das Bild genommen werden", isPresented: $showingActionSheet, titleVisibility: .visible) {
                         
-                        
                         Button("Foto aufnehmen")
                         {
                             vm.source = .camera
@@ -116,46 +117,68 @@ struct InformationFFHWiese: View {
                         
                     }
                     
-                    if let image = vm.image {
-                        ZoomableScrollView {
-                            Image(uiImage: image)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(minWidth: 10, maxWidth: .infinity)
-                        }.scaledToFit()
-                    }  else{
+                    List{
+                  
+                        ForEach(viewModelPicutre.pictures)
+                        {
+                            i in
+                            
+                          
+                                ZoomableScrollView {
+                                    Image(uiImage: i.picuture)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(minWidth: 10, maxWidth: .infinity)
+                                }.scaledToFit()
+                           
+                            
+                        }
+              
                         
-                        Image(systemName: "photo.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .opacity(0.6)
-                            .frame(minWidth: 10, maxWidth: .infinity)
-                            .padding(.horizontal)
+                    }       .sheet(isPresented: $vm.showPicker){
+                        ImagePickerInformationSide(sourceType : vm.source == .library ? .photoLibrary : .camera, selectedImage: $vm.image).ignoresSafeArea()
+                
+                    }.onChange(of: vm.image, perform: {newValue in
                         
-                    }
+                        if removeUnneadedPicture{
+                            if viewModelPicutre.pictures.count == 1
+                            {
+                                viewModelPicutre.pictures.remove(at: 0)
+                            }
+                        }
+                        print("CHANGE")
+                        addToList(image: vm.image ?? UIImage())
+                        removeUnneadedPicture = false
+                    })
+                    .alert("Error", isPresented: $vm.showCameraAlert, presenting: vm.cameraError, actions: {
+                        cameraError in
+                        cameraError.button
+                    }, message: {
+                        cameraError in
+                        Text(cameraError.message)
+                    })
                     
-                }       .sheet(isPresented: $vm.showPicker){
-                    ImagePickerInformationSide(sourceType : vm.source == .library ? .photoLibrary : .camera, selectedImage: $vm.image).ignoresSafeArea()
                 }
-                .alert("Error", isPresented: $vm.showCameraAlert, presenting: vm.cameraError, actions: {
-                    cameraError in
-                    cameraError.button
-                }, message: {
-                    cameraError in
-                    Text(cameraError.message)
-                })
-            
+           
+
                 
                 NavigationLink(destination: FFHWieseConclusion()) {
                     Text("Zur Zusammenfassung!")
                 }.navigationBarBackButtonHidden(true)
 
+            }
+
             }.navigationTitle("Information")
  
-        }.navigationBarBackButtonHidden(true)
+        }
         
+    func addToList(image : UIImage){
+        let newImage = partFieldArea(picuture: image)
+        viewModelPicutre.pictures.append(newImage)
     }
-}
+    
+    }
+
 
 struct InformationFFHWiese_Previews: PreviewProvider {
     static var previews: some View {

@@ -7,18 +7,6 @@
 
 import SwiftUI
 
-struct partFieldArea : Identifiable {
-    var id = UUID()
-    var picuture : UIImage
-}
-
-class pictureVM : ObservableObject
-{
-    @Published var pictures : [partFieldArea] = [partFieldArea(picuture: UIImage()) ]
-    
-    
-}
-
 
 
 struct InformationAnderesBiotop: View {
