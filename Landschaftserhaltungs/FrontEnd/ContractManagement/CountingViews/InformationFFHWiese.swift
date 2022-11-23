@@ -24,6 +24,9 @@ struct InformationFFHWiese: View {
     @State private var protectionStatus  : String = ""
     @State private var overallAssessmentOfTheStateOfPreservation  : String = ""
     @State private var faunisticObservation  : String = ""
+    @State private var contractTarget  : String = ""
+    @State private var adaptationEditions  : String = ""
+    @State private var furtherMaintenanceMeasures  : String = ""
     @State private var showingActionSheet = false
     
     var body: some View {
@@ -87,6 +90,21 @@ struct InformationFFHWiese: View {
                         Section(header: Text("Faunistische Beobachtungen"))
                         {
                             TextField("Bitte eingeben", text: $faunisticObservation,axis: .vertical )
+                        }
+                        
+                        Section(header: Text("Vertragsziel erfüllt"))
+                        {
+                            TextField("Bitte eingeben", text: $contractTarget,axis: .vertical )
+                        }
+                        
+                        Section(header: Text("Anpassung Auflagen"))
+                        {
+                            TextField("Bitte eingeben", text: $adaptationEditions,axis: .vertical )
+                        }
+                        
+                        Section(header: Text("Weitere Pflegemaßnahmen"))
+                        {
+                            TextField("Bitte eingeben", text: $furtherMaintenanceMeasures,axis: .vertical )
                         }
                         
                         
@@ -164,7 +182,7 @@ struct InformationFFHWiese: View {
            
 
                 
-                NavigationLink(destination: ExportPreview(listEntry: listEntry).onAppear(perform: {
+                NavigationLink(destination: ExportPreviewFFH(listEntry: listEntry).onAppear(perform: {
                     save()
                 })) {
                     Text("Zur Zusammenfassung!")

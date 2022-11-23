@@ -27,7 +27,7 @@ struct InformationAnderesBiotop: View {
     @State private var adaptationEditions  : String = ""
     @State private var furtherMaintenanceMeasures  : String = ""
     @State private var showingActionSheet = false
-    
+   
     
     var body: some View {
        
@@ -86,6 +86,7 @@ struct InformationAnderesBiotop: View {
                             {
                                 TextField("Bitte eingeben", text: $furtherMaintenanceMeasures,axis: .vertical )
                             }
+                            
                         }
                         
                         Button(action: {
@@ -162,7 +163,7 @@ struct InformationAnderesBiotop: View {
                
 
                     
-                    NavigationLink(destination: ExportPreview(listEntry: listEntry).onAppear(perform: {
+                    NavigationLink(destination: ExportPreviewOtherBiotop(listEntry: listEntry).onAppear(perform: {
                         save()
                     })) {
                         Text("Zur Zusammenfassung!")

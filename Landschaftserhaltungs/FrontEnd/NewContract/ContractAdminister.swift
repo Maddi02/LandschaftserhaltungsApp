@@ -99,7 +99,8 @@ struct ContractAdminister: View {
 
                     }
                 }
-                NavigationLink(destination: ExportPreview(listEntry: listEntry)) {
+                
+                NavigationLink(destination: ExportPreviewFFH(listEntry: listEntry)) {
                     Button("Exportieren")
                     {
 

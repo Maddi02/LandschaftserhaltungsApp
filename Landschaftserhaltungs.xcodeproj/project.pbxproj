@@ -19,7 +19,7 @@
 		223AD5262917CBDA009B5C1C /* ToggleCheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD5252917CBDA009B5C1C /* ToggleCheckboxStyle.swift */; };
 		223AD56E291845D3009B5C1C /* EditListItemContractArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD56D291845D3009B5C1C /* EditListItemContractArea.swift */; };
 		223AD572291861AD009B5C1C /* FrequencyEstimationField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD571291861AD009B5C1C /* FrequencyEstimationField.swift */; };
-		223AD5742918623C009B5C1C /* ExportPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD5732918623C009B5C1C /* ExportPreview.swift */; };
+		223AD5742918623C009B5C1C /* ExportPreviewFFH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD5732918623C009B5C1C /* ExportPreviewFFH.swift */; };
 		223AD57629186339009B5C1C /* SpeciesCensusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD57529186339009B5C1C /* SpeciesCensusView.swift */; };
 		223AD57829192815009B5C1C /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD57729192815009B5C1C /* CounterViewModel.swift */; };
 		223AD581291940D7009B5C1C /* AppStateDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 223AD57F291940D7009B5C1C /* AppStateDataModel.xcdatamodeld */; };
@@ -78,6 +78,7 @@
 		226C67DC292E180F0049958A /* PicutreList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67D8292E180F0049958A /* PicutreList+CoreDataProperties.swift */; };
 		226C67E0292E87180049958A /* RowViewShortTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67DF292E87180049958A /* RowViewShortTerm.swift */; };
 		226C67E2292E95070049958A /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67E1292E95070049958A /* NavigationUtil.swift */; };
+		226C67E4292ECCE40049958A /* ExportPreviewOtherBiotop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67E3292ECCE40049958A /* ExportPreviewOtherBiotop.swift */; };
 		227FAAC4291E4BC700D747DA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227FAAC3291E4BC700D747DA /* SearchBar.swift */; };
 		227FAB33291ED81700D747DA /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227FAB32291ED81700D747DA /* CheckBoxView.swift */; };
 		22A108792919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A108782919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift */; };
@@ -121,7 +122,7 @@
 		223AD5252917CBDA009B5C1C /* ToggleCheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCheckboxStyle.swift; sourceTree = "<group>"; };
 		223AD56D291845D3009B5C1C /* EditListItemContractArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditListItemContractArea.swift; sourceTree = "<group>"; };
 		223AD571291861AD009B5C1C /* FrequencyEstimationField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyEstimationField.swift; sourceTree = "<group>"; };
-		223AD5732918623C009B5C1C /* ExportPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportPreview.swift; sourceTree = "<group>"; };
+		223AD5732918623C009B5C1C /* ExportPreviewFFH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportPreviewFFH.swift; sourceTree = "<group>"; };
 		223AD57529186339009B5C1C /* SpeciesCensusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesCensusView.swift; sourceTree = "<group>"; };
 		223AD57729192815009B5C1C /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 		223AD580291940D7009B5C1C /* AppStateDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppStateDataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -183,6 +184,7 @@
 		226C67D8292E180F0049958A /* PicutreList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PicutreList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		226C67DF292E87180049958A /* RowViewShortTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViewShortTerm.swift; sourceTree = "<group>"; };
 		226C67E1292E95070049958A /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
+		226C67E3292ECCE40049958A /* ExportPreviewOtherBiotop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportPreviewOtherBiotop.swift; sourceTree = "<group>"; };
 		227FAAC3291E4BC700D747DA /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		227FAB32291ED81700D747DA /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		22A108782919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSelectPlantsShortTerm.swift; sourceTree = "<group>"; };
@@ -280,7 +282,8 @@
 			children = (
 				22455CF928FF27B5002876AD /* ManageContractView.swift */,
 				223AD571291861AD009B5C1C /* FrequencyEstimationField.swift */,
-				223AD5732918623C009B5C1C /* ExportPreview.swift */,
+				223AD5732918623C009B5C1C /* ExportPreviewFFH.swift */,
+				226C67E3292ECCE40049958A /* ExportPreviewOtherBiotop.swift */,
 				223AD56D291845D3009B5C1C /* EditListItemContractArea.swift */,
 				2235240229270541000126E1 /* CountingViews */,
 			);
@@ -634,7 +637,7 @@
 			files = (
 				22A1087B2919CDCC0071FF3A /* TimerView.swift in Sources */,
 				226C67CE292D74C30049958A /* PickerModel.swift in Sources */,
-				223AD5742918623C009B5C1C /* ExportPreview.swift in Sources */,
+				223AD5742918623C009B5C1C /* ExportPreviewFFH.swift in Sources */,
 				22455CF628FF03BC002876AD /* CreateNewContract.swift in Sources */,
 				223AD52229157DF1009B5C1C /* ListItemContractArea.swift in Sources */,
 				224F463128FE06E4004EA74F /* ThirdFeatureOverview.swift in Sources */,
@@ -682,6 +685,7 @@
 				22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */,
 				224F462F28FE06CD004EA74F /* SecondFeatureOverview.swift in Sources */,
 				226C67D0292D76DC0049958A /* ImagePickerInformationSide.swift in Sources */,
+				226C67E4292ECCE40049958A /* ExportPreviewOtherBiotop.swift in Sources */,
 				223BB354291147380064927A /* WrappedTextView.swift in Sources */,
 				223AD5DC29199C53009B5C1C /* PlantSpeciesItem+CoreDataClass.swift in Sources */,
 				223AD572291861AD009B5C1C /* FrequencyEstimationField.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ExportPreview: View {
+struct ExportPreviewFFH: View {
     @StateObject var listEntry: ListEntry
     var body: some View {
         
