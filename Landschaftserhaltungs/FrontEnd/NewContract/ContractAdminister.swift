@@ -88,7 +88,7 @@ struct ContractAdminister: View {
                 NavigationLink(destination: SpeciesCensusView( listEntry: listEntry, description:  self.description)) {
                     Button("Artenzählung")
                     {
-
+                    
                     }
                 }
 
@@ -98,7 +98,7 @@ struct ContractAdminister: View {
 
                     }
                 }
-                NavigationLink(destination: ExportPreview()) {
+                NavigationLink(destination: ExportPreview(listEntry: listEntry)) {
                     Button("Exportieren")
                     {
 

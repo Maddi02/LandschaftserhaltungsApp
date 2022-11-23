@@ -8,13 +8,29 @@
 import SwiftUI
 
 struct ExportPreview: View {
+    var listEntry: ListEntry
     var body: some View {
+        
+       Text("Pflanzen aus der Schnellaufnahme")
+        List{
+            ForEach(listEntry.PlantArray)
+            {
+                i in
+                Text(i.scientificName ?? "hhh")
+            }
+        }
+        
+        Text("Pflanzen aus der Langaufnahme")
+         List{
+             ForEach(listEntry.PlantArrayLongTerm)
+             {
+                 i in
+                 Text(i.scientificName ?? "hhh")
+             }
+         }
+        
         Text("Hello, ExportView!")
     }
 }
 
-struct ExportPreview_Previews: PreviewProvider {
-    static var previews: some View {
-        ExportPreview()
-    }
-}
+
