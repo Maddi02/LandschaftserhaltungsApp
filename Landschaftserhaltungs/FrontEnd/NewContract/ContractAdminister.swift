@@ -85,6 +85,7 @@ struct ContractAdminister: View {
                 }
                 
             }.confirmationDialog("Wähle die Art der Zählung aus", isPresented: $showingActionSheet, titleVisibility: .visible) {
+                
                 NavigationLink(destination: SpeciesCensusView( listEntry: listEntry, description:  self.description)) {
                     Button("Artenzählung")
                     {

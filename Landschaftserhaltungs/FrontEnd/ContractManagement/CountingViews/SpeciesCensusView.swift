@@ -7,12 +7,31 @@
 
 import SwiftUI
 import CoreData
+
+struct alertView : View
+{
+    @Environment(\.dismiss) var dismiss
+    @State var showAlert : Bool
+    var body: some View{
+        Text("Sie können keine neue Aufnahme starten. --> Daten schon vorhandne").alert("Daten schon vorhanden", isPresented: $showAlert) {
+            Button("Zurück", role: .cancel) {
+              dismiss()
+            }
+    }
+    }
+    
+    
+}
+
+
+
 struct SpeciesCensusView: View {
     
     @Environment(\.managedObjectContext) var moc
     @StateObject var plantSpeciesDataModel = PlantSpeciesDataModel()
     @StateObject var listEntry : ListEntry
     @State private var showSelectionView = false
+    @State private var showingAlert = false
     @State var fieldDescription : String = ""
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private let  width : Double = 250
@@ -21,20 +40,32 @@ struct SpeciesCensusView: View {
     var body: some View {
         
         VStack{
-            Text("Schnellaufnahme").font(Font.title).frame(maxWidth: .infinity , alignment: .topLeading)
-            Text("\(description) ").font(Font.title3).frame(maxWidth: .infinity , alignment: .topLeading)
-        }
-        
-        Form{
             
-            Section(header: Text("Description"))
+            
+            if(listEntry.PlantArray.count > 0  || listEntry.PlantArrayLongTerm.count > 0)
             {
-                TextField("Fügen Sie ein Beschreibung hinzu", text: $fieldDescription)
+                alertView(showAlert: true)
+               
             }
             
-            NavigationLink(destination: SheetSelectPlantsShortTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies: plantSpeciesDataModel.platList, speciesCensusView: self, listEntry: listEntry)){
+            else
+            {
+                Text("Schnellaufnahme").font(Font.title).frame(maxWidth: .infinity , alignment: .topLeading)
+                Text("\(description) ").font(Font.title3).frame(maxWidth: .infinity , alignment: .topLeading)
                 
-                Text("Wähle Pflanze aus")
+                
+                Form{
+                    
+                    Section(header: Text("Description"))
+                    {
+                        TextField("Fügen Sie ein Beschreibung hinzu", text: $fieldDescription)
+                    }
+                    
+                    NavigationLink(destination: SheetSelectPlantsShortTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies: plantSpeciesDataModel.platList, speciesCensusView: self, listEntry: listEntry)){
+                        
+                        Text("Wähle Pflanze aus")
+                    }
+                }
             }
         }
         
@@ -126,5 +157,6 @@ struct SpeciesCensusView: View {
         }
         
     }
+    
 }
 
