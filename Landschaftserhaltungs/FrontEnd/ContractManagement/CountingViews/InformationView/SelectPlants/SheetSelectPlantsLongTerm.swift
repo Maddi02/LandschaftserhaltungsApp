@@ -89,10 +89,10 @@ struct SheetSelectPlantsLongTerm: View {
 
              if(listEntry.descriptionField == "FFH Mähwiese")
              {
-                 return AnyView(InformationFFHWiese())
+                 return AnyView(InformationFFHWiese(listEntry: listEntry))
              }
              else {
-                 return AnyView(InformationAnderesBiotop())
+                 return AnyView(InformationAnderesBiotop(listEntry: listEntry))
              }
 
          }

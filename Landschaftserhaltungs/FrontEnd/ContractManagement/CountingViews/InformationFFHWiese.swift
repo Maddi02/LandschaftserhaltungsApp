@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct InformationFFHWiese: View {
+    @State var listEntry : ListEntry
     @State private var removeUnneadedPicture = true
     @EnvironmentObject  var vm : ViewModel
     @StateObject var viewModelPicutre = pictureVM()
@@ -162,7 +163,7 @@ struct InformationFFHWiese: View {
            
 
                 
-                NavigationLink(destination: FFHWieseConclusion()) {
+                NavigationLink(destination: ExportPreview(listEntry: listEntry)) {
                     Text("Zur Zusammenfassung!")
                 }.navigationBarBackButtonHidden(true)
 
@@ -179,9 +180,3 @@ struct InformationFFHWiese: View {
     
     }
 
-
-struct InformationFFHWiese_Previews: PreviewProvider {
-    static var previews: some View {
-        InformationFFHWiese()
-    }
-}

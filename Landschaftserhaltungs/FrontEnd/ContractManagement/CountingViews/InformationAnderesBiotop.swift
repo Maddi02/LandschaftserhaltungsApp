@@ -10,6 +10,7 @@ import SwiftUI
 
 
 struct InformationAnderesBiotop: View {
+    @State var listEntry : ListEntry
     @State private var removeUnneadedPicture = true
     @StateObject var viewModelPicutre = pictureVM()
     @EnvironmentObject  var vm : ViewModel
@@ -160,7 +161,7 @@ struct InformationAnderesBiotop: View {
                
 
                     
-                    NavigationLink(destination: FFHWieseConclusion()) {
+                    NavigationLink(destination: ExportPreview(listEntry: listEntry)) {
                         Text("Zur Zusammenfassung!")
                     }.navigationBarBackButtonHidden(true)
 
@@ -176,8 +177,3 @@ struct InformationAnderesBiotop: View {
     }
 }
 
-struct InformationAnderesBiotop_Previews: PreviewProvider {
-    static var previews: some View {
-        InformationAnderesBiotop().environmentObject(ViewModel())
-    }
-}
