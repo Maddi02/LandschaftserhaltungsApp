@@ -24,6 +24,7 @@ struct InformationAnderesBiotop: View {
     @State private var overallAssessmentOfTheStateOfPreservation  : String = ""
     @State private var faunisticObservation  : String = ""
     @State private var contractTarget  : String = ""
+    @State private var protectionStatus  : String = ""
     @State private var adaptationEditions  : String = ""
     @State private var furtherMaintenanceMeasures  : String = ""
     @State private var showingActionSheet = false
@@ -70,6 +71,11 @@ struct InformationAnderesBiotop: View {
                             Section(header: Text("Faunistische Beobachtungen"))
                             {
                                 TextField("Bitte eingeben", text: $faunisticObservation,axis: .vertical )
+                            }
+                            
+                            Section(header: Text("Schutzstatus"))
+                            {
+                                TextField("Bitte eingeben", text: $protectionStatus,axis: .vertical )
                             }
                             
                             Section(header: Text("Vertragsziel erfüllt"))
@@ -179,6 +185,15 @@ struct InformationAnderesBiotop: View {
         let plant = FieldInformation(context: moc)
         plant.listEntry = listEntry
         plant.bloomAspect = bloomAspect
+        plant.dataOfTaking = dataOfTaking
+        plant.farming = farming
+        plant.position = position
+        plant.vegetationDescription = vegetationDescription
+        plant.protectionStatus = protectionStatus
+        plant.faunisticObservation = faunisticObservation
+        plant.contractTarget = contractTarget
+        plant.furtherMaintenanceMeasures = furtherMaintenanceMeasures
+        plant.adaptationEditions = adaptationEditions
         
         
         

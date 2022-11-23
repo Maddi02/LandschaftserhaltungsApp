@@ -198,10 +198,41 @@ struct InformationFFHWiese: View {
     
     func save()
     {
+        
+        /*
+         
+         @State private var dataOfTaking = Date()
+         @State private var farming : String = ""
+         @State private var position : String = ""
+         @State private var vegetationDescription : String = ""
+         @State private var bloomAspect : String = ""
+         @State private var evaluationSpeciesInventory : String = ""
+         @State private var assessmentHabitatStructure : String = ""
+         @State private var ratingImpairment  : String = ""
+         @State private var protectionStatus  : String = ""
+         @State private var overallAssessmentOfTheStateOfPreservation  : String = ""
+         @State private var faunisticObservation  : String = ""
+         @State private var contractTarget  : String = ""
+         @State private var adaptationEditions  : String = ""
+         @State private var furtherMaintenanceMeasures  : String = ""
+         */
         print("IN save")
         let plant = FieldInformation(context: moc)
         plant.listEntry = listEntry
         plant.bloomAspect = bloomAspect
+        plant.dataOfTaking = dataOfTaking
+        plant.farming = farming
+        plant.position = position
+        plant.vegetationDescription = vegetationDescription
+        plant.evaluationSpeciesInventory = evaluationSpeciesInventory
+        plant.assessmentHabitatStructure = assessmentHabitatStructure
+        plant.ratingImpairment = ratingImpairment
+        plant.protectionStatus = protectionStatus
+        plant.overallAssessmentOfTheStateOfPreservation = overallAssessmentOfTheStateOfPreservation
+        plant.faunisticObservation = faunisticObservation
+        plant.contractTarget = contractTarget
+        plant.adaptationEditions = adaptationEditions
+        plant.furtherMaintenanceMeasures = furtherMaintenanceMeasures
         
   
         
