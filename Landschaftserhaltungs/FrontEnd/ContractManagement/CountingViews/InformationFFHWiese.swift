@@ -184,6 +184,7 @@ struct InformationFFHWiese: View {
         let plant = FieldInformation(context: moc)
         plant.listEntry = listEntry
         plant.bloomAspect = "DEINE MUM"
+        
   
         
         do{

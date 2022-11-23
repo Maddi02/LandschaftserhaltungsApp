@@ -10,6 +10,7 @@ import SwiftUI
 
 
 struct InformationAnderesBiotop: View {
+    @Environment(\.managedObjectContext) var moc
     @State var listEntry : ListEntry
     @State private var removeUnneadedPicture = true
     @StateObject var viewModelPicutre = pictureVM()
@@ -161,7 +162,9 @@ struct InformationAnderesBiotop: View {
                
 
                     
-                    NavigationLink(destination: ExportPreview(listEntry: listEntry)) {
+                    NavigationLink(destination: ExportPreview(listEntry: listEntry).onAppear(perform: {
+                        save()
+                    })) {
                         Text("Zur Zusammenfassung!")
                     }.navigationBarBackButtonHidden(true)
 
@@ -169,11 +172,29 @@ struct InformationAnderesBiotop: View {
             }.navigationTitle("Information")
         }.navigationBarBackButtonHidden(true)
     }
-    
-    
-    func addToList(image : UIImage){
-        let newImage = partFieldArea(picuture: image)
-        viewModelPicutre.pictures.append(newImage)
+    func save()
+    {
+        print("IN save")
+        let plant = FieldInformation(context: moc)
+        plant.listEntry = listEntry
+        plant.bloomAspect = "DEINE Hure"
+        
+        
+        
+        do{
+            try moc.save()
+            
+        }
+        catch
+        {
+            print("ERROR")
+        }
     }
+        
+        func addToList(image : UIImage){
+            let newImage = partFieldArea(picuture: image)
+            viewModelPicutre.pictures.append(newImage)
+        }
+    
 }
 
