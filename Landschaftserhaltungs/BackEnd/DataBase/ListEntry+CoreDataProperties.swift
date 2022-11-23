@@ -24,6 +24,7 @@ extension ListEntry {
     @NSManaged public var contract: AppContract?
     @NSManaged public var plant: NSSet?
     @NSManaged public var longTermPlant: NSSet?
+    @NSManaged public var infos : FieldInformation?
     
     var PlantArray : [PlantSpeciesItem] {
         let set = plant as? Set<PlantSpeciesItem> ?? []

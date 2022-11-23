@@ -25,6 +25,30 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
+    <entity name="FieldInformation" representedClassName="FieldInformation" syncable="YES">
+        <attribute name="adaptationEditions" optional="YES" attributeType="String"/>
+        <attribute name="assessmentHabitatStructure" optional="YES" attributeType="String"/>
+        <attribute name="bloomAspect" optional="YES" attributeType="String"/>
+        <attribute name="contractTarget" optional="YES" attributeType="String"/>
+        <attribute name="dataOfTaking" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="evaluationSpeciesInventory" optional="YES" attributeType="String"/>
+        <attribute name="farming" optional="YES" attributeType="String"/>
+        <attribute name="faunisticObservation" optional="YES" attributeType="String"/>
+        <attribute name="furtherMaintenanceMeasures" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="overallAssessmentOfTheStateOfPreservation" optional="YES" attributeType="String"/>
+        <attribute name="position" optional="YES" attributeType="String"/>
+        <attribute name="protectionStatus" optional="YES" attributeType="String"/>
+        <attribute name="ratingImpairment" optional="YES" attributeType="String"/>
+        <attribute name="vegetationDescription" optional="YES" attributeType="String"/>
+        <relationship name="listEntry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListEntry" inverseName="infos" inverseEntity="ListEntry"/>
+        <relationship name="pictures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PicutreList" inverseName="listOfPictures" inverseEntity="PicutreList"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
     <entity name="ListEntry" representedClassName="ListEntry" syncable="YES">
         <attribute name="dateOfObservation" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="descriptionField" optional="YES" attributeType="String"/>
@@ -32,11 +56,22 @@
         <attribute name="listUUID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="contract" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AppContract" inverseName="list" inverseEntity="AppContract"/>
+        <relationship name="infos" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FieldInformation" inverseName="listEntry" inverseEntity="FieldInformation"/>
         <relationship name="longTermPlant" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlantSpeciesLongTermItem" inverseName="speciesLongTerm" inverseEntity="PlantSpeciesLongTermItem"/>
         <relationship name="plant" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlantSpeciesItem" inverseName="species" inverseEntity="PlantSpeciesItem"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="listUUID"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="PicutreList" representedClassName="PicutreList" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="picutre" optional="YES" attributeType="Transformable" valueTransformerName="UIImageTransformer" customClassName="UIImage"/>
+        <relationship name="listOfPictures" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FieldInformation" inverseName="pictures" inverseEntity="FieldInformation"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
