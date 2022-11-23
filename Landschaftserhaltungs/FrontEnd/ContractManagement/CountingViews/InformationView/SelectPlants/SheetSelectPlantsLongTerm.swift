@@ -31,7 +31,7 @@ struct SheetSelectPlantsLongTerm: View {
         }), id: \.key) { categoryName, devicesArray in
             HeaderView(title: categoryName)
             ForEach(devicesArray) { name in
-                RowViewLongTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies : plantSpecies, checked: name.isChecked, listEntry: listEntry, text: name.germanName)
+                RowViewLongTerm(plant: name, plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies : plantSpecies, checked: name.isChecked, listEntry: listEntry, text: name.germanName)
             }
         }
     }
@@ -42,7 +42,7 @@ struct SheetSelectPlantsLongTerm: View {
         }), id: \.key) { categoryName, devicesArray in
             HeaderView(title: categoryName)
             ForEach(devicesArray) { name in
-                RowViewLongTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies : plantSpecies, checked: name.isChecked, listEntry: listEntry, text: name.scientificName)
+                RowViewLongTerm(plant: name, plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies : plantSpecies, checked: name.isChecked, listEntry: listEntry, text: name.scientificName)
             }
         }
         
@@ -140,7 +140,7 @@ struct SheetSelectPlantsLongTerm: View {
                         }
                     }
                     
-                    
+                  /*
                     if (listEntry.PlantArrayLongTerm.count == 0)
                     {
                         let plant = PlantSpeciesLongTermItem(context: moc)
@@ -155,6 +155,7 @@ struct SheetSelectPlantsLongTerm: View {
                             print("Error saving: \(error)")
                         }
                     }
+                   */
                 }
             
             }
@@ -163,7 +164,7 @@ struct SheetSelectPlantsLongTerm: View {
     
     private func contains(str: String) -> Bool
     {
-        for i in listEntry.PlantArrayLongTerm
+        for i in listEntry.PlantArray
         {
             if(i.scientificName == str)
             {

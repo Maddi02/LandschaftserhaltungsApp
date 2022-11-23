@@ -60,6 +60,7 @@ struct LongTimeSpeciesCensus: View {
             }
             Section(header: Text("Schon gespeicherte Pflanzen aus Schnellaufnahme"))
             {
+                
                 List{
                     ForEach(listEntry.PlantArray)
                     {
@@ -74,6 +75,7 @@ struct LongTimeSpeciesCensus: View {
                         
                         if(userSettings.getSelectedLanguage() == "Latein")
                         {
+                          //  print(listEntry.PlantArray.count())
                             Text(list.scientificName  ?? "N")
                         }
                         
@@ -111,51 +113,58 @@ struct LongTimeSpeciesCensus: View {
     public func saveEntrysLongTerm()
     {
         
-        let plant = PlantSpeciesLongTermItem(context: moc)
-        plant.descriptionFieldLongTerm = description
-        print("Size \(listEntry.PlantArrayLongTerm.count)")
         
         
-        for list in plantSpeciesDataModel.platList
+        print("Size \(listEntry.PlantArray.count)")
+        print("Size \(listEntry.PlantArray.count)")
+        let plant = PlantSpeciesItem(context: moc)
+        plant.descriptionField = description
+        
+        
+        for (_ ,list1) in plantSpeciesDataModel.germanList
         {
             
-            
-            if(list.isChecked){
-                if(contains(str: list.scientificName))
-                {
-                    print("Found")
-                }
-                else{
-                    let plant = PlantSpeciesLongTermItem(context: moc)
-                  
-                    plant.speciesLongTerm = listEntry
-                    plant.scientificName =  list.scientificName
-                    plant.southernGaelandschaften = list.southernGaelandschaften
-                    plant.schaebischeAlb = list.schaebischeAlb
-                    plant.responsibility = list.responsibility
-                    plant.redListBw = list.redListBw
-                    plant.odenWald = list.odenWald
-                    plant.oberReihnArea = list.oberReihnArea
-                    plant.nothernGaelandschaften = list.nothernGaelandschaften
-                    plant.germanName = list.germanName
-                    plant.checked = list.isChecked
-                    plant.blackForest = list.blackForest
-                    plant.alpenvorland = list.alpenvorland
-                    print(list.scientificName)
-                    
-                    do {
-                        try moc.save()
-                        print("Success")
-                    } catch {
-                        print("Error saving: \(error)")
+            for list in list1{
+                print("ergeger \(list.germanName) \(list.isChecked)")
+                
+                if(list.isChecked){
+                    print(list.germanName)
+                    if(contains(str: list.germanName))
+                    {
+                        print("Found")
+                    }
+                    else{
+                        print("try to insert ")
+                        let plant = PlantSpeciesLongTermItem(context: moc)
+                        plant.speciesLongTerm = listEntry
+                        plant.scientificName = list.scientificName
+                        plant.southernGaelandschaften = list.southernGaelandschaften
+                        plant.schaebischeAlb = list.schaebischeAlb
+                        plant.responsibility = list.responsibility
+                        plant.redListBw = list.redListBw
+                        plant.odenWald = list.odenWald
+                        plant.oberReihnArea = list.oberReihnArea
+                        plant.nothernGaelandschaften = list.nothernGaelandschaften
+                        plant.germanName = list.germanName
+                        plant.checked = list.isChecked
+                        plant.blackForest = list.blackForest
+                        plant.alpenvorland = list.alpenvorland
+                        print(list.scientificName)
+                        
+                        do {
+                            try moc.save()
+                            print("Success")
+                        } catch {
+                            print("Error saving: \(error)")
+                        }
                     }
                 }
                 
                 
-                if (listEntry.PlantArrayLongTerm.count == 0)
+                if (listEntry.PlantArray.count == 0)
                 {
-                    let plant = PlantSpeciesLongTermItem(context: moc)
-                    plant.speciesLongTerm = listEntry
+                    let plant = PlantSpeciesItem(context: moc)
+                    plant.species = listEntry
                     plant.scientificName = list.scientificName
                     print(list.scientificName)
                     
@@ -167,9 +176,9 @@ struct LongTimeSpeciesCensus: View {
                     }
                 }
             }
-        
+            
+            
         }
-       
         
     }
     

@@ -104,7 +104,7 @@ struct SpeciesCensusView: View {
                     }
                 }
                 
-                
+                /*
                 if (listEntry.PlantArray.count == 0)
                 {
                     let plant = PlantSpeciesItem(context: moc)
@@ -119,6 +119,7 @@ struct SpeciesCensusView: View {
                         print("Error saving: \(error)")
                     }
                 }
+                 */
             }
             
             

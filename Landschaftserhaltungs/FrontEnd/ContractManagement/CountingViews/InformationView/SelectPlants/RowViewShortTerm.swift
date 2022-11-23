@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct RowViewLongTerm: View {
+struct RowViewShortTerm: View {
     @State var plant : PlantSpecies
     @ObservedObject var plantSpeciesDataModel : PlantSpeciesDataModel
     @State  var plantSpecies : [PlantSpecies]
@@ -39,7 +39,6 @@ struct RowViewLongTerm: View {
                     
                 })
                
-                    
             }
         }
 

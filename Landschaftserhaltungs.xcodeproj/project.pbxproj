@@ -76,6 +76,7 @@
 		226C67DA292E180F0049958A /* FieldInformation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67D6292E180F0049958A /* FieldInformation+CoreDataProperties.swift */; };
 		226C67DB292E180F0049958A /* PicutreList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67D7292E180F0049958A /* PicutreList+CoreDataClass.swift */; };
 		226C67DC292E180F0049958A /* PicutreList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67D8292E180F0049958A /* PicutreList+CoreDataProperties.swift */; };
+		226C67E0292E87180049958A /* RowViewShortTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67DF292E87180049958A /* RowViewShortTerm.swift */; };
 		227FAAC4291E4BC700D747DA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227FAAC3291E4BC700D747DA /* SearchBar.swift */; };
 		227FAB33291ED81700D747DA /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227FAB32291ED81700D747DA /* CheckBoxView.swift */; };
 		22A108792919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A108782919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift */; };
@@ -179,6 +180,7 @@
 		226C67D6292E180F0049958A /* FieldInformation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FieldInformation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		226C67D7292E180F0049958A /* PicutreList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PicutreList+CoreDataClass.swift"; sourceTree = "<group>"; };
 		226C67D8292E180F0049958A /* PicutreList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PicutreList+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		226C67DF292E87180049958A /* RowViewShortTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViewShortTerm.swift; sourceTree = "<group>"; };
 		227FAAC3291E4BC700D747DA /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		227FAB32291ED81700D747DA /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		22A108782919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSelectPlantsShortTerm.swift; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 				225561D129252F8900C645F6 /* RowViewLongTerm.swift */,
 				225561D329252FC100C645F6 /* SectionIndexTitles.swift */,
 				225561D529252FEC00C645F6 /* SectionIndexTitle.swift */,
+				226C67DF292E87180049958A /* RowViewShortTerm.swift */,
 			);
 			path = SelectPlants;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				223BB354291147380064927A /* WrappedTextView.swift in Sources */,
 				223AD5DC29199C53009B5C1C /* PlantSpeciesItem+CoreDataClass.swift in Sources */,
 				223AD572291861AD009B5C1C /* FrequencyEstimationField.swift in Sources */,
+				226C67E0292E87180049958A /* RowViewShortTerm.swift in Sources */,
 				225561D029252F6700C645F6 /* HeaderView.swift in Sources */,
 				223AD5DF29199C53009B5C1C /* ListEntry+CoreDataProperties.swift in Sources */,
 				227FAAC4291E4BC700D747DA /* SearchBar.swift in Sources */,

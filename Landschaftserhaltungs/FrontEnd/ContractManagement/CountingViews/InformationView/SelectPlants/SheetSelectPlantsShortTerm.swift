@@ -29,7 +29,7 @@ struct SheetSelectPlantsShortTerm: View {
         }), id: \.key) { categoryName, devicesArray in
             HeaderView(title: categoryName)
             ForEach(devicesArray) { name in
-                RowViewLongTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies: plantSpecies, checked: name.isChecked, listEntry: listEntry, text: name.scientificName)
+                RowViewShortTerm(plant: name, plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies: plantSpecies, checked: name.isChecked, listEntry: listEntry, text: name.scientificName )
             }
         }
         
@@ -42,7 +42,7 @@ struct SheetSelectPlantsShortTerm: View {
         }), id: \.key) { categoryName, devicesArray in
             HeaderView(title: categoryName)
             ForEach(devicesArray) { name in
-                RowViewLongTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies: plantSpecies, checked: name.isChecked, listEntry: listEntry, text: name.germanName )
+                RowViewShortTerm(plant: name, plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies: plantSpecies, checked: name.isChecked, listEntry: listEntry, text: name.germanName  )
             }
         }
     }
@@ -89,6 +89,9 @@ struct SheetSelectPlantsShortTerm: View {
     {
         listDisabled = true
     }
+    
+    
+    
     
     
 func sectionIndexTitles(proxy: ScrollViewProxy) -> some View {
