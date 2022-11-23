@@ -183,7 +183,7 @@ struct InformationFFHWiese: View {
         print("IN save")
         let plant = FieldInformation(context: moc)
         plant.listEntry = listEntry
-        plant.bloomAspect = "DEINE MUM"
+        plant.bloomAspect = bloomAspect
         
   
         

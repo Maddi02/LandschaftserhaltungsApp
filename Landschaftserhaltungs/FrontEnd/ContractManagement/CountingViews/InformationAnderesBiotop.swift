@@ -177,7 +177,7 @@ struct InformationAnderesBiotop: View {
         print("IN save")
         let plant = FieldInformation(context: moc)
         plant.listEntry = listEntry
-        plant.bloomAspect = "DEINE Hure"
+        plant.bloomAspect = bloomAspect
         
         
         
