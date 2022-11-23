@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct InformationFFHWiese: View {
+    @Environment(\.managedObjectContext) var moc
     @State var listEntry : ListEntry
     @State private var removeUnneadedPicture = true
     @EnvironmentObject  var vm : ViewModel
@@ -163,8 +164,11 @@ struct InformationFFHWiese: View {
            
 
                 
-                NavigationLink(destination: ExportPreview(listEntry: listEntry)) {
+                NavigationLink(destination: ExportPreview(listEntry: listEntry).onAppear(perform: {
+                    save()
+                })) {
                     Text("Zur Zusammenfassung!")
+             
                 }.navigationBarBackButtonHidden(true)
 
             }
@@ -172,6 +176,30 @@ struct InformationFFHWiese: View {
             }.navigationTitle("Information")
  
         }
+    
+    
+    func save()
+    {
+        print("IN save")
+        let plant = FieldInformation(context: moc)
+        plant.listEntry = listEntry
+        plant.bloomAspect = "DEINE MUM"
+  
+        
+        do{
+            try moc.save()
+            
+        }
+        catch
+        {
+            print("ERROR")
+        }
+        
+        
+        
+        
+        
+    }
         
     func addToList(image : UIImage){
         let newImage = partFieldArea(picuture: image)

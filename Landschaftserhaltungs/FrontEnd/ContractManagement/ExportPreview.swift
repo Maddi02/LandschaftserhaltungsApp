@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ExportPreview: View {
-    var listEntry: ListEntry
+    @StateObject var listEntry: ListEntry
     var body: some View {
         
        Text("Pflanzen aus der Schnellaufnahme")
@@ -28,6 +28,11 @@ struct ExportPreview: View {
                  Text(i.scientificName ?? "hhh")
              }
          }
+        
+        Text(listEntry.infos?.bloomAspect ?? "NO Data")
+        
+        
+        
         Button(action: { NavigationUtil.popToRootView() }) {
                Text("Zurück zum Home Bildschirm")
              }
