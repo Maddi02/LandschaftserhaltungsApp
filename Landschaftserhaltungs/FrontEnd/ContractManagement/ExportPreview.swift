@@ -28,8 +28,9 @@ struct ExportPreview: View {
                  Text(i.scientificName ?? "hhh")
              }
          }
-        
-        Text("Hello, ExportView!")
+        Button(action: { NavigationUtil.popToRootView() }) {
+               Text("Zurück zum Home Bildschirm")
+             }
     }
 }
 
