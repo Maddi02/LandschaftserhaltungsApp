@@ -198,24 +198,6 @@ struct InformationFFHWiese: View {
     
     func save()
     {
-        
-        /*
-         
-         @State private var dataOfTaking = Date()
-         @State private var farming : String = ""
-         @State private var position : String = ""
-         @State private var vegetationDescription : String = ""
-         @State private var bloomAspect : String = ""
-         @State private var evaluationSpeciesInventory : String = ""
-         @State private var assessmentHabitatStructure : String = ""
-         @State private var ratingImpairment  : String = ""
-         @State private var protectionStatus  : String = ""
-         @State private var overallAssessmentOfTheStateOfPreservation  : String = ""
-         @State private var faunisticObservation  : String = ""
-         @State private var contractTarget  : String = ""
-         @State private var adaptationEditions  : String = ""
-         @State private var furtherMaintenanceMeasures  : String = ""
-         */
         print("IN save")
         let plant = FieldInformation(context: moc)
         plant.listEntry = listEntry
@@ -234,7 +216,12 @@ struct InformationFFHWiese: View {
         plant.adaptationEditions = adaptationEditions
         plant.furtherMaintenanceMeasures = furtherMaintenanceMeasures
         
-  
+        print ("Picute array size \(viewModelPicutre.pictures.count)")
+        
+        
+        let a = PicutreList(context: moc)
+        a.listOfPictures = plant
+        a.picutre = UIImage(systemName: "pencil")
         
         do{
             try moc.save()

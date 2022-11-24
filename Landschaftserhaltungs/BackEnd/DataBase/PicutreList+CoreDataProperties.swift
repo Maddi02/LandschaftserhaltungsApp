@@ -17,9 +17,13 @@ extension PicutreList {
     }
 
     @NSManaged public var id: UUID?
+    @NSManaged public var compareString: String?
     @NSManaged public var picutre: UIImage?
     @NSManaged public var listOfPictures: FieldInformation?
 
+    public var wrappedCompareString : String {
+        compareString ?? "Unknown"
+    }
 }
 
 extension PicutreList : Identifiable {

@@ -34,6 +34,18 @@ extension FieldInformation {
     @NSManaged public var listEntry: ListEntry?
     @NSManaged public var pictures: NSSet?
 
+    
+    var pictureArray : [PicutreList] {
+        let set = pictures as? Set<PicutreList> ?? []
+        
+        return Array(Set(set.sorted{
+            $0.compareString ?? " " < $1.compareString ?? " "
+        }))
+    }
+    
+    
+    
+    
 }
 
 // MARK: Generated accessors for picutres

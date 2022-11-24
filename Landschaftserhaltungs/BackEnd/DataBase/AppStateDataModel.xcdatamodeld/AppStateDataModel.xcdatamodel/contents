@@ -66,6 +66,7 @@
         </uniquenessConstraints>
     </entity>
     <entity name="PicutreList" representedClassName="PicutreList" syncable="YES">
+        <attribute name="compareString" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="picutre" optional="YES" attributeType="Transformable" valueTransformerName="UIImageTransformer" customClassName="UIImage"/>
         <relationship name="listOfPictures" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FieldInformation" inverseName="pictures" inverseEntity="FieldInformation"/>

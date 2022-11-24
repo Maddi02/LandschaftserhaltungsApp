@@ -7,8 +7,37 @@
 
 import SwiftUI
 
+struct bb :View
+{
+    var a : FieldInformation
+    
+    var body : some View
+
+    {
+        Text("HHH")
+        if(a != nil)
+        {
+             Text("\(a.pictureArray.count)")
+            ForEach(a.pictureArray)
+            {
+                
+                i in
+                Image(uiImage: i.picutre ?? UIImage())
+            }
+        }
+     
+        
+  
+    }
+    
+    
+}
+
+
+
 struct ExportPreviewFFH: View {
     @StateObject var listEntry: ListEntry
+
     var body: some View {
         
         
@@ -86,6 +115,7 @@ struct ExportPreviewFFH: View {
                         Section(header: Text("Weiter Pflegemaßnahme"))
                         {
                             Text(listEntry.infos?.furtherMaintenanceMeasures ?? "No Data")
+                          
                         }
                         
                         
@@ -172,7 +202,17 @@ struct ExportPreviewFFH: View {
                                 }
                                 
                             }
-
+                            
+                            
+                            Group{
+                                Section(header: Text("Aufgenommene Fotos"))
+                                {
+                                 
+                               
+                                }
+                                
+                            }
+                       //     bb(a: listEntry.infos ?? FieldInformation())
                             
                     }
 
@@ -193,5 +233,11 @@ struct ExportPreviewFFH: View {
         Button(action: { NavigationUtil.popToRootView() }) {
             Text("Zurück zum Home Bildschirm")
         }
+    }
+    
+    func a() -> [PicutreList]
+    {
+        print(listEntry.infos?.pictureArray.count as Any)
+        return listEntry.infos?.pictureArray ?? []
     }
 }
