@@ -21,6 +21,7 @@ struct LongTimeSpeciesCensus: View {
     
     var body: some View {
         
+        VStack{
         if(listEntry.PlantArrayLongTerm.count > 0)
         {
             Text("Daten schon vorhanden. Aufnahmen nicht erneut möglich.")
@@ -30,77 +31,77 @@ struct LongTimeSpeciesCensus: View {
             }
         }
         
-        else {
-            VStack{
-                Text("Genauere Aufname").font(Font.title).frame(maxWidth: .infinity , alignment: .topLeading)
-                Text("\(description) ").font(Font.title3).frame(maxWidth: .infinity , alignment: .topLeading)
-            }
-            
-            
-            Form{
-                Section(header: Text("Description"))
-                {
-                    TextField("Fügen Sie ein Beschreibung hinzu", text: $fieldDescription)
+            else {
+                VStack{
+                    Text("Genauere Aufname").font(Font.title).frame(maxWidth: .infinity , alignment: .topLeading)
+                    Text("\(description) ").font(Font.title3).frame(maxWidth: .infinity , alignment: .topLeading)
                 }
-                Section(header: Text("Ausgewählte Pflanzen"))
-                {
-                    List{
-                        ForEach($plantSpeciesDataModel.platList)
-                        {
-                            
-                            list in
-                            
-                            if(list.isChecked.wrappedValue)
+                
+                
+                Form{
+                    Section(header: Text("Description"))
+                    {
+                        TextField("Fügen Sie ein Beschreibung hinzu", text: $fieldDescription)
+                    }
+                    Section(header: Text("Ausgewählte Pflanzen"))
+                    {
+                        List{
+                            ForEach($plantSpeciesDataModel.platList)
                             {
-                                if(userSettings.getSelectedLanguage() == "Latein")
+                                
+                                list in
+                                
+                                if(list.isChecked.wrappedValue)
                                 {
-                                    Text(list.scientificName.wrappedValue)
+                                    if(userSettings.getSelectedLanguage() == "Latein")
+                                    {
+                                        Text(list.scientificName.wrappedValue)
+                                    }
+                                    
+                                    if(userSettings.getSelectedLanguage() == "Deutsch")
+                                    {
+                                        Text(list.germanName.wrappedValue)
+                                    }
+                                    
                                 }
+                            }
+                            
+                            
+                        }
+                    }
+                    Section(header: Text("Schon gespeicherte Pflanzen aus Schnellaufnahme"))
+                    {
+                        
+                        List{
+                            ForEach(listEntry.PlantArray)
+                            {
+                                
+                                list in
+                                
                                 
                                 if(userSettings.getSelectedLanguage() == "Deutsch")
                                 {
-                                    Text(list.germanName.wrappedValue)
+                                    Text(list.germanName ?? "N")
+                                }
+                                
+                                if(userSettings.getSelectedLanguage() == "Latein")
+                                {
+                                    //  print(listEntry.PlantArray.count())
+                                    Text(list.scientificName  ?? "N")
                                 }
                                 
                             }
-                        }
-                        
-                        
-                    }
-                }
-                Section(header: Text("Schon gespeicherte Pflanzen aus Schnellaufnahme"))
-                {
-                    
-                    List{
-                        ForEach(listEntry.PlantArray)
-                        {
-                            
-                            list in
-                            
-                            
-                            if(userSettings.getSelectedLanguage() == "Deutsch")
-                            {
-                                Text(list.germanName ?? "N")
-                            }
-                            
-                            if(userSettings.getSelectedLanguage() == "Latein")
-                            {
-                                //  print(listEntry.PlantArray.count())
-                                Text(list.scientificName  ?? "N")
-                            }
                             
                         }
-                        
                     }
-                }
-                
-                
-                NavigationLink(destination: SheetSelectPlantsLongTerm(plantSpeciesDataModel: plantSpeciesDataModel, longTimeSpeciesCencus: self ,listEntry: listEntry, plantSpecies: plantSpeciesDataModel.platList)){
                     
-                    Text("Wähle Pflanze aus")
-                }
+                    
+                    NavigationLink(destination: SheetSelectPlantsLongTerm(plantSpeciesDataModel: plantSpeciesDataModel, longTimeSpeciesCencus: self ,listEntry: listEntry, plantSpecies: plantSpeciesDataModel.platList)){
+                        
+                        Text("Wähle Pflanze aus")
+                    }
+                } .navigationBarBackButtonHidden(true)
             }
-            .navigationBarBackButtonHidden(true)
         }
     }
         

@@ -73,7 +73,7 @@ struct SheetSelectPlantsLongTerm: View {
                     })
                     {
                         Text("Save & geh zur nächsten Seite")
-                    }
+                    }.navigationBarBackButtonHidden(true)
         
         
     }

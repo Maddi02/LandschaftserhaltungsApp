@@ -221,7 +221,7 @@ struct ExportPreviewFFH: View {
                     
                 }
             }
-        }
+        }.navigationBarBackButtonHidden(true)
         
         
         //    Text(listEntry.infos?.bloomAspect ?? "NO Data")

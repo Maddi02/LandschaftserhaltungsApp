@@ -189,9 +189,9 @@ struct InformationFFHWiese: View {
              
                 }.navigationBarBackButtonHidden(true)
 
-            }
+            }.navigationBarBackButtonHidden(true)
 
-            }.navigationTitle("Information")
+            }.navigationTitle("Information").navigationBarBackButtonHidden(true)
  
         }
     
