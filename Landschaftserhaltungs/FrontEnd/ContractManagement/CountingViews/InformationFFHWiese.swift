@@ -28,6 +28,8 @@ struct InformationFFHWiese: View {
     @State private var adaptationEditions  : String = ""
     @State private var furtherMaintenanceMeasures  : String = ""
     @State private var showingActionSheet = false
+    @State private var goToConclusion = true
+    @State private var saveIsEnabled = false
     
     var body: some View {
         
@@ -181,13 +183,22 @@ struct InformationFFHWiese: View {
                 }
            
 
+               
+                VStack{
+
+                    Button("Save & Zurück zum Home Screen")
+                    {
+                        save()
+                        NavigationUtil.popToRootView()
+                     //   save()
+                    }
+                    
+                    
+                    
+                }
                 
-                NavigationLink(destination: ExportPreviewFFH(listEntry: listEntry).onAppear(perform: {
-                    save()
-                })) {
-                    Text("Zur Zusammenfassung!")
-             
-                }.navigationBarBackButtonHidden(true)
+                
+
 
             }.navigationBarBackButtonHidden(true)
 
@@ -216,12 +227,16 @@ struct InformationFFHWiese: View {
         plant.adaptationEditions = adaptationEditions
         plant.furtherMaintenanceMeasures = furtherMaintenanceMeasures
         
-        print ("Picute array size \(viewModelPicutre.pictures.count)")
+       // print ("Picute array size \(viewModelPicutre.pictures.count)")
         
-        
-        let a = PicutreList(context: moc)
-        a.listOfPictures = plant
-        a.picutre = viewModelPicutre.pictures[0].picuture
+
+        for i in viewModelPicutre.pictures{
+            let a = PicutreList(context: moc)
+            a.listOfPictures = plant
+            a.compareString = " "
+            a.picutre = i.picuture
+        }
+      
         
         do{
             try moc.save()
@@ -242,6 +257,19 @@ struct InformationFFHWiese: View {
         let newImage = partFieldArea(picuture: image)
         viewModelPicutre.pictures.append(newImage)
     }
+    
+    func toImageList() ->[UIImage]
+    {
+        var list : [UIImage] = []
+        
+        for i in  viewModelPicutre.pictures
+        {
+            list.append(i.picuture)
+        }
+        
+        return list
+    }
+    
     
     }
 

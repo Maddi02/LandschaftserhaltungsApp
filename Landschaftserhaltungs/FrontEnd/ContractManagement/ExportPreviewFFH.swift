@@ -7,34 +7,30 @@
 
 import SwiftUI
 
-struct bb :View
+struct PictureView :View
 {
-    var a : FieldInformation
+    var fieldInformation : FieldInformation
     
     var body : some View
 
     {
-        Text("HHH")
-        if(a != nil)
-        {
-           Text("\(a.pictureArray.count)")
-           Image(uiImage: a.pictureArray[0].picutre ?? UIImage())
-            /*
-        {
-
-            ForEach(a.pictureArray)
+           Text("Anzahl der Fotos \(fieldInformation.pictureArray.count)")
+           
+       
+        ForEach(fieldInformation.pictureArray, id: \.self)
             {
                 
                 i in
-                Image(uiImage: i.picutre ?? UIImage())
+                Image(uiImage: i.picutre ?? UIImage()).resizable().scaledToFit()
             }
-             */
+       
         }
+         
            
      
         
   
-    }
+    
     
     
 }
@@ -214,7 +210,7 @@ struct ExportPreviewFFH: View {
                                 Section(header: Text("Aufgenommene Fotos"))
                                 {
                                  
-                                         bb(a: listEntry.infos ?? FieldInformation())
+                                    PictureView(fieldInformation: listEntry.infos ?? FieldInformation())
                                     
                                 }
                                 
