@@ -524,8 +524,8 @@
             filePath = "Landschaftserhaltungs/FrontEnd/ContractManagement/CountingViews/LongTimeSpeciesCensus.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -540,8 +540,8 @@
             filePath = "Landschaftserhaltungs/FrontEnd/ContractManagement/CountingViews/LongTimeSpeciesCensus.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -556,9 +556,9 @@
             filePath = "Landschaftserhaltungs/FrontEnd/ContractManagement/CountingViews/SpeciesCensusView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "saveEntrys()"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "contains(str:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
