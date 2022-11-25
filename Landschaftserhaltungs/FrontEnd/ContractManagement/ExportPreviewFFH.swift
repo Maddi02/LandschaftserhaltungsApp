@@ -7,39 +7,12 @@
 
 import SwiftUI
 
-struct PictureView :View
-{
-    var fieldInformation : FieldInformation
-    
-    var body : some View
-
-    {
-           Text("Anzahl der Fotos \(fieldInformation.pictureArray.count)")
-           
-       
-        ForEach(fieldInformation.pictureArray, id: \.self)
-            {
-                
-                i in
-                Image(uiImage: i.picutre ?? UIImage()).resizable().scaledToFit()
-            }
-       
-        }
-         
-           
-     
-        
-  
-    
-    
-    
-}
 
 
 
 struct ExportPreviewFFH: View {
     @StateObject var listEntry: ListEntry
-
+    
     var body: some View {
         
         
@@ -117,12 +90,12 @@ struct ExportPreviewFFH: View {
                         Section(header: Text("Weiter Pflegemaßnahme"))
                         {
                             Text(listEntry.infos?.furtherMaintenanceMeasures ?? "No Data")
-                          
+                            
                         }
                         
                         
                         Group{
-                        Section(header: Text("Anzahl der Pflanzen Schnellaufnahme"))
+                            Section(header: Text("Anzahl der Pflanzen Schnellaufnahme"))
                             {
                                 Text("\(listEntry.PlantArray.count) Arten" )
                                 
@@ -138,7 +111,7 @@ struct ExportPreviewFFH: View {
                                 }
                                 
                             }
-                       
+                            
                             Section(header: Text("Anzahl der Pflanzen - Genau Aufnahme"))
                             {
                                 Text("\(listEntry.PlantArrayLongTerm.count) Arten" )
@@ -171,7 +144,7 @@ struct ExportPreviewFFH: View {
                                         i in
                                         Text("\(i.scientificName ?? "hhh") (\(i.germanName ?? "hh"))" )
                                     }
-
+                                    
                                 }
                                 
                             }
@@ -180,7 +153,7 @@ struct ExportPreviewFFH: View {
                                 Text(" Keine Ahnung woher ich wisse soll Arten" )
                                 
                                 List{
-                           
+                                    
                                 }
                                 
                             }
@@ -190,7 +163,7 @@ struct ExportPreviewFFH: View {
                                 Text(" Keine Ahnung woher ich wisse soll Arten" )
                                 
                                 List{
-                           
+                                    
                                 }
                                 
                             }
@@ -200,7 +173,7 @@ struct ExportPreviewFFH: View {
                                 Text(" Keine Ahnung woher ich wisse soll Arten" )
                                 
                                 List{
-                           
+                                    
                                 }
                                 
                             }
@@ -209,18 +182,18 @@ struct ExportPreviewFFH: View {
                             Group{
                                 Section(header: Text("Aufgenommene Fotos"))
                                 {
-                                 
-                                    PictureView(fieldInformation: listEntry.infos ?? FieldInformation())
+                                    
+                                    PictureViewExport(fieldInformation: listEntry.infos ?? FieldInformation())
                                     
                                 }
                                 
                             }
-         
                             
+                            
+                        }
+                        
                     }
-
-                    }
-                
+                    
                     
                 }
             }

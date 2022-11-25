@@ -7,6 +7,31 @@
 
 import SwiftUI
 
+struct PictureViewExportDiffrentBiotop :View
+{
+    var fieldInformation : FieldInformation
+    
+    var body : some View
+    
+    {
+        Text("Anzahl der Fotos \(fieldInformation.pictureArray.count)")
+        
+        
+        ForEach(fieldInformation.pictureArray, id: \.self)
+        {
+            
+            i in
+            Image(uiImage: i.picutre ?? UIImage()).resizable().scaledToFit()
+        }
+        
+    }
+    
+}
+
+
+
+
+
 struct ExportPreviewOtherBiotop: View {
     
     @StateObject var listEntry : ListEntry
@@ -90,6 +115,8 @@ struct ExportPreviewOtherBiotop: View {
                                         i in
                                         Text("\(i.scientificName ?? "hhh") (\(i.germanName ?? "hh"))" )
                                     }
+                                    
+                                  
 
                                 }
                                 
@@ -102,6 +129,15 @@ struct ExportPreviewOtherBiotop: View {
                            
                                 }
                                 
+                            }
+                            
+                            Group{
+                                Section(header: Text("Aufgenommene Fotos"))
+                                {
+                                    
+                                    PictureViewExport(fieldInformation: listEntry.infos ?? FieldInformation())
+                                    
+                                }
                             }
                             
                     }
