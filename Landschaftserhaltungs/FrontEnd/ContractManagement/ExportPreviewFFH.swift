@@ -17,14 +17,20 @@ struct bb :View
         Text("HHH")
         if(a != nil)
         {
-             Text("\(a.pictureArray.count)")
+           Text("\(a.pictureArray.count)")
+           Image(uiImage: a.pictureArray[0].picutre ?? UIImage())
+            /*
+        {
+
             ForEach(a.pictureArray)
             {
                 
                 i in
                 Image(uiImage: i.picutre ?? UIImage())
             }
+             */
         }
+           
      
         
   
@@ -208,11 +214,12 @@ struct ExportPreviewFFH: View {
                                 Section(header: Text("Aufgenommene Fotos"))
                                 {
                                  
-                               
+                                         bb(a: listEntry.infos ?? FieldInformation())
+                                    
                                 }
                                 
                             }
-                       //     bb(a: listEntry.infos ?? FieldInformation())
+         
                             
                     }
 
@@ -222,9 +229,6 @@ struct ExportPreviewFFH: View {
                 }
             }
         }.navigationBarBackButtonHidden(true)
-        
-        
-        //    Text(listEntry.infos?.bloomAspect ?? "NO Data")
         
         
         

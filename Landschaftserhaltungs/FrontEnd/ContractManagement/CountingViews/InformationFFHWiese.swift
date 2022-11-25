@@ -221,7 +221,7 @@ struct InformationFFHWiese: View {
         
         let a = PicutreList(context: moc)
         a.listOfPictures = plant
-        a.picutre = UIImage(systemName: "pencil")
+        a.picutre = viewModelPicutre.pictures[0].picuture
         
         do{
             try moc.save()

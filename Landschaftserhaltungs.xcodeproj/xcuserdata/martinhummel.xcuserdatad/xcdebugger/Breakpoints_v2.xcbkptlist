@@ -558,7 +558,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
             endingLineNumber = "83"
-            landmarkName = "contains(str:)"
+            landmarkName = "saveEntrys()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -566,7 +566,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6459A1EB-AD6A-4A01-B6A4-4A7F97F52B67"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Landschaftserhaltungs/FrontEnd/ContractManagement/CountingViews/InformationView/SelectPlants/SheetSelectPlantsLongTerm.swift"
@@ -575,6 +575,22 @@
             startingLineNumber = "165"
             endingLineNumber = "165"
             landmarkName = "contains(str:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7FA9A672-1614-4109-A923-4FC4129F2014"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Landschaftserhaltungs/FrontEnd/ContractManagement/CountingViews/InformationAnderesBiotop.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "addToList(image:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
