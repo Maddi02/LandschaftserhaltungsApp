@@ -149,7 +149,11 @@ struct ExportPreviewOtherBiotop: View {
                         
                         Button("Generate PDF")
                         {
+
+            
+                            let pdfCreator = PDFCreator(fieldInfo: listEntry.infos ?? FieldInformation(), appContract : listEntry.contract ?? AppContract())
                             
+                            pdfCreator.createPdf()
                         }
                     }
                     
