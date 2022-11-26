@@ -16,17 +16,9 @@ struct ExportPreviewFFH: View {
     var body: some View {
         
         
-        if(listEntry.PlantArrayLongTerm.count < 1)
-        {
-            Text("Es wurden keine valide Daten eingeben.  ")
-            Button(action: { NavigationUtil.popToRootView() }) {
-                Text("Zurück zum Home Bildschirm")
-            }
-        }
+   
         
-        
-        
-        else{
+
             VStack{
                 
                 VStack{
@@ -204,15 +196,20 @@ struct ExportPreviewFFH: View {
                             
                         }
                         
-                        
+                        Button("Generate PDF")
+                        {
+                            
+                        }
                     }
+                    
+        
                 }
                 Button(action: { NavigationUtil.popToRootView() }) {
                     Text("Zurück zum Home Bildschirm")
                 }
             }.navigationBarBackButtonHidden(true)
             
-        }
+        
         
         
         

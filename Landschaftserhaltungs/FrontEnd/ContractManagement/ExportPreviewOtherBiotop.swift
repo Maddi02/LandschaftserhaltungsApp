@@ -38,12 +38,7 @@ struct ExportPreviewOtherBiotop: View {
     var body: some View {
         
         
-        if(listEntry.PlantArrayLongTerm.count < 1)
-        {
-            Text("Es wurden keine valide Daten eingeben.  ")
-        }
-        
-        else{
+
             VStack{
                 
                 VStack{
@@ -152,12 +147,17 @@ struct ExportPreviewOtherBiotop: View {
                             
                         }
                         
-                        
+                        Button("Generate PDF")
+                        {
+                            
+                        }
                     }
+                    
+                 
                 }
             }.navigationBarBackButtonHidden(true)
             
-        }
+        
         //    Text(listEntry.infos?.bloomAspect ?? "NO Data")
         
         
