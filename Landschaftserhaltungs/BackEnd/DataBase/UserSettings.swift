@@ -39,10 +39,13 @@ public class UserSettings: ObservableObject {
         self.firstName = UserDefaults.standard.object(forKey: "firstName") as? String ?? ""
         self.lastName = UserDefaults.standard.object(forKey: "lastName") as? String ?? ""
         self.language = UserDefaults.standard.object(forKey: "language") as? String ?? ""
-        
+        guard let data = UserDefaults.standard.data(forKey: "KEY") else { return }
+        let decoded = try! PropertyListDecoder().decode(Data.self, from: data)
+        let image = UIImage(data: decoded)
+        self.image = image ?? UIImage()
 
         
-        loadImage()
+
         
 
     }
@@ -61,17 +64,10 @@ public class UserSettings: ObservableObject {
         UserDefaults.standard.set(encoded, forKey: "KEY")
     }
     
-    func loadImage() {
-        print("Hekk")
-        guard let data = UserDefaults.standard.data(forKey: "KEY") else { return }
-        let decoded = try! PropertyListDecoder().decode(Data.self, from: data)
-        let image = UIImage(data: decoded)
-        self.image = image ?? UIImage()
-    }
+
     
     func getImage() ->UIImage
     {
-        loadImage()
         return self.image
     }
 }
