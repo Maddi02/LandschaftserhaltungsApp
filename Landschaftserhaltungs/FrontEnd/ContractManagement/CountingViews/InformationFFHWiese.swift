@@ -31,6 +31,9 @@ struct InformationFFHWiese: View {
     @State private var goToConclusion = true
     @State private var saveIsEnabled = false
     
+    
+    
+    
     var body: some View {
         
         NavigationView{

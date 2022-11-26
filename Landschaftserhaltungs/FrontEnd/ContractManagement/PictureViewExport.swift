@@ -23,7 +23,6 @@ struct PictureViewExport :View
             i in
             Image(uiImage: i.picutre ?? UIImage()).resizable().scaledToFit()
         }
-        
     }
     
 }
