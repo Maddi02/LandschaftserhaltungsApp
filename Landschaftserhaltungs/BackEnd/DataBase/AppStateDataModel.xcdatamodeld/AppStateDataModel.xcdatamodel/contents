@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AppContract" representedClassName="AppContract" syncable="YES">
+        <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="contractPurpose" optional="YES" attributeType="String"/>
+        <attribute name="contractTermination" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="deadline" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="managementRequirements" optional="YES" attributeType="String"/>
+        <attribute name="measures" optional="YES" attributeType="String"/>
+        <attribute name="mobile" optional="YES" attributeType="String"/>
+        <attribute name="operationNumber" optional="YES" attributeType="String"/>
+        <attribute name="particularities" optional="YES" attributeType="String"/>
+        <attribute name="picture" optional="YES" attributeType="Transformable" valueTransformerName="UIImageTransformer" customClassName="UIImage"/>
+        <attribute name="plz" optional="YES" attributeType="String"/>
+        <attribute name="plzName" optional="YES" attributeType="String"/>
+        <attribute name="street" optional="YES" attributeType="String"/>
+        <relationship name="list" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ListEntry" inverseName="contract" inverseEntity="ListEntry"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="FieldInformation" representedClassName="FieldInformation" syncable="YES">
+        <attribute name="adaptationEditions" optional="YES" attributeType="String"/>
+        <attribute name="assessmentHabitatStructure" optional="YES" attributeType="String"/>
+        <attribute name="bloomAspect" optional="YES" attributeType="String"/>
+        <attribute name="contractTarget" optional="YES" attributeType="String"/>
+        <attribute name="dataOfTaking" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="evaluationSpeciesInventory" optional="YES" attributeType="String"/>
+        <attribute name="farming" optional="YES" attributeType="String"/>
+        <attribute name="faunisticObservation" optional="YES" attributeType="String"/>
+        <attribute name="furtherMaintenanceMeasures" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="overallAssessmentOfTheStateOfPreservation" optional="YES" attributeType="String"/>
+        <attribute name="position" optional="YES" attributeType="String"/>
+        <attribute name="protectionStatus" optional="YES" attributeType="String"/>
+        <attribute name="ratingImpairment" optional="YES" attributeType="String"/>
+        <attribute name="vegetationDescription" optional="YES" attributeType="String"/>
+        <relationship name="listEntry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListEntry" inverseName="infos" inverseEntity="ListEntry"/>
+        <relationship name="pictures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PicutreList" inverseName="listOfPictures" inverseEntity="PicutreList"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="ListEntry" representedClassName="ListEntry" syncable="YES">
+        <attribute name="dateOfObservation" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="descriptionField" optional="YES" attributeType="String"/>
+        <attribute name="detailDescription" optional="YES" attributeType="String"/>
+        <attribute name="listUUID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="contract" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AppContract" inverseName="list" inverseEntity="AppContract"/>
+        <relationship name="infos" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FieldInformation" inverseName="listEntry" inverseEntity="FieldInformation"/>
+        <relationship name="longTermPlant" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlantSpeciesLongTermItem" inverseName="speciesLongTerm" inverseEntity="PlantSpeciesLongTermItem"/>
+        <relationship name="plant" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlantSpeciesItem" inverseName="species" inverseEntity="PlantSpeciesItem"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="listUUID"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="PicutreList" representedClassName="PicutreList" syncable="YES">
+        <attribute name="compareString" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="picutre" optional="YES" attributeType="Transformable" valueTransformerName="UIImageTransformer" customClassName="UIImage"/>
+        <relationship name="listOfPictures" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FieldInformation" inverseName="pictures" inverseEntity="FieldInformation"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="PlantSpeciesItem" representedClassName="PlantSpeciesItem" syncable="YES">
+        <attribute name="alpenvorland" optional="YES" attributeType="String"/>
+        <attribute name="blackForest" optional="YES" attributeType="String"/>
+        <attribute name="brachePointer" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="checked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="descriptionField" optional="YES" attributeType="String"/>
+        <attribute name="descriptionFieldLongTerm" optional="YES" attributeType="String"/>
+        <attribute name="disturbanceIndicator" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="germanName" optional="YES" attributeType="String"/>
+        <attribute name="impairedSpecies" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="mergerityPointer" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="nitrogenIndicator" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="nothernGaelandschaften" optional="YES" attributeType="String"/>
+        <attribute name="oberReihnArea" optional="YES" attributeType="String"/>
+        <attribute name="odenWald" optional="YES" attributeType="String"/>
+        <attribute name="redListBw" optional="YES" attributeType="String"/>
+        <attribute name="responsibility" optional="YES" attributeType="String"/>
+        <attribute name="schaebischeAlb" optional="YES" attributeType="String"/>
+        <attribute name="scientificName" optional="YES" attributeType="String"/>
+        <attribute name="seedSpecies" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="southernGaelandschaften" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="valuationNeutralType" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="species" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListEntry" inverseName="plant" inverseEntity="ListEntry"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="uuid"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="PlantSpeciesLongTermItem" representedClassName="PlantSpeciesLongTermItem" syncable="YES">
+        <attribute name="alpenvorland" optional="YES" attributeType="String"/>
+        <attribute name="blackForest" optional="YES" attributeType="String"/>
+        <attribute name="brachePointer" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="checked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="descriptionFieldLongTerm" optional="YES" attributeType="String"/>
+        <attribute name="disturbanceIndicator" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="germanName" optional="YES" attributeType="String"/>
+        <attribute name="impairedSpecies" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="longTermuuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="mergerityPointer" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="nitrogenIndicator" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="nothernGaelandschaften" optional="YES" attributeType="String"/>
+        <attribute name="oberReihnArea" optional="YES" attributeType="String"/>
+        <attribute name="odenWald" optional="YES" attributeType="String"/>
+        <attribute name="redListBw" optional="YES" attributeType="String"/>
+        <attribute name="responsibility" optional="YES" attributeType="String"/>
+        <attribute name="schaebischeAlb" optional="YES" attributeType="String"/>
+        <attribute name="scientificName" optional="YES" attributeType="String"/>
+        <attribute name="seedSpecies" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="southernGaelandschaften" optional="YES" attributeType="String"/>
+        <attribute name="valuationNeutralType" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="speciesLongTerm" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListEntry" inverseName="longTermPlant" inverseEntity="ListEntry"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="longTermuuid"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Profile" representedClassName="Profile" syncable="YES">
+        <attribute name="logo" optional="YES" attributeType="Transformable" valueTransformerName="UIImageTransformer" customClassName="UIImage"/>
+        <attribute name="selectedLanguage" optional="YES" attributeType="String"/>
+        <attribute name="userFirstName" optional="YES" attributeType="String"/>
+        <attribute name="userSecondName" optional="YES" attributeType="String"/>
+    </entity>
+</model>

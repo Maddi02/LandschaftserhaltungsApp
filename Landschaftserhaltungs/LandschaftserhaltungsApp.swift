@@ -17,10 +17,14 @@ struct LandschaftserhaltungsApp: App {
             
             if appState.hasOnboarded{
                 
-                MainSideView().environment(\.managedObjectContext, container.persistentContainer.viewContext).environmentObject(appState)
+                MainSideView().environment(\.managedObjectContext, container.persistentContainer.viewContext).environmentObject(appState).onAppear{
+                    UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+                }
             } else {
                 
-                OnboardingFlowView().environment(\.managedObjectContext, container.persistentContainer.viewContext).environmentObject(appState)
+                OnboardingFlowView().environment(\.managedObjectContext, container.persistentContainer.viewContext).environmentObject(appState).onAppear{
+                    UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+                }
             }
         }
     }

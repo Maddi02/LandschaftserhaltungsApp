@@ -7,6 +7,36 @@
 
 import Foundation
 import SwiftUI
+
+
+extension String {
+
+    var length: Int {
+        return count
+    }
+
+    subscript (i: Int) -> String {
+        return self[i ..< i + 1]
+    }
+
+    func substring(fromIndex: Int) -> String {
+        return self[min(fromIndex, length) ..< length]
+    }
+
+    func substring(toIndex: Int) -> String {
+        return self[0 ..< max(0, toIndex)]
+    }
+
+    subscript (r: Range<Int>) -> String {
+        let range = Range(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)),
+                                            upper: min(length, max(0, r.upperBound))))
+        let start = index(startIndex, offsetBy: range.lowerBound)
+        let end = index(start, offsetBy: range.upperBound - range.lowerBound)
+        return String(self[start ..< end])
+    }
+}
+
+
 public extension View {
     func fullBackground(imageName: String) -> some View {
         return background(
@@ -15,6 +45,33 @@ public extension View {
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
         )
+    }
+    
+}
+
+extension UIApplication {
+      func dismissKeyboard() {
+          sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+      }
+  }
+ 
+extension Sequence where Element: Hashable {
+    func uniqued() -> [Element] {
+        var set = Set<Element>()
+        return filter { set.insert($0).inserted }
+    }
+}
+extension Array where Element: Hashable {
+    func uniqued() -> Array {
+        var buffer = Array()
+        var added = Set<Element>()
+        for elem in self {
+            if !added.contains(elem) {
+                buffer.append(elem)
+                added.insert(elem)
+            }
+        }
+        return buffer
     }
 }
 extension Date
@@ -26,7 +83,6 @@ extension Date
         let date = dateStringFormatter.date(from: dateString)!
         self.init(timeInterval:0, since:date)
     }
-    
     
     func getYearFromDate(date : Date) -> Int
     {
