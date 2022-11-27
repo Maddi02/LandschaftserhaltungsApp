@@ -45,13 +45,16 @@ class PDFCreator
                                                              font: Font.boldSystemFont(ofSize: 20.0),
                                                              color: Color.black))
         let style = PDFLineStyle(type: .full, color: .darkGray, width: 0.5)
-        
+        let colors = (fill: UIColor.darkGray, text: UIColor.black)
+        let lineStyle = PDFLineStyle(type: .dashed, color: UIColor.gray, width: 10)
+        let borders = PDFTableCellBorders(left: lineStyle, top: lineStyle, right: lineStyle, bottom: lineStyle)
+        let font = UIFont.systemFont(ofSize: 20)
         
         
         //Header
         document.add(.headerRight, image: imageElementHeader)
         
-        //Body
+        //Body First Page
         document.add(textObject: PDFSimpleText(text: "Flächenbeurteilung der Vertragsflächen", style: headingStyle1))
         document.add(.contentLeft, text: " ")
         document.add(.contentLeft, text: "Zu: ")
@@ -61,22 +64,183 @@ class PDFCreator
         document.addLineSeparator(PDFContainer.contentLeft, style: style)
         document.add(space: 15.0)
         document.add(.contentCenter, image: imageOverViewPic)
+        
+        
+        //Body Second Page
         document.createNewPage()
+        document.add(.contentLeft, text: " ")
+        
+        let table = PDFTable(rows: 13, columns: 2)
+ 
+        // Tables can contain Strings, Numbers, Images or nil, in case you need an empty cell.
+        // If you add a unknown content type, an assertion will be thrown and the rendering will stop.
+        table.content = [
+            [nil,       "Information"],
+            ["Datum",  "Water flowing down stones."],
+            ["Bewirt-\n schaftung",    "Sunlight shining through the leafs."],
+            ["Lage",    "Sunlight shining through the leafs."],
+            ["Vegetations-\n beschreibung ",  "Fireworks exploding into 100.000 stars"],
+            ["Blühaspekt",     "Crops growing big and providing food."],
+            ["Artenzahl\n gesamt",  "Water flowing down stones."],
+            ["Anzahl Rote\n Liste BW",    "Sunlight shining through the leafs."],
+            ["Schutzstatus",  "Fireworks exploding into 100.000 stars"],
+            ["Faunistische\n Beobachtung",     "Crops growing big and providing food."],
+            ["Vertragsziel\n erfüllt",     "Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.CropsCrops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.CropsCrops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.CropsCrops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.CropsCrops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.CropsCrops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.CropsCrops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing"],
+            ["Anpassung\n Auflagen",     "Crops growing big and providing food."],
+            ["Weitere\n Pflegeaufnah-\n men",     "Crops growing big and providing food."]
+        ]
         
         
+        
+        
+        
+        table.widths = [0.2, 0.8]
+        table.rows.allRowsAlignment = [.left, .left]
+        document.add(table: table)
+    
+
+        //Body Third Page
+        var allPlants : [PlantMatcher] = []
+
+        for i in listEntry.infos?.pictureArray ?? []
+        {
+            document.createNewPage()
+            document.add(.contentCenter, image: PDFImage(image: i.picutre ?? UIImage()))
+         
+        }
+        
+        
+        
+        //Body XXX Page
+        
+        for i in listEntry.PlantArray
+        {
+            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.nitrogenIndicator , reating1b: i.brachePointer , reating1c: i.disturbanceIndicator , reating1d: i.seedSpecies , reating2: i.valuationNeutralType , reating3: i.mergerityPointer ))
+        }
+        
+        for i in listEntry.PlantArrayLongTerm
+        {
+            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.nitrogenIndicator , reating1b: i.brachePointer , reating1c: i.disturbanceIndicator , reating1d: i.seedSpecies , reating2: i.valuationNeutralType , reating3: i.mergerityPointer ))
+        }
+        
+        allPlants = allPlants.sorted{$0.getScientificName() < $1.getScientificName()}
+
+
+        
+        
+       // let tablePlant = PDFTable(rows: 50 , columns: 3)
+        
+       // tablePlant.content = [ ["WN" , "DN" , "1a","1b","1c","1d","2","3","RD"]]
        
+     /*
+        for i in allPlants
+        {
+            tablePlant[colum : 0][0].content =  "\(i.getScientificName()) , \(i.getGermanName()) , \(setCross(checked: i.getReating1a())),\(setCross(checked: i.getReating1b())), \(setCross(checked: i.getReating1c())), \(setCross(checked: i.getReating1d())), \(setCross(checked: i.getReating2())),  \(setCross(checked: i.getReating3())), \(i.getRedList())".asTableContent
+        }
+      */
+        document.createNewPage()
+        let tablePlant = PDFTable(rows: allPlants.count + 1, columns: 11)
+        tablePlant.widths = [0.275, 0.275, 0.05, 0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05]
+        tablePlant.showHeadersOnEveryPage = false
+        tablePlant.rows.allRowsAlignment = [.left, .left, .center, .center, .center, .center, .center,.center, .center]
+        
+        tablePlant[0, 0].content = "WN".asTableContent
+        tablePlant[0, 1].content = "DN".asTableContent
+        tablePlant[0, 2].content = "1a".asTableContent
+        tablePlant[0, 3].content = "1b".asTableContent
+        tablePlant[0, 4].content = "1c".asTableContent
+        tablePlant[0, 5].content = "1d".asTableContent
+        tablePlant[0, 6].content = "2".asTableContent
+        tablePlant[0, 7].content = "3".asTableContent
+        tablePlant[0, 8].content = "KA".asTableContent
+        tablePlant[0, 9].content = "ZA".asTableContent
+        tablePlant[0, 10].content = "RT".asTableContent
+        
+        for row in 1..<tablePlant.size.rows {
+            tablePlant[row, 0].content = "\(allPlants[row-1].getScientificName())".asTableContent
+            for column in 1..<tablePlant.size.columns {
+                
+                if(column == 1){
+                    tablePlant[row, column].content = "\(allPlants[row-1].getGermanName())".asTableContent
+                }
+                if(column == 2){
+                    tablePlant[row, column].content = "\(allPlants[row-1].getReating1a())".asTableContent
+                }
+                
+                if(column == 3){
+                    tablePlant[row, column].content = "\(allPlants[row-1].getReating1b())".asTableContent
+                }
+                
+                
+                if(column == 4){
+                    tablePlant[row, column].content = "\(allPlants[row-1].getReating1c())".asTableContent
+                }
+                
+                if(column == 5){
+                    tablePlant[row, column].content = "\(allPlants[row-1].getReating1d())".asTableContent
+                }
+                
+                
+                if(column == 6){
+                    tablePlant[row, column].content = "\(allPlants[row-1].getReating2())".asTableContent
+                }
+                
+                
+                if(column == 7){
+                    tablePlant[row, column].content = "\(allPlants[row-1].getReating3())".asTableContent
+                }
+                
+                
+                if(column == 8){
+               
+                        tablePlant[row, column].content = "\(allPlants[row-1].getReating3())".asTableContent
+                    
+                }
+                
+                
+                if(column == 9){
+                    
+                        tablePlant[row, column].content = "\(allPlants[row-1].getReating3())".asTableContent
+                    
+                }
+                
+                
+                if(column == 10){
+               
+                        tablePlant[row, column].content = "\(allPlants[row-1].getRedList())".asTableContent
+                    
+                }
+
+                
+            }
+        }
+     
+      //  table.widths = [0.1, 0.1, 0.1, 0.1,0.1,0.1,0.1,0.1,0.2]
+      //  table.rows.allRowsAlignment = [.center, .center,.center, .center,.center, .center,.center, .center,.center]
+        document.add(table : tablePlant)
         
         
-        
-        
+    
         let generator = PDFGenerator(document: document)
-        url =  try! generator.generateURL(filename: "Example.pdf")
+        url =  try! generator.generateURL(filename: "\(Int.random(in: 0..<10000)).pdf")
         return url!
     }
     
     func getUrl() -> URL
     {
         return url!
+    }
+    
+    private func setCross(checked : Bool) -> String
+    {
+        if(checked)
+        {
+            return "X"
+        }
+        else
+        {
+            return " "
+        }
     }
     
   
