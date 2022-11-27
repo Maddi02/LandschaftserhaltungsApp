@@ -8,12 +8,6 @@
 import SwiftUI
 import PDFKit
 
-
-
-
-
-
-
 struct PictureViewExportDiffrentBiotop :View
 {
     var fieldInformation : FieldInformation
@@ -42,13 +36,13 @@ struct PictureViewExportDiffrentBiotop :View
 struct ExportPreviewOtherBiotop: View {
     let pdfView = PDFView()
     @StateObject var listEntry : ListEntry
-    private  let pdf = PDFFromGit()
+    private  let pdf = PDFCreator()
     @State private var showSheet = false
 
     var body: some View {
 
         VStack{
-            PDFKitView(showing: PDFDocument(url: pdf.generatePdfAndGetURL())!)
+            PDFKitView(showing: PDFDocument(url: pdf.generatePdfAndGetURL(listEntry: listEntry))!)
             HStack{
             
                 Button {
@@ -62,7 +56,7 @@ struct ExportPreviewOtherBiotop: View {
     
     
     private func presentShareSheet(){
-        pdf.generatePdf()
+        pdf.generatePdf(listEntry: listEntry)
         guard let pdfDoc = PDFDocument(url: pdf.getUrl())?.documentURL else {return}
         let shareSheetVC = UIActivityViewController(activityItems: [pdfDoc], applicationActivities:  [])
         UIApplication.shared.windows.first?.rootViewController?.present(shareSheetVC, animated: true, completion: nil)

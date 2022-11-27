@@ -13,7 +13,7 @@ import SwiftUI
 struct ContractAdminister: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) var moc
-    private  let pdf = PDFFromGit()
+    private  let pdf = PDFCreator()
     @ObservedObject var dataHandler : DataHandler
     @State var listEntry : ListEntry = ListEntry()
     @State var filteredContracts : AppContract
@@ -119,7 +119,7 @@ struct ContractAdminister: View {
                     }
                 }
                 else {
-                    NavigationLink(destination: ExportPreviewOtherBiotop(listEntry: listEntry).onAppear(perform: {pdf.generatePdf()})) {
+                    NavigationLink(destination: ExportPreviewOtherBiotop(listEntry: listEntry).onAppear(perform: {pdf.generatePdf(listEntry: listEntry)})) {
                         Button("Exportieren")
                         {
                             

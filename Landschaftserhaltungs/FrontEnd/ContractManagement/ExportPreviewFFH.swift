@@ -11,13 +11,13 @@ import PDFKit
 
 
 struct ExportPreviewFFH: View {
-    private  let pdf = PDFFromGit()
+    private  let pdf = PDFCreator()
     @StateObject var listEntry: ListEntry
     
     var body: some View {
         
         VStack{
-            PDFKitView(showing: PDFDocument(url: pdf.generatePdfAndGetURL())!)
+            PDFKitView(showing: PDFDocument(url: pdf.generatePdfAndGetURL(listEntry: listEntry))!)
             HStack{
             
                 Button {
@@ -31,7 +31,7 @@ struct ExportPreviewFFH: View {
 
     
     private func presentShareSheet(){
-        pdf.generatePdf()
+        pdf.generatePdf(listEntry: listEntry)
         guard let pdfDoc = PDFDocument(url: pdf.getUrl())?.documentURL else {return}
         let shareSheetVC = UIActivityViewController(activityItems: [pdfDoc], applicationActivities:  [])
         UIApplication.shared.windows.first?.rootViewController?.present(shareSheetVC, animated: true, completion: nil)
