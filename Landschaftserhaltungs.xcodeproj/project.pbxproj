@@ -63,6 +63,7 @@
 		225DFBAE2931F0FE005C7DEC /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DFBAD2931F0FE005C7DEC /* PDFCreator.swift */; };
 		225DFBE82932356B005C7DEC /* PDFFromGit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DFBE72932356B005C7DEC /* PDFFromGit.swift */; };
 		225DFBEB29323F59005C7DEC /* TPPDF in Frameworks */ = {isa = PBXBuildFile; productRef = 225DFBEA29323F59005C7DEC /* TPPDF */; };
+		225DFBEE29338873005C7DEC /* PDFKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DFBED29338873005C7DEC /* PDFKitView.swift */; };
 		226C67B529278F1F0049958A /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67B329278F1F0049958A /* Profile+CoreDataClass.swift */; };
 		226C67B629278F1F0049958A /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67B429278F1F0049958A /* Profile+CoreDataProperties.swift */; };
 		226C67BC292BAAD70049958A /* ProfileDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67BB292BAAD70049958A /* ProfileDataModel.swift */; };
@@ -173,6 +174,7 @@
 		225DFBAD2931F0FE005C7DEC /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
 		225DFBE72932356B005C7DEC /* PDFFromGit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFFromGit.swift; sourceTree = "<group>"; };
 		225DFBEC2932482F005C7DEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		225DFBED29338873005C7DEC /* PDFKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitView.swift; sourceTree = "<group>"; };
 		226C67B329278F1F0049958A /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
 		226C67B429278F1F0049958A /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		226C67BB292BAAD70049958A /* ProfileDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataModel.swift; sourceTree = "<group>"; };
@@ -289,11 +291,13 @@
 		22352403292705A5000126E1 /* ContractManagement */ = {
 			isa = PBXGroup;
 			children = (
+				225DFBED29338873005C7DEC /* PDFKitView.swift */,
 				22455CF928FF27B5002876AD /* ManageContractView.swift */,
 				223AD571291861AD009B5C1C /* FrequencyEstimationField.swift */,
 				223AD5732918623C009B5C1C /* ExportPreviewFFH.swift */,
 				226C67E3292ECCE40049958A /* ExportPreviewOtherBiotop.swift */,
 				223AD56D291845D3009B5C1C /* EditListItemContractArea.swift */,
+				223524012927041B000126E1 /* HelpView */,
 				225DFBA829311F4C005C7DEC /* PictureViewExport.swift */,
 				2235240229270541000126E1 /* CountingViews */,
 			);
@@ -421,7 +425,6 @@
 				226C67C5292D708E0049958A /* Model */,
 				226C67C4292D70800049958A /* ViewModels */,
 				22352403292705A5000126E1 /* ContractManagement */,
-				223524012927041B000126E1 /* HelpView */,
 				223524002927011B000126E1 /* NewContract */,
 				223523FB2927005F000126E1 /* MainView */,
 				224F45FF28FD80E8004EA74F /* Assets.xcassets */,
@@ -724,6 +727,7 @@
 				224F462D28FE06BB004EA74F /* FirstFeatureOverview.swift in Sources */,
 				22A10883291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataProperties.swift in Sources */,
 				225DFBE82932356B005C7DEC /* PDFFromGit.swift in Sources */,
+				225DFBEE29338873005C7DEC /* PDFKitView.swift in Sources */,
 				224F462828FDFC99004EA74F /* MainSideView.swift in Sources */,
 				226C67DA292E180F0049958A /* FieldInformation+CoreDataProperties.swift in Sources */,
 				223AD4D42912B59B009B5C1C /* ContractAdminister.swift in Sources */,

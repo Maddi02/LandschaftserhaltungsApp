@@ -32,6 +32,18 @@ class PDFFromGit
 
     }
     
+    
+    func generatePdfAndGetURL() -> URL {
+        url =  getDocumentsDirectory().appendingPathComponent("awesome.pdf")
+       // var url = URL(string: "file://~/Desktop/awesome.pdf")!
+        let document = PDFDocument(format: .a4)
+        document.add(.contentCenter, text: "Create PDF documents easily.")
+        let generator = PDFGenerator(document: document)
+        generator.debug = true
+        url =  try! generator.generateURL(filename: "Example.pdf")
+        return url!
+    }
+    
     func getUrl() -> URL
     {
         return url!
