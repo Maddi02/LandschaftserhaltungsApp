@@ -11,7 +11,7 @@ import PDFKit
 
 
 struct ExportPreviewFFH: View {
-    private  let pdf = PDFCreator()
+    private  let pdf = PDFCreatorFFH()
     @StateObject var listEntry: ListEntry
     
     var body: some View {

@@ -8,7 +8,7 @@
 import Foundation
 import PDFKit
 import TPPDF
-class PDFCreator
+class PDFCreatorDiffrentBiotop
 {
     
     var  url = URL(string: "")
