@@ -70,24 +70,31 @@ class PDFCreatorFFH
         document.createNewPage()
         document.add(.contentLeft, text: " ")
         
-        let table = PDFTable(rows: 13, columns: 2)
+        let table = PDFTable(rows: 20, columns: 2)
         
         // Tables can contain Strings, Numbers, Images or nil, in case you need an empty cell.
         // If you add a unknown content type, an assertion will be thrown and the rendering will stop.
         table.content = [
             [nil,       "Information"],
-            ["Datum",  "Water flowing down stones."],
-            ["Bewirt-\n schaftung",    "Sunlight shining through the leafs."],
-            ["Lage",    "Sunlight shining through the leafs."],
-            ["Vegetations-\n beschreibung ",  "Fireworks exploding into 100.000 stars"],
-            ["Blühaspekt",     "Crops growing big and providing food."],
-            ["Artenzahl\n gesamt",  "Water flowing down stones."],
+            ["Datum",  "\(listEntry.infos?.dataOfTaking ?? Date())"],
+            ["Bewirt-\n schaftung",    "\(listEntry.infos?.farming ?? "No Value")"],
+            ["Lage",    "\(listEntry.infos?.position ?? "No Value")"],
+            ["Vegetations-\n beschreibung ",  "\(listEntry.infos?.vegetationDescription ?? "No Value")"],
+            ["Blühaspekt",     "\(listEntry.infos?.bloomAspect ?? "No Value")"],
+            ["Artenzahl\n gesamt",  "\(listEntry.PlantArrayLongTerm.count + listEntry.PlantArray.count)"],
+            ["Artenzahl Schnellaufnahme",  "\(listEntry.PlantArray.count)"],
             ["Anzahl Rote\n Liste BW",    "Sunlight shining through the leafs."],
-            ["Schutzstatus",  "Fireworks exploding into 100.000 stars"],
-            ["Faunistische\n Beobachtung",     "Crops growing big and providing food."],
-            ["Vertragsziel\n erfüllt",     "Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.CropsCrops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.CropsCrops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.CropsCrops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.CropsCrops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.CropsCrops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.CropsCrops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing food.Crops growing big and providing"],
-            ["Anpassung\n Auflagen",     "Crops growing big and providing food."],
-            ["Weitere\n Pflegeaufnah-\n men",     "Crops growing big and providing food."]
+            ["Bewertung Arteninventar",    "\(listEntry.infos?.evaluationSpeciesInventory ?? "No Value")"],
+            ["Bewertung Habitatsstruktur",    "\(listEntry.infos?.assessmentHabitatStructure ?? "No Value")"],
+            ["Bewertung Beeinträchtigung",    "\(listEntry.infos?.ratingImpairment ?? "No Value")"],
+            ["Gesamtbewertung Erhaltungszustand",    "\(listEntry.infos?.overallAssessmentOfTheStateOfPreservation ?? "No Value")"],
+            ["Magerkeitszeiger",    "No Value"],
+            ["Beeinträchtigende Arten",    "No Value"],
+            ["Schutzstatus",  "\(listEntry.infos?.protectionStatus ?? "No Value")"],
+            ["Faunistische\n Beobachtung",     "\(listEntry.infos?.faunisticObservation ?? "No Value")"],
+            ["Vertragsziel\n erfüllt",     "\(listEntry.infos?.contractTarget ?? "No Value")"],
+            ["Anpassung\n Auflagen",     "\(listEntry.infos?.adaptationEditions ?? "No Value")"],
+            ["Weitere\n Pflegeaufnah-\n men",     "\(listEntry.infos?.furtherMaintenanceMeasures ?? "No Value")"]
         ]
         
         
