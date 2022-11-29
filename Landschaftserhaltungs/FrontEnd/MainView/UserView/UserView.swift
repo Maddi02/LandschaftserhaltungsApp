@@ -11,12 +11,28 @@ import Foundation
 struct Test : Identifiable
 {
     
-    var test : String
+    private var scientficName : String
+    private var germanName : String
+    private var evaluation1a : String
+    private var evaluation1b : String
+    private var evaluation1c : String
+    private var evaluation1d : String
+    private var evaluation2 : String
+    private var evaluation3 : String
+    private var evaluationRL : String
     var id = UUID()
     
     init(row: [String])
     {
-        test = row[0]
+        scientficName = row[0]
+        germanName = row[1]
+        evaluation1a = row[2]
+        evaluation1b = row[3]
+        evaluation1c = row[4]
+        evaluation1d = row[5]
+        evaluation2 = row[6]
+        evaluation3 = row[7]
+        evaluationRL = row[8]
     }
     
     
@@ -111,19 +127,16 @@ struct UserView: View {
                         swiftArray.remove(at: 0)
                         swiftArray.remove(at: 1)
                         print(swiftArray[0][0])
-                        
+                        var plant : [Test] = []
                         var i = 0
-                        var j = 0
+        
                         for _ in swiftArray
                         {
-                            
-                            for _ in j...8 {
-                                print(swiftArray[i][j])
-                                j+=1
-                            }
-                            j = 0
+                            plant.append(Test(row: swiftArray[i]))
                             i+=1
                         }
+                        
+                        print(plant)
                     }
                     
                     catch{
