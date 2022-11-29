@@ -10,7 +10,7 @@ import PDFKit
 
 
 
-struct ExportPreviewFFH: View {
+struct ExportPreviewPDFFFH: View {
     private  let pdf = PDFCreatorFFH()
     @StateObject var listEntry: ListEntry
     

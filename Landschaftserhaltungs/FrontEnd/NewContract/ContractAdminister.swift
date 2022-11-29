@@ -112,7 +112,7 @@ import SwiftUI
                     }
                 }
                 if(typOfField == "FFH Mähwiese"){
-                    NavigationLink(destination: ExportPreviewFFH(listEntry: listEntry)) {
+                    NavigationLink(destination: ExportPreviewPDFFFH(listEntry: listEntry)) {
                         Button("Exportieren")
                         {
                             
@@ -120,7 +120,7 @@ import SwiftUI
                     }
                 }
                 else {
-                    NavigationLink(destination: ExportPreviewOtherBiotop(listEntry: listEntry).onAppear(perform: {pdf.generatePdf(listEntry: listEntry)})) {
+                    NavigationLink(destination: ExportPreviewPDFOtherBiotop(listEntry: listEntry).onAppear(perform: {pdf.generatePdf(listEntry: listEntry)})) {
                         Button("Exportieren")
                         {
                             

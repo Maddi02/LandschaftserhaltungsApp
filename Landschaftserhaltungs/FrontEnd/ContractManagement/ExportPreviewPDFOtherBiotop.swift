@@ -33,7 +33,7 @@ struct PictureViewExportDiffrentBiotop :View
 
 
 
-struct ExportPreviewOtherBiotop: View {
+struct ExportPreviewPDFOtherBiotop: View {
     let pdfView = PDFView()
     @StateObject var listEntry : ListEntry
     private  let pdf = PDFCreatorDiffrentBiotop()
