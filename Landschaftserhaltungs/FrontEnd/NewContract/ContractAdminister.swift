@@ -24,8 +24,8 @@ import SwiftUI
     @State private var showingAlert = false
     @State private var showingActionSheet = false
     @State private var typOfField = ""
-
-    
+     let csvGenerator = CSVGenerator()
+     @State var link = URL(string: "https://www.hackingwithswift.com")!
     var body: some View {
         Text("Vetragsübersicht").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
         ContractListItem(firstName: filteredContracts.firstName ?? "Unknown", lastName: filteredContracts.lastName ?? "Unknwon" , operationNumber: filteredContracts.operationNumber ?? "Unknown", contractTermination:  filteredContracts.contractTermination?.toString() ?? Date().toString(), endOfContract: filteredContracts.contractTermination?.getEndOfContract(date: filteredContracts.contractTermination ?? Date()) ?? Date().toString() , image: filteredContracts.picture ?? UIImage(imageLiteralResourceName: "HFULogo"), deadline: filteredContracts.deadline?.toString() ?? Date().toString(), dataHandler: dataHandler).frame(maxWidth: .infinity, alignment: .top)
@@ -128,15 +128,16 @@ import SwiftUI
                     }
                 }
                 
+               
+            
+            
+                
                 Button("CSV")
                 {
-                     let csvGenerator = CSVGenerator()
+                     
                     print("Pressed me")
-                    csvGenerator.generate(listEntry: listEntry)
-                    
-                    
-                    
-                    
+                    link = csvGenerator.generateAndGetUrl(listEntry: listEntry)
+                    presentShareSheet()
                 }
                 
             }
@@ -158,6 +159,13 @@ import SwiftUI
             
         }
     }
+     private func presentShareSheet(){
+        // pdf.generatePdf(listEntry: listEntry)
+     
+         let shareSheetVC = UIActivityViewController(activityItems: [link], applicationActivities:  [])
+         UIApplication.shared.windows.first?.rootViewController?.present(shareSheetVC, animated: true, completion: nil)
+     }
+
     
 }
 

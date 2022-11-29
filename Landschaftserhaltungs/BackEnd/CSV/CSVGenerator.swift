@@ -11,9 +11,9 @@ class CSVGenerator
 {
     
     
-    func generate(listEntry : ListEntry)
+    func generateAndGetUrl(listEntry : ListEntry) -> URL
     {
-        let sFileName = "test.csv"
+        let sFileName = "\(Int.random(in: 1...100000)).csv"
         let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         
         
@@ -188,6 +188,8 @@ class CSVGenerator
         {
             
         }
+        
+        return documentURL
         
     }
     
