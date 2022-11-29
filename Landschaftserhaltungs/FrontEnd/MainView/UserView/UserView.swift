@@ -75,11 +75,17 @@ struct UserView: View {
                     
                 }
                 
-            
-                Text("Ausgewähltes file \(fileUrl)")
+                var parsedCSV: [String] = []
+                var data = ""
+               // Text("Ausgewähltes file \(String(fileUrl))")
               Button("Test")
                 {
                     openFile.toggle()
+     
+                 
+                  
+                  //  print(rows?.count)
+                    
                 }.fileImporter(isPresented: $openFile, allowedContentTypes: [.data]) {
                     (res) in
                     
@@ -87,6 +93,16 @@ struct UserView: View {
                         let fileUrl = try res.get()
                         print(fileUrl)
                         self.fileUrl = fileUrl.lastPathComponent
+                    
+                        let rows = NSArray(contentsOfCSVURL: fileUrl, options: CHCSVParserOptions.sanitizesFields)!
+                        
+                        print(rows.count)
+                        
+                        for row in rows
+                        {
+                            print(row)
+                        }
+                        print(parsedCSV)
                     }
                     
                     catch{
