@@ -10,7 +10,7 @@ import PDFKit
 import TPPDF
 class PDFCreatorDiffrentBiotop
 {
-    
+
     var  url = URL(string: "")
    
     func getDocumentsDirectory() -> URL {
@@ -36,6 +36,8 @@ class PDFCreatorDiffrentBiotop
     
     
     func generatePdfAndGetURL(listEntry : ListEntry) -> URL {
+    
+
         url =  getDocumentsDirectory().appendingPathComponent("awesome.pdf")
         let document = PDFDocument(format: .a4)
         let imageElementHeader = PDFImage(image: listEntry.contract?.picture ?? UIImage(), size: CGSize(width: 150, height: 80))
@@ -45,11 +47,7 @@ class PDFCreatorDiffrentBiotop
                                                              font: Font.boldSystemFont(ofSize: 20.0),
                                                              color: Color.black))
         let style = PDFLineStyle(type: .full, color: .darkGray, width: 0.5)
-        let colors = (fill: UIColor.darkGray, text: UIColor.black)
-        let lineStyle = PDFLineStyle(type: .dashed, color: UIColor.gray, width: 10)
-        let borders = PDFTableCellBorders(left: lineStyle, top: lineStyle, right: lineStyle, bottom: lineStyle)
-        let font = UIFont.systemFont(ofSize: 20)
-        
+     
         
         //Header
         document.add(.headerRight, image: imageElementHeader)
@@ -125,19 +123,6 @@ class PDFCreatorDiffrentBiotop
         
         allPlants = allPlants.sorted{$0.getScientificName() < $1.getScientificName()}
 
-
-        
-        
-       // let tablePlant = PDFTable(rows: 50 , columns: 3)
-        
-       // tablePlant.content = [ ["WN" , "DN" , "1a","1b","1c","1d","2","3","RD"]]
-       
-     /*
-        for i in allPlants
-        {
-            tablePlant[colum : 0][0].content =  "\(i.getScientificName()) , \(i.getGermanName()) , \(setCross(checked: i.getReating1a())),\(setCross(checked: i.getReating1b())), \(setCross(checked: i.getReating1c())), \(setCross(checked: i.getReating1d())), \(setCross(checked: i.getReating2())),  \(setCross(checked: i.getReating3())), \(i.getRedList())".asTableContent
-        }
-      */
         document.createNewPage()
         let tablePlant = PDFTable(rows: allPlants.count + 1, columns: 11)
         tablePlant.widths = [0.275, 0.275, 0.05, 0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05]

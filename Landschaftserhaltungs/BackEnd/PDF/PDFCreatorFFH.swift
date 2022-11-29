@@ -44,11 +44,7 @@ class PDFCreatorFFH
                                                              font: Font.boldSystemFont(ofSize: 20.0),
                                                              color: Color.black))
         let style = PDFLineStyle(type: .full, color: .darkGray, width: 0.5)
-        let colors = (fill: UIColor.darkGray, text: UIColor.black)
-        let lineStyle = PDFLineStyle(type: .dashed, color: UIColor.gray, width: 10)
-        let borders = PDFTableCellBorders(left: lineStyle, top: lineStyle, right: lineStyle, bottom: lineStyle)
-        let font = UIFont.systemFont(ofSize: 20)
-        
+    
         
         //Header
         document.add(.contentCenter, text: "Create PDF documents easily.")

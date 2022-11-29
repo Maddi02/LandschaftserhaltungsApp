@@ -10,7 +10,7 @@ import SwiftUI
 
 
 
-struct ContractAdminister: View {
+ struct ContractAdminister: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) var moc
     private  let pdf = PDFCreatorDiffrentBiotop()
@@ -24,6 +24,7 @@ struct ContractAdminister: View {
     @State private var showingAlert = false
     @State private var showingActionSheet = false
     @State private var typOfField = ""
+
     
     var body: some View {
         Text("Vetragsübersicht").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
@@ -126,6 +127,18 @@ struct ContractAdminister: View {
                         }
                     }
                 }
+                
+                Button("CSV")
+                {
+                     let csvGenerator = CSVGenerator()
+                    print("Pressed me")
+                    csvGenerator.generate(listEntry: listEntry)
+                    
+                    
+                    
+                    
+                }
+                
             }
         }
     }
