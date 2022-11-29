@@ -20,11 +20,11 @@ struct UserView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
     let defaults = UserDefaults.standard
-    
     let language = ["Deutsch", "Latein"]
     @State private var isShownPhotoLibrary = false
     @State private var image = UIImage()
-    
+    @State private var openFile = false
+    @State private var fileUrl = ""
     
     
     var body: some View {
@@ -75,10 +75,23 @@ struct UserView: View {
                     
                 }
                 
-                
-                NavigationLink(destination: InsertNewPlantView())
+            
+                Text("Ausgewähltes file \(fileUrl)")
+              Button("Test")
                 {
-                    Text("Füge Pflanze hinzu")
+                    openFile.toggle()
+                }.fileImporter(isPresented: $openFile, allowedContentTypes: [.data]) {
+                    (res) in
+                    
+                    do {
+                        let fileUrl = try res.get()
+                        print(fileUrl)
+                        self.fileUrl = fileUrl.lastPathComponent
+                    }
+                    
+                    catch{
+                        
+                    }
                 }
               
                 
