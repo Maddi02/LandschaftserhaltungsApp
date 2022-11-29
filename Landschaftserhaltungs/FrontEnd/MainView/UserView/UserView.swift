@@ -8,6 +8,21 @@
 import SwiftUI
 import Foundation
 
+struct Test : Identifiable
+{
+    
+    var test : String
+    var id = UUID()
+    
+    init(row: [String])
+    {
+        test = row[0]
+    }
+    
+    
+    
+    
+}
 
 
 
@@ -74,18 +89,9 @@ struct UserView: View {
                     }.frame(maxWidth: .infinity, alignment: .center)
                     
                 }
-                
-                var parsedCSV: [String] = []
-                var data = ""
-               // Text("Ausgewähltes file \(String(fileUrl))")
               Button("Test")
                 {
                     openFile.toggle()
-     
-                 
-                  
-                  //  print(rows?.count)
-                    
                 }.fileImporter(isPresented: $openFile, allowedContentTypes: [.data]) {
                     (res) in
                     
@@ -93,16 +99,31 @@ struct UserView: View {
                         let fileUrl = try res.get()
                         print(fileUrl)
                         self.fileUrl = fileUrl.lastPathComponent
-                    
+                        
                         let rows = NSArray(contentsOfCSVURL: fileUrl, options: CHCSVParserOptions.sanitizesFields)!
+                        var objCArray = NSMutableArray(array: rows)
                         
-                        print(rows.count)
                         
-                        for row in rows
+                        print(objCArray.count)
+                        var swiftArray: [[String]] = objCArray as! [[String]]
+                        
+                        print(swiftArray.count)
+                        swiftArray.remove(at: 0)
+                        swiftArray.remove(at: 1)
+                        print(swiftArray[0][0])
+                        
+                        var i = 0
+                        var j = 0
+                        for _ in swiftArray
                         {
-                            print(row)
+                            
+                            for _ in j...8 {
+                                print(swiftArray[i][j])
+                                j+=1
+                            }
+                            j = 0
+                            i+=1
                         }
-                        print(parsedCSV)
                     }
                     
                     catch{
