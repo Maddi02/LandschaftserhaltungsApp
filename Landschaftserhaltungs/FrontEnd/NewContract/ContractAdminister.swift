@@ -90,7 +90,7 @@ import SwiftUI
                     }
                 
 
-                NavigationLink(destination: FrequencyEstimationField()) {
+                NavigationLink(destination: FrequencyEstimationField(listEntry: listEntry)) {
                     Button("Häufigkeitsschätzung")
                     {
 

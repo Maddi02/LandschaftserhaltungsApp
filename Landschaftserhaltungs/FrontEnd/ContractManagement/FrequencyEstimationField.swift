@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct FrequencyEstimationField: View {
+    
+    @StateObject var listEntry : ListEntry
+    
     var body: some View {
         Text("Hello, Häufigkeitsschätzung")
+        Text("\(listEntry.PlantArray.count)")
+        Text("\(listEntry.PlantArrayLongTerm.count)")
+        
+        
+        
+        
+        
+        
     }
 }
 
-struct FrequencyEstimationField_Previews: PreviewProvider {
-    static var previews: some View {
-        FrequencyEstimationField()
-    }
-}
