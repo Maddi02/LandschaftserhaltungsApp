@@ -62,8 +62,10 @@ import SwiftUI
                         showingActionSheet.toggle()
                         typOfField = list.descriptionField ?? "Unknown"
                         listEntry = list.self
+                
                         
                     }
+   
                 
                 
                 label: {
@@ -71,17 +73,8 @@ import SwiftUI
                         
                         ListItemContractArea(description: list.detailDescription ?? "Unknown", date: list.dateOfObservation ?? Date(), typ: list.descriptionField ?? "Unknown").tint(.black)
                         
-                    }.swipeActions(edge: .leading) {
-                        NavigationLink( destination: EditListItemContractArea())
-                        {
-                            HStack(spacing: 0) {
-                                Text("Aufnahme bearbeiten")
-                                Image(systemName: "slider.horizontal.2.square.on.square")
-                            }
-                        }.tint(.indigo)
-                        
-                        
-                    }.tint(.indigo)
+                    }
+                    
                 } .onDelete(perform: delete).alert("Vertrag wurde gelöscht", isPresented: $showingAlert) {
                 }
                 
@@ -126,11 +119,22 @@ import SwiftUI
                 
                 Button("CSV")
                 {
-                     
-                    print("Pressed me")
                     link = csvGenerator.generateAndGetUrl(listEntry: listEntry)
                     presentShareSheet()
                 }
+                
+                NavigationLink(destination: EditListItemContractAreaFFH(type: typOfField, listEntry: listEntry)) {
+                    Button(" Information Bearbeiten")
+                    {
+                        
+                    }
+                }
+
+                    
+                 
+               
+                
+                
                 
             }
         }
@@ -158,6 +162,11 @@ import SwiftUI
          UIApplication.shared.windows.first?.rootViewController?.present(shareSheetVC, animated: true, completion: nil)
      }
 
-    
+     func test(str : String)
+     {
+         print(str)
+     }
+     
+
 }
 

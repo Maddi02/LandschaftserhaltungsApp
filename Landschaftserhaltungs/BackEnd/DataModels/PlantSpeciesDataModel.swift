@@ -58,7 +58,7 @@ public class PlantSpeciesDataModel : ObservableObject
     
     
         loadFromCSV()
-        a()
+        initatializeList()
 
 
         }
@@ -97,7 +97,8 @@ public class PlantSpeciesDataModel : ObservableObject
     
     
     
-    func a()
+    
+    func initatializeList()
     {
         print("IN A")
 
