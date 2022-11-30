@@ -76,8 +76,8 @@ struct UserView: View {
                     }.frame(maxWidth: .infinity, alignment: .center)
                     
                 }
-                Text(defaults.url(forKey: "csvPath")?.absoluteString ?? "NO Path Selected")
-              Button("Test")
+                Text(defaults.url(forKey: "csvPath")?.lastPathComponent ?? "NO Path Selected")
+              Button("Import CSV Datei")
                 {
                     openFile.toggle()
                 }.fileImporter(isPresented: $openFile, allowedContentTypes: [.data]) {
@@ -103,6 +103,18 @@ struct UserView: View {
                     dismiss()
                     print("Button Saved was pressed")
                 }
+                
+                
+                
+                NavigationLink(destination: OnboardingFlowView(), label: {
+                    Text("Onboarding wiederholen")
+          
+                    
+                }).onAppear(perform: {
+                    defaults.set(false, forKey: "realOnboarding")
+                })
+    
+                
             }.navigationBarTitle(Text("Profile"))
         }
         .sheet(isPresented: $isShownPhotoLibrary){

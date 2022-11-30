@@ -684,8 +684,8 @@
             filePath = "Landschaftserhaltungs/BackEnd/DataModels/PlantSpeciesDataModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "loadFromCSV()"
             landmarkType = "7">
          </BreakpointContent>
@@ -716,24 +716,8 @@
             filePath = "Landschaftserhaltungs/BackEnd/DataModels/PlantSpeciesDataModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
-            landmarkName = "loadFromCSV()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "213E13D5-3EFB-409C-915B-5ABAA9698E31"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Landschaftserhaltungs/BackEnd/DataModels/PlantSpeciesDataModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "loadFromCSV()"
             landmarkType = "7">
          </BreakpointContent>
