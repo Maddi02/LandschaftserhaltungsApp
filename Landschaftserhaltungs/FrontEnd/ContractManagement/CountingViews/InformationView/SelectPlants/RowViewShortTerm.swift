@@ -33,7 +33,7 @@ struct RowViewShortTerm: View {
 
             else {
                 
-                Text(text).foregroundColor(.green)
+   
                 CheckBoxView(checked: $checked).onChange(of: checked, perform: {
                     newValue in
                     if(checked)
@@ -42,7 +42,7 @@ struct RowViewShortTerm: View {
                     }
                     
                 })
-               
+                Text(text)
             }
         }
 

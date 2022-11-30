@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-import CSV
 
 struct MainSideView:  View {
     @ObservedObject var userSettings = UserSettings()
@@ -17,12 +16,14 @@ struct MainSideView:  View {
     @StateObject var appContract = AppContract()
     @State var showProfile = false
     @State var showImpressum = false
-    
     @State private var image = UIImage()
     var body: some View {
         //Verwalten
         
         VStack{
+            
+            
+
             
             GeometryReader { geometry in
                 

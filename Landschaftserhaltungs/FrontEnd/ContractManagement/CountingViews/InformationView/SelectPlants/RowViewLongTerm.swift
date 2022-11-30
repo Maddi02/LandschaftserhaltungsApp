@@ -20,7 +20,7 @@ struct RowViewLongTerm: View {
     
     var body: some View {
         HStack{
-            Text(text).foregroundColor(.green)
+          
             
             if(checkIfAllreadySaved(plant: text))
             {
@@ -39,7 +39,7 @@ struct RowViewLongTerm: View {
                     
                 })
                
-                    
+                Text(text).foregroundColor(.green)
             }
         }
 

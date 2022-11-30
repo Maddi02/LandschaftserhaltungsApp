@@ -50,8 +50,7 @@ struct UserView: View {
                     }
                     
                 }.onAppear(perform: {
-       
-                  //  userSettings.loadImage()
+                    print("HHHH")
                     self.image = userSettings.getImage()
                 })
               
@@ -88,6 +87,7 @@ struct UserView: View {
                         let fileUrl = try res.get()
                         self.fileUrl = fileUrl.lastPathComponent
                         defaults.set(fileUrl, forKey: "csvPath")
+                        print(fileUrl)
                     }
                     
                     catch{
