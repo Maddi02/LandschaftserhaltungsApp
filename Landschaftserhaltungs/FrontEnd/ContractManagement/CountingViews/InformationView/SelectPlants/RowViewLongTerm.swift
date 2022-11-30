@@ -21,7 +21,7 @@ struct RowViewLongTerm: View {
     var body: some View {
         HStack{
           
-            
+            Text(text).foregroundColor(.green)
             if(checkIfAllreadySaved(plant: text))
             {
                 CheckBoxView(checked: $checkedTrue).disabled(true)
@@ -39,7 +39,7 @@ struct RowViewLongTerm: View {
                     
                 })
                
-                Text(text).foregroundColor(.green)
+       
             }
         }
 

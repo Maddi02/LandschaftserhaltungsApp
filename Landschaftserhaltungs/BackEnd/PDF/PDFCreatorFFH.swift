@@ -10,6 +10,7 @@ import TPPDF
 import PDFKit
 class PDFCreatorFFH
 {
+  var userSettings = UserSettings()
     var  url = URL(string: "")
     
     func getDocumentsDirectory() -> URL {
@@ -37,7 +38,7 @@ class PDFCreatorFFH
     func generatePdfAndGetURL(listEntry : ListEntry) -> URL {
         url =  getDocumentsDirectory().appendingPathComponent("awesome.pdf")
         let document = PDFDocument(format: .a4)
-        let imageElementHeader = PDFImage(image: listEntry.contract?.picture ?? UIImage(), size: CGSize(width: 150, height: 80))
+        let imageElementHeader = PDFImage(image: userSettings.getImage() , size: CGSize(width: 150, height: 80))
         let imageOverViewPic = PDFImage(image: listEntry.contract?.picture ?? UIImage())
         
         let headingStyle1 = document.add(style: PDFTextStyle(name: "Heading 1",

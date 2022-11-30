@@ -23,7 +23,7 @@ struct RowViewShortTerm: View {
         
         HStack{
            
-            
+            Text(text)
             if(checkIfAllreadySaved(plant: text))
             {
                 Text(text).foregroundColor(.green)
@@ -32,8 +32,6 @@ struct RowViewShortTerm: View {
             }
 
             else {
-                
-   
                 CheckBoxView(checked: $checked).onChange(of: checked, perform: {
                     newValue in
                     if(checked)
@@ -42,8 +40,9 @@ struct RowViewShortTerm: View {
                     }
                     
                 })
-                Text(text)
+                
             }
+
         }
 
     }

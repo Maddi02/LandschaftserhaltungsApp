@@ -60,7 +60,6 @@ public class UserSettings: ObservableObject {
     }
     
     func loadImage() {
-        print("Hekk")
         guard let data = UserDefaults.standard.data(forKey: "KEY") else { return }
         let decoded = try! PropertyListDecoder().decode(Data.self, from: data)
         let image = UIImage(data: decoded)
