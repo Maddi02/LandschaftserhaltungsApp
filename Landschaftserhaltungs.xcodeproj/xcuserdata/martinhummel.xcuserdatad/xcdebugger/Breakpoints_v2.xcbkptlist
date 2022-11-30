@@ -718,7 +718,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
             endingLineNumber = "13"
-            landmarkName = "EditListItemContractAreaFFH"
+            landmarkName = "EditListItemContractArea"
             landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
@@ -734,7 +734,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
             endingLineNumber = "34"
-            landmarkName = "EditListItemContractAreaFFH"
+            landmarkName = "EditListItemContractArea"
             landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>

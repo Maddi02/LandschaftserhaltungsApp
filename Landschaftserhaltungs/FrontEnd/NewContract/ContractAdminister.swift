@@ -123,7 +123,7 @@ import SwiftUI
                     presentShareSheet()
                 }
                 
-                NavigationLink(destination: EditListItemContractAreaFFH(type: typOfField, listEntry: listEntry)) {
+                NavigationLink(destination: EditListItemContractArea(type: typOfField, listEntry: listEntry)) {
                     Button(" Information Bearbeiten")
                     {
                         

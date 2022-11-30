@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EditListItemContractAreaFFH: View {
+struct EditListItemContractArea: View {
   
     var type : String
     @ObservedObject var listEntry : ListEntry
