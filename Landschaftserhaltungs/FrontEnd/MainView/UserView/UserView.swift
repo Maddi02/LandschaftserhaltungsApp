@@ -91,7 +91,7 @@ struct UserView: View {
                     }
                     
                     catch{
-                        
+                        print(error)
                     }
                 }
               

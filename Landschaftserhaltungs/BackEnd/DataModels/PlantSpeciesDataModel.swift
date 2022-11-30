@@ -172,6 +172,15 @@ public class PlantSpeciesDataModel : ObservableObject
     }
     
     
+    func getDocumentsDirectory() -> URL {
+        // find all possible documents directories for this user
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        
+        // just send back the first one, which ought to be the only one
+        return paths[0]
+    }
+    
+    
     func loadFromCSV()
     {
         let fileURL = defaults.url(forKey: "csvPath")
@@ -179,17 +188,31 @@ public class PlantSpeciesDataModel : ObservableObject
         let rows = NSArray(contentsOfCSVURL: fileURL, options: CHCSVParserOptions.sanitizesFields)!
         var objCArray = NSMutableArray(array: rows)
         var swiftArray: [[String]] = objCArray as! [[String]]
-        swiftArray.remove(at: 0)
-        swiftArray.remove(at: 1)
-        var i = 0
-        print(swiftArray)
-        for item in swiftArray
-        {
-            platList.append(PlantSpecies(row: item))
-            //i+=1
-        }
         
-        print(platList)
+        if(swiftArray.count > 2)
+        {
+            swiftArray.remove(at: 0)
+            swiftArray.remove(at: 1)
+            var i = 0
+            print(swiftArray)
+            for item in swiftArray
+            {
+                platList.append(PlantSpecies(row: item))
+                //i+=1
+            }
+            
+            print(platList)
+        }
+
+        let documentDirectoryURL = try! FileManager.default.url(for: .documentDirectory,
+                                        in: .userDomainMask,
+                            appropriateFor: nil,
+                                    create: true)
+
+        let databaseURL = documentDirectoryURL.appendingPathComponent("Hope.csv")
+        
+        print(databaseURL)
+        
         
         print("out of Datamodel \(fileURL)")
         
