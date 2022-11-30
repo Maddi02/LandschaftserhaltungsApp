@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SheetSelectPlantsLongTerm: View {
     @ObservedObject var userSettings = UserSettings()
-    @StateObject var plantSpeciesDataModel = PlantSpeciesDataModel()
+    @ObservedObject var plantSpeciesDataModel : PlantSpeciesDataModel
     var longTimeSpeciesCencus : LongTimeSpeciesCensus
     @StateObject var listEntry : ListEntry
     @Environment(\.presentationMode) var presentationMode

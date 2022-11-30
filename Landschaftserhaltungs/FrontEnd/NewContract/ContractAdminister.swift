@@ -14,7 +14,7 @@ import SwiftUI
     @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) var moc
     private  let pdf = PDFCreatorDiffrentBiotop()
-    @ObservedObject var dataHandler : DataHandler
+    @ObservedObject var dataHandler : DataHandler 
     @State var listEntry : ListEntry = ListEntry()
     @State var filteredContracts : AppContract
     @State var description : String = ""

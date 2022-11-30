@@ -35,6 +35,42 @@ struct PlantListItem : Identifiable
     }
     
     
+    public func getScientificName() -> String
+    {
+        return scientficName
+    }
     
+    public func getGermanName() -> String
+    {
+        return germanName
+    }
     
+    public func getEvaluation1a() -> String
+    {
+        return evaluation1a
+    }
+    public func getEvaluation1b() -> String
+    {
+        return evaluation1b
+    }
+    public func getEvaluation1c() -> String
+    {
+        return evaluation1c
+    }
+    public func getEvaluation1d() -> String
+    {
+        return evaluation1d
+    }
+    public func getEvaluation2() -> String
+    {
+        return evaluation2
+    }
+    public func getEvaluation3() -> String
+    {
+        return evaluation3
+    }
+    public func getRL() -> String
+    {
+        return evaluationRL
+    }
 }

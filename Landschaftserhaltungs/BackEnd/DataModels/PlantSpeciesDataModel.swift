@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import SwiftUI
 public class PlantSpeciesDataModel : ObservableObject
 
 {
@@ -14,7 +14,7 @@ public class PlantSpeciesDataModel : ObservableObject
     
     
     
-    
+    let defaults = UserDefaults.standard
     @Published var platList : [PlantSpecies] = []
     @Published var filterdPlants : [PlantSpecies] = []
     @Published  var germanList:  [String:  [PlantSpecies]] = [:]
@@ -54,51 +54,11 @@ public class PlantSpeciesDataModel : ObservableObject
 
       //  sectionDictionary = [:]
       //  sectionDictionary = getSectionedDictionary()
-        
-     
-        platList.append(PlantSpecies(
-            scientificName: "Abies alba",
-            redListBw: "*",
-            responsibility: " ",
-            oberReihnArea: "*",
-            blackForest: "*",
-            odenWald: "°",
-            nothernGaelandschaften: "V",
-            southernGaelandschaften: "*",
-            schaebischeAlb: "*",
-            alpenvorland: "*",
-            germanName: "Weiß-Tanne"
-        ))
-        
-        platList.append(PlantSpecies(
-            scientificName: "Acer campestre",
-            redListBw: "*",
-            responsibility: " ",
-            oberReihnArea: "*",
-            blackForest: "*",
-            odenWald: "*",
-            nothernGaelandschaften: "*",
-            southernGaelandschaften: "*",
-            schaebischeAlb: "*",
-            alpenvorland: "*",
-            germanName: "Feld-Ahorn"
-        ))
-
-        
-        platList.append(PlantSpecies(
-            scientificName: "Acer negundo",
-            redListBw: "*",
-            responsibility: " ",
-            oberReihnArea: "*",
-            blackForest: "-",
-            odenWald: "°",
-            nothernGaelandschaften: "°",
-            southernGaelandschaften: "°",
-            schaebischeAlb: "°",
-            alpenvorland: "°",
-            germanName: "Eschen-Ahorn"
-        ))
+    
+    
+        loadFromCSV()
         a()
+
 
         }
    
@@ -140,6 +100,7 @@ public class PlantSpeciesDataModel : ObservableObject
     {
         print("IN A")
 
+        print(platList.count)
         germanList  =
         
 
@@ -209,6 +170,32 @@ public class PlantSpeciesDataModel : ObservableObject
 
        
     }
+    
+    
+    func loadFromCSV()
+    {
+        let fileURL = defaults.url(forKey: "csvPath")
+        print(fileURL)
+        let rows = NSArray(contentsOfCSVURL: fileURL, options: CHCSVParserOptions.sanitizesFields)!
+        var objCArray = NSMutableArray(array: rows)
+        var swiftArray: [[String]] = objCArray as! [[String]]
+        swiftArray.remove(at: 0)
+        swiftArray.remove(at: 1)
+        var i = 0
+        print(swiftArray)
+        for item in swiftArray
+        {
+            platList.append(PlantSpecies(row: item))
+            //i+=1
+        }
+        
+        print(platList)
+        
+        print("out of Datamodel \(fileURL)")
+        
+    }
+    
+
     
     
     

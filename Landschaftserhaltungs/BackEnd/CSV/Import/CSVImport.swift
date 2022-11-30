@@ -9,7 +9,7 @@ import Foundation
 import UniformTypeIdentifiers
 import UIKit
 
-/// NOT LONGER NEEDED
+
 class CSVImport : UIViewController, UIDocumentPickerDelegate{
     
     let supportedFiles : [UTType] = [UTType.data]

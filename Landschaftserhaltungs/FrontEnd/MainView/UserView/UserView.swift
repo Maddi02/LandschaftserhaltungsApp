@@ -13,6 +13,7 @@ import Foundation
 
 
 struct UserView: View {
+
     @ObservedObject var userSettings = UserSettings()
     @State private var firstName = ""
     @State private var lastName = ""
@@ -75,6 +76,7 @@ struct UserView: View {
                     }.frame(maxWidth: .infinity, alignment: .center)
                     
                 }
+                Text(defaults.url(forKey: "csvPath")?.absoluteString ?? "NO Path Selected")
               Button("Test")
                 {
                     openFile.toggle()
@@ -82,25 +84,10 @@ struct UserView: View {
                     (res) in
                     
                     do {
+       
                         let fileUrl = try res.get()
-                        print(fileUrl)
                         self.fileUrl = fileUrl.lastPathComponent
-                        
-                        let rows = NSArray(contentsOfCSVURL: fileUrl, options: CHCSVParserOptions.sanitizesFields)!
-                        var objCArray = NSMutableArray(array: rows)
-                        var swiftArray: [[String]] = objCArray as! [[String]]
-                        swiftArray.remove(at: 0)
-                        swiftArray.remove(at: 1)
-                        var plant : [PlantListItem] = []
-                        var i = 0
-        
-                        for _ in swiftArray
-                        {
-                            plant.append(PlantListItem(row: swiftArray[i]))
-                            i+=1
-                        }
-                        
-                        print(plant)
+                        defaults.set(fileUrl, forKey: "csvPath")
                     }
                     
                     catch{
