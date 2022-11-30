@@ -98,7 +98,7 @@ import SwiftUI
                 }
                 if(typOfField == "FFH Mähwiese"){
                     NavigationLink(destination: ExportPreviewPDFFFH(listEntry: listEntry)) {
-                        Button("Exportieren")
+                        Button("PDF Exportieren")
                         {
                             
                         }
@@ -106,7 +106,7 @@ import SwiftUI
                 }
                 else {
                     NavigationLink(destination: ExportPreviewPDFOtherBiotop(listEntry: listEntry).onAppear(perform: {pdf.generatePdf(listEntry: listEntry)})) {
-                        Button("Exportieren")
+                        Button("PDF Exportieren")
                         {
                             
                         }
@@ -117,7 +117,7 @@ import SwiftUI
             
             
                 
-                Button("CSV")
+                Button("CSV Exportieren")
                 {
                     link = csvGenerator.generateAndGetUrl(listEntry: listEntry)
                     presentShareSheet()

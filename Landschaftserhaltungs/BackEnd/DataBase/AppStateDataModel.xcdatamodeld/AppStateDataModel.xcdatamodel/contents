@@ -84,6 +84,7 @@
         <attribute name="descriptionField" optional="YES" attributeType="String"/>
         <attribute name="descriptionFieldLongTerm" optional="YES" attributeType="String"/>
         <attribute name="disturbanceIndicator" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="frequency" optional="YES" attributeType="String"/>
         <attribute name="germanName" optional="YES" attributeType="String"/>
         <attribute name="impairedSpecies" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="mergerityPointer" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -113,6 +114,7 @@
         <attribute name="checked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="descriptionFieldLongTerm" optional="YES" attributeType="String"/>
         <attribute name="disturbanceIndicator" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="frequency" optional="YES" attributeType="String"/>
         <attribute name="germanName" optional="YES" attributeType="String"/>
         <attribute name="impairedSpecies" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="longTermuuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>

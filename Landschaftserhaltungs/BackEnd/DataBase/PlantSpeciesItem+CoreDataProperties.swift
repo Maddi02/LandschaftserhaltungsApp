@@ -17,6 +17,7 @@ extension PlantSpeciesItem {
     }
 
     @NSManaged public var alpenvorland: String?
+    @NSManaged public var frequency: String?
     @NSManaged public var blackForest: String?
     @NSManaged public var germanName: String?
     @NSManaged public var nothernGaelandschaften: String?
