@@ -60,7 +60,7 @@ struct SheetSelectPlantsShortTerm: View {
             }.listStyle(InsetGroupedListStyle())
                 .overlay(sectionIndexTitles(proxy: proxy))
 
-                .navigationBarTitle("Pflanzenarten")
+                .navigationBarTitle("Schnellaufnahme").padding()
                 .navigationBarBackButtonHidden(true)
         }
     
@@ -69,7 +69,7 @@ struct SheetSelectPlantsShortTerm: View {
 
     
     
-            NavigationLink(destination: LongTimeSpeciesCensus(listEntry: listEntry, plantSpeciesDataModel: plantSpeciesDataModel, speciesCensusView: speciesCensusView).onAppear{
+        NavigationLink(destination: SheetSelectPlantsLongTerm(plantSpeciesDataModel: plantSpeciesDataModel , listEntry: listEntry).onAppear{
                 speciesCensusView.saveEntrys()
                 
             }){

@@ -524,8 +524,8 @@
             filePath = "Landschaftserhaltungs/FrontEnd/ContractManagement/CountingViews/LongTimeSpeciesCensus.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -540,26 +540,10 @@
             filePath = "Landschaftserhaltungs/FrontEnd/ContractManagement/CountingViews/LongTimeSpeciesCensus.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "body"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9FE1082F-F7A7-4EC3-A0FA-92019A61C05B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Landschaftserhaltungs/FrontEnd/ContractManagement/CountingViews/SpeciesCensusView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "saveEntrys()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -572,9 +556,9 @@
             filePath = "Landschaftserhaltungs/FrontEnd/ContractManagement/CountingViews/InformationView/SelectPlants/SheetSelectPlantsLongTerm.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "contains(str:)"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "saveEntrysLongTerm()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -590,8 +574,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "223"
             endingLineNumber = "223"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "addToList(image:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

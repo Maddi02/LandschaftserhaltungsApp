@@ -28,6 +28,7 @@ struct SpeciesCensusView: View {
     @State private var showSelectionView = false
     @State private var showingAlert = false
     @State var fieldDescription : String = ""
+    @State var typeOfField : String
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private let  width : Double = 250
     public var description : String
@@ -37,7 +38,7 @@ struct SpeciesCensusView: View {
         VStack{
             
             
-            if(listEntry.PlantArray.count > 0  || listEntry.PlantArrayLongTerm.count > 0)
+            if(listEntry.PlantArray.count > 0  || listEntry.PlantArrayLongTerm.count > 0 || ((listEntry.infos?.dataOfTaking) != nil))
             {
                 alertView(showAlert: true)
                
@@ -45,21 +46,41 @@ struct SpeciesCensusView: View {
             
             else
             {
-                Text("Schnellaufnahme").font(Font.title).frame(maxWidth: .infinity , alignment: .topLeading)
-                Text("\(description) ").font(Font.title3).frame(maxWidth: .infinity , alignment: .topLeading)
+                if(typeOfField == "FFH Mähwiese"){
+                    
+                    Text("INFO").frame(maxWidth: .infinity, alignment: .top).font(.title2).padding()
+                    
+                    Text("Auf Grund der Feldtypauswahl :  \(typeOfField) müssen Sie im folgenden eine Schnellaufnahme durchführen. Diese wird 10 Minuten dauern. Die Pflanzen welche Sie dort auswählen sind automatisch in der draufffolgenden genauen Aufnahme ausgewählt und können auch nicht mehr gelöscht werden. Nach dem Sie die Schnell / Genauaufnahme durhchgeführt haben. Können Sie noch Informationen zum Feld aufnehmen. Des Weitern kann man dort Bilder aus der Galerie oder direkt von der Kamera aufnehemen\nBEACHTEN SIE wenn Sie die Aufnahme einmal gestartet kommt man nicht mehr zurück.\nWenn Sie bereit sind, klicken Sie einfach auf Start ").padding(.top).padding(.leading)
+                }
                 
-                
+                else {
+                    Text("INFO").frame(maxWidth: .infinity, alignment: .top).font(.title2).padding()
+                    Text("Auf Grund der Feldtypauswahl :  \(typeOfField) müssen Sie im folgenden eine genaue Aufnahme durchführen. Nach dem Sie diese durchgeführt haben, könnne Sie zusätzliche Information & Bilder hinzufügen. Wenn Sie die Aufnahme einmal gestartet haben, können Sie nicht mehr zurück.\nWenn Sie bereit sind, klicken Sie einfach auf Start ").padding(.top).padding(.leading)
+                    
+                    
+                }
                 Form{
                     
-                    Section(header: Text("Description"))
-                    {
-                        TextField("Fügen Sie ein Beschreibung hinzu", text: $fieldDescription)
+             
+               
+                    
+                    if(typeOfField == "FFH Mähwiese"){
+                        NavigationLink(destination: SheetSelectPlantsShortTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies: plantSpeciesDataModel.platList, speciesCensusView: self, listEntry: listEntry)){
+                            
+                            Text("Start")
+                        }
+                    }
+                    else{
+                        
+                        NavigationLink(destination: SheetSelectPlantsLongTerm(plantSpeciesDataModel: plantSpeciesDataModel , listEntry: listEntry)){
+                            
+                            Text("Start")
+                        }
+                        
                     }
                     
-                    NavigationLink(destination: SheetSelectPlantsShortTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies: plantSpeciesDataModel.platList, speciesCensusView: self, listEntry: listEntry)){
-                        
-                        Text("Wähle Pflanze aus")
-                    }
+                    
+                    
                 }
             }
         }

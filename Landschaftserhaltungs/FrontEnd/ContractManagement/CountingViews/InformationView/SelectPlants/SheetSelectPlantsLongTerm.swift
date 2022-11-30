@@ -10,12 +10,10 @@ import SwiftUI
 struct SheetSelectPlantsLongTerm: View {
     @ObservedObject var userSettings = UserSettings()
     @ObservedObject var plantSpeciesDataModel : PlantSpeciesDataModel
-    var longTimeSpeciesCencus : LongTimeSpeciesCensus
     @StateObject var listEntry : ListEntry
     @Environment(\.presentationMode) var presentationMode
     @State private var selection: Set<UUID> = []
     @Environment(\.managedObjectContext) var moc
-    @State  var plantSpecies : [PlantSpecies]
     @State private var searchText = ""
     @State private var isItemCheck : Bool = false
     @State private var ItemCheckTrue : Bool = true
@@ -31,7 +29,7 @@ struct SheetSelectPlantsLongTerm: View {
         }), id: \.key) { categoryName, devicesArray in
             HeaderView(title: categoryName)
             ForEach(devicesArray) { name in
-                RowViewLongTerm(plant: name, plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies : plantSpecies, checked: name.isChecked, listEntry: listEntry, text: name.germanName)
+                RowViewLongTerm(plant: name, plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies : plantSpeciesDataModel.platList, checked: name.isChecked, listEntry: listEntry, text: name.germanName)
             }
         }
     }
@@ -42,7 +40,7 @@ struct SheetSelectPlantsLongTerm: View {
         }), id: \.key) { categoryName, devicesArray in
             HeaderView(title: categoryName)
             ForEach(devicesArray) { name in
-                RowViewLongTerm(plant: name, plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies : plantSpecies, checked: name.isChecked, listEntry: listEntry, text: name.scientificName)
+                RowViewLongTerm(plant: name, plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies : plantSpeciesDataModel.platList, checked: name.isChecked, listEntry: listEntry, text: name.scientificName)
             }
         }
         
@@ -64,7 +62,7 @@ struct SheetSelectPlantsLongTerm: View {
                 .overlay(sectionIndexTitles(proxy: proxy))
            
             
-            .navigationBarTitle("Pflanzenarten")
+                .navigationBarTitle("Genau Aufnahme").padding()
           
         }
         

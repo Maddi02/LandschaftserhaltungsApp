@@ -88,22 +88,14 @@ import SwiftUI
             }.confirmationDialog("Wähle die Art der Zählung aus", isPresented: $showingActionSheet, titleVisibility: .visible) {
                 
                 
-                if(typOfField == "FFH Mähwiese"){
-                    NavigationLink(destination: SpeciesCensusView( listEntry: listEntry, description:  self.description)) {
+            
+                NavigationLink(destination: SpeciesCensusView( listEntry: listEntry, typeOfField: typOfField, description:  self.description )) {
                         Button("Artenzählung")
                         {
                             
                         }
                     }
-                }
-                else {
-                    NavigationLink(destination: LongTimeSpeciesCensus( listEntry: listEntry, description:  self.description, speciesCensusView: SpeciesCensusView( listEntry: listEntry, description:  self.description))) {
-                        Button("Artenzählung")
-                        {
-                            
-                        }
-                    }
-                }
+                
 
                 NavigationLink(destination: FrequencyEstimationField()) {
                     Button("Häufigkeitsschätzung")
