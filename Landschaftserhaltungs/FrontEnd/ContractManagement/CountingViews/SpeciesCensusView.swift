@@ -13,17 +13,12 @@ struct alertView : View
     @Environment(\.dismiss) var dismiss
     @State var showAlert : Bool
     var body: some View{
-        Text("Sie können keine neue Aufnahme starten. --> Daten schon vorhandne").alert("Daten schon vorhanden", isPresented: $showAlert) {
+        Text("Sie können keine neue Aufnahme starten. --> Daten schon vorhandne")
             Button("Zurück", role: .cancel) {
               dismiss()
             }
     }
-    }
-    
-    
 }
-
-
 
 struct SpeciesCensusView: View {
     

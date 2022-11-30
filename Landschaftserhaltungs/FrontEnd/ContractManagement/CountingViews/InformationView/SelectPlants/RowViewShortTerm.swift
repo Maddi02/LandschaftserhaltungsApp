@@ -19,19 +19,23 @@ struct RowViewShortTerm: View {
     
     
     var body: some View {
+        
+        
         HStack{
-            Text(text).foregroundColor(.green)
+           
             
             if(checkIfAllreadySaved(plant: text))
             {
+                Text(text).foregroundColor(.green)
                 CheckBoxView(checked: $checkedTrue).disabled(true)
                 
             }
 
             else {
+                
+                Text(text).foregroundColor(.green)
                 CheckBoxView(checked: $checked).onChange(of: checked, perform: {
                     newValue in
-                    print("WHHHHHHHHHHEEEEEEE")
                     if(checked)
                     {
                         plant.isChecked = true

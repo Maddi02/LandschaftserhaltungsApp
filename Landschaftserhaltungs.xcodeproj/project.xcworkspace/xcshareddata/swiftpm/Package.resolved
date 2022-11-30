@@ -1,6 +1,24 @@
 {
   "pins" : [
     {
+      "identity" : "csv.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/yaslab/CSV.swift",
+      "state" : {
+        "revision" : "81d2874c51db364d7e1d71b0d99018a294c87ac1",
+        "version" : "2.4.3"
+      }
+    },
+    {
+      "identity" : "csvkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sanzaru/csvkit",
+      "state" : {
+        "revision" : "25aadbda99d3f04e352558affa77604fdefca672",
+        "version" : "0.0.5"
+      }
+    },
+    {
       "identity" : "swiftlocation",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/malcommac/SwiftLocation",
@@ -16,6 +34,15 @@
       "state" : {
         "revision" : "964843d9d745e9face81622958c787832553d200",
         "version" : "1.1.0"
+      }
+    },
+    {
+      "identity" : "tppdf",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Techprimate/TPPDF",
+      "state" : {
+        "revision" : "e4577f5ac161d35fd4ad41e401b639ef68b81315",
+        "version" : "2.3.5"
       }
     }
   ],

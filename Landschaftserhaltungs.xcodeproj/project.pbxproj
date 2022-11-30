@@ -19,7 +19,7 @@
 		223AD5262917CBDA009B5C1C /* ToggleCheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD5252917CBDA009B5C1C /* ToggleCheckboxStyle.swift */; };
 		223AD56E291845D3009B5C1C /* EditListItemContractArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD56D291845D3009B5C1C /* EditListItemContractArea.swift */; };
 		223AD572291861AD009B5C1C /* FrequencyEstimationField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD571291861AD009B5C1C /* FrequencyEstimationField.swift */; };
-		223AD5742918623C009B5C1C /* ExportPreviewFFH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD5732918623C009B5C1C /* ExportPreviewFFH.swift */; };
+		223AD5742918623C009B5C1C /* ExportPreviewPDFFFH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD5732918623C009B5C1C /* ExportPreviewPDFFFH.swift */; };
 		223AD57629186339009B5C1C /* SpeciesCensusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD57529186339009B5C1C /* SpeciesCensusView.swift */; };
 		223AD57829192815009B5C1C /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AD57729192815009B5C1C /* CounterViewModel.swift */; };
 		223AD581291940D7009B5C1C /* AppStateDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 223AD57F291940D7009B5C1C /* AppStateDataModel.xcdatamodeld */; };
@@ -59,6 +59,19 @@
 		225561D229252F8900C645F6 /* RowViewLongTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225561D129252F8900C645F6 /* RowViewLongTerm.swift */; };
 		225561D429252FC100C645F6 /* SectionIndexTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225561D329252FC100C645F6 /* SectionIndexTitles.swift */; };
 		225561D629252FEC00C645F6 /* SectionIndexTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225561D529252FEC00C645F6 /* SectionIndexTitle.swift */; };
+		225DFBA929311F4C005C7DEC /* PictureViewExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DFBA829311F4C005C7DEC /* PictureViewExport.swift */; };
+		225DFBE82932356B005C7DEC /* PDFCreatorDiffrentBiotop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DFBE72932356B005C7DEC /* PDFCreatorDiffrentBiotop.swift */; };
+		225DFBEB29323F59005C7DEC /* TPPDF in Frameworks */ = {isa = PBXBuildFile; productRef = 225DFBEA29323F59005C7DEC /* TPPDF */; };
+		225DFBEE29338873005C7DEC /* PDFKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DFBED29338873005C7DEC /* PDFKitView.swift */; };
+		225DFBF02933D80F005C7DEC /* PlantMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DFBEF2933D80F005C7DEC /* PlantMatcher.swift */; };
+		225DFBF22934E625005C7DEC /* PDFCreatorFFH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DFBF12934E625005C7DEC /* PDFCreatorFFH.swift */; };
+		225DFBFE29350108005C7DEC /* CSV in Frameworks */ = {isa = PBXBuildFile; productRef = 225DFBFD29350108005C7DEC /* CSV */; };
+		225DFC0D2935575A005C7DEC /* CSVKit in Frameworks */ = {isa = PBXBuildFile; productRef = 225DFC0C2935575A005C7DEC /* CSVKit */; };
+		225DFC112936048D005C7DEC /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 225DFC102936048D005C7DEC /* CHCSVParser.m */; };
+		225DFC1329360790005C7DEC /* CSVGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DFC1229360790005C7DEC /* CSVGenerator.swift */; };
+		225DFC152936148F005C7DEC /* ExportCSVPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DFC142936148F005C7DEC /* ExportCSVPreview.swift */; };
+		225DFC19293629A4005C7DEC /* CSVImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DFC18293629A4005C7DEC /* CSVImport.swift */; };
+		225DFC1B2936B715005C7DEC /* PlantListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DFC1A2936B715005C7DEC /* PlantListItem.swift */; };
 		226C67B529278F1F0049958A /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67B329278F1F0049958A /* Profile+CoreDataClass.swift */; };
 		226C67B629278F1F0049958A /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67B429278F1F0049958A /* Profile+CoreDataProperties.swift */; };
 		226C67BC292BAAD70049958A /* ProfileDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67BB292BAAD70049958A /* ProfileDataModel.swift */; };
@@ -78,7 +91,7 @@
 		226C67DC292E180F0049958A /* PicutreList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67D8292E180F0049958A /* PicutreList+CoreDataProperties.swift */; };
 		226C67E0292E87180049958A /* RowViewShortTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67DF292E87180049958A /* RowViewShortTerm.swift */; };
 		226C67E2292E95070049958A /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67E1292E95070049958A /* NavigationUtil.swift */; };
-		226C67E4292ECCE40049958A /* ExportPreviewOtherBiotop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67E3292ECCE40049958A /* ExportPreviewOtherBiotop.swift */; };
+		226C67E4292ECCE40049958A /* ExportPreviewPDFOtherBiotop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C67E3292ECCE40049958A /* ExportPreviewPDFOtherBiotop.swift */; };
 		227FAAC4291E4BC700D747DA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227FAAC3291E4BC700D747DA /* SearchBar.swift */; };
 		227FAB33291ED81700D747DA /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227FAB32291ED81700D747DA /* CheckBoxView.swift */; };
 		22A108792919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A108782919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift */; };
@@ -122,7 +135,7 @@
 		223AD5252917CBDA009B5C1C /* ToggleCheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCheckboxStyle.swift; sourceTree = "<group>"; };
 		223AD56D291845D3009B5C1C /* EditListItemContractArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditListItemContractArea.swift; sourceTree = "<group>"; };
 		223AD571291861AD009B5C1C /* FrequencyEstimationField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyEstimationField.swift; sourceTree = "<group>"; };
-		223AD5732918623C009B5C1C /* ExportPreviewFFH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportPreviewFFH.swift; sourceTree = "<group>"; };
+		223AD5732918623C009B5C1C /* ExportPreviewPDFFFH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportPreviewPDFFFH.swift; sourceTree = "<group>"; };
 		223AD57529186339009B5C1C /* SpeciesCensusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesCensusView.swift; sourceTree = "<group>"; };
 		223AD57729192815009B5C1C /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 		223AD580291940D7009B5C1C /* AppStateDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppStateDataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -165,6 +178,19 @@
 		225561D129252F8900C645F6 /* RowViewLongTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViewLongTerm.swift; sourceTree = "<group>"; };
 		225561D329252FC100C645F6 /* SectionIndexTitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionIndexTitles.swift; sourceTree = "<group>"; };
 		225561D529252FEC00C645F6 /* SectionIndexTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionIndexTitle.swift; sourceTree = "<group>"; };
+		225DFBA829311F4C005C7DEC /* PictureViewExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewExport.swift; sourceTree = "<group>"; };
+		225DFBE72932356B005C7DEC /* PDFCreatorDiffrentBiotop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreatorDiffrentBiotop.swift; sourceTree = "<group>"; };
+		225DFBEC2932482F005C7DEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		225DFBED29338873005C7DEC /* PDFKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitView.swift; sourceTree = "<group>"; };
+		225DFBEF2933D80F005C7DEC /* PlantMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantMatcher.swift; sourceTree = "<group>"; };
+		225DFBF12934E625005C7DEC /* PDFCreatorFFH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreatorFFH.swift; sourceTree = "<group>"; };
+		225DFC0E2936048B005C7DEC /* Landschaftserhaltungs-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Landschaftserhaltungs-Bridging-Header.h"; sourceTree = "<group>"; };
+		225DFC0F2936048C005C7DEC /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCSVParser.h; sourceTree = "<group>"; };
+		225DFC102936048D005C7DEC /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCSVParser.m; sourceTree = "<group>"; };
+		225DFC1229360790005C7DEC /* CSVGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVGenerator.swift; sourceTree = "<group>"; };
+		225DFC142936148F005C7DEC /* ExportCSVPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportCSVPreview.swift; sourceTree = "<group>"; };
+		225DFC18293629A4005C7DEC /* CSVImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVImport.swift; sourceTree = "<group>"; };
+		225DFC1A2936B715005C7DEC /* PlantListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantListItem.swift; sourceTree = "<group>"; };
 		226C67B329278F1F0049958A /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
 		226C67B429278F1F0049958A /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		226C67BB292BAAD70049958A /* ProfileDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataModel.swift; sourceTree = "<group>"; };
@@ -184,7 +210,7 @@
 		226C67D8292E180F0049958A /* PicutreList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PicutreList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		226C67DF292E87180049958A /* RowViewShortTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViewShortTerm.swift; sourceTree = "<group>"; };
 		226C67E1292E95070049958A /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
-		226C67E3292ECCE40049958A /* ExportPreviewOtherBiotop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportPreviewOtherBiotop.swift; sourceTree = "<group>"; };
+		226C67E3292ECCE40049958A /* ExportPreviewPDFOtherBiotop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportPreviewPDFOtherBiotop.swift; sourceTree = "<group>"; };
 		227FAAC3291E4BC700D747DA /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		227FAB32291ED81700D747DA /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		22A108782919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSelectPlantsShortTerm.swift; sourceTree = "<group>"; };
@@ -203,6 +229,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				225DFBEB29323F59005C7DEC /* TPPDF in Frameworks */,
+				225DFBFE29350108005C7DEC /* CSV in Frameworks */,
+				225DFC0D2935575A005C7DEC /* CSVKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,11 +309,15 @@
 		22352403292705A5000126E1 /* ContractManagement */ = {
 			isa = PBXGroup;
 			children = (
+				225DFBED29338873005C7DEC /* PDFKitView.swift */,
 				22455CF928FF27B5002876AD /* ManageContractView.swift */,
 				223AD571291861AD009B5C1C /* FrequencyEstimationField.swift */,
-				223AD5732918623C009B5C1C /* ExportPreviewFFH.swift */,
-				226C67E3292ECCE40049958A /* ExportPreviewOtherBiotop.swift */,
+				223AD5732918623C009B5C1C /* ExportPreviewPDFFFH.swift */,
+				226C67E3292ECCE40049958A /* ExportPreviewPDFOtherBiotop.swift */,
 				223AD56D291845D3009B5C1C /* EditListItemContractArea.swift */,
+				225DFC142936148F005C7DEC /* ExportCSVPreview.swift */,
+				223524012927041B000126E1 /* HelpView */,
+				225DFBA829311F4C005C7DEC /* PictureViewExport.swift */,
 				2235240229270541000126E1 /* CountingViews */,
 			);
 			path = ContractManagement;
@@ -342,6 +375,7 @@
 				223AD5E22919C2E7009B5C1C /* PlantSpecies.swift */,
 				226C67CF292D76DC0049958A /* ImagePickerInformationSide.swift */,
 				226C67E1292E95070049958A /* NavigationUtil.swift */,
+				225DFBEF2933D80F005C7DEC /* PlantMatcher.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -369,6 +403,7 @@
 		224F45FA28FD80E7004EA74F /* Landschaftserhaltungs */ = {
 			isa = PBXGroup;
 			children = (
+				225DFBEC2932482F005C7DEC /* Info.plist */,
 				224F460128FD80E8004EA74F /* Preview Content */,
 				224F463628FE1BD1004EA74F /* extensions */,
 				224F462628FD855D004EA74F /* BackEnd */,
@@ -410,7 +445,6 @@
 				226C67C5292D708E0049958A /* Model */,
 				226C67C4292D70800049958A /* ViewModels */,
 				22352403292705A5000126E1 /* ContractManagement */,
-				223524012927041B000126E1 /* HelpView */,
 				223524002927011B000126E1 /* NewContract */,
 				223523FB2927005F000126E1 /* MainView */,
 				224F45FF28FD80E8004EA74F /* Assets.xcassets */,
@@ -422,6 +456,8 @@
 		224F462628FD855D004EA74F /* BackEnd */ = {
 			isa = PBXGroup;
 			children = (
+				225DFBF52934ED95005C7DEC /* CSV */,
+				225DFBAC2931F0E7005C7DEC /* PDF */,
 				22352407292706A4000126E1 /* Helper */,
 				2235240629270666000126E1 /* DataModels */,
 				2235240529270632000126E1 /* DataBase */,
@@ -463,6 +499,44 @@
 				226C67DF292E87180049958A /* RowViewShortTerm.swift */,
 			);
 			path = SelectPlants;
+			sourceTree = "<group>";
+		};
+		225DFBAC2931F0E7005C7DEC /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				225DFBE72932356B005C7DEC /* PDFCreatorDiffrentBiotop.swift */,
+				225DFBF12934E625005C7DEC /* PDFCreatorFFH.swift */,
+			);
+			path = PDF;
+			sourceTree = "<group>";
+		};
+		225DFBF52934ED95005C7DEC /* CSV */ = {
+			isa = PBXGroup;
+			children = (
+				225DFC1729362980005C7DEC /* Import */,
+				225DFC1629362974005C7DEC /* Export */,
+				225DFC0F2936048C005C7DEC /* CHCSVParser.h */,
+				225DFC102936048D005C7DEC /* CHCSVParser.m */,
+				225DFC0E2936048B005C7DEC /* Landschaftserhaltungs-Bridging-Header.h */,
+			);
+			path = CSV;
+			sourceTree = "<group>";
+		};
+		225DFC1629362974005C7DEC /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				225DFC1229360790005C7DEC /* CSVGenerator.swift */,
+			);
+			path = Export;
+			sourceTree = "<group>";
+		};
+		225DFC1729362980005C7DEC /* Import */ = {
+			isa = PBXGroup;
+			children = (
+				225DFC18293629A4005C7DEC /* CSVImport.swift */,
+				225DFC1A2936B715005C7DEC /* PlantListItem.swift */,
+			);
+			path = Import;
 			sourceTree = "<group>";
 		};
 		226C67BF292D22370049958A /* UserView */ = {
@@ -516,6 +590,9 @@
 			);
 			name = Landschaftserhaltungs;
 			packageProductDependencies = (
+				225DFBEA29323F59005C7DEC /* TPPDF */,
+				225DFBFD29350108005C7DEC /* CSV */,
+				225DFC0C2935575A005C7DEC /* CSVKit */,
 			);
 			productName = Landschaftserhaltungs;
 			productReference = 224F45F828FD80E7004EA74F /* Landschaftserhaltungs.app */;
@@ -569,6 +646,7 @@
 				TargetAttributes = {
 					224F45F728FD80E7004EA74F = {
 						CreatedOnToolsVersion = 14.0.1;
+						LastSwiftMigration = 1410;
 					};
 					224F460728FD80E8004EA74F = {
 						CreatedOnToolsVersion = 14.0.1;
@@ -592,6 +670,9 @@
 			packageReferences = (
 				22455CFB29007AF3002876AD /* XCRemoteSwiftPackageReference "SwiftLocation" */,
 				223BB350291144BE0064927A /* XCRemoteSwiftPackageReference "TextView" */,
+				225DFBE929323F59005C7DEC /* XCRemoteSwiftPackageReference "TPPDF" */,
+				225DFBFC29350108005C7DEC /* XCRemoteSwiftPackageReference "CSV" */,
+				225DFC0B2935575A005C7DEC /* XCRemoteSwiftPackageReference "csvkit" */,
 			);
 			productRefGroup = 224F45F928FD80E7004EA74F /* Products */;
 			projectDirPath = "";
@@ -637,7 +718,7 @@
 			files = (
 				22A1087B2919CDCC0071FF3A /* TimerView.swift in Sources */,
 				226C67CE292D74C30049958A /* PickerModel.swift in Sources */,
-				223AD5742918623C009B5C1C /* ExportPreviewFFH.swift in Sources */,
+				223AD5742918623C009B5C1C /* ExportPreviewPDFFFH.swift in Sources */,
 				22455CF628FF03BC002876AD /* CreateNewContract.swift in Sources */,
 				223AD52229157DF1009B5C1C /* ListItemContractArea.swift in Sources */,
 				224F463128FE06E4004EA74F /* ThirdFeatureOverview.swift in Sources */,
@@ -647,9 +728,11 @@
 				22455D0B2900901C002876AD /* ImagePicker.swift in Sources */,
 				22A10885291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift in Sources */,
 				223BB35829116F9D0064927A /* SelectFilterView.swift in Sources */,
+				225DFBA929311F4C005C7DEC /* PictureViewExport.swift in Sources */,
 				223AD5DE29199C53009B5C1C /* ListEntry+CoreDataClass.swift in Sources */,
 				22455CFA28FF27B5002876AD /* ManageContractView.swift in Sources */,
 				227FAB33291ED81700D747DA /* CheckBoxView.swift in Sources */,
+				225DFC1B2936B715005C7DEC /* PlantListItem.swift in Sources */,
 				226C67E2292E95070049958A /* NavigationUtil.swift in Sources */,
 				224F45FE28FD80E7004EA74F /* OnboardingFlowView.swift in Sources */,
 				225561D629252FEC00C645F6 /* SectionIndexTitle.swift in Sources */,
@@ -658,18 +741,22 @@
 				223BB34D29103C490064927A /* TextView.swift in Sources */,
 				223523FF292700ED000126E1 /* ImpressumView.swift in Sources */,
 				226C67D9292E180F0049958A /* FieldInformation+CoreDataClass.swift in Sources */,
+				225DFBF22934E625005C7DEC /* PDFCreatorFFH.swift in Sources */,
 				22455D122900A869002876AD /* CoreDataManager.swift in Sources */,
 				226C67C8292D71340049958A /* ZoomableScrollView.swift in Sources */,
 				223AD57629186339009B5C1C /* SpeciesCensusView.swift in Sources */,
 				22A10889291C1C260071FF3A /* InformationFFHWiese.swift in Sources */,
+				225DFC152936148F005C7DEC /* ExportCSVPreview.swift in Sources */,
 				224F463328FE07D8004EA74F /* DoneOverview.swift in Sources */,
 				226C67B629278F1F0049958A /* Profile+CoreDataProperties.swift in Sources */,
 				223AD5E32919C2E7009B5C1C /* PlantSpecies.swift in Sources */,
+				225DFC19293629A4005C7DEC /* CSVImport.swift in Sources */,
 				22A108792919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift in Sources */,
 				226C67DC292E180F0049958A /* PicutreList+CoreDataProperties.swift in Sources */,
 				223AD581291940D7009B5C1C /* AppStateDataModel.xcdatamodeld in Sources */,
 				221AC67D290D150B00993F52 /* BackgroundLinearGradient.swift in Sources */,
 				223AD57829192815009B5C1C /* CounterViewModel.swift in Sources */,
+				225DFBF02933D80F005C7DEC /* PlantMatcher.swift in Sources */,
 				223AD5E52919C309009B5C1C /* PlantSpeciesDataModel.swift in Sources */,
 				22A1088B291C1CE50071FF3A /* InformationAnderesBiotop.swift in Sources */,
 				226C67B529278F1F0049958A /* Profile+CoreDataClass.swift in Sources */,
@@ -685,13 +772,15 @@
 				22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */,
 				224F462F28FE06CD004EA74F /* SecondFeatureOverview.swift in Sources */,
 				226C67D0292D76DC0049958A /* ImagePickerInformationSide.swift in Sources */,
-				226C67E4292ECCE40049958A /* ExportPreviewOtherBiotop.swift in Sources */,
+				226C67E4292ECCE40049958A /* ExportPreviewPDFOtherBiotop.swift in Sources */,
 				223BB354291147380064927A /* WrappedTextView.swift in Sources */,
 				223AD5DC29199C53009B5C1C /* PlantSpeciesItem+CoreDataClass.swift in Sources */,
+				225DFC112936048D005C7DEC /* CHCSVParser.m in Sources */,
 				223AD572291861AD009B5C1C /* FrequencyEstimationField.swift in Sources */,
 				226C67E0292E87180049958A /* RowViewShortTerm.swift in Sources */,
 				225561D029252F6700C645F6 /* HeaderView.swift in Sources */,
 				223AD5DF29199C53009B5C1C /* ListEntry+CoreDataProperties.swift in Sources */,
+				225DFC1329360790005C7DEC /* CSVGenerator.swift in Sources */,
 				227FAAC4291E4BC700D747DA /* SearchBar.swift in Sources */,
 				2239595B290452A600D5F38E /* UIImageTransformer.swift in Sources */,
 				2252D321290868FF00568A1A /* EditContractView.swift in Sources */,
@@ -699,6 +788,8 @@
 				226C67CA292D715F0049958A /* FileManager.swift in Sources */,
 				224F462D28FE06BB004EA74F /* FirstFeatureOverview.swift in Sources */,
 				22A10883291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataProperties.swift in Sources */,
+				225DFBE82932356B005C7DEC /* PDFCreatorDiffrentBiotop.swift in Sources */,
+				225DFBEE29338873005C7DEC /* PDFKitView.swift in Sources */,
 				224F462828FDFC99004EA74F /* MainSideView.swift in Sources */,
 				226C67DA292E180F0049958A /* FieldInformation+CoreDataProperties.swift in Sources */,
 				223AD4D42912B59B009B5C1C /* ContractAdminister.swift in Sources */,
@@ -868,12 +959,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Landschaftserhaltungs/Preview Content\"";
 				DEVELOPMENT_TEAM = 6QRCDK36S8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Landschaftserhaltungs/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Aktivieren Sie bitten den Kamerazugriff. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -887,7 +981,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hfu.landschaftserhaltungs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SHARED_PRECOMPS_DIR = "$(OBJROOT)/SharedPrecompiledHeaders";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Landschaftserhaltungs/BackEnd/CSV/Landschaftserhaltungs-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -898,12 +995,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Landschaftserhaltungs/Preview Content\"";
 				DEVELOPMENT_TEAM = 6QRCDK36S8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Landschaftserhaltungs/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Aktivieren Sie bitten den Kamerazugriff. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -917,7 +1017,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hfu.landschaftserhaltungs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SHARED_PRECOMPS_DIR = "$(OBJROOT)/SharedPrecompiledHeaders";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Landschaftserhaltungs/BackEnd/CSV/Landschaftserhaltungs-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1057,7 +1159,49 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		225DFBE929323F59005C7DEC /* XCRemoteSwiftPackageReference "TPPDF" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Techprimate/TPPDF";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		225DFBFC29350108005C7DEC /* XCRemoteSwiftPackageReference "CSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yaslab/CSV.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		225DFC0B2935575A005C7DEC /* XCRemoteSwiftPackageReference "csvkit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sanzaru/csvkit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		225DFBEA29323F59005C7DEC /* TPPDF */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 225DFBE929323F59005C7DEC /* XCRemoteSwiftPackageReference "TPPDF" */;
+			productName = TPPDF;
+		};
+		225DFBFD29350108005C7DEC /* CSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 225DFBFC29350108005C7DEC /* XCRemoteSwiftPackageReference "CSV" */;
+			productName = CSV;
+		};
+		225DFC0C2935575A005C7DEC /* CSVKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 225DFC0B2935575A005C7DEC /* XCRemoteSwiftPackageReference "csvkit" */;
+			productName = CSVKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		223AD57F291940D7009B5C1C /* AppStateDataModel.xcdatamodeld */ = {

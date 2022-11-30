@@ -169,11 +169,19 @@ struct InformationAnderesBiotop: View {
                
 
                     
-                    NavigationLink(destination: ExportPreviewOtherBiotop(listEntry: listEntry).onAppear(perform: {
-                        save()
-                    })) {
-                        Text("Zur Zusammenfassung!")
-                    }.navigationBarBackButtonHidden(true)
+                    
+                     VStack{
+
+                         Button("Save & Zurück zum Home Screen")
+                         {
+                             save()
+                             NavigationUtil.popToRootView()
+                          //   save()
+                         }
+                         
+                         
+                         
+                     }
 
                 }
             }.navigationTitle("Information")
@@ -195,7 +203,12 @@ struct InformationAnderesBiotop: View {
         plant.furtherMaintenanceMeasures = furtherMaintenanceMeasures
         plant.adaptationEditions = adaptationEditions
         
-        
+        for i in viewModelPicutre.pictures{
+            let a = PicutreList(context: moc)
+            a.listOfPictures = plant
+            a.compareString = " "
+            a.picutre = i.picuture
+        }
         
         do{
             try moc.save()

@@ -11,7 +11,9 @@ import Foundation
 
 
 
+
 struct UserView: View {
+
     @ObservedObject var userSettings = UserSettings()
     @State private var firstName = ""
     @State private var lastName = ""
@@ -20,11 +22,11 @@ struct UserView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
     let defaults = UserDefaults.standard
-    
     let language = ["Deutsch", "Latein"]
     @State private var isShownPhotoLibrary = false
     @State private var image = UIImage()
-    
+    @State private var openFile = false
+    @State private var fileUrl = ""
     
     
     var body: some View {
@@ -74,11 +76,23 @@ struct UserView: View {
                     }.frame(maxWidth: .infinity, alignment: .center)
                     
                 }
-                
-                
-                NavigationLink(destination: InsertNewPlantView())
+                Text(defaults.url(forKey: "csvPath")?.lastPathComponent ?? "NO Path Selected")
+              Button("Import CSV Datei")
                 {
-                    Text("Füge Pflanze hinzu")
+                    openFile.toggle()
+                }.fileImporter(isPresented: $openFile, allowedContentTypes: [.data]) {
+                    (res) in
+                    
+                    do {
+       
+                        let fileUrl = try res.get()
+                        self.fileUrl = fileUrl.lastPathComponent
+                        defaults.set(fileUrl, forKey: "csvPath")
+                    }
+                    
+                    catch{
+                        print(error)
+                    }
                 }
               
                 
@@ -89,6 +103,18 @@ struct UserView: View {
                     dismiss()
                     print("Button Saved was pressed")
                 }
+                
+                
+                
+                NavigationLink(destination: OnboardingFlowView(), label: {
+                    Text("Onboarding wiederholen")
+          
+                    
+                }).onAppear(perform: {
+                    defaults.set(false, forKey: "realOnboarding")
+                })
+    
+                
             }.navigationBarTitle(Text("Profile"))
         }
         .sheet(isPresented: $isShownPhotoLibrary){

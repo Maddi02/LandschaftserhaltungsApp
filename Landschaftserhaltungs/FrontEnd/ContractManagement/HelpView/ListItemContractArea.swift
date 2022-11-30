@@ -60,24 +60,7 @@ struct ListItemContractArea: Hashable,  View {
                 
             }.padding(.all)
             
-            
-            
-            HStack{
-                
-                HStack{
-                    Text("Gezählte Pflanzenarten")
-                    Spacer()
-                }
-                
-                HStack{
-                    /*
-                    WrappedTextView(text: $username.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeLocation)
-                        .frame(height: heightLocation ?? minHeightLocation).background(Color.clear)
-                    */
-                }
-                
-                
-            }.padding(.all)
+
             
             
             

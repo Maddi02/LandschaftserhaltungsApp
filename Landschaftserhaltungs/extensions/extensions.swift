@@ -1,7 +1,6 @@
 //
 //  extensions.swift
 //  Landschaftserhaltungs
-//  ha
 //  Created by Martin Hummel on 18.10.22.
 //
 
@@ -274,5 +273,15 @@ extension Color {
 extension Binding {
     func toUnwrapped<T>(defaultValue: T) -> Binding<T> where Value == Optional<T>  {
         Binding<T>(get: { self.wrappedValue ?? defaultValue }, set: { self.wrappedValue = $0 })
+    }
+}
+
+
+extension NSTextAttachment {
+    func setImageHeight(height: CGFloat) {
+        guard let image = image else { return }
+        let ratio = image.size.width / image.size.height
+
+        bounds = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: ratio * height, height: height)
     }
 }

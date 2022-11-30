@@ -17,80 +17,92 @@ struct LongTimeSpeciesCensus: View {
     @State private var showSelectionView = false
     var description : String = ""
     var speciesCensusView : SpeciesCensusView
-
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         
         VStack{
-            Text("Genauere Aufname").font(Font.title).frame(maxWidth: .infinity , alignment: .topLeading)
-            Text("\(description) ").font(Font.title3).frame(maxWidth: .infinity , alignment: .topLeading)
+        if(listEntry.PlantArrayLongTerm.count > 0)
+        {
+            Text("Daten schon vorhanden. Aufnahmen nicht erneut möglich.")
+            Button("Zurück")
+            {
+                dismiss()
+            }
         }
         
-        
-        Form{
-            Section(header: Text("Description"))
-            {
-                TextField("Fügen Sie ein Beschreibung hinzu", text: $fieldDescription)
-            }
-            Section(header: Text("Ausgewählte Pflanzen"))
-            {
-                List{
-                    ForEach($plantSpeciesDataModel.platList)
+            else {
+                VStack{
+                    Text("Genauere Aufname").font(Font.title).frame(maxWidth: .infinity , alignment: .topLeading)
+                    Text("\(description) ").font(Font.title3).frame(maxWidth: .infinity , alignment: .topLeading)
+                }
+                
+                
+                Form{
+                    Section(header: Text("Description"))
                     {
-                        
-                        list in
-                        
-                        if(list.isChecked.wrappedValue)
-                        {
-                            if(userSettings.getSelectedLanguage() == "Latein")
+                        TextField("Fügen Sie ein Beschreibung hinzu", text: $fieldDescription)
+                    }
+                    Section(header: Text("Ausgewählte Pflanzen"))
+                    {
+                        List{
+                            ForEach($plantSpeciesDataModel.platList)
                             {
-                                Text(list.scientificName.wrappedValue)
+                                
+                                list in
+                                
+                                if(list.isChecked.wrappedValue)
+                                {
+                                    if(userSettings.getSelectedLanguage() == "Latein")
+                                    {
+                                        Text(list.scientificName.wrappedValue)
+                                    }
+                                    
+                                    if(userSettings.getSelectedLanguage() == "Deutsch")
+                                    {
+                                        Text(list.germanName.wrappedValue)
+                                    }
+                                    
+                                }
                             }
                             
-                            if(userSettings.getSelectedLanguage() == "Deutsch")
-                            {
-                                Text(list.germanName.wrappedValue)
-                            }
-        
+                            
                         }
                     }
-                    
-                    
-                }
-            }
-            Section(header: Text("Schon gespeicherte Pflanzen aus Schnellaufnahme"))
-            {
-                
-                List{
-                    ForEach(listEntry.PlantArray)
+                    Section(header: Text("Schon gespeicherte Pflanzen aus Schnellaufnahme"))
                     {
                         
-                        list in
-                        
-          
-                        if(userSettings.getSelectedLanguage() == "Deutsch")
-                        {
-                            Text(list.germanName ?? "N")
+                        List{
+                            ForEach(listEntry.PlantArray)
+                            {
+                                
+                                list in
+                                
+                                
+                                if(userSettings.getSelectedLanguage() == "Deutsch")
+                                {
+                                    Text(list.germanName ?? "N")
+                                }
+                                
+                                if(userSettings.getSelectedLanguage() == "Latein")
+                                {
+                                    //  print(listEntry.PlantArray.count())
+                                    Text(list.scientificName  ?? "N")
+                                }
+                                
+                            }
+                            
                         }
-                        
-                        if(userSettings.getSelectedLanguage() == "Latein")
-                        {
-                          //  print(listEntry.PlantArray.count())
-                            Text(list.scientificName  ?? "N")
-                        }
-                        
                     }
                     
-                }
-            }
-            
-            
-            NavigationLink(destination: SheetSelectPlantsLongTerm(plantSpeciesDataModel: plantSpeciesDataModel, longTimeSpeciesCencus: self ,listEntry: listEntry, plantSpecies: plantSpeciesDataModel.platList)){
-                
-                Text("Wähle Pflanze aus")
+                    
+                    NavigationLink(destination: SheetSelectPlantsLongTerm(plantSpeciesDataModel: plantSpeciesDataModel, longTimeSpeciesCencus: self ,listEntry: listEntry, plantSpecies: plantSpeciesDataModel.platList)){
+                        
+                        Text("Wähle Pflanze aus")
+                    }
+                } .navigationBarBackButtonHidden(true)
             }
         }
-        .navigationBarBackButtonHidden(true)
     }
         
     

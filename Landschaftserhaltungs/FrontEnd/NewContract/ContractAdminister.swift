@@ -10,11 +10,11 @@ import SwiftUI
 
 
 
-struct ContractAdminister: View {
+ struct ContractAdminister: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) var moc
-    
-    @ObservedObject var dataHandler : DataHandler
+    private  let pdf = PDFCreatorDiffrentBiotop()
+    @ObservedObject var dataHandler : DataHandler 
     @State var listEntry : ListEntry = ListEntry()
     @State var filteredContracts : AppContract
     @State var description : String = ""
@@ -24,7 +24,8 @@ struct ContractAdminister: View {
     @State private var showingAlert = false
     @State private var showingActionSheet = false
     @State private var typOfField = ""
-    
+     let csvGenerator = CSVGenerator()
+     @State var link = URL(string: "https://www.hackingwithswift.com")!
     var body: some View {
         Text("Vetragsübersicht").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
         ContractListItem(firstName: filteredContracts.firstName ?? "Unknown", lastName: filteredContracts.lastName ?? "Unknwon" , operationNumber: filteredContracts.operationNumber ?? "Unknown", contractTermination:  filteredContracts.contractTermination?.toString() ?? Date().toString(), endOfContract: filteredContracts.contractTermination?.getEndOfContract(date: filteredContracts.contractTermination ?? Date()) ?? Date().toString() , image: filteredContracts.picture ?? UIImage(imageLiteralResourceName: "HFULogo"), deadline: filteredContracts.deadline?.toString() ?? Date().toString(), dataHandler: dataHandler).frame(maxWidth: .infinity, alignment: .top)
@@ -86,10 +87,21 @@ struct ContractAdminister: View {
                 
             }.confirmationDialog("Wähle die Art der Zählung aus", isPresented: $showingActionSheet, titleVisibility: .visible) {
                 
-                NavigationLink(destination: SpeciesCensusView( listEntry: listEntry, description:  self.description)) {
-                    Button("Artenzählung")
-                    {
-                    
+                
+                if(typOfField == "FFH Mähwiese"){
+                    NavigationLink(destination: SpeciesCensusView( listEntry: listEntry, description:  self.description)) {
+                        Button("Artenzählung")
+                        {
+                            
+                        }
+                    }
+                }
+                else {
+                    NavigationLink(destination: LongTimeSpeciesCensus( listEntry: listEntry, description:  self.description, speciesCensusView: SpeciesCensusView( listEntry: listEntry, description:  self.description))) {
+                        Button("Artenzählung")
+                        {
+                            
+                        }
                     }
                 }
 
@@ -100,7 +112,7 @@ struct ContractAdminister: View {
                     }
                 }
                 if(typOfField == "FFH Mähwiese"){
-                    NavigationLink(destination: ExportPreviewFFH(listEntry: listEntry)) {
+                    NavigationLink(destination: ExportPreviewPDFFFH(listEntry: listEntry)) {
                         Button("Exportieren")
                         {
                             
@@ -108,13 +120,26 @@ struct ContractAdminister: View {
                     }
                 }
                 else {
-                    NavigationLink(destination: ExportPreviewOtherBiotop(listEntry: listEntry)) {
+                    NavigationLink(destination: ExportPreviewPDFOtherBiotop(listEntry: listEntry).onAppear(perform: {pdf.generatePdf(listEntry: listEntry)})) {
                         Button("Exportieren")
                         {
                             
                         }
                     }
                 }
+                
+               
+            
+            
+                
+                Button("CSV")
+                {
+                     
+                    print("Pressed me")
+                    link = csvGenerator.generateAndGetUrl(listEntry: listEntry)
+                    presentShareSheet()
+                }
+                
             }
         }
     }
@@ -134,6 +159,13 @@ struct ContractAdminister: View {
             
         }
     }
+     private func presentShareSheet(){
+        // pdf.generatePdf(listEntry: listEntry)
+     
+         let shareSheetVC = UIActivityViewController(activityItems: [link], applicationActivities:  [])
+         UIApplication.shared.windows.first?.rootViewController?.present(shareSheetVC, animated: true, completion: nil)
+     }
+
     
 }
 
