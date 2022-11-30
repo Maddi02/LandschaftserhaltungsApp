@@ -19,6 +19,17 @@ struct alertView : View
             }
     }
 }
+struct alertViewWrongData : View
+{
+    @Environment(\.dismiss) var dismiss
+    @State var showAlert : Bool
+    var body: some View{
+        Text("Upps.. es sieht so aus, als ob Sie eine invalide Datei geladen hätten. Dies kann folgenden Gründe haben \n1.\nAchten Sie darauf, dass Ihre Datei 9 Reihen enthält. \n2.\nAchten Sie darauf, dass Ihre Datei in dem Landschaftserhaltungsordner liegt.\n3.\nÜberprüfen Sie, ob Ihre Datei auf .csv endet.\n4.\nHaben Sie ein Datei ausgewählt\n\nÜberprüfen Sie ihr Import wiefolgt: Home Screen -> Profil")
+            Button("Zurück", role: .cancel) {
+              dismiss()
+            }
+    }
+}
 
 struct SpeciesCensusView: View {
     
@@ -37,50 +48,58 @@ struct SpeciesCensusView: View {
         
         VStack{
             
-            
-            if(listEntry.PlantArray.count > 0  || listEntry.PlantArrayLongTerm.count > 0 || ((listEntry.infos?.dataOfTaking) != nil))
+            if(plantSpeciesDataModel.showAlert)
             {
-                alertView(showAlert: true)
-               
+                alertViewWrongData(showAlert: true)
+               // Text("HHHh")
             }
             
-            else
-            {
-                if(typeOfField == "FFH Mähwiese"){
+            if(!plantSpeciesDataModel.showAlert){
+                if(listEntry.PlantArray.count > 0  || listEntry.PlantArrayLongTerm.count > 0 || ((listEntry.infos?.dataOfTaking) != nil))
+                {
+                    alertView(showAlert: true)
                     
-                    Text("INFO").frame(maxWidth: .infinity, alignment: .top).font(.title2).padding()
-                    
-                    Text("Auf Grund der Feldtypauswahl :  \(typeOfField) müssen Sie im folgenden eine Schnellaufnahme durchführen. Diese wird 10 Minuten dauern. Die Pflanzen welche Sie dort auswählen sind automatisch in der draufffolgenden genauen Aufnahme ausgewählt und können auch nicht mehr gelöscht werden. Nach dem Sie die Schnell / Genauaufnahme durhchgeführt haben. Können Sie noch Informationen zum Feld aufnehmen. Des Weitern kann man dort Bilder aus der Galerie oder direkt von der Kamera aufnehemen\nBEACHTEN SIE wenn Sie die Aufnahme einmal gestartet kommt man nicht mehr zurück.\nWenn Sie bereit sind, klicken Sie einfach auf Start ").padding(.top).padding(.leading)
                 }
                 
-                else {
-                    Text("INFO").frame(maxWidth: .infinity, alignment: .top).font(.title2).padding()
-                    Text("Auf Grund der Feldtypauswahl :  \(typeOfField) müssen Sie im folgenden eine genaue Aufnahme durchführen. Nach dem Sie diese durchgeführt haben, könnne Sie zusätzliche Information & Bilder hinzufügen. Wenn Sie die Aufnahme einmal gestartet haben, können Sie nicht mehr zurück.\nWenn Sie bereit sind, klicken Sie einfach auf Start ").padding(.top).padding(.leading)
-                    
-                    
-                }
-                Form{
-                    
-             
-               
-                    
+                
+                else
+                {
                     if(typeOfField == "FFH Mähwiese"){
-                        NavigationLink(destination: SheetSelectPlantsShortTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies: plantSpeciesDataModel.platList, speciesCensusView: self, listEntry: listEntry)){
-                            
-                            Text("Start")
-                        }
-                    }
-                    else{
                         
-                        NavigationLink(destination: SheetSelectPlantsLongTerm(plantSpeciesDataModel: plantSpeciesDataModel , listEntry: listEntry)){
-                            
-                            Text("Start")
-                        }
+                        Text("INFO").frame(maxWidth: .infinity, alignment: .top).font(.title2).padding()
                         
+                        Text("Auf Grund der Feldtypauswahl :  \(typeOfField) müssen Sie im folgenden eine Schnellaufnahme durchführen. Diese wird 10 Minuten dauern. Die Pflanzen welche Sie dort auswählen sind automatisch in der draufffolgenden genauen Aufnahme ausgewählt und können auch nicht mehr gelöscht werden. Nach dem Sie die Schnell / Genauaufnahme durhchgeführt haben. Können Sie noch Informationen zum Feld aufnehmen. Des Weitern kann man dort Bilder aus der Galerie oder direkt von der Kamera aufnehemen\nBEACHTEN SIE wenn Sie die Aufnahme einmal gestartet kommt man nicht mehr zurück.\nWenn Sie bereit sind, klicken Sie einfach auf Start ").padding(.top).padding(.leading)
                     }
                     
-                    
-                    
+                    else {
+                        Text("INFO").frame(maxWidth: .infinity, alignment: .top).font(.title2).padding()
+                        Text("Auf Grund der Feldtypauswahl :  \(typeOfField) müssen Sie im folgenden eine genaue Aufnahme durchführen. Nach dem Sie diese durchgeführt haben, könnne Sie zusätzliche Information & Bilder hinzufügen. Wenn Sie die Aufnahme einmal gestartet haben, können Sie nicht mehr zurück.\nWenn Sie bereit sind, klicken Sie einfach auf Start ").padding(.top).padding(.leading)
+                        
+                        
+                    }
+                    Form{
+                        
+                        
+                        
+                        
+                        if(typeOfField == "FFH Mähwiese"){
+                            NavigationLink(destination: SheetSelectPlantsShortTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies: plantSpeciesDataModel.platList, speciesCensusView: self, listEntry: listEntry)){
+                                
+                                Text("Start")
+                            }
+                        }
+                        else{
+                            
+                            NavigationLink(destination: SheetSelectPlantsLongTerm(plantSpeciesDataModel: plantSpeciesDataModel , listEntry: listEntry)){
+                                
+                                Text("Start")
+                            }
+                            
+                        }
+                        
+                        
+                        
+                    }
                 }
             }
         }

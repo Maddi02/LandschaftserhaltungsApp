@@ -16,6 +16,7 @@ public class PlantSpeciesDataModel : ObservableObject
     
     let defaults = UserDefaults.standard
     @Published var platList : [PlantSpecies] = []
+    @Published var showAlert : Bool = false
     @Published var filterdPlants : [PlantSpecies] = []
     @Published  var germanList:  [String:  [PlantSpecies]] = [:]
     @Published  var lateinList:  [String:  [PlantSpecies]] = [:]
@@ -187,7 +188,26 @@ public class PlantSpeciesDataModel : ObservableObject
         let rows = NSArray(contentsOfCSVURL: fileURL, options: CHCSVParserOptions.sanitizesFields)!
         let objCArray = NSMutableArray(array: rows)
         var swiftArray: [[String]] = objCArray as! [[String]]
+       
+        do{
+            let  regex = try Regex(".*(csv)")
+            if(fileURL?.lastPathComponent.contains(regex) == false)
+            {
+                showAlert = true
+            }
+        }
+        catch{
+            showAlert = true
+        }
         
+       
+        if fileURL?.absoluteString == ""
+        {
+            showAlert = true
+            
+        }
+
+
         if(swiftArray.count > 2)
         {
             swiftArray.remove(at: 0)
@@ -195,10 +215,28 @@ public class PlantSpeciesDataModel : ObservableObject
             print(swiftArray)
             for item in swiftArray
             {
+                if(item.count != 9)
+                {
+                    print("No Valid Data")
+                    showAlert = true
+                    return
+                }
                 platList.append(PlantSpecies(row: item))
             }
             print(platList)
         }
+        else
+        {
+            showAlert = true
+        }
+
+        
+        
+            
+            
+            
+        
+        
     }
     
 
