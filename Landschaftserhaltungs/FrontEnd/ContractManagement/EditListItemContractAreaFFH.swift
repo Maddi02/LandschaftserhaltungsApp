@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EditListItemContractArea: View {
+struct EditListItemContractAreaFFH: View {
     var body: some View {
         Text("Hello, Edit Contract List Item!")
     }
@@ -15,6 +15,6 @@ struct EditListItemContractArea: View {
 
 struct EditListItemContractArea_Previews: PreviewProvider {
     static var previews: some View {
-        EditListItemContractArea()
+        EditListItemContractAreaFFH()
     }
 }
