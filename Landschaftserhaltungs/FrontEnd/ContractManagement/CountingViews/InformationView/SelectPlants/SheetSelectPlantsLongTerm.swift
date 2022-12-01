@@ -127,13 +127,6 @@ struct SheetSelectPlantsLongTerm: View {
                         plant.evaluation2 = list.evaluation2
                         plant.evaluation3 = list.evaluation3
                         plant.checked = list.isChecked
-                       
-                        print("HERE \(plant.evaluation1d)")
-                        print("HERE \(plant.evaluation1b)")
-                        print("HERE \(plant.evaluation1c)")
-                        print("HERE \(plant.evaluation1d)")
-                        print("HERE \(plant.evaluation2)")
-                        print("HERE \(plant.evaluation3)")
                         print(list.scientificName)
                         
                         do {

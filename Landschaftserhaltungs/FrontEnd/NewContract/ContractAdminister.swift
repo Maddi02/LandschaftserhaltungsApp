@@ -130,13 +130,6 @@ import SwiftUI
                         
                     }
                 }
-
-                    
-                 
-               
-                
-                
-                
             }
         }
     }
