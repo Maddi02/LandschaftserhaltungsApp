@@ -148,17 +148,16 @@ struct SpeciesCensusView: View {
                         let plant = PlantSpeciesItem(context: moc)
                         plant.species = listEntry
                         plant.scientificName = list.scientificName
-                        plant.southernGaelandschaften = list.southernGaelandschaften
-                        plant.schaebischeAlb = list.schaebischeAlb
-                        plant.responsibility = list.responsibility
+                    
                         plant.redListBw = list.redListBw
-                        plant.odenWald = list.odenWald
-                        plant.oberReihnArea = list.oberReihnArea
-                        plant.nothernGaelandschaften = list.nothernGaelandschaften
                         plant.germanName = list.germanName
                         plant.checked = list.isChecked
-                        plant.blackForest = list.blackForest
-                        plant.alpenvorland = list.alpenvorland
+                        plant.evaluation1a = list.evaluation1a
+                        plant.evaluation1b = list.evaluation1b
+                        plant.evaluation1c = list.evaluation1c
+                        plant.evaluation1d = list.evaluation1d
+                        plant.evaluation2 = list.evaluation2
+                        plant.evaluation3 = list.evaluation3
                         print(list.scientificName)
                         
                         do {

@@ -40,12 +40,12 @@ class CSVGenerator
         var  allPlants : [PlantMatcher] = []
         for i in listEntry.PlantArray
         {
-            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.nitrogenIndicator , reating1b: i.brachePointer , reating1c: i.disturbanceIndicator , reating1d: i.seedSpecies , reating2: i.valuationNeutralType , reating3: i.mergerityPointer,frequency: i.frequency ?? " " ))
+            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.evaluation1a ?? " " , reating1b: i.evaluation1b ?? " ", reating1c: i.evaluation1c ?? " " , reating1d: i.evaluation1d ?? " " , reating2: i.evaluation2 ?? " " , reating3: i.evaluation3 ?? " ",frequency: i.frequency ?? " " ))
         }
         
         for i in listEntry.PlantArrayLongTerm
         {
-            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.nitrogenIndicator , reating1b: i.brachePointer , reating1c: i.disturbanceIndicator , reating1d: i.seedSpecies , reating2: i.valuationNeutralType , reating3: i.mergerityPointer, frequency: i.frequency ?? " " ))
+            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.evaluation1a ?? " " , reating1b: i.evaluation1b ?? " ", reating1c: i.evaluation1c ?? " " , reating1d: i.evaluation1d ?? " " , reating2: i.evaluation2 ?? " " , reating3: i.evaluation3 ?? " ",frequency: i.frequency ?? " " ))
         }
         
         allPlants = allPlants.sorted{$0.getScientificName() < $1.getScientificName()}
@@ -61,7 +61,7 @@ class CSVGenerator
             csvWriter?.writeField(i.element.getReating1b())
             csvWriter?.writeField(i.element.getReating1c())
             csvWriter?.writeField(i.element.getReating1d())
-            csvWriter?.writeField(i.element.getReating2())
+            csvWriter?.writeField(i.element.getReating3())
             csvWriter?.writeField(i.element.getFrequency())
          
             
