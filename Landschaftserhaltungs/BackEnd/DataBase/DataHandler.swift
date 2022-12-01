@@ -20,11 +20,12 @@ class DataHandler : ObservableObject
     @Published var appContractListSortedByDate: [AppContract] = []
     @Published var listItemContractArea: [ListItemContractArea] = []
     @Published var appContractListSortedByDeadline: [AppContract] = []
+    @Published var appContractListFilteredByExpiring: [AppContract] = []
     @Published var appContractList: [AppContract] = []
     @Published var filter : FilterType = .none
     
     enum FilterType{
-        case none, date, deadline
+        case none, date, deadline, expiring
     }
 
     
@@ -57,7 +58,12 @@ class DataHandler : ObservableObject
                 self.appContractListSortedByDeadline =  self.sortByDateDeadline()
             }
                 return appContractListSortedByDeadline
-            
+        case .expiring:
+            Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false)
+            { _ in
+                self.appContractListFilteredByExpiring = self.filterByExpiring()
+            }
+                return appContractListFilteredByExpiring
         }
     }
     
@@ -257,6 +263,21 @@ class DataHandler : ObservableObject
         }
         
         return appContractListSortedByDeadline
+    }
+    
+    public func filterByExpiring() -> Array<AppContract>
+    {
+        let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
+        request.predicate = NSPredicate(format: "deadline < %@", Date().addMonths(numberOfMonths: 1) as NSDate)
+        var filteredList: [AppContract] = []
+        do{
+            filteredList = try context.fetch(request)
+        }
+        catch{
+            print(error)
+        }
+        
+        return filteredList
     }
     
     
