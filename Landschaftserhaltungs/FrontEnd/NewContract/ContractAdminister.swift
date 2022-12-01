@@ -16,6 +16,7 @@ import SwiftUI
     private  let pdf = PDFCreatorDiffrentBiotop()
     @ObservedObject var dataHandler : DataHandler 
     @State var listEntry : ListEntry = ListEntry()
+    @StateObject var userSettings = UserSettings()
     @State var filteredContracts : AppContract
     @State var description : String = ""
     @State private var action: Int? = 0
@@ -90,7 +91,7 @@ import SwiftUI
                     }
                 
 
-                NavigationLink(destination: FrequencyEstimationField(listEntry: listEntry, typeOfField: typOfField)) {
+                NavigationLink(destination: getDirection()) {
                     Button("Häufigkeitsschätzung")
                     {
 
@@ -155,6 +156,19 @@ import SwiftUI
             
         }
     }
+     
+     
+     func getDirection() -> AnyView{
+         
+         if(userSettings.getLanguage() == "Deutsch")
+         {
+             return AnyView(FrequencyEstimationFieldGerman(listEntry: listEntry, typeOfField: typOfField))
+         }
+         else{
+             return AnyView(FrequencyEstimationFieldLatein(listEntry: listEntry, typeOfField: typOfField))
+         }
+     }
+     
      private func presentShareSheet(){
         // pdf.generatePdf(listEntry: listEntry)
      

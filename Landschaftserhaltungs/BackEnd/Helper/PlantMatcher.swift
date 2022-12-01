@@ -19,10 +19,11 @@ class PlantMatcher
     private var reating1d : Bool
     private var reating2 : Bool
     private var reating3 : Bool
+    private var frequency : String
 
     
     
-    init(scientificName: String, germanName: String, redList: String, reating1a: Bool, reating1b: Bool, reating1c: Bool, reating1d: Bool, reating2: Bool, reating3: Bool) {
+    init(scientificName: String, germanName: String, redList: String, reating1a: Bool, reating1b: Bool, reating1c: Bool, reating1d: Bool, reating2: Bool, reating3: Bool, frequency : String) {
         self.scientificName = scientificName
         self.germanName = germanName
         self.redList = redList
@@ -32,6 +33,7 @@ class PlantMatcher
         self.reating1d = reating1d
         self.reating2 = reating2
         self.reating3 = reating3
+        self.frequency = frequency
     }
     
     
@@ -82,6 +84,10 @@ class PlantMatcher
         return changeBoolInChar(checked: reating3)
     }
     
+    public func getFrequency() -> String
+    {
+        return self.frequency
+    }
     
     
     private func changeBoolInChar(checked : Bool) -> String

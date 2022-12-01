@@ -1,4 +1,12 @@
 //
+//  FrequencyEstimationFieldLatein.swift
+//  Landschaftserhaltungs
+//
+//  Created by Martin Hummel on 01.12.22.
+//
+
+import SwiftUI
+//
 //  FrequencyEstimationField.swift
 //  Landschaftserhaltungs
 //
@@ -7,11 +15,12 @@
 
 import SwiftUI
 
-struct FrequencyEstimationField: View {
+struct FrequencyEstimationFieldLatein: View {
     @Environment(\.managedObjectContext) var moc
     @StateObject var listEntry : ListEntry
-    @State var checkedW = false
+    @StateObject  var userSettings = UserSettings()
     var typeOfField : String
+    let defaults = UserDefaults.standard
     let frequence = ["m", "w", "z" , "s" , "d"]
     @State var selection = ""
     @State private var showingAlert = false
@@ -42,7 +51,7 @@ struct FrequencyEstimationField: View {
                             showingAlert = true
                         } label: {
                             HStack{
-                                Text(item.germanName ?? " " )
+                                Text(item.scientificName ?? " " )
                                 Spacer()
                                 Text(item.frequency ?? "")
                             }
@@ -78,15 +87,15 @@ struct FrequencyEstimationField: View {
                             {
                                 item in
                                 Button {
-                                    print(item.germanName)
+                                    print(item.scientificName)
                                     showingAlert = true
                                 } label: {
                                     HStack{
-                                        Text(item.germanName ?? " " )
+                                        Text(item.scientificName ?? " " )
                                         Spacer()
                                         Text(item.frequency ?? "")
                                     }
-                                }.alert(item.germanName ?? "NO Value", isPresented: $showingAlert, actions: {
+                                }.alert(item.scientificName ?? "NO Value", isPresented: $showingAlert, actions: {
                                     Button("wenige") { saveShortTerm(item: item, value: "w") }
                                     Button("mehrere") { saveShortTerm(item: item, value: "m") }
                                     Button("zahlreich") { saveShortTerm(item: item, value: "z")}
@@ -103,12 +112,12 @@ struct FrequencyEstimationField: View {
                         List()
                         {
                         
-                        ForEach(listEntry.PlantArrayLongTerm)
+                            ForEach(listEntry.PlantArrayLongTerm)
                         {
                             item in
                         
                                 Button {
-                                    print(item.germanName)
+                                    print(item.scientificName)
                                     showingAlert = true
                                 } label: {
                                     HStack{
@@ -116,7 +125,7 @@ struct FrequencyEstimationField: View {
                                         Spacer()
                                         Text(item.frequency ?? "")
                                     }
-                                }.alert(item.germanName ?? "NO Value", isPresented: $showingAlert, actions: {
+                                }.alert(item.scientificName ?? "NO Value", isPresented: $showingAlert, actions: {
                                     Button("wenige") { saveLongTerm(item: item, value: "w") }
                                     Button("mehrere") { saveLongTerm(item: item, value: "m") }
                                     Button("zahlreich") { saveLongTerm(item: item, value: "z")}

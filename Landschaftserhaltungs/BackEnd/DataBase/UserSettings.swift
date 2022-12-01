@@ -10,6 +10,7 @@ import Combine
 import UIKit
 
 public class UserSettings: ObservableObject {
+    let defaults = UserDefaults.standard
     @Published var firstName: String {
         didSet {
             UserDefaults.standard.set(firstName, forKey: "firstName")
@@ -70,5 +71,10 @@ public class UserSettings: ObservableObject {
     {
         loadImage()
         return self.image
+    }
+    
+    func getLanguage() -> String
+    {
+        return defaults.string(forKey: "language") ?? "Unknown"
     }
 }

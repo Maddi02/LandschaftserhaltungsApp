@@ -32,6 +32,7 @@ class CSVGenerator
         csvWriter?.writeField("N - Zahl")
         csvWriter?.writeField("F - Zahl")
         csvWriter?.writeField("Bewertung für Mahwiesen - LRT")
+        csvWriter?.writeField("Häufigkeit")
 
         csvWriter?.finishLine()
         
@@ -39,12 +40,12 @@ class CSVGenerator
         var  allPlants : [PlantMatcher] = []
         for i in listEntry.PlantArray
         {
-            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.nitrogenIndicator , reating1b: i.brachePointer , reating1c: i.disturbanceIndicator , reating1d: i.seedSpecies , reating2: i.valuationNeutralType , reating3: i.mergerityPointer ))
+            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.nitrogenIndicator , reating1b: i.brachePointer , reating1c: i.disturbanceIndicator , reating1d: i.seedSpecies , reating2: i.valuationNeutralType , reating3: i.mergerityPointer,frequency: i.frequency ?? " " ))
         }
         
         for i in listEntry.PlantArrayLongTerm
         {
-            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.nitrogenIndicator , reating1b: i.brachePointer , reating1c: i.disturbanceIndicator , reating1d: i.seedSpecies , reating2: i.valuationNeutralType , reating3: i.mergerityPointer ))
+            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.nitrogenIndicator , reating1b: i.brachePointer , reating1c: i.disturbanceIndicator , reating1d: i.seedSpecies , reating2: i.valuationNeutralType , reating3: i.mergerityPointer, frequency: i.frequency ?? " " ))
         }
         
         allPlants = allPlants.sorted{$0.getScientificName() < $1.getScientificName()}
@@ -61,6 +62,7 @@ class CSVGenerator
             csvWriter?.writeField(i.element.getReating1c())
             csvWriter?.writeField(i.element.getReating1d())
             csvWriter?.writeField(i.element.getReating2())
+            csvWriter?.writeField(i.element.getFrequency())
          
             
             csvWriter?.finishLine()
