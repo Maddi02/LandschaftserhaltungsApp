@@ -53,7 +53,7 @@ struct SheetSelectPlantsLongTerm: View {
                 if(userSettings.getSelectedLanguage() == "Deutsch"){
                     devicesListGerman
                 }
-                else if(userSettings.getSelectedLanguage() == "Latein"){
+                else{
                     devicesListLatein
                 }
                 

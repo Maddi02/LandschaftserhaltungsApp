@@ -6,6 +6,42 @@
 //
 
 import SwiftUI
+struct test : View
+{    @Environment(\.managedObjectContext) var moc
+
+    @StateObject var listentry : PlantSpeciesItem
+    static var state = " frrewfwf"
+    var body: some View
+    {
+        Text(listentry.germanName ?? "Hhh")
+        Text(listentry.frequency ?? "Hhh")
+        Button("Test")
+        {
+            listentry.frequency = "DergwgrM"
+            do{
+                try moc.save()
+       
+                test.state = "Hallo"
+               
+                
+            }
+            catch{
+                print("Hier \(error)")
+            }
+            
+        }
+        
+        
+    }
+    
+    public static func geti() -> String
+    
+    {
+        return state
+    }
+}
+
+
 
 struct FrequencyEstimationFieldGerman: View {
     @Environment(\.managedObjectContext) var moc
@@ -74,57 +110,26 @@ struct FrequencyEstimationFieldGerman: View {
                     
                     if(selectedType == "Schnell-Aufnahme")
                     {
-                        List()
-                        {
-                            ForEach(listEntry.PlantArray)
-                            {
-                                item in
-                                Button {
-                                    print(item.germanName)
-                                    showingAlert = true
-                                } label: {
-                                    HStack{
-                                        Text(item.germanName ?? " " )
-                                        Spacer()
-                                        Text(item.frequency ?? "")
-                                    }
-                                }.alert(item.germanName ?? "NO Value", isPresented: $showingAlert, actions: {
-                                    Button("wenige") { saveShortTerm(item: item, value: "w") }
-                                    Button("mehrere") { saveShortTerm(item: item, value: "m") }
-                                    Button("zahlreich") { saveShortTerm(item: item, value: "z")}
-                                    Button("sehr viele") { saveShortTerm(item: item, value: "v")}
-                                    Button("dominat") { saveShortTerm(item: item, value: "d") }
-                                })
-                            }}
-                        
+                        NavigationView {
+                            
+                            List(listEntry.PlantArray) { todoItem in
+                                Button(todoItem.germanName ?? "")
+                                {
+                                    
+                                }
+                            }.navigationBarTitle(Text("Todo Items"))
+                        }
                         
                     }
                     
                     if(selectedType == "Genaue Aufnahme")
                     {
-                        List()
-                        {
-                        
-                        ForEach(listEntry.PlantArrayLongTerm)
-                        {
-                            item in
-                        
-                                Button {
-                                    print(item.germanName)
-                                    showingAlert = true
-                                } label: {
-                                    HStack{
-                                        Text(item.germanName ?? " " )
-                                        Spacer()
-                                        Text(item.frequency ?? "")
-                                    }
-                                }.alert(item.germanName ?? "NO Value", isPresented: $showingAlert, actions: {
-                                    Button("wenige") { saveLongTerm(item: item, value: "w") }
-                                    Button("mehrere") { saveLongTerm(item: item, value: "m") }
-                                    Button("zahlreich") { saveLongTerm(item: item, value: "z")}
-                                    Button("sehr viele") { saveLongTerm(item: item, value: "v")}
-                                    Button("dominat") { saveLongTerm(item: item, value: "d") }
-                                })
+                        NavigationView {
+                            
+                            List(listEntry.PlantArray) { todoItem in
+                                NavigationLink(destination: test(listentry: todoItem)) {
+                                    Text("ggg")
+                                }
                             }
                         }
                         
@@ -137,6 +142,9 @@ struct FrequencyEstimationFieldGerman: View {
         }
         
     }
+    
+    
+    
     
     func saveShortTerm(item : PlantSpeciesItem, value : String)
     {
@@ -164,6 +172,8 @@ struct FrequencyEstimationFieldGerman: View {
             print("Hier \(error)")
         }
     }
+    
+  
     
     
 }
