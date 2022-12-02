@@ -44,8 +44,10 @@ struct FrequencyEstimationFieldGerman: View {
                             checkedW.toggle()
                             update()
                         })) {
-                            Text(todoItem.germanName ?? " ")
-                            Text(todoItem.frequency ?? " ")
+                            HStack{
+                                Text(todoItem.frequency ?? " ")
+                                Text("  ")
+                                Text(todoItem.germanName ?? " ")                            }
                         }
                     }.alert("HHH", isPresented: $checkedW, actions: {
                         
@@ -79,8 +81,13 @@ struct FrequencyEstimationFieldGerman: View {
                                     checkedW.toggle()
                                     update()
                                 })) {
-                                    Text(todoItem.germanName ?? " ")
-                                    Text(todoItem.frequency ?? " ")
+                                    HStack{
+                                        Text(todoItem.frequency ?? " ")
+                                        Text("  ")
+                                        Text(todoItem.germanName ?? " ")
+                                      
+                                  
+                                    }
                                 }
                             }.alert("", isPresented: $checkedW, actions: {
                                 
@@ -103,8 +110,11 @@ struct FrequencyEstimationFieldGerman: View {
                                     checkedW.toggle()
                                     update()
                                 })) {
-                                    Text(todoItem.germanName ?? " ")
-                                    Text(todoItem.frequency ?? " ")
+                                    HStack{
+                                        Text(todoItem.frequency ?? " ")
+                                        Text("  ")
+                                        Text(todoItem.germanName ?? " ")
+                                    }
                                 }
                             }.alert("", isPresented: $checkedW, actions: {
                                 

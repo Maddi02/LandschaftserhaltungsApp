@@ -46,8 +46,11 @@ struct FrequencyEstimationFieldLatein: View {
                             checkedW.toggle()
                             update()
                         })) {
-                            Text(todoItem.scientificName ?? " ")
-                            Text(todoItem.frequency ?? " ")
+                            HStack{
+                                Text(todoItem.frequency ?? " ")
+                                Text("  ")
+                                Text(todoItem.scientificName ?? " ")
+                            }
                         }
                     }.alert("HHH", isPresented: $checkedW, actions: {
                         
@@ -81,8 +84,11 @@ struct FrequencyEstimationFieldLatein: View {
                                     checkedW.toggle()
                                     update()
                                 })) {
-                                    Text(todoItem.scientificName ?? " ")
-                                    Text(todoItem.frequency ?? " ")
+                                    HStack{
+                                        Text(todoItem.frequency ?? " ")
+                                        Text("  ")
+                                        Text(todoItem.scientificName ?? " ")
+                                    }
                                 }
                             }.alert("", isPresented: $checkedW, actions: {
                                 
@@ -105,8 +111,11 @@ struct FrequencyEstimationFieldLatein: View {
                                     checkedW.toggle()
                                     update()
                                 })) {
-                                    Text(todoItem.scientificName ?? " ")
-                                    Text(todoItem.frequency ?? " ")
+                                    HStack{
+                                        Text(todoItem.frequency ?? " ")
+                                        Text("  ")
+                                        Text(todoItem.scientificName ?? " ")
+                                    }
                                 }
                             }.alert("", isPresented: $checkedW, actions: {
                                 
