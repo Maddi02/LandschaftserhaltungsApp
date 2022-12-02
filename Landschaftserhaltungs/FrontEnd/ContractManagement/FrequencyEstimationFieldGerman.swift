@@ -17,7 +17,7 @@ struct test : View
         Text(listentry.frequency ?? "Hhh")
         Button("Test")
         {
-            listentry.frequency = "DergwgrM"
+            listentry.frequency = "Kuck Kuck"
             do{
                 try moc.save()
        
@@ -110,27 +110,42 @@ struct FrequencyEstimationFieldGerman: View {
                     
                     if(selectedType == "Schnell-Aufnahme")
                     {
-                        NavigationView {
-                            
-                            List(listEntry.PlantArray) { todoItem in
-                                Button(todoItem.germanName ?? "")
-                                {
-                                    
-                                }
-                            }.navigationBarTitle(Text("Todo Items"))
-                        }
                         
-                    }
+                        NavigationView{
+                            List(test1(listEntry : listEntry)){
+                                
+                                 todoItem in
+                                    NavigationLink(destination: test(listentry: todoItem)) {
+                                        Text(todoItem.germanName ?? "")
+                                    }
+                                }
+                                
+                                
+                                
+                            }
+                        }
                     
                     if(selectedType == "Genaue Aufnahme")
                     {
                         NavigationView {
                             
-                            List(listEntry.PlantArray) { todoItem in
-                                NavigationLink(destination: test(listentry: todoItem)) {
-                                    Text("ggg")
+                            List(test1(listEntry: listEntry)) { todoItem in
+                                NavigationLink(destination: test(listentry: todoItem).onAppear(perform: {
+                                    print("Hallo Welt")
+                                    selection = "WEEE"
+                                    
+                                }).onDisappear(perform: {
+                                    print("Tschäuch Welt")
+                                    selection = "WEEE"
+                                    checkedW.toggle()
+                                    up()
+                                })) {
+                                    Text(todoItem.germanName ?? " ")
+                                    Text(todoItem.frequency ?? " ")
                                 }
-                            }
+                            }.alert("HHH", isPresented: $checkedW, actions: {
+                                
+                            })
                         }
                         
                     }
@@ -171,6 +186,25 @@ struct FrequencyEstimationFieldGerman: View {
         catch{
             print("Hier \(error)")
         }
+    }
+    
+    func up()
+    {
+        print("In upo")
+        checkedW.toggle()
+      
+    }
+    
+    
+    
+    
+    
+    func test1(listEntry : ListEntry) -> [PlantSpeciesItem]
+    {
+        
+        return listEntry.PlantArray.sorted( by : {lhs, rhs in
+            return lhs.germanName ?? "a" < rhs.germanName ?? "b"
+          })
     }
     
   
