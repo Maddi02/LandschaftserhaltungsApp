@@ -23,14 +23,14 @@ struct SelectFilterView: View {
             Button("bald auslaufende Verträge") {
                 Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false)
                 { _ in
-                    dataHandler.filter = .date
+                    dataHandler.filter = .expiring
                 }
                 dismiss()
             }
             Button("nach Fristen") {
                 Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false)
                 { _ in
-                    dataHandler.filter = .none
+                    dataHandler.filter = .deadline
                 }
                 dismiss()
                 

@@ -50,8 +50,7 @@ struct UserView: View {
                     }
                     
                 }.onAppear(perform: {
-       
-                  //  userSettings.loadImage()
+                    print("HHHH")
                     self.image = userSettings.getImage()
                 })
               
@@ -78,8 +77,7 @@ struct UserView: View {
                     }.frame(maxWidth: .infinity, alignment: .center)
                     
                 }
-                
-                
+
               
               
                 Section(header: Text("CSV")){
