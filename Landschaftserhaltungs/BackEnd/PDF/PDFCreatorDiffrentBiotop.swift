@@ -11,8 +11,10 @@ import TPPDF
 class PDFCreatorDiffrentBiotop
 {
 
+    
     var  url = URL(string: "")
    
+    var userSettings = UserSettings()
     func getDocumentsDirectory() -> URL {
         // find all possible documents directories for this user
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -50,7 +52,10 @@ class PDFCreatorDiffrentBiotop
      
         
         //Header
+        
         document.add(.headerRight, image: imageElementHeader)
+        document.add(.headerLeft, text: "Bearbeiter")
+        document.add(.headerLeft, text: "\(userSettings.getLastName()) \(userSettings.getFirstName())")
         
         //Body First Page
         document.add(textObject: PDFSimpleText(text: "Flächenbeurteilung der Vertragsflächen", style: headingStyle1))
@@ -113,19 +118,19 @@ class PDFCreatorDiffrentBiotop
         
         for i in listEntry.PlantArray
         {
-            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.nitrogenIndicator , reating1b: i.brachePointer , reating1c: i.disturbanceIndicator , reating1d: i.seedSpecies , reating2: i.valuationNeutralType , reating3: i.mergerityPointer ))
+            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.evaluation1a ?? " " , reating1b: i.evaluation1b ?? " ", reating1c: i.evaluation1c ?? " " , reating1d: i.evaluation1d ?? " " , reating2: i.evaluation2 ?? " " , reating3: i.evaluation3 ?? " ",frequency: i.frequency ?? " " ))
         }
         
         for i in listEntry.PlantArrayLongTerm
         {
-            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.nitrogenIndicator , reating1b: i.brachePointer , reating1c: i.disturbanceIndicator , reating1d: i.seedSpecies , reating2: i.valuationNeutralType , reating3: i.mergerityPointer ))
+            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.evaluation1a ?? " " , reating1b: i.evaluation1b ?? " ", reating1c: i.evaluation1c ?? " " , reating1d: i.evaluation1d ?? " " , reating2: i.evaluation2 ?? " " , reating3: i.evaluation3 ?? " ",frequency: i.frequency ?? " " ))
         }
         
         allPlants = allPlants.sorted{$0.getScientificName() < $1.getScientificName()}
 
         document.createNewPage()
-        let tablePlant = PDFTable(rows: allPlants.count + 1, columns: 11)
-        tablePlant.widths = [0.275, 0.275, 0.05, 0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05]
+        let tablePlant = PDFTable(rows: allPlants.count + 1, columns: 12)
+        tablePlant.widths = [0.25, 0.25, 0.05, 0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05]
         tablePlant.showHeadersOnEveryPage = false
         tablePlant.rows.allRowsAlignment = [.left, .left, .center, .center, .center, .center, .center,.center, .center]
         
@@ -140,6 +145,7 @@ class PDFCreatorDiffrentBiotop
         tablePlant[0, 8].content = "KA".asTableContent
         tablePlant[0, 9].content = "ZA".asTableContent
         tablePlant[0, 10].content = "RT".asTableContent
+        tablePlant[0, 11].content = "FR".asTableContent
         
         for row in 1..<tablePlant.size.rows {
             tablePlant[row, 0].content = "\(allPlants[row-1].getScientificName())".asTableContent
@@ -193,6 +199,11 @@ class PDFCreatorDiffrentBiotop
                 if(column == 10){
                
                         tablePlant[row, column].content = "\(allPlants[row-1].getRedList())".asTableContent
+                    
+                }
+                if(column == 11){
+               
+                        tablePlant[row, column].content = "\(allPlants[row-1].getFrequency())".asTableContent
                     
                 }
 

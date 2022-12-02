@@ -19,6 +19,17 @@ struct alertView : View
             }
     }
 }
+struct alertViewWrongData : View
+{
+    @Environment(\.dismiss) var dismiss
+    @State var showAlert : Bool
+    var body: some View{
+        Text("Upps.. es sieht so aus, als ob Sie eine invalide Datei geladen hätten. Dies kann folgenden Gründe haben \n1.\nAchten Sie darauf, dass Ihre Datei 9 Reihen enthält. \n2.\nAchten Sie darauf, dass Ihre Datei in dem Landschaftserhaltungsordner liegt.\n3.\nÜberprüfen Sie, ob Ihre Datei auf .csv endet.\n4.\nHaben Sie ein Datei ausgewählt\n\nÜberprüfen Sie ihr Import wiefolgt: Home Screen -> Profil")
+            Button("Zurück", role: .cancel) {
+              dismiss()
+            }
+    }
+}
 
 struct SpeciesCensusView: View {
     
@@ -28,6 +39,7 @@ struct SpeciesCensusView: View {
     @State private var showSelectionView = false
     @State private var showingAlert = false
     @State var fieldDescription : String = ""
+    @State var typeOfField : String
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private let  width : Double = 250
     public var description : String
@@ -36,29 +48,57 @@ struct SpeciesCensusView: View {
         
         VStack{
             
-            
-            if(listEntry.PlantArray.count > 0  || listEntry.PlantArrayLongTerm.count > 0)
+            if(plantSpeciesDataModel.showAlert)
             {
-                alertView(showAlert: true)
-               
+                alertViewWrongData(showAlert: true)
+               // Text("HHHh")
             }
             
-            else
-            {
-                Text("Schnellaufnahme").font(Font.title).frame(maxWidth: .infinity , alignment: .topLeading)
-                Text("\(description) ").font(Font.title3).frame(maxWidth: .infinity , alignment: .topLeading)
-                
-                
-                Form{
+            if(!plantSpeciesDataModel.showAlert){
+                if(listEntry.PlantArray.count > 0  || listEntry.PlantArrayLongTerm.count > 0 || ((listEntry.infos?.dataOfTaking) != nil))
+                {
+                    alertView(showAlert: true)
                     
-                    Section(header: Text("Description"))
-                    {
-                        TextField("Fügen Sie ein Beschreibung hinzu", text: $fieldDescription)
+                }
+                
+                
+                else
+                {
+                    if(typeOfField == "FFH Mähwiese"){
+                        
+                        Text("INFO").frame(maxWidth: .infinity, alignment: .top).font(.title2).padding()
+                        
+                        Text("Auf Grund der Feldtypauswahl :  \(typeOfField) müssen Sie im folgenden eine Schnellaufnahme durchführen. Diese wird 10 Minuten dauern. Die Pflanzen welche Sie dort auswählen sind automatisch in der draufffolgenden genauen Aufnahme ausgewählt und können auch nicht mehr gelöscht werden. Nach dem Sie die Schnell / Genauaufnahme durhchgeführt haben. Können Sie noch Informationen zum Feld aufnehmen. Des Weitern kann man dort Bilder aus der Galerie oder direkt von der Kamera aufnehemen\nBEACHTEN SIE wenn Sie die Aufnahme einmal gestartet kommt man nicht mehr zurück.\nWenn Sie bereit sind, klicken Sie einfach auf Start ").padding(.top).padding(.leading)
                     }
                     
-                    NavigationLink(destination: SheetSelectPlantsShortTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies: plantSpeciesDataModel.platList, speciesCensusView: self, listEntry: listEntry)){
+                    else {
+                        Text("INFO").frame(maxWidth: .infinity, alignment: .top).font(.title2).padding()
+                        Text("Auf Grund der Feldtypauswahl :  \(typeOfField) müssen Sie im folgenden eine genaue Aufnahme durchführen. Nach dem Sie diese durchgeführt haben, könnne Sie zusätzliche Information & Bilder hinzufügen. Wenn Sie die Aufnahme einmal gestartet haben, können Sie nicht mehr zurück.\nWenn Sie bereit sind, klicken Sie einfach auf Start ").padding(.top).padding(.leading)
                         
-                        Text("Wähle Pflanze aus")
+                        
+                    }
+                    Form{
+                        
+                        
+                        
+                        
+                        if(typeOfField == "FFH Mähwiese"){
+                            NavigationLink(destination: SheetSelectPlantsShortTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies: plantSpeciesDataModel.platList, speciesCensusView: self, listEntry: listEntry)){
+                                
+                                Text("Start")
+                            }
+                        }
+                        else{
+                            
+                            NavigationLink(destination: SheetSelectPlantsLongTerm(plantSpeciesDataModel: plantSpeciesDataModel , listEntry: listEntry)){
+                                
+                                Text("Start")
+                            }
+                            
+                        }
+                        
+                        
+                        
                     }
                 }
             }
@@ -108,17 +148,16 @@ struct SpeciesCensusView: View {
                         let plant = PlantSpeciesItem(context: moc)
                         plant.species = listEntry
                         plant.scientificName = list.scientificName
-                        plant.southernGaelandschaften = list.southernGaelandschaften
-                        plant.schaebischeAlb = list.schaebischeAlb
-                        plant.responsibility = list.responsibility
+                    
                         plant.redListBw = list.redListBw
-                        plant.odenWald = list.odenWald
-                        plant.oberReihnArea = list.oberReihnArea
-                        plant.nothernGaelandschaften = list.nothernGaelandschaften
                         plant.germanName = list.germanName
                         plant.checked = list.isChecked
-                        plant.blackForest = list.blackForest
-                        plant.alpenvorland = list.alpenvorland
+                        plant.evaluation1a = list.evaluation1a
+                        plant.evaluation1b = list.evaluation1b
+                        plant.evaluation1c = list.evaluation1c
+                        plant.evaluation1d = list.evaluation1d
+                        plant.evaluation2 = list.evaluation2
+                        plant.evaluation3 = list.evaluation3
                         print(list.scientificName)
                         
                         do {

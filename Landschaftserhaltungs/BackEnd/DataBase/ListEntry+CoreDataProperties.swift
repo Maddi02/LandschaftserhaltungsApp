@@ -43,6 +43,7 @@ extension ListEntry {
             $0.scientificName ?? " " < $1.scientificName ?? " "
         }))
     }
+    
 }
 
 // MARK: Generated accessors for plant

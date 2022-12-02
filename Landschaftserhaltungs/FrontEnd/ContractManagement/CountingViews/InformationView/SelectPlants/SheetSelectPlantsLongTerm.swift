@@ -10,12 +10,10 @@ import SwiftUI
 struct SheetSelectPlantsLongTerm: View {
     @ObservedObject var userSettings = UserSettings()
     @ObservedObject var plantSpeciesDataModel : PlantSpeciesDataModel
-    var longTimeSpeciesCencus : LongTimeSpeciesCensus
     @StateObject var listEntry : ListEntry
     @Environment(\.presentationMode) var presentationMode
     @State private var selection: Set<UUID> = []
     @Environment(\.managedObjectContext) var moc
-    @State  var plantSpecies : [PlantSpecies]
     @State private var searchText = ""
     @State private var isItemCheck : Bool = false
     @State private var ItemCheckTrue : Bool = true
@@ -31,7 +29,7 @@ struct SheetSelectPlantsLongTerm: View {
         }), id: \.key) { categoryName, devicesArray in
             HeaderView(title: categoryName)
             ForEach(devicesArray) { name in
-                RowViewLongTerm(plant: name, plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies : plantSpecies, checked: name.isChecked, listEntry: listEntry, text: name.germanName)
+                RowViewLongTerm(plant: name, plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies : plantSpeciesDataModel.platList, checked: name.isChecked, listEntry: listEntry, text: name.germanName)
             }
         }
     }
@@ -42,7 +40,7 @@ struct SheetSelectPlantsLongTerm: View {
         }), id: \.key) { categoryName, devicesArray in
             HeaderView(title: categoryName)
             ForEach(devicesArray) { name in
-                RowViewLongTerm(plant: name, plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies : plantSpecies, checked: name.isChecked, listEntry: listEntry, text: name.scientificName)
+                RowViewLongTerm(plant: name, plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies : plantSpeciesDataModel.platList, checked: name.isChecked, listEntry: listEntry, text: name.scientificName)
             }
         }
         
@@ -55,7 +53,7 @@ struct SheetSelectPlantsLongTerm: View {
                 if(userSettings.getSelectedLanguage() == "Deutsch"){
                     devicesListGerman
                 }
-                else if(userSettings.getSelectedLanguage() == "Latein"){
+                else{
                     devicesListLatein
                 }
                 
@@ -64,7 +62,7 @@ struct SheetSelectPlantsLongTerm: View {
                 .overlay(sectionIndexTitles(proxy: proxy))
            
             
-            .navigationBarTitle("Pflanzenarten")
+                .navigationBarTitle("Genau Aufnahme").padding()
           
         }
         
@@ -117,19 +115,18 @@ struct SheetSelectPlantsLongTerm: View {
                     else{
                         let plant = PlantSpeciesLongTermItem(context: moc)
                       
+                        //SEARCH
                         plant.speciesLongTerm = listEntry
                         plant.scientificName =  list.scientificName
-                        plant.southernGaelandschaften = list.southernGaelandschaften
-                        plant.schaebischeAlb = list.schaebischeAlb
-                        plant.responsibility = list.responsibility
                         plant.redListBw = list.redListBw
-                        plant.odenWald = list.odenWald
-                        plant.oberReihnArea = list.oberReihnArea
-                        plant.nothernGaelandschaften = list.nothernGaelandschaften
                         plant.germanName = list.germanName
+                        plant.evaluation1a = list.evaluation1a
+                        plant.evaluation1b = list.evaluation1b
+                        plant.evaluation1c = list.evaluation1c
+                        plant.evaluation1d = list.evaluation1d
+                        plant.evaluation2 = list.evaluation2
+                        plant.evaluation3 = list.evaluation3
                         plant.checked = list.isChecked
-                        plant.blackForest = list.blackForest
-                        plant.alpenvorland = list.alpenvorland
                         print(list.scientificName)
                         
                         do {

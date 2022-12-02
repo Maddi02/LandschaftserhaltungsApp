@@ -16,12 +16,12 @@ import SwiftUI
     private  let pdf = PDFCreatorDiffrentBiotop()
     @ObservedObject var dataHandler : DataHandler 
     @State var listEntry : ListEntry = ListEntry()
+    @StateObject var userSettings = UserSettings()
     @State var filteredContracts : AppContract
     @State var description : String = ""
     @State private var action: Int? = 0
     @State private var showingOptions = false
     @State private var selection = "None"
-    @State private var showingAlert = false
     @State private var showingActionSheet = false
     @State private var typOfField = ""
      let csvGenerator = CSVGenerator()
@@ -62,8 +62,10 @@ import SwiftUI
                         showingActionSheet.toggle()
                         typOfField = list.descriptionField ?? "Unknown"
                         listEntry = list.self
+                
                         
                     }
+   
                 
                 
                 label: {
@@ -71,41 +73,23 @@ import SwiftUI
                         
                         ListItemContractArea(description: list.detailDescription ?? "Unknown", date: list.dateOfObservation ?? Date(), typ: list.descriptionField ?? "Unknown").tint(.black)
                         
-                    }.swipeActions(edge: .leading) {
-                        NavigationLink( destination: EditListItemContractArea())
-                        {
-                            HStack(spacing: 0) {
-                                Text("Aufnahme bearbeiten")
-                                Image(systemName: "slider.horizontal.2.square.on.square")
-                            }
-                        }.tint(.indigo)
-                        
-                        
-                    }.tint(.indigo)
-                } .onDelete(perform: delete).alert("Vertrag wurde gelöscht", isPresented: $showingAlert) {
-                }
+                    }
+                    
+                } .onDelete(perform: delete)
                 
             }.confirmationDialog("Wähle die Art der Zählung aus", isPresented: $showingActionSheet, titleVisibility: .visible) {
                 
                 
-                if(typOfField == "FFH Mähwiese"){
-                    NavigationLink(destination: SpeciesCensusView( listEntry: listEntry, description:  self.description)) {
+            
+                NavigationLink(destination: SpeciesCensusView( listEntry: listEntry, typeOfField: typOfField, description:  self.description )) {
                         Button("Artenzählung")
                         {
                             
                         }
                     }
-                }
-                else {
-                    NavigationLink(destination: LongTimeSpeciesCensus( listEntry: listEntry, description:  self.description, speciesCensusView: SpeciesCensusView( listEntry: listEntry, description:  self.description))) {
-                        Button("Artenzählung")
-                        {
-                            
-                        }
-                    }
-                }
+                
 
-                NavigationLink(destination: FrequencyEstimationField()) {
+                NavigationLink(destination: getDirection()) {
                     Button("Häufigkeitsschätzung")
                     {
 
@@ -113,7 +97,7 @@ import SwiftUI
                 }
                 if(typOfField == "FFH Mähwiese"){
                     NavigationLink(destination: ExportPreviewPDFFFH(listEntry: listEntry)) {
-                        Button("Exportieren")
+                        Button("PDF Exportieren")
                         {
                             
                         }
@@ -121,7 +105,7 @@ import SwiftUI
                 }
                 else {
                     NavigationLink(destination: ExportPreviewPDFOtherBiotop(listEntry: listEntry).onAppear(perform: {pdf.generatePdf(listEntry: listEntry)})) {
-                        Button("Exportieren")
+                        Button("PDF Exportieren")
                         {
                             
                         }
@@ -132,21 +116,25 @@ import SwiftUI
             
             
                 
-                Button("CSV")
+                Button("CSV Exportieren")
                 {
-                     
-                    print("Pressed me")
                     link = csvGenerator.generateAndGetUrl(listEntry: listEntry)
                     presentShareSheet()
                 }
                 
+                NavigationLink(destination: EditListItemContractArea(type: typOfField, listEntry: listEntry)) {
+                    Button(" Information Bearbeiten")
+                    {
+                        
+                    }
+                }
             }
         }
     }
     
     func delete(at offsets : IndexSet )
     {
-        showingAlert = true
+
         for offset in offsets{
             let item = filteredContracts.ContactArray[offset]
             moc.delete(item)
@@ -159,6 +147,19 @@ import SwiftUI
             
         }
     }
+     
+     
+     func getDirection() -> AnyView{
+         
+         if(userSettings.getLanguage() == "Deutsch")
+         {
+             return AnyView(FrequencyEstimationFieldGerman(listEntry: listEntry, typeOfField: typOfField))
+         }
+         else{
+             return AnyView(FrequencyEstimationFieldLatein(listEntry: listEntry, typeOfField: typOfField))
+         }
+     }
+     
      private func presentShareSheet(){
         // pdf.generatePdf(listEntry: listEntry)
      
@@ -166,6 +167,11 @@ import SwiftUI
          UIApplication.shared.windows.first?.rootViewController?.present(shareSheetVC, animated: true, completion: nil)
      }
 
-    
+     func test(str : String)
+     {
+         print(str)
+     }
+     
+
 }
 

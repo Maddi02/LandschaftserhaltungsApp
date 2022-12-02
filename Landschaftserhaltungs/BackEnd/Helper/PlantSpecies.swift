@@ -45,6 +45,7 @@ class PlantSpecies : Identifiable
     
     init(row : [String])
     {
+        
         self.scientificName = row[0]
         self.germanName = row[1]
         self.evaluation1a = row[2]
