@@ -107,19 +107,7 @@ struct CreateNewContract : View
                         .cornerRadius(10)
                         .padding(.horizontal)
                     }
-                        Button{
-                            print("Sollte ein Feldbegehungsformular öffnen")
-                        }
-                    label: {
-                        HStack {
-                            Text("Hinzufügen einer Feldbegehung")
-                        }
-                        .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
-                    }
+             
                     }
                 }.navigationBarTitle(Text("Neuen Vertrag anlegen"))
             }.background(content: BackGroundGradient.getGradient)

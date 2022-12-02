@@ -23,7 +23,7 @@ struct RowViewShortTerm: View {
         
         HStack{
            
-            Text(text)
+  
             if(checkIfAllreadySaved(plant: text))
             {
                 Text(text).foregroundColor(.green)
@@ -42,6 +42,7 @@ struct RowViewShortTerm: View {
                 })
                 
             }
+            Text(text)
 
         }
 

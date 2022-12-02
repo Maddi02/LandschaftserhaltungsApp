@@ -226,7 +226,7 @@ struct EditContractView: View {
                             }
                             DatePicker(selection: $contractDeadline,
                                        displayedComponents: [.date],
-                                       label: { Text("Vertragsabschluss") })
+                                       label: { Text("Frist") })
                             
                         }
                         
@@ -290,19 +290,7 @@ struct EditContractView: View {
                     .cornerRadius(10)
                     .padding(.horizontal)
                     }
-                    Button{
-                        print("Sollte ein Feldbegehungsformular öffnen")
-                    }
-                label: {
-                    HStack {
-                        Text("Hinzufügen einer Feldbegehung")
-                    }
-                    .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .padding(.horizontal)
-                }
+    
                     
                 }.navigationBarTitle(Text("Vertrag bearbeiten"))
             }.background(content: BackGroundGradient.getGradient)
