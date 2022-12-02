@@ -63,6 +63,8 @@ struct UserView: View {
                         TextField("Nachname", text: $userSettings.lastName)
                     }
                 }
+                
+                
                 Section(header: Text("Sprache")) {
                     
                     Section {
@@ -75,29 +77,39 @@ struct UserView: View {
                     }.frame(maxWidth: .infinity, alignment: .center)
                     
                 }
-                Text(defaults.url(forKey: "csvPath")?.lastPathComponent ?? "NO Path Selected")
-              Button("Import CSV Datei")
-                {
-                    openFile.toggle()
-                }.fileImporter(isPresented: $openFile, allowedContentTypes: [.data]) {
-                    (res) in
-                    
-                    do {
-       
-                        let fileUrl = try res.get()
-                        self.fileUrl = fileUrl.lastPathComponent
-                        defaults.set(fileUrl, forKey: "csvPath")
-                        print(fileUrl)
-                    }
-                    
-                    catch{
-                        print(error)
-                    }
-                }
+
               
+              
+                Section(header: Text("CSV")){
+                    Button("CSV Datei importieren")
+                    {
+                        openFile.toggle()
+                    }.fileImporter(isPresented: $openFile, allowedContentTypes: [.data]) {
+                        (res) in
+                        
+                        do {
+                            let fileUrl = try res.get()
+                            self.fileUrl = fileUrl.lastPathComponent
+                            defaults.set(fileUrl, forKey: "csvPath")
+                        }
+                        catch{
+                            print(error)
+                        }
+                    }
+                    Text(defaults.url(forKey: "csvPath")?.lastPathComponent ?? "Kein Pfad ausgewählt")
+                }
                 
                 
-                Button("Save")
+                Section(header: Text("Onboarding")){
+                    NavigationLink(destination: OnboardingFlowView(), label: {
+                        Text("Onboarding wiederholen")
+                        
+                    }).onAppear(perform: {
+                        defaults.set(false, forKey: "realOnboarding")
+                    })
+                }
+                
+                Button("Sichern")
                 {
                     userSettings.saveImage(image: self.image)
                     dismiss()
@@ -105,17 +117,7 @@ struct UserView: View {
                 }
                 
                 
-                
-                NavigationLink(destination: OnboardingFlowView(), label: {
-                    Text("Onboarding wiederholen")
-          
-                    
-                }).onAppear(perform: {
-                    defaults.set(false, forKey: "realOnboarding")
-                })
-    
-                
-            }.navigationBarTitle(Text("Profile"))
+            }.navigationBarTitle(Text("Mein Profil"))
         }
         .sheet(isPresented: $isShownPhotoLibrary){
             ImagePicker(changePicture: false,  sourceType: .photoLibrary, selectedImage: self.$image)
