@@ -314,9 +314,10 @@ struct EditListItemContractArea: View {
         listEntry.infos?.farming = farming
         listEntry.infos?.dataOfTaking = dateOfTaking
         listEntry.infos?.vegetationDescription = vegetationDescription
+        listEntry.infos?.position = position
         listEntry.infos?.bloomAspect = bloomAspekt
         listEntry.infos?.evaluationSpeciesInventory = evaluationSpeciesInventory
-        listEntry.infos?.evaluationSpeciesInventory = evaluationHabitatStructures
+        listEntry.infos?.assessmentHabitatStructure = evaluationHabitatStructures
         listEntry.infos?.ratingImpairment = evaluationImpairments
         listEntry.infos?.overallAssessmentOfTheStateOfPreservation = overallAssessmentConservation
         listEntry.infos?.protectionStatus = protectionStatus

@@ -47,7 +47,6 @@ struct FrequencyEstimationFieldLatein: View {
                     {
                         item in
                         Button {
-                            print(item.germanName)
                             showingAlert = true
                         } label: {
                             HStack{
@@ -87,7 +86,6 @@ struct FrequencyEstimationFieldLatein: View {
                             {
                                 item in
                                 Button {
-                                    print(item.scientificName)
                                     showingAlert = true
                                 } label: {
                                     HStack{
@@ -117,7 +115,6 @@ struct FrequencyEstimationFieldLatein: View {
                             item in
                         
                                 Button {
-                                    print(item.scientificName)
                                     showingAlert = true
                                 } label: {
                                     HStack{
