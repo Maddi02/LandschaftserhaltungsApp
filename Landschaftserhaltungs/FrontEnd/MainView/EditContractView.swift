@@ -224,6 +224,8 @@ struct EditContractView: View {
                                 WrappedTextView(text: $appContract.managementRequirements.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeContractManagementRequirements)
                                     .frame(height: heightContractManagementRequirements ?? minHeightContractManagementRequirements).background(Color.clear)
                             }
+                        }
+                        VStack {
                             DatePicker(selection: $contractDeadline,
                                        displayedComponents: [.date],
                                        label: { Text("Frist") })
@@ -231,6 +233,10 @@ struct EditContractView: View {
                         }
                         
                     }
+                    Section(header: Text("Vertragsinformationen")) {
+                    }
+                    
+                    
                     Section(header: Text("Besonderheiten"))
                     {
                         HStack {

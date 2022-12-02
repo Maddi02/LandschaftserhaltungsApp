@@ -26,6 +26,7 @@ struct TextView: UIViewRepresentable {
         textView.isSelectable = true
         textView.isUserInteractionEnabled = true
         textView.backgroundColor = .clear
+        textView.isScrollEnabled = false
         
         
         return textView
