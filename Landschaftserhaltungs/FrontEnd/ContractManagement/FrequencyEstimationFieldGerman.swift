@@ -6,42 +6,6 @@
 //
 
 import SwiftUI
-struct test : View
-{    @Environment(\.managedObjectContext) var moc
-
-    @StateObject var listentry : PlantSpeciesItem
-    static var state = " frrewfwf"
-    var body: some View
-    {
-        Text(listentry.germanName ?? "Hhh")
-        Text(listentry.frequency ?? "Hhh")
-        Button("Test")
-        {
-            listentry.frequency = "Kuck Kuck"
-            do{
-                try moc.save()
-       
-                test.state = "Hallo"
-               
-                
-            }
-            catch{
-                print("Hier \(error)")
-            }
-            
-        }
-        
-        
-    }
-    
-    public static func geti() -> String
-    
-    {
-        return state
-    }
-}
-
-
 
 struct FrequencyEstimationFieldGerman: View {
     @Environment(\.managedObjectContext) var moc
@@ -69,32 +33,23 @@ struct FrequencyEstimationFieldGerman: View {
             
             
             if (typeOfField == "Anderes Biotop"){
-                List()
-                {
+                NavigationView {
                     
-                    ForEach(listEntry.PlantArrayLongTerm)
-                    {
-                        item in
-                        Button {
-                            print(item.germanName)
-                            showingAlert = true
-                        } label: {
-                            HStack{
-                                Text(item.germanName ?? " " )
-                                Spacer()
-                                Text(item.frequency ?? "")
-                            }
-                        }.alert(item.germanName ?? "NO Value", isPresented: $showingAlert, actions: {
-                            Button("wenige") { saveLongTerm(item: item, value: "w") }
-                            Button("mehrere") { saveLongTerm(item: item, value: "m") }
-                            Button("zahlreich") { saveLongTerm(item: item, value: "z")}
-                            Button("sehr viele") { saveLongTerm(item: item, value: "v")}
-                            Button("dominat") { saveLongTerm(item: item, value: "d") }
-                        })
-                    }
-                    
-                    
-                    
+                    List(sortLongTerm(listEntry: listEntry)) { todoItem in
+                        NavigationLink(destination: SetFrequenceViewLongTerm(listentry: todoItem).onAppear(perform: {
+                            selection = "WEEE"
+                            
+                        }).onDisappear(perform: {
+                            selection = "WEEE"
+                            checkedW.toggle()
+                            update()
+                        })) {
+                            Text(todoItem.germanName ?? " ")
+                            Text(todoItem.frequency ?? " ")
+                        }
+                    }.alert("HHH", isPresented: $checkedW, actions: {
+                        
+                    })
                 }
             }
             
@@ -102,7 +57,7 @@ struct FrequencyEstimationFieldGerman: View {
             else {
                 
                 VStack {
-                    Picker("Please choose a color", selection: $selectedType) {
+                    Picker("Wähle Liste aus", selection: $selectedType) {
                         ForEach(types, id: \.self) {
                             Text($0)
                         }
@@ -111,26 +66,10 @@ struct FrequencyEstimationFieldGerman: View {
                     if(selectedType == "Schnell-Aufnahme")
                     {
                         
-                        NavigationView{
-                            List(test1(listEntry : listEntry)){
-                                
-                                 todoItem in
-                                    NavigationLink(destination: test(listentry: todoItem)) {
-                                        Text(todoItem.germanName ?? "")
-                                    }
-                                }
-                                
-                                
-                                
-                            }
-                        }
-                    
-                    if(selectedType == "Genaue Aufnahme")
-                    {
                         NavigationView {
                             
-                            List(test1(listEntry: listEntry)) { todoItem in
-                                NavigationLink(destination: test(listentry: todoItem).onAppear(perform: {
+                            List(sortShortTerm(listEntry: listEntry)) { todoItem in
+                                NavigationLink(destination: SetFrequenceViewShortTerm(listentry: todoItem).onAppear(perform: {
                                     print("Hallo Welt")
                                     selection = "WEEE"
                                     
@@ -138,12 +77,36 @@ struct FrequencyEstimationFieldGerman: View {
                                     print("Tschäuch Welt")
                                     selection = "WEEE"
                                     checkedW.toggle()
-                                    up()
+                                    update()
                                 })) {
                                     Text(todoItem.germanName ?? " ")
                                     Text(todoItem.frequency ?? " ")
                                 }
-                            }.alert("HHH", isPresented: $checkedW, actions: {
+                            }.alert("", isPresented: $checkedW, actions: {
+                                
+                            })
+                        }
+                        }
+                    
+                    if(selectedType == "Genaue Aufnahme")
+                    {
+                        NavigationView {
+                            
+                            List(sortLongTerm(listEntry: listEntry)) { todoItem in
+                                NavigationLink(destination: SetFrequenceViewLongTerm(listentry: todoItem).onAppear(perform: {
+                                    print("Hallo Welt")
+                                    selection = "WEEE"
+                                    
+                                }).onDisappear(perform: {
+                                    print("Tschäuch Welt")
+                                    selection = "WEEE"
+                                    checkedW.toggle()
+                                    update()
+                                })) {
+                                    Text(todoItem.germanName ?? " ")
+                                    Text(todoItem.frequency ?? " ")
+                                }
+                            }.alert("", isPresented: $checkedW, actions: {
                                 
                             })
                         }
@@ -188,7 +151,7 @@ struct FrequencyEstimationFieldGerman: View {
         }
     }
     
-    func up()
+    func update()
     {
         print("In upo")
         checkedW.toggle()
@@ -199,13 +162,22 @@ struct FrequencyEstimationFieldGerman: View {
     
     
     
-    func test1(listEntry : ListEntry) -> [PlantSpeciesItem]
+    func sortShortTerm(listEntry : ListEntry) -> [PlantSpeciesItem]
     {
         
         return listEntry.PlantArray.sorted( by : {lhs, rhs in
             return lhs.germanName ?? "a" < rhs.germanName ?? "b"
           })
     }
+    
+    func sortLongTerm(listEntry : ListEntry) -> [PlantSpeciesLongTermItem]
+    {
+        
+        return listEntry.PlantArrayLongTerm.sorted( by : {lhs, rhs in
+            return lhs.germanName ?? "a" < rhs.germanName ?? "b"
+          })
+    }
+    
     
   
     

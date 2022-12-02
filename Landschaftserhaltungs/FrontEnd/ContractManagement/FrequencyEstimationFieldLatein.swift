@@ -1,12 +1,4 @@
 //
-//  FrequencyEstimationFieldLatein.swift
-//  Landschaftserhaltungs
-//
-//  Created by Martin Hummel on 01.12.22.
-//
-
-import SwiftUI
-//
 //  FrequencyEstimationField.swift
 //  Landschaftserhaltungs
 //
@@ -15,10 +7,13 @@ import SwiftUI
 
 import SwiftUI
 
+
+
 struct FrequencyEstimationFieldLatein: View {
     @Environment(\.managedObjectContext) var moc
     @StateObject var listEntry : ListEntry
-    @StateObject  var userSettings = UserSettings()
+    @StateObject var userSettings = UserSettings()
+    @State var checkedW = false
     var typeOfField : String
     let defaults = UserDefaults.standard
     let frequence = ["m", "w", "z" , "s" , "d"]
@@ -40,31 +35,23 @@ struct FrequencyEstimationFieldLatein: View {
             
             
             if (typeOfField == "Anderes Biotop"){
-                List()
-                {
+                NavigationView {
                     
-                    ForEach(listEntry.PlantArrayLongTerm)
-                    {
-                        item in
-                        Button {
-                            showingAlert = true
-                        } label: {
-                            HStack{
-                                Text(item.scientificName ?? " " )
-                                Spacer()
-                                Text(item.frequency ?? "")
-                            }
-                        }.alert(item.germanName ?? "NO Value", isPresented: $showingAlert, actions: {
-                            Button("wenige") { saveLongTerm(item: item, value: "w") }
-                            Button("mehrere") { saveLongTerm(item: item, value: "m") }
-                            Button("zahlreich") { saveLongTerm(item: item, value: "z")}
-                            Button("sehr viele") { saveLongTerm(item: item, value: "v")}
-                            Button("dominat") { saveLongTerm(item: item, value: "d") }
-                        })
-                    }
-                    
-                    
-                    
+                    List(sortLongTerm(listEntry: listEntry)) { todoItem in
+                        NavigationLink(destination: SetFrequenceViewLongTerm(listentry: todoItem).onAppear(perform: {
+                            selection = "WEEE"
+                            
+                        }).onDisappear(perform: {
+                            selection = "WEEE"
+                            checkedW.toggle()
+                            update()
+                        })) {
+                            Text(todoItem.scientificName ?? " ")
+                            Text(todoItem.frequency ?? " ")
+                        }
+                    }.alert("HHH", isPresented: $checkedW, actions: {
+                        
+                    })
                 }
             }
             
@@ -72,7 +59,7 @@ struct FrequencyEstimationFieldLatein: View {
             else {
                 
                 VStack {
-                    Picker("Please choose a color", selection: $selectedType) {
+                    Picker("Wähle Liste aus", selection: $selectedType) {
                         ForEach(types, id: \.self) {
                             Text($0)
                         }
@@ -80,56 +67,50 @@ struct FrequencyEstimationFieldLatein: View {
                     
                     if(selectedType == "Schnell-Aufnahme")
                     {
-                        List()
-                        {
-                            ForEach(listEntry.PlantArray)
-                            {
-                                item in
-                                Button {
-                                    showingAlert = true
-                                } label: {
-                                    HStack{
-                                        Text(item.scientificName ?? " " )
-                                        Spacer()
-                                        Text(item.frequency ?? "")
-                                    }
-                                }.alert(item.scientificName ?? "NO Value", isPresented: $showingAlert, actions: {
-                                    Button("wenige") { saveShortTerm(item: item, value: "w") }
-                                    Button("mehrere") { saveShortTerm(item: item, value: "m") }
-                                    Button("zahlreich") { saveShortTerm(item: item, value: "z")}
-                                    Button("sehr viele") { saveShortTerm(item: item, value: "v")}
-                                    Button("dominat") { saveShortTerm(item: item, value: "d") }
-                                })
-                            }}
                         
-                        
-                    }
+                        NavigationView {
+                            
+                            List(sortShortTerm(listEntry: listEntry)) { todoItem in
+                                NavigationLink(destination: SetFrequenceViewShortTerm(listentry: todoItem).onAppear(perform: {
+                                    print("Hallo Welt")
+                                    selection = "WEEE"
+                                    
+                                }).onDisappear(perform: {
+                                    print("Tschäuch Welt")
+                                    selection = "WEEE"
+                                    checkedW.toggle()
+                                    update()
+                                })) {
+                                    Text(todoItem.scientificName ?? " ")
+                                    Text(todoItem.frequency ?? " ")
+                                }
+                            }.alert("", isPresented: $checkedW, actions: {
+                                
+                            })
+                        }
+                        }
                     
                     if(selectedType == "Genaue Aufnahme")
                     {
-                        List()
-                        {
-                        
-                            ForEach(listEntry.PlantArrayLongTerm)
-                        {
-                            item in
-                        
-                                Button {
-                                    showingAlert = true
-                                } label: {
-                                    HStack{
-                                        Text(item.germanName ?? " " )
-                                        Spacer()
-                                        Text(item.frequency ?? "")
-                                    }
-                                }.alert(item.scientificName ?? "NO Value", isPresented: $showingAlert, actions: {
-                                    Button("wenige") { saveLongTerm(item: item, value: "w") }
-                                    Button("mehrere") { saveLongTerm(item: item, value: "m") }
-                                    Button("zahlreich") { saveLongTerm(item: item, value: "z")}
-                                    Button("sehr viele") { saveLongTerm(item: item, value: "v")}
-                                    Button("dominat") { saveLongTerm(item: item, value: "d") }
-                                })
-                            }
+                        NavigationView {
+                            
+                            List(sortLongTerm(listEntry: listEntry)) { todoItem in
+                                NavigationLink(destination: SetFrequenceViewLongTerm(listentry: todoItem).onAppear(perform: {
+                                    print("Hallo Welt")
+                                    selection = "WEEE"
+                                    
+                                }).onDisappear(perform: {
+                                    print("Tschäuch Welt")
+                                    selection = "WEEE"
+                                    checkedW.toggle()
+                                    update()
+                                })) {
+                                    Text(todoItem.scientificName ?? " ")
+                                    Text(todoItem.frequency ?? " ")
+                                }
+                            }.alert("", isPresented: $checkedW, actions: {
+                                
+                            })
                         }
                         
                     }
@@ -141,6 +122,9 @@ struct FrequencyEstimationFieldLatein: View {
         }
         
     }
+    
+    
+    
     
     func saveShortTerm(item : PlantSpeciesItem, value : String)
     {
@@ -169,6 +153,37 @@ struct FrequencyEstimationFieldLatein: View {
         }
     }
     
+    func update()
+    {
+        print("In upo")
+        checkedW.toggle()
+      
+    }
+    
+    
+    
+    
+    
+    func sortShortTerm(listEntry : ListEntry) -> [PlantSpeciesItem]
+    {
+        
+        return listEntry.PlantArray.sorted( by : {lhs, rhs in
+            return lhs.scientificName ?? "a" < rhs.scientificName ?? "b"
+          })
+    }
+    
+    func sortLongTerm(listEntry : ListEntry) -> [PlantSpeciesLongTermItem]
+    {
+        
+        return listEntry.PlantArrayLongTerm.sorted( by : {lhs, rhs in
+            return lhs.scientificName ?? "a" < rhs.scientificName ?? "b"
+          })
+    }
+    
+    
+  
+    
     
 }
+
 
