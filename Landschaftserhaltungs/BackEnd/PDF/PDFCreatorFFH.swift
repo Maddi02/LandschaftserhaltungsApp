@@ -10,7 +10,8 @@ import TPPDF
 import PDFKit
 class PDFCreatorFFH
 {
-  var userSettings = UserSettings()
+    var userSettings = UserSettings()
+
     var  url = URL(string: "")
     
     func getDocumentsDirectory() -> URL {
@@ -50,6 +51,8 @@ class PDFCreatorFFH
         //Header
         document.add(.contentCenter, text: "Create PDF documents easily.")
         document.add(.headerRight, image: imageElementHeader)
+        document.add(.headerLeft, text: "Bearbeiter")
+        document.add(.headerLeft, text: "\(userSettings.getLastName()) \(userSettings.getFirstName())")
         
         //Body First Page
         document.add(textObject: PDFSimpleText(text: "Flächenbeurteilung der Vertragsflächen", style: headingStyle1))

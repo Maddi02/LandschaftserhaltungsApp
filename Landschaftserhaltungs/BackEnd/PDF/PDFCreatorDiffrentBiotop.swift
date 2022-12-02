@@ -11,8 +11,10 @@ import TPPDF
 class PDFCreatorDiffrentBiotop
 {
 
+    
     var  url = URL(string: "")
    
+    var userSettings = UserSettings()
     func getDocumentsDirectory() -> URL {
         // find all possible documents directories for this user
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -50,7 +52,10 @@ class PDFCreatorDiffrentBiotop
      
         
         //Header
+        
         document.add(.headerRight, image: imageElementHeader)
+        document.add(.headerLeft, text: "Bearbeiter")
+        document.add(.headerLeft, text: "\(userSettings.getLastName()) \(userSettings.getFirstName())")
         
         //Body First Page
         document.add(textObject: PDFSimpleText(text: "Flächenbeurteilung der Vertragsflächen", style: headingStyle1))

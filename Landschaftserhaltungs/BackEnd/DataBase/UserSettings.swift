@@ -77,4 +77,12 @@ public class UserSettings: ObservableObject {
     {
         return defaults.string(forKey: "language") ?? "Unknown"
     }
+    func getFirstName() -> String
+    {
+        return defaults.string(forKey: "firstName") ?? "Unknown"
+    }
+    func getLastName() -> String
+    {
+        return defaults.string(forKey: "lastName") ?? "Unknown"
+    }
 }
