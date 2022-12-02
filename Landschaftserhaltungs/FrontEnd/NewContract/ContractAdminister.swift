@@ -22,7 +22,6 @@ import SwiftUI
     @State private var action: Int? = 0
     @State private var showingOptions = false
     @State private var selection = "None"
-    @State private var showingAlert = false
     @State private var showingActionSheet = false
     @State private var typOfField = ""
      let csvGenerator = CSVGenerator()
@@ -76,8 +75,7 @@ import SwiftUI
                         
                     }
                     
-                } .onDelete(perform: delete).alert("Vertrag wurde gelöscht", isPresented: $showingAlert) {
-                }
+                } .onDelete(perform: delete)
                 
             }.confirmationDialog("Wähle die Art der Zählung aus", isPresented: $showingActionSheet, titleVisibility: .visible) {
                 
@@ -136,7 +134,7 @@ import SwiftUI
     
     func delete(at offsets : IndexSet )
     {
-        showingAlert = true
+
         for offset in offsets{
             let item = filteredContracts.ContactArray[offset]
             moc.delete(item)
