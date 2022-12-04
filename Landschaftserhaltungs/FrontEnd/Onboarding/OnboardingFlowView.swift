@@ -26,10 +26,12 @@ struct OnboardingFlowView: View {
             SixthFeatureOverview().tag(6)
             SeventhFeatureOverview().tag(7)
             EighthFeatureOverview().tag(8)
-            NinethFeatureOverview().tag(9)
-            //TenthFeatureOverview().tag(10)
-            //ReOnboradingFeatureOverview().tag(11)
-            //DoneOverview().tag(12)
+            Group{
+                NinethFeatureOverview().tag(9)
+                TenthFeatureOverview().tag(10)
+                ReOnboradingFeatureOverview().tag(11)
+                DoneOverview().tag(12)
+            }
             
         }
         .background(BackGroundGradient.getGradient())
