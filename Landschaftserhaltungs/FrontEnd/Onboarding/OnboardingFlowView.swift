@@ -11,7 +11,7 @@ struct OnboardingFlowView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @State private var selection = 0
     @State private var buttonTitleNext = "Start"
-    @State private var buttonTitleBack = "back"
+    @State private var buttonTitleBack = "Zurück"
     @EnvironmentObject var appState : AppState
     private let defaults = UserDefaults.standard
     var body: some View {
@@ -32,7 +32,7 @@ struct OnboardingFlowView: View {
         HStack{
             if(selection >= 1)
             {
-                Button("back") {
+                Button("Zurück") {
                     withAnimation {
                         if(selection == 0)
                         {
@@ -58,7 +58,7 @@ struct OnboardingFlowView: View {
                         
                         if(selection < 4)
                         {
-                            buttonTitleNext = "Next"
+                            buttonTitleNext = "Weiter"
                             selection+=1
                         }
                         
@@ -73,7 +73,7 @@ struct OnboardingFlowView: View {
         
         if(selection < 4)
         {
-            Button("Skip Tutorial") {
+            Button("Tutorial überspringen") {
                 
                 withAnimation {
                     if(selection < 4)
