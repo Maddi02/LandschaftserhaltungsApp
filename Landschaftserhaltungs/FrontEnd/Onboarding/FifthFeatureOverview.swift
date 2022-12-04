@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FifthFeatureOverview: View {
     var body: some View {
-        Text("\"Mein Profil\" \n \n Importieren Sie die CSV mit den Pflanzenarten. \n \n \n").multilineTextAlignment(.center)
+        Text("\"Hauptmenü\" \n \n Legen Sie einen neuen Vertrag an. \n \n \n").multilineTextAlignment(.center)
     }
 }
 
