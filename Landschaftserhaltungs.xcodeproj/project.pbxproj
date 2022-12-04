@@ -106,6 +106,8 @@
 		22A1088B291C1CE50071FF3A /* InformationAnderesBiotop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1088A291C1CE50071FF3A /* InformationAnderesBiotop.swift */; };
 		BFEFB781293CDBBB00266853 /* FourthFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB780293CDBBB00266853 /* FourthFeatureOverview.swift */; };
 		BFEFB783293CDDDD00266853 /* ReOnboradingFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB782293CDDDD00266853 /* ReOnboradingFeatureOverview.swift */; };
+		BFEFB785293CDF1100266853 /* FifthFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB784293CDF1100266853 /* FifthFeatureOverview.swift */; };
+		BFEFB787293CDF3200266853 /* SixthFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB786293CDF3200266853 /* SixthFeatureOverview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -228,6 +230,8 @@
 		22A1088A291C1CE50071FF3A /* InformationAnderesBiotop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAnderesBiotop.swift; sourceTree = "<group>"; };
 		BFEFB780293CDBBB00266853 /* FourthFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthFeatureOverview.swift; sourceTree = "<group>"; };
 		BFEFB782293CDDDD00266853 /* ReOnboradingFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReOnboradingFeatureOverview.swift; sourceTree = "<group>"; };
+		BFEFB784293CDF1100266853 /* FifthFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthFeatureOverview.swift; sourceTree = "<group>"; };
+		BFEFB786293CDF3200266853 /* SixthFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixthFeatureOverview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -481,6 +485,8 @@
 				224F462E28FE06CD004EA74F /* SecondFeatureOverview.swift */,
 				224F463028FE06E4004EA74F /* ThirdFeatureOverview.swift */,
 				BFEFB780293CDBBB00266853 /* FourthFeatureOverview.swift */,
+				BFEFB784293CDF1100266853 /* FifthFeatureOverview.swift */,
+				BFEFB786293CDF3200266853 /* SixthFeatureOverview.swift */,
 				BFEFB782293CDDDD00266853 /* ReOnboradingFeatureOverview.swift */,
 				224F463228FE07D8004EA74F /* DoneOverview.swift */,
 			);
@@ -750,6 +756,7 @@
 				2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */,
 				22A0AD9A293A4984008D2EA7 /* SetFrequenceViewLongTerm.swift in Sources */,
 				223BB34D29103C490064927A /* TextView.swift in Sources */,
+				BFEFB785293CDF1100266853 /* FifthFeatureOverview.swift in Sources */,
 				22A0AD9C293A49B7008D2EA7 /* SetFrequenceViewShortTerm.swift in Sources */,
 				223523FF292700ED000126E1 /* ImpressumView.swift in Sources */,
 				226C67D9292E180F0049958A /* FieldInformation+CoreDataClass.swift in Sources */,
@@ -814,6 +821,7 @@
 				225561D229252F8900C645F6 /* RowViewLongTerm.swift in Sources */,
 				223AD5E129199C53009B5C1C /* AppContract+CoreDataProperties.swift in Sources */,
 				224F45FC28FD80E7004EA74F /* LandschaftserhaltungsApp.swift in Sources */,
+				BFEFB787293CDF3200266853 /* SixthFeatureOverview.swift in Sources */,
 				224F462B28FE0167004EA74F /* WelcomeView.swift in Sources */,
 				223AD5DD29199C53009B5C1C /* PlantSpeciesItem+CoreDataProperties.swift in Sources */,
 			);
