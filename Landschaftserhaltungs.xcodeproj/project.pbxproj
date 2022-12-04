@@ -110,6 +110,8 @@
 		BFEFB787293CDF3200266853 /* SixthFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB786293CDF3200266853 /* SixthFeatureOverview.swift */; };
 		BFEFB789293CE3DA00266853 /* SeventhFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB788293CE3DA00266853 /* SeventhFeatureOverview.swift */; };
 		BFEFB78B293CE40200266853 /* EighthFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB78A293CE40200266853 /* EighthFeatureOverview.swift */; };
+		BFEFB78D293CE6D300266853 /* NinethFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB78C293CE6D300266853 /* NinethFeatureOverview.swift */; };
+		BFEFB78F293CE76700266853 /* TenthFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB78E293CE76700266853 /* TenthFeatureOverview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,6 +238,8 @@
 		BFEFB786293CDF3200266853 /* SixthFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixthFeatureOverview.swift; sourceTree = "<group>"; };
 		BFEFB788293CE3DA00266853 /* SeventhFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeventhFeatureOverview.swift; sourceTree = "<group>"; };
 		BFEFB78A293CE40200266853 /* EighthFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EighthFeatureOverview.swift; sourceTree = "<group>"; };
+		BFEFB78C293CE6D300266853 /* NinethFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinethFeatureOverview.swift; sourceTree = "<group>"; };
+		BFEFB78E293CE76700266853 /* TenthFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenthFeatureOverview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -493,6 +497,8 @@
 				BFEFB786293CDF3200266853 /* SixthFeatureOverview.swift */,
 				BFEFB788293CE3DA00266853 /* SeventhFeatureOverview.swift */,
 				BFEFB78A293CE40200266853 /* EighthFeatureOverview.swift */,
+				BFEFB78C293CE6D300266853 /* NinethFeatureOverview.swift */,
+				BFEFB78E293CE76700266853 /* TenthFeatureOverview.swift */,
 				BFEFB782293CDDDD00266853 /* ReOnboradingFeatureOverview.swift */,
 				224F463228FE07D8004EA74F /* DoneOverview.swift */,
 			);
@@ -759,6 +765,7 @@
 				BFEFB789293CE3DA00266853 /* SeventhFeatureOverview.swift in Sources */,
 				224F45FE28FD80E7004EA74F /* OnboardingFlowView.swift in Sources */,
 				225561D629252FEC00C645F6 /* SectionIndexTitle.swift in Sources */,
+				BFEFB78F293CE76700266853 /* TenthFeatureOverview.swift in Sources */,
 				226C67BC292BAAD70049958A /* ProfileDataModel.swift in Sources */,
 				2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */,
 				22A0AD9A293A4984008D2EA7 /* SetFrequenceViewLongTerm.swift in Sources */,
@@ -832,6 +839,7 @@
 				BFEFB787293CDF3200266853 /* SixthFeatureOverview.swift in Sources */,
 				224F462B28FE0167004EA74F /* WelcomeView.swift in Sources */,
 				223AD5DD29199C53009B5C1C /* PlantSpeciesItem+CoreDataProperties.swift in Sources */,
+				BFEFB78D293CE6D300266853 /* NinethFeatureOverview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

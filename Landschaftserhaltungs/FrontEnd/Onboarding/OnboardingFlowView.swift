@@ -26,8 +26,10 @@ struct OnboardingFlowView: View {
             SixthFeatureOverview().tag(6)
             SeventhFeatureOverview().tag(7)
             EighthFeatureOverview().tag(8)
-            ReOnboradingFeatureOverview().tag(9)
-            //DoneOverview().tag(10)
+            NinethFeatureOverview().tag(9)
+            //TenthFeatureOverview().tag(10)
+            //ReOnboradingFeatureOverview().tag(11)
+            //DoneOverview().tag(12)
             
         }
         .background(BackGroundGradient.getGradient())
@@ -44,7 +46,7 @@ struct OnboardingFlowView: View {
                         {
                             buttonTitleNext = "Start"
                         }
-                        if(selection >= 0 && selection < 11 )
+                        if(selection >= 0 && selection < 13 )
                         {
                             selection-=1
                         }
@@ -57,12 +59,12 @@ struct OnboardingFlowView: View {
                     .padding()
             }
             
-            if(selection < 10)
+            if(selection < 12)
             {
                 Button(buttonTitleNext) {
                     withAnimation {
                         
-                        if(selection < 10)
+                        if(selection < 12)
                         {
                             buttonTitleNext = "Weiter"
                             selection+=1
@@ -77,12 +79,12 @@ struct OnboardingFlowView: View {
             }
         }.padding(.leading, 50).padding(.trailing,50)
         
-        if(selection < 10)
+        if(selection < 12)
         {
             Button("Tutorial überspringen") {
                 
                 withAnimation {
-                    if(selection < 10)
+                    if(selection < 12)
                     {
                         
                         appState.hasOnboarded = true
