@@ -104,8 +104,8 @@
 		22A10885291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A10884291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift */; };
 		22A10889291C1C260071FF3A /* InformationFFHWiese.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A10888291C1C260071FF3A /* InformationFFHWiese.swift */; };
 		22A1088B291C1CE50071FF3A /* InformationAnderesBiotop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1088A291C1CE50071FF3A /* InformationAnderesBiotop.swift */; };
-		BFEFB77F293CD73100266853 /* CSVFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB77E293CD73100266853 /* CSVFeatureOverview.swift */; };
 		BFEFB781293CDBBB00266853 /* FourthFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB780293CDBBB00266853 /* FourthFeatureOverview.swift */; };
+		BFEFB783293CDDDD00266853 /* ReOnboradingFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB782293CDDDD00266853 /* ReOnboradingFeatureOverview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -226,8 +226,8 @@
 		22A10884291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSelectPlantsLongTerm.swift; sourceTree = "<group>"; };
 		22A10888291C1C260071FF3A /* InformationFFHWiese.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationFFHWiese.swift; sourceTree = "<group>"; };
 		22A1088A291C1CE50071FF3A /* InformationAnderesBiotop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAnderesBiotop.swift; sourceTree = "<group>"; };
-		BFEFB77E293CD73100266853 /* CSVFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVFeatureOverview.swift; sourceTree = "<group>"; };
 		BFEFB780293CDBBB00266853 /* FourthFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthFeatureOverview.swift; sourceTree = "<group>"; };
+		BFEFB782293CDDDD00266853 /* ReOnboradingFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReOnboradingFeatureOverview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -481,8 +481,8 @@
 				224F462E28FE06CD004EA74F /* SecondFeatureOverview.swift */,
 				224F463028FE06E4004EA74F /* ThirdFeatureOverview.swift */,
 				BFEFB780293CDBBB00266853 /* FourthFeatureOverview.swift */,
+				BFEFB782293CDDDD00266853 /* ReOnboradingFeatureOverview.swift */,
 				224F463228FE07D8004EA74F /* DoneOverview.swift */,
-				BFEFB77E293CD73100266853 /* CSVFeatureOverview.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -740,7 +740,6 @@
 				223BB35829116F9D0064927A /* SelectFilterView.swift in Sources */,
 				225DFBA929311F4C005C7DEC /* PictureViewExport.swift in Sources */,
 				223AD5DE29199C53009B5C1C /* ListEntry+CoreDataClass.swift in Sources */,
-				BFEFB77F293CD73100266853 /* CSVFeatureOverview.swift in Sources */,
 				22455CFA28FF27B5002876AD /* ManageContractView.swift in Sources */,
 				227FAB33291ED81700D747DA /* CheckBoxView.swift in Sources */,
 				225DFC1B2936B715005C7DEC /* PlantListItem.swift in Sources */,
@@ -781,6 +780,7 @@
 				2259A2A42938C48E003212AC /* FrequencyEstimationFieldLatein.swift in Sources */,
 				226C67D2292E11810049958A /* PictureViewModel.swift in Sources */,
 				22A10882291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataClass.swift in Sources */,
+				BFEFB783293CDDDD00266853 /* ReOnboradingFeatureOverview.swift in Sources */,
 				22455D0D290094AE002876AD /* NewContractDataModel.swift in Sources */,
 				224F462F28FE06CD004EA74F /* SecondFeatureOverview.swift in Sources */,
 				226C67D0292D76DC0049958A /* ImagePickerInformationSide.swift in Sources */,
