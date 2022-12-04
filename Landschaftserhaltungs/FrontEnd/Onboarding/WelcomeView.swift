@@ -11,8 +11,12 @@ struct WelcomeView: View {
     var body: some View {
         VStack {
             Group{
-                Text("Herzlich Willkommen \n\n Onboarding zur digitalen Erfassung von Landschaftsflächen")
+                Text("Herzlich Willkommen \n")
                     .font(.title)
+                    .multilineTextAlignment(.center)
+            }
+            Group{
+                Text("im Onboarding zur digitalen Erfassung von Landschaftsflächen")
                     .multilineTextAlignment(.center)
             }
         }
