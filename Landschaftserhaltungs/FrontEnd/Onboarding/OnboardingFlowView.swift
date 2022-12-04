@@ -11,7 +11,7 @@ struct OnboardingFlowView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @State private var selection = 0
     @State private var buttonTitleNext = "Start"
-    @State private var buttonTitleBack = "back"
+    @State private var buttonTitleBack = "Zurück"
     @EnvironmentObject var appState : AppState
     private let defaults = UserDefaults.standard
     var body: some View {
@@ -21,7 +21,17 @@ struct OnboardingFlowView: View {
             FirstFeatureOverview().tag(1)
             SecondFeatureOverview().tag(2)
             ThirdFeatureOverview().tag(3)
-            DoneOverview().tag(4)
+            FourthFeatureOverview().tag(4)
+            FifthFeatureOverview().tag(5)
+            SixthFeatureOverview().tag(6)
+            SeventhFeatureOverview().tag(7)
+            EighthFeatureOverview().tag(8)
+            Group{
+                NinethFeatureOverview().tag(9)
+                TenthFeatureOverview().tag(10)
+                ReOnboradingFeatureOverview().tag(11)
+                DoneOverview().tag(12)
+            }
             
         }
         .background(BackGroundGradient.getGradient())
@@ -32,13 +42,13 @@ struct OnboardingFlowView: View {
         HStack{
             if(selection >= 1)
             {
-                Button("back") {
+                Button("Zurück") {
                     withAnimation {
                         if(selection == 0)
                         {
                             buttonTitleNext = "Start"
                         }
-                        if(selection >= 0 && selection < 5 )
+                        if(selection >= 0 && selection < 13 )
                         {
                             selection-=1
                         }
@@ -51,14 +61,14 @@ struct OnboardingFlowView: View {
                     .padding()
             }
             
-            if(selection < 4)
+            if(selection < 12)
             {
                 Button(buttonTitleNext) {
                     withAnimation {
                         
-                        if(selection < 4)
+                        if(selection < 12)
                         {
-                            buttonTitleNext = "Next"
+                            buttonTitleNext = "Weiter"
                             selection+=1
                         }
                         
@@ -71,12 +81,12 @@ struct OnboardingFlowView: View {
             }
         }.padding(.leading, 50).padding(.trailing,50)
         
-        if(selection < 4)
+        if(selection < 12)
         {
-            Button("Skip Tutorial") {
+            Button("Tutorial überspringen") {
                 
                 withAnimation {
-                    if(selection < 4)
+                    if(selection < 12)
                     {
                         
                         appState.hasOnboarded = true

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FirstFeatureOverview: View {
     var body: some View {
-        Text("Hello, World 1")
+        Text("\"Mein Profil\" \n \n Tragen Sie Ihren Bearbeiternamen ein. Dieser wird in den PDFs ersichtlich sein.\n \n").multilineTextAlignment(.center)
     }
 }
 
