@@ -12,11 +12,12 @@ class UIImageTransformer: ValueTransformer {
     
     override func transformedValue(_ value: Any?) -> Any? {
         
-        guard let image = value as? UIImage else {
+        guard var image = value as? UIImage else {
             return nil
         }
         
         do{
+            image = image.resizeImage(targetRatio: 0.5)
             let data = try NSKeyedArchiver.archivedData(withRootObject: image, requiringSecureCoding: true)
             return data
         } catch {
