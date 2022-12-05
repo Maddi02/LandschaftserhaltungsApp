@@ -9,7 +9,13 @@ import SwiftUI
 import Foundation
 
 
-
+enum PhotoQuality: Double, CaseIterable, Identifiable
+{
+    case low = 0.5
+    case medium = 0.75
+    case high = 1
+    var id: Self {self}
+}
 
 
 struct UserView: View {
@@ -21,12 +27,13 @@ struct UserView: View {
     @State private var profileUser = Profile ()
     @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
-    let defaults = UserDefaults.standard
+    static let defaults = UserDefaults.standard
     let language = ["Deutsch", "Latein"]
     @State private var isShownPhotoLibrary = false
     @State private var image = UIImage()
     @State private var openFile = false
     @State private var fileUrl = ""
+    @State private var selectedPhotoQuality: PhotoQuality = .high
     
     
     var body: some View {
@@ -90,13 +97,22 @@ struct UserView: View {
                         do {
                             let fileUrl = try res.get()
                             self.fileUrl = fileUrl.lastPathComponent
-                            defaults.set(fileUrl, forKey: "csvPath")
+                            UserView.defaults.set(fileUrl, forKey: "csvPath")
                         }
                         catch{
                             print(error)
                         }
                     }
-                    Text(defaults.url(forKey: "csvPath")?.lastPathComponent ?? "Kein Pfad ausgewählt")
+                    Text(UserView.defaults.url(forKey: "csvPath")?.lastPathComponent ?? "Kein Pfad ausgewählt")
+                }
+                
+                
+                Section(header: Text("Fotoqualität")){
+                    Picker("Fotoqualität", selection: $selectedPhotoQuality){
+                        Text("hoch").tag(PhotoQuality.high)
+                        Text("mittel").tag(PhotoQuality.medium)
+                        Text("niedrig").tag(PhotoQuality.low)
+                    }.onAppear{selectedPhotoQuality = PhotoQuality(rawValue: Self.defaults.double(forKey: "photoQuality")) ?? .high}
                 }
                 
                 
@@ -105,12 +121,13 @@ struct UserView: View {
                         Text("Onboarding wiederholen")
                         
                     }).onAppear(perform: {
-                        defaults.set(false, forKey: "realOnboarding")
+                        Self.defaults.set(false, forKey: "realOnboarding")
                     })
                 }
                 
                 Button("Sichern")
                 {
+                    Self.defaults.set(selectedPhotoQuality.rawValue, forKey: "photoQuality")
                     userSettings.saveImage(image: self.image)
                     dismiss()
                     print("Button Saved was pressed")

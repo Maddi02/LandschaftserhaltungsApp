@@ -10,15 +10,27 @@ import UIKit
 
 class UIImageTransformer: ValueTransformer {
     
+    let defaults = UserDefaults.standard
+    
     override func transformedValue(_ value: Any?) -> Any? {
         
-        guard var image = value as? UIImage else {
+        guard let image = value as? UIImage else {
+            return nil
+        }
+        
+        var photoQuality = defaults.double(forKey: "photoQuality")
+        
+        if photoQuality == 0
+        {
+            photoQuality = 1.0
+        }
+        
+        guard let scaledImage = image.resizeImage(targetRatio: photoQuality) else {
             return nil
         }
         
         do{
-            image = image.resizeImage(targetRatio: 0.5)
-            let data = try NSKeyedArchiver.archivedData(withRootObject: image, requiringSecureCoding: true)
+            let data = try NSKeyedArchiver.archivedData(withRootObject: scaledImage, requiringSecureCoding: true)
             return data
         } catch {
             return nil

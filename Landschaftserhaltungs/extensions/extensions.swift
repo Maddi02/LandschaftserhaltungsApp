@@ -288,10 +288,8 @@ extension NSTextAttachment {
 }
 
 extension UIImage {
-  func resizeImage(targetRatio: Double) -> UIImage {
+  func resizeImage(targetRatio: Double) -> UIImage? {
     let size = self.size
-    //let widthRatio  = targetSize.width  / size.width
-    //let heightRatio = targetSize.height / size.height
     let newSize = CGSize(width: size.width * targetRatio, height: size.height * targetRatio)
     let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
 
@@ -300,6 +298,6 @@ extension UIImage {
     let newImage = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
 
-    return newImage!
+    return newImage
   }
 }
