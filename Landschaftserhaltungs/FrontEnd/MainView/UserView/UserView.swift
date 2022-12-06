@@ -27,7 +27,7 @@ struct UserView: View {
     @State private var profileUser = Profile ()
     @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
-    static let defaults = UserDefaults.standard
+    let defaults = UserDefaults.standard
     let language = ["Deutsch", "Latein"]
     @State private var isShownPhotoLibrary = false
     @State private var image = UIImage()
@@ -97,13 +97,13 @@ struct UserView: View {
                         do {
                             let fileUrl = try res.get()
                             self.fileUrl = fileUrl.lastPathComponent
-                            UserView.defaults.set(fileUrl, forKey: "csvPath")
+                            defaults.set(fileUrl, forKey: "csvPath")
                         }
                         catch{
                             print(error)
                         }
                     }
-                    Text(UserView.defaults.url(forKey: "csvPath")?.lastPathComponent ?? "Kein Pfad ausgewählt")
+                    Text(defaults.url(forKey: "csvPath")?.lastPathComponent ?? "Kein Pfad ausgewählt")
                 }
                 
                 
@@ -112,7 +112,7 @@ struct UserView: View {
                         Text("hoch").tag(PhotoQuality.high)
                         Text("mittel").tag(PhotoQuality.medium)
                         Text("niedrig").tag(PhotoQuality.low)
-                    }.onAppear{selectedPhotoQuality = PhotoQuality(rawValue: Self.defaults.double(forKey: "photoQuality")) ?? .high}
+                    }.onAppear{selectedPhotoQuality = PhotoQuality(rawValue: defaults.double(forKey: "photoQuality")) ?? .high}
                 }
                 
                 
@@ -121,13 +121,13 @@ struct UserView: View {
                         Text("Onboarding wiederholen")
                         
                     }).onAppear(perform: {
-                        Self.defaults.set(false, forKey: "realOnboarding")
+                        defaults.set(false, forKey: "realOnboarding")
                     })
                 }
                 
                 Button("Sichern")
                 {
-                    Self.defaults.set(selectedPhotoQuality.rawValue, forKey: "photoQuality")
+                    defaults.set(selectedPhotoQuality.rawValue, forKey: "photoQuality")
                     userSettings.saveImage(image: self.image)
                     dismiss()
                     print("Button Saved was pressed")
