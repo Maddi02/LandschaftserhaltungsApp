@@ -45,7 +45,7 @@ struct MainSideView:  View {
                             .toolbar {
                                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                                     
-                                    NavigationLink(destination: UserView()) {
+                                    NavigationLink(destination: UserView().navigationBarBackButtonHidden(true)) {
                                         Text(Image(systemName: "person"))
                                     }
                                     

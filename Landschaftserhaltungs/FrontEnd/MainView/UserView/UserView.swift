@@ -135,6 +135,7 @@ struct UserView: View {
                 
                 
             }.navigationBarTitle(Text("Mein Profil"))
+
         }
         .sheet(isPresented: $isShownPhotoLibrary){
             ImagePicker(changePicture: false,  sourceType: .photoLibrary, selectedImage: self.$image)
