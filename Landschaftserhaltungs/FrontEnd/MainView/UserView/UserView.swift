@@ -9,7 +9,13 @@ import SwiftUI
 import Foundation
 
 
-
+enum PhotoQuality: Double, CaseIterable, Identifiable
+{
+    case low = 0.5
+    case medium = 0.75
+    case high = 1
+    var id: Self {self}
+}
 
 
 struct UserView: View {
@@ -27,6 +33,7 @@ struct UserView: View {
     @State private var image = UIImage()
     @State private var openFile = false
     @State private var fileUrl = ""
+    @State private var selectedPhotoQuality: PhotoQuality = .high
     
     
     var body: some View {
@@ -100,6 +107,15 @@ struct UserView: View {
                 }
                 
                 
+                Section(header: Text("Fotoqualität")){
+                    Picker("Fotoqualität", selection: $selectedPhotoQuality){
+                        Text("hoch").tag(PhotoQuality.high)
+                        Text("mittel").tag(PhotoQuality.medium)
+                        Text("niedrig").tag(PhotoQuality.low)
+                    }.onAppear{selectedPhotoQuality = PhotoQuality(rawValue: defaults.double(forKey: "photoQuality")) ?? .high}
+                }
+                
+                
                 Section(header: Text("Onboarding")){
                     NavigationLink(destination: OnboardingFlowView(), label: {
                         Text("Onboarding wiederholen")
@@ -111,6 +127,7 @@ struct UserView: View {
                 
                 Button("Sichern")
                 {
+                    defaults.set(selectedPhotoQuality.rawValue, forKey: "photoQuality")
                     userSettings.saveImage(image: self.image)
                     dismiss()
                     print("Button Saved was pressed")

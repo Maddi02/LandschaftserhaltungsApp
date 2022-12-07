@@ -15,6 +15,9 @@ class PDFCreatorDiffrentBiotop
     var  url = URL(string: "")
    
     var userSettings = UserSettings()
+    
+    let defaults = UserDefaults.standard
+    
     func getDocumentsDirectory() -> URL {
         // find all possible documents directories for this user
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -43,7 +46,14 @@ class PDFCreatorDiffrentBiotop
         url =  getDocumentsDirectory().appendingPathComponent("awesome.pdf")
         let document = PDFDocument(format: .a4)
         let imageElementHeader = PDFImage(image: listEntry.contract?.picture ?? UIImage(), size: CGSize(width: 150, height: 80))
-        let imageOverViewPic = PDFImage(image: listEntry.contract?.picture ?? UIImage())
+        var photoQuality = defaults.double(forKey: "photoQuality")
+        
+        if photoQuality == 0
+        {
+            photoQuality = 1.0
+        }
+        
+        let imageOverViewPic = PDFImage(image: listEntry.contract?.picture?.resizeImage(targetRatio: photoQuality) ?? UIImage())
 
         let headingStyle1 = document.add(style: PDFTextStyle(name: "Heading 1",
                                                              font: Font.boldSystemFont(ofSize: 20.0),
