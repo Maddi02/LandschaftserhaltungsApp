@@ -100,9 +100,9 @@ class DataHandler : ObservableObject
         return appContract.picture ?? UIImage()
     }
     
-    func updateContract(appContract : AppContract, contractDataModel : NewContractDataModel, image: UIImage, contractTermination : Date, contractDeadline : Date){
+    func updateContract(appContract : AppContract, contractDataModel : NewContractDataModel, image: UIImage, contractTermination : Int, contractDeadline : Date){
         appContract.deadline = contractDeadline
-        appContract.contractTermination = contractTermination
+        appContract.contractTermination = Int16(contractTermination)
         appContract.picture = image
         
         
@@ -239,8 +239,8 @@ class DataHandler : ObservableObject
     public func sortByDateASC() -> Array<AppContract>
     {
         let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
-        let sortByDate = NSSortDescriptor(key: #keyPath(AppContract.contractTermination), ascending: true)
-        request.sortDescriptors = [sortByDate]
+        let sortByYear = NSSortDescriptor(key: #keyPath(AppContract.contractTermination), ascending: true)
+        request.sortDescriptors = [sortByYear]
         do{
             appContractListSortedByDate = try context.fetch(request)
         }
@@ -300,7 +300,7 @@ class DataHandler : ObservableObject
         appContract.setValue(newContractDataModel.street, forKey: #keyPath(AppContract.street))
         appContract.setValue(newContractDataModel.mobile, forKey: #keyPath(AppContract.mobile))
         appContract.setValue(image, forKey: #keyPath(AppContract.picture))
-        appContract.setValue(newContractDataModel.contractTermination, forKey: #keyPath(AppContract.contractTermination))
+        appContract.setValue(Int16(newContractDataModel.contractTermination), forKey: #keyPath(AppContract.contractTermination))
         appContract.setValue(newContractDataModel.deadline, forKey: #keyPath(AppContract.deadline))
         do{
             try context.save()

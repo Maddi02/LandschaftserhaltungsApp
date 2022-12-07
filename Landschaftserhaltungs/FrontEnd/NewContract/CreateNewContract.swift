@@ -16,6 +16,7 @@ struct CreateNewContract : View
     @State private var isShownPhotoLibrary = false
     @State private var image = UIImage()
     @State private var firstName  = String()
+    @State private var showWheelPicker: Bool = false
     @StateObject var newContractDataModel = NewContractDataModel()
     @StateObject var dataHandler = DataHandler()
     @StateObject var appContract = AppContract()
@@ -45,18 +46,36 @@ struct CreateNewContract : View
                     }
                     
                     Section(header: Text("Vertragsinformationen")) {
-                        DatePicker(selection: $newContractDataModel.contractTermination,
-                                   displayedComponents: [.date],
-                                   label: { Text("Vertragsabschluss") })
+                        HStack
+                        {
+                            Text("Vertragsabschluss")
+                            Spacer()
+                            Button(String(newContractDataModel.contractTermination))
+                            {
+                                showWheelPicker.toggle()
+                            }
+                            .buttonStyle(BorderedButtonStyle())
+                            .padding(5)
+                            .foregroundColor(.black)
+                            .cornerRadius(5)
+                        }
+                        CollapsableWheelPicker(
+                            "Vertragsabschluss",
+                            showsPicker: $showWheelPicker,
+                            selection: $newContractDataModel.contractTermination
+                        ) {
+                            ForEach(newContractDataModel.years, id: \.self) {
+                                Text(String($0)).tag($0)
+                            }
+                        }
+                        
                         TextField("Vorgangsnummer", text: $newContractDataModel.operationNumber)
                         TextField("Vertragszweck", text: $newContractDataModel.contractPurpose,axis: .vertical)
                         TextField("Maßnahmen", text: $newContractDataModel.measures,axis: .vertical)
                         TextField("Bewirtschaftungsauflagen", text: $newContractDataModel.managementRequirements,axis: .vertical)
                         DatePicker(selection: $newContractDataModel.deadline,
                                    displayedComponents: [.date],
-                                   label: { Text("First") })
-                    
-                        
+                                   label: { Text("Frist") })
                     }
                 
                     Section(header: Text("Besonderheiten"))

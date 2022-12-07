@@ -28,7 +28,14 @@ import SwiftUI
      @State var link = URL(string: "https://www.hackingwithswift.com")!
     var body: some View {
         Text("Vetragsübersicht").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
-        ContractListItem(firstName: filteredContracts.firstName ?? "Unknown", lastName: filteredContracts.lastName ?? "Unknwon" , operationNumber: filteredContracts.operationNumber ?? "Unknown", contractTermination:  filteredContracts.contractTermination?.toString() ?? Date().toString(), endOfContract: filteredContracts.contractTermination?.getEndOfContract(date: filteredContracts.contractTermination ?? Date()) ?? Date().toString() , image: filteredContracts.picture ?? UIImage(imageLiteralResourceName: "HFULogo"), deadline: filteredContracts.deadline?.toString() ?? Date().toString(), dataHandler: dataHandler).frame(maxWidth: .infinity, alignment: .top)
+        ContractListItem(firstName: filteredContracts.firstName ?? "Unknown",
+                         lastName: filteredContracts.lastName ?? "Unknwon" ,
+                         operationNumber: filteredContracts.operationNumber ?? "Unknown",
+                         contractTermination:  String(filteredContracts.contractTermination),
+                         endOfContract: String(filteredContracts.contractTermination + 5),
+                         image: filteredContracts.picture ?? UIImage(imageLiteralResourceName: "HFULogo"),
+                         deadline: filteredContracts.deadline?.toString() ?? Date().toString(),
+                         dataHandler: dataHandler).frame(maxWidth: .infinity, alignment: .top)
         
         
         

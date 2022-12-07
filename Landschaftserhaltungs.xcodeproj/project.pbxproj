@@ -104,6 +104,7 @@
 		22A10885291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A10884291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift */; };
 		22A10889291C1C260071FF3A /* InformationFFHWiese.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A10888291C1C260071FF3A /* InformationFFHWiese.swift */; };
 		22A1088B291C1CE50071FF3A /* InformationAnderesBiotop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1088A291C1CE50071FF3A /* InformationAnderesBiotop.swift */; };
+		329D8FEA293FC67A00DA0010 /* CollabsableWheelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D8FE9293FC67A00DA0010 /* CollabsableWheelPicker.swift */; };
 		BFEFB781293CDBBB00266853 /* FourthFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB780293CDBBB00266853 /* FourthFeatureOverview.swift */; };
 		BFEFB783293CDDDD00266853 /* ReOnboradingFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB782293CDDDD00266853 /* ReOnboradingFeatureOverview.swift */; };
 		BFEFB785293CDF1100266853 /* FifthFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB784293CDF1100266853 /* FifthFeatureOverview.swift */; };
@@ -232,6 +233,7 @@
 		22A10884291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSelectPlantsLongTerm.swift; sourceTree = "<group>"; };
 		22A10888291C1C260071FF3A /* InformationFFHWiese.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationFFHWiese.swift; sourceTree = "<group>"; };
 		22A1088A291C1CE50071FF3A /* InformationAnderesBiotop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAnderesBiotop.swift; sourceTree = "<group>"; };
+		329D8FE9293FC67A00DA0010 /* CollabsableWheelPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollabsableWheelPicker.swift; sourceTree = "<group>"; };
 		BFEFB780293CDBBB00266853 /* FourthFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthFeatureOverview.swift; sourceTree = "<group>"; };
 		BFEFB782293CDDDD00266853 /* ReOnboradingFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReOnboradingFeatureOverview.swift; sourceTree = "<group>"; };
 		BFEFB784293CDF1100266853 /* FifthFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthFeatureOverview.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 			children = (
 				22455CF528FF03BC002876AD /* CreateNewContract.swift */,
 				223AD4D32912B59B009B5C1C /* ContractAdminister.swift */,
+				329D8FE9293FC67A00DA0010 /* CollabsableWheelPicker.swift */,
 			);
 			path = NewContract;
 			sourceTree = "<group>";
@@ -761,6 +764,7 @@
 				22455CFA28FF27B5002876AD /* ManageContractView.swift in Sources */,
 				227FAB33291ED81700D747DA /* CheckBoxView.swift in Sources */,
 				225DFC1B2936B715005C7DEC /* PlantListItem.swift in Sources */,
+				329D8FEA293FC67A00DA0010 /* CollabsableWheelPicker.swift in Sources */,
 				226C67E2292E95070049958A /* NavigationUtil.swift in Sources */,
 				BFEFB789293CE3DA00266853 /* SeventhFeatureOverview.swift in Sources */,
 				224F45FE28FD80E7004EA74F /* OnboardingFlowView.swift in Sources */,

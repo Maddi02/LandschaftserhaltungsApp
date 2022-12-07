@@ -81,46 +81,7 @@ extension Date
         dateStringFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
         let date = dateStringFormatter.date(from: dateString)!
         self.init(timeInterval:0, since:date)
-    }
-    
-    func getYearFromDate(date : Date) -> Int
-    {
-        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: date)
-        return calendarDate.year!
-        
-    }
-    
-    func getMonthFromDate(date : Date) -> Int
-    {
-        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: date)
-        return calendarDate.month!
-        
-    }
-    
-    
-    func getDayFromDate(date : Date) -> Int
-    {
-        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: date)
-        return calendarDate.day!
-        
-    }
-    
-    func getEndOfContract(date : Date)-> String
-    {
-        
-        let year = date.getYearFromDate(date: date)
-        
-        if(date.getDayFromDate(date: date) == 1 && (date.getMonthFromDate(date: date) == 1))
-        {
-            let firstOfNextYear = Calendar.current.date(from: DateComponents(year: year + 5, month: 1, day: 1))
-            return Calendar.current.date(byAdding: .day, value: -1, to: firstOfNextYear ?? Date())!.toString()
-            
-        }
-        let firstOfNextYear = Calendar.current.date(byAdding: .year, value: 5, to: date )!
-        return Calendar.current.date(byAdding: .day, value: -1, to: firstOfNextYear )!.toString()
-        
-    }
-    
+    }    
     
     func toString(format: String = "dd-MM-yyyy") -> String {
         let formatter = DateFormatter()

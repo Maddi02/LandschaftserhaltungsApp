@@ -18,7 +18,7 @@ extension AppContract {
 
     @NSManaged public var birthday: Date?
     @NSManaged public var contractPurpose: String?
-    @NSManaged public var contractTermination: Date?
+    @NSManaged public var contractTermination: Int16
     @NSManaged public var country: String?
     @NSManaged public var deadline: Date?
     @NSManaged public var firstName: String?
