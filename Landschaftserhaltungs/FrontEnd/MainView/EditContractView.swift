@@ -13,7 +13,8 @@ struct EditContractView: View {
     
     @State private var isShownPhotoLibrary = false
     @State private var image = UIImage()
-    @State  var contractTerminatation : Date
+    @State var contractTermination : Int
+    @State var showWheelPicker: Bool = false
     @State  var contractDeadline : Date
     @State private var firstname = String()
     @State private var textStyle = UIFont.TextStyle.body
@@ -172,9 +173,28 @@ struct EditContractView: View {
                         }
                     }
                     Section(header: Text("Vertragsinformationen")) {
-                        DatePicker(selection: $contractTerminatation,
-                                   displayedComponents: [.date],
-                                   label: { Text("Vertragsabschluss") })
+                        HStack
+                        {
+                            Text("Vertragsabschluss")
+                            Spacer()
+                            Button(String(contractTermination))
+                            {
+                                showWheelPicker.toggle()
+                            }
+                            .buttonStyle(BorderedButtonStyle())
+                            .padding(5)
+                            .foregroundColor(.black)
+                            .cornerRadius(5)
+                        }
+                        CollapsableWheelPicker(
+                            "Vertragsabschluss",
+                            showsPicker: $showWheelPicker,
+                            selection: $contractTermination
+                        ) {
+                            ForEach(newContractDataModel.years, id: \.self) {
+                                Text(String($0)).tag($0)
+                            }
+                        }
                         
                         HStack {
                             HStack {
@@ -276,7 +296,7 @@ struct EditContractView: View {
                             
                             
                             
-                            dataHandler.updateContract(appContract: appContract, contractDataModel: newContractDataModel, image:dataHandler.getImage(appContract: appContract), contractTermination: contractTerminatation, contractDeadline: contractDeadline)
+                            dataHandler.updateContract(appContract: appContract, contractDataModel: newContractDataModel, image:dataHandler.getImage(appContract: appContract), contractTermination: contractTermination, contractDeadline: contractDeadline)
                             dataHandler.fetchAppContract()
                             presentationMode.wrappedValue.dismiss()
                         }

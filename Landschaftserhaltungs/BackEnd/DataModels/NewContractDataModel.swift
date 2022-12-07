@@ -23,7 +23,7 @@ class NewContractDataModel: ObservableObject {
     
     @Published var birthday: Date = Date()
     
-    @Published var contractTermination: Date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date("01-01-\(Calendar.current.component(.year, from: Date()).description)"))!
+    @Published var contractTermination: Int = currentYear()
     
     
     @Published var deadline : Date = Date()
@@ -49,11 +49,15 @@ class NewContractDataModel: ObservableObject {
     @Published var particularities: String = ""
     @Published var mobile : String = ""
     
+    var years: [Int] {Array(1900...Self.currentYear() + 50)}
+    
     public func getImage () -> UIImage
     {
         return photo
     }
+    
+    private class func currentYear() -> Int
+    {
+        Calendar.current.component(.year, from: Date())
+    }
 }
-
-
-
