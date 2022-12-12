@@ -73,7 +73,7 @@ struct MainSideView:  View {
                       
                      
                     }.frame(width: (geometry.size.width), height: geometry.size.height, alignment: .center)
-                        .background(BackGroundGradient.getGradient())
+                    
                         .onAppear(perform: {
                
                           //  userSettings.loadImage()

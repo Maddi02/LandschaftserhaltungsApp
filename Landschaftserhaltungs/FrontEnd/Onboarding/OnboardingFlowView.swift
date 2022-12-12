@@ -34,7 +34,7 @@ struct OnboardingFlowView: View {
             }
             
         }
-        .background(BackGroundGradient.getGradient())
+
         .tabViewStyle(.page)
         .indexViewStyle(
             .page(backgroundDisplayMode: .always))
