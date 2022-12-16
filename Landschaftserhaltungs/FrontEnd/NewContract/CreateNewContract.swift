@@ -14,7 +14,9 @@ struct CreateNewContract : View
     
     @State private var date = Date()
     @State private var isShownPhotoLibrary = false
+    @State private var isShownSelectFilesFromFiles = false
     @State private var image = UIImage()
+    @State private var image2 = UIImage()
     @State private var firstName  = String()
     @State private var showWheelPicker: Bool = false
     @StateObject var newContractDataModel = NewContractDataModel()
@@ -22,12 +24,14 @@ struct CreateNewContract : View
     @StateObject var appContract = AppContract()
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.dismiss) private var dismiss
+    @State private var fileContent = ""
+    @State private var showDocumentPicker = false
     
-
-        var body : some View
+    
+    var body : some View
     {
-   
-
+        
+        
         NavigationView {
             GeometryReader { geo in
                 Form {
@@ -77,7 +81,7 @@ struct CreateNewContract : View
                                    displayedComponents: [.date],
                                    label: { Text("Frist") })
                     }
-                
+                    
                     Section(header: Text("Besonderheiten"))
                     {
                         TextField("Besonderheiten", text: $newContractDataModel.particularities,axis: .vertical).frame(minHeight: 50)
@@ -91,6 +95,35 @@ struct CreateNewContract : View
                             .frame(minWidth: 0, maxWidth: .infinity)
                             .edgesIgnoringSafeArea(.all)
                         
+                        
+                        
+                        
+                        Button()
+                        {
+                            showDocumentPicker.toggle()
+                        }label: {
+                            HStack {
+                                HStack{
+                                    Image(systemName: "photo")
+                                        .font(.system(size: 20))
+                                    Text("Wähle ein Bild aus Files aus")
+                                }
+                                .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                                .padding(.horizontal)
+                            }
+                        }
+                        
+                        .sheet(isPresented: $showDocumentPicker)
+                        {
+                            DocumentPicker(content: self.$image)
+                        }
+                        
+                        
+                        
+                        
                         Button {
                             self.isShownPhotoLibrary = true
                             
@@ -99,7 +132,7 @@ struct CreateNewContract : View
                                 HStack{
                                     Image(systemName: "photo")
                                         .font(.system(size: 20))
-                                    Text("Wähle ein Bild aus der Galerie aus")
+                                    Text("Wähle ein Bild aus Files aus")
                                 }
                                 .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
                                 .background(Color.blue)
@@ -112,12 +145,12 @@ struct CreateNewContract : View
                     Section(header: Text("")) {
                         Button{
                             dataHandler.saveAll(image: self.image, firstName1: firstName, newContractDataModel : newContractDataModel)
-                          
+                            
                             dismiss()
                         }
                     label: {
                         HStack {
-                           
+                            
                             Text("Speichern")
                         }
                         .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
@@ -126,14 +159,13 @@ struct CreateNewContract : View
                         .cornerRadius(10)
                         .padding(.horizontal)
                     }
-             
+                        
                     }
                 }.navigationBarTitle(Text("Neuen Vertrag anlegen"))
             }.background(content: BackGroundGradient.getGradient)
             
         }.sheet(isPresented: $isShownPhotoLibrary){
             ImagePicker(changePicture: false, appContract: appContract,  sourceType: .photoLibrary, selectedImage: self.$image)
-
         }
     }
     
@@ -143,7 +175,7 @@ struct CreateNewContract : View
         
     }
     
-
+    
 }
 
 

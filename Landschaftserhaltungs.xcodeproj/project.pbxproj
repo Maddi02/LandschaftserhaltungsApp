@@ -34,6 +34,8 @@
 		223BB34D29103C490064927A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB34C29103C490064927A /* TextView.swift */; };
 		223BB354291147380064927A /* WrappedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB353291147380064927A /* WrappedTextView.swift */; };
 		223BB35829116F9D0064927A /* SelectFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BB35729116F9D0064927A /* SelectFilterView.swift */; };
+		2244BDEE294CBEFB00CF8062 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2244BDED294CBEFB00CF8062 /* DocumentPicker.swift */; };
+		2244BDF0294CBF0600CF8062 /* DocumentPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2244BDEF294CBF0600CF8062 /* DocumentPickerCoordinator.swift */; };
 		22455CF628FF03BC002876AD /* CreateNewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455CF528FF03BC002876AD /* CreateNewContract.swift */; };
 		22455CFA28FF27B5002876AD /* ManageContractView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455CF928FF27B5002876AD /* ManageContractView.swift */; };
 		22455D0B2900901C002876AD /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22455D0A2900901C002876AD /* ImagePicker.swift */; };
@@ -160,6 +162,8 @@
 		223BB34C29103C490064927A /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		223BB353291147380064927A /* WrappedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedTextView.swift; sourceTree = "<group>"; };
 		223BB35729116F9D0064927A /* SelectFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFilterView.swift; sourceTree = "<group>"; };
+		2244BDED294CBEFB00CF8062 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
+		2244BDEF294CBF0600CF8062 /* DocumentPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPickerCoordinator.swift; sourceTree = "<group>"; };
 		22455CF528FF03BC002876AD /* CreateNewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewContract.swift; sourceTree = "<group>"; usesTabs = 0; };
 		22455CF928FF27B5002876AD /* ManageContractView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageContractView.swift; sourceTree = "<group>"; };
 		22455D0A2900901C002876AD /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -398,6 +402,8 @@
 				226C67CF292D76DC0049958A /* ImagePickerInformationSide.swift */,
 				226C67E1292E95070049958A /* NavigationUtil.swift */,
 				225DFBEF2933D80F005C7DEC /* PlantMatcher.swift */,
+				2244BDED294CBEFB00CF8062 /* DocumentPicker.swift */,
+				2244BDEF294CBF0600CF8062 /* DocumentPickerCoordinator.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -774,6 +780,7 @@
 				2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */,
 				22A0AD9A293A4984008D2EA7 /* SetFrequenceViewLongTerm.swift in Sources */,
 				223BB34D29103C490064927A /* TextView.swift in Sources */,
+				2244BDEE294CBEFB00CF8062 /* DocumentPicker.swift in Sources */,
 				BFEFB785293CDF1100266853 /* FifthFeatureOverview.swift in Sources */,
 				22A0AD9C293A49B7008D2EA7 /* SetFrequenceViewShortTerm.swift in Sources */,
 				223523FF292700ED000126E1 /* ImpressumView.swift in Sources */,
@@ -790,6 +797,7 @@
 				22A108792919C8A50071FF3A /* SheetSelectPlantsShortTerm.swift in Sources */,
 				226C67DC292E180F0049958A /* PicutreList+CoreDataProperties.swift in Sources */,
 				223AD581291940D7009B5C1C /* AppStateDataModel.xcdatamodeld in Sources */,
+				2244BDF0294CBF0600CF8062 /* DocumentPickerCoordinator.swift in Sources */,
 				221AC67D290D150B00993F52 /* BackgroundLinearGradient.swift in Sources */,
 				223AD57829192815009B5C1C /* CounterViewModel.swift in Sources */,
 				225DFBF02933D80F005C7DEC /* PlantMatcher.swift in Sources */,
@@ -1007,13 +1015,15 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Landschaftserhaltungs/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Aktivieren Sie bitten den Kamerazugriff. ";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to your photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1044,13 +1054,15 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Landschaftserhaltungs/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Aktivieren Sie bitten den Kamerazugriff. ";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to your photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
