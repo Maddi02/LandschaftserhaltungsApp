@@ -30,9 +30,7 @@ class DocumentPickerCoordinator: NSObject, UIDocumentPickerDelegate, UINavigatio
             {
                 print(error)
             }
-    
-       
-            print("HHHHH \(content)" )
+
         }
 
     }

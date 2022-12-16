@@ -16,8 +16,8 @@ struct CreateNewContract : View
     @State private var isShownPhotoLibrary = false
     @State private var isShownSelectFilesFromFiles = false
     @State private var image = UIImage()
-    @State private var image2 = UIImage()
     @State private var firstName  = String()
+    @State private var showActionSheet  = false
     @State private var showWheelPicker: Bool = false
     @StateObject var newContractDataModel = NewContractDataModel()
     @StateObject var dataHandler = DataHandler()
@@ -97,49 +97,53 @@ struct CreateNewContract : View
                         
                         
                         
-                        
                         Button()
                         {
-                            showDocumentPicker.toggle()
-                        }label: {
-                            HStack {
-                                HStack{
-                                    Image(systemName: "photo")
-                                        .font(.system(size: 20))
-                                    Text("Wähle ein Bild aus Files aus")
-                                }
-                                .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                            showActionSheet.toggle()
+                        } label: {
+                            HStack{
+                                Image(systemName: "airplane")
+                                    .font(.system(size: 20))
+                                Text("Wähle eine Luftaufnahme aus")
+                                   
+                            } .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
                                 .background(Color.blue)
                                 .foregroundColor(.white)
                                 .cornerRadius(10)
                                 .padding(.horizontal)
+                        }.confirmationDialog("Wähle die Bildquelle aus", isPresented: $showActionSheet, titleVisibility: .visible) {
+                            
+                        
+                            Button()
+                            {
+                                showDocumentPicker.toggle()
+                            }label: {
+                                
+                           
+                                        Text("Wähle ein Bild aus Datein aus")
+                                    
+                                
+                            }
+                          
+                            
+                            
+                            
+                            
+                            Button {
+                                self.isShownPhotoLibrary = true
+                                
+                            } label: {
+                                HStack {
+                                    HStack{
+                                        Text("Wähle ein Bild aus der Galerie")
+                                    }
+
+                                }
                             }
                         }
-                        
                         .sheet(isPresented: $showDocumentPicker)
                         {
                             DocumentPicker(content: self.$image)
-                        }
-                        
-                        
-                        
-                        
-                        Button {
-                            self.isShownPhotoLibrary = true
-                            
-                        } label: {
-                            HStack {
-                                HStack{
-                                    Image(systemName: "photo")
-                                        .font(.system(size: 20))
-                                    Text("Wähle ein Bild aus Files aus")
-                                }
-                                .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
-                                .background(Color.blue)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                                .padding(.horizontal)
-                            }
                         }
                     }
                     Section(header: Text("")) {
