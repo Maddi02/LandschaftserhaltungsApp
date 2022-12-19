@@ -115,6 +115,7 @@
 		BFF0BB5529509CCC00E42179 /* WelcomeAndGenerateFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB5429509CCC00E42179 /* WelcomeAndGenerateFolder.swift */; };
 		BFF0BB572950A62500E42179 /* CustomiseProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB562950A62400E42179 /* CustomiseProfile.swift */; };
 		BFF0BB592950A71200E42179 /* NewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB582950A71200E42179 /* NewContract.swift */; };
+		BFF0BB5B2950A7BF00E42179 /* ManageContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB5A2950A7BF00E42179 /* ManageContract.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,6 +247,7 @@
 		BFF0BB5429509CCC00E42179 /* WelcomeAndGenerateFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAndGenerateFolder.swift; sourceTree = "<group>"; };
 		BFF0BB562950A62400E42179 /* CustomiseProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomiseProfile.swift; sourceTree = "<group>"; };
 		BFF0BB582950A71200E42179 /* NewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContract.swift; sourceTree = "<group>"; };
+		BFF0BB5A2950A7BF00E42179 /* ManageContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageContract.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -497,6 +499,7 @@
 				BFF0BB5429509CCC00E42179 /* WelcomeAndGenerateFolder.swift */,
 				BFF0BB562950A62400E42179 /* CustomiseProfile.swift */,
 				BFF0BB582950A71200E42179 /* NewContract.swift */,
+				BFF0BB5A2950A7BF00E42179 /* ManageContract.swift */,
 				224F462A28FE0167004EA74F /* WelcomeView.swift */,
 				224F462C28FE06BB004EA74F /* FirstFeatureOverview.swift */,
 				224F462E28FE06CD004EA74F /* SecondFeatureOverview.swift */,
@@ -808,6 +811,7 @@
 				223AD5262917CBDA009B5C1C /* ToggleCheckboxStyle.swift in Sources */,
 				223AD5E029199C53009B5C1C /* AppContract+CoreDataClass.swift in Sources */,
 				224F463528FE1443004EA74F /* AppState.swift in Sources */,
+				BFF0BB5B2950A7BF00E42179 /* ManageContract.swift in Sources */,
 				2259A2A42938C48E003212AC /* FrequencyEstimationFieldLatein.swift in Sources */,
 				226C67D2292E11810049958A /* PictureViewModel.swift in Sources */,
 				22A10882291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataClass.swift in Sources */,
