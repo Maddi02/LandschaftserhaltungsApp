@@ -112,6 +112,7 @@
 		BFEFB78B293CE40200266853 /* EighthFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB78A293CE40200266853 /* EighthFeatureOverview.swift */; };
 		BFEFB78D293CE6D300266853 /* NinethFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB78C293CE6D300266853 /* NinethFeatureOverview.swift */; };
 		BFEFB78F293CE76700266853 /* TenthFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB78E293CE76700266853 /* TenthFeatureOverview.swift */; };
+		BFF0BB5529509CCC00E42179 /* WelcomeAndGenerateFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB5429509CCC00E42179 /* WelcomeAndGenerateFolder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,6 +241,7 @@
 		BFEFB78A293CE40200266853 /* EighthFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EighthFeatureOverview.swift; sourceTree = "<group>"; };
 		BFEFB78C293CE6D300266853 /* NinethFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinethFeatureOverview.swift; sourceTree = "<group>"; };
 		BFEFB78E293CE76700266853 /* TenthFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenthFeatureOverview.swift; sourceTree = "<group>"; };
+		BFF0BB5429509CCC00E42179 /* WelcomeAndGenerateFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAndGenerateFolder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,6 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				224F45FD28FD80E7004EA74F /* OnboardingFlowView.swift */,
+				BFF0BB5429509CCC00E42179 /* WelcomeAndGenerateFolder.swift */,
 				224F462A28FE0167004EA74F /* WelcomeView.swift */,
 				224F462C28FE06BB004EA74F /* FirstFeatureOverview.swift */,
 				224F462E28FE06CD004EA74F /* SecondFeatureOverview.swift */,
@@ -838,6 +841,7 @@
 				224F45FC28FD80E7004EA74F /* LandschaftserhaltungsApp.swift in Sources */,
 				BFEFB787293CDF3200266853 /* SixthFeatureOverview.swift in Sources */,
 				224F462B28FE0167004EA74F /* WelcomeView.swift in Sources */,
+				BFF0BB5529509CCC00E42179 /* WelcomeAndGenerateFolder.swift in Sources */,
 				223AD5DD29199C53009B5C1C /* PlantSpeciesItem+CoreDataProperties.swift in Sources */,
 				BFEFB78D293CE6D300266853 /* NinethFeatureOverview.swift in Sources */,
 			);
