@@ -105,8 +105,6 @@ struct SheetSelectPlantsLongTerm: View {
             
             for list in plantSpeciesDataModel.platList
             {
-                
-                
                 if(list.isChecked){
                     if(contains(str: list.scientificName))
                     {
@@ -127,6 +125,7 @@ struct SheetSelectPlantsLongTerm: View {
                         plant.evaluation2 = list.evaluation2
                         plant.evaluation3 = list.evaluation3
                         plant.checked = list.isChecked
+                        plant.noun = list.noun
                         print(list.scientificName)
                         
                         do {

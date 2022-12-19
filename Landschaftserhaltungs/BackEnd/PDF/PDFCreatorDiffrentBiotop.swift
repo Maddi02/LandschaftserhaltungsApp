@@ -31,7 +31,6 @@ class PDFCreatorDiffrentBiotop
         url =  getDocumentsDirectory().appendingPathComponent("awesome.pdf")
        // var url = URL(string: "file://~/Desktop/awesome.pdf")!
         let document = PDFDocument(format: .a4)
-        document.add(.contentCenter, text: "Create PDF documents easily.")
         let generator = PDFGenerator(document: document)
         generator.debug = true
         url =  try! generator.generateURL(filename: "Example.pdf")
@@ -128,21 +127,21 @@ class PDFCreatorDiffrentBiotop
         
         for i in listEntry.PlantArray
         {
-            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.evaluation1a ?? " " , reating1b: i.evaluation1b ?? " ", reating1c: i.evaluation1c ?? " " , reating1d: i.evaluation1d ?? " " , reating2: i.evaluation2 ?? " " , reating3: i.evaluation3 ?? " ",frequency: i.frequency ?? " " ))
+            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.evaluation1a ?? " " , reating1b: i.evaluation1b ?? " ", reating1c: i.evaluation1c ?? " " , reating1d: i.evaluation1d ?? " " , reating2: i.evaluation2 ?? " " , reating3: i.evaluation3 ?? " ",frequency: i.frequency ?? " ", noun: i.noun ?? " " ))
         }
         
         for i in listEntry.PlantArrayLongTerm
         {
-            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.evaluation1a ?? " " , reating1b: i.evaluation1b ?? " ", reating1c: i.evaluation1c ?? " " , reating1d: i.evaluation1d ?? " " , reating2: i.evaluation2 ?? " " , reating3: i.evaluation3 ?? " ",frequency: i.frequency ?? " " ))
+            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.evaluation1a ?? " " , reating1b: i.evaluation1b ?? " ", reating1c: i.evaluation1c ?? " " , reating1d: i.evaluation1d ?? " " , reating2: i.evaluation2 ?? " " , reating3: i.evaluation3 ?? " ",frequency: i.frequency ?? " " , noun : i.noun ?? " "))
         }
         
         allPlants = allPlants.sorted{$0.getScientificName() < $1.getScientificName()}
 
         document.createNewPage()
-        let tablePlant = PDFTable(rows: allPlants.count + 1, columns: 12)
-        tablePlant.widths = [0.25, 0.25, 0.05, 0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05]
+        let tablePlant = PDFTable(rows: allPlants.count + 1, columns: 13)
+        tablePlant.widths = [0.225, 0.225, 0.05, 0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05, 0.05]
         tablePlant.showHeadersOnEveryPage = false
-        tablePlant.rows.allRowsAlignment = [.left, .left, .center, .center, .center, .center, .center,.center, .center]
+        tablePlant.rows.allRowsAlignment = [.left, .left, .center, .center, .center, .center, .center,.center, .center, .center]
         
         tablePlant[0, 0].content = "WN".asTableContent
         tablePlant[0, 1].content = "DN".asTableContent
@@ -156,6 +155,7 @@ class PDFCreatorDiffrentBiotop
         tablePlant[0, 9].content = "ZA".asTableContent
         tablePlant[0, 10].content = "RT".asTableContent
         tablePlant[0, 11].content = "FR".asTableContent
+        tablePlant[0, 12].content = "KN".asTableContent
         
         for row in 1..<tablePlant.size.rows {
             tablePlant[row, 0].content = "\(allPlants[row-1].getScientificName())".asTableContent
@@ -215,6 +215,10 @@ class PDFCreatorDiffrentBiotop
                
                         tablePlant[row, column].content = "\(allPlants[row-1].getFrequency())".asTableContent
                     
+                }
+                
+                if(column == 12){
+                    tablePlant[row,column].content = "\(allPlants[row-1].getNoun())".asTableContent
                 }
 
                 

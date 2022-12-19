@@ -30,6 +30,7 @@ class PlantSpecies : Identifiable
     public var evaluation1d : String = " "
     public var evaluation2 : String = " "
     public var evaluation3 : String = " "
+    public var noun : String = " "
     @Published public var isChecked : Bool = false
   
     
@@ -55,6 +56,7 @@ class PlantSpecies : Identifiable
         self.evaluation2 = row[6]
         self.evaluation3 = row[7]
         self.redListBw = row[8]
+        self.noun = row[9]
     }
     
     
@@ -97,6 +99,10 @@ class PlantSpecies : Identifiable
         return redListBw
     }
     
+    public func getNoun() -> String
+    {
+        return noun
+    }
     
 }
 

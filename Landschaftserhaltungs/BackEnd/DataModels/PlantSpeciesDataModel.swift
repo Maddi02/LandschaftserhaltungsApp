@@ -181,6 +181,7 @@ public class PlantSpeciesDataModel : ObservableObject
     func loadFromCSV()
     {
         let fileURL = defaults.url(forKey: "csvPath")
+        print ("weee\(fileURL)")
         let rows = NSArray(contentsOfCSVURL: fileURL, options: CHCSVParserOptions.sanitizesFields)!
         let objCArray = NSMutableArray(array: rows)
         var swiftArray: [[String]] = objCArray as! [[String]]
@@ -208,11 +209,13 @@ public class PlantSpeciesDataModel : ObservableObject
         {
             swiftArray.remove(at: 0)
             swiftArray.remove(at: 1)
+     
             print(swiftArray)
             for item in swiftArray
             {
-                if(item.count != 9)
+                if(item.count != 10)
                 {
+                    print(item.count)
                     print("No Valid Data")
                     showAlert = true
                     return

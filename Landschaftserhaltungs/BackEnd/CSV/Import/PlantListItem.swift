@@ -19,6 +19,7 @@ struct PlantListItem : Identifiable
     private var evaluation2 : String
     private var evaluation3 : String
     private var evaluationRL : String
+    private var noun : String
     var id = UUID()
     
     init(row: [String])
@@ -32,6 +33,7 @@ struct PlantListItem : Identifiable
         evaluation2 = row[6]
         evaluation3 = row[7]
         evaluationRL = row[8]
+        noun = row[9]
     }
     
     
@@ -72,5 +74,10 @@ struct PlantListItem : Identifiable
     public func getRL() -> String
     {
         return evaluationRL
+    }
+    
+    public func getNoun() -> String
+    {
+        return noun;
     }
 }

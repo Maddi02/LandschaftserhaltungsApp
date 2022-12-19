@@ -158,6 +158,7 @@ struct SpeciesCensusView: View {
                         plant.evaluation1d = list.evaluation1d
                         plant.evaluation2 = list.evaluation2
                         plant.evaluation3 = list.evaluation3
+                        plant.noun = list.noun
                         print(list.scientificName)
                         
                         do {

@@ -17,6 +17,7 @@ extension PlantSpeciesItem {
     }
     @NSManaged public var descriptionField: String?
     @NSManaged public var evaluation1a: String?
+    @NSManaged public var noun: String?
     @NSManaged public var evaluation1b: String?
     @NSManaged public var evaluation1c: String?
     @NSManaged public var evaluation1d: String?

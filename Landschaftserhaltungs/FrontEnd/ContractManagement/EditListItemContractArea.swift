@@ -14,20 +14,20 @@ struct EditListItemContractArea: View {
      var context = CoreDataManager.shared.persistentContainer.viewContext
     @Environment(\.dismiss) var dismiss
     @State var field = FieldInformation()
-    @State var farming = " "
+    @State var farming = ""
     @State var dateOfTaking = Date()
-    @State var position = " "
-    @State var vegetationDescription = " "
-    @State var bloomAspekt = " "
-    @State var evaluationSpeciesInventory = " "
-    @State var evaluationHabitatStructures = " "
-    @State var evaluationImpairments = " "
-    @State var overallAssessmentConservation  = " "
-    @State var protectionStatus  = " "
-    @State var faunisticObservations  = " "
-    @State var contractTarget   = " "
-    @State var adjustmentEditions   = " "
-    @State var furtherCareMeasures   = " "
+    @State var position = ""
+    @State var vegetationDescription = ""
+    @State var bloomAspekt = ""
+    @State var evaluationSpeciesInventory = ""
+    @State var evaluationHabitatStructures = ""
+    @State var evaluationImpairments = ""
+    @State var overallAssessmentConservation  = ""
+    @State var protectionStatus  = ""
+    @State var faunisticObservations  = ""
+    @State var contractTarget   = ""
+    @State var adjustmentEditions   = ""
+    @State var furtherCareMeasures   = ""
     
     
     
@@ -333,18 +333,18 @@ struct EditListItemContractArea: View {
     {
         dateOfTaking = listEntry.infos?.dataOfTaking ?? Date()
         farming = listEntry.infos?.farming ?? " "
-        position = listEntry.infos?.position ?? ""
-        vegetationDescription = listEntry.infos?.vegetationDescription ?? ""
-        bloomAspekt = listEntry.infos?.bloomAspect ?? ""
-        evaluationSpeciesInventory = listEntry.infos?.evaluationSpeciesInventory ?? ""
-        evaluationHabitatStructures = listEntry.infos?.assessmentHabitatStructure ?? ""
-        evaluationImpairments = listEntry.infos?.ratingImpairment ?? ""
-        overallAssessmentConservation = listEntry.infos?.overallAssessmentOfTheStateOfPreservation ?? ""
-        protectionStatus = listEntry.infos?.protectionStatus ?? ""
-        faunisticObservations = listEntry.infos?.faunisticObservation ?? ""
-        contractTarget = listEntry.infos?.contractTarget ?? ""
-        adjustmentEditions = listEntry.infos?.adaptationEditions ?? ""
-        furtherCareMeasures = listEntry.infos?.furtherMaintenanceMeasures ?? ""
+        position = listEntry.infos?.position ?? " "
+        vegetationDescription = listEntry.infos?.vegetationDescription ?? " "
+        bloomAspekt = listEntry.infos?.bloomAspect ?? " "
+        evaluationSpeciesInventory = listEntry.infos?.evaluationSpeciesInventory ?? " "
+        evaluationHabitatStructures = listEntry.infos?.assessmentHabitatStructure ?? " "
+        evaluationImpairments = listEntry.infos?.ratingImpairment ?? " "
+        overallAssessmentConservation = listEntry.infos?.overallAssessmentOfTheStateOfPreservation ?? " "
+        protectionStatus = listEntry.infos?.protectionStatus ?? " "
+        faunisticObservations = listEntry.infos?.faunisticObservation ?? " "
+        contractTarget = listEntry.infos?.contractTarget ?? " "
+        adjustmentEditions = listEntry.infos?.adaptationEditions ?? " "
+        furtherCareMeasures = listEntry.infos?.furtherMaintenanceMeasures ?? " "
     }
     
     

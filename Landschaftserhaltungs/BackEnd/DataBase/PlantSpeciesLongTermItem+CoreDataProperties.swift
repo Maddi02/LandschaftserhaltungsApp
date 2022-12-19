@@ -29,6 +29,7 @@ extension PlantSpeciesLongTermItem {
     @NSManaged public var scientificName: String?
     @NSManaged public var descriptionFieldLongTerm: String?
     @NSManaged public var longTermuuid: UUID?
+    @NSManaged public var noun: String?
     @NSManaged public var speciesLongTerm: ListEntry?
 
 }

@@ -20,10 +20,11 @@ class PlantMatcher
     private var reating2 : String
     private var reating3 : String
     private var frequency : String
+    private var noun : String
 
     
     
-    init(scientificName: String, germanName: String, redList: String, reating1a: String, reating1b: String, reating1c: String, reating1d: String, reating2: String, reating3: String, frequency : String) {
+    init(scientificName: String, germanName: String, redList: String, reating1a: String, reating1b: String, reating1c: String, reating1d: String, reating2: String, reating3: String, frequency : String, noun : String) {
         self.scientificName = scientificName
         self.germanName = germanName
         self.redList = redList
@@ -34,6 +35,9 @@ class PlantMatcher
         self.reating2 = reating2
         self.reating3 = reating3
         self.frequency = frequency
+        
+        print("Noun\(noun)")
+        self.noun = noun
     }
     
     
@@ -87,6 +91,16 @@ class PlantMatcher
     public func getFrequency() -> String
     {
         return self.frequency
+    }
+    
+    public func getNoun() -> String
+    {
+        print("in getter ")
+        if (noun != " ")
+        {
+            print (noun)
+        }
+        return self.noun
     }
     
     
