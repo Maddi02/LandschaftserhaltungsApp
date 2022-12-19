@@ -11,19 +11,19 @@ struct NewContract: View {
     var body: some View {
         VStack {
             Group{
-                Text("Profil anpassen\n")
+                Text("Neuen Vertrag anlegen\n")
                     .multilineTextAlignment(.center)
             }
             Group{
-                Text("Im Hauptmenü können Sie über das Profil Icon Ihren Namen und das Logo anpassen (Der Name und das Logo werden im PDF-Bericht angezeigt).\n")
+                Text("Hier können Sie neue Verträge anlegen und in weiteren Schritten Teilflächen anlegen und Artenzählungen und Häufigkeitsschätzungen durchführen.\n")
                     .multilineTextAlignment(.center)
             }
             Group{
-                Text("Außerdem können hier noch die Sprache der Pflanzennamen, die in der Artenliste angezeigt werden sollen, und die Qualität der in der App gespeicherten Bilder angepasst werden.\n")
+                Text("Die Informationen müssen nicht eingegeben werden, aber es empfiehlt sich, da es die Vertragsverwaltung übersichtlich hält.\n")
                     .multilineTextAlignment(.center)
             }
             Group{
-                Text("Über “CSV auswählen” können Sie eine Artenliste importieren, die für die Artenzählung genutzt wird (Wenn keine CSV-Datei ausgewählt wird, funktioniert die Artenzählung u.a. nicht).\n")
+                Text("Außerdem kann hier eine Übersichtskarte der Vertragsfläche eingefügt werden.\n")
                     .multilineTextAlignment(.center)
             }
         }
