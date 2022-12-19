@@ -11,12 +11,19 @@ struct CustomiseProfile: View {
     var body: some View {
         VStack {
             Group{
-                Text("Herzlich Willkommen \n")
-                    .font(.title)
+                Text("Profil anpassen\n")
                     .multilineTextAlignment(.center)
             }
             Group{
-                Text("im Onboarding zur digitalen Erfassung von Landschaftsflächen")
+                Text("Im Hauptmenü können Sie über das Profil Icon Ihren Namen und das Logo anpassen (Der Name und das Logo werden im PDF-Bericht angezeigt).\n")
+                    .multilineTextAlignment(.center)
+            }
+            Group{
+                Text("Außerdem können hier noch die Sprache der Pflanzennamen, die in der Artenliste angezeigt werden sollen, und die Qualität der in der App gespeicherten Bilder angepasst werden.\n")
+                    .multilineTextAlignment(.center)
+            }
+            Group{
+                Text("Über “CSV auswählen” können Sie eine Artenliste importieren, die für die Artenzählung genutzt wird (Wenn keine CSV-Datei ausgewählt wird, funktioniert die Artenzählung u.a. nicht).\n")
                     .multilineTextAlignment(.center)
             }
         }

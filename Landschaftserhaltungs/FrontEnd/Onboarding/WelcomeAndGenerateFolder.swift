@@ -16,7 +16,7 @@ struct WelcomeAndGenerateFolder: View {
         VStack{
             
             Group{
-                Text("Herzlich Willkommen \n")
+                Text("Herzlich Willkommen\n")
                     .font(.title)
                     .multilineTextAlignment(.center)
             }
