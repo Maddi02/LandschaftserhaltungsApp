@@ -113,6 +113,7 @@
 		BFEFB78D293CE6D300266853 /* NinethFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB78C293CE6D300266853 /* NinethFeatureOverview.swift */; };
 		BFEFB78F293CE76700266853 /* TenthFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB78E293CE76700266853 /* TenthFeatureOverview.swift */; };
 		BFF0BB5529509CCC00E42179 /* WelcomeAndGenerateFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB5429509CCC00E42179 /* WelcomeAndGenerateFolder.swift */; };
+		BFF0BB572950A62500E42179 /* CustomiseProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB562950A62400E42179 /* CustomiseProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -242,6 +243,7 @@
 		BFEFB78C293CE6D300266853 /* NinethFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinethFeatureOverview.swift; sourceTree = "<group>"; };
 		BFEFB78E293CE76700266853 /* TenthFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenthFeatureOverview.swift; sourceTree = "<group>"; };
 		BFF0BB5429509CCC00E42179 /* WelcomeAndGenerateFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAndGenerateFolder.swift; sourceTree = "<group>"; };
+		BFF0BB562950A62400E42179 /* CustomiseProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomiseProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -491,6 +493,7 @@
 			children = (
 				224F45FD28FD80E7004EA74F /* OnboardingFlowView.swift */,
 				BFF0BB5429509CCC00E42179 /* WelcomeAndGenerateFolder.swift */,
+				BFF0BB562950A62400E42179 /* CustomiseProfile.swift */,
 				224F462A28FE0167004EA74F /* WelcomeView.swift */,
 				224F462C28FE06BB004EA74F /* FirstFeatureOverview.swift */,
 				224F462E28FE06CD004EA74F /* SecondFeatureOverview.swift */,
@@ -830,6 +833,7 @@
 				224F462828FDFC99004EA74F /* MainSideView.swift in Sources */,
 				226C67DA292E180F0049958A /* FieldInformation+CoreDataProperties.swift in Sources */,
 				223AD4D42912B59B009B5C1C /* ContractAdminister.swift in Sources */,
+				BFF0BB572950A62500E42179 /* CustomiseProfile.swift in Sources */,
 				226C67BE292CCAB60049958A /* UserSettings.swift in Sources */,
 				223AD56E291845D3009B5C1C /* EditListItemContractArea.swift in Sources */,
 				226C67C1292D23940049958A /* InsertNewPlantView.swift in Sources */,
