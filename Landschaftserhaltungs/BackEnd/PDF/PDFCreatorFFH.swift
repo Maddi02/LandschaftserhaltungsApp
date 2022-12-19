@@ -8,9 +8,12 @@
 import Foundation
 import TPPDF
 import PDFKit
+
 class PDFCreatorFFH
 {
     var userSettings = UserSettings()
+    
+    let defaults = UserDefaults.standard
 
     var  url = URL(string: "")
     
@@ -40,7 +43,14 @@ class PDFCreatorFFH
         url =  getDocumentsDirectory().appendingPathComponent("awesome.pdf")
         let document = PDFDocument(format: .a4)
         let imageElementHeader = PDFImage(image: userSettings.getImage() , size: CGSize(width: 150, height: 80))
-        let imageOverViewPic = PDFImage(image: listEntry.contract?.picture ?? UIImage())
+        var photoQuality = defaults.double(forKey: "photoQuality")
+        
+        if photoQuality == 0
+        {
+            photoQuality = 1.0
+        }
+        
+        let imageOverViewPic = PDFImage(image: listEntry.contract?.picture?.resizeImage(targetRatio: photoQuality) ?? UIImage())
         
         let headingStyle1 = document.add(style: PDFTextStyle(name: "Heading 1",
                                                              font: Font.boldSystemFont(ofSize: 20.0),
