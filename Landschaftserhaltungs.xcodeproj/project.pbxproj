@@ -117,6 +117,7 @@
 		BFF0BB592950A71200E42179 /* NewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB582950A71200E42179 /* NewContract.swift */; };
 		BFF0BB5B2950A7BF00E42179 /* ManageContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB5A2950A7BF00E42179 /* ManageContract.swift */; };
 		BFF0BB5D2950A88B00E42179 /* ContractOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB5C2950A88B00E42179 /* ContractOverview.swift */; };
+		BFF0BB5F2950A97500E42179 /* RepeatOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB5E2950A97500E42179 /* RepeatOnboarding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,6 +251,7 @@
 		BFF0BB582950A71200E42179 /* NewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContract.swift; sourceTree = "<group>"; };
 		BFF0BB5A2950A7BF00E42179 /* ManageContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageContract.swift; sourceTree = "<group>"; };
 		BFF0BB5C2950A88B00E42179 /* ContractOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractOverview.swift; sourceTree = "<group>"; };
+		BFF0BB5E2950A97500E42179 /* RepeatOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatOnboarding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -503,6 +505,7 @@
 				BFF0BB582950A71200E42179 /* NewContract.swift */,
 				BFF0BB5A2950A7BF00E42179 /* ManageContract.swift */,
 				BFF0BB5C2950A88B00E42179 /* ContractOverview.swift */,
+				BFF0BB5E2950A97500E42179 /* RepeatOnboarding.swift */,
 				224F462A28FE0167004EA74F /* WelcomeView.swift */,
 				224F462C28FE06BB004EA74F /* FirstFeatureOverview.swift */,
 				224F462E28FE06CD004EA74F /* SecondFeatureOverview.swift */,
@@ -782,6 +785,7 @@
 				225561D629252FEC00C645F6 /* SectionIndexTitle.swift in Sources */,
 				BFEFB78F293CE76700266853 /* TenthFeatureOverview.swift in Sources */,
 				226C67BC292BAAD70049958A /* ProfileDataModel.swift in Sources */,
+				BFF0BB5F2950A97500E42179 /* RepeatOnboarding.swift in Sources */,
 				2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */,
 				22A0AD9A293A4984008D2EA7 /* SetFrequenceViewLongTerm.swift in Sources */,
 				223BB34D29103C490064927A /* TextView.swift in Sources */,
