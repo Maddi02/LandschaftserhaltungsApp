@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ManageContract: View {
+struct ContractOverview: View {
     var body: some View {
         VStack {
             Group{
@@ -15,32 +15,28 @@ struct ManageContract: View {
                     .multilineTextAlignment(.center)
             }
             Group{
-                Text("Hier sehen Sie alle angelegten Verträge und können diese über das Icon oben links sortieren.\n")
+                Text("Über das + können Sie dem Vertrag eine Teilfläche hinzufügen. Dabei können Sie einen Namen,die Art der Teilfläche und das Datum der Artenzählung wählen. Die Teilflächen können ebenfalls durch Wischen nach links gelöscht werden.\n")
                     .multilineTextAlignment(.center)
             }
             Group{
-                Text("Wenn sie einen angelegten Vertrag nach rechts wischen, können sie die eingegebenen Informationen erneut einsehen oder bearbeiten.\n")
+                Text("Für jede Teilfläche können Sie eine Artenzählung und eine Häufigkeitsschätzung durchführen und die Ergebnisse anschließend als PDF-Datei (Bericht) oder CSV-Datei exportieren.\n")
                     .multilineTextAlignment(.center)
             }
             Group{
-                Text("[Screenshot Beispiel bearbeiten]\n")
+                Text("Hinweis:")
                     .multilineTextAlignment(.center)
             }
             Group{
-                Text("Wenn Sie nach links wischen, löschen Sie den Vertrag.\n")
-                    .multilineTextAlignment(.center)
-            }
-            Group{
-                Text("[Screenshot Beispiel löschen]\n")
+                Text("Die in der Artenzählung eingegebene Information kann später noch angepasst werden.\n")
                     .multilineTextAlignment(.center)
             }
         }
     }
 }
 
-struct ManageContract_Previews: PreviewProvider {
+struct ContractOverview_Previews: PreviewProvider {
     static var previews: some View {
-        ManageContract()
+        ContractOverview()
     }
 }
 
