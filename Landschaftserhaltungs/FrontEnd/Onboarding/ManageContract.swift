@@ -11,19 +11,27 @@ struct ManageContract: View {
     var body: some View {
         VStack {
             Group{
-                Text("Neuen Vertrag anlegen\n")
+                Text("Verträge verwalten\n")
                     .multilineTextAlignment(.center)
             }
             Group{
-                Text("Hier können Sie neue Verträge anlegen und in weiteren Schritten Teilflächen anlegen und Artenzählungen und Häufigkeitsschätzungen durchführen.\n")
+                Text("Hier sehen Sie alle angelegten Verträge und können diese über das Icon oben links sortieren.\n")
                     .multilineTextAlignment(.center)
             }
             Group{
-                Text("Die Informationen müssen nicht eingegeben werden, aber es empfiehlt sich, da es die Vertragsverwaltung übersichtlich hält.\n")
+                Text("Wenn sie einen angelegten Vertrag nach rechts wischen, können sie die eingegebenen Informationen erneut einsehen oder bearbeiten.\n")
                     .multilineTextAlignment(.center)
             }
             Group{
-                Text("Außerdem kann hier eine Übersichtskarte der Vertragsfläche eingefügt werden.\n")
+                Text("[Screenshot Beispiel bearbeiten]\n")
+                    .multilineTextAlignment(.center)
+            }
+            Group{
+                Text("Wenn Sie nach links wischen, löschen Sie den Vertrag.\n")
+                    .multilineTextAlignment(.center)
+            }
+            Group{
+                Text("[Screenshot Beispiel löschen]\n")
                     .multilineTextAlignment(.center)
             }
         }
