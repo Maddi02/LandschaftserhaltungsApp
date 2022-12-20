@@ -18,20 +18,12 @@ struct OnboardingFlowView: View {
         
         TabView(selection: $selection){
             WelcomeAndGenerateFolder().tag(0)
-            FirstFeatureOverview().tag(1)
-            SecondFeatureOverview().tag(2)
-            ThirdFeatureOverview().tag(3)
-            FourthFeatureOverview().tag(4)
-            FifthFeatureOverview().tag(5)
-            SixthFeatureOverview().tag(6)
-            SeventhFeatureOverview().tag(7)
-            EighthFeatureOverview().tag(8)
-            Group{
-                NinethFeatureOverview().tag(9)
-                TenthFeatureOverview().tag(10)
-                ReOnboradingFeatureOverview().tag(11)
-                DoneOverview().tag(12)
-            }
+            CustomiseProfile().tag(1)
+            NewContract().tag(2)
+            ManageContract().tag(3)
+            ContractOverview().tag(4)
+            RepeatOnboarding().tag(5)
+            DoneOverview().tag(6)
             
         }
         .background(BackGroundGradient.getGradient())
@@ -48,7 +40,7 @@ struct OnboardingFlowView: View {
                         {
                             buttonTitleNext = "Start"
                         }
-                        if(selection >= 0 && selection < 13 )
+                        if(selection >= 0 && selection < 7 )
                         {
                             selection-=1
                         }
@@ -61,12 +53,12 @@ struct OnboardingFlowView: View {
                     .padding()
             }
             
-            if(selection < 12)
+            if(selection < 6)
             {
                 Button(buttonTitleNext) {
                     withAnimation {
                         
-                        if(selection < 12)
+                        if(selection < 6)
                         {
                             buttonTitleNext = "Weiter"
                             selection+=1
@@ -81,12 +73,12 @@ struct OnboardingFlowView: View {
             }
         }.padding(.leading, 50).padding(.trailing,50)
         
-        if(selection < 12)
+        if(selection < 6)
         {
             Button("Tutorial überspringen") {
                 
                 withAnimation {
-                    if(selection < 12)
+                    if(selection < 6)
                     {
                         
                         appState.hasOnboarded = true
