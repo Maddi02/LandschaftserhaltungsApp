@@ -118,11 +118,7 @@ struct CreateNewContract : View
                             {
                                 showDocumentPicker.toggle()
                             }label: {
-                                
-                           
                                         Text("Wähle ein Bild aus Datein aus")
-                                    
-                                
                             }
                           
                             

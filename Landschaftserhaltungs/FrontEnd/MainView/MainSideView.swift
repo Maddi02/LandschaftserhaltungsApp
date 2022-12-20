@@ -16,20 +16,18 @@ struct MainSideView:  View {
     @StateObject var appContract = AppContract()
     @State var showProfile = false
     @State var showImpressum = false
+    let defaults = UserDefaults.standard
     @State private var image = UIImage()
     var body: some View {
         //Verwalten
         
         VStack{
-            
-            
-
-            
             GeometryReader { geometry in
                 
                 NavigationStack() {
 
                     VStack {
+                
                         Image(uiImage: self.image)
                             .resizable()
                             .scaledToFit()

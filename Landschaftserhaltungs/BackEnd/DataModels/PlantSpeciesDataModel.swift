@@ -52,7 +52,8 @@ public class PlantSpeciesDataModel : ObservableObject
       //  sectionDictionary = getSectionedDictionary()
     
     
-        loadFromCSV()
+ //       loadFromCSV()
+        loadFromData()
         initatializeList()
 
 
@@ -178,10 +179,31 @@ public class PlantSpeciesDataModel : ObservableObject
     }
     
     
+    
+    
+    func loadFromData()
+    {
+        
+        var data : String = defaults.string(forKey: "csvData") ?? " "
+        var dataLines : [String.SubSequence]
+        dataLines = data.split(whereSeparator: \.isNewline)
+        for i in dataLines
+        {
+            platList.append(PlantSpecies(row: i.components(separatedBy: ",")))
+        }
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
     func loadFromCSV()
     {
         let fileURL = defaults.url(forKey: "csvPath")
-        print ("weee\(fileURL)")
         let rows = NSArray(contentsOfCSVURL: fileURL, options: CHCSVParserOptions.sanitizesFields)!
         let objCArray = NSMutableArray(array: rows)
         var swiftArray: [[String]] = objCArray as! [[String]]

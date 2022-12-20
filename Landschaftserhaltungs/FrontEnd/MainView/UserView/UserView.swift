@@ -31,9 +31,14 @@ struct UserView: View {
     let language = ["Deutsch", "Latein"]
     @State private var isShownPhotoLibrary = false
     @State private var image = UIImage()
+    @State private var csvData : String = " "
+    @State private var csvURL : URL = URL(filePath: "")
     @State private var openFile = false
     @State private var fileUrl = ""
     @State private var selectedPhotoQuality: PhotoQuality = .high
+    @State private var fileContent = ""
+    @State private var showDocumentPicker = false
+   
     
     
     var body: some View {
@@ -88,25 +93,21 @@ struct UserView: View {
               
               
                 Section(header: Text("CSV")){
-                    Button("CSV Datei importieren")
+                    Button()
                     {
-                        openFile.toggle()
-                    }.fileImporter(isPresented: $openFile, allowedContentTypes: [.data]) {
-                        (res) in
+                        showDocumentPicker.toggle()
+                        print(csvData)
+                    }label: {
+                        Text("Wähle ein CSV Datei aus")
+                    }.sheet(isPresented: $showDocumentPicker)
+                    {
+                        DocumentPickerCSV(content: self.$csvData, urlCSV: self.$csvURL)
                         
-                        do {
-                            let fileUrl = try res.get()
-                            self.fileUrl = fileUrl.lastPathComponent
-                            defaults.set(fileUrl, forKey: "csvPath")
-                        }
-                        catch{
-                            print(error)
-                        }
+                        
                     }
-                    Text(defaults.url(forKey: "csvPath")?.lastPathComponent ?? "Kein Pfad ausgewählt")
+                    Text(csvURL.lastPathComponent)
                 }
-                
-                
+
                 Section(header: Text("Fotoqualität")){
                     Picker("Fotoqualität", selection: $selectedPhotoQuality){
                         Text("hoch").tag(PhotoQuality.high)
@@ -129,6 +130,8 @@ struct UserView: View {
                 {
                     defaults.set(selectedPhotoQuality.rawValue, forKey: "photoQuality")
                     userSettings.saveImage(image: self.image)
+                    defaults.set(csvData, forKey: "csvData")
+                    print(csvData)
                     dismiss()
                     print("Button Saved was pressed")
                 }
@@ -145,8 +148,3 @@ struct UserView: View {
 
 }
 
-struct UserView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserView()
-    }
-}
