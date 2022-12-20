@@ -115,6 +115,12 @@
 		BFEFB78B293CE40200266853 /* EighthFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB78A293CE40200266853 /* EighthFeatureOverview.swift */; };
 		BFEFB78D293CE6D300266853 /* NinethFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB78C293CE6D300266853 /* NinethFeatureOverview.swift */; };
 		BFEFB78F293CE76700266853 /* TenthFeatureOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFB78E293CE76700266853 /* TenthFeatureOverview.swift */; };
+		BFF0BB5529509CCC00E42179 /* WelcomeAndGenerateFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB5429509CCC00E42179 /* WelcomeAndGenerateFolder.swift */; };
+		BFF0BB572950A62500E42179 /* CustomiseProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB562950A62400E42179 /* CustomiseProfile.swift */; };
+		BFF0BB592950A71200E42179 /* NewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB582950A71200E42179 /* NewContract.swift */; };
+		BFF0BB5B2950A7BF00E42179 /* ManageContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB5A2950A7BF00E42179 /* ManageContract.swift */; };
+		BFF0BB5D2950A88B00E42179 /* ContractOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB5C2950A88B00E42179 /* ContractOverview.swift */; };
+		BFF0BB5F2950A97500E42179 /* RepeatOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB5E2950A97500E42179 /* RepeatOnboarding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,6 +252,12 @@
 		BFEFB78A293CE40200266853 /* EighthFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EighthFeatureOverview.swift; sourceTree = "<group>"; };
 		BFEFB78C293CE6D300266853 /* NinethFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinethFeatureOverview.swift; sourceTree = "<group>"; };
 		BFEFB78E293CE76700266853 /* TenthFeatureOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenthFeatureOverview.swift; sourceTree = "<group>"; };
+		BFF0BB5429509CCC00E42179 /* WelcomeAndGenerateFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAndGenerateFolder.swift; sourceTree = "<group>"; };
+		BFF0BB562950A62400E42179 /* CustomiseProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomiseProfile.swift; sourceTree = "<group>"; };
+		BFF0BB582950A71200E42179 /* NewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContract.swift; sourceTree = "<group>"; };
+		BFF0BB5A2950A7BF00E42179 /* ManageContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageContract.swift; sourceTree = "<group>"; };
+		BFF0BB5C2950A88B00E42179 /* ContractOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractOverview.swift; sourceTree = "<group>"; };
+		BFF0BB5E2950A97500E42179 /* RepeatOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatOnboarding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -497,6 +509,12 @@
 			isa = PBXGroup;
 			children = (
 				224F45FD28FD80E7004EA74F /* OnboardingFlowView.swift */,
+				BFF0BB5429509CCC00E42179 /* WelcomeAndGenerateFolder.swift */,
+				BFF0BB562950A62400E42179 /* CustomiseProfile.swift */,
+				BFF0BB582950A71200E42179 /* NewContract.swift */,
+				BFF0BB5A2950A7BF00E42179 /* ManageContract.swift */,
+				BFF0BB5C2950A88B00E42179 /* ContractOverview.swift */,
+				BFF0BB5E2950A97500E42179 /* RepeatOnboarding.swift */,
 				224F462A28FE0167004EA74F /* WelcomeView.swift */,
 				224F462C28FE06BB004EA74F /* FirstFeatureOverview.swift */,
 				224F462E28FE06CD004EA74F /* SecondFeatureOverview.swift */,
@@ -777,6 +795,7 @@
 				225561D629252FEC00C645F6 /* SectionIndexTitle.swift in Sources */,
 				BFEFB78F293CE76700266853 /* TenthFeatureOverview.swift in Sources */,
 				226C67BC292BAAD70049958A /* ProfileDataModel.swift in Sources */,
+				BFF0BB5F2950A97500E42179 /* RepeatOnboarding.swift in Sources */,
 				2239595F2907DDCD00D5F38E /* ContractListItem.swift in Sources */,
 				22A0AD9A293A4984008D2EA7 /* SetFrequenceViewLongTerm.swift in Sources */,
 				223BB34D29103C490064927A /* TextView.swift in Sources */,
@@ -803,13 +822,16 @@
 				225DFBF02933D80F005C7DEC /* PlantMatcher.swift in Sources */,
 				223AD5E52919C309009B5C1C /* PlantSpeciesDataModel.swift in Sources */,
 				22A1088B291C1CE50071FF3A /* InformationAnderesBiotop.swift in Sources */,
+				BFF0BB5D2950A88B00E42179 /* ContractOverview.swift in Sources */,
 				226C67B529278F1F0049958A /* Profile+CoreDataClass.swift in Sources */,
 				223AD5242917C67D009B5C1C /* CreateNewPerpetration.swift in Sources */,
 				226C67C3292D65EE0049958A /* FFHWieseConclusion.swift in Sources */,
 				226C67CC292D71E50049958A /* ViewModel.swift in Sources */,
+				BFF0BB592950A71200E42179 /* NewContract.swift in Sources */,
 				223AD5262917CBDA009B5C1C /* ToggleCheckboxStyle.swift in Sources */,
 				223AD5E029199C53009B5C1C /* AppContract+CoreDataClass.swift in Sources */,
 				224F463528FE1443004EA74F /* AppState.swift in Sources */,
+				BFF0BB5B2950A7BF00E42179 /* ManageContract.swift in Sources */,
 				2259A2A42938C48E003212AC /* FrequencyEstimationFieldLatein.swift in Sources */,
 				226C67D2292E11810049958A /* PictureViewModel.swift in Sources */,
 				22A10882291BF66A0071FF3A /* PlantSpeciesLongTermItem+CoreDataClass.swift in Sources */,
@@ -839,6 +861,7 @@
 				224F462828FDFC99004EA74F /* MainSideView.swift in Sources */,
 				226C67DA292E180F0049958A /* FieldInformation+CoreDataProperties.swift in Sources */,
 				223AD4D42912B59B009B5C1C /* ContractAdminister.swift in Sources */,
+				BFF0BB572950A62500E42179 /* CustomiseProfile.swift in Sources */,
 				226C67BE292CCAB60049958A /* UserSettings.swift in Sources */,
 				223AD56E291845D3009B5C1C /* EditListItemContractArea.swift in Sources */,
 				226C67C1292D23940049958A /* InsertNewPlantView.swift in Sources */,
@@ -850,6 +873,7 @@
 				224F45FC28FD80E7004EA74F /* LandschaftserhaltungsApp.swift in Sources */,
 				BFEFB787293CDF3200266853 /* SixthFeatureOverview.swift in Sources */,
 				224F462B28FE0167004EA74F /* WelcomeView.swift in Sources */,
+				BFF0BB5529509CCC00E42179 /* WelcomeAndGenerateFolder.swift in Sources */,
 				223AD5DD29199C53009B5C1C /* PlantSpeciesItem+CoreDataProperties.swift in Sources */,
 				BFEFB78D293CE6D300266853 /* NinethFeatureOverview.swift in Sources */,
 			);
