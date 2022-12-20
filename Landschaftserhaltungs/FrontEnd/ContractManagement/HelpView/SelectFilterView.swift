@@ -36,7 +36,7 @@ struct SelectFilterView: View {
             }
             Toggle(isOn: $dataHandler.filterExpiring)
             {
-                Text("Only show expiring Contracts")
+                Text("Nur bald auslaufende Verträge anzeigen")
             }
             Button("Press to dismiss") {
                 dismiss()
