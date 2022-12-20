@@ -25,6 +25,7 @@ class DataHandler : ObservableObject
     @Published var appContractList: [AppContract] = []
     @Published var filter : FilterType = .none
     @Published var filterExpiring: Bool = false
+    @Published var sortAscending: Bool = true
     
     enum FilterType{
         case none, date, deadline
@@ -48,19 +49,19 @@ class DataHandler : ObservableObject
         case .none:
             Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false)
             { _ in
-                self.appContractListSortedByLastAdded =  self.sortByLastAdded()
+                self.appContractListSortedByLastAdded =  self.sortByLastAdded(ascending: self.sortAscending)
             }
             return appContractListSortedByLastAdded
         case .date:
             Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false)
             { _ in
-                self.appContractListSortedByDate =  self.sortByDateASC()
+                self.appContractListSortedByDate =  self.sortByDate(ascending: self.sortAscending)
             }
             return appContractListSortedByDate
         case .deadline:
             Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false)
             { _ in
-                self.appContractListSortedByDeadline =  self.sortByDateDeadline()
+                self.appContractListSortedByDeadline =  self.sortByDateDeadline(ascending: self.sortAscending)
             }
                 return appContractListSortedByDeadline
         }
@@ -228,10 +229,10 @@ class DataHandler : ObservableObject
     }
     
     
-    public func sortByDateASC() -> Array<AppContract>
+    public func sortByDate(ascending: Bool) -> Array<AppContract>
     {
         let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
-        let sortByYear = NSSortDescriptor(key: #keyPath(AppContract.contractTermination), ascending: true)
+        let sortByYear = NSSortDescriptor(key: #keyPath(AppContract.contractTermination), ascending: ascending)
         request.sortDescriptors = [sortByYear]
         if (self.filterExpiring)
         {
@@ -248,13 +249,14 @@ class DataHandler : ObservableObject
     }
     
     
-    public func sortByLastAdded() -> Array<AppContract>
+    public func sortByLastAdded(ascending: Bool) -> Array<AppContract>
     {
         let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
         if (self.filterExpiring)
         {
             request.predicate = NSPredicate(format: "deadline < %@", Date().addMonths(numberOfMonths: 1) as NSDate)
         }
+        
         do{
             appContractListSortedByDeadline = try context.fetch(request)
         }
@@ -262,14 +264,19 @@ class DataHandler : ObservableObject
             print(error)
         }
         
+        if (!ascending)
+        {
+            appContractListSortedByDeadline.reverse()
+        }
+        
         return appContractListSortedByDeadline
     }
     
     
-    public func sortByDateDeadline() -> Array<AppContract>
+    public func sortByDateDeadline(ascending: Bool) -> Array<AppContract>
     {
         let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
-        let sortByDate = NSSortDescriptor(key: #keyPath(AppContract.deadline), ascending: true)
+        let sortByDate = NSSortDescriptor(key: #keyPath(AppContract.deadline), ascending: ascending)
         request.sortDescriptors = [sortByDate]
         if (self.filterExpiring)
         {
