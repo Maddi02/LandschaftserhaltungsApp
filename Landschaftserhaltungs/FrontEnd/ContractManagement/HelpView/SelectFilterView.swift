@@ -7,7 +7,7 @@
 import Foundation
 import SwiftUI
 struct SelectFilterView: View {
-    
+
     @Environment(\.dismiss) var dismiss
     @ObservedObject  var dataHandler : DataHandler
     var body: some View {
@@ -20,10 +20,10 @@ struct SelectFilterView: View {
                 }
                 dismiss()
             }
-            Button("bald auslaufende Verträge") {
+            Button("nach Abschlussdatum") {
                 Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false)
                 { _ in
-                    dataHandler.filter = .expiring
+                    dataHandler.filter = .date
                 }
                 dismiss()
             }
@@ -33,10 +33,12 @@ struct SelectFilterView: View {
                     dataHandler.filter = .deadline
                 }
                 dismiss()
-                
+            }
+            Toggle(isOn: $dataHandler.filterExpiring)
+            {
+                Text("Only show expiring Contracts")
             }
             Button("Press to dismiss") {
-                
                 dismiss()
                 
             }
