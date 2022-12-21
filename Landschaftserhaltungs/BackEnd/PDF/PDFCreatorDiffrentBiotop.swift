@@ -59,7 +59,7 @@ class PDFCreatorDiffrentBiotop
                                                              color: Color.black))
         let style = PDFLineStyle(type: .full, color: .darkGray, width: 0.5)
      
-        
+        var allPlants : [PlantMatcher] = []
         //Header
         
         document.add(.headerRight, image: imageElementHeader)
@@ -82,6 +82,114 @@ class PDFCreatorDiffrentBiotop
         document.createNewPage()
         document.add(.contentLeft, text: " ")
         
+        
+        
+        for i in listEntry.PlantArray
+        {
+            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.evaluation1a ?? " " , reating1b: i.evaluation1b ?? " ", reating1c: i.evaluation1c ?? " " , reating1d: i.evaluation1d ?? " " , reating2: i.evaluation2 ?? " " , reating3: i.evaluation3 ?? " ",frequency: i.frequency ?? " ", noun: i.noun ?? " " ))
+        }
+        
+        for i in listEntry.PlantArrayLongTerm
+        {
+            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.evaluation1a ?? " " , reating1b: i.evaluation1b ?? " ", reating1c: i.evaluation1c ?? " " , reating1d: i.evaluation1d ?? " " , reating2: i.evaluation2 ?? " " , reating3: i.evaluation3 ?? " ",frequency: i.frequency ?? " " , noun : i.noun ?? " "))
+        }
+        
+        
+        
+        
+        var extinctOrLost : String = "ausgestorben oder verschollen: "
+        var endangeredByExtinction : String = "vom Aussterben bedroht: "
+        var stronglyEndangered : String = "stark gefährdet: "
+        var endangered : String = "gefährdet: "
+        var preWarningList : String = "Vorwarnliste: "
+        var textRedListForPDF : String = ""
+        var counterRedList : Int = 0
+    
+    
+        
+        
+        for i in allPlants
+        {
+            if(i.getRedList() == "0")
+            {
+                extinctOrLost += "\(i.getGermanName()) (\(i.getScientificName())) \n"
+                counterRedList+=1
+            }
+            
+            if(i.getRedList() == "1")
+            {
+                endangeredByExtinction += "\(i.getGermanName()) (\(i.getScientificName())) \n"
+                counterRedList+=1
+            }
+            
+            if(i.getRedList() == "2")
+            {
+                stronglyEndangered += "\(i.getGermanName()) (\(i.getScientificName())) \n"
+                counterRedList+=1
+            }
+            
+            if(i.getRedList() == "3")
+            {
+                endangered += "\(i.getGermanName()) (\(i.getScientificName())) \n"
+                counterRedList+=1
+            }
+            
+            if(i.getRedList() == "V")
+            {
+                preWarningList += "\(i.getGermanName()) (\(i.getScientificName())) \n"
+                counterRedList+=1
+            }
+  
+        }
+        
+        if(extinctOrLost != "ausgestorben oder verschollen: ")
+        {
+            textRedListForPDF += extinctOrLost
+        }
+        
+        if(endangeredByExtinction != "vom Aussterben bedroht: ")
+        {
+            textRedListForPDF += endangeredByExtinction
+        }
+        
+        if(stronglyEndangered != "stark gefährdet: ")
+        {
+            textRedListForPDF += stronglyEndangered
+        }
+        
+        if(endangered != "gefährdet: ")
+        {
+            textRedListForPDF += endangered
+        }
+        
+        if(preWarningList != "Vorwarnliste: ")
+        {
+            textRedListForPDF += preWarningList
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        allPlants = allPlants.sorted{$0.getScientificName() < $1.getScientificName()}
+        
+        
+        
+        
+        
+        
+        
         let table = PDFTable(rows: 13, columns: 2)
  
         // Tables can contain Strings, Numbers, Images or nil, in case you need an empty cell.
@@ -94,7 +202,7 @@ class PDFCreatorDiffrentBiotop
             ["Vegetations-\n beschreibung ",  "\(listEntry.infos?.vegetationDescription ?? "No Value")"],
             ["Blühaspekt",     "\(listEntry.infos?.bloomAspect ?? "No Value")"],
             ["Artenzahl\n gesamt",  "\(listEntry.PlantArrayLongTerm.count + listEntry.PlantArray.count)"],
-            ["Anzahl Rote\n Liste BW",    "Sunlight shining through the leafs."],
+            ["Anzahl Rote\n Liste BW",    "Anzahl: \(counterRedList)\n\(textRedListForPDF)"],
             ["Schutzstatus",   "\(listEntry.infos?.protectionStatus ?? "No Value")"],
             ["Faunistische\n Beobachtung",    "\(listEntry.infos?.faunisticObservation ?? "No Value")"],
             ["Vertragsziel\n erfüllt",     "\(listEntry.infos?.contractTarget ?? "No Value")"],
@@ -112,7 +220,7 @@ class PDFCreatorDiffrentBiotop
     
 
         //Body Third Page
-        var allPlants : [PlantMatcher] = []
+
 
         for i in listEntry.infos?.pictureArray ?? []
         {
@@ -125,17 +233,7 @@ class PDFCreatorDiffrentBiotop
         
         //Body XXX Page
         
-        for i in listEntry.PlantArray
-        {
-            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.evaluation1a ?? " " , reating1b: i.evaluation1b ?? " ", reating1c: i.evaluation1c ?? " " , reating1d: i.evaluation1d ?? " " , reating2: i.evaluation2 ?? " " , reating3: i.evaluation3 ?? " ",frequency: i.frequency ?? " ", noun: i.noun ?? " " ))
-        }
-        
-        for i in listEntry.PlantArrayLongTerm
-        {
-            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.evaluation1a ?? " " , reating1b: i.evaluation1b ?? " ", reating1c: i.evaluation1c ?? " " , reating1d: i.evaluation1d ?? " " , reating2: i.evaluation2 ?? " " , reating3: i.evaluation3 ?? " ",frequency: i.frequency ?? " " , noun : i.noun ?? " "))
-        }
-        
-        allPlants = allPlants.sorted{$0.getScientificName() < $1.getScientificName()}
+  
 
         document.createNewPage()
         let tablePlant = PDFTable(rows: allPlants.count + 1, columns: 13)

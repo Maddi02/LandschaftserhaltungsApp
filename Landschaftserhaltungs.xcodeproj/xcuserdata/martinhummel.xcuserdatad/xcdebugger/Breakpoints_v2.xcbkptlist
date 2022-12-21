@@ -828,24 +828,8 @@
             filePath = "Landschaftserhaltungs/BackEnd/PDF/PDFCreatorDiffrentBiotop.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "generatePdfAndGetURL(listEntry:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C072D149-9C94-4D6B-A9B0-E4F9163F423F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Landschaftserhaltungs/BackEnd/PDF/PDFCreatorDiffrentBiotop.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "generatePdfAndGetURL(listEntry:)"
             landmarkType = "7">
          </BreakpointContent>
