@@ -17,7 +17,7 @@ struct OnboardingFlowView: View {
     var body: some View {
         
         TabView(selection: $selection){
-            WelcomeView().tag(0)
+            WelcomeAndGenerateFolder().tag(0)
             FirstFeatureOverview().tag(1)
             SecondFeatureOverview().tag(2)
             ThirdFeatureOverview().tag(3)

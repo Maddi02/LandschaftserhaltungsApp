@@ -17,15 +17,18 @@ class DataHandler : ObservableObject
     let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
 
 
+    @Published var appContractListSortedByLastAdded: [AppContract] = []
     @Published var appContractListSortedByDate: [AppContract] = []
     @Published var listItemContractArea: [ListItemContractArea] = []
     @Published var appContractListSortedByDeadline: [AppContract] = []
     @Published var appContractListFilteredByExpiring: [AppContract] = []
     @Published var appContractList: [AppContract] = []
     @Published var filter : FilterType = .none
+    @Published var filterExpiring: Bool = false
+    @Published var sortAscending: Bool = true
     
     enum FilterType{
-        case none, date, deadline, expiring
+        case none, date, deadline
     }
 
     
@@ -44,26 +47,23 @@ class DataHandler : ObservableObject
         switch filter {
             
         case .none:
-  
-            return appContractList
+            Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false)
+            { _ in
+                self.appContractListSortedByLastAdded =  self.sortByLastAdded(ascending: self.sortAscending)
+            }
+            return appContractListSortedByLastAdded
         case .date:
             Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false)
             { _ in
-                self.appContractListSortedByDate =  self.sortByDateASC()
+                self.appContractListSortedByDate =  self.sortByDate(ascending: self.sortAscending)
             }
             return appContractListSortedByDate
         case .deadline:
             Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false)
             { _ in
-                self.appContractListSortedByDeadline =  self.sortByDateDeadline()
+                self.appContractListSortedByDeadline =  self.sortByDateDeadline(ascending: self.sortAscending)
             }
                 return appContractListSortedByDeadline
-        case .expiring:
-            Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false)
-            { _ in
-                self.appContractListFilteredByExpiring = self.filterByExpiring()
-            }
-                return appContractListFilteredByExpiring
         }
     }
     
@@ -79,19 +79,12 @@ class DataHandler : ObservableObject
         { _ in
             do {
                 self.appContractList = try self.context.fetch(self.request)
-
             }
             catch {
                 // Handle Error
-                print("EHHHHHHHHHHH")
+                print("Error fetching App Contracts")
             }
         }
-        
-        
-        
-        
-        
-        
     }
     
     func getImage(appContract : AppContract) -> UIImage
@@ -236,11 +229,15 @@ class DataHandler : ObservableObject
     }
     
     
-    public func sortByDateASC() -> Array<AppContract>
+    public func sortByDate(ascending: Bool) -> Array<AppContract>
     {
         let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
-        let sortByYear = NSSortDescriptor(key: #keyPath(AppContract.contractTermination), ascending: true)
+        let sortByYear = NSSortDescriptor(key: #keyPath(AppContract.contractTermination), ascending: ascending)
         request.sortDescriptors = [sortByYear]
+        if (self.filterExpiring)
+        {
+            request.predicate = NSPredicate(format: "deadline < %@", Date().addMonths(numberOfMonths: 1) as NSDate)
+        }
         do{
             appContractListSortedByDate = try context.fetch(request)
         }
@@ -250,11 +247,41 @@ class DataHandler : ObservableObject
         
         return appContractListSortedByDate
     }
-    public func sortByDateDeadline() -> Array<AppContract>
+    
+    
+    public func sortByLastAdded(ascending: Bool) -> Array<AppContract>
     {
         let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
-        let sortByDate = NSSortDescriptor(key: #keyPath(AppContract.deadline), ascending: true)
+        if (self.filterExpiring)
+        {
+            request.predicate = NSPredicate(format: "deadline < %@", Date().addMonths(numberOfMonths: 1) as NSDate)
+        }
+        
+        do{
+            appContractListSortedByDeadline = try context.fetch(request)
+        }
+        catch{
+            print(error)
+        }
+        
+        if (!ascending)
+        {
+            appContractListSortedByDeadline.reverse()
+        }
+        
+        return appContractListSortedByDeadline
+    }
+    
+    
+    public func sortByDateDeadline(ascending: Bool) -> Array<AppContract>
+    {
+        let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
+        let sortByDate = NSSortDescriptor(key: #keyPath(AppContract.deadline), ascending: ascending)
         request.sortDescriptors = [sortByDate]
+        if (self.filterExpiring)
+        {
+            request.predicate = NSPredicate(format: "deadline < %@", Date().addMonths(numberOfMonths: 1) as NSDate)
+        }
         do{
             appContractListSortedByDeadline = try context.fetch(request)
         }
@@ -265,23 +292,6 @@ class DataHandler : ObservableObject
         return appContractListSortedByDeadline
     }
     
-    public func filterByExpiring() -> Array<AppContract>
-    {
-        let request : NSFetchRequest<AppContract> = NSFetchRequest(entityName: "AppContract")
-        request.predicate = NSPredicate(format: "deadline < %@", Date().addMonths(numberOfMonths: 1) as NSDate)
-        var filteredList: [AppContract] = []
-        do{
-            filteredList = try context.fetch(request)
-        }
-        catch{
-            print(error)
-        }
-        
-        return filteredList
-    }
-    
-    
-
     
     public func saveAll(image: UIImage = UIImage(), firstName1: String, newContractDataModel : NewContractDataModel)
     {
