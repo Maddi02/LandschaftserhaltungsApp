@@ -42,9 +42,6 @@ struct EditContractView: View {
     let minHeightLastName: CGFloat = 30
     let minHeightLocation: CGFloat = 30
     
-    
-    
-    
     private func textDidChangeContractNumber(_ textView: UITextView) {
         self.heightContractNumber = max(textView.contentSize.height, minHeightContractNumber)
     }

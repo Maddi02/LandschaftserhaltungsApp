@@ -16,17 +16,17 @@ struct InformationAnderesBiotop: View {
     @StateObject var viewModelPicutre = pictureVM()
     @EnvironmentObject  var vm : ViewModel
     @State private var dataOfTaking = Date()
-    @State private var farming : String = ""
-    @State private var position : String = ""
-    @State private var vegetationDescription : String = ""
-    @State private var bloomAspect : String = ""
-    @State private var ratingImpairment  : String = ""
-    @State private var overallAssessmentOfTheStateOfPreservation  : String = ""
-    @State private var faunisticObservation  : String = ""
-    @State private var contractTarget  : String = ""
-    @State private var protectionStatus  : String = ""
-    @State private var adaptationEditions  : String = ""
-    @State private var furtherMaintenanceMeasures  : String = ""
+    @State private var farming : String = " "
+    @State private var position : String = " "
+    @State private var vegetationDescription : String = " "
+    @State private var bloomAspect : String = " "
+    @State private var ratingImpairment  : String = " "
+    @State private var overallAssessmentOfTheStateOfPreservation  : String = " "
+    @State private var faunisticObservation  : String = " "
+    @State private var contractTarget  : String = " "
+    @State private var protectionStatus  : String = " "
+    @State private var adaptationEditions  : String = " "
+    @State private var furtherMaintenanceMeasures  : String = " "
     @State private var showingActionSheet = false
    
     

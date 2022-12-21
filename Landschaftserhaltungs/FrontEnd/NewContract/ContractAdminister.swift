@@ -128,12 +128,12 @@ import SwiftUI
                     link = csvGenerator.generateAndGetUrl(listEntry: listEntry)
                     presentShareSheet()
                 }
-                
-                NavigationLink(destination: EditListItemContractArea(type: typOfField, listEntry: listEntry)) {
-                    Button(" Information Bearbeiten")
-                    {
-                        
-                    }
+
+                            NavigationLink(destination: EditListItemContractArea(type: typOfField, listEntry: listEntry)) {
+                                Button(" Information Bearbeiten")
+                                {
+
+                                }
                 }
             }
         }
