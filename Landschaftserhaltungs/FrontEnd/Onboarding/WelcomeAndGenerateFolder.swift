@@ -30,6 +30,8 @@ struct WelcomeAndGenerateFolder: View {
             }
             Text("In diesem Ordner muss die CSV-Datei enthalten sein, die für die Artenliste importiert werden soll.\n").multilineTextAlignment(.center)
             
+            Text("Achten Sie darauf, dass die Spalten 1a, 1b, ... in der CSV-Datei ausschließlich mit einem großen X gekennzeichet werden (falls zutreffend).\n").multilineTextAlignment(.center)
+            
             Button("Ordner generieren"){
                 link = csvGenerator.generateInitFolder()
                 presentShareSheet()
