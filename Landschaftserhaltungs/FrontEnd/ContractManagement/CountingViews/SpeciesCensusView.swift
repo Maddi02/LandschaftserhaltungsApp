@@ -68,12 +68,12 @@ struct SpeciesCensusView: View {
                         
                         Text("INFO").frame(maxWidth: .infinity, alignment: .top).font(.title2).padding()
                         
-                        Text("Auf Grund der Feldtypauswahl :  \(typeOfField) müssen Sie im folgenden eine Schnellaufnahme durchführen. Diese wird 10 Minuten dauern. Die Pflanzen welche Sie dort auswählen sind automatisch in der draufffolgenden genauen Aufnahme ausgewählt und können auch nicht mehr gelöscht werden. Nach dem Sie die Schnell / Genauaufnahme durhchgeführt haben. Können Sie noch Informationen zum Feld aufnehmen. Des Weitern kann man dort Bilder aus der Galerie oder direkt von der Kamera aufnehemen\nBEACHTEN SIE wenn Sie die Aufnahme einmal gestartet kommt man nicht mehr zurück.\nWenn Sie bereit sind, klicken Sie einfach auf Start ").padding(.top).padding(.leading)
+                        Text("Feldtypauswahl: \(typeOfField) - Artenzählung Info \n\n 1. Schnellaufnahme \n Hier können Sie unten einen Timer starten und die gefundenen Pflanzen aus der Artenliste auswählen. Wenn die Schnellaufnahme beendet werden soll, drücken Sie auf „Weiter“. \n\n 2. Weitere Arten \n An dieser Stelle gibt es keinen Timer mehr und Sie können weitere Pflanzen, die im ersten Durchlauf nicht erfasst wurden, hinzufügen. \n 1 und 2 können nicht wiederholt werden. \n\n 3. Informationen \n Als letztes können Sie übrige Informationen für den Bericht hinzufügen. Die Eingaben können nachträglich verändert oder ergänzt werden. ").padding(.top).padding(.leading)
                     }
                     
                     else {
                         Text("INFO").frame(maxWidth: .infinity, alignment: .top).font(.title2).padding()
-                        Text("Auf Grund der Feldtypauswahl :  \(typeOfField) müssen Sie im folgenden eine genaue Aufnahme durchführen. Nach dem Sie diese durchgeführt haben, könnne Sie zusätzliche Information & Bilder hinzufügen. Wenn Sie die Aufnahme einmal gestartet haben, können Sie nicht mehr zurück.\nWenn Sie bereit sind, klicken Sie einfach auf Start ").padding(.top).padding(.leading)
+                        Text("Feldtypauswahl: \(typeOfField) - Artenzählung Info \n\n Hier müssen Sie im folgenden eine genaue Aufnahme der Pflanzen durchführen. Anschließend können Sie übrige Informationen für den Bericht hinzufügen. Die Eingaben können nachträglich verändert oder ergänzt werden.").padding(.top).padding(.leading)
                         
                         
                     }
