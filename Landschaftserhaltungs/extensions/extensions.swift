@@ -15,6 +15,14 @@ extension String {
         return count
     }
 
+
+        var lines: [String] {
+            var result: [String] = []
+            enumerateLines { line, _ in result.append(line) }
+            return result
+        }
+   
+    
     subscript (i: Int) -> String {
         return self[i ..< i + 1]
     }

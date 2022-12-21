@@ -47,17 +47,9 @@ public class PlantSpeciesDataModel : ObservableObject
     
     init()
     {
-
-      //  sectionDictionary = [:]
-      //  sectionDictionary = getSectionedDictionary()
-    
-    
- //       loadFromCSV()
         loadFromData()
         initatializeList()
-
-
-        }
+    }
    
    
     
@@ -184,18 +176,29 @@ public class PlantSpeciesDataModel : ObservableObject
     func loadFromData()
     {
         
-        var data : String = defaults.string(forKey: "csvData") ?? " "
-        var dataLines : [String.SubSequence]
-        dataLines = data.split(whereSeparator: \.isNewline)
+        let data : String = defaults.string(forKey: "csvData") ?? " "
+        var dataLines : [String]
+        dataLines = data.lines
         for i in dataLines
         {
+           
+            print(i.components(separatedBy: ",").count)
+            if(i.components(separatedBy: ",").count != 10)
+            {
+                showAlert = true
+            }
             platList.append(PlantSpecies(row: i.components(separatedBy: ",")))
+
         }
         
-        
-        
-        
-        
+        if(platList.count > 1)
+        {
+            platList.remove(at: 0)
+        }
+        else{
+            showAlert = true
+        }
+ 
     }
     
     

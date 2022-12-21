@@ -27,19 +27,20 @@ struct UserView: View {
     @State private var profileUser = Profile ()
     @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
-    let defaults = UserDefaults.standard
+    static let defaults = UserDefaults.standard
     let language = ["Deutsch", "Latein"]
     @State private var isShownPhotoLibrary = false
     @State private var image = UIImage()
-    @State private var csvData : String = " "
+    @State private var csvData : String = (defaults.string(forKey: "csvData") ?? "FUCK NYOU")
     @State private var csvURL : URL = URL(filePath: "")
     @State private var openFile = false
     @State private var fileUrl = ""
     @State private var selectedPhotoQuality: PhotoQuality = .high
     @State private var fileContent = ""
     @State private var showDocumentPicker = false
-   
-    
+
+
+
     
     var body: some View {
         NavigationView {
@@ -102,10 +103,9 @@ struct UserView: View {
                     }.sheet(isPresented: $showDocumentPicker)
                     {
                         DocumentPickerCSV(content: self.$csvData, urlCSV: self.$csvURL)
-                        
-                        
                     }
-                    Text(csvURL.lastPathComponent)
+                    Text(UserView.defaults.string(forKey: "csvICloud") ?? "Keine CSV Datei importiert")
+                    //Text(csvURL.absoluteString)
                 }
 
                 Section(header: Text("Fotoqualität")){
@@ -113,7 +113,7 @@ struct UserView: View {
                         Text("hoch").tag(PhotoQuality.high)
                         Text("mittel").tag(PhotoQuality.medium)
                         Text("niedrig").tag(PhotoQuality.low)
-                    }.onAppear{selectedPhotoQuality = PhotoQuality(rawValue: defaults.double(forKey: "photoQuality")) ?? .high}
+                    }.onAppear{selectedPhotoQuality = PhotoQuality(rawValue: UserView.defaults.double(forKey: "photoQuality")) ?? .high}
                 }
                 
                 
@@ -122,16 +122,17 @@ struct UserView: View {
                         Text("Onboarding wiederholen")
                         
                     }).onAppear(perform: {
-                        defaults.set(false, forKey: "realOnboarding")
+                        UserView.defaults.set(false, forKey: "realOnboarding")
                     })
                 }
                 
                 Button("Sichern")
                 {
-                    defaults.set(selectedPhotoQuality.rawValue, forKey: "photoQuality")
+                    UserView.defaults.set(selectedPhotoQuality.rawValue, forKey: "photoQuality")
                     userSettings.saveImage(image: self.image)
-                    defaults.set(csvData, forKey: "csvData")
-                    print(csvData)
+                    UserView.defaults.set(csvData, forKey: "csvData")
+                    
+                    print("PRINT \(csvData)")
                     dismiss()
                     print("Button Saved was pressed")
                 }
