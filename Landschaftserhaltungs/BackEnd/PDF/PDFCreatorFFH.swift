@@ -46,6 +46,8 @@ class PDFCreatorFFH
         var photoQuality = defaults.double(forKey: "photoQuality")
         var allPlants : [PlantMatcher] = []
         var counterRedList : Int = 0
+        var counterLeannessIndicator : Int = 0
+        var counterAffectingSpecies : Int = 0
         
         
         for i in listEntry.PlantArray
@@ -81,7 +83,11 @@ class PDFCreatorFFH
         var stronglyEndangered : String = "stark gefährdet: "
         var endangered : String = "gefährdet: "
         var preWarningList : String = "Vorwarnliste: "
-        var textForPDF : String = ""
+        var textRedListForPDF : String = ""
+        var textLeannessIndicatorForPDF : String = ""
+        var textAffectingSpeciesForPDF : String = ""
+    
+    
         
         
         for i in allPlants
@@ -115,31 +121,46 @@ class PDFCreatorFFH
                 preWarningList += "\(i.getGermanName()) (\(i.getScientificName())) \n"
                 counterRedList+=1
             }
+            
+            if(i.getReating3() == "X")
+            {
+                textLeannessIndicatorForPDF += "\(i.getGermanName()) (\(i.getScientificName())) \n"
+                counterLeannessIndicator += 1
+            }
+            
+            
+            if(i.getReating1a() == "X" || i.getReating1b() == "X" || i.getReating1c() == "X" ||  i.getReating1d() == "X" )
+            {
+                textAffectingSpeciesForPDF += "\(i.getGermanName()) (\(i.getScientificName())) \n"
+                counterAffectingSpecies += 1
+            }
+            
+            
         }
         
         if(extinctOrLost != "ausgestorben oder verschollen: ")
         {
-            textForPDF += extinctOrLost
+            textRedListForPDF += extinctOrLost
         }
         
         if(endangeredByExtinction != "vom Aussterben bedroht: ")
         {
-            textForPDF += endangeredByExtinction
+            textRedListForPDF += endangeredByExtinction
         }
         
         if(stronglyEndangered != "stark gefährdet: ")
         {
-            textForPDF += stronglyEndangered
+            textRedListForPDF += stronglyEndangered
         }
         
         if(endangered != "gefährdet: ")
         {
-            textForPDF += endangered
+            textRedListForPDF += endangered
         }
         
         if(preWarningList != "Vorwarnliste: ")
         {
-            textForPDF += preWarningList
+            textRedListForPDF += preWarningList
         }
         
         
@@ -197,13 +218,13 @@ class PDFCreatorFFH
             ["Blühaspekt",     "\(listEntry.infos?.bloomAspect ?? "No Value")"],
             ["Artenzahl\n gesamt",  "\(listEntry.PlantArrayLongTerm.count + listEntry.PlantArray.count)"],
             ["Artenzahl Schnellaufnahme",  "\(listEntry.PlantArray.count)"],
-            ["Anzahl Rote\n Liste BW",    "Anzahl: \(counterRedList)\n\(textForPDF)"],
+            ["Anzahl Rote\n Liste BW",    "Anzahl: \(counterRedList)\n\(textRedListForPDF)"],
             ["Bewertung Arteninventar",    "\(listEntry.infos?.evaluationSpeciesInventory ?? "No Value")"],
             ["Bewertung Habitatsstruktur",    "\(listEntry.infos?.assessmentHabitatStructure ?? "No Value")"],
             ["Bewertung Beeinträchtigung",    "\(listEntry.infos?.ratingImpairment ?? "No Value")"],
             ["Gesamtbewertung Erhaltungszustand",    "\(listEntry.infos?.overallAssessmentOfTheStateOfPreservation ?? "No Value")"],
-            ["Magerkeitszeiger",    "No Value"],
-            ["Beeinträchtigende Arten",    "No Value"],
+            ["Magerkeitszeiger",    "Anzahl: \(counterLeannessIndicator)\n\(textLeannessIndicatorForPDF)"],
+            ["Beeinträchtigende Arten",    "Anzahl: \(counterAffectingSpecies)\n\(textAffectingSpeciesForPDF)"],
             ["Schutzstatus",  "\(listEntry.infos?.protectionStatus ?? "No Value")"],
             ["Faunistische\n Beobachtung",     "\(listEntry.infos?.faunisticObservation ?? "No Value")"],
             ["Vertragsziel\n erfüllt",     "\(listEntry.infos?.contractTarget ?? "No Value")"],
