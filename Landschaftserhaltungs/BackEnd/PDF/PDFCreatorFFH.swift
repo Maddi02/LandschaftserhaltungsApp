@@ -44,6 +44,111 @@ class PDFCreatorFFH
         let document = PDFDocument(format: .a4)
         let imageElementHeader = PDFImage(image: userSettings.getImage() , size: CGSize(width: 150, height: 80))
         var photoQuality = defaults.double(forKey: "photoQuality")
+        var allPlants : [PlantMatcher] = []
+        var counterRedList : Int = 0
+        
+        
+        for i in listEntry.PlantArray
+        {
+            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.evaluation1a ?? " " , reating1b: i.evaluation1b ?? " ", reating1c: i.evaluation1c ?? " " , reating1d: i.evaluation1d ?? " " , reating2: i.evaluation2 ?? " " , reating3: i.evaluation3 ?? " ",frequency: i.frequency ?? " " , noun: i.noun ?? " "))
+        }
+        
+        for i in listEntry.PlantArrayLongTerm
+        {
+            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.evaluation1a ?? " " , reating1b: i.evaluation1b ?? " ", reating1c: i.evaluation1c ?? " " , reating1d: i.evaluation1d ?? " " , reating2: i.evaluation2 ?? " " , reating3: i.evaluation3 ?? " ",frequency: i.frequency ?? " " , noun: i.noun ?? " "))
+        }
+        
+        allPlants = allPlants.sorted{$0.getScientificName() < $1.getScientificName()}
+        
+        
+        
+        
+        // let tablePlant = PDFTable(rows: 50 , columns: 3)
+        
+        // tablePlant.content = [ ["WN" , "DN" , "1a","1b","1c","1d","2","3","RD"]]
+        
+        /*
+         for i in allPlants
+         {
+         tablePlant[colum : 0][0].content =  "\(i.getScientificName()) , \(i.getGermanName()) , \(setCross(checked: i.getReating1a())),\(setCross(checked: i.getReating1b())), \(setCross(checked: i.getReating1c())), \(setCross(checked: i.getReating1d())), \(setCross(checked: i.getReating2())),  \(setCross(checked: i.getReating3())), \(i.getRedList())".asTableContent
+         }
+         */
+        
+        
+        
+        var extinctOrLost : String = "ausgestorben oder verschollen: "
+        var endangeredByExtinction : String = "vom Aussterben bedroht: "
+        var stronglyEndangered : String = "stark gefährdet: "
+        var endangered : String = "gefährdet: "
+        var preWarningList : String = "Vorwarnliste: "
+        var textForPDF : String = ""
+        
+        
+        for i in allPlants
+        {
+            if(i.getRedList() == "0")
+            {
+                extinctOrLost += "\(i.getGermanName()) (\(i.getScientificName())) \n"
+                counterRedList+=1
+            }
+            
+            if(i.getRedList() == "1")
+            {
+                endangeredByExtinction += "\(i.getGermanName()) (\(i.getScientificName())) \n"
+                counterRedList+=1
+            }
+            
+            if(i.getRedList() == "2")
+            {
+                stronglyEndangered += "\(i.getGermanName()) (\(i.getScientificName())) \n"
+                counterRedList+=1
+            }
+            
+            if(i.getRedList() == "3")
+            {
+                endangered += "\(i.getGermanName()) (\(i.getScientificName())) \n"
+                counterRedList+=1
+            }
+            
+            if(i.getRedList() == "V")
+            {
+                preWarningList += "\(i.getGermanName()) (\(i.getScientificName())) \n"
+                counterRedList+=1
+            }
+        }
+        
+        if(extinctOrLost != "ausgestorben oder verschollen: ")
+        {
+            textForPDF += extinctOrLost
+        }
+        
+        if(endangeredByExtinction != "vom Aussterben bedroht: ")
+        {
+            textForPDF += endangeredByExtinction
+        }
+        
+        if(stronglyEndangered != "stark gefährdet: ")
+        {
+            textForPDF += stronglyEndangered
+        }
+        
+        if(endangered != "gefährdet: ")
+        {
+            textForPDF += endangered
+        }
+        
+        if(preWarningList != "Vorwarnliste: ")
+        {
+            textForPDF += preWarningList
+        }
+        
+        
+        
+        
+        
+        
+        
+        
         
         if photoQuality == 0
         {
@@ -92,7 +197,7 @@ class PDFCreatorFFH
             ["Blühaspekt",     "\(listEntry.infos?.bloomAspect ?? "No Value")"],
             ["Artenzahl\n gesamt",  "\(listEntry.PlantArrayLongTerm.count + listEntry.PlantArray.count)"],
             ["Artenzahl Schnellaufnahme",  "\(listEntry.PlantArray.count)"],
-            ["Anzahl Rote\n Liste BW",    "Sunlight shining through the leafs."],
+            ["Anzahl Rote\n Liste BW",    "Anzahl: \(counterRedList)\n\(textForPDF)"],
             ["Bewertung Arteninventar",    "\(listEntry.infos?.evaluationSpeciesInventory ?? "No Value")"],
             ["Bewertung Habitatsstruktur",    "\(listEntry.infos?.assessmentHabitatStructure ?? "No Value")"],
             ["Bewertung Beeinträchtigung",    "\(listEntry.infos?.ratingImpairment ?? "No Value")"],
@@ -116,7 +221,7 @@ class PDFCreatorFFH
         
         
         //Body Third Page
-        var allPlants : [PlantMatcher] = []
+
         
         for i in listEntry.infos?.pictureArray ?? []
         {
@@ -129,31 +234,9 @@ class PDFCreatorFFH
         
         //Body XXX Page
         
-        for i in listEntry.PlantArray
-        {
-            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.evaluation1a ?? " " , reating1b: i.evaluation1b ?? " ", reating1c: i.evaluation1c ?? " " , reating1d: i.evaluation1d ?? " " , reating2: i.evaluation2 ?? " " , reating3: i.evaluation3 ?? " ",frequency: i.frequency ?? " " , noun: i.noun ?? " "))
-        }
-        
-        for i in listEntry.PlantArrayLongTerm
-        {
-            allPlants.append(PlantMatcher(scientificName: i.scientificName ?? " ", germanName: i.germanName ?? " ", redList: i.redListBw ?? " ", reating1a: i.evaluation1a ?? " " , reating1b: i.evaluation1b ?? " ", reating1c: i.evaluation1c ?? " " , reating1d: i.evaluation1d ?? " " , reating2: i.evaluation2 ?? " " , reating3: i.evaluation3 ?? " ",frequency: i.frequency ?? " " , noun: i.noun ?? " "))
-        }
-        
-        allPlants = allPlants.sorted{$0.getScientificName() < $1.getScientificName()}
+       
         
         
-        
-        
-        // let tablePlant = PDFTable(rows: 50 , columns: 3)
-        
-        // tablePlant.content = [ ["WN" , "DN" , "1a","1b","1c","1d","2","3","RD"]]
-        
-        /*
-         for i in allPlants
-         {
-         tablePlant[colum : 0][0].content =  "\(i.getScientificName()) , \(i.getGermanName()) , \(setCross(checked: i.getReating1a())),\(setCross(checked: i.getReating1b())), \(setCross(checked: i.getReating1c())), \(setCross(checked: i.getReating1d())), \(setCross(checked: i.getReating2())),  \(setCross(checked: i.getReating3())), \(i.getRedList())".asTableContent
-         }
-         */
         document.createNewPage()
         let tablePlant = PDFTable(rows: allPlants.count + 1, columns: 13)
         tablePlant.widths = [0.225, 0.225, 0.05, 0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05, 0.05]
