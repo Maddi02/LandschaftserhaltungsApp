@@ -24,7 +24,7 @@ struct alertViewWrongData : View
     @Environment(\.dismiss) var dismiss
     @State var showAlert : Bool
     var body: some View{
-        Text("Upps.. es sieht so aus, als ob Sie eine invalide Datei geladen hätten. Dies kann folgenden Gründe haben \n1.\nAchten Sie darauf, dass Ihre Datei 10 Zeilen enthält. \n2.\nAchten Sie darauf, dass Ihre Datei in dem Landschaftserhaltungsordner liegt.\n3.\nÜberprüfen Sie, ob Ihre Datei auf .csv endet.\n4.\nHaben Sie ein Datei ausgewählt\n\nÜberprüfen Sie ihr Import wiefolgt: Home Screen -> Profil")
+        Text("Upps.. es sieht so aus, als ob Sie eine invalide Datei geladen hätten. Dies kann folgenden Gründe haben \n1.\nAchten Sie darauf, dass Ihre Datei 9 Reihen enthält. \n2.\nAchten Sie darauf, dass Ihre Datei in dem Landschaftserhaltungsordner liegt.\n3.\nÜberprüfen Sie, ob Ihre Datei auf .csv endet.\n4.\nHaben Sie ein Datei ausgewählt\n\nÜberprüfen Sie ihr Import wiefolgt: Home Screen -> Profil")
             Button("Zurück", role: .cancel) {
               dismiss()
             }

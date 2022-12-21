@@ -158,7 +158,7 @@ struct UserView: View {
                 
                 
                 Section(header: Text("Onboarding")){
-                    NavigationLink(destination: ReOnboardingFlowView(), label: {
+                    NavigationLink(destination: OnboardingFlowView(), label: {
                         Text("Onboarding wiederholen")
                         
                     }).onAppear(perform: {

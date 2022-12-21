@@ -1,9 +1,4 @@
-//
-//  DocumentPickerCoordinator.swift
-//  Landschaftserhaltungs
-//
-//  Created by Martin Hummel on 16.12.22.
-//
+
 
 import Foundation
 import UIKit
