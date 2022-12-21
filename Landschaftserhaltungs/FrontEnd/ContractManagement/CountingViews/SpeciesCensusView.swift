@@ -66,14 +66,18 @@ struct SpeciesCensusView: View {
                 {
                     if(typeOfField == "FFH Mähwiese"){
                         
-                        Text("INFO").frame(maxWidth: .infinity, alignment: .top).font(.title2).padding()
                         
-                        Text("Feldtypauswahl: \(typeOfField) - Artenzählung Info \n\n 1. Schnellaufnahme \n Hier können Sie unten einen Timer starten und die gefundenen Pflanzen aus der Artenliste auswählen. Wenn die Schnellaufnahme beendet werden soll, drücken Sie auf „Weiter“. \n\n 2. Weitere Arten \n An dieser Stelle gibt es keinen Timer mehr und Sie können weitere Pflanzen, die im ersten Durchlauf nicht erfasst wurden, hinzufügen. \n 1 und 2 können nicht wiederholt werden. \n\n 3. Informationen \n Als letztes können Sie übrige Informationen für den Bericht hinzufügen. Die Eingaben können nachträglich verändert oder ergänzt werden. ").padding(.top).padding(.leading)
+                        Text("INFO").frame(maxWidth: .infinity, alignment: .top).font(.title2).padding()
+                        Group{
+                            Text("Feldtypauswahl: \(typeOfField) - Artenzählung Info \n\n1. Schnellaufnahme \nHier können Sie unten einen Timer starten und die gefundenen Pflanzen aus der Artenliste auswählen. Wenn die Schnellaufnahme beendet werden soll, drücken Sie auf „Weiter“")
+                            Text("2. Weitere Arten \nAn dieser Stelle gibt es keinen Timer mehr und Sie können weitere Pflanzen, die im ersten Durchlauf nicht erfasst wurden, hinzufügen. \n1 und 2 können nicht wiederholt werden.")
+                            Text("3. Informationen \nAls letztes können Sie übrige Informationen für den Bericht hinzufügen. Die Eingaben können nachträglich verändert oder ergänzt werden.")
+                        }.padding()
                     }
                     
                     else {
                         Text("INFO").frame(maxWidth: .infinity, alignment: .top).font(.title2).padding()
-                        Text("Feldtypauswahl: \(typeOfField) - Artenzählung Info \n\n Hier müssen Sie im folgenden eine genaue Aufnahme der Pflanzen durchführen. Anschließend können Sie übrige Informationen für den Bericht hinzufügen. Die Eingaben können nachträglich verändert oder ergänzt werden.").padding(.top).padding(.leading)
+                        Text("Feldtypauswahl: \(typeOfField) - Artenzählung Info \n\nHier müssen Sie im folgenden eine genaue Aufnahme der Pflanzen durchführen. Anschließend können Sie übrige Informationen für den Bericht hinzufügen. Die Eingaben können nachträglich verändert oder ergänzt werden.").padding(.top).padding(.leading)
                         
                         
                     }
