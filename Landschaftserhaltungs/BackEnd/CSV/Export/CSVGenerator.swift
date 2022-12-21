@@ -84,7 +84,9 @@ class CSVGenerator
         let output = OutputStream.toMemory()
         
         let csvWriter = CHCSVWriter(outputStream: output, encoding: String.Encoding.utf8.rawValue, delimiter: ",".utf16.first!)
-        
+        var counterRedList : Int = 0
+        var counterLeannessIndicator : Int = 0
+        var counterIdentifier : Int = 0
         
         //HEADER FOR CSV File
         csvWriter?.writeField("Wissenschaftlicher Name")
@@ -96,10 +98,7 @@ class CSVGenerator
         csvWriter?.writeField("1d")
         csvWriter?.writeField("2")
         csvWriter?.writeField("3")
-        csvWriter?.writeField("6510 Kennarten")
-        csvWriter?.writeField("6510 Zählarten")
-        csvWriter?.writeField("N - Zahl")
-        csvWriter?.writeField("F - Zahl")
+        csvWriter?.writeField("Kennarten")
         csvWriter?.writeField("Häufigkeit")
         csvWriter?.writeField("")
         csvWriter?.writeField("")
@@ -124,6 +123,52 @@ class CSVGenerator
         allPlants = allPlants.sorted{$0.getScientificName() < $1.getScientificName()}
         
         
+        for i in allPlants
+        {
+            if(i.getRedList() == "0")
+            {
+                counterRedList+=1
+            }
+            
+            if(i.getRedList() == "1")
+            {
+                counterRedList+=1
+            }
+            
+            if(i.getRedList() == "2")
+            {
+                counterRedList+=1
+            }
+            
+            if(i.getRedList() == "3")
+            {
+                counterRedList+=1
+            }
+            
+            if(i.getRedList() == "V")
+            {
+
+                counterRedList+=1
+            }
+            
+            if(i.getReating3() == "X")
+            {
+                counterLeannessIndicator += 1
+            }
+            
+            if(i.getNoun() == "6510" || i.getNoun() == "6520")
+            {
+                counterIdentifier += 1
+            }
+            
+        }
+        
+        
+        
+        
+        
+        
+        
         
         for(i) in allPlants.enumerated()
         {
@@ -134,7 +179,9 @@ class CSVGenerator
             csvWriter?.writeField(i.element.getReating1b())
             csvWriter?.writeField(i.element.getReating1c())
             csvWriter?.writeField(i.element.getReating1d())
+            csvWriter?.writeField(i.element.getReating2())
             csvWriter?.writeField(i.element.getReating3())
+            csvWriter?.writeField(i.element.getNoun())
             csvWriter?.writeField(i.element.getFrequency())
          
             
@@ -157,8 +204,7 @@ class CSVGenerator
         csvWriter?.writeField("")
         csvWriter?.writeField("")
         csvWriter?.writeField("Anzahl Arten insgesamt")
-        csvWriter?.writeField("38")
-        csvWriter?.writeField("28")
+        csvWriter?.writeField(allPlants.count)
         csvWriter?.finishLine()
         csvWriter?.writeField("")
         csvWriter?.writeField("")
@@ -175,94 +221,10 @@ class CSVGenerator
         csvWriter?.writeField("")
         csvWriter?.writeField("")
         csvWriter?.writeField("")
-        csvWriter?.writeField("Anzahl Arten Schnellaufnahme")
-        csvWriter?.writeField("8")
-        csvWriter?.writeField("18")
+        csvWriter?.writeField("Anzahl Kennarten")
+        csvWriter?.writeField(counterIdentifier)
+        csvWriter?.finishLine()
 
-        csvWriter?.finishLine()
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("Anzahl Kennarten 6510")
-        csvWriter?.writeField("8")
-        csvWriter?.writeField("18")
-        
-        
-        csvWriter?.finishLine()
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("Anzahl Zählarten 6510")
-        csvWriter?.writeField("8")
-        csvWriter?.writeField("18")
-        
-        csvWriter?.finishLine()
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("Mittlere N - Zahl")
-        csvWriter?.writeField("8")
-        csvWriter?.writeField("18")
-        
-        csvWriter?.finishLine()
-        
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("")
-        csvWriter?.writeField("Mittlere F - Zahl")
-        csvWriter?.writeField("8")
-        csvWriter?.writeField("18")
-        
-        csvWriter?.finishLine()
-        
         csvWriter?.writeField("")
         csvWriter?.writeField("")
         csvWriter?.writeField("")
@@ -279,12 +241,27 @@ class CSVGenerator
         csvWriter?.writeField("")
         csvWriter?.writeField("")
         csvWriter?.writeField("Anzahl Magerkeitszeiger")
-        csvWriter?.writeField("8")
-        csvWriter?.writeField("18")
-        
+        csvWriter?.writeField(counterLeannessIndicator)
         csvWriter?.finishLine()
         
-        
+        csvWriter?.writeField("")
+        csvWriter?.writeField("")
+        csvWriter?.writeField("")
+        csvWriter?.writeField("")
+        csvWriter?.writeField("")
+        csvWriter?.writeField("")
+        csvWriter?.writeField("")
+        csvWriter?.writeField("")
+        csvWriter?.writeField("")
+        csvWriter?.writeField("")
+        csvWriter?.writeField("")
+        csvWriter?.writeField("")
+        csvWriter?.writeField("")
+        csvWriter?.writeField("")
+        csvWriter?.writeField("")
+        csvWriter?.writeField("Anzahl Rote Liste")
+        csvWriter?.writeField(counterRedList)
+        csvWriter?.finishLine()
         
         
         csvWriter?.closeStream()
