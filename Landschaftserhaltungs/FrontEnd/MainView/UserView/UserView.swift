@@ -38,7 +38,9 @@ struct UserView: View {
     @State private var selectedPhotoQuality: PhotoQuality = .high
     @State private var fileContent = ""
     @State private var showDocumentPicker = false
-
+    @State private var showDocumentPickerCSV = false
+    @State private var showActionSheet  = false
+    @State private var isShownSelectFilesFromFiles = false
 
 
     
@@ -55,11 +57,49 @@ struct UserView: View {
                         .clipShape(Circle())
                         .overlay(Circle().stroke(Color.blue, lineWidth: 2.0))
                     
-                    Button {
-                        self.isShownPhotoLibrary = true
-                        
+                    Button()
+                    {
+                        showActionSheet.toggle()
                     } label: {
-                        Label("Edit", systemImage: "pencil")
+                        HStack{
+                            Image(systemName: "house")
+                                .font(.system(size: 20))
+                            Text("Wähle ein Logo aus")
+                               
+                        } .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                    }.confirmationDialog("Wähle die Bildquelle aus", isPresented: $showActionSheet, titleVisibility: .visible) {
+                        
+                    
+                        Button()
+                        {
+                            showDocumentPicker.toggle()
+                        }label: {
+                                    Text("Wähle ein Bild aus Datein aus")
+                        }
+                      
+                        
+                        
+                        
+                        
+                        Button {
+                            self.isShownPhotoLibrary = true
+                            
+                        } label: {
+                            HStack {
+                                HStack{
+                                    Text("Wähle ein Bild aus der Galerie")
+                                }
+
+                            }
+                        }
+                    }
+                    .sheet(isPresented: $showDocumentPicker)
+                    {
+                        DocumentPicker(content: self.$image)
                     }
                     
                 }.onAppear(perform: {
@@ -96,11 +136,11 @@ struct UserView: View {
                 Section(header: Text("CSV")){
                     Button()
                     {
-                        showDocumentPicker.toggle()
+                        showDocumentPickerCSV.toggle()
                         print(csvData)
                     }label: {
                         Text("Wähle ein CSV Datei aus")
-                    }.sheet(isPresented: $showDocumentPicker)
+                    }.sheet(isPresented: $showDocumentPickerCSV)
                     {
                         DocumentPickerCSV(content: self.$csvData, urlCSV: self.$csvURL)
                     }
