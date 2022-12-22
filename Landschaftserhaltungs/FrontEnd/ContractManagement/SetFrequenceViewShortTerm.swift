@@ -43,7 +43,7 @@ struct SetFrequenceViewShortTerm : View
                 dismiss()
                 
             } .padding()
-                .background(Color.gray)
+                .background(Color(uiColor: UIColor.systemGray5))
                 .foregroundColor(.black)
                 .clipShape(Capsule())
             
@@ -58,7 +58,7 @@ struct SetFrequenceViewShortTerm : View
                 }
                 dismiss()
             } .padding()
-                .background(Color.gray)
+                .background(Color(uiColor: UIColor.systemGray5))
                 .foregroundColor(.black)
                 .clipShape(Capsule())
             
@@ -74,7 +74,7 @@ struct SetFrequenceViewShortTerm : View
                 dismiss()
                 
             } .padding()
-                .background(Color.gray)
+                .background(Color(uiColor: UIColor.systemGray5))
                 .foregroundColor(.black)
                 .clipShape(Capsule())
             
@@ -89,7 +89,7 @@ struct SetFrequenceViewShortTerm : View
                 }
                 dismiss()
             } .padding()
-                .background(Color.gray)
+                .background(Color(uiColor: UIColor.systemGray5))
                 .foregroundColor(.black)
                 .clipShape(Capsule())
             
@@ -104,19 +104,9 @@ struct SetFrequenceViewShortTerm : View
                 }
                 dismiss()
             } .padding()
-                .background(Color.gray)
+                .background(Color(uiColor: UIColor.systemGray5))
                 .foregroundColor(.black)
                 .clipShape(Capsule())
-            
-            Button("Zurück")
-            {
-               dismiss()
-                
-            } .padding()
-                .background(Color.gray)
-                .foregroundColor(.black)
-                .clipShape(Capsule())
-            
         }
         
         
