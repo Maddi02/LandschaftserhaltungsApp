@@ -65,7 +65,7 @@ struct ManageContractView: View {
                                
                                      
                                             HStack(spacing: 0) {
-                                                Text("Vertrag bearbeiten")
+                                                Text("Vertrag einsehen / bearbeiten")
                                                 Image(systemName: "slider.horizontal.2.square.on.square")
                                          
                                             }
