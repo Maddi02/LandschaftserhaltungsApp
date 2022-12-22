@@ -310,16 +310,23 @@ struct EditListItemContractArea: View {
 
                     Button("Zurück"){
                         dismiss()
-                    }
+                    }.frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding(.horizontal)
+                        .listRowBackground(Color.blue)
                 }
 
 
             }
 
 
-        }
+        }     .onTapGesture {
+            UIApplication.shared.endEditing()
+                }
         if(listEntry.PlantArray.count > 0 || listEntry.PlantArrayLongTerm.count > 0) {
-            Button("Save") {
+            Button("Speichern") {
                 print("Halllllllloooooo")
                 updateValues()
                 do {
@@ -328,7 +335,12 @@ struct EditListItemContractArea: View {
                     print(error)
                 }
                 dismiss()
-            }
+            }.frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                .padding(.horizontal)
+                .listRowBackground(Color.blue)
         }
 
 

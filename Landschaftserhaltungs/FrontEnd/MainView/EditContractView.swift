@@ -29,7 +29,7 @@ struct EditContractView: View {
     @State private var heightLocation: CGFloat?
     @StateObject var newContractDataModel = NewContractDataModel()
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
+
     var dataHandler : DataHandler
     var manageContractView = ManageContractView()
     let minHeightContractNumber: CGFloat = 30
@@ -62,6 +62,7 @@ struct EditContractView: View {
     }
     private func textDidChangeFirstName(_ textView: UITextView) {
         self.heightFirstName = max(textView.contentSize.height, minHeightFirstName)
+       
     }
     private func textDidChangeLastName(_ textView: UITextView) {
         self.heightLastName = max(textView.contentSize.height, minHeightLastName)
@@ -278,15 +279,16 @@ struct EditContractView: View {
                                 HStack{
                                     Image(systemName: "photo")
                                         .font(.system(size: 20))
-                                    Text("Wähle ein Bild aus der Galerie aus")
+                                    Text("Bild aus Galerie auswählen")
                                 }
                                 .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
                                 .background(Color.blue)
                                 .foregroundColor(.white)
                                 .cornerRadius(10)
                                 .padding(.horizontal)
+                               
                             }
-                        }
+                        } .listRowBackground(Color.blue)
                     }
                     Section(header: Text("")) {
                         Button{
@@ -312,15 +314,20 @@ struct EditContractView: View {
                     .foregroundColor(.white)
                     .cornerRadius(10)
                     .padding(.horizontal)
+                    .listRowBackground(Color.blue)
                     }
     
                     
                 }.navigationBarTitle(Text("Vertrag bearbeiten"))
             }.background(content: BackGroundGradient.getGradient)
+         
             
         }.sheet(isPresented: $isShownPhotoLibrary){
             ImagePicker(changePicture: true, appContract: appContract, sourceType: .photoLibrary, selectedImage: self.$image)
             
         }
+        .onTapGesture {
+            UIApplication.shared.endEditing()
+                }
     }
 }

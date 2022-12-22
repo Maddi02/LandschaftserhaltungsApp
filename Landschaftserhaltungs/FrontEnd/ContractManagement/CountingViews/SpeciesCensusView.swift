@@ -68,16 +68,19 @@ struct SpeciesCensusView: View {
                         
                         
                         Text("INFO").frame(maxWidth: .infinity, alignment: .top).font(.title2).padding()
+          
                         Group{
                             Text("Feldtypauswahl: \(typeOfField) - Artenzählung Info \n\n1. Schnellaufnahme \nHier können Sie unten einen Timer starten und die gefundenen Pflanzen aus der Artenliste auswählen. Wenn die Schnellaufnahme beendet werden soll, drücken Sie auf „Weiter“")
                             Text("2. Weitere Arten \nAn dieser Stelle gibt es keinen Timer mehr und Sie können weitere Pflanzen, die im ersten Durchlauf nicht erfasst wurden, hinzufügen. \n1 und 2 können nicht wiederholt werden.")
-                            Text("3. Informationen \nAls letztes können Sie übrige Informationen für den Bericht hinzufügen. Die Eingaben können nachträglich verändert oder ergänzt werden.")
+                            Text("3. Informationen \nAls letztes könnne Sie die überigen Informationen für den Bericht hinzufügen. Die Eingaben können nachträglich verändert oder ergänzt werden.")
+
                         }.padding()
+                        
                     }
                     
                     else {
                         Text("INFO").frame(maxWidth: .infinity, alignment: .top).font(.title2).padding()
-                        Text("Feldtypauswahl: \(typeOfField) - Artenzählung Info \n\nHier müssen Sie im folgenden eine genaue Aufnahme der Pflanzen durchführen. Anschließend können Sie übrige Informationen für den Bericht hinzufügen. Die Eingaben können nachträglich verändert oder ergänzt werden.").padding(.top).padding(.leading)
+                        Text("Feldtypauswahl: \(typeOfField) - Artenzählung Info \n\nHier müssen Sie im folgenden eine genaue Aufnahme der Pflanzen durchführen. Anschließend können Sie übrige Informationen für den Bericht hinzufügen. Die Eingaben können nachträglich verändert oder ergänzt werden.").padding(.top).padding()
                         
                         
                     }
@@ -90,14 +93,24 @@ struct SpeciesCensusView: View {
                             NavigationLink(destination: SheetSelectPlantsShortTerm(plantSpeciesDataModel: plantSpeciesDataModel, plantSpecies: plantSpeciesDataModel.platList, speciesCensusView: self, listEntry: listEntry)){
                                 
                                 Text("Start")
-                            }
+                            }.frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                                .padding(.horizontal)
+                                .listRowBackground(Color.blue)
                         }
                         else{
                             
                             NavigationLink(destination: SheetSelectPlantsLongTerm(plantSpeciesDataModel: plantSpeciesDataModel , listEntry: listEntry)){
                                 
                                 Text("Start")
-                            }
+                            }.frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                                .padding(.horizontal)
+                                .listRowBackground(Color.blue)
                             
                         }
                         

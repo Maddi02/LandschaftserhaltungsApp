@@ -24,7 +24,11 @@ struct DoneOverview: View {
                 {
                     NavigationUtil.popToRootView()
                 }
-            }
+            } .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                .padding(.horizontal)
         }
     }
 }

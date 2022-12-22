@@ -28,7 +28,7 @@ struct ManageContractView: View {
     
     var body: some View {
         VStack(alignment: .leading){
-            Text("Verträge Verwaltung").font(.title2)
+            Text("Vertragsverwaltung").font(.title2).padding(.leading)
             
             Button {
                 showingSheet.toggle()

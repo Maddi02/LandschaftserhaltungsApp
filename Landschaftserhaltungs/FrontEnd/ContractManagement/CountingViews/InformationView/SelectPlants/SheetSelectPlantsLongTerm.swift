@@ -70,7 +70,12 @@ struct SheetSelectPlantsLongTerm: View {
                         saveEntrysLongTerm()
                     })
                     {
-                        Text("Save & geh zur nächsten Seite")
+                        Text("Weiter").frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                            .listRowBackground(Color.blue)
                     }.navigationBarBackButtonHidden(true)
         
         

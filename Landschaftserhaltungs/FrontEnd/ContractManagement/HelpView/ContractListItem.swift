@@ -20,7 +20,7 @@ struct ContractListItem: View {
     var body: some View {
         
         HStack(){
-            Image(uiImage: image).resizable().scaledToFit()
+            Image(uiImage: image).resizable().scaledToFit().padding(.leading)
             VStack(alignment: .leading)
             {
                 Text("Inhaber")

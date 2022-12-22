@@ -10,10 +10,9 @@ import SwiftUI
 struct RepeatOnboarding: View {
     var body: some View {
         VStack {
-            Group{
-                Text("Das Onboarding kann über das Profil Icon im Hauptmenü wiederholt werden.\n")
-                    .multilineTextAlignment(.center)
-            }
+            Text("Das Onboarding kann über das Profil Icon im Hauptmenü wiederholt werden.\n")
+                .multilineTextAlignment(.center)
+                .padding()
         }
     }
 }

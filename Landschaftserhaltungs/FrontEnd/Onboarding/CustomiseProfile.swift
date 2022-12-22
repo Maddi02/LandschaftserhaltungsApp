@@ -10,22 +10,24 @@ import SwiftUI
 struct CustomiseProfile: View {
     var body: some View {
         VStack {
-            Group{
-                Text("Profil anpassen\n")
-                    .multilineTextAlignment(.center)
-            }
-            Group{
-                Text("Im Hauptmenü können Sie über das Profil Icon Ihren Namen und das Logo anpassen (Der Name und das Logo werden im PDF-Bericht angezeigt).\n")
-                    .multilineTextAlignment(.center)
-            }
-            Group{
-                Text("Außerdem können hier noch die Sprache der Pflanzennamen, die in der Artenliste angezeigt werden sollen, und die Qualität der in der App gespeicherten Bilder angepasst werden.\n")
-                    .multilineTextAlignment(.center)
-            }
-            Group{
-                Text("Über “CSV auswählen” können Sie eine Artenliste importieren, die für die Artenzählung genutzt wird (Wenn keine CSV-Datei ausgewählt wird, funktioniert die Artenzählung u.a. nicht).\n")
-                    .multilineTextAlignment(.center)
-            }
+            
+            Text("Profil anpassen")
+                .multilineTextAlignment(.center)
+                .padding()
+            
+            
+            Text("Im Hauptmenü können Sie über das Profil Icon Ihren Namen und das Logo anpassen (Der Name und das Logo werden im PDF-Bericht angezeigt).")
+                .multilineTextAlignment(.center)
+                .padding()
+            
+            
+            Text("Außerdem können hier noch die Sprache der Pflanzennamen, die in der Artenliste angezeigt werden sollen, und die Qualität der in der App gespeicherten Bilder angepasst werden.")
+                .multilineTextAlignment(.center)
+                .padding()
+            
+            Text("Über “CSV auswählen” können Sie eine Artenliste importieren, die für die Artenzählung genutzt wird (Wenn keine CSV-Datei ausgewählt wird, funktioniert die Artenzählung u.a. nicht).")
+                .multilineTextAlignment(.center)
+                .padding()
         }
     }
 }

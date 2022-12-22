@@ -23,13 +23,13 @@ struct FrequencyEstimationFieldGerman: View {
         
         VStack(alignment: .leading){
             
-            Text("Häufigkeitsschätzung").font(.title2).frame(maxWidth: .infinity, alignment: .top)
+            Text("Häufigkeitsschätzung").font(.title2).frame(maxWidth: .infinity, alignment: .topLeading).padding()
             
-            Text("w - wenige")
-            Text("m - mehrere")
-            Text("z - zahlreich")
-            Text("s - sehr viele")
-            Text("d - dominant")
+            Text("w - wenige").padding(.leading)
+            Text("m - mehrere").padding(.leading)
+            Text("z - zahlreich").padding(.leading)
+            Text("s - sehr viele").padding(.leading)
+            Text("d - dominant").padding(.leading)
             
             
             if (typeOfField == "Anderes Biotop"){
