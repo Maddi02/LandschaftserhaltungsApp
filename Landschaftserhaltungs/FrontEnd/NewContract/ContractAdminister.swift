@@ -41,7 +41,7 @@ import SwiftUI
         
         VStack{
 
-            Text("Vetragsflächen:").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
+            Text("Teilflächen:").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
             Button(action: {
                 showingOptions.toggle()
                 
