@@ -62,7 +62,7 @@ struct SheetSelectPlantsLongTerm: View {
                 .overlay(sectionIndexTitles(proxy: proxy))
            
             
-                .navigationBarTitle("Genau Aufnahme").padding()
+                .navigationBarTitle("Weitere Arten").padding()
           
         }
         
