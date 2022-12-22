@@ -73,7 +73,12 @@ struct SheetSelectPlantsShortTerm: View {
                 speciesCensusView.saveEntrys()
                 
             }){
-                Text("Save & Go to Genaue Aufnahme")
+                Text("Weiter").frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .padding(.horizontal)
+                    .listRowBackground(Color.blue)
             }.padding(.bottom, 30)
             
             TimerView(sheetSelectPlants: self).frame(maxWidth: .infinity, maxHeight: 30)

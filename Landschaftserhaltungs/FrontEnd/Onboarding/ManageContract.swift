@@ -10,30 +10,20 @@ import SwiftUI
 struct ManageContract: View {
     var body: some View {
         VStack {
-            Group{
-                Text("Verträge verwalten\n")
-                    .multilineTextAlignment(.center)
-            }
-            Group{
-                Text("Hier sehen Sie alle angelegten Verträge und können diese über das Icon oben links sortieren.\n")
-                    .multilineTextAlignment(.center)
-            }
-            Group{
-                Text("Wenn sie einen angelegten Vertrag nach rechts wischen, können sie die eingegebenen Informationen erneut einsehen oder bearbeiten.\n")
-                    .multilineTextAlignment(.center)
-            }
-            Group{
-                Text("[Screenshot Beispiel bearbeiten]\n")
-                    .multilineTextAlignment(.center)
-            }
-            Group{
-                Text("Wenn Sie nach links wischen, löschen Sie den Vertrag.\n")
-                    .multilineTextAlignment(.center)
-            }
-            Group{
-                Text("[Screenshot Beispiel löschen]\n")
-                    .multilineTextAlignment(.center)
-            }
+            Text("Verträge verwalten")
+                .multilineTextAlignment(.center)
+                .padding()
+            
+            Text("Hier sehen Sie alle angelegten Verträge und können diese über das Icon oben links sortieren.")
+                .multilineTextAlignment(.center)
+                .padding()
+            Text("Wenn sie einen angelegten Vertrag nach rechts wischen, können sie die eingegebenen Informationen erneut einsehen oder bearbeiten.")
+                .multilineTextAlignment(.center)
+                .padding()
+            Text("Wenn Sie nach links wischen, löschen Sie den Vertrag.")
+                .multilineTextAlignment(.center)
+                .padding()
+            
         }
     }
 }

@@ -25,9 +25,11 @@ struct MainSideView:  View {
             GeometryReader { geometry in
                 
                 NavigationStack() {
-
+                   
                     VStack {
-                
+                        if self.image.cgImage == nil && self.image.ciImage == nil {
+                            Image("LandschaftserhaltungsVerbandLogo")
+                        }
                         Image(uiImage: self.image)
                             .resizable()
                             .scaledToFit()

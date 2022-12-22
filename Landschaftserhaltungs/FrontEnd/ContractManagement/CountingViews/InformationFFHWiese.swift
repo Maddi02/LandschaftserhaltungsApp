@@ -189,12 +189,16 @@ struct InformationFFHWiese: View {
                
                 VStack{
 
-                    Button("Save & Zurück zum Home Screen")
-                    {
+               
+                    Button("Speichern") {
                         save()
                         NavigationUtil.popToRootView()
-                     //   save()
-                    }
+                          }.frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding(.horizontal)
+                        .listRowBackground(Color.blue)
                     
                     
                     
@@ -206,6 +210,9 @@ struct InformationFFHWiese: View {
             }.navigationBarBackButtonHidden(true)
 
             }.navigationTitle("Information").navigationBarBackButtonHidden(true)
+            .onTapGesture {
+                UIApplication.shared.endEditing()
+                    }
  
         }
     

@@ -89,7 +89,12 @@ struct CreateNewPerpetration: View {
                 
                     }
                     dismiss()
-                }.frame(maxWidth: .infinity, alignment: .center)
+                }.frame(maxWidth: .infinity, alignment: .center).frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .padding(.horizontal)
+                    .listRowBackground(Color.blue)
                 
             }
             
@@ -97,7 +102,12 @@ struct CreateNewPerpetration: View {
             
             Button("Abbrechen"){
                 dismiss()
-            }
+            }.frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                .padding(.horizontal)
+                .listRowBackground(Color.blue)
             
         }
     }

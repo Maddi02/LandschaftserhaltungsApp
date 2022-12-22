@@ -186,8 +186,11 @@ public class PlantSpeciesDataModel : ObservableObject
             if(i.components(separatedBy: ",").count != 10)
             {
                 showAlert = true
+                return
             }
-            platList.append(PlantSpecies(row: i.components(separatedBy: ",")))
+            else{
+                platList.append(PlantSpecies(row: i.components(separatedBy: ",")))
+            }
 
         }
         

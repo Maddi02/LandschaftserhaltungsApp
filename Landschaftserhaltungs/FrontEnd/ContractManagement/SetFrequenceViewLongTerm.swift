@@ -18,15 +18,15 @@ struct SetFrequenceViewLongTerm : View
     {
         if(userSettings.getLanguage() == "Deutsch")
         {
-            Text(listentry.germanName ?? "Hhh").font(.title2)
+            Text(listentry.germanName ?? "").font(.title2)
         }
         else
         {
-            Text(listentry.scientificName ?? "Hhh").font(.title2)
+            Text(listentry.scientificName ?? "").font(.title2)
         }
         VStack{
             Text("Ausgewählte Häufigkeit").frame(maxWidth: .infinity , alignment: .center)
-            Text(listentry.frequency ?? "Hhh").frame(maxWidth: .infinity , alignment: .center)
+            Text(listentry.frequency ?? "").frame(maxWidth: .infinity , alignment: .center)
         }
         
         

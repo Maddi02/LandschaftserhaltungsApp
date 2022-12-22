@@ -19,7 +19,7 @@ enum PhotoQuality: Double, CaseIterable, Identifiable
 
 
 struct UserView: View {
-
+    
     @ObservedObject var userSettings = UserSettings()
     @State private var firstName = ""
     @State private var lastName = ""
@@ -41,14 +41,15 @@ struct UserView: View {
     @State private var showDocumentPickerCSV = false
     @State private var showActionSheet  = false
     @State private var isShownSelectFilesFromFiles = false
-
-
+    @State private var refreseh = false
+    
+    
     
     var body: some View {
         NavigationView {
             Form {
                 Text("Logo")
-
+                
                 HStack{
                     Image(uiImage: self.image)
                         .resizable()
@@ -65,7 +66,7 @@ struct UserView: View {
                             Image(systemName: "house")
                                 .font(.system(size: 20))
                             Text("Wähle ein Logo aus")
-                               
+                            
                         } .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
                             .background(Color.blue)
                             .foregroundColor(.white)
@@ -73,14 +74,14 @@ struct UserView: View {
                             .padding(.horizontal)
                     }.confirmationDialog("Wähle die Bildquelle aus", isPresented: $showActionSheet, titleVisibility: .visible) {
                         
-                    
+                        
                         Button()
                         {
                             showDocumentPicker.toggle()
                         }label: {
-                                    Text("Wähle ein Bild aus Datein aus")
+                            Text("Wähle ein Bild aus Datein aus")
                         }
-                      
+                        
                         
                         
                         
@@ -93,7 +94,7 @@ struct UserView: View {
                                 HStack{
                                     Text("Wähle ein Bild aus der Galerie")
                                 }
-
+                                
                             }
                         }
                     }
@@ -106,7 +107,7 @@ struct UserView: View {
                     print("HHHH")
                     self.image = userSettings.getImage()
                 })
-              
+                
                 Section(header: Text("Bearbeitername")) {
                     HStack {
                         TextField("Vorname", text: $userSettings.firstName)
@@ -130,24 +131,43 @@ struct UserView: View {
                     }.frame(maxWidth: .infinity, alignment: .center)
                     
                 }
-
-              
-              
+                
+                
+                
                 Section(header: Text("CSV")){
                     Button()
                     {
                         showDocumentPickerCSV.toggle()
                         print(csvData)
+                        print(csvURL)
+                        
                     }label: {
                         Text("Wähle ein CSV Datei aus")
-                    }.sheet(isPresented: $showDocumentPickerCSV)
+                    }.frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding(.horizontal)
+                        .listRowBackground(Color.blue).cornerRadius(10)
+                        .padding(.horizontal)
+                    
+                        .sheet(isPresented: $showDocumentPickerCSV)
                     {
                         DocumentPickerCSV(content: self.$csvData, urlCSV: self.$csvURL)
+                    }.onAppear(perform: {
+                        refreseh.toggle()
+                    })
+                    
+                    if(UserView.defaults.string(forKey: "csvICloud") ?? "Keine CSV Datei importiert" == csvURL.lastPathComponent )
+                    {
+                        Text(csvURL.lastPathComponent)
                     }
-                    Text(UserView.defaults.string(forKey: "csvICloud") ?? "Keine CSV Datei importiert")
-                    //Text(csvURL.absoluteString)
+                    else{
+                        Text(UserView.defaults.string(forKey: "csvICloud") ?? "Keine CSV Datei importiert")
+                    }
+                    
                 }
-
+                
                 Section(header: Text("Fotoqualität")){
                     Picker("Fotoqualität", selection: $selectedPhotoQuality){
                         Text("hoch").tag(PhotoQuality.high)
@@ -156,36 +176,40 @@ struct UserView: View {
                     }.onAppear{selectedPhotoQuality = PhotoQuality(rawValue: UserView.defaults.double(forKey: "photoQuality")) ?? .high}
                 }
                 
-                
                 Section(header: Text("Onboarding")){
                     NavigationLink(destination: ReOnboardingFlowView(), label: {
                         Text("Onboarding wiederholen")
-                        
                     }).onAppear(perform: {
                         UserView.defaults.set(false, forKey: "realOnboarding")
                     })
                 }
                 
-                Button("Sichern")
+                
+                
+                Button("Speichern")
                 {
                     UserView.defaults.set(selectedPhotoQuality.rawValue, forKey: "photoQuality")
                     userSettings.saveImage(image: self.image)
                     UserView.defaults.set(csvData, forKey: "csvData")
-                    
+                    print(csvURL)
                     print("PRINT \(csvData)")
                     dismiss()
                     print("Button Saved was pressed")
-                }
-                
+                }.frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .padding(.horizontal)
+                    .listRowBackground(Color.blue)
                 
             }.navigationBarTitle(Text("Mein Profil"))
-
+            
         }
         .sheet(isPresented: $isShownPhotoLibrary){
             ImagePicker(changePicture: false,  sourceType: .photoLibrary, selectedImage: self.$image)
         }
     }
     
-
+    
 }
 

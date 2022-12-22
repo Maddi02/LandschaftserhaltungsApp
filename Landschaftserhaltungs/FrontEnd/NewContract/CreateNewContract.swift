@@ -97,6 +97,7 @@ struct CreateNewContract : View
                         
                         
                         
+                        
                         Button()
                         {
                             showActionSheet.toggle()
@@ -104,23 +105,24 @@ struct CreateNewContract : View
                             HStack{
                                 Image(systemName: "airplane")
                                     .font(.system(size: 20))
-                                Text("Wähle eine Luftaufnahme aus")
-                                   
+                                Text("Luftaufnahme auswählen")
+                                
                             } .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
                                 .background(Color.blue)
                                 .foregroundColor(.white)
                                 .cornerRadius(10)
                                 .padding(.horizontal)
-                        }.confirmationDialog("Wähle die Bildquelle aus", isPresented: $showActionSheet, titleVisibility: .visible) {
+                               
+                        }.confirmationDialog("Bildquelle auswählen", isPresented: $showActionSheet, titleVisibility: .visible) {
                             
-                        
+                            
                             Button()
                             {
                                 showDocumentPicker.toggle()
                             }label: {
-                                        Text("Wähle ein Bild aus Datein aus")
+                                Text("Bild aus Datein auswählen")
                             }
-                          
+                            
                             
                             
                             
@@ -131,12 +133,12 @@ struct CreateNewContract : View
                             } label: {
                                 HStack {
                                     HStack{
-                                        Text("Wähle ein Bild aus der Galerie")
+                                        Text("Bild aus der Galerie auswählen")
                                     }
-
+                                    
                                 }
                             }
-                        }
+                        } .listRowBackground(Color.blue)
                         .sheet(isPresented: $showDocumentPicker)
                         {
                             DocumentPicker(content: self.$image)
@@ -158,9 +160,10 @@ struct CreateNewContract : View
                         .foregroundColor(.white)
                         .cornerRadius(10)
                         .padding(.horizontal)
-                    }
                         
                     }
+                        
+                    }.listRowBackground(Color.blue)
                 }.navigationBarTitle(Text("Neuen Vertrag anlegen"))
             }.background(content: BackGroundGradient.getGradient)
             
