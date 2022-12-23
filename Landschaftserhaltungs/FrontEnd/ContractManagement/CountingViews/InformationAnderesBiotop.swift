@@ -101,7 +101,7 @@ struct InformationAnderesBiotop: View {
                         }, label: {
                             
                             HStack{
-                                Text("Füge Bilder hinzu")
+                                Text("Bilder auswählen")
                                 Text(Image(systemName: "camera.on.rectangle.fill"))
                             }.frame(maxWidth: .infinity ,alignment: .center)
                         }).confirmationDialog("Woher soll das Bild genommen werden", isPresented: $showingActionSheet, titleVisibility: .visible) {

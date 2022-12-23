@@ -28,7 +28,7 @@ struct ManageContractView: View {
     
     var body: some View {
         VStack(alignment: .leading){
-            Text("Vertragsverwaltung").font(.title2).padding(.leading)
+            Text("Verträge").font(.title2)
             
             Button {
                 showingSheet.toggle()
@@ -65,7 +65,7 @@ struct ManageContractView: View {
                                
                                      
                                             HStack(spacing: 0) {
-                                                Text("Vertrag bearbeiten")
+                                                Text("Vertrag einsehen / bearbeiten")
                                                 Image(systemName: "slider.horizontal.2.square.on.square")
                                          
                                             }

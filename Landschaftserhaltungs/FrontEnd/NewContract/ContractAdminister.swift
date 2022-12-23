@@ -40,8 +40,8 @@ struct ContractAdminister: View {
         
         
         VStack{
-            
-            Text("Vetragsflächen:").font(.title2).frame(maxWidth: .infinity, alignment: .leading).padding(.leading)
+
+            Text("Teilflächen:").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
             Button(action: {
                 showingOptions.toggle()
                 
