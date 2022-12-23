@@ -112,7 +112,7 @@ struct CreateNewContract : View
                                 .foregroundColor(.white)
                                 .cornerRadius(10)
                                 .padding(.horizontal)
-                               
+                            
                         }.confirmationDialog("Bildquelle auswählen", isPresented: $showActionSheet, titleVisibility: .visible) {
                             
                             
@@ -139,7 +139,7 @@ struct CreateNewContract : View
                                 }
                             }
                         } .listRowBackground(Color.blue)
-                        .sheet(isPresented: $showDocumentPicker)
+                            .sheet(isPresented: $showDocumentPicker)
                         {
                             DocumentPicker(content: self.$image)
                         }
@@ -165,6 +165,18 @@ struct CreateNewContract : View
                         
                     }.listRowBackground(Color.blue)
                 }.navigationBarTitle(Text("Neuen Vertrag anlegen"))
+                    .toolbar {
+                                       ToolbarItemGroup(placement: .keyboard) {
+                                           Spacer()
+                                           Button {
+                                                   dismissKeyboard()
+                                                } label: {
+                                                    Text("Fertig").frame(alignment: .leading)
+                                                }
+                                       }
+                                   }
+                               
+                
             }.background(content: BackGroundGradient.getGradient)
             
         }.sheet(isPresented: $isShownPhotoLibrary){
@@ -172,6 +184,9 @@ struct CreateNewContract : View
         }
     }
     
+    func dismissKeyboard() {
+         UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.endEditing(true) // 4
+       }
     public func testSet()
     {
         self.firstName = "dd"

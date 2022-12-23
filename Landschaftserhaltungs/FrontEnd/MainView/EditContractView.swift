@@ -16,6 +16,8 @@ struct EditContractView: View {
     @State var contractTermination : Int
     @State var showWheelPicker: Bool = false
     @State  var contractDeadline : Date
+    @State  var showActionSheet : Bool = false
+    @State  var showDocumentPicker : Bool = false
     @State private var firstname = String()
     @State private var textStyle = UIFont.TextStyle.body
     @State private var heightContractNumber: CGFloat?
@@ -93,7 +95,17 @@ struct EditContractView: View {
                                         HStack {
                                             WrappedTextView(text: $appContract.firstName.toUnwrapped(defaultValue: ""), textDidChange: self.textDidChangeFirstName)
                                                 .frame(height: heightFirstName ?? minHeightFirstName).background(Color.clear)
+                                            
+                                        }    .toolbar{
+                                            ToolbarItemGroup(placement: .keyboard)
+                                            {
+                                                Button("hh")
+                                                {
+                                                    
+                                                }
+                                            }
                                         }
+                                    
                                         
                                     }
                                     HStack {
@@ -269,38 +281,68 @@ struct EditContractView: View {
                             }
                             
                             Section(header: Text("Übersichtskarte")) {
-                                
-                                Image(uiImage: appContract.picture ?? self.image)
+                                Image(uiImage: self.image)
                                     .resizable()
                                     .scaledToFit()
                                     .frame(minWidth: 0, maxWidth: .infinity)
                                     .edgesIgnoringSafeArea(.all)
                                 
-                                Button {
-                                    self.isShownPhotoLibrary = true
-                                    
+                                
+                                
+                                
+                                Button()
+                                {
+                                    showActionSheet.toggle()
                                 } label: {
-                                    HStack {
-                                        HStack{
-                                            Image(systemName: "photo")
-                                                .font(.system(size: 20))
-                                            Text("Übersichtskarte auswählen")
-                                        }
-                                        .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                                    HStack{
+                                        Image(systemName: "airplane")
+                                            .font(.system(size: 20))
+                                        Text("Übersichtskarte auswählen")
+                                        
+                                    } .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
                                         .background(Color.blue)
                                         .foregroundColor(.white)
                                         .cornerRadius(10)
                                         .padding(.horizontal)
+                                       
+                                }.confirmationDialog("Bildquelle auswählen", isPresented: $showActionSheet, titleVisibility: .visible) {
+                                    
+                                    
+                                    Button()
+                                    {
+                                        showDocumentPicker.toggle()
+                                    }label: {
+                                        Text("Bild aus Datein auswählen")
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    Button {
+                                        self.isShownPhotoLibrary = true
                                         
+                                    } label: {
+                                        HStack {
+                                            HStack{
+                                                Text("Bild aus der Galerie auswählen")
+                                            }
+                                            
+                                        }
                                     }
                                 } .listRowBackground(Color.blue)
+                                .sheet(isPresented: $showDocumentPicker)
+                                {
+                                    DocumentPicker(content: self.$image)
+                                }
+                            
                             }
                             Section(header: Text("")) {
                                 Button{
                                     
                                     
                                     
-                                    dataHandler.updateContract(appContract: appContract, contractDataModel: newContractDataModel, image:dataHandler.getImage(appContract: appContract), contractTermination: contractTermination, contractDeadline: contractDeadline)
+                                    dataHandler.updateContract(appContract: appContract, contractDataModel: newContractDataModel, image:self.image, contractTermination: contractTermination, contractDeadline: contractDeadline)
                                     dataHandler.fetchAppContract()
                                     presentationMode.wrappedValue.dismiss()
                                 }

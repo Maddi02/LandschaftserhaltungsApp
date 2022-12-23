@@ -719,7 +719,7 @@
 				22455CFB29007AF3002876AD /* XCRemoteSwiftPackageReference "SwiftLocation" */,
 				223BB350291144BE0064927A /* XCRemoteSwiftPackageReference "TextView" */,
 				225DFBE929323F59005C7DEC /* XCRemoteSwiftPackageReference "TPPDF" */,
-				225DFBFC29350108005C7DEC /* XCRemoteSwiftPackageReference "CSV.swift" */,
+				225DFBFC29350108005C7DEC /* XCRemoteSwiftPackageReference "CSV" */,
 				225DFC0B2935575A005C7DEC /* XCRemoteSwiftPackageReference "csvkit" */,
 			);
 			productRefGroup = 224F45F928FD80E7004EA74F /* Products */;
@@ -1023,6 +1023,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Landschaftserhaltungs/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LPV;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Aktivieren Sie bitten den Kamerazugriff. ";
@@ -1062,6 +1063,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Landschaftserhaltungs/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LPV;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Aktivieren Sie bitten den Kamerazugriff. ";
@@ -1229,7 +1231,7 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		225DFBFC29350108005C7DEC /* XCRemoteSwiftPackageReference "CSV.swift" */ = {
+		225DFBFC29350108005C7DEC /* XCRemoteSwiftPackageReference "CSV" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/yaslab/CSV.swift";
 			requirement = {
@@ -1255,7 +1257,7 @@
 		};
 		225DFBFD29350108005C7DEC /* CSV */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 225DFBFC29350108005C7DEC /* XCRemoteSwiftPackageReference "CSV.swift" */;
+			package = 225DFBFC29350108005C7DEC /* XCRemoteSwiftPackageReference "CSV" */;
 			productName = CSV;
 		};
 		225DFC0C2935575A005C7DEC /* CSVKit */ = {
