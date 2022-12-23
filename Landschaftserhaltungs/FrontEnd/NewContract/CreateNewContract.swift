@@ -52,7 +52,7 @@ struct CreateNewContract : View
                     Section(header: Text("Vertragsinformationen")) {
                         HStack
                         {
-                            Text("Vertragsabschluss")
+                            Text("Laufzeitbeginn")
                             Spacer()
                             Button(String(newContractDataModel.contractTermination))
                             {
@@ -88,7 +88,7 @@ struct CreateNewContract : View
                     }
                     
                     
-                    Section(header: Text("Karte mit Vertragsflächen")) {
+                    Section(header: Text("Übersichtskarte")) {
                         Image(uiImage: self.image)
                             .resizable()
                             .scaledToFit()
@@ -105,7 +105,7 @@ struct CreateNewContract : View
                             HStack{
                                 Image(systemName: "airplane")
                                     .font(.system(size: 20))
-                                Text("Luftaufnahme auswählen")
+                                Text("Übersichtskarte auswählen")
                                 
                             } .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
                                 .background(Color.blue)

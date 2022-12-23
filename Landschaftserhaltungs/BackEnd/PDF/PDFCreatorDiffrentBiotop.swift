@@ -197,24 +197,24 @@ class PDFCreatorDiffrentBiotop
         table.content = [
             [nil,       "Information"],
             ["Datum",  "\(listEntry.infos?.dataOfTaking ?? Date())"],
-            ["Bewirt-\n schaftung",    "\(listEntry.infos?.farming ?? "No Value")"],
+            ["Bewirt\nschaftung",    "\(listEntry.infos?.farming ?? "No Value")"],
             ["Lage",    "\(listEntry.infos?.position ?? "No Value")"],
-            ["Vegetations-\n beschreibung ",  "\(listEntry.infos?.vegetationDescription ?? "No Value")"],
+            ["Vegetations\nbeschreibung",  "\(listEntry.infos?.vegetationDescription ?? "No Value")"],
             ["Blühaspekt",     "\(listEntry.infos?.bloomAspect ?? "No Value")"],
-            ["Artenzahl\n gesamt",  "\(listEntry.PlantArrayLongTerm.count + listEntry.PlantArray.count)"],
-            ["Anzahl Rote\n Liste BW",    "Anzahl: \(counterRedList)\n\(textRedListForPDF)"],
+            ["Artenzahl\ngesamt",  "\(listEntry.PlantArrayLongTerm.count + listEntry.PlantArray.count)"],
+            ["Anzahl Rote\nListe BW",    "Anzahl: \(counterRedList)\n\(textRedListForPDF)"],
             ["Schutzstatus",   "\(listEntry.infos?.protectionStatus ?? "No Value")"],
-            ["Faunistische\n Beobachtung",    "\(listEntry.infos?.faunisticObservation ?? "No Value")"],
-            ["Vertragsziel\n erfüllt",     "\(listEntry.infos?.contractTarget ?? "No Value")"],
-            ["Anpassung\n Auflagen",     "\(listEntry.infos?.adaptationEditions ?? "No Value")"],
-            ["Weitere\n Pflegeaufnah-\n men",     "\(listEntry.infos?.furtherMaintenanceMeasures ?? "No Value")"]
+            ["Faunistische\nBeobachtung",    "\(listEntry.infos?.faunisticObservation ?? "No Value")"],
+            ["Vertragsziel\nerfüllt",     "\(listEntry.infos?.contractTarget ?? "No Value")"],
+            ["Anpassung\nAuflagen",     "\(listEntry.infos?.adaptationEditions ?? "No Value")"],
+            ["Weitere\nPflegeaufnahmen",     "\(listEntry.infos?.furtherMaintenanceMeasures ?? "No Value")"]
         ]
         
         
         
         
         
-        table.widths = [0.2, 0.8]
+        table.widths = [0.3, 0.7]
         table.rows.allRowsAlignment = [.left, .left]
         document.add(table: table)
     
@@ -233,11 +233,26 @@ class PDFCreatorDiffrentBiotop
         
         //Body XXX Page
         
+        document.createNewPage()
+        
+        
+        document.add(.contentLeft, text: "Legende")
+        document.add(.contentLeft, text: " ")
+        document.add(.contentLeft, text: "WN\t= Wissenschaftlicher Name")
+        document.add(.contentLeft, text: "DN\t\t= Deutscher Name")
+        document.add(.contentLeft, text: "1*\t\t= Beeinflusste Arten")
+        document.add(.contentLeft, text: "2\t\t= Bewertungsneutrale Arten")
+        document.add(.contentLeft, text: "3\t\t= Magerkeitszeiger")
+        document.add(.contentLeft, text: "RT\t\t= Rote Liste")
+        document.add(.contentLeft, text: "FR\t\t= Häufigkeit")
+        document.add(.contentLeft, text: "KN\t\t= Kennart")
+        
+
   
 
         document.createNewPage()
-        let tablePlant = PDFTable(rows: allPlants.count + 1, columns: 13)
-        tablePlant.widths = [0.225, 0.225, 0.05, 0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05, 0.05]
+        let tablePlant = PDFTable(rows: allPlants.count + 1, columns: 11)
+        tablePlant.widths = [0.225, 0.225, 0.05, 0.05,0.05,0.05,0.05,0.05,0.05,0.05, 0.15]
         tablePlant.showHeadersOnEveryPage = false
         tablePlant.rows.allRowsAlignment = [.left, .left, .center, .center, .center, .center, .center,.center, .center, .center]
         
@@ -249,11 +264,9 @@ class PDFCreatorDiffrentBiotop
         tablePlant[0, 5].content = "1d".asTableContent
         tablePlant[0, 6].content = "2".asTableContent
         tablePlant[0, 7].content = "3".asTableContent
-        tablePlant[0, 8].content = "KA".asTableContent
-        tablePlant[0, 9].content = "ZA".asTableContent
-        tablePlant[0, 10].content = "RT".asTableContent
-        tablePlant[0, 11].content = "FR".asTableContent
-        tablePlant[0, 12].content = "KN".asTableContent
+        tablePlant[0, 8].content = "RT".asTableContent
+        tablePlant[0, 9].content = "FR".asTableContent
+        tablePlant[0, 10].content = "KN".asTableContent
         
         for row in 1..<tablePlant.size.rows {
             tablePlant[row, 0].content = "\(allPlants[row-1].getScientificName())".asTableContent
@@ -292,30 +305,16 @@ class PDFCreatorDiffrentBiotop
                 
                 if(column == 8){
                
-                        tablePlant[row, column].content = "\(allPlants[row-1].getReating3())".asTableContent
-                    
-                }
-                
-                
-                if(column == 9){
-                    
-                        tablePlant[row, column].content = "\(allPlants[row-1].getReating3())".asTableContent
-                    
-                }
-                
-                
-                if(column == 10){
-               
                         tablePlant[row, column].content = "\(allPlants[row-1].getRedList())".asTableContent
                     
                 }
-                if(column == 11){
+                if(column == 9){
                
                         tablePlant[row, column].content = "\(allPlants[row-1].getFrequency())".asTableContent
                     
                 }
                 
-                if(column == 12){
+                if(column == 10){
                     tablePlant[row,column].content = "\(allPlants[row-1].getNoun())".asTableContent
                 }
 

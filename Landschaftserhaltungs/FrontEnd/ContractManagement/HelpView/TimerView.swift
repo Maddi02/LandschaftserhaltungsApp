@@ -36,12 +36,21 @@ struct TimerView: View {
                         sheetSelectPlants.selectionActivate()
                         vm.start(minutes: vm.minutes)
                     }.disabled(vm.isActive)
+                        .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding(.horizontal)
                     
                     Button("Reset")
                     {
                         vm.reset()
                         sheetSelectPlants.selectionDeactivate()
-                    }.tint(.red)
+                    }.frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                        .background(Color.red)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding(.horizontal)
                 }.frame(width: width).padding(.top,20)
                 
                 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   version = "1.3">
+   <BuildAction>
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForRunning = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "224F45F728FD80E7004EA74F"
+               BuildableName = "Landschaftserhaltungs.app"
+               BlueprintName = "Landschaftserhaltungs"
+               ReferencedContainer = "container:Landschaftserhaltungs.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <LaunchAction
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Debug"
+      allowLocationSimulation = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "224F45F728FD80E7004EA74F"
+            BuildableName = "Landschaftserhaltungs.app"
+            BlueprintName = "Landschaftserhaltungs"
+            ReferencedContainer = "container:Landschaftserhaltungs.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </LaunchAction>
+</Scheme>

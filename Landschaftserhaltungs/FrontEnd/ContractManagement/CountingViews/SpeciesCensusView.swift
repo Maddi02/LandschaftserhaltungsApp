@@ -24,7 +24,7 @@ struct alertViewWrongData : View
     @Environment(\.dismiss) var dismiss
     @State var showAlert : Bool
     var body: some View{
-        Text("Upps.. es sieht so aus, als ob Sie eine invalide Datei geladen hätten. Dies kann folgenden Gründe haben \n1.\nAchten Sie darauf, dass Ihre Datei 9 Reihen enthält. \n2.\nAchten Sie darauf, dass Ihre Datei in dem Landschaftserhaltungsordner liegt.\n3.\nÜberprüfen Sie, ob Ihre Datei auf .csv endet.\n4.\nHaben Sie ein Datei ausgewählt\n\nÜberprüfen Sie ihr Import wiefolgt: Home Screen -> Profil")
+        Text("Upps.. es sieht so aus, als ob Sie eine invalide Datei geladen hätten. Dies kann folgenden Gründe haben \n1.\nAchten Sie darauf, dass Ihre Datei 10 Reihen enthält und durch Kommas getrennt sind. \n2.\nAchten Sie darauf, dass Ihre Datei in dem Landschaftserhaltungsordner liegt.\n3.\nÜberprüfen Sie, ob Ihre Datei auf .csv endet.\n4.\nHaben Sie ein Datei ausgewählt\n\nÜberprüfen Sie ihr Import wiefolgt: Home Screen -> Profil")
             Button("Zurück", role: .cancel) {
               dismiss()
             }
@@ -69,12 +69,19 @@ struct SpeciesCensusView: View {
                         
                         Text("INFO").frame(maxWidth: .infinity, alignment: .top).font(.title2).padding()
           
-                        Group{
-                            Text("Feldtypauswahl: \(typeOfField) - Artenzählung Info \n\n1. Schnellaufnahme \nHier können Sie unten einen Timer starten und die gefundenen Pflanzen aus der Artenliste auswählen. Wenn die Schnellaufnahme beendet werden soll, drücken Sie auf „Weiter“")
-                            Text("2. Weitere Arten \nAn dieser Stelle gibt es keinen Timer mehr und Sie können weitere Pflanzen, die im ersten Durchlauf nicht erfasst wurden, hinzufügen. \n1 und 2 können nicht wiederholt werden.")
-                            Text("3. Informationen \nAls letztes könnne Sie die überigen Informationen für den Bericht hinzufügen. Die Eingaben können nachträglich verändert oder ergänzt werden.")
+        
+                        Text("Feldtypauswahl: \(typeOfField) - Artenzählung Info")  .frame(maxWidth: .infinity, alignment: .leading).padding(.leading).padding(.top)
 
-                        }.padding()
+                            Text("1. Schnellaufnahme\nHier können Sie unten einen Timer starten und die gefundenen Pflanzen aus der Artenliste auswählen. Wenn die Schnellaufnahme beendet werden soll, drücken Sie auf „Weiter“")  .frame(maxWidth: .infinity, alignment: .leading).padding(.leading).padding(.top)
+
+                            Text("2. Weitere Arten\nAn dieser Stelle gibt es keinen Timer mehr und Sie können weitere Pflanzen, die im ersten Durchlauf nicht erfasst wurden, hinzufügen.")  .frame(maxWidth: .infinity, alignment: .leading).padding(.leading).padding(.top)
+
+                            Text("3. Informationen\nAls letztes können Sie die übrigen Informationen für den Bericht hinzufügen. Die Eingaben können nachträglich verändert oder ergänzt werden.")  .frame(maxWidth: .infinity, alignment: .leading).padding(.leading).padding(.top)
+                        
+                        Text("1 und 2 können nicht wiederholt werden").frame(maxWidth: .infinity, alignment: .center).padding(.top).font(Font.body.bold())
+
+
+              
                         
                     }
                     

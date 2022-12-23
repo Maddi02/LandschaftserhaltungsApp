@@ -29,7 +29,7 @@ struct WelcomeAndGenerateFolder: View {
                 .multilineTextAlignment(.center)
                 .padding()
             
-            Text("In diesem Ordner muss die CSV-Datei enthalten sein, die für die Artenliste importiert werden soll.")
+            Text("In diesem Ordner muss die CSV-Datei enthalten sein, die für die Artenliste importiert werden soll. Hinweis: Google Sheets bietet die Möglichkeit eine CSV - Datei mit kommagetrennten Werten zu downloaden.")
                 .multilineTextAlignment(.center)
                 .padding()
             Text("Achten Sie darauf, dass die Spalten 1a, 1b, ... in der CSV-Datei ausschließlich mit einem großen X gekennzeichet werden (falls zutreffend).")

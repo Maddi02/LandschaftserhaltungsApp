@@ -16,135 +16,143 @@ struct InformationAnderesBiotop: View {
     @StateObject var viewModelPicutre = pictureVM()
     @EnvironmentObject  var vm : ViewModel
     @State private var dataOfTaking = Date()
-    @State private var farming : String = " "
-    @State private var position : String = " "
-    @State private var vegetationDescription : String = " "
-    @State private var bloomAspect : String = " "
-    @State private var ratingImpairment  : String = " "
-    @State private var overallAssessmentOfTheStateOfPreservation  : String = " "
-    @State private var faunisticObservation  : String = " "
-    @State private var contractTarget  : String = " "
-    @State private var protectionStatus  : String = " "
-    @State private var adaptationEditions  : String = " "
-    @State private var furtherMaintenanceMeasures  : String = " "
+    @State private var farming : String = ""
+    @State private var position : String = ""
+    @State private var vegetationDescription : String = ""
+    @State private var bloomAspect : String = ""
+    @State private var ratingImpairment  : String = ""
+    @State private var overallAssessmentOfTheStateOfPreservation  : String = ""
+    @State private var faunisticObservation  : String = ""
+    @State private var contractTarget  : String = ""
+    @State private var protectionStatus  : String = ""
+    @State private var adaptationEditions  : String = ""
+    @State private var furtherMaintenanceMeasures  : String = ""
     @State private var showingActionSheet = false
-   
+    
     
     var body: some View {
-       
+        
         NavigationView{
             VStack{
                 VStack{
                     Form
                     {
-                        Section(header: Text("Datum"))
-                        {
-                            DatePicker(selection: $dataOfTaking,
-                                       displayedComponents: [.date],
-                                       label: { Text("Datum der Begehung") })
-                            
-                        }
-                        
-                        Section(header: Text("Bewirtschaftung"))
-                        {
-                            TextField("Bitte eingeben", text: $farming ,axis: .vertical)
-                            
-                        }
-                        
-                        Section(header: Text("Lage"))
-                        {
-                            TextField("Bitte eingeben", text: $position ,axis: .vertical)
-                        }
-                        
-                        Section(header: Text("Vegetationsbeschreibung"))
-                        {
-                            TextField("Bitte eingeben", text: $vegetationDescription ,axis: .vertical)
-                        }
-                        
-                        Section(header: Text("Blühaspekt"))
-                        {
-                            TextField("Bitte eingeben", text: $bloomAspect ,axis: .vertical)
-                        }
-                        
                         Group{
-                            
-                            Section(header: Text("Faunistische Beobachtungen"))
+                            Section(header: Text("Datum"))
                             {
-                                TextField("Bitte eingeben", text: $faunisticObservation,axis: .vertical )
-                            }
-                            
-                            Section(header: Text("Schutzstatus"))
-                            {
-                                TextField("Bitte eingeben", text: $protectionStatus,axis: .vertical )
-                            }
-                            
-                            Section(header: Text("Vertragsziel erfüllt"))
-                            {
-                                TextField("Bitte eingeben", text: $contractTarget,axis: .vertical )
-                            }
-                            
-                            Section(header: Text("Anpassung Auflagen"))
-                            {
-                                TextField("Bitte eingeben", text: $adaptationEditions,axis: .vertical )
-                            }
-                            
-                            Section(header: Text("Weitere Pflegemaßnahmen"))
-                            {
-                                TextField("Bitte eingeben", text: $furtherMaintenanceMeasures,axis: .vertical )
-                            }
-                            
-                        }
-                        
-                        Button(action: {
-                            print("Select")
-                            showingActionSheet.toggle()
-                        }, label: {
-                            
-                            HStack{
-                                Text("Bilder auswählen")
-                                Text(Image(systemName: "camera.on.rectangle.fill"))
-                            }.frame(maxWidth: .infinity ,alignment: .center)
-                        }).confirmationDialog("Woher soll das Bild genommen werden", isPresented: $showingActionSheet, titleVisibility: .visible) {
-                            
-                            
-                            Button("Foto aufnehmen")
-                            {
-                                vm.source = .camera
-                                vm.showPhotoPicker()
-                            }
-                            
-                            
-                            
-                            Button("Foto aus Galerie wählen")
-                            {
-                                vm.source = .library
-                                vm.showPhotoPicker()
+                                DatePicker(selection: $dataOfTaking,
+                                           displayedComponents: [.date],
+                                           label: { Text("Datum der Begehung") })
                                 
                             }
                             
+                            Section(header: Text("Bewirtschaftung"))
+                            {
+                                TextField("Bitte eingeben", text: $farming ,axis: .vertical)
+                                
+                            }
+                            
+                            Section(header: Text("Lage"))
+                            {
+                                TextField("Bitte eingeben", text: $position ,axis: .vertical)
+                            }
+                            
+                            Section(header: Text("Vegetationsbeschreibung"))
+                            {
+                                TextField("Bitte eingeben", text: $vegetationDescription ,axis: .vertical)
+                            }
+                            
+                            Section(header: Text("Blühaspekt"))
+                            {
+                                TextField("Bitte eingeben", text: $bloomAspect ,axis: .vertical)
+                            }
+                            
+                            Group{
+                                
+                                Section(header: Text("Faunistische Beobachtungen"))
+                                {
+                                    TextField("Bitte eingeben", text: $faunisticObservation,axis: .vertical )
+                                }
+                                
+                                Section(header: Text("Schutzstatus"))
+                                {
+                                    TextField("Bitte eingeben", text: $protectionStatus,axis: .vertical )
+                                }
+                                
+                                Section(header: Text("Vertragsziel erfüllt"))
+                                {
+                                    TextField("Bitte eingeben", text: $contractTarget,axis: .vertical )
+                                }
+                                
+                                Section(header: Text("Anpassung Auflagen"))
+                                {
+                                    TextField("Bitte eingeben", text: $adaptationEditions,axis: .vertical )
+                                }
+                                
+                                Section(header: Text("Weitere Pflegemaßnahmen"))
+                                {
+                                    TextField("Bitte eingeben", text: $furtherMaintenanceMeasures,axis: .vertical )
+                                }
+                            }
+                            
+                            
+                            
+                            
+                        }
+            
+                        VStack{
+                            
+                            Button(action: {
+                                print("Select")
+                                showingActionSheet.toggle()
+                            }, label: {
+                                
+                                HStack{
+                                    Text("Bilder auswählen")
+                                    Text(Image(systemName: "camera.on.rectangle.fill"))
+                                }.frame(maxWidth: .infinity ,alignment: .center)
+                            }).confirmationDialog("Woher soll das Bild genommen werden", isPresented: $showingActionSheet, titleVisibility: .visible) {
+                                
+                                
+                                Button("Foto aufnehmen")
+                                {
+                                    vm.source = .camera
+                                    vm.showPhotoPicker()
+                                }
+                                
+                                
+                                
+                                Button("Foto aus Galerie wählen")
+                                {
+                                    vm.source = .library
+                                    vm.showPhotoPicker()
+                                    
+                                }
+                                
+                            }
                         }
                         
                         List{
-                      
+                            
                             ForEach(viewModelPicutre.pictures)
                             {
                                 i in
                                 
-                              
-                                    ZoomableScrollView {
-                                        Image(uiImage: i.picuture)
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(minWidth: 10, maxWidth: .infinity)
-                                    }.scaledToFit()
-                               
+                                
+                                ZoomableScrollView {
+                                    Image(uiImage: i.picuture)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(minWidth: 10, maxWidth: .infinity)
+                                }.scaledToFit()
+                                
                                 
                             }
-                  
+                            
                             
                         }       .sheet(isPresented: $vm.showPicker){
                             ImagePickerInformationSide(sourceType : vm.source == .library ? .photoLibrary : .camera, selectedImage: $vm.image).ignoresSafeArea()
-                    
+                            
                         }.onChange(of: vm.image, perform: {newValue in
                             
                             if removeUnneadedPicture{
@@ -165,36 +173,47 @@ struct InformationAnderesBiotop: View {
                             Text(cameraError.message)
                         })
                         
+                        
+                        
+                        Button("Speichern")
+                        {
+                            save()
+                            NavigationUtil.popToRootView()
+                            //   save()
+                        } .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                            .listRowBackground(Color.blue)
+                        
+                        
+                        
                     }
-               
-
                     
-                    
-                     VStack{
-
-                         Button("Speichern")
-                         {
-                             save()
-                             NavigationUtil.popToRootView()
-                          //   save()
-                         } .frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
-                             .background(Color.blue)
-                             .foregroundColor(.white)
-                             .cornerRadius(10)
-                             .padding(.horizontal)
-                             .listRowBackground(Color.blue)
-                         
-                         
-                         
-                     }
-
                 }
-            }.navigationTitle("Information")
-        }.navigationBarBackButtonHidden(true)
-            .onTapGesture {
-                UIApplication.shared.endEditing()
+            }.navigationTitle("Informationen")
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Spacer()
+                        Button {
+                                dismissKeyboard()
+                             } label: {
+                                 Text("Fertig").frame(alignment: .leading)
+                             }
                     }
+                }
+            
+        }.navigationBarBackButtonHidden(true)
+        
     }
+    
+    
+    
+    func dismissKeyboard() {
+         UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.endEditing(true) // 4
+       }
+    
     func save()
     {
         print("IN save")
@@ -227,11 +246,11 @@ struct InformationAnderesBiotop: View {
             print("ERROR")
         }
     }
-        
-        func addToList(image : UIImage){
-            let newImage = partFieldArea(picuture: image)
-            viewModelPicutre.pictures.append(newImage)
-        }
+    
+    func addToList(image : UIImage){
+        let newImage = partFieldArea(picuture: image)
+        viewModelPicutre.pictures.append(newImage)
+    }
     
 }
 

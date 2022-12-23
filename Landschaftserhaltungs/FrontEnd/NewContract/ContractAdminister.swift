@@ -41,7 +41,7 @@ struct ContractAdminister: View {
         
         VStack{
 
-            Text("Teilflächen:").font(.title2).frame(maxWidth: .infinity, alignment: .leading)
+            Text("Teilflächen:").font(.title2).frame(maxWidth: .infinity, alignment: .leading).padding(.leading)
             Button(action: {
                 showingOptions.toggle()
                 

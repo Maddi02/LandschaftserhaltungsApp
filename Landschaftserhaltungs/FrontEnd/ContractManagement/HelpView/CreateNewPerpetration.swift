@@ -27,18 +27,15 @@ struct CreateNewPerpetration: View {
 
         VStack{
             Form{
-                Section(header: Text("Vertragsflächen - Details")) {
+                Section(header: Text("Teilflächen - Details")) {
                     HStack {
                         HStack {
-                            Text("Beschreibung")
+                            Text("Name")
                             Spacer()
+                            Text("")
                             
                         }
-                        
-                        HStack {
-                            TextField("Text:", text: $description,axis: .vertical)
-                        }
-                        
+                        TextField("Bitte eingeben:", text: $description,axis: .vertical).frame(width: nil, height: nil, alignment: .trailing)
                     }
                     
                     HStack{
@@ -59,11 +56,20 @@ struct CreateNewPerpetration: View {
                         }
                     }
                     
-                    DatePicker(
-                        "Datum der Begehung",
-                        selection: $date,
-                        displayedComponents: [.date]
-                    ).frame(maxWidth: .infinity, alignment: .center).padding(.trailing,80)
+                    
+                    HStack{
+                        HStack{
+                            Text("Erstellungsdatum")
+                            Spacer()
+                        }
+                        DatePicker(
+                            "",
+                            selection: $date,
+                            displayedComponents: [.date]
+                        )
+                    }
+                    
+                 
                     
                     
                     
