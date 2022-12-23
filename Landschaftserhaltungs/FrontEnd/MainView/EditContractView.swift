@@ -295,7 +295,7 @@ struct EditContractView: View {
                                     showActionSheet.toggle()
                                 } label: {
                                     HStack{
-                                        Image(systemName: "airplane")
+                                        Image(systemName: "map.fill")
                                             .font(.system(size: 20))
                                         Text("Übersichtskarte auswählen")
                                         

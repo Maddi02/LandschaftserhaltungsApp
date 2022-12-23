@@ -6,7 +6,5 @@
 	<string>$(PRODUCT_NAME)</string>
 	<key>UIFileSharingEnabled</key>
 	<true/>
-    
-    
 </dict>
 </plist>

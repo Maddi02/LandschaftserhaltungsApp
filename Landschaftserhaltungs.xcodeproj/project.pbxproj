@@ -66,8 +66,6 @@
 		225DFBEE29338873005C7DEC /* PDFKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DFBED29338873005C7DEC /* PDFKitView.swift */; };
 		225DFBF02933D80F005C7DEC /* PlantMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DFBEF2933D80F005C7DEC /* PlantMatcher.swift */; };
 		225DFBF22934E625005C7DEC /* PDFCreatorFFH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DFBF12934E625005C7DEC /* PDFCreatorFFH.swift */; };
-		225DFBFE29350108005C7DEC /* CSV in Frameworks */ = {isa = PBXBuildFile; productRef = 225DFBFD29350108005C7DEC /* CSV */; };
-		225DFC0D2935575A005C7DEC /* CSVKit in Frameworks */ = {isa = PBXBuildFile; productRef = 225DFC0C2935575A005C7DEC /* CSVKit */; };
 		225DFC112936048D005C7DEC /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 225DFC102936048D005C7DEC /* CHCSVParser.m */; };
 		225DFC1329360790005C7DEC /* CSVGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DFC1229360790005C7DEC /* CSVGenerator.swift */; };
 		225DFC19293629A4005C7DEC /* CSVImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DFC18293629A4005C7DEC /* CSVImport.swift */; };
@@ -246,8 +244,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				225DFBEB29323F59005C7DEC /* TPPDF in Frameworks */,
-				225DFBFE29350108005C7DEC /* CSV in Frameworks */,
-				225DFC0D2935575A005C7DEC /* CSVKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,8 +635,6 @@
 			name = Landschaftserhaltungs;
 			packageProductDependencies = (
 				225DFBEA29323F59005C7DEC /* TPPDF */,
-				225DFBFD29350108005C7DEC /* CSV */,
-				225DFC0C2935575A005C7DEC /* CSVKit */,
 			);
 			productName = Landschaftserhaltungs;
 			productReference = 224F45F828FD80E7004EA74F /* Landschaftserhaltungs.app */;
@@ -1023,7 +1017,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Landschaftserhaltungs/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = LPV;
+				INFOPLIST_KEY_CFBundleDisplayName = LPR;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Aktivieren Sie bitten den Kamerazugriff. ";
@@ -1031,6 +1025,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -1042,11 +1037,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hfu.landschaftserhaltungs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SHARED_PRECOMPS_DIR = "$(OBJROOT)/SharedPrecompiledHeaders";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Landschaftserhaltungs/BackEnd/CSV/Landschaftserhaltungs-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1063,7 +1061,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Landschaftserhaltungs/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = LPV;
+				INFOPLIST_KEY_CFBundleDisplayName = LPR;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Aktivieren Sie bitten den Kamerazugriff. ";
@@ -1071,6 +1069,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -1082,10 +1081,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hfu.landschaftserhaltungs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SHARED_PRECOMPS_DIR = "$(OBJROOT)/SharedPrecompiledHeaders";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Landschaftserhaltungs/BackEnd/CSV/Landschaftserhaltungs-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1254,16 +1256,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 225DFBE929323F59005C7DEC /* XCRemoteSwiftPackageReference "TPPDF" */;
 			productName = TPPDF;
-		};
-		225DFBFD29350108005C7DEC /* CSV */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 225DFBFC29350108005C7DEC /* XCRemoteSwiftPackageReference "CSV" */;
-			productName = CSV;
-		};
-		225DFC0C2935575A005C7DEC /* CSVKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 225DFC0B2935575A005C7DEC /* XCRemoteSwiftPackageReference "csvkit" */;
-			productName = CSVKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 

@@ -62,7 +62,7 @@ struct InformationFFHWiese: View {
                                 TextField("Bitte eingeben", text: $position ,axis: .vertical)
                             }
                             
-                            Section(header: Text("Vegetationsbeschreibung"))
+                            Section(header: Text("Vegetations-\nbeschreibung"))
                             {
                                 TextField("Bitte eingeben", text: $vegetationDescription ,axis: .vertical)
                             }
