@@ -34,7 +34,7 @@ struct WelcomeAndGenerateFolder: View {
                 .padding()
             Text("Achten Sie darauf, dass die Spalten 1a, 1b, ... in der CSV-Datei ausschließlich mit einem großen X gekennzeichet werden (falls zutreffend).")
                 .multilineTextAlignment(.center)
-                .padding()
+                .padding(.leading)
             
             Button("Ordner generieren"){
                 link = csvGenerator.generateInitFolder()
@@ -44,6 +44,7 @@ struct WelcomeAndGenerateFolder: View {
                 .foregroundColor(.white)
                 .cornerRadius(10)
                 .padding(.horizontal)
+                .padding(.bottom)
         }
         
         
