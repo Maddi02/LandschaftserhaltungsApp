@@ -102,18 +102,11 @@ struct SheetSelectPlantsLongTerm: View {
     
     public func saveEntrysLongTerm()
         {
-            
-            //let plant = PlantSpeciesLongTermItem(context: moc)
-           // plant.descriptionFieldLongTerm = description
-            print("Size \(listEntry.PlantArrayLongTerm.count)")
-            
-            
             for list in plantSpeciesDataModel.platList
             {
                 if(list.isChecked){
                     if(contains(str: list.scientificName))
                     {
-                        print("Found")
                     }
                     else{
                         let plant = PlantSpeciesLongTermItem(context: moc)
@@ -131,32 +124,13 @@ struct SheetSelectPlantsLongTerm: View {
                         plant.evaluation3 = list.evaluation3
                         plant.checked = list.isChecked
                         plant.noun = list.noun
-                        print(list.scientificName)
                         
                         do {
                             try moc.save()
-                            print("Success")
                         } catch {
                             print("Error saving: \(error)")
                         }
                     }
-                    
-                  /*
-                    if (listEntry.PlantArrayLongTerm.count == 0)
-                    {
-                        let plant = PlantSpeciesLongTermItem(context: moc)
-                        plant.speciesLongTerm = listEntry
-                        plant.scientificName = list.scientificName
-                        print(list.scientificName)
-                        
-                        do {
-                            try moc.save()
-                            print("Success")
-                        } catch {
-                            print("Error saving: \(error)")
-                        }
-                    }
-                   */
                 }
             
             }

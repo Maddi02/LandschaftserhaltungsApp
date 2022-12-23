@@ -29,12 +29,10 @@ class PDFCreatorDiffrentBiotop
     func generatePdf(listEntry : ListEntry)
     {
         url =  getDocumentsDirectory().appendingPathComponent("awesome.pdf")
-       // var url = URL(string: "file://~/Desktop/awesome.pdf")!
         let document = PDFDocument(format: .a4)
         let generator = PDFGenerator(document: document)
         generator.debug = true
         url =  try! generator.generateURL(filename: "Example.pdf")
-       // print("Output URL:", url)
 
     }
     

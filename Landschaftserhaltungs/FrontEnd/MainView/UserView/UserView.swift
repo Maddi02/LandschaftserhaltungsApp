@@ -104,7 +104,6 @@ struct UserView: View {
                     }
                     
                 }.onAppear(perform: {
-                    print("HHHH")
                     self.image = userSettings.getImage()
                 })
                 
@@ -138,8 +137,6 @@ struct UserView: View {
                     Button()
                     {
                         showDocumentPickerCSV.toggle()
-                        print(csvData)
-                        print(csvURL)
                         
                     }label: {
                         Text("Wähle ein CSV Datei aus")
@@ -156,14 +153,17 @@ struct UserView: View {
                         DocumentPickerCSV(content: self.$csvData, urlCSV: self.$csvURL)
                     }.onAppear(perform: {
                         refreseh.toggle()
+                        
                     })
                     
                     if(UserView.defaults.string(forKey: "csvICloud") ?? "Keine CSV Datei importiert" == csvURL.lastPathComponent )
                     {
                         Text(csvURL.lastPathComponent)
+           
                     }
                     else{
                         Text(UserView.defaults.string(forKey: "csvICloud") ?? "Keine CSV Datei importiert")
+      
                     }
                     
                 }
@@ -191,10 +191,7 @@ struct UserView: View {
                     UserView.defaults.set(selectedPhotoQuality.rawValue, forKey: "photoQuality")
                     userSettings.saveImage(image: self.image)
                     UserView.defaults.set(csvData, forKey: "csvData")
-                    print(csvURL)
-                    print("PRINT \(csvData)")
                     dismiss()
-                    print("Button Saved was pressed")
                 }.frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
                     .background(Color.blue)
                     .foregroundColor(.white)

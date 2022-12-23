@@ -59,7 +59,6 @@ class CSVGenerator
         let buffer = (output.property(forKey: .dataWrittenToMemoryStreamKey) as? Data)!
         do{
             try buffer.write(to: documentURL)
-            print(documentURL)
         }
         catch
         {
@@ -251,15 +250,11 @@ class CSVGenerator
         let buffer = (output.property(forKey: .dataWrittenToMemoryStreamKey) as? Data)!
         do{
             try buffer.write(to: documentURL)
-            print(documentURL)
         }
         catch
         {
             
         }
-        
-        print(documentURL)
-        
         return documentURL
         
     }

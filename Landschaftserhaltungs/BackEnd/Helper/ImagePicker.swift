@@ -56,8 +56,6 @@ struct ImagePicker: UIViewControllerRepresentable {
                 parent.selectedImage = image
                
             }
-            print("LETS SEWEW")
-            
             parent.presentationMode.wrappedValue.dismiss()
         }
     }

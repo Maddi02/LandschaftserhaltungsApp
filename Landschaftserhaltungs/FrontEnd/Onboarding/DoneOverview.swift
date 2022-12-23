@@ -16,7 +16,6 @@ struct DoneOverview: View {
           
             Text("Onboarding abgeschlossen\n")
             Button("Starten"){
-                print(defaults.bool(forKey: "realOnboarding"))
                 appState.hasOnboarded = true
                 UserDefaults.standard.set(appState.hasOnboarded, forKey: "onBoarded")
                 

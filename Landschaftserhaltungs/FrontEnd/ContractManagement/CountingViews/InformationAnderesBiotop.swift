@@ -103,7 +103,6 @@ struct InformationAnderesBiotop: View {
                         VStack{
                             
                             Button(action: {
-                                print("Select")
                                 showingActionSheet.toggle()
                             }, label: {
                                 
@@ -161,7 +160,6 @@ struct InformationAnderesBiotop: View {
                                     viewModelPicutre.pictures.remove(at: 0)
                                 }
                             }
-                            print("CHANGE")
                             addToList(image: vm.image ?? UIImage())
                             removeUnneadedPicture = false
                         })
@@ -216,7 +214,6 @@ struct InformationAnderesBiotop: View {
     
     func save()
     {
-        print("IN save")
         let plant = FieldInformation(context: moc)
         plant.listEntry = listEntry
         plant.bloomAspect = bloomAspect
@@ -243,7 +240,7 @@ struct InformationAnderesBiotop: View {
         }
         catch
         {
-            print("ERROR")
+            print(error)
         }
     }
     

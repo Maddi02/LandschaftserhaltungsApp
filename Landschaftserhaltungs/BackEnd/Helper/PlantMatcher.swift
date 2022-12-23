@@ -35,8 +35,6 @@ class PlantMatcher
         self.reating2 = reating2
         self.reating3 = reating3
         self.frequency = frequency
-        
-        print("Noun\(noun)")
         self.noun = noun
     }
     
@@ -95,10 +93,8 @@ class PlantMatcher
     
     public func getNoun() -> String
     {
-        print("in getter ")
         if (noun != " ")
         {
-            print (noun)
         }
         return self.noun
     }

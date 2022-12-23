@@ -18,8 +18,6 @@ struct DocumentPickerCSV: UIViewControllerRepresentable
            let controller = UIDocumentPickerViewController(forOpeningContentTypes: [.text], asCopy: true)
            controller.allowsMultipleSelection = false
            controller.delegate = context.coordinator
-
-           print("In PICKER")
            return controller
        }
        

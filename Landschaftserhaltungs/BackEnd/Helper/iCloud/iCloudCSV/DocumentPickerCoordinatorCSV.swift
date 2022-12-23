@@ -27,14 +27,11 @@ class DocumentPickerCoordinatorCSV: NSObject, UIDocumentPickerDelegate, UINaviga
             {
                 content = try String(contentsOf: fileURL, encoding: .utf8)
                 urlCSV = fileURL
-                print(content)
-                print("\(fileURL.lastPathComponent)oirehufiöh")
                 defaults.set(fileURL.lastPathComponent, forKey: "csvICloud")
             }
             
             catch let error
             {
-                print("test test test")
                 print(error.localizedDescription)
             }
         }

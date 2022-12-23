@@ -34,7 +34,6 @@ class PDFCreatorFFH
         let generator = PDFGenerator(document: document)
         generator.debug = true
         url =  try! generator.generateURL(filename: "Example.pdf")
-        // print("Output URL:", url)
         
     }
     

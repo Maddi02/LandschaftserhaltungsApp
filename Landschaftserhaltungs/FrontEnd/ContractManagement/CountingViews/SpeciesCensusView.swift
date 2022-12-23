@@ -146,11 +146,6 @@ struct SpeciesCensusView: View {
     
     public func saveEntrys()
     {
-        
-        
-        
-        print("Size \(listEntry.PlantArray.count)")
-        print("Size \(listEntry.PlantArray.count)")
         let plant = PlantSpeciesItem(context: moc)
         plant.descriptionField = description
         
@@ -159,16 +154,13 @@ struct SpeciesCensusView: View {
         {
             
             for list in list1{
-                print("ergeger \(list.germanName) \(list.isChecked)")
                 
                 if(list.isChecked){
                     print(list.germanName)
                     if(contains(str: list.germanName))
                     {
-                        print("Found")
                     }
                     else{
-                        print("try to insert ")
                         let plant = PlantSpeciesItem(context: moc)
                         plant.species = listEntry
                         plant.scientificName = list.scientificName
@@ -183,33 +175,14 @@ struct SpeciesCensusView: View {
                         plant.evaluation2 = list.evaluation2
                         plant.evaluation3 = list.evaluation3
                         plant.noun = list.noun
-                        print(list.scientificName)
                         
                         do {
                             try moc.save()
-                            print("Success")
                         } catch {
                             print("Error saving: \(error)")
                         }
                     }
                 }
-                
-                /*
-                if (listEntry.PlantArray.count == 0)
-                {
-                    let plant = PlantSpeciesItem(context: moc)
-                    plant.species = listEntry
-                    plant.scientificName = list.scientificName
-                    print(list.scientificName)
-                    
-                    do {
-                        try moc.save()
-                        print("Success")
-                    } catch {
-                        print("Error saving: \(error)")
-                    }
-                }
-                 */
             }
             
             

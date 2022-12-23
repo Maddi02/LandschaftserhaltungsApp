@@ -81,8 +81,7 @@ class DataHandler : ObservableObject
                 self.appContractList = try self.context.fetch(self.request)
             }
             catch {
-                // Handle Error
-                print("Error fetching App Contracts")
+                print (error)
             }
         }
     }

@@ -72,12 +72,10 @@ struct FrequencyEstimationFieldGerman: View {
                             
                             List(sortShortTerm(listEntry: listEntry)) { todoItem in
                                 NavigationLink(destination: SetFrequenceViewShortTerm(listentry: todoItem).onAppear(perform: {
-                                    print("Hallo Welt")
-                                    selection = "WEEE"
+                                    selection = ""
                                     
                                 }).onDisappear(perform: {
-                                    print("Tschäuch Welt")
-                                    selection = "WEEE"
+                                    selection = ""
                                     checkedW.toggle()
                                     update()
                                 })) {
@@ -101,12 +99,10 @@ struct FrequencyEstimationFieldGerman: View {
                             
                             List(sortLongTerm(listEntry: listEntry)) { todoItem in
                                 NavigationLink(destination: SetFrequenceViewLongTerm(listentry: todoItem).onAppear(perform: {
-                                    print("Hallo Welt")
-                                    selection = "WEEE"
+                                    selection = ""
                                     
                                 }).onDisappear(perform: {
-                                    print("Tschäuch Welt")
-                                    selection = "WEEE"
+                                    selection = ""
                                     checkedW.toggle()
                                     update()
                                 })) {
@@ -137,13 +133,12 @@ struct FrequencyEstimationFieldGerman: View {
     func saveShortTerm(item : PlantSpeciesItem, value : String)
     {
         item.frequency = value
-        print(value)
         do{
             try moc.save()
             
         }
         catch{
-            print("Hier \(error)")
+            print(error)
         }
     }
     
@@ -151,21 +146,18 @@ struct FrequencyEstimationFieldGerman: View {
     func saveLongTerm(item : PlantSpeciesLongTermItem, value : String)
     {
         item.frequency = value
-        print(value)
         do{
             try moc.save()
             
         }
         catch{
-            print("Hier \(error)")
+            print(error)
         }
     }
     
     func update()
     {
-        print("In upo")
         checkedW.toggle()
-      
     }
     
     

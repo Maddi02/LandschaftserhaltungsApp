@@ -327,7 +327,6 @@ struct EditListItemContractArea: View {
                 }
         if(listEntry.PlantArray.count > 0 || listEntry.PlantArrayLongTerm.count > 0) {
             Button("Speichern") {
-                print("Halllllllloooooo")
                 updateValues()
                 do {
                     try context.save()

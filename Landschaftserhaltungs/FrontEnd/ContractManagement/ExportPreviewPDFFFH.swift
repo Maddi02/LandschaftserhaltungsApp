@@ -31,8 +31,6 @@ struct ExportPreviewPDFFFH: View {
 
     
     private func presentShareSheet(){
-       // pdf.generatePdf(listEntry: listEntry)
-        print(pdf.getUrl())
         guard let pdfDoc = PDFDocument(url: pdf.generatePdfAndGetURL(listEntry: listEntry))?.documentURL else {return}
         let shareSheetVC = UIActivityViewController(activityItems: [pdfDoc], applicationActivities:  [])
         UIApplication.shared.windows.first?.rootViewController?.present(shareSheetVC, animated: true, completion: nil)

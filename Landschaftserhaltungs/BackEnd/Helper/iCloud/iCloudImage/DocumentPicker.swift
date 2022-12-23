@@ -17,7 +17,6 @@ struct DocumentPicker: UIViewControllerRepresentable
         let controller = UIDocumentPickerViewController(forOpeningContentTypes: [.image], asCopy: true)
         controller.allowsMultipleSelection = false
         controller.delegate = context.coordinator
-        print("Test \(controller)")
         return controller
     }
     

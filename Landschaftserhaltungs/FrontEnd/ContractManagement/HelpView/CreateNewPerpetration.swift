@@ -90,7 +90,7 @@ struct CreateNewPerpetration: View {
                             try moc.save()
                         }
                         catch{
-                            print("f \(error)")
+                            print(error)
                         }
                 
                     }

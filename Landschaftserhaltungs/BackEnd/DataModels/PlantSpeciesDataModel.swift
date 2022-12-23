@@ -22,22 +22,6 @@ public class PlantSpeciesDataModel : ObservableObject
     @Published  var lateinList:  [String:  [PlantSpecies]] = [:]
     @Published private var ItemCheckTrue : Bool = true
     let alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-    
-    func hell(plantName : String, state : Bool)
-    {
-        print(plantName)
-        for (_ , plant) in germanList{
-            
-            for i in plant
-            {
-                if (i.germanName == plantName)
-                {
-                 //   i.$isChecked = ItemCheckTrue
-                }
-
-            }
-        }
-    }
 
     
     
@@ -88,9 +72,6 @@ public class PlantSpeciesDataModel : ObservableObject
     
     func initatializeList()
     {
-        print("IN A")
-
-        print(platList.count)
         germanList  =
         
 
@@ -181,8 +162,6 @@ public class PlantSpeciesDataModel : ObservableObject
         dataLines = data.lines
         for i in dataLines
         {
-           
-            print(i.components(separatedBy: ",").count)
             if(i.components(separatedBy: ",").count != 10)
             {
                 showAlert = true
@@ -237,20 +216,15 @@ public class PlantSpeciesDataModel : ObservableObject
         {
             swiftArray.remove(at: 0)
             swiftArray.remove(at: 1)
-     
-            print(swiftArray)
             for item in swiftArray
             {
                 if(item.count != 10)
                 {
-                    print(item.count)
-                    print("No Valid Data")
                     showAlert = true
                     return
                 }
                 platList.append(PlantSpecies(row: item))
             }
-            print(platList)
         }
         else
         {

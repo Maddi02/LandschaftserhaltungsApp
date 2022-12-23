@@ -172,12 +172,5 @@ struct ContractAdminister: View {
         let shareSheetVC = UIActivityViewController(activityItems: [link], applicationActivities:  [])
         UIApplication.shared.windows.first?.rootViewController?.present(shareSheetVC, animated: true, completion: nil)
     }
-    
-    func test(str : String)
-    {
-        print(str)
-    }
-    
-    
 }
 

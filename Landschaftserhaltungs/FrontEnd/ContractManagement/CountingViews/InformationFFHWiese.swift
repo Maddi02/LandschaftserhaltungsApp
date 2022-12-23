@@ -120,7 +120,6 @@ struct InformationFFHWiese: View {
                         
                         VStack{
                             Button(action: {
-                                print("Select")
                                 showingActionSheet.toggle()
                             }, label: {
                                 
@@ -177,7 +176,6 @@ struct InformationFFHWiese: View {
                                     viewModelPicutre.pictures.remove(at: 0)
                                 }
                             }
-                            print("CHANGE")
                             addToList(image: vm.image ?? UIImage())
                             removeUnneadedPicture = false
                         })
@@ -232,7 +230,6 @@ struct InformationFFHWiese: View {
     
     func save()
     {
-        print("IN save")
         let plant = FieldInformation(context: moc)
         plant.listEntry = listEntry
         plant.bloomAspect = bloomAspect
@@ -249,9 +246,6 @@ struct InformationFFHWiese: View {
         plant.contractTarget = contractTarget
         plant.adaptationEditions = adaptationEditions
         plant.furtherMaintenanceMeasures = furtherMaintenanceMeasures
-        
-       // print ("Picute array size \(viewModelPicutre.pictures.count)")
-        
 
         for i in viewModelPicutre.pictures{
             let a = PicutreList(context: moc)
@@ -267,7 +261,7 @@ struct InformationFFHWiese: View {
         }
         catch
         {
-            print("ERROR")
+            print(error)
         }
         
         

@@ -25,11 +25,9 @@ public class ProfileDataModel : ObservableObject {
         { _ in
             do {
                 self.profile = try self.context.fetch(self.request)
-                print("User size \(self.profile.count)")
             }
             catch {
-                // Handle Error
-                print("EHHHHHHHHHHH")
+                print(error)
             }
         }
         return profile

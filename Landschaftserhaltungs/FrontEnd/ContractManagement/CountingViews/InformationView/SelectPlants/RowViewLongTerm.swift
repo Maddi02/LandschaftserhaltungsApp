@@ -31,7 +31,6 @@ struct RowViewLongTerm: View {
             else {
                 CheckBoxView(checked: $checked).onChange(of: checked, perform: {
                     newValue in
-                    print("WHHHHHHHHHHEEEEEEE")
                     if(checked)
                     {
                         plant.isChecked = true

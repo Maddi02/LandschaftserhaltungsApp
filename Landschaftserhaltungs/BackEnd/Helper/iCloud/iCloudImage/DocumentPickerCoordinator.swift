@@ -13,8 +13,6 @@ class DocumentPickerCoordinator: NSObject, UIDocumentPickerDelegate, UINavigatio
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         let fileURL = urls[0]
-        
-        print(fileURL.absoluteString)
         do
         {
             var imageData :NSData

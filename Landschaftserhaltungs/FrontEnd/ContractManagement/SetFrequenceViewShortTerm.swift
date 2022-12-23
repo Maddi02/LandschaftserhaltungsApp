@@ -38,7 +38,7 @@ struct SetFrequenceViewShortTerm : View
                     try moc.save()
                 }
                 catch{
-                    print("Hier \(error)")
+                    print(error)
                 }
                 dismiss()
                 
@@ -54,7 +54,7 @@ struct SetFrequenceViewShortTerm : View
                     try moc.save()
                 }
                 catch{
-                    print("Hier \(error)")
+                    print(error)
                 }
                 dismiss()
             } .padding()
@@ -69,7 +69,7 @@ struct SetFrequenceViewShortTerm : View
                     try moc.save()
                 }
                 catch{
-                    print("Hier \(error)")
+                    print(error)
                 }
                 dismiss()
                 
@@ -85,7 +85,7 @@ struct SetFrequenceViewShortTerm : View
                     try moc.save()
                 }
                 catch{
-                    print("Hier \(error)")
+                    print(error)
                 }
                 dismiss()
             } .padding()
@@ -100,7 +100,7 @@ struct SetFrequenceViewShortTerm : View
                     try moc.save()
                 }
                 catch{
-                    print("Hier \(error)")
+                    print(error)
                 }
                 dismiss()
             } .padding()
