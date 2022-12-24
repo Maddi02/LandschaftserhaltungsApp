@@ -13,10 +13,15 @@ struct alertView : View
     @Environment(\.dismiss) var dismiss
     @State var showAlert : Bool
     var body: some View{
-        Text("Sie können keine neue Aufnahme starten. --> Daten schon vorhandne")
+        Text("Sie können keine neue Aufnahme starten. --> Daten schon vorhandne").padding().font(.system(size: 14))
             Button("Zurück", role: .cancel) {
               dismiss()
-            }
+            }.frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+            .padding(.horizontal)
+            .listRowBackground(Color.blue)
     }
 }
 struct alertViewWrongData : View
@@ -24,10 +29,15 @@ struct alertViewWrongData : View
     @Environment(\.dismiss) var dismiss
     @State var showAlert : Bool
     var body: some View{
-        Text("Upps.. es sieht so aus, als ob Sie eine invalide Datei geladen hätten. Dies kann folgenden Gründe haben \n1.\nAchten Sie darauf, dass Ihre Datei 10 Reihen enthält und durch Kommas getrennt sind. \n2.\nAchten Sie darauf, dass Ihre Datei in dem Landschaftserhaltungsordner liegt.\n3.\nÜberprüfen Sie, ob Ihre Datei auf .csv endet.\n4.\nHaben Sie ein Datei ausgewählt\n\nÜberprüfen Sie ihr Import wiefolgt: Home Screen -> Profil")
+        Text("Upps.. es sieht so aus, als ob Sie eine invalide Datei geladen hätten. Dies kann folgenden Gründe haben \n1.\nAchten Sie darauf, dass Ihre Datei 10 Reihen enthält und durch Kommas getrennt sind. \n2.\nAchten Sie darauf, dass Ihre Datei in dem Landschaftserhaltungsordner liegt.\n3.\nÜberprüfen Sie, ob Ihre Datei auf .csv endet.\n4.\nHaben Sie ein Datei ausgewählt\n\nÜberprüfen Sie ihr Import wiefolgt: Home Screen -> Profil").padding().font(.system(size: 14))
             Button("Zurück", role: .cancel) {
               dismiss()
-            }
+            }.frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+            .padding(.horizontal)
+            .listRowBackground(Color.blue)
     }
 }
 
@@ -88,7 +98,7 @@ struct SpeciesCensusView: View {
                     
                     else {
                         Text("INFO").frame(maxWidth: .infinity, alignment: .top).font(.title2).padding()
-                        Text("Feldtypauswahl: \(typeOfField) - Artenzählung Info \n\nHier müssen Sie im folgenden eine genaue Aufnahme der Pflanzen durchführen. Anschließend können Sie übrige Informationen für den Bericht hinzufügen. Die Eingaben können nachträglich verändert oder ergänzt werden.").padding(.top).padding()
+                        Text("Feldtypauswahl: \(typeOfField) - Artenzählung Info \n\nHier müssen Sie im folgenden eine genaue Aufnahme der Pflanzen durchführen. Anschließend können Sie übrige Informationen für den Bericht hinzufügen. Die Eingaben können nachträglich verändert oder ergänzt werden.").padding(.top).padding().font(.system(size: 14))
                         
                         
                     }
