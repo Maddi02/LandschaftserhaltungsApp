@@ -73,12 +73,13 @@ struct SpeciesCensusView: View {
                         Text("Feldtypauswahl: \(typeOfField) - Artenzählung Info")  .frame(maxWidth: .infinity, alignment: .leading).padding(.leading).padding(.top)
 
                             Text("1. Schnellaufnahme\nHier können Sie unten einen Timer starten und die gefundenen Pflanzen aus der Artenliste auswählen. Wenn die Schnellaufnahme beendet werden soll, drücken Sie auf „Weiter“")  .frame(maxWidth: .infinity, alignment: .leading).padding(.leading).padding(.top)
+                                .font(.system(size: 14))
 
-                            Text("2. Weitere Arten\nAn dieser Stelle gibt es keinen Timer mehr und Sie können weitere Pflanzen, die im ersten Durchlauf nicht erfasst wurden, hinzufügen.")  .frame(maxWidth: .infinity, alignment: .leading).padding(.leading).padding(.top)
+                            Text("2. Weitere Arten\nAn dieser Stelle gibt es keinen Timer mehr und Sie können weitere Pflanzen, die im ersten Durchlauf nicht erfasst wurden, hinzufügen.")  .frame(maxWidth: .infinity, alignment: .leading).padding(.leading).padding(.top).font(.system(size: 14))
 
-                            Text("3. Informationen\nAls letztes können Sie die übrigen Informationen für den Bericht hinzufügen. Die Eingaben können nachträglich verändert oder ergänzt werden.")  .frame(maxWidth: .infinity, alignment: .leading).padding(.leading).padding(.top)
+                            Text("3. Informationen\nAls letztes können Sie die übrigen Informationen für den Bericht hinzufügen. Die Eingaben können nachträglich verändert oder ergänzt werden.")  .frame(maxWidth: .infinity, alignment: .leading).padding(.leading).padding(.top).font(.system(size: 14))
                         
-                        Text("1 und 2 können nicht wiederholt werden").frame(maxWidth: .infinity, alignment: .center).padding(.top).font(Font.body.bold())
+                        Text("1 und 2 können nicht wiederholt werden").frame(maxWidth: .infinity, alignment: .center).padding(.top).font(Font.body.bold()).font(.system(size: 14))
 
 
               

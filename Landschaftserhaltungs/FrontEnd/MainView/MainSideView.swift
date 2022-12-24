@@ -27,21 +27,17 @@ struct MainSideView:  View {
                 NavigationStack() {
                    
                     VStack {
-                        if self.image.cgImage == nil && self.image.ciImage == nil {
-                            Image("LandschaftserhaltungsVerbandLogo")
-                        }
                         Image(uiImage: self.image)
                             .resizable()
                             .scaledToFit()
                             .frame( maxHeight: 400, alignment: .center)
                         NavigationLink(destination: CreateNewContract()) {
                             Text("Neuen Vertrag anlegen")
-                        }.foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.gray.opacity(0.5))
-                        
-                            .frame(alignment: .topLeading)
+                        }.frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                            .background(Color.gray)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .padding(.horizontal)
                             .toolbar {
                                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                                     
@@ -63,10 +59,12 @@ struct MainSideView:  View {
                         
                         NavigationLink(destination: ManageContractView()) {
                             Text("Verträge verwalten")
-                        }.foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.gray.opacity(0.5))
+                        }.frame(minWidth: 0, maxWidth: .infinity , minHeight: 30 , maxHeight: 50)
+                            .background(Color.gray)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+
 
                         
                   

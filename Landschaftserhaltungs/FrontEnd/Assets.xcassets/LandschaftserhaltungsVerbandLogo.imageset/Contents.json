@@ -1,16 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "Semesterprojekt_Logo_Ping_Rund-20.png",
+      "filename" : "Semesterprojekt_Logo_Ping_Rund-1024.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Semesterprojekt_Logo_Ping_Rund-20@3x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Semesterprojekt_Logo_Ping_Rund-60@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

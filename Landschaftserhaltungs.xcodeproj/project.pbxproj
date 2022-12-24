@@ -101,9 +101,10 @@
 		22A10885291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A10884291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift */; };
 		22A10889291C1C260071FF3A /* InformationFFHWiese.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A10888291C1C260071FF3A /* InformationFFHWiese.swift */; };
 		22A1088B291C1CE50071FF3A /* InformationAnderesBiotop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1088A291C1CE50071FF3A /* InformationAnderesBiotop.swift */; };
+		22FD15EB295713040022A1CE /* GenerateFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FD15EA295713040022A1CE /* GenerateFolder.swift */; };
 		329D8FEA293FC67A00DA0010 /* CollabsableWheelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D8FE9293FC67A00DA0010 /* CollabsableWheelPicker.swift */; };
 		B766974EADBD606686E80DCD /* ReOnboardingFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76696D3DAD28B2A384FD42B /* ReOnboardingFlowView.swift */; };
-		BFF0BB5529509CCC00E42179 /* WelcomeAndGenerateFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB5429509CCC00E42179 /* WelcomeAndGenerateFolder.swift */; };
+		BFF0BB5529509CCC00E42179 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB5429509CCC00E42179 /* Welcome.swift */; };
 		BFF0BB572950A62500E42179 /* CustomiseProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB562950A62400E42179 /* CustomiseProfile.swift */; };
 		BFF0BB592950A71200E42179 /* NewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB582950A71200E42179 /* NewContract.swift */; };
 		BFF0BB5B2950A7BF00E42179 /* ManageContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF0BB5A2950A7BF00E42179 /* ManageContract.swift */; };
@@ -228,9 +229,10 @@
 		22A10884291C0C2A0071FF3A /* SheetSelectPlantsLongTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSelectPlantsLongTerm.swift; sourceTree = "<group>"; };
 		22A10888291C1C260071FF3A /* InformationFFHWiese.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationFFHWiese.swift; sourceTree = "<group>"; };
 		22A1088A291C1CE50071FF3A /* InformationAnderesBiotop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAnderesBiotop.swift; sourceTree = "<group>"; };
+		22FD15EA295713040022A1CE /* GenerateFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateFolder.swift; sourceTree = "<group>"; };
 		329D8FE9293FC67A00DA0010 /* CollabsableWheelPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollabsableWheelPicker.swift; sourceTree = "<group>"; };
 		B76696D3DAD28B2A384FD42B /* ReOnboardingFlowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReOnboardingFlowView.swift; sourceTree = "<group>"; };
-		BFF0BB5429509CCC00E42179 /* WelcomeAndGenerateFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAndGenerateFolder.swift; sourceTree = "<group>"; };
+		BFF0BB5429509CCC00E42179 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		BFF0BB562950A62400E42179 /* CustomiseProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomiseProfile.swift; sourceTree = "<group>"; };
 		BFF0BB582950A71200E42179 /* NewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContract.swift; sourceTree = "<group>"; };
 		BFF0BB5A2950A7BF00E42179 /* ManageContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageContract.swift; sourceTree = "<group>"; };
@@ -511,7 +513,7 @@
 			isa = PBXGroup;
 			children = (
 				224F45FD28FD80E7004EA74F /* OnboardingFlowView.swift */,
-				BFF0BB5429509CCC00E42179 /* WelcomeAndGenerateFolder.swift */,
+				BFF0BB5429509CCC00E42179 /* Welcome.swift */,
 				BFF0BB562950A62400E42179 /* CustomiseProfile.swift */,
 				BFF0BB582950A71200E42179 /* NewContract.swift */,
 				BFF0BB5A2950A7BF00E42179 /* ManageContract.swift */,
@@ -519,6 +521,7 @@
 				BFF0BB5E2950A97500E42179 /* RepeatOnboarding.swift */,
 				224F463228FE07D8004EA74F /* DoneOverview.swift */,
 				B76696D3DAD28B2A384FD42B /* ReOnboardingFlowView.swift */,
+				22FD15EA295713040022A1CE /* GenerateFolder.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -823,6 +826,7 @@
 				226C67E4292ECCE40049958A /* ExportPreviewPDFOtherBiotop.swift in Sources */,
 				223BB354291147380064927A /* WrappedTextView.swift in Sources */,
 				223AD5DC29199C53009B5C1C /* PlantSpeciesItem+CoreDataClass.swift in Sources */,
+				22FD15EB295713040022A1CE /* GenerateFolder.swift in Sources */,
 				225DFC112936048D005C7DEC /* CHCSVParser.m in Sources */,
 				223AD572291861AD009B5C1C /* FrequencyEstimationFieldGerman.swift in Sources */,
 				226C67E0292E87180049958A /* RowViewShortTerm.swift in Sources */,
@@ -851,7 +855,7 @@
 				2210D66B2953482B00A1A813 /* DocumentPickerCoordinator.swift in Sources */,
 				223AD5E129199C53009B5C1C /* AppContract+CoreDataProperties.swift in Sources */,
 				224F45FC28FD80E7004EA74F /* LandschaftserhaltungsApp.swift in Sources */,
-				BFF0BB5529509CCC00E42179 /* WelcomeAndGenerateFolder.swift in Sources */,
+				BFF0BB5529509CCC00E42179 /* Welcome.swift in Sources */,
 				223AD5DD29199C53009B5C1C /* PlantSpeciesItem+CoreDataProperties.swift in Sources */,
 				B766974EADBD606686E80DCD /* ReOnboardingFlowView.swift in Sources */,
 			);
@@ -1011,7 +1015,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.0.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Landschaftserhaltungs/Preview Content\"";
 				DEVELOPMENT_TEAM = 6QRCDK36S8;
 				ENABLE_PREVIEWS = YES;
@@ -1033,7 +1037,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hfu.landschaftserhaltungs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SHARED_PRECOMPS_DIR = "$(OBJROOT)/SharedPrecompiledHeaders";
@@ -1055,7 +1059,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.0.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Landschaftserhaltungs/Preview Content\"";
 				DEVELOPMENT_TEAM = 6QRCDK36S8;
 				ENABLE_PREVIEWS = YES;
@@ -1077,7 +1081,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hfu.landschaftserhaltungs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SHARED_PRECOMPS_DIR = "$(OBJROOT)/SharedPrecompiledHeaders";

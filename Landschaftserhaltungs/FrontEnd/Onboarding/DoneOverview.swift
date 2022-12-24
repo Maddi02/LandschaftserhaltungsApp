@@ -14,7 +14,7 @@ struct DoneOverview: View {
         VStack{
             
           
-            Text("Onboarding abgeschlossen\n")
+            Text("Onboarding abgeschlossen").font(.title)
             Button("Starten"){
                 appState.hasOnboarded = true
                 UserDefaults.standard.set(appState.hasOnboarded, forKey: "onBoarded")

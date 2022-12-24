@@ -17,13 +17,14 @@ struct OnboardingFlowView: View {
     var body: some View {
         
         TabView(selection: $selection){
-            WelcomeAndGenerateFolder().tag(0)
-            CustomiseProfile().tag(1)
-            NewContract().tag(2)
-            ManageContract().tag(3)
-            ContractOverview().tag(4)
-            RepeatOnboarding().tag(5)
-            DoneOverview().tag(6)
+            Welcome().tag(0)
+            GenerateFolder().tag(1)
+            CustomiseProfile().tag(2)
+            NewContract().tag(3)
+            ManageContract().tag(4)
+            ContractOverview().tag(5)
+            RepeatOnboarding().tag(6)
+            DoneOverview().tag(7)
             
         }
 
@@ -40,7 +41,7 @@ struct OnboardingFlowView: View {
                         {
                             buttonTitleNext = "Start"
                         }
-                        if(selection >= 0 && selection < 7 )
+                        if(selection >= 0 && selection < 8 )
                         {
                             selection-=1
                         }
@@ -53,12 +54,12 @@ struct OnboardingFlowView: View {
                     .padding()
             }
             
-            if(selection < 6)
+            if(selection < 7)
             {
                 Button(buttonTitleNext) {
                     withAnimation {
                         
-                        if(selection < 6)
+                        if(selection < 7)
                         {
                             buttonTitleNext = "Weiter"
                             selection+=1
@@ -73,12 +74,12 @@ struct OnboardingFlowView: View {
             }
         }.padding(.leading, 50).padding(.trailing,50)
         
-        if(selection < 6)
+        if(selection < 7)
         {
             Button("Tutorial überspringen") {
                 
                 withAnimation {
-                    if(selection < 6)
+                    if(selection < 8)
                     {
                         
                         appState.hasOnboarded = true

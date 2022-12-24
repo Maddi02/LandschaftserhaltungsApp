@@ -14,20 +14,24 @@ struct CustomiseProfile: View {
             Text("Profil anpassen")
                 .multilineTextAlignment(.center)
                 .padding()
+                .font(.title)
             
             
             Text("Im Hauptmenü können Sie über das Profil Icon Ihren Namen und das Logo anpassen (Der Name und das Logo werden im PDF-Bericht angezeigt).")
                 .multilineTextAlignment(.center)
                 .padding()
+                .font(.system(size: 14))
             
             
             Text("Außerdem können hier noch die Sprache der Pflanzennamen, die in der Artenliste angezeigt werden sollen, und die Qualität der in der App gespeicherten Bilder angepasst werden.")
                 .multilineTextAlignment(.center)
                 .padding()
+                .font(.system(size: 14))
             
             Text("Über “CSV auswählen” können Sie eine Artenliste importieren, die für die Artenzählung genutzt wird (Wenn keine CSV-Datei ausgewählt wird, funktioniert die Artenzählung u.a. nicht).")
                 .multilineTextAlignment(.center)
                 .padding()
+                .font(.system(size: 14))
         }
     }
 }
