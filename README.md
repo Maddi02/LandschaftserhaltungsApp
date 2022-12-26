@@ -2,6 +2,21 @@
 # Landschaftsverwaltungsprojekt
 Dieses Semsterprojekt der Hochschule Furtwangen ist in Koorperation mit dem Landschaftsverbund Tuttlingen entstanden.Dabei ging es darum, das der Verbund eine IOS App haben wollte, welche ihre Prozesse beschleunigt. Darunter fällt die Erstellung von Verträgen mit einem Landwirt.  Dieser bekommt Subvensionen anhand dessen wie er sein Feld bewirtschaftet. Deswegen kann man in der App zu den Verträgen Teilflächen hinzufügen. In diesen Flächen gibt man an, um welche Art von Bewirtschaftung es sich handelt. Des Weitern gibt man an, welche Pflanzenarten man gefunden hat. Zusätzlich kann man noch Information zu diesen Flächen eintragen. 
 
+# Inhaltsverzeichnis
+1. [Anleitung](#Anleitung)
+2. [Schnittstellen](#Schnittstellen)
+3. [Auf welcher Sprache basiert die App](#Auf welcher Sprache basiert die App?)
+4. [Sicherstellung der Funktionalität](#Auf welcher Sprache basiert die App?)
+5. [Auf welcher Sprache basiert die App](#Sicherstellung der Funktionalität)
+6. [Probleme bei der Entwicklung](#Probleme bei der Entwicklung)
+7. [Verteilung der Aufgaben](#Verteilung der Aufgaben)
+
+
+
+
+
+
+
 # Anleitung
 Wenn man die App startet wird dem Nutzer eine Onboarding Page angezeigt. Diese soll dazu dienen das dieser Sich in der App zu recht findet. 
 
