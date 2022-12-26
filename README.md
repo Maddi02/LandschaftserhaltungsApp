@@ -5,7 +5,7 @@ Dieses Semsterprojekt der Hochschule Furtwangen ist in Koorperation mit dem Land
 # Inhaltsverzeichnis
 1. [Anleitung](#Anleitung)
 2. [Schnittstellen](#Schnittstellen)
-3. [Auf welcher Sprache basiert die App](#AufwelcherSprachebasiertdieApp?)
+3. [Auf welcher Sprache basiert die App](#Auf\wwelcher\wSprache\wbasiert\wdie\wApp?)
 4. [Sicherstellung der Funktionalität](#Auf welcher Sprache basiert die App?)
 5. [Auf welcher Sprache basiert die App](#Sicherstellung der Funktionalität)
 6. [Probleme bei der Entwicklung](#Probleme bei der Entwicklung)
