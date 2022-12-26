@@ -51,7 +51,7 @@ Die angelegten Verträge können nun auch Teilflächen beeinhalten. Auf diesen k
 Um die Artenzählung dem Nutzer so einfach wie möglich zu machen, wird ihm eine Liste von Pflanzen angezeigt welche zu vor per CSV Importiert wurde. Diese Liste kann er durchsuchen mit Hilfe des Alphabets an der Seite. Damit ist es möglich eine Pflanze schneller zu finden. 
 
 <p float="left">
-  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/PlantEstimationInfo.png" alt="alt text" width="200" />
+  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/PlantEstimation.png" alt="alt text" width="200" />
 </p>
 
 Nachdem die Pflanzenzählung durchgeführt wurde wird dem Nutzer die Möglichekeit gegeben zusätzliche Informationen hinzuzufügen. 
