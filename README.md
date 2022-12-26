@@ -12,6 +12,7 @@ Dieses Semsterprojekt der Hochschule Furtwangen ist in Koorperation mit dem Land
 7. [Tracking der Aufgaben](#Tracking-der-Aufgaben)
 8. [Umfrage zur Benutzerbarkeit der APP](#Umfrage-zur-Benutzerbarkeit-der-APP)
 9. [Bauen der App](#Bauen-der-App)
+10. [Lizenz](#Lizenz)
 
 
 
@@ -157,6 +158,9 @@ Anhand unsere Auswertung nach der SuS - Methode konnten wir vestellen, dass die 
 4. Das Projekt sollte nun automatisch von Ihrere IDE gebaut werden. 
 
 
+## Lizenz
+
+[MIT](https://choosealicense.com/licenses/mit/)
 
 
 
