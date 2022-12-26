@@ -6,7 +6,7 @@ Dieses Semsterprojekt der Hochschule Furtwangen ist in Koorperation mit dem Land
 1. [Anleitung](#Anleitung)
 2. [Schnittstellen](#Schnittstellen)
 3. [Auf welcher Sprache basiert die App](#Auf-welcher-Sprache-basiert-die-App)
-4. [Sicherstellung der Funktionalität](#Auf welcher Sprache basiert die App?)
+4. [Sicherstellung der Funktionalität](#Sicherstellung-der-Funktionalität)
 5. [Auf welcher Sprache basiert die App](#Sicherstellung der Funktionalität)
 6. [Probleme bei der Entwicklung](#Probleme bei der Entwicklung)
 7. [Verteilung der Aufgaben](#Verteilung der Aufgaben)
