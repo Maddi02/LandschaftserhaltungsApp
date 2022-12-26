@@ -5,7 +5,7 @@ Dieses Semsterprojekt der Hochschule Furtwangen ist in Koorperation mit dem Land
 # Inhaltsverzeichnis
 1. [Anleitung](#Anleitung)
 2. [Schnittstellen](#Schnittstellen)
-3. [Auf welcher Sprache basiert die App](#Auf-welcher-Sprache-basiert-die-App?)
+3. [Auf welcher Sprache basiert die App](#Auf-welcher-Sprache-basiert-die-App)
 4. [Sicherstellung der Funktionalität](#Auf welcher Sprache basiert die App?)
 5. [Auf welcher Sprache basiert die App](#Sicherstellung der Funktionalität)
 6. [Probleme bei der Entwicklung](#Probleme bei der Entwicklung)
@@ -64,7 +64,7 @@ Bild auswahl woher die Datei kommt
 
 
 
-# Auf welcher Sprache basiert die App? 
+# Auf welcher Sprache basiert die App
 Die App wurde mit zwei Sprachen entwickelt - Objective C und Swift. Der Grund für diese Sprachauswahl ist - Der "Kunde" wollte eine IOS App. Somit hat es Sinn gemacht die Sprachen zu verweden, welche von Apple primär genutzt werden. Es gäbe noch die Möglichkeit diese App mit Hilfe von Flutter bzw Dart oder Kotlin KMM zu entwickeln. Da aber keine Android App gefordert war, haben wir uns dazu entscheiden den "Apple Weg" zu gehen. Diese hatte den Vorteil dass wir Xcode als IDE verwenden konnten. Diese Entwicklungsumgebung hat eine Integration für den deploy zu App Store Connect. Diesen Dienst mussten wir nutzen um die App im App Store zu veröffentlichen. 
 
 
