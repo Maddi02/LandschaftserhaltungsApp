@@ -11,6 +11,7 @@ Dieses Semsterprojekt der Hochschule Furtwangen ist in Koorperation mit dem Land
 6. [Verteilung der Aufgaben](#Verteilung-der-Aufgaben)
 7. [Tracking der Aufgaben](#Tracking-der-Aufgaben)
 8. [Umfrage zur Benutzerbarkeit der APP](#Umfrage-zur-Benutzerbarkeit-der-APP)
+9. [Bauen der App](#Bauen-der-App)
 
 
 
@@ -139,7 +140,22 @@ Anhand unsere Auswertung nach der SuS - Methode konnten wir vestellen, dass die 
 
 
 
+# Bauen der App
 
+1. Clone das Projekt
+
+```bash
+  git clone https://link-to-project
+```
+
+2. Gehe in den Ordner wo Sie ihr Projekt geclont haben
+
+```bash
+  cd my-project
+``` 
+3. Öffnen Sie in XCode oder AppCode die .xcodeproj Datei
+4. Das Projekt sollte nun automatisch von Ihrere IDE gebaut werden. 
+```
 
 
 
