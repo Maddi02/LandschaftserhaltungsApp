@@ -9,6 +9,7 @@ Dieses Semsterprojekt der Hochschule Furtwangen ist in Koorperation mit dem Land
 4. [Sicherstellung der Funktionalität](#Sicherstellung-der-Funktionalität)
 5. [Probleme bei der Entwicklung](#Probleme-bei-der-Entwicklung)
 6. [Verteilung der Aufgaben](#Verteilung-der-Aufgaben)
+7. [Tracking der Aufgaben](#Tracking-der-Aufgaben)
 
 
 
@@ -19,59 +20,38 @@ Dieses Semsterprojekt der Hochschule Furtwangen ist in Koorperation mit dem Land
 # Anleitung
 Wenn man die App startet wird dem Nutzer eine Onboarding Page angezeigt. Diese soll dazu dienen das dieser Sich in der App zu recht findet. 
 
-<p float="left">
-  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/Onboarding.png" alt="alt text" width="200" />
-</p>
+Bild von Onboarding
 
-Nachdem man das Onboarding erfolgreich abgeschlossen hat - landet man in der Hauptansicht der App. Dort gibt es nun verschiedene Möglichkeiten. 
+Nachdem man das Onboarding erfolgreich abgeschlossen hat - landet man in der Hauptansicht der App. Dort gibt es nun verschiedene Möglichkeiten. Zum Einen kann man dort nun einen Vertrag anlegen
 
-<p float="left">
-  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/MainView.png" alt="alt text" width="200" />
-</p>
-Zum Einen kann man dort nun einen Vertrag anlegen
-
-<p float="left">
-  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/NewContract.png" alt="alt text" width="200" />
-</p>
+Bild vertrag anlegen
 
 Des Weitern kann man dort seinen bisher angelegten Verträge sich anzeigen lassen. Inklusive der zugehörigen Teilflächen. 
 
-<p float="left">
-  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/ContractOverview.png" alt="alt text" width="200" />
-</p>
+Bild Vertrag verwalten
 
 Das User Icon in der Hauptansicht dient dazu, sich ein Benutzerprofile anlegen zu können. Darunter zählt - Ein Nutzername, ein Bild. Aber auch der Import der CSV welche für die Artenzählung verwendet wird. Außerdem legt man dort fest, ob man die Pflanzenname auf Deutsch oder auf Latein haben will. 
 
-<p float="left">
-  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/UserView.png" alt="alt text" width="200" />
-</p>
+Bild user view. 
 
 Wenn der Nutzer sich nun die bereits angelegten Flächen anschauen will, hat er die Möglichkeit dies über den Knopf "Verträge Verwalten" zu tuen. Dort werden ihm nun die Verträge angezeigt - diese kann er sich auch sortiern lassen. Das dient dazu, dass der Nutzer die relevanten Verträge auf Einmal sieht.
 
+Bild verträge. 
 
-Die angelegten Verträge können nun auch Teilflächen beeinhalten. Auf diesen kann der Nutzer verschiedenen Aktion durchführen. Dazu zählen - Artzählung, Häufigkeitsschätzung, angelegte Information bearbeiten aber auch PDF und CSV exportieren.
-<p float="left">
-  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/PossibleActions.png" alt="alt text" width="200" />
-</p>
+Die angelegten Verträge können nun auch Teilflächen beeinhalten. Auf diesen kann der Nutzer verschiedenen Aktion durchführen. Dazu zählen - Artzählung, Häufigkeitsschätzung, angelegte Information bearbeiten aber auch PDF und CSV exportieren. Um den Export dem Nutzer zu erleichten hat er die Möglichekeit dies über diveres Apps auf seinem Iphone zu versenden. 
 
+Bild verschiedene Aktionen PDF etc
 
 Um die Artenzählung dem Nutzer so einfach wie möglich zu machen, wird ihm eine Liste von Pflanzen angezeigt welche zu vor per CSV Importiert wurde. Diese Liste kann er durchsuchen mit Hilfe des Alphabets an der Seite. Damit ist es möglich eine Pflanze schneller zu finden. 
 
+Bild Pflanzen ausswählen. 
 
-<p float="left">
-  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/PlantEstimation.png" alt="alt text" width="200" />
-</p>
 
 Nachdem die Pflanzenzählung durchgeführt wurde wird dem Nutzer die Möglichekeit gegeben zusätzliche Informationen hinzuzufügen. 
 
-<p float="left">
-  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/PlantEstimationInfo.png" alt="alt text" width="200" />
-</p>
+Bild zzusätzliche Infos
 
- Um den Export dem Nutzer zu erleichten hat er die Möglichekeit dies über diveres Apps auf seinem Iphone zu versenden. 
- <p float="left">
-  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/PossibleShareActions.png" alt="alt text" width="200" />
-</p>
+
 
 # Schnittstellen 
 Der Nutzer hat die Möglichkeit seine Bilder entweder von der iPhone Galerie zu importieren aber auch per iCloud Drive. 
@@ -99,10 +79,19 @@ Das wohl größte Problem war, dass Luca keinen eigene Mac besitzt. Da es aber n
 
 
 # Verteilung der Aufgaben 
-Wie in "Probleme bei der Entwicklung" bereits erwähnt wurde die Hauptarbeit von Marc und Martin geleistet. Dabei wurden die Aufgaben ca 40 / 60 aufgeteilt. Dies sah leider bei Luca anders aus. Er kümmerte sich um folgende Punkte. Sortierung der Verträge, Frist Auswahl auf das Jahr beschränken, Vorlage zur iCloud Schnittstelle. Bezüglich der UI. Dort hat er 5 Überschriften im finalen Produkt bearbeitet. All dies kann dem Grund geschuldet sein, dass er keinen Mac besaß. Dazu muss man aber auch sagen, dass es 2 Monate gedauert hat bis sich um einen Zugang zum Mac Labor bemührt wurde. In dieser Zeit wurde die App schon entwicklet. Somit waren die Hauptaufgaben schon erledigt bzw. begonnen, zugewiesen. 
+Wie in "Probleme bei der Entwicklung" bereits erwähnt wurde die Hauptarbeit von Marc und Martin geleistet. Dabei wurden die Aufgaben ca 30 / 70 aufgeteilt. Dies sah leider bei Luca anders aus. Er kümmerte sich um folgende Punkte. Sortierung der Verträge, Frist Auswahl auf das Jahr beschränken, Vorlage zur iCloud Schnittstelle. Bezüglich der UI. Dort hat er 5 Überschriften im finalen Produkt bearbeitet. All dies kann dem Grund geschuldet sein, dass er keinen Mac besaß. Dazu muss man aber auch sagen, dass es 2 Monate gedauert hat bis sich um einen Zugang zum Mac Labor bemührt wurde. In dieser Zeit wurde die App schon entwicklet. Somit waren die Hauptaufgaben schon erledigt bzw. begonnen, zugewiesen. 
 
 
+# Tracking der Aufgaben
+Die Tasks und Subtasks, welche zu bearbeiten waren, wurden über ein Trello-Board verwaltet. Untergliedert in "TO-DO", "NICE TO HAVEs", "IN BEARBEITUNG", "REVIEW", "DONE", "BLOCKED", "NICHT MEHR NÖTIG" und "UNNÖTIG".
 
+TO-DO: Welche Tasks sind noch zu erledigen.
+NICE TO HAVE: Aufgaben, die die App erfüllen kann, aber nicht unbedingt muss
+IN BEARBEITUNG: Tasks, die aktuell bearbeitet werden.
+REVIEW: Tasks, die bearbeitet wurden und in den Master gemerged werden sollen.
+DONE: Erledigte Tasks.
+NICHT MEHR NÖTIG: Tasks, die durch Abstimmungen mit dem Landschaftsschutzverband nicht mehr umzusetzen ist.
+UNNÖTIG: Tasks, die zuviel eingestellt wurden.
 
 
 
