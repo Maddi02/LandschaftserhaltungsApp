@@ -95,7 +95,7 @@ Wie in "Probleme bei der Entwicklung" bereits erwähnt wurde die Hauptarbeit von
 
 
 # Tracking der Aufgaben
-Die Tasks und Subtasks, welche zu bearbeiten waren, wurden über ein Trello-Board verwaltet. Untergliedert in "TO-DO", "NICE TO HAVEs", "IN BEARBEITUNG", "REVIEW", "DONE", "BLOCKED", "NICHT MEHR NÖTIG" und "UNNÖTIG".
+Die Tasks und Subtasks, welche zu bearbeiten waren, wurden über ein Trello-Board verwaltet. Untergliedert in "TO-DO", "NICE TO HAVEs", "IN BEARBEITUNG", "REVIEW", "DONE", "NICHT MEHR NÖTIG" und "UNNÖTIG".
 
 TO-DO: Welche Tasks sind noch zu erledigen.
 NICE TO HAVE: Aufgaben, die die App erfüllen kann, aber nicht unbedingt muss
@@ -104,6 +104,8 @@ REVIEW: Tasks, die bearbeitet wurden und in den Master gemerged werden sollen.
 DONE: Erledigte Tasks.
 NICHT MEHR NÖTIG: Tasks, die durch Abstimmungen mit dem Landschaftsschutzverband nicht mehr umzusetzen ist.
 UNNÖTIG: Tasks, die zuviel eingestellt wurden.
+
+https://trello.com/b/JR6x8QdX/landschaftsverwaltung
 
 
 
