@@ -145,17 +145,17 @@ Anhand unsere Auswertung nach der SuS - Methode konnten wir vestellen, dass die 
 1. Clone das Projekt
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/Maddi02/LandschaftserhaltungsApp.git
 ```
 
 2. Gehe in den Ordner wo Sie ihr Projekt geclont haben
 
 ```bash
-  cd my-project
+  cd LandschaftserhaltungsApp
 ``` 
 3. Öffnen Sie in XCode oder AppCode die .xcodeproj Datei
 4. Das Projekt sollte nun automatisch von Ihrere IDE gebaut werden. 
-```
+
 
 
 
