@@ -19,38 +19,59 @@ Dieses Semsterprojekt der Hochschule Furtwangen ist in Koorperation mit dem Land
 # Anleitung
 Wenn man die App startet wird dem Nutzer eine Onboarding Page angezeigt. Diese soll dazu dienen das dieser Sich in der App zu recht findet. 
 
-Bild von Onboarding
+<p float="left">
+  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/Onboarding.png" alt="alt text" width="200" />
+</p>
 
-Nachdem man das Onboarding erfolgreich abgeschlossen hat - landet man in der Hauptansicht der App. Dort gibt es nun verschiedene Möglichkeiten. Zum Einen kann man dort nun einen Vertrag anlegen
+Nachdem man das Onboarding erfolgreich abgeschlossen hat - landet man in der Hauptansicht der App. Dort gibt es nun verschiedene Möglichkeiten. 
 
-Bild vertrag anlegen
+<p float="left">
+  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/MainView.png" alt="alt text" width="200" />
+</p>
+Zum Einen kann man dort nun einen Vertrag anlegen
+
+<p float="left">
+  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/NewContract.png" alt="alt text" width="200" />
+</p>
 
 Des Weitern kann man dort seinen bisher angelegten Verträge sich anzeigen lassen. Inklusive der zugehörigen Teilflächen. 
 
-Bild Vertrag verwalten
+<p float="left">
+  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/ContractOverview.png" alt="alt text" width="200" />
+</p>
 
 Das User Icon in der Hauptansicht dient dazu, sich ein Benutzerprofile anlegen zu können. Darunter zählt - Ein Nutzername, ein Bild. Aber auch der Import der CSV welche für die Artenzählung verwendet wird. Außerdem legt man dort fest, ob man die Pflanzenname auf Deutsch oder auf Latein haben will. 
 
-Bild user view. 
+<p float="left">
+  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/UserView.png" alt="alt text" width="200" />
+</p>
 
 Wenn der Nutzer sich nun die bereits angelegten Flächen anschauen will, hat er die Möglichkeit dies über den Knopf "Verträge Verwalten" zu tuen. Dort werden ihm nun die Verträge angezeigt - diese kann er sich auch sortiern lassen. Das dient dazu, dass der Nutzer die relevanten Verträge auf Einmal sieht.
 
-Bild verträge. 
 
-Die angelegten Verträge können nun auch Teilflächen beeinhalten. Auf diesen kann der Nutzer verschiedenen Aktion durchführen. Dazu zählen - Artzählung, Häufigkeitsschätzung, angelegte Information bearbeiten aber auch PDF und CSV exportieren. Um den Export dem Nutzer zu erleichten hat er die Möglichekeit dies über diveres Apps auf seinem Iphone zu versenden. 
+Die angelegten Verträge können nun auch Teilflächen beeinhalten. Auf diesen kann der Nutzer verschiedenen Aktion durchführen. Dazu zählen - Artzählung, Häufigkeitsschätzung, angelegte Information bearbeiten aber auch PDF und CSV exportieren.
+<p float="left">
+  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/PossibleActions.png" alt="alt text" width="200" />
+</p>
 
-Bild verschiedene Aktionen PDF etc
 
 Um die Artenzählung dem Nutzer so einfach wie möglich zu machen, wird ihm eine Liste von Pflanzen angezeigt welche zu vor per CSV Importiert wurde. Diese Liste kann er durchsuchen mit Hilfe des Alphabets an der Seite. Damit ist es möglich eine Pflanze schneller zu finden. 
 
-Bild Pflanzen ausswählen. 
 
+<p float="left">
+  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/PlantEstimation.png" alt="alt text" width="200" />
+</p>
 
 Nachdem die Pflanzenzählung durchgeführt wurde wird dem Nutzer die Möglichekeit gegeben zusätzliche Informationen hinzuzufügen. 
 
-Bild zzusätzliche Infos
+<p float="left">
+  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/PlantEstimationInfo.png" alt="alt text" width="200" />
+</p>
 
-
+ Um den Export dem Nutzer zu erleichten hat er die Möglichekeit dies über diveres Apps auf seinem Iphone zu versenden. 
+ <p float="left">
+  <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/PossibleShareActions.png" alt="alt text" width="200" />
+</p>
 
 # Schnittstellen 
 Der Nutzer hat die Möglichkeit seine Bilder entweder von der iPhone Galerie zu importieren aber auch per iCloud Drive. 
