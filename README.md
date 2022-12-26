@@ -91,7 +91,7 @@ Das wohl größte Problem war, dass Luca keinen eigene Mac besitzt. Da es aber n
 
 
 # Verteilung der Aufgaben 
-Wie in "Probleme bei der Entwicklung" bereits erwähnt wurde die Hauptarbeit von Marc und Martin geleistet. Dabei wurden die Aufgaben ca 30 / 70 aufgeteilt. Dies sah leider bei Luca anders aus. Er kümmerte sich um folgende Punkte. Sortierung der Verträge, Frist Auswahl auf das Jahr beschränken, Vorlage zur iCloud Schnittstelle. Bezüglich der UI. Dort hat er 5 Überschriften im finalen Produkt bearbeitet. All dies kann dem Grund geschuldet sein, dass er keinen Mac besaß. Dazu muss man aber auch sagen, dass es 2 Monate gedauert hat bis sich um einen Zugang zum Mac Labor bemührt wurde. In dieser Zeit wurde die App schon entwicklet. Somit waren die Hauptaufgaben schon erledigt bzw. begonnen, zugewiesen. 
+Wie in "Probleme bei der Entwicklung" bereits erwähnt wurde die Hauptarbeit von Marc und Martin geleistet. Dabei wurden die Aufgaben ca 40 / 60 aufgeteilt. Dies sah leider bei Luca anders aus. Er kümmerte sich um folgende Punkte. Sortierung der Verträge, Frist Auswahl auf das Jahr beschränken, Vorlage zur iCloud Schnittstelle. Bezüglich der UI. Dort hat er 5 Überschriften im finalen Produkt bearbeitet. All dies kann dem Grund geschuldet sein, dass er keinen Mac besaß. Dazu muss man aber auch sagen, dass es 2 Monate gedauert hat bis sich um einen Zugang zum Mac Labor bemührt wurde. In dieser Zeit wurde die App schon entwicklet. Somit waren die Hauptaufgaben schon erledigt bzw. begonnen, zugewiesen. 
 
 
 # Tracking der Aufgaben
