@@ -97,24 +97,24 @@ Wie in "Probleme bei der Entwicklung" bereits erwähnt wurde die Hauptarbeit von
 # Tracking der Aufgaben
 Die Tasks und Subtasks, welche zu bearbeiten waren, wurden über ein Trello-Board verwaltet. Untergliedert in "TO-DO", "NICE TO HAVEs", "IN BEARBEITUNG", "REVIEW", "DONE", "NICHT MEHR NÖTIG" und "UNNÖTIG".
 
-TO-DO: Welche Tasks sind noch zu erledigen.
-NICE TO HAVE: Aufgaben, die die App erfüllen kann, aber nicht unbedingt muss
-IN BEARBEITUNG: Tasks, die aktuell bearbeitet werden.
-REVIEW: Tasks, die bearbeitet wurden und in den Master gemerged werden sollen.
-DONE: Erledigte Tasks.
-NICHT MEHR NÖTIG: Tasks, die durch Abstimmungen mit dem Landschaftsschutzverband nicht mehr umzusetzen ist.
-UNNÖTIG: Tasks, die zuviel eingestellt wurden.
+TO-DO: Welche Tasks sind noch zu erledigen. <br> 
+NICE TO HAVE: Aufgaben, die die App erfüllen kann, aber nicht unbedingt muss. <br> 
+IN BEARBEITUNG: Tasks, die aktuell bearbeitet werden. <br> 
+REVIEW: Tasks, die bearbeitet wurden und in den Master gemerged werden sollen. <br> 
+DONE: Erledigte Tasks. <br> 
+NICHT MEHR NÖTIG: Tasks, die durch Abstimmungen mit dem Landschaftsschutzverband nicht mehr umzusetzen ist. <br> 
+UNNÖTIG: Tasks, die zuviel eingestellt wurden. <br>  
 
 Übersicht der Tasks:
 https://trello.com/b/JR6x8QdX/landschaftsverwaltung
 
 # Umfrage zur Benutzerbarkeit der APP
 
-Die Bewertung 1 bedeutet - stimme ich überhaupt nicht zu
-Die Bewertung 2 bedeutet - stimme ich nicht zu
-Die Bewertung 3 bedeutet - neutral
-Die Bewertung 4 bedeutet - stimme ich überwiegend zu
-Die Bewertung 5 bedeutet - stimme ich voll zu
+Die Bewertung 1 bedeutet - stimme ich überhaupt nicht zu <br> 
+Die Bewertung 2 bedeutet - stimme ich nicht zu <br> 
+Die Bewertung 3 bedeutet - neutral <br> 
+Die Bewertung 4 bedeutet - stimme ich überwiegend zu <br> 
+Die Bewertung 5 bedeutet - stimme ich voll zu <br> 
 
 
 
