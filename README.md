@@ -105,6 +105,7 @@ DONE: Erledigte Tasks.
 NICHT MEHR NÖTIG: Tasks, die durch Abstimmungen mit dem Landschaftsschutzverband nicht mehr umzusetzen ist.
 UNNÖTIG: Tasks, die zuviel eingestellt wurden.
 
+Übersicht der Tasks:
 https://trello.com/b/JR6x8QdX/landschaftsverwaltung
 
 
