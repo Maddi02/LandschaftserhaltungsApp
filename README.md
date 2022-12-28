@@ -1,6 +1,6 @@
 
 # Landschaftsverwaltungsprojekt
-Dieses Semsterprojekt der Hochschule Furtwangen ist in Koorperation mit dem Landschaftsverbund Tuttlingen entstanden.Dabei ging es darum, das der Verbund eine IOS App haben wollte, welche ihre Prozesse beschleunigt. Darunter fällt die Erstellung von Verträgen mit einem Landwirt.  Dieser bekommt Subvensionen anhand dessen wie er sein Feld bewirtschaftet. Deswegen kann man in der App zu den Verträgen Teilflächen hinzufügen. In diesen Flächen gibt man an, um welche Art von Bewirtschaftung es sich handelt. Des Weitern gibt man an, welche Pflanzenarten man gefunden hat. Zusätzlich kann man noch Information zu diesen Flächen eintragen. 
+Dieses Semsterprojekt der Hochschule Furtwangen ist in Koorperation mit dem Landschaftsverbund Tuttlingen entstanden.Dabei ging es darum, dass der Verbund eine IOS App haben wollte, welche ihre Prozesse vereinfacht und beschleunigt. Darunter fällt die Erstellung von Verträgen mit einem Landwirt.  Dieser bekommt Subvensionen anhand dessen, wie er sein Feld bewirtschaftet. Deswegen kann man in der App zu den Verträgen Teilflächen hinzufügen. In diesen Flächen gibt man an, um welche Art von Bewirtschaftung es sich handelt. Des Weitern gibt man an, welche Pflanzenarten man gefunden hat. Zusätzlich kann man noch ergänzente Information zu diesen Flächen eintragen. 
 
 # Inhaltsverzeichnis
 1. [Anleitung](#Anleitung)
@@ -22,24 +22,24 @@ Dieses Semsterprojekt der Hochschule Furtwangen ist in Koorperation mit dem Land
 
 
 # Anleitung
-Wenn man die App startet wird dem Nutzer eine Onboarding Page angezeigt. Diese soll dazu dienen das dieser Sich in der App zu recht findet. 
+Wenn man die App startet, wird dem Nutzer eine Onboarding Page angezeigt. Diese soll dazu dienen das dieser sich in der App zu recht findet. 
 <p float="left">
   <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/MainView.png" alt="alt text" width="200" />
 </p>
 
-Nachdem man das Onboarding erfolgreich abgeschlossen hat - landet man in der Hauptansicht der App. Dort gibt es nun verschiedene Möglichkeiten. Zum Einen kann man dort nun einen Vertrag anlegen
+Nachdem man das Onboarding erfolgreich abgeschlossen hat,landet man in der Hauptansicht der App. Dort gibt es nun verschiedene Möglichkeiten. Zum Einen kann man dort nun einen Vertrag anlegen
 <p float="left">
   <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/NewContract.png" alt="alt text" width="200" />
 </p>
 
 
-Des Weitern kann man dort seinen bisher angelegten Verträge sich anzeigen lassen. Inklusive der zugehörigen Teilflächen. 
+Des Weitern kann man sich dort seinen bisher angelegten Verträge anzeigen lassen. Inklusive der zugehörigen Teilflächen. 
 
 <p float="left">
   <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/ContractOverview.png" alt="alt text" width="200" />
 </p>
 
-Das User Icon in der Hauptansicht dient dazu, sich ein Benutzerprofile anlegen zu können. Darunter zählt - Ein Nutzername, ein Bild. Aber auch der Import der CSV welche für die Artenzählung verwendet wird. Außerdem legt man dort fest, ob man die Pflanzenname auf Deutsch oder auf Latein haben will. 
+Das User Icon in der Hauptansicht dient dazu, sich ein Benutzerprofile anlegen zu können. Darunter zählt - Ein Nutzername, ein Bild. Aber auch der Import der CSV, welche für die Artenzählung verwendet wird. Außerdem legt man dort fest, ob man die Pflanzenname auf Deutsch oder auf Latein haben will. 
 
 <p float="left">
   <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/UserView.png" alt="alt text" width="200" />
@@ -52,47 +52,42 @@ Die angelegten Verträge können nun auch Teilflächen beeinhalten. Auf diesen k
   <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/PossibleActions.png" alt="alt text" width="200" />
 </p>
 
-Um die Artenzählung dem Nutzer so einfach wie möglich zu machen, wird ihm eine Liste von Pflanzen angezeigt welche zu vor per CSV Importiert wurde. Diese Liste kann er durchsuchen mit Hilfe des Alphabets an der Seite. Damit ist es möglich eine Pflanze schneller zu finden. 
+Um die Artenzählung dem Nutzer so einfach wie möglich zu machen, wird ihm eine Liste von Pflanzen angezeigt welche zuvor per CSV importiert wurde. Diese Liste kann er mit Hilfe des Alphabets an der Seite durchsuchen. Damit ist es möglich eine Pflanze schneller zu finden. 
 
 <p float="left">
   <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/PlantEstimation.png" alt="alt text" width="200" />
 </p>
 
-Nachdem die Pflanzenzählung durchgeführt wurde wird dem Nutzer die Möglichekeit gegeben zusätzliche Informationen hinzuzufügen. 
+Nachdem die Pflanzenzählung durchgeführt wurde, wird dem Nutzer die Möglichkeit gegeben, zusätzliche Informationen hinzuzufügen. 
 
 <p float="left">
   <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/PlantEstimationInfo.png" alt="alt text" width="200" />
 </p>
 
-Um den Export dem Nutzer zu erleichten hat er die Möglichekeit dies über diveres Apps auf seinem Iphone zu versenden. 
+Um dem Nutzer den Export zu erleichtern, hat er die Möglichekeit, dies über diveres Apps auf seinem iPhone zu versenden. 
 <p float="left">
   <img src="https://github.com/Maddi02/LandschaftserhaltungsApp/blob/master/Photos/PossibleShareActions.png" alt="alt text" width="200" />
 </p>
 
 # Schnittstellen 
-Der Nutzer hat die Möglichkeit seine Bilder entweder von der iPhone Galerie zu importieren aber auch per iCloud Drive. 
+Der Nutzer hat die Möglichkeit, seine Bilder entweder von der iPhone Galerie zu importieren aber auch per iCloud Drive. 
 Somit kann er die Bilder am PC bearbeiten und in seine iCloud hochladen und direkt in seine App einfügen. 
-Des Weitern hat der Nutzer die Möglichkeit seine CSV Datein im iCloud Drive abzuspreichern aber auch eine CSV Datei aus dem iCloud Drive zu importieren.
-
-
-Bild auswahl woher die Datei kommt
-
-
+Des Weitern hat der Nutzer die Möglichkeit, seine CSV Datein im iCloud Drive abzuspreichern aber auch eine CSV Datei aus dem iCloud Drive zu importieren.
 
 
 # Auf welcher Sprache basiert die App
-Die App wurde mit zwei Sprachen entwickelt - Objective C und Swift. Der Grund für diese Sprachauswahl ist - Der "Kunde" wollte eine IOS App. Somit hat es Sinn gemacht die Sprachen zu verweden, welche von Apple primär genutzt werden. Es gäbe noch die Möglichkeit diese App mit Hilfe von Flutter bzw Dart oder Kotlin KMM zu entwickeln. Da aber keine Android App gefordert war, haben wir uns dazu entscheiden den "Apple Weg" zu gehen. Diese hatte den Vorteil dass wir Xcode als IDE verwenden konnten. Diese Entwicklungsumgebung hat eine Integration für den deploy zu App Store Connect. Diesen Dienst mussten wir nutzen um die App im App Store zu veröffentlichen. 
+Die App wurde mit zwei Sprachen entwickelt - Objective C und Swift. Der Grund für diese Sprachauswahl ist - Der "Kunde" wollte eine IOS App. Somit hat es Sinn gemacht diese Sprachen zu verweden, welche von Apple primär genutzt werden. Es gäbe noch die Möglichkeit, diese App mit Hilfe von Flutter bzw. Dart oder Kotlin KMM zu entwickeln. Da aber keine Android App gefordert war, haben wir uns dazu entscheiden den "Apple Weg" zu gehen. Diese hatte den Vorteil, dass wir Xcode als IDE verwenden konnten. Diese Entwicklungsumgebung hat eine Integration für den Deploy zu App Store Connect. Diesen Dienst mussten wir nutzen, um die App im App Store zu veröffentlichen. 
 
 
 # Sicherstellung der Funktionalität
-Die App wurde während der Entwicklung mehrmals von uns getestet. Somit konnten wir Fehler direkt von Anfang an beheben. Sobald einen neue Funktion hinzugefüht wurde haben wir die App auf die Handy der ITP´ler installiert. Dies konnten dann überprüfen, ob das UI ihren Ehrwartungen entspricht aber auch ob die App möglicherweise Fehler enthält welche wir nicht gefunden haben. Der Vorteil wenn Leute die App testen welche mit der Entwicklung nichts zutuen hatten ist folgender. Sie konnten die App so nutzen wie es der Entverbrauchen auch tuen würde. Im Gegensatz zu uns. Wir wussten was wir drücken mussten damit die App nicht abstützt. Schlussendlich haben wir die App auch außenstehenden Personen gegeben. Das Feedback von diesen wurde gesammelt und in die App übertragen. Dadurch haben wir nochmals neue Ideen bekommen wie die App benutzerfreundlicher wird. Hierzu wurde eine Google Forms Befragung durchgeführt. 
+Die App wurde während der Entwicklung mehrmals von uns getestet. Somit konnten wir Fehler direkt von Anfang an beheben. Sobald einen neue Funktion hinzugefüht wurde, haben wir die App auf die Handy's der ITP´ler installiert. Diese konnten dann überprüfen, ob das UI ihren Ehrwartungen entspricht aber auch ob die App möglicherweise Fehler enthält, welche wir nicht gefunden haben. Der Vorteil wenn Leute die App testen, welche mit der Entwicklung nichts zu tun hatten ist folgender. Sie konnten die App so nutzen, wie es der Entverbrauchen auch tun würde. Im Gegensatz zu uns. Wir wussten, was wir drücken mussten, damit die App nicht abstützt. Schlussendlich haben wir die App auch außenstehenden Personen gegeben. Das Feedback von diesen wurde gesammelt und in die App übertragen. Dadurch haben wir nochmals neue Ideen bekommen wie die App benutzerfreundlicher wird. Hierzu wurde eine Google Forms Befragung durchgeführt. 
 
 # Probleme bei der Entwicklung
-Das wohl größte Problem war, dass man einen Mac für eine iOS Appentwicklung benötigt. Da dies nicht bei jedem aus unserem Team gegeben war, mussten wir einen Weg finden, wie wir dem Problem entgegenen wirken. Die Lösung war, dass wir einen Zugang zum Mac-Labor bekommen hatten. Das andere schwerwiegende Problem war - die App in den Apple App Store zu bekommen. Dazu mussten wir uns mit den Apple Guidelines auseinader setzen. Nachdem wir zum Ersten mal die App in das Review bei Apple gegeben hatten wurde diese von Apple abgelehnt. Als wir das Feedback von Apple bekamen, dass die UI nicht ihren Richtlinen entsprach mussten wir uns internsiv mit dem Thema auseinadersetzen, was Apple genau will. Im Anschluss mussten wir die Anforderungen Apple seitig umsetzen. Was nochmals zu einem ungeplanten Zeitaufwand gefüht hatte. So ging das Ganze mehrmals hin und her. Bis wir schlussendlich, die Zusage von Apple erhalten hatten, dass die App nun ihren Richtlinen entsprach - und somit nun im Apple App Store verfügbar ist.  
+Das wohl größte Problem war, dass man einen Mac für eine iOS Appentwicklung benötigt. Da dies nicht bei jedem aus unserem Team gegeben war, mussten wir einen Weg finden, wie wir dem Problem entgegenen wirken. Die Lösung war, dass wir einen Zugang zum Mac-Labor bekommen hatten. Das andere schwerwiegende Problem war - die App in den Apple App Store zu bekommen. Dazu mussten wir uns mit den Apple Guidelines auseinader setzen. Nachdem wir zum ersten Mal die App in das Review bei Apple gegeben hatten, wurde diese von Apple abgelehnt. Als wir das Feedback von Apple bekamen, dass die UI nicht ihren Richtlinen entsprach, mussten wir uns internsiv mit dem Thema auseinadersetzen, was Apple genau will. Im Anschluss mussten wir die Anforderungen Apple seitig umsetzen. Was nochmals zu einem Mehraufwand gefüht hatte. So ging das Ganze mehrmals hin und her. Bis wir schlussendlich die Zusage von Apple erhalten hatten, dass die App nun ihren Richtlinen entsprach - und somit nun im Apple App Store verfügbar ist.  
 
 
 # Verteilung der Aufgaben 
-Im großen und Ganzen wurde die App zwischen uns AIN´lern gemeinsam entwickelt. Das heißt 50 / 50. Dies war vorallem von Vorteil, da jeder seine Gebiete hatte, um welche er sich gekümmert hat. Somit konnte man zusammen kontinuierlich die App entwickeln was zu einem effektiven Workflow geführt hatte. Außerdem war es dadurch möglich, die Anforderungen des Landschaftserhaltungsverband umzusetzen - selbst wenn während des Projekt noch Wünsche des Verbandes dazu kamen.  
+Im großen und Ganzen wurde die App zwischen uns AIN´lern gemeinsam entwickelt. Das heißt 50 / 50. Dies war vorallem von Vorteil, da jeder seine Gebiete hatte, um welche er sich gekümmert hat. Somit konnte man zusammen kontinuierlich die App entwickeln, was zu einem effektiven Workflow geführt hatte. Außerdem war es dadurch möglich, die Anforderungen des Landschaftserhaltungsverband umzusetzen - selbst wenn während des Projekt noch Wünsche des Verbandes dazu kamen.  
 
 
 # Tracking der Aufgaben
@@ -103,7 +98,7 @@ NICE TO HAVE: Aufgaben, die die App erfüllen kann, aber nicht unbedingt muss. <
 IN BEARBEITUNG: Tasks, die aktuell bearbeitet werden. <br> 
 REVIEW: Tasks, die bearbeitet wurden und in den Master gemerged werden sollen. <br> 
 DONE: Erledigte Tasks. <br> 
-NICHT MEHR NÖTIG: Tasks, die durch Abstimmungen mit dem Landschaftsschutzverband nicht mehr umzusetzen ist. <br> 
+NICHT MEHR NÖTIG: Tasks, die durch Abstimmungen mit dem Landschaftsschutzverband nicht mehr umzusetzen sind. <br> 
 UNNÖTIG: Tasks, die zuviel eingestellt wurden. <br>  
 
 Übersicht der Tasks:
@@ -147,7 +142,7 @@ Anhand unsere Auswertung nach der SuS - Methode konnten wir vestellen, dass die 
   git clone https://github.com/Maddi02/LandschaftserhaltungsApp.git
 ```
 
-2. Gehe in den Ordner wo Sie ihr Projekt geclont haben
+2. Gehe in den Ordner, wo Sie ihr Projekt geclont haben
 
 ```bash
   cd LandschaftserhaltungsApp
@@ -161,7 +156,7 @@ Anhand unsere Auswertung nach der SuS - Methode konnten wir vestellen, dass die 
 [MIT](https://choosealicense.com/licenses/mit/)
 
 # AppStore
-Nachdem Apple die App gründlich geprüft hat, können wir nun unser Projekt über den Apple App Store vertreiben. Somit bietet die App einen Mehrwert für die Landschaftspflegeverbünde welche, die gleichen Aufgaben durchführen wie der Landschaftserhaltungsverband Tuttlingen.
+Nachdem Apple die App gründlich geprüft hat, können wir nun unser Projekt über den Apple App Store vertreiben. Somit bietet die App einen Mehrwert für die Landschaftspflegeverbande welche die gleichen Aufgaben durchführen wie der Landschaftserhaltungsverband Tuttlingen.
 
 [Link zur App](https://apps.apple.com/de/app/lpr/id1660222879?l=en)
 
