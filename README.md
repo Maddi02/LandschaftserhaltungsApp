@@ -13,6 +13,7 @@ Dieses Semsterprojekt der Hochschule Furtwangen ist in Koorperation mit dem Land
 8. [Umfrage zur Benutzerbarkeit der APP](#Umfrage-zur-Benutzerbarkeit-der-APP)
 9. [Bauen der App](#Bauen-der-App)
 10. [Lizenz](#Lizenz)
+11. [App Store](#AppStore)
 
 
 
@@ -87,7 +88,7 @@ Die App wurde mit zwei Sprachen entwickelt - Objective C und Swift. Der Grund f�
 Die App wurde während der Entwicklung mehrmals von uns getestet. Somit konnten wir Fehler direkt von Anfang an beheben. Sobald einen neue Funktion hinzugefüht wurde haben wir die App auf die Handy der ITP´ler installiert. Dies konnten dann überprüfen, ob das UI ihren Ehrwartungen entspricht aber auch ob die App möglicherweise Fehler enthält welche wir nicht gefunden haben. Der Vorteil wenn Leute die App testen welche mit der Entwicklung nichts zutuen hatten ist folgender. Sie konnten die App so nutzen wie es der Entverbrauchen auch tuen würde. Im Gegensatz zu uns. Wir wussten was wir drücken mussten damit die App nicht abstützt. Schlussendlich haben wir die App auch außenstehenden Personen gegeben. Das Feedback von diesen wurde gesammelt und in die App übertragen. Dadurch haben wir nochmals neue Ideen bekommen wie die App benutzerfreundlicher wird. Hierzu wurde eine Google Forms Befragung durchgeführt. 
 
 # Probleme bei der Entwicklung
-Das wohl größte Problem war, dass man einen Mac für eine iOS Appentwicklung benötigt. Da dies nicht bei jedem aus unserem Team gegeben war, mussten wir einen Weg finden, wie wir dem Problem entgegenen wirken. Die Lösung war, dass wir einen Zugang zum Mac-Labor bekommen hatten. Das andere schwerwiegende Problem war - die App in den Apple App Store zu bekommen. Dazu mussten wir uns mit den Apple Guidelines auseinader setzen. Nachdem wir zum Ersten mal die App in das Review bei Apple gegeben hatten wurde diese von Apple abgelehnt. Als wir das Feedback von Apple bekommen, dass die UI nicht ihren Richtlinen entsprach mussten wir uns internsiv mit dem Thema auseinadersetzen, was Apple genau will. Im Anschluss mussten wir die Anforderungen Apple seitig umsetzen. Was nochmals zu einem ungeplanten Zeitaufwand gefüht hatte. So ging das Ganze mehrmals hin und her. Bis wir schlussendlich, die Zusage von Apple erhalten hatten, dass die App nun ihren Richtlinen entsprach - und somit nun im Apple App Store verfügbar ist.  
+Das wohl größte Problem war, dass man einen Mac für eine iOS Appentwicklung benötigt. Da dies nicht bei jedem aus unserem Team gegeben war, mussten wir einen Weg finden, wie wir dem Problem entgegenen wirken. Die Lösung war, dass wir einen Zugang zum Mac-Labor bekommen hatten. Das andere schwerwiegende Problem war - die App in den Apple App Store zu bekommen. Dazu mussten wir uns mit den Apple Guidelines auseinader setzen. Nachdem wir zum Ersten mal die App in das Review bei Apple gegeben hatten wurde diese von Apple abgelehnt. Als wir das Feedback von Apple bekamen, dass die UI nicht ihren Richtlinen entsprach mussten wir uns internsiv mit dem Thema auseinadersetzen, was Apple genau will. Im Anschluss mussten wir die Anforderungen Apple seitig umsetzen. Was nochmals zu einem ungeplanten Zeitaufwand gefüht hatte. So ging das Ganze mehrmals hin und her. Bis wir schlussendlich, die Zusage von Apple erhalten hatten, dass die App nun ihren Richtlinen entsprach - und somit nun im Apple App Store verfügbar ist.  
 
 
 # Verteilung der Aufgaben 
@@ -159,7 +160,10 @@ Anhand unsere Auswertung nach der SuS - Methode konnten wir vestellen, dass die 
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
+# AppStore
+Nachdem Apple die App gründlich geprüft hat, können wir nun unsere Projekt über den Apple App Store vertreiben. Somit bietet die App einen Mehrwert für die Landschaftspflegeverbünde welche, die gleichen Aufgaben durchführen wie der Landschaftserhaltungsverband Tuttlingen.
 
+[a link](https://github.com/user/repo/blob/branch/other_file.md)
 
 
 
