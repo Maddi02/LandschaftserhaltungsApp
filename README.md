@@ -161,9 +161,9 @@ Anhand unsere Auswertung nach der SuS - Methode konnten wir vestellen, dass die 
 [MIT](https://choosealicense.com/licenses/mit/)
 
 # AppStore
-Nachdem Apple die App gründlich geprüft hat, können wir nun unsere Projekt über den Apple App Store vertreiben. Somit bietet die App einen Mehrwert für die Landschaftspflegeverbünde welche, die gleichen Aufgaben durchführen wie der Landschaftserhaltungsverband Tuttlingen.
+Nachdem Apple die App gründlich geprüft hat, können wir nun unser Projekt über den Apple App Store vertreiben. Somit bietet die App einen Mehrwert für die Landschaftspflegeverbünde welche, die gleichen Aufgaben durchführen wie der Landschaftserhaltungsverband Tuttlingen.
 
-[a link](https://github.com/user/repo/blob/branch/other_file.md)
+[Link zur App](https://apps.apple.com/de/app/lpr/id1660222879?l=en)
 
 
 
